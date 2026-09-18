@@ -277,15 +277,235 @@ egy checksum-forrás (ha a DMA/Beredskabsstyrelsen közöl ilyet) hozzáadását
 
 ---
 
+## 2026-09-18 22:10 – Forgalmi kiértékelés: csúcsnapok vs átlagos nap
+
+**Mit futtattam:** Új szkript, `forgalom_elemzes.py` – a bounding boxban
+(54.5–56.5°N, 10.0–13.0°E) óránkénti egyedi hajószámot (MMSI) és
+üzenetszámot számol napi AIS ZIP-ekből (streamelt olvasással, `zf.open()`,
+nem `zf.read()`, hogy az 1 GB-os fájlok ne fussanak ki a memóriából).
+
+```
+python forgalom_elemzes.py --csucs data/aisdk-2026-07-15.zip data/aisdk-2026-07-16.zip --atlag aisdk-2026-09-05.zip
+```
+
+**Eredmény (napi összesítés, `forgalmi_osszefoglalo.csv`):**
+
+| dátum | típus | napi üzenet | csúcsóra | csúcsórai hajószám | átlagos órai hajószám |
+|---|---|---|---|---|---|
+| 2026-07-15 | csúcs | 10 860 221 | 09:00 | 2971 | 2275.5 |
+| 2026-07-16 | csúcs | 10 968 080 | 09:00 | 2943 | 2245.8 |
+| 2026-09-05 | átlag | 6 030 204 | 10:00 | 1261 | 1144.5 |
+
+Óránkénti bontás: `forgalmi_profil_oranankent.csv`, ábra: `forgalmi_profil.png`.
+
+Mindkét csúcsnapon (07-15, 07-16) az átlagos órai hajószám kb. **2×** akkora,
+mint a 09-05-i referencianapon (2275/2246 vs 1145), a csúcsórai (09:00)
+egyedi hajószám pedig kb. **2,3–2,4×** (2971/2943 vs 1261). A napi
+üzenetszám is kb. **1,8×** magasabb.
+
+**Fontos módszertani probléma – a hipotézis még NEM tekinthető
+igazoltnak:** Az ábrán (`forgalmi_profil.png`) a 07-15 és 07-16 görbéje
+gyakorlatilag egybeesik, és a 09-05-i görbétől **a nap MINDEN órájában**
+nagyjából arányosan (kb. azonos szorzóval) magasabb – beleértve az
+éjszakai órákat is, amikor a Kiel-csatorna még nem is volt lezárva (a
+lezárás csak 07-15 17:00 – 07-16 09:00 között volt). Ha a többletforgalom
+kifejezetten a csatornalezárás miatti átterelés lenne, azt várnánk, hogy
+a különbség konkrétan a lezárási ablakban ugrik meg, nem pedig egyenletes
+szorzóként jelentkezik a teljes napon át.
+
+Ennek jóval valószínűbb magyarázata: **szezonalitás** – július (nyári
+turista-/vitorlás-szezon, hosszabb nappalok, több komp-/kedvtelési célú
+hajóforgalom) és szeptember eleje eleve nem összehasonlítható bázis, a
+mért különbség nagy része feltehetően ennek tudható be, nem a
+csatornalezárásnak.
+
+**Döntés:** A Kiel-csatorna-hipotézist egyelőre **nem tekintjük
+igazoltnak**. A jelenlegi adatokból csak annyi állítható biztosan, hogy
+a dán szorosokban 2026-07-15/16-án kb. kétszer annyi hajó volt látható
+óránként, mint 2026-09-05-én – az ok (szezonalitás vs csatornalezárás)
+szétválasztása további adatot igényel.
+
+**Nyitott kérdés / következő lépés:** Kontrollnapra van szükség: egy
+**másik júliusi nap, amikor a Kiel-csatorna NEM volt lezárva** (pl. egy
+"átlagos" 2026 júliusi hétköznap, lehetőleg azonos hét napja, mint 07-15
+[szerda] vagy 07-16 [csütörtök], hogy a hét napja szerinti hatás is ki
+legyen szűrve). Ha ezen a kontrollnapon a forgalom közelebb van a 09-05-i
+szinthez, mint a csúcsnapokhoz, az a szezonalitást erősíti. Ha a
+kontrollnap is magasan van, de a csúcsnapok MÉG magasabbak (főleg a
+lezárási ablakban), az a csatornalezárás hatását igazolja. Emellett érdemes
+lenne a 07-14-i (rövidebb, 9 órás) lezárás napját is letölteni
+összehasonlításként.
+
+---
+
 ## Munkamenet vége – összefoglaló
 
 - Kész: `letoltes.py` (letöltő szkript + alapértelmezett csúcsablak és a
   javított, ténylegesen működő `http://aisdata.ais.dk` forrás, ld. a
   21:50-es és 22:05-ös bejegyzést), frissített `CLAUDE.md`, ez a
   `naplo.md`, `.gitignore` a git repóhoz, GitHub repó létrehozva és
-  feltöltve (https://github.com/BallaAttila04/szakdolgozat).
-- Nincs kész: a 07-15/07-16-i forgalmi hipotézis igazolása a tényleges
-  letöltött adatból (a letöltés maga már működik).
-- Következő lépés: `python letoltes.py --cel data` futtatása a teljes
-  csúcsablakra (2026-07-15 – 2026-07-16), a kimenet bemásolása egy új
-  naplóbejegyzésbe, majd a forgalmi hipotézis kiértékelése az adatból.
+  feltöltve (https://github.com/BallaAttila04/szakdolgozat), a
+  07-15/07-16 csúcsnapok és a 09-05-i referencianap ténylegesen
+  letöltve, `forgalom_elemzes.py` az óránkénti forgalmi kiértékeléshez.
+- Nincs kész: a Kiel-csatorna-hipotézis **nincs igazolva** – a mért
+  ~2×-es forgalomnövekedés (ld. 22:10-es bejegyzés) valószínűleg
+  keveredik a nyár/ősz szezonalitással; kontroll júliusi nap (lezárás
+  nélküli) letöltése és összevetése szükséges a szétválasztáshoz.
+- Következő lépés: egy kontroll júliusi (lehetőleg lezárás nélküli,
+  azonos hét napjára eső) nap letöltése és bevonása a
+  `forgalom_elemzes.py` futtatásába, hogy a szezonalitás és a
+  csatornalezárás hatása szétválasztható legyen.
+
+---
+
+## 2026-09-18 22:35 – Konzulenssel megbeszélt tárolási irány pótlólag naplózva
+
+**Mit jelent:** Egy másik (böngészős) Cowork-beszélgetésben a hallgató a
+konzulenssel (2026-09-17-i konzultáció) megbeszélt konkrét
+tárolási/feldolgozási irányt is átbeszélte, de ez eddig **csak abban a
+beszélgetésben** volt meg, sem ide (`naplo.md`), sem `CLAUDE.md`-be nem
+került be – a beszélgetések között nincs automatikus adatmegosztás. A
+hallgató az `atadas_cowork.md` fájlban (a mappa gyökerében) hozta át a
+tartalmát, innen pótolva:
+
+**A konzulens által jóváhagyott új irány (2026-09-17):** a cím szabadon
+módosítható, a SAR-rész elejthető (az xView3-SAR adathalmaz 2020-as és
+nincs balti/szoros jelenet benne – ez korábban külön megvalósíthatósági
+teszttel is alátámasztva: 10 dán jelenet, 4585 detektálás, 2304 nem hajó,
+a maradék 2267 hajóból 46% AIS nélküli). Az **új hangsúly a nagy AIS-
+adathalmaz modern tárolási/feldolgozási módszereinek vizsgálatán van**,
+konkrétan felmerült megoldások:
+
+- **CSV → Parquet és/vagy DuckDB** – oszlopos tárolás, gyorsabb
+  lekérdezés, kisebb méret a nyers CSV-hez képest.
+- **H3 térbeli index** – esetlegesen, térbeli lekérdezések
+  gyorsítására/particionálására.
+- **Spark** – esetlegesen, ha az adat mérete miatt egy gépen nem
+  kezelhető hatékonyan (a konzulens ezt inkább példaként, nem
+  kőbe vésett elvárásként említette).
+
+Tervezett mérési irány: CSV vs. Parquet vs. DuckDB összehasonlítása
+**méretben, beolvasási időben és lekérdezési időben** – ez lenne a
+dolgozat első mérhető, számszerű eredménye.
+
+**Nyitott kérdés (a hallgatótól átvéve, nem lezárt):**
+- A konzulens jegyzetében szereplő "geopods" szó tisztázatlan –
+  valószínűleg GeoPandas vagy GeoParquet, de ezt még nem erősítették meg
+  vele.
+- Nem tisztázott, hogy a Spark-ot ténylegesen elvárja-e a konzulens, vagy
+  csak illusztrációként hangzott el.
+- A pontos szakdolgozat-cím még nincs véglegesítve, csak az irány (AIS
+  nagy adat tárolás/feldolgozás modernizálása) áll.
+
+**Megjegyzés az `atadas_cowork.md` és a tényleges állapot közti
+eltérésről:** az a fájl a `letoltes.py`-t még egy korábbi tervként írja
+le (S3-tükör elsődleges forrás + `web.ais.dk` tartalék, `.part` fájl,
+magic-byte+méret ellenőrzés) – ez **nem egyezik** a jelenleg a mappában
+lévő, ténylegesen működő verzióval (`http://aisdata.ais.dk` egyetlen
+forrás, ZIP-CRC ellenőrzés, ld. 21:35/22:05-ös bejegyzés). A ténylegesen
+futó, validált kód a mérvadó, nem az átadó dokumentum korábbi leírása –
+de érdemes tudni, hogy legalább két külön munkamenet (ez a Cowork-chat és
+egy VS Code/Claude Code munkamenet) is dolgozott/dolgozik ugyanezen a
+mappán, így a `naplo.md` rendszeres, gyors frissítése (mindkét oldalról)
+különösen fontos az ütközések elkerüléséhez.
+
+**Döntés:** A fenti tárolási irány mostantól itt, a `naplo.md`-ben is
+szerepel, hogy bármelyik beszélgetésből/munkamenetből elérhető legyen.
+
+---
+
+## 2026-09-18 22:47 – Tárolási benchmark lefuttatva: CSV vs Parquet vs DuckDB
+
+**Mit futtattam:**
+```
+pip install duckdb          # duckdb-1.5.5
+python -u tarolas_benchmark.py data/aisdk-2026-07-15.zip data/aisdk-2026-07-16.zip
+```
+
+**Első futás elszállt – bug a szkriptben (javítva):**
+```
+_duckdb.BinderException: Binder Error: No function matches the given name and
+argument types 'strptime(TIMESTAMP, STRING_LITERAL)'.
+```
+Ok: a DuckDB `read_csv_auto` a `# Timestamp` oszlopot **már TIMESTAMP
+típusúra** konvertálja beolvasáskor, a lekérdezés viszont `strptime()`-ot
+hívott rá, ami VARCHAR bemenetet vár. (A pandas-ág addigra hibátlanul
+lefutott, a hiba a DuckDB rész 4. lekérdezésénél jött.)
+
+Javítás: új `ora_kifejezes()` segédfüggvény, ami `typeof()`-fal megnézi az
+oszlop tényleges típusát, és TIMESTAMP-nál `date_part('hour', ...)`-ot
+használ, szöveges oszlopnál marad a `strptime`. Füstteszttel (200 000 soros
+minta) validálva, mielőtt a teljes 12 GB-os futás újraindult.
+
+**Méret (a lényeg):**
+
+| formátum | 2026-07-15 | 2026-07-16 | arány a CSV-hez |
+|---|---|---|---|
+| CSV (nyers, kicsomagolt) | 6248.0 MB | 6137.7 MB | 100% |
+| Parquet | 1061.2 MB | 1059.5 MB | **~17%** |
+| DuckDB natív tábla | 1537.3 MB | 1507.8 MB | **~25%** |
+
+**Lekérdezési idő (mind a négy lekérdezés együtt, másodperc):**
+
+| motor | 2026-07-15 | 2026-07-16 | gyorsulás a pandas-hoz |
+|---|---|---|---|
+| pandas_csv (egy chunkolt menet) | 151.4 | 141.2 | 1× |
+| duckdb_csv (4 külön lekérdezés) | 56.2 | 60.9 | ~2,5× |
+| duckdb_parquet | 3.10 | 1.64 | ~49–86× |
+| duckdb_tabla | 0.99 | 1.05 | ~134–153× |
+
+**Egyszeri konverziós költség:**
+
+| művelet | 2026-07-15 | 2026-07-16 |
+|---|---|---|
+| CSV → Parquet | 66.2 mp | 54.4 mp |
+| CSV → DuckDB natív tábla | 114.1 mp | 124.2 mp |
+
+Részletes soronkénti mérés: `tarolas_benchmark.csv`, nyers futási napló:
+`tarolas_benchmark.log`.
+
+**Mit jelent:**
+1. **A Parquet a legkompaktabb** (~17% a CSV-nek, tehát kb. 6-szoros
+   helymegtakarítás), a DuckDB natív tábla valamivel nagyobb (~25%), de
+   cserébe a leggyorsabb lekérdezés.
+2. **A konverzió egyetlen lekérdezési menet alatt megtérül:** a
+   CSV→Parquet konverzió 54–66 mp, ami kevesebb, mint egyetlen pandas
+   végigolvasás (141–151 mp). Tehát már az első elemzésnél nyerünk vele,
+   és onnantól minden további lekérdezés ~50–150× gyorsabb.
+3. A nyers CSV-n futtatott DuckDB is gyorsabb a pandas-nál (~2,5×), de a
+   nagyságrendi különbséget az oszlopos tárolás (Parquet / natív tábla)
+   adja, nem önmagában a motor.
+
+**Keresztvalidáció (fontos, mert két független implementáció):** a
+benchmark DuckDB-eredményei **pontosan egyeznek** a `forgalom_elemzes.py`
+(pandas, chunkolt) korábbi számaival – bounding box találat 10 860 221
+(07-15) és 10 968 080 (07-16), a csúcsóra mindkét napon 09:00, 2971 ill.
+2943 egyedi hajóval. Két teljesen külön kódúton (pandas chunk vs SQL)
+azonos eredmény jött ki, ez erős megerősítés a 22:10-es kiértékelés
+számaira.
+
+**Nyitott kérdés / a mérés korlátai:**
+- **Egyetlen futás, ismétlés nélkül**, és az operációs rendszer
+  fájl-cache-e nincs kontrollálva. Ez látszik is az adatokon: ugyanaz a
+  Parquet-lekérdezéscsomag 3.10 mp (07-15) vs 1.64 mp (07-16) – közel
+  2× szórás azonos munkára. A nagyságrendi következtetéseket ez nem
+  érinti, de **publikálható számokhoz ismételt mérés kell** (pl. 3–5
+  futás, hideg/meleg cache külön jelölve).
+- A pandas-ág az **összes oszlopot** beolvassa, a Parquet/tábla motorok
+  csak a lekérdezéshez kellőket – ez pont az oszlopos tárolás lényege,
+  tehát jogos összehasonlítás, de a dolgozatban explicit ki kell mondani,
+  nem szabad elhallgatni.
+- **H3 térbeli index és Spark még nincs mérve** – a 22:35-ös bejegyzésben
+  szereplő három irányból csak az első (Parquet/DuckDB) van kész.
+- **DuckDB dátum-felismerés csapdája:** a `read_csv_auto` ezen a fájlon
+  helyesen ismerte fel a nap/hónap sorrendet (15/07/2026 → július 15.),
+  mert a 15-ös nap egyértelművé teszi. Olyan napnál viszont, ahol a nap
+  ≤ 12 (pl. `aisdk-2026-09-05` → "05/09/2026"), a sniffer akár
+  hónap/napként is értelmezhetné. Az **órastatisztikát ez nem rontaná el**
+  (az óra rész egyértelmű), de dátum-szintű elemzésnél csendes hibaforrás
+  – több napos összefűzésnél explicit `dateformat`-ot kell megadni.
+
+**Lemezhasználat figyelmeztetés:** a `bench_workdir` a futás után **18 GB**
+(2 kicsomagolt CSV + 2 Parquet + 2 .duckdb), a lemez 96%-on áll, 24 GB
+szabad. A könyvtár teljes tartalma bármikor újragenerálható a ZIP-ekből,
+tehát törölhető – és `.gitignore`-ba is fel kell venni.
