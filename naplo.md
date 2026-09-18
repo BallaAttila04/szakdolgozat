@@ -157,14 +157,135 @@ chat-felületen.
 
 ---
 
+## 2026-09-18 21:50 – Éles letöltés a saját gépről: miért failel a `letoltes.py`
+
+**Mit futtattam:** `python letoltes.py 2026-09-05 --cel /tmp/ais_test_real`
+(most már a hallgató saját gépéről, nem a Claude felhős munkakörnyezetéből –
+tehát a korábbi proxy-403 gyanú kizárva).
+
+**Nyers kimenet:**
+```
+aisdk-2026-09-05.zip: hiba a(z) 1. kiserletnel: HTTPSConnectionPool(host='web.ais.dk', port=443):
+Max retries exceeded with url: /aisdata/aisdk-2026-09-05.zip
+(Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED]
+certificate verify failed: Hostname mismatch, certificate is not valid for
+'web.ais.dk'. (_ssl.c:1020)")))
+[... 2 tovabbi kiserlet, ugyanaz a hiba ...]
+aisdk-2026-09-05.zip: nem sikerult 3 kiserlet utan sem
+
+Osszesites: 0 uj letoltes, 0 mar megvolt, 1 hiba (1 nap osszesen)
+```
+
+**Diagnózis:** A hiba nem hálózati/proxy eredetű, hanem a `web.ais.dk`
+szerver TLS-tanúsítványa a valódi ok. `openssl s_client`-tel közvetlenül
+lekérdezve a `185.153.153.66`-on futó szerver tanúsítványát:
+
+```
+subject=CN=*.govcloud.dk
+issuer=C=GB, ST=Greater Manchester, L=Salford, O=Sectigo Limited,
+       CN=Sectigo RSA Domain Validation Secure Server CA
+notBefore=Jun 12 00:00:00 2024 GMT
+notAfter=Jun 12 23:59:59 2025 GMT
+Subject Alternative Name: DNS:*.govcloud.dk, DNS:*.govcloud.faellesweb.dk,
+                           DNS:govcloud.dk, DNS:govcloud.faellesweb.dk
+```
+
+Két külön probléma egyszerre:
+1. **Rossz domain a tanúsítványon** – a `web.ais.dk`-ra kiszolgált
+   tanúsítvány a `*.govcloud.dk`-ra (és rokon domainjeire) van kiállítva,
+   nem `web.ais.dk`/`*.ais.dk`-ra. A `185.153.153.66` IP-n láthatóan egy
+   megosztott/más célra használt szerver fut, aminek nincs érvényes,
+   `web.ais.dk`-ra szóló tanúsítványa.
+2. **Lejárt tanúsítvány** – a bemutatott tanúsítvány érvényessége
+   2025-06-12-én lejárt, azaz több mint egy éve érvénytelen (a mai dátum
+   2026-09-18).
+
+`curl`/Windows schannel más hibaüzenetet ad ugyanerre
+(`SEC_E_CERT_EXPIRED`), mert a schannel elsőként a lejáratot ellenőrzi,
+míg Python `ssl`/OpenSSL a hostname-egyezést jelzi elsőként – de a
+gyökérok ugyanaz: a szerver oldali tanúsítvány érvénytelen.
+
+**Mit jelent:** A `letoltes.py` retry/hibakezelő logikája helyesen
+működik (3 kísérlet, egyértelmű hibaüzenet, `hiba` állapot, nem-nulla
+kilépési kód) – ez **nem kódhiba**, hanem a DMA (vagy az azt kiszolgáló
+harmadik fél) szerverének infrastrukturális problémája. TLS-ellenőrzés
+kikapcsolása (`verify=False`) **nem** javasolt megoldás, mert a
+tanúsítvány szerint a kapcsolat egy teljesen más domainhez
+(`govcloud.dk`) tartozó szerverhez megy – ez akár DNS-hibát, akár rosszul
+konfigurált/megosztott hosztolást, akár (elvi lehetőségként) man-in-the-
+middle helyzetet is jelenthet, és éles adatletöltés esetén nem lehet
+vakon megbízni benne.
+
+**Döntés:** A `letoltes.py`-t egyelőre nem módosítjuk a tanúsítvány-
+ellenőrzés megkerülésére. A éles letöltés blokkolva marad, amíg a
+domain/tanúsítvány állapota nem tisztázódik.
+
+**Nyitott kérdés:** Ellenőrizni kell, hogy a `web.ais.dk` a DMA jelenlegi
+hivatalos AIS-adat domainje-e (lehet, hogy a DMA időközben átköltöztette
+az adatokat egy másik domainre/URL-re, és a `web.ais.dk` DNS-bejegyzése
+mára egy más célra használt szerverre mutat). Ezt a DMA hivatalos
+oldalán (dma.dk) vagy a PyMEOS/más friss dokumentáción kell utánanézni,
+mielőtt bármilyen megkerülő megoldást (pl. új URL, kézi tanúsítvány-
+pinning) bevezetnénk.
+
+---
+
+## 2026-09-18 22:05 – Helyes URL megtalálva: `aisdata.ais.dk` (HTTP, nem HTTPS)
+
+**Mit jelent:** A hallgató a saját böngészőjében ellenőrizte a domaint, és
+kiderült, hogy az AIS-adatok üzemeltetése időközben átkerült a Dán
+Katasztrófavédelmi Hatósághoz (Beredskabsstyrelsen). A korábban használt
+`https://web.ais.dk/aisdata/...` cím a fenti (rossz domainre kiállított,
+lejárt) tanúsítvány miatt nem használható. A böngészős valódi könyvtár-
+listázás (több hónapnyi napi ZIP fájllal) alapján a jelenleg élő,
+helyes cím:
+
+```
+http://aisdata.ais.dk/aisdk-YYYY-MM-DD.zip
+peldaul: http://aisdata.ais.dk/aisdk-2026-09-05.zip
+```
+
+Fontos: ez a cím **HTTP-n** szolgál, nem HTTPS-en – a szerver ezen a
+címen nem is kínál TLS-t, tehát ez nem megkerülés/tanúsítvány-figyelmen
+kívül hagyás, hanem a szerver által ténylegesen kiszolgált, natívan
+titkosítatlan végpont.
+
+**Mit futtattam:** `letoltes.py`-ban a `BASE_URL` átírva
+`https://web.ais.dk/aisdata`-ról `http://aisdata.ais.dk`-ra, majd
+`python letoltes.py 2026-09-05 --cel /tmp/ais_test_http` a saját gépről.
+
+**Nyers kimenet:**
+```
+Letoltendo napok: 1 (2026-09-05 - 2026-09-05)
+Celkonyvtar: C:\Users\Hp\AppData\Local\Temp\ais_test_http
+
+  aisdk-2026-09-05.zip: kesz (560.6 MB)
+
+Osszesites: 1 uj letoltes, 0 mar megvolt, 0 hiba (1 nap osszesen)
+```
+
+**Döntés:** Az éles letöltés a `http://aisdata.ais.dk` címmel működik,
+a blokkolás (ld. 21:50-es bejegyzés) feloldva. A `letoltes.py` fejléc-
+kommentje frissítve az új forrásra és a döntés indoklására mutató
+hivatkozással.
+
+**Nyitott kérdés:** A HTTP (titkosítatlan) átvitel azt jelenti, hogy a
+letöltött adat integritása kizárólag a szkript ZIP-CRC ellenőrzésén
+(`ellenoriz_zip`) múlik, aktív hálózati manipuláció ellen nincs
+védelem. Nagyobb (több napos/hetes) letöltés előtt érdemes megfontolni
+egy checksum-forrás (ha a DMA/Beredskabsstyrelsen közöl ilyet) hozzáadását.
+
+---
+
 ## Munkamenet vége – összefoglaló
 
-- Kész: `letoltes.py` (letöltő szkript + alapértelmezett csúcsablak,
-  validálva mock szerverrel), frissített `CLAUDE.md`, ez a `naplo.md`,
-  `.gitignore` a git repóhoz.
-- Nincs kész: éles adatletöltés (hálózati korlátozás miatt a hallgatónak
-  kell futtatnia), a 07-15/07-16-i forgalmi hipotézis igazolása az adatból,
-  a GitHub repó tényleges létrehozása és feltöltése.
-- Következő lépés: repó létrehozása github.com-on + `git init`/push a
-  saját gépen (lépések a chatben), majd `python letoltes.py --cel data`
-  futtatása és a kimenet bemásolása egy új naplóbejegyzésbe.
+- Kész: `letoltes.py` (letöltő szkript + alapértelmezett csúcsablak és a
+  javított, ténylegesen működő `http://aisdata.ais.dk` forrás, ld. a
+  21:50-es és 22:05-ös bejegyzést), frissített `CLAUDE.md`, ez a
+  `naplo.md`, `.gitignore` a git repóhoz, GitHub repó létrehozva és
+  feltöltve (https://github.com/BallaAttila04/szakdolgozat).
+- Nincs kész: a 07-15/07-16-i forgalmi hipotézis igazolása a tényleges
+  letöltött adatból (a letöltés maga már működik).
+- Következő lépés: `python letoltes.py --cel data` futtatása a teljes
+  csúcsablakra (2026-07-15 – 2026-07-16), a kimenet bemásolása egy új
+  naplóbejegyzésbe, majd a forgalmi hipotézis kiértékelése az adatból.
