@@ -2,6 +2,13 @@
 data/
 *.zip
 
+# Benchmark munkakonyvtar - kicsomagolt CSV/Parquet/.duckdb (10+ GB),
+# barmikor ujrageneralhato a ZIP-ekbol
+bench_workdir/
+*.parquet
+*.duckdb
+*.log
+
 # Python
 __pycache__/
 *.pyc
