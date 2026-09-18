@@ -1,10 +1,14 @@
 """
-AIS napi adatfajlok letoltese a Dan Tengereszeti Hatosag (DMA) publikus
-szerverer.
+AIS napi adatfajlok letoltese. Az AIS-rendszer uzemeltetese a DMA-tol
+atkerult a Dan Katasztrofavedelmi Hatosaghoz (Beredskabsstyrelsen); a
+korabban hasznalt web.ais.dk cim lejart/rossz tanusitvanyt ad (ld.
+naplo.md, 2026-09-18 21:50 es 22:05-os bejegyzes).
 
-Forras es fajlnev-mintazat ellenorizve (2026-09-18):
-    https://web.ais.dk/aisdata/aisdk-YYYY-MM-DD.zip
-peldaul: https://web.ais.dk/aisdata/aisdk-2023-08-01.zip
+Forras es fajlnev-mintazat ellenorizve (2026-09-18, a hallgato altal, a
+sajat bongeszojeben - valodi konyvtarlistazas, tobb honapnyi napi ZIP-pel):
+    http://aisdata.ais.dk/aisdk-YYYY-MM-DD.zip
+peldaul: http://aisdata.ais.dk/aisdk-2026-09-05.zip
+Figyelem: http, nem https - a szerver nem szolgaltat TLS-t ezen a cimen.
 
 Hasznalat:
     # argumentum nelkul: a megbeszelt csucsforgalmi ablak toltodik le
@@ -36,7 +40,7 @@ import requests
 
 # --- Parameterek ---------------------------------------------------------
 
-BASE_URL = "https://web.ais.dk/aisdata"
+BASE_URL = "http://aisdata.ais.dk"
 FILENAME_FORMAT = "aisdk-{date}.zip"  # date = ISO YYYY-MM-DD
 
 # A DMA szerver nagy fajlokat szolgal ki (tobb szaz MB naponta) - streamelve,
