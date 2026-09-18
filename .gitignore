@@ -1,0 +1,14 @@
+# Nyers AIS adat - nagy fajlok (tobb szaz MB/nap), nem valok git-be
+data/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
