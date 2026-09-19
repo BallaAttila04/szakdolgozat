@@ -1,0 +1,446 @@
+<title>Dán szorosok hajóforgalma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground:   #f2f0ea;
+    --panel:    #fbfaf6;
+    --water:    #e6ecf0;
+    --ink:      #16232d;
+    --ink-2:    #55646f;
+    --ink-3:    #8a97a1;
+    --line:     #d3dbe1;
+    --accent:   #0f6f8c;
+    --track:    #c9d4db;
+    --v1: #b6ccd8;
+    --v2: #7aa9bf;
+    --v3: #3f83a1;
+    --v4: #145f7e;
+    --v5: #06394f;
+    --grid: rgba(22,35,45,0.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:  #070d13;
+      --panel:   #0d151d;
+      --water:   #0b131b;
+      --ink:     #d8e6ef;
+      --ink-2:   #8395a2;
+      --ink-3:   #5d6d7a;
+      --line:    #1c2833;
+      --accent:  #3fb9dc;
+      --track:   #223240;
+      --v1: #1b4557;
+      --v2: #2b7695;
+      --v3: #3fa5c9;
+      --v4: #64d3f0;
+      --v5: #aeeeff;
+      --grid: rgba(216,230,239,0.06);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:  #070d13;
+    --panel:   #0d151d;
+    --water:   #0b131b;
+    --ink:     #d8e6ef;
+    --ink-2:   #8395a2;
+    --ink-3:   #5d6d7a;
+    --line:    #1c2833;
+    --accent:  #3fb9dc;
+    --track:   #223240;
+    --v1: #1b4557;
+    --v2: #2b7695;
+    --v3: #3fa5c9;
+    --v4: #64d3f0;
+    --v5: #aeeeff;
+    --grid: rgba(216,230,239,0.06);
+  }
+
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fejlec {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 16px;
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cim {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .alcim {
+    font-size: 12.5px;
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .terkep-doboz {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 260px;
+    background: var(--water);
+  }
+  canvas { display: block; width: 100%; height: 100%; }
+
+  .jelmagyarazat {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 8px 10px;
+    font-size: 11px;
+    color: var(--ink-2);
+    pointer-events: none;
+  }
+  .jm-cimke {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 9.5px;
+    color: var(--ink-3);
+    margin-bottom: 5px;
+  }
+  .jm-sav { display: flex; align-items: center; gap: 0; }
+  .jm-sav i { width: 17px; height: 8px; display: block; }
+  .jm-skala {
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px;
+    margin-top: 3px;
+    color: var(--ink-3);
+  }
+
+  .vezerlo {
+    border-top: 1px solid var(--line);
+    background: var(--panel);
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ido {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 25px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .mutato {
+    display: flex;
+    gap: 18px;
+    margin-left: auto;
+    flex-wrap: wrap;
+  }
+  .mut-elem { display: flex; flex-direction: column; gap: 2px; }
+  .mut-cimke {
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 9.5px;
+    color: var(--ink-3);
+  }
+  .mut-ertek {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 15px;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  button {
+    font: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 7px 13px;
+    cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .jatszik {
+    border-color: var(--accent);
+    color: var(--accent);
+    min-width: 88px;
+  }
+  .seb-csoport { display: flex; gap: 0; }
+  .seb-csoport button {
+    border-radius: 0;
+    border-left-width: 0;
+    padding: 7px 11px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+  }
+  .seb-csoport button:first-child { border-left-width: 1px; border-radius: 3px 0 0 3px; }
+  .seb-csoport button:last-child { border-radius: 0 3px 3px 0; }
+  .seb-csoport button[aria-pressed="true"] {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+
+  input[type="range"] {
+    flex: 1 1 200px;
+    min-width: 0;
+    accent-color: var(--accent);
+    height: 22px;
+  }
+  input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .lablec {
+    font-size: 11px;
+    color: var(--ink-3);
+    line-height: 1.5;
+    border-top: 1px solid var(--line);
+    padding-top: 9px;
+  }
+  .lablec strong { color: var(--ink-2); font-weight: 500; }
+
+  @media (max-width: 560px) {
+    .ido { font-size: 21px; }
+    .mutato { margin-left: 0; gap: 14px; }
+    .jelmagyarazat { left: 10px; bottom: 10px; padding: 7px 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="fejlec">
+  <h1 class="cim">Dán szorosok hajóforgalma</h1>
+  <p class="alcim" id="alcim">AIS, 2026-07-15 · 54,5–56,5° É / 10,0–13,0° K</p>
+</div>
+
+<div class="terkep-doboz">
+  <canvas id="vaszon"></canvas>
+  <div class="jelmagyarazat">
+    <div class="jm-cimke">Sebesség</div>
+    <div class="jm-sav">
+      <i style="background:var(--v1)"></i><i style="background:var(--v2)"></i><i style="background:var(--v3)"></i><i style="background:var(--v4)"></i><i style="background:var(--v5)"></i>
+    </div>
+    <div class="jm-skala"><span>0</span><span>16+ cs</span></div>
+  </div>
+</div>
+
+<div class="vezerlo">
+  <div class="sor">
+    <button class="jatszik" id="jatszik" aria-label="Lejátszás indítása">Lejátszás</button>
+    <span class="ido" id="ido">00:00</span>
+    <div class="seb-csoport" role="group" aria-label="Lejátszási sebesség">
+      <button id="seb1" aria-pressed="true">1×</button>
+      <button id="seb2" aria-pressed="false">2×</button>
+      <button id="seb4" aria-pressed="false">4×</button>
+    </div>
+    <div class="mutato">
+      <div class="mut-elem">
+        <span class="mut-cimke">Látható hajó</span>
+        <span class="mut-ertek" id="lathato">–</span>
+      </div>
+      <div class="mut-elem">
+        <span class="mut-cimke">Mozgásban (&gt;1 cs)</span>
+        <span class="mut-ertek" id="mozgo">–</span>
+      </div>
+    </div>
+  </div>
+  <div class="sor">
+    <input type="range" id="csuszka" min="0" max="143" value="0" step="1" aria-label="Időpont">
+  </div>
+  <p class="lablec">
+    <strong>Megjelenítési réteg.</strong> A pozíciók 10 perces szabályos rácsra
+    interpolálva, 20 percnél hosszabb adathézagon át nem kitöltve – az elemzési
+    számok mindig a nyers, szabálytalan AIS-adatból készülnek, nem ebből.
+    Az időbélyeg a forrásadat szerinti; hogy UTC vagy helyi idő, még nincs tisztázva.
+  </p>
+</div>
+
+<script>
+const ADAT = /*ADATHELY*/;
+
+(function () {
+  const b64 = (s, T) => {
+    const bin = atob(s);
+    const buf = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+    return new T(buf.buffer);
+  };
+
+  const meta = ADAT.meta;
+  const X = b64(ADAT.x, Uint16Array);
+  const Y = b64(ADAT.y, Uint16Array);
+  const S = b64(ADAT.sog, Uint8Array);
+  const HIANYZO = meta.hianyzo;
+
+  // Hajónkénti eltolás a közös pufferben
+  const hajok = ADAT.hajok;
+  const eltolas = new Int32Array(hajok.length);
+  let futo = 0;
+  for (let i = 0; i < hajok.length; i++) { eltolas[i] = futo; futo += hajok[i].n; }
+
+  const vaszon = document.getElementById("vaszon");
+  const ctx = vaszon.getContext("2d", { alpha: false });
+  const csuszka = document.getElementById("csuszka");
+  const idoEl = document.getElementById("ido");
+  const lathatoEl = document.getElementById("lathato");
+  const mozgoEl = document.getElementById("mozgo");
+  const jatszikGomb = document.getElementById("jatszik");
+
+  csuszka.max = String(meta.frame_db - 1);
+  document.getElementById("alcim").textContent =
+    `AIS, ${meta.nap} · 54,5–56,5° É / 10,0–13,0° K · ${meta.hajo_db.toLocaleString("hu")} hajó`;
+
+  const stilus = () => getComputedStyle(document.documentElement);
+  let rampa = [], vizSzin = "#000", racsSzin = "#333";
+  function szinekFrissit() {
+    const s = stilus();
+    rampa = ["--v1", "--v2", "--v3", "--v4", "--v5"].map(v => s.getPropertyValue(v).trim());
+    vizSzin = s.getPropertyValue("--water").trim();
+    racsSzin = s.getPropertyValue("--grid").trim();
+    hatterKesz = false;
+  }
+
+  // Valódi arányok: a hosszúsági fok rövidebb a szélesség koszinuszával
+  const kozepLat = (meta.lat_min + meta.lat_max) / 2;
+  const szelesKm = (meta.lon_max - meta.lon_min) * 111.32 * Math.cos(kozepLat * Math.PI / 180);
+  const magasKm = (meta.lat_max - meta.lat_min) * 111.32;
+
+  let dpr = 1, W = 0, H = 0, ox = 0, oy = 0, skala = 1;
+  let hatterVaszon = document.createElement("canvas");
+  let hatterKesz = false;
+
+  function meretez() {
+    const doboz = vaszon.parentElement.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, Math.round(doboz.width));
+    H = Math.max(1, Math.round(doboz.height));
+    vaszon.width = Math.round(W * dpr);
+    vaszon.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const arany = Math.min(W / szelesKm, H / magasKm);
+    skala = arany;
+    ox = (W - szelesKm * arany) / 2;
+    oy = (H - magasKm * arany) / 2;
+    hatterKesz = false;
+    rajzol();
+  }
+
+  const px = qx => ox + (qx / 65534) * szelesKm * skala;
+  const py = qy => oy + (1 - qy / 65534) * magasKm * skala;
+
+  // Háttér: a nap ÖSSZES rácspozíciója halványan – ebből rajzolódik ki a
+  // szorosok geometriája, külső alaptérkép nélkül.
+  function hatterRajzol() {
+    hatterVaszon.width = vaszon.width;
+    hatterVaszon.height = vaszon.height;
+    const h = hatterVaszon.getContext("2d");
+    h.setTransform(dpr, 0, 0, dpr, 0, 0);
+    h.fillStyle = vizSzin;
+    h.fillRect(0, 0, W, H);
+    h.fillStyle = racsSzin;
+    for (let i = 0; i < X.length; i++) {
+      const qx = X[i];
+      if (qx === HIANYZO) continue;
+      h.fillRect(px(qx), py(Y[i]), 1, 1);
+    }
+    hatterKesz = true;
+  }
+
+  function rajzol() {
+    if (!hatterKesz) hatterRajzol();
+    ctx.drawImage(hatterVaszon, 0, 0, W, H);
+
+    const f = Number(csuszka.value);
+    let lathato = 0, mozgo = 0;
+
+    for (let v = 0; v < hajok.length; v++) {
+      const h = hajok[v];
+      const k = f - h.s;
+      if (k < 0 || k >= h.n) continue;
+      const i = eltolas[v] + k;
+      const qx = X[i];
+      if (qx === HIANYZO) continue;
+
+      const sog = S[i];
+      const sav = sog < 1 ? 0 : sog < 4 ? 1 : sog < 8 ? 2 : sog < 16 ? 3 : 4;
+      ctx.fillStyle = rampa[sav];
+      const x = px(qx), y = py(Y[i]);
+      const m = sog < 1 ? 1.5 : 2.1;
+      ctx.fillRect(x - m / 2, y - m / 2, m, m);
+
+      lathato++;
+      if (sog > 1) mozgo++;
+    }
+
+    const perc = f * meta.perc;
+    idoEl.textContent =
+      String(Math.floor(perc / 60)).padStart(2, "0") + ":" + String(perc % 60).padStart(2, "0");
+    lathatoEl.textContent = lathato.toLocaleString("hu");
+    mozgoEl.textContent = mozgo.toLocaleString("hu");
+  }
+
+  // Lejátszás
+  let jatszik = false, sebesseg = 1, utolso = 0;
+  const LEPES_MS = 220;
+
+  function kepkocka(t) {
+    if (!jatszik) return;
+    if (t - utolso >= LEPES_MS / sebesseg) {
+      utolso = t;
+      let f = Number(csuszka.value) + 1;
+      if (f > Number(csuszka.max)) f = 0;
+      csuszka.value = String(f);
+      rajzol();
+    }
+    requestAnimationFrame(kepkocka);
+  }
+
+  function jatszikAllit(be) {
+    jatszik = be;
+    jatszikGomb.textContent = be ? "Szünet" : "Lejátszás";
+    jatszikGomb.setAttribute("aria-label", be ? "Szünet" : "Lejátszás indítása");
+    if (be) { utolso = 0; requestAnimationFrame(kepkocka); }
+  }
+
+  jatszikGomb.addEventListener("click", () => jatszikAllit(!jatszik));
+  csuszka.addEventListener("input", () => { jatszikAllit(false); rajzol(); });
+
+  [["seb1", 1], ["seb2", 2], ["seb4", 4]].forEach(([id, v]) => {
+    document.getElementById(id).addEventListener("click", () => {
+      sebesseg = v;
+      ["seb1", "seb2", "seb4"].forEach(o =>
+        document.getElementById(o).setAttribute("aria-pressed", o === id ? "true" : "false"));
+    });
+  });
+
+  window.addEventListener("resize", meretez);
+  const mm = window.matchMedia("(prefers-color-scheme: dark)");
+  mm.addEventListener("change", () => { szinekFrissit(); rajzol(); });
+
+  szinekFrissit();
+  meretez();
+  // Nyitáskor a reggeli csúcs közelében állunk meg, hogy ne üres képpel induljon
+  csuszka.value = String(Math.min(9 * 60 / meta.perc, meta.frame_db - 1));
+  rajzol();
+})();
+</script>

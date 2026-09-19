@@ -19,3 +19,8 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Terkep generalt kimenetei (a terkep_adat.py + terkep_sablon.html
+# barmikor ujragenerálja oket a Parquetbol)
+terkep_adat.json
+terkep.html
