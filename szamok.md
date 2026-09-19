@@ -115,3 +115,36 @@ Egyszeri konverziós költség:
 10 968 080 bounding box-találat, csúcsóra 09:00-kor 2971 ill. 2943
 egyedi hajóval. Két független kódút (pandas chunk vs SQL) azonos
 eredménye, ez megerősíti a forgalmi kiértékelés számait.
+
+## Trajektória-tömörítés (dead reckoning)
+
+Forrás: `trajektoria_tomorites.py`, kimenet `trajektoria_tomorites.csv`,
+lefuttatva 2026-09-19 a `data/aisdk-2026-07-15.zip` fájlon (ld. `naplo.md`,
+2026-09-19 21:07-es bejegyzés). Bounding box: 54.5–56.5°N, 10.0–13.0°E.
+Oszlopok: MMSI, ts, Latitude, Longitude, SOG, COG. Kodek: zstd.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 10 860 221 | összes pozíció a bounding boxban, 2026-07-15 | trajektoria_tomorites.py | 2026-09-19 |
+| 4 138 | egyedi hajó a bounding boxban, 2026-07-15 | trajektoria_tomorites.py | 2026-09-19 |
+| 84.3 MB | tömörítetlen Parquet (zstd, 6 oszlop, bbox) | trajektoria_tomorites.py | 2026-09-19 |
+| 20.8 MB / 4.05× | dead reckoning, 10 m küszöb (77.77% tömörítés) | trajektoria_tomorites.py | 2026-09-19 |
+| 15.5 MB / 5.44× | dead reckoning, 25 m küszöb (80.57%) | trajektoria_tomorites.py | 2026-09-19 |
+| **13.2 MB / 6.39×** | dead reckoning, **50 m küszöb** (82.02%) | trajektoria_tomorites.py | 2026-09-19 |
+| 11.6 MB / 7.27× | dead reckoning, 100 m küszöb (82.99%) | trajektoria_tomorites.py | 2026-09-19 |
+| 10.4 MB / 8.11× | dead reckoning, 250 m küszöb (83.58%) | trajektoria_tomorites.py | 2026-09-19 |
+| 10.0 MB / 8.43× | dead reckoning, 500 m küszöb (83.78%) | trajektoria_tomorites.py | 2026-09-19 |
+| ~16% | a megtartott pontok **padlója** (kötelező horgonyok: >600 mp időrés, érvénytelen SOG/COG, valódi manőverek) | trajektoria_tomorites.py | 2026-09-19 |
+
+A küszöb **garantált felső korlát** a pozícióhibára, nem átlag: konstrukció
+szerint minden eldobott pont visszaszámolási hibája a küszöb alatt marad.
+Az átlagos hiba ennél jóval kisebb (50 m-es küszöbnél 13,6 m).
+
+**Fontos – mivel NEM hasonlítható össze:** a 84.3 MB nem vethető össze a
+tárolási benchmark 1061 MB-os értékével, mert az egész napra, ~26 oszlopra és
+snappy kodekkel készült, míg ez bbox-szűrt, 6 oszlopos, zstd. A **6.39× tisztán
+a trajektória-tömörítés hatása**, azonos oszlopkészleten és kodekkel mérve.
+
+**Még nem mért, tehát nem állítható:** a tömörített adaton a lekérdezési idő,
+és hogy a forgalmi kiértékelés ugyanazt az eredményt adja-e a tömörített
+adaton. Csak egyetlen napon (07-15) futott.
