@@ -109,12 +109,20 @@ def elemez_nap(path: Path) -> pd.DataFrame:
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--csucs", nargs="+", required=True,
-                     help="Csucsforgalmi napok ZIP utvonalai")
+                     help="Csucsforgalmi (Kiel-lezarasi) napok ZIP utvonalai")
     ap.add_argument("--atlag", nargs="+", required=True,
                      help="Atlagos (viszonyitasi) napok ZIP utvonalai")
+    ap.add_argument("--kontroll", nargs="*", default=[],
+                     help="Kontrollnapok: azonos honap es azonos het napja, "
+                          "mint a csucsnapok, de lezaras nelkul - ezek "
+                          "valasztjak szet a szezonalitast a lezaras hatasatol")
     args = ap.parse_args()
 
-    napok = [(p, "csucs") for p in args.csucs] + [(p, "atlag") for p in args.atlag]
+    napok = (
+        [(p, "csucs") for p in args.csucs]
+        + [(p, "kontroll") for p in args.kontroll]
+        + [(p, "atlag") for p in args.atlag]
+    )
 
     osszesito = []
     profilok = {}
@@ -159,10 +167,14 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 6))
     for datum, profil in profilok.items():
         label = profil["label"].iloc[0]
-        stilus = dict(linewidth=2.4, marker="o") if label == "csucs" else \
-                 dict(linewidth=1.4, linestyle="--", marker=".")
+        stilusok = {
+            "csucs": dict(linewidth=2.4, marker="o"),
+            "kontroll": dict(linewidth=2.0, linestyle="-.", marker="s",
+                             markersize=4),
+            "atlag": dict(linewidth=1.4, linestyle="--", marker="."),
+        }
         ax.plot(profil["hour"], profil["unique_ships"], label=f"{datum} ({label})",
-                **stilus)
+                **stilusok[label])
 
     ax.set_xlabel("Ora (nap kozben)")
     ax.set_ylabel("Egyedi hajok szama (MMSI)")

@@ -20,14 +20,44 @@ lefuttatva 2026-09-18 (ld. `naplo.md`, 22:10-es bejegyzés).
 | 2275.5 | átlagos órai egyedi hajószám, 2026-07-15 | forgalom_elemzes.py | 2026-09-18 |
 | 2245.8 | átlagos órai egyedi hajószám, 2026-07-16 | forgalom_elemzes.py | 2026-09-18 |
 | 1144.5 | átlagos órai egyedi hajószám, 2026-09-05 (referencia) | forgalom_elemzes.py | 2026-09-18 |
-| ~2× | 07-15/07-16 átlagos órai hajószám aránya a 09-05-i referenciához | forgalom_elemzes.py + kézi számolás | 2026-09-18 |
+| ~~~2×~~ → **+20.2%** | 07-15/07-16 forgalomtöbblete | forgalom_elemzes.py + kézi számolás | ~~2026-09-18~~ → 2026-09-19 |
 
-**Fontos:** a fenti ~2×-es eltérés oka **nincs eldöntve** — a
-`naplo.md` 22:10-es bejegyzése szerint valószínűleg keveredik a
-nyár/ősz szezonalitással, mert az eltérés a nap MINDEN órájában
-egyenletesen jelentkezik, nem csak a csatornalezárás (07-15 17:00 –
-07-16 09:00) ablakában. Kontrollnap nélkül ez a szám **nem** bizonyítja
-a Kiel-csatorna-hipotézist, csak azt, hogy nagyobb volt a forgalom.
+**A ~2× áthúzva — miért változott:** a ~2× a **szeptember 5-i**
+referencianaphoz mérte a lezárási napokat, és ez a referencia két
+szempontból is rossz volt: (1) más évszak, (2) **szombat**, miközben a
+lezárási napok szerda és csütörtök. A 2026-09-19-én letöltött júliusi
+kontrollnapokkal (07-08 szerda, 07-09 csütörtök, lezárás nélkül) a
+különbség felbontható (ld. `naplo.md`, 2026-09-19 20:44):
+
+| összehasonlítás | arány | mit mér |
+|---|---|---|
+| lezárási napok / szeptemberi szombat | 1.962 (+96.2%) | a régi, félrevezető szám |
+| júliusi kontroll / szeptemberi szombat | 1.632 (+63.2%) | évszak + hét napja |
+| lezárási napok / júliusi kontroll | **1.202 (+20.2%)** | ennyi marad a lezárásra |
+
+Párosított, azonos hét napján (a hibás 11. óra kihagyva minden napból):
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 1.292 (+29.2%) | szerda: 07-15 / 07-08 arány | forgalom_elemzes.py | 2026-09-19 |
+| 1.123 (+12.3%) | csütörtök: 07-16 / 07-09 arány | forgalom_elemzes.py | 2026-09-19 |
+| 1.136 (+13.6%) | **zajszint**: két rendes kontrollnap aránya (07-09 / 07-08) | forgalom_elemzes.py | 2026-09-19 |
+| 1741.1 | átlagos órai egyedi hajószám, 2026-07-08 (kontroll, 23 óra) | forgalom_elemzes.py | 2026-09-19 |
+| 1978.8 | átlagos órai egyedi hajószám, 2026-07-09 (kontroll, 23 óra) | forgalom_elemzes.py | 2026-09-19 |
+
+**Fontos — a hipotézis továbbra sem igazolt:** a csütörtöki +12.3% a
+megfigyelt napi zajszint (+13.6%) **alatt** van, tehát nem
+különböztethető meg a szokásos napi ingadozástól. A szerdai +29.2% a
+zajszint fölött van, de ez 1 nap 1 nap ellen — szignifikanciát ebből
+állítani nem lehet. Több kontrollnap kell (július összes szerdája és
+csütörtöke a lezárással érintettek nélkül).
+
+**Adathiány — 2026-07-08, 11. óra:** 134 168 üzenet és 1084 egyedi hajó
+a szomszédos órák ~330–360 ezer / ~2020 értékei helyett. Ez vételi vagy
+naplózási kiesés a forrásadatban, nem valódi forgalom. Mind az 5 nap
+átvizsgálva, ez az egyetlen ilyen óra. A fenti arányok úgy készültek,
+hogy a 11. óra **mindegyik napból ki van hagyva** (23 óra átlaga),
+interpoláció nélkül.
 
 ## Adattárolás-benchmark (CSV vs Parquet vs DuckDB)
 
