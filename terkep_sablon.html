@@ -125,6 +125,71 @@
     color: var(--ink-3);
   }
 
+  .hajo-panel {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 232px;
+    max-width: calc(100% - 28px);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--accent);
+    border-radius: 3px;
+    padding: 11px 13px 12px;
+    font-size: 12px;
+  }
+  .hp-fej {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 9px;
+  }
+  .hp-nev {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
+    flex: 1;
+    word-break: break-word;
+  }
+  .hp-nev.nevtelen { color: var(--ink-3); font-weight: 500; font-style: italic; }
+  .hp-zar {
+    border: 0;
+    background: transparent;
+    color: var(--ink-3);
+    font-size: 17px;
+    line-height: 1;
+    padding: 0 2px;
+    cursor: pointer;
+  }
+  .hp-zar:hover { color: var(--accent); }
+  .hp-sor {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 3px 0;
+    border-top: 1px solid var(--line);
+  }
+  .hp-sor:first-of-type { border-top: 0; }
+  .hp-k { color: var(--ink-3); white-space: nowrap; }
+  .hp-v {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    word-break: break-word;
+  }
+  .hp-sugo {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: color-mix(in srgb, var(--panel) 88%, transparent);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: var(--ink-3);
+    pointer-events: none;
+  }
+
   .vezerlo {
     border-top: 1px solid var(--line);
     background: var(--panel);
@@ -241,6 +306,14 @@
     </div>
     <div class="jm-skala"><span>0</span><span>16+ cs</span></div>
   </div>
+  <div class="hp-sugo" id="sugo">Kattints egy hajóra</div>
+  <div class="hajo-panel" id="panel" hidden>
+    <div class="hp-fej">
+      <div class="hp-nev" id="hp-nev">–</div>
+      <button class="hp-zar" id="hp-zar" aria-label="Panel bezárása">×</button>
+    </div>
+    <div id="hp-mezok"></div>
+  </div>
 </div>
 
 <div class="vezerlo">
@@ -304,6 +377,10 @@ const ADAT = /*ADATHELY*/;
   const lathatoEl = document.getElementById("lathato");
   const mozgoEl = document.getElementById("mozgo");
   const jatszikGomb = document.getElementById("jatszik");
+  const panel = document.getElementById("panel");
+  const sugo = document.getElementById("sugo");
+  const info = ADAT.info || {};
+  let kivalasztott = -1;
 
   csuszka.max = String(meta.frame_db - 1);
   document.getElementById("alcim").textContent =
@@ -392,12 +469,119 @@ const ADAT = /*ADATHELY*/;
       if (sog > 1) mozgo++;
     }
 
+    if (kivalasztott >= 0) { kivalasztottRajzol(f); panelFrissit(); }
+
     const perc = f * meta.perc;
     idoEl.textContent =
       String(Math.floor(perc / 60)).padStart(2, "0") + ":" + String(perc % 60).padStart(2, "0");
     lathatoEl.textContent = lathato.toLocaleString("hu");
     mozgoEl.textContent = mozgo.toLocaleString("hu");
   }
+
+  // A kiválasztott hajó teljes napi útvonala + kiemelt aktuális pozíciója
+  function kivalasztottRajzol(f) {
+    const h = hajok[kivalasztott];
+    const alap = eltolas[kivalasztott];
+    const kiemelo = stilus().getPropertyValue("--accent").trim();
+
+    ctx.strokeStyle = kiemelo;
+    ctx.lineWidth = 1.4;
+    ctx.globalAlpha = 0.55;
+    ctx.beginPath();
+    let tollFent = true;
+    for (let k = 0; k < h.n; k++) {
+      const qx = X[alap + k];
+      if (qx === HIANYZO) { tollFent = true; continue; }
+      const x = px(qx), y = py(Y[alap + k]);
+      if (tollFent) { ctx.moveTo(x, y); tollFent = false; } else { ctx.lineTo(x, y); }
+    }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    const k = f - h.s;
+    if (k < 0 || k >= h.n) return;
+    const qx = X[alap + k];
+    if (qx === HIANYZO) return;
+    const x = px(qx), y = py(Y[alap + k]);
+    ctx.strokeStyle = kiemelo;
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(x, y, 7, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  const MEZO_CIMKE = {
+    "MMSI": "MMSI", "Ship type": "Típus", "Type of mobile": "Osztály",
+    "Length": "Hossz", "Width": "Szélesség", "Callsign": "Hívójel",
+    "IMO": "IMO", "Destination": "Úticél", "SOG": "Sebesség",
+  };
+
+  function panelFrissit() {
+    if (kivalasztott < 0) {
+      panel.hidden = true;
+      sugo.hidden = false;
+      return;
+    }
+    const h = hajok[kivalasztott];
+    const rek = info[String(h.m)] || {};
+    const nevEl = document.getElementById("hp-nev");
+    const nev = rek["Name"];
+    nevEl.textContent = nev || "Név nélkül";
+    nevEl.classList.toggle("nevtelen", !nev);
+
+    const f = Number(csuszka.value);
+    const k = f - h.s;
+    const sog = (k >= 0 && k < h.n && X[eltolas[kivalasztott] + k] !== HIANYZO)
+      ? S[eltolas[kivalasztott] + k] : null;
+
+    const sorok = [["MMSI", String(h.m)]];
+    if (sog !== null) sorok.push(["SOG", sog + " cs"]);
+    for (const mezo of ["Ship type", "Type of mobile", "Length", "Width",
+                        "Callsign", "IMO", "Destination"]) {
+      let v = rek[mezo];
+      if (!v) continue;
+      if (mezo === "Length" || mezo === "Width") v = v + " m";
+      sorok.push([mezo, v]);
+    }
+
+    document.getElementById("hp-mezok").innerHTML = sorok.map(([k2, v]) =>
+      `<div class="hp-sor"><span class="hp-k">${MEZO_CIMKE[k2] || k2}</span>` +
+      `<span class="hp-v">${String(v).replace(/[<>&]/g, c =>
+        ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]))}</span></div>`).join("");
+
+    panel.hidden = false;
+    sugo.hidden = true;
+  }
+
+  // Kattintás: a legközelebbi, adott pillanatban látható hajó kiválasztása
+  vaszon.addEventListener("click", (e) => {
+    const doboz = vaszon.getBoundingClientRect();
+    const kx = e.clientX - doboz.left, ky = e.clientY - doboz.top;
+    const f = Number(csuszka.value);
+    let legjobb = -1, legkisebb = 18 * 18;
+
+    for (let v = 0; v < hajok.length; v++) {
+      const h = hajok[v];
+      const k = f - h.s;
+      if (k < 0 || k >= h.n) continue;
+      const i = eltolas[v] + k;
+      const qx = X[i];
+      if (qx === HIANYZO) continue;
+      const dx = px(qx) - kx, dy = py(Y[i]) - ky;
+      const t = dx * dx + dy * dy;
+      if (t < legkisebb) { legkisebb = t; legjobb = v; }
+    }
+
+    kivalasztott = legjobb;
+    panelFrissit();
+    rajzol();
+  });
+
+  document.getElementById("hp-zar").addEventListener("click", () => {
+    kivalasztott = -1;
+    panelFrissit();
+    rajzol();
+  });
 
   // Lejátszás
   let jatszik = false, sebesseg = 1, utolso = 0;

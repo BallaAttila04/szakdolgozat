@@ -114,7 +114,7 @@ def main():
         # Sebesseg 0..255 csomo helyett 0..63 (negyed csomo felbontas, 0-63 kn)
         s = np.clip(np.nan_to_num(i_sog, nan=0.0), 0, 63).astype(np.uint8)
 
-        hajok.append({"s": int(eleje), "n": int(len(r))})
+        hajok.append({"s": int(eleje), "n": int(len(r)), "m": int(mmsi_arr[a])})
         palyak.append((x, y, s))
 
     print(f"  megjelenitheto hajo: {len(hajok):,}")
