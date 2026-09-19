@@ -27,18 +27,23 @@ elrendezés.
 
 ## Adatforrás: AIS
 
-A nyers AIS adat forrása a Dán Tengerészeti Hatóság (DMA) publikus
-szervere:
+A nyers AIS adat forrása a dán AIS-szolgáltatás publikus szervere
+(az üzemeltetés a DMA-tól a Dán Katasztrófavédelmi Hatósághoz,
+Beredskabsstyrelsen-hez került):
 
 ```
-https://web.ais.dk/aisdata/aisdk-YYYY-MM-DD.zip
+http://aisdata.ais.dk/aisdk-YYYY-MM-DD.zip
 ```
 
-Ellenőrizve 2026-09-18-án (független forrás: PyMEOS dokumentáció
-példája, `aisdk-2023-08-01.zip`), mert a `web.ais.dk` domain közvetlen
-lekérése ebben a munkakörnyezetben robots.txt-hibával elutasításra
-került. A kézzel letöltött `aisdk-2026-09-05.zip` fájlnév megegyezik
-ezzel a mintázattal.
+**Figyelem: `http`, nem `https`** – a szerver ezen a címen nem
+szolgáltat TLS-t. Ez nem tanúsítvány-megkerülés: natívan titkosítatlan
+végpontról van szó.
+
+A korábban itt dokumentált `https://web.ais.dk/aisdata/...` cím
+**halott** – lejárt (2025-06-12) és rossz domainre (`*.govcloud.dk`)
+kiállított tanúsítványt ad, így minden letöltés `CERTIFICATE_VERIFY_FAILED`
+hibára fut. Ne állítsd vissza. Részletes diagnózis: `naplo.md`,
+2026-09-18 21:50 és 22:05.
 
 **`letoltes.py`** – napi ZIP fájlok letöltése erről a szerverről:
 
@@ -56,12 +61,10 @@ Dátum nélkül a megbeszélt csúcsforgalmi ablakot tölti le (2026-07-15 –
 
 Kihagyja a már meglévő, érvényes ZIP-eket; sérült vagy hiányos
 letöltést CRC-ellenőrzéssel szűr ki és újrapróbál (max. 3 kísérlet).
-A tényleges hálózati letöltés ebből a munkakörnyezetből nem volt
-tesztelhető (a `web.ais.dk` cél nincs az egress-listán) – a
-letöltő/ellenőrző/hibakezelő logika helyi HTTP szerverrel, valódi ZIP
-fájllal validálva (sikeres letöltés, már-megvan eset, 404 eset mind
-lefutott). Első éles futtatáskor a kimenetet naplózni kell a
-`naplo.md`-ben.
+
+**Élesben validálva** 2026-09-18-án a hallgató gépéről: a 2026-09-05,
+2026-07-15 és 2026-07-16 napok ténylegesen letöltve (560–1036 MB/nap,
+0 hiba). Ld. `naplo.md`, 22:05.
 
 ---
 
