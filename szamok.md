@@ -185,3 +185,43 @@ a sorszám. A küszöb szigorítása a sebességet gyakorlatilag nem befolyásol
 **Még nem mért:** csak a 07-15-ös napon és csak erre az egy metrikára.
 Útvonalhosszra, sebességeloszlásra vagy kapuvonal-átlépésre a torzítás más
 lehet – azt külön kell mérni, nem szabad ebből általánosítani.
+
+## Adatminőség a forrásfájlban (2026-07-15)
+
+Forrás: közvetlen mérés a `data/aisdk-2026-07-15.zip` fájlon, 2026-09-19
+(ld. `naplo.md`, 21:27 és 21:36-os bejegyzés). A teljes napi fájlra
+vonatkozik, nem csak a bounding boxra.
+
+### Hibás pozíciók
+
+| szám | jelentés | forrás | dátum |
+|------|----------|--------|-------|
+| 36 650 571 | a napi fájl összes sora | közvetlen mérés | 2026-09-19 |
+| 87 126 (0.238%) | **jelzőérték** pozíció (lat ≥ 90 v. lon ≥ 180), tipikusan `91.0 / 0.0` | közvetlen mérés | 2026-09-19 |
+| 3 223 (24%) | hajó, amely legalább egy jelzőértéket küldött (13 387-ből) | közvetlen mérés | 2026-09-19 |
+| 492 650 (1.344%) | **érvényes tartományú, de földrajzilag képtelen** pozíció | közvetlen mérés | 2026-09-19 |
+| 1 486 (11%) | hajó, amely legalább egy ilyet küldött (13 387-ből) | közvetlen mérés | 2026-09-19 |
+| **1.58%** | a sorok összesen használhatatlan pozícióval | közvetlen mérés | 2026-09-19 |
+| −85.801 – 81.304° | a fájl szélességi kiterjedése a jelzőértékek nélkül | közvetlen mérés | 2026-09-19 |
+| −122.025 – 122.434° | a fájl hosszúsági kiterjedése a jelzőértékek nélkül | közvetlen mérés | 2026-09-19 |
+
+A 91° az AIS szabvány (ITU-R M.1371) „pozíció nem elérhető" jelzőértéke, ami
+a CSV-ben **valódi számként** jelenik meg, nem üres mezőként — előzetes
+szűrés nélkül érvényes koordinátaként dolgozódna fel.
+
+**Ezek a hibák az eddigi elemzést nem rontották el**, mert a bounding box
+szűrés mindkét típust kizárja — de ez szerencse, nem tervezés.
+
+### Statikus mezők ellentmondásai (bounding box, 4 138 hajó)
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 256 (6.2%) | hajó ellentmondó `Type of mobile` értékkel — **gyanús**, az AIS-osztály nem változhat | hajo_adatok.py | 2026-09-19 |
+| 128 (3.1%) | hajó ellentmondó `Destination` értékkel — **NEM hiba**, az úticél jogosan változik út közben | hajo_adatok.py | 2026-09-19 |
+| 15 / 7 | hajó ellentmondó `Length` / `Width` értékkel — **valódi hiba**, a méret nem változik | hajo_adatok.py | 2026-09-19 |
+| 5 / 3 / 1 | hajó ellentmondó `Name` / `Ship type` / `Callsign` értékkel | hajo_adatok.py | 2026-09-19 |
+| 94 (2.3%) | hajó bejelentett név nélkül | hajo_adatok.py | 2026-09-19 |
+
+**Figyelem:** a `hajo_adatok.py` jelenleg minden eltérést „ellentmondásként"
+számol, beleértve a jogos változásokat is (`Destination`). A dolgozatban ezt
+szét kell választani, különben felfújt adatminőségi szám jön ki.
