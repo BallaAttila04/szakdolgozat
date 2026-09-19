@@ -34,6 +34,8 @@ from pathlib import Path
 import duckdb
 import pandas as pd
 
+from utak import KIMENET
+
 # Az a lekerdezes, amire a forgalmi kiertekeles epul: oranankenti egyedi
 # hajoszam es uzenetszam.
 LEKERDEZES = """
@@ -69,7 +71,7 @@ def main():
     ap.add_argument("--tomoritett", nargs="+", required=True,
                     help="A tomoritett Parquet fajlok")
     ap.add_argument("--ismetles", type=int, default=ISMETLES)
-    ap.add_argument("--ki", default="tomorites_hatas.csv")
+    ap.add_argument("--ki", default=KIMENET / "tomorites_hatas.csv")
     args = ap.parse_args()
 
     con = duckdb.connect()

@@ -38,6 +38,8 @@ from pathlib import Path
 
 import requests
 
+from utak import ADAT
+
 # --- Parameterek ---------------------------------------------------------
 
 BASE_URL = "http://aisdata.ais.dk"
@@ -143,7 +145,7 @@ def main():
         help="Veg datum (ha nincs megadva, csak a kezdo_datum toltodik le)",
     )
     parser.add_argument(
-        "--cel", default="data",
+        "--cel", default=ADAT,
         help="Celkonyvtar a letoltott ZIP-eknek (alapertelmezett: ./data)",
     )
     parser.add_argument(

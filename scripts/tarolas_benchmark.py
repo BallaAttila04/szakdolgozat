@@ -46,6 +46,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from utak import KIMENET
+
 try:
     import duckdb
 except ImportError:
@@ -293,10 +295,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                   formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("bemenetek", nargs="+", help="Napi AIS ZIP vagy CSV fajlok")
-    ap.add_argument("--munka", default="bench_workdir",
+    ap.add_argument("--munka", default=KIMENET / "bench_workdir",
                      help="Munkakonyvtar kicsomagolt CSV/Parquet/.duckdb fajloknak "
                           "(alapertelmezett: ./bench_workdir)")
-    ap.add_argument("--ki", default="tarolas_benchmark.csv",
+    ap.add_argument("--ki", default=KIMENET / "tarolas_benchmark.csv",
                      help="Kimeneti CSV a merest eredmenyekkel")
     args = ap.parse_args()
 

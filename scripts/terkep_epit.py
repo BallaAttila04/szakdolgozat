@@ -19,16 +19,18 @@ import argparse
 import json
 from pathlib import Path
 
+from utak import KIMENET, SABLONOK
+
 HELYORZO = "/*ADATHELY*/"
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sablon", default="terkep_sablon.html")
-    ap.add_argument("--poziciok", default="terkep_adat.json")
-    ap.add_argument("--hajok", default="hajo_adatok.json")
-    ap.add_argument("--ki", default="terkep.html")
+    ap.add_argument("--sablon", default=SABLONOK / "terkep_sablon.html")
+    ap.add_argument("--poziciok", default=KIMENET / "terkep_adat.json")
+    ap.add_argument("--hajok", default=KIMENET / "hajo_adatok.json")
+    ap.add_argument("--ki", default=KIMENET / "terkep.html")
     args = ap.parse_args()
 
     adat = json.loads(Path(args.poziciok).read_text(encoding="utf-8"))

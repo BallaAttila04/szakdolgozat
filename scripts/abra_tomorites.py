@@ -14,6 +14,8 @@ import argparse
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from utak import KIMENET
+
 # Szinek: egyetlen adatsor, ezert egyetlen hue (kek) + visszafogott kromja.
 SZIN_ADAT = "#2a78d6"
 SZIN_REFERENCIA = "#898781"
@@ -26,8 +28,8 @@ HATTER = "#fcfcfb"
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--be", default="trajektoria_tomorites.csv")
-    ap.add_argument("--ki", default="tomorites_tradeoff.png")
+    ap.add_argument("--be", default=KIMENET / "trajektoria_tomorites.csv")
+    ap.add_argument("--ki", default=KIMENET / "tomorites_tradeoff.png")
     args = ap.parse_args()
 
     df = pd.read_csv(args.be).sort_values("kuszob_m")

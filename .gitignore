@@ -20,7 +20,12 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Terkep generalt kimenetei (a terkep_adat.py + terkep_sablon.html
-# barmikor ujragenerálja oket a Parquetbol)
+# Terkep generalt kimenetei - a scripts/terkep_adat.py,
+# scripts/hajo_adatok.py es scripts/terkep_epit.py barmikor ujrageneralja
+# oket a nyers ZIP-bol
 terkep_adat.json
+hajo_adatok.json
 terkep.html
+
+# Futtatasi naplok (a lenyeges kimenet a naplo.md-ben van)
+outputs/logs/

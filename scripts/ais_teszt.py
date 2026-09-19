@@ -3,12 +3,14 @@ AIS megvalosithatosagi teszt - 1. lepes
 Dan Tengereszeti Hatosag (DMA) napi AIS fajl betoltese, szurese, kirajzolasa.
 
 Hasznalat:
-    python ais_teszt.py aisdk-2024-05-15.zip
+    python scripts/ais_teszt.py data/aisdk-2026-07-15.zip
+    python scripts/ais_teszt.py <zip> --pillanatkep <csv> --abra <png>
 
 Fuggosegek: pandas, matplotlib
     pip install pandas matplotlib
 """
 
+import argparse
 import io
 import os
 import sys
@@ -16,6 +18,8 @@ import zipfile
 
 import pandas as pd
 import matplotlib.pyplot as plt
+
+from utak import KIMENET
 
 # --- Parameterek ---------------------------------------------------------
 
@@ -103,10 +107,16 @@ def load(path):
 
 
 def main():
-    if len(sys.argv) < 2:
-        sys.exit("Add meg a fajl utvonalat: python ais_teszt.py aisdk-2024-05-15.zip")
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("bemenet", help="Napi AIS ZIP vagy CSV fajl")
+    ap.add_argument("--pillanatkep", default=KIMENET / "ais_pillanatkep.csv",
+                    help="A 10 perces ablak hajonkenti pillanatkepe (CSV)")
+    ap.add_argument("--abra", default=KIMENET / "ais_teszt.png",
+                    help="A kirajzolt terkep (PNG)")
+    args = ap.parse_args()
 
-    path = sys.argv[1]
+    path = args.bemenet
     print(f"Betoltes: {path}")
     df = load(path)
 
@@ -137,8 +147,8 @@ def main():
     print(f"Pillanatkep:     {len(snap):,} hajo pozicioval\n")
     print(snap[["MMSI", "ts", "Latitude", "Longitude", "SOG", "Ship type", "Length"]].head(10))
 
-    snap.to_csv("ais_pillanatkep.csv", index=False)
-    print("\n-> ais_pillanatkep.csv kiirva")
+    snap.to_csv(args.pillanatkep, index=False)
+    print(f"\n-> {args.pillanatkep} kiirva")
 
     # --- Abra ---
     fig, ax = plt.subplots(figsize=(9, 8))
@@ -154,8 +164,8 @@ def main():
     ax.set_title("AIS - dan szorosok")
     ax.legend(loc="best", markerscale=2)
     ax.grid(alpha=0.25)
-    fig.savefig("ais_teszt.png", dpi=150, bbox_inches="tight")
-    print("-> ais_teszt.png kiirva")
+    fig.savefig(args.abra, dpi=150, bbox_inches="tight")
+    print(f"-> {args.abra} kiirva")
 
 
 if __name__ == "__main__":

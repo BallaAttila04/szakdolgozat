@@ -24,6 +24,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from utak import KIMENET
+
 LAT_MIN, LAT_MAX = 54.5, 56.5
 LON_MIN, LON_MAX = 10.0, 13.0
 
@@ -48,7 +50,7 @@ def main():
     ap.add_argument("zip_fajl")
     ap.add_argument("--csak-bbox", action="store_true",
                     help="Csak a bounding boxban megjelent hajok")
-    ap.add_argument("--ki", default="hajo_adatok.json")
+    ap.add_argument("--ki", default=KIMENET / "hajo_adatok.json")
     args = ap.parse_args()
 
     path = Path(args.zip_fajl)

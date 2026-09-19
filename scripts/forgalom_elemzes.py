@@ -27,6 +27,8 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from utak import KIMENET
+
 LAT_MIN, LAT_MAX = 54.5, 56.5
 LON_MIN, LON_MAX = 10.0, 13.0
 
@@ -154,11 +156,11 @@ def main():
         })
 
     reszletes = pd.concat(profilok.values(), ignore_index=True)
-    reszletes.to_csv("forgalmi_profil_oranankent.csv", index=False)
+    reszletes.to_csv(KIMENET / "forgalmi_profil_oranankent.csv", index=False)
     print("\n-> forgalmi_profil_oranankent.csv kiirva (oranankenti bontas)")
 
     osszesito_df = pd.DataFrame(osszesito)
-    osszesito_df.to_csv("forgalmi_osszefoglalo.csv", index=False)
+    osszesito_df.to_csv(KIMENET / "forgalmi_osszefoglalo.csv", index=False)
     print("-> forgalmi_osszefoglalo.csv kiirva (napi osszesites)")
 
     print("\n" + osszesito_df.to_string(index=False))
@@ -182,7 +184,7 @@ def main():
     ax.set_xticks(range(0, 24, 2))
     ax.legend(loc="best")
     ax.grid(alpha=0.3)
-    fig.savefig("forgalmi_profil.png", dpi=150, bbox_inches="tight")
+    fig.savefig(KIMENET / "forgalmi_profil.png", dpi=150, bbox_inches="tight")
     print("-> forgalmi_profil.png kiirva")
 
 

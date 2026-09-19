@@ -29,6 +29,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from utak import KIMENET
+
 LAT_MIN, LAT_MAX = 54.5, 56.5
 LON_MIN, LON_MAX = 10.0, 13.0
 
@@ -45,7 +47,7 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("parquet", help="Bemeneti Parquet (MMSI, ts, Latitude, Longitude, SOG)")
     ap.add_argument("--perc", type=int, default=10, help="Idorács lepeskoze percben")
-    ap.add_argument("--ki", default="terkep_adat.json")
+    ap.add_argument("--ki", default=KIMENET / "terkep_adat.json")
     args = ap.parse_args()
 
     print(f"Betoltes: {args.parquet}")

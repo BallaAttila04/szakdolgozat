@@ -36,6 +36,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from utak import KIMENET
+
 # --- Parameterek ----------------------------------------------------------
 
 # Ugyanaz a bounding box, mint a tobbi szkriptben (dan szorosok)
@@ -170,7 +172,7 @@ def main():
     ap.add_argument("--kuszobok", nargs="+", type=float,
                     default=ALAP_KUSZOBOK_M,
                     help=f"Kuszobertekek meterben (alap: {ALAP_KUSZOBOK_M})")
-    ap.add_argument("--ki", default="trajektoria_tomorites.csv",
+    ap.add_argument("--ki", default=KIMENET / "trajektoria_tomorites.csv",
                     help="Kimeneti CSV a meresi eredmenyekkel")
     ap.add_argument("--parquet-dir", default=None,
                     help="Ha megadod, ide irja a tomoritett Parquet fajlokat "
