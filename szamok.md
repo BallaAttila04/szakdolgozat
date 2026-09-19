@@ -148,3 +148,40 @@ a trajektória-tömörítés hatása**, azonos oszlopkészleten és kodekkel mé
 **Még nem mért, tehát nem állítható:** a tömörített adaton a lekérdezési idő,
 és hogy a forgalmi kiértékelés ugyanazt az eredményt adja-e a tömörített
 adaton. Csak egyetlen napon (07-15) futott.
+
+### A tömörítés hatása az elemzésre és a lekérdezésre
+
+Forrás: `tomorites_hatas.py`, kimenet `tomorites_hatas.csv`, lefuttatva
+2026-09-19, 5 ismétlés / medián (ld. `naplo.md`, 2026-09-19 21:13).
+Lekérdezés: óránkénti egyedi hajószám – az a metrika, amire a forgalmi
+kiértékelés épül.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 238.7 ms | lekérdezés a tömörítetlen Parqueten (84.3 MB), medián | tomorites_hatas.py | 2026-09-19 |
+| 124.7 ms | lekérdezés a 50 m-es tömörítetten (13.2 MB), medián | tomorites_hatas.py | 2026-09-19 |
+| **1.91×** | lekérdezési gyorsulás 50 m-nél (miközben a fájl 6.39× kisebb) | tomorites_hatas.py | 2026-09-19 |
+| **0.42%** | max. relatív eltérés az óránkénti hajószámban, 50 m | tomorites_hatas.py | 2026-09-19 |
+| 11 | max. abszolút eltérés (hajó/óra) a ~2600-ból, 50 m | tomorites_hatas.py | 2026-09-19 |
+| 3.67 | átlagos abszolút eltérés (hajó/óra), 50 m | tomorites_hatas.py | 2026-09-19 |
+| 4138 = 4138 | napi összes egyedi hajószám: tömörítetlen vs tömörített (**pontosan egyezik**) | tomorites_hatas.py | 2026-09-19 |
+
+**Az eltérés iránya garantáltan egyirányú:** a tömörített adat kizárólag
+**alulszámol**, soha nem felül (minden óránkénti eltérés ≥ 0). Oka: egy
+órában rövid ideig jelen lévő, egyenesen haladó hajó elveszítheti az összes
+pontját abban az órában, de új hajó nem keletkezhet. A **napi** hajószám
+konstrukció szerint pontos, mert minden hajó első pontja mindig megmarad.
+
+**Nagyságrendi viszonyítás:** a 0.42%-os torzítás a mért napi zajszint
+(+13.6%) kb. harmincad része, a vizsgált lezárási hatásnak (+20.2%) az
+ötvened része – az elemzési következtetéseket tehát nem befolyásolja.
+
+**A tárhely- és a sebességnyereség NEM arányos:** 6.39× kisebb fájl mellett
+csak 1.91× gyorsulás, mert a `COUNT(DISTINCT MMSI)` költségét a különböző
+értékek száma (4138, minden változatban azonos) és a fix overhead hajtja, nem
+a sorszám. A küszöb szigorítása a sebességet gyakorlatilag nem befolyásolja
+(10 m: 121.5 ms vs 500 m: 119.5 ms – szóráson belül, nem monoton a mérettel).
+
+**Még nem mért:** csak a 07-15-ös napon és csak erre az egy metrikára.
+Útvonalhosszra, sebességeloszlásra vagy kapuvonal-átlépésre a torzítás más
+lehet – azt külön kell mérni, nem szabad ebből általánosítani.

@@ -1,0 +1,8 @@
+fajl,kuszob_m,meret_mb,lekerdezes_median_ms,lekerdezes_elso_ms,gyorsulas,max_hajo_elteres,atlag_hajo_elteres,max_relativ_elteres_szazalek
+aisdk-2026-07-15_teljes.parquet,0,84.3,238.7,283.7,1.0,0,0.0,0.0
+aisdk-2026-07-15_dr100m.parquet,100,11.6,105.2,146.7,2.27,12,4.75,0.486
+aisdk-2026-07-15_dr10m.parquet,10,20.8,121.5,138.9,1.96,7,2.29,0.27
+aisdk-2026-07-15_dr250m.parquet,250,10.4,112.2,112.2,2.13,14,5.21,0.511
+aisdk-2026-07-15_dr25m.parquet,25,15.5,110.4,150.0,2.16,8,2.83,0.389
+aisdk-2026-07-15_dr500m.parquet,500,10.0,119.5,93.2,2.0,15,5.67,0.507
+aisdk-2026-07-15_dr50m.parquet,50,13.2,124.7,147.5,1.91,11,3.67,0.424
