@@ -1,13 +1,14 @@
 # Validált számok
 
-Minden szám ide csak akkor kerül, ha ténylegesen lefuttatott szkript
-eredménye — forrással (szkript, paraméterek, dátum). Ha egy szám
-megváltozik, ne írd felül: húzd át és írd mellé az újat, indoklással.
+A dokumentum csak ténylegesen lefuttatott szkriptek eredményeit
+tartalmazza, forrásmegjelöléssel (szkript, paraméterek, dátum). A
+megváltozott értékek nem kerülnek felülírásra: áthúzva maradnak, mellettük
+az új érték és a változás indoklása.
 
 ## Forgalmi kiértékelés (dán szorosok, 54.5–56.5°N, 10.0–13.0°E)
 
 Forrás: `forgalom_elemzes.py`, kimenet `forgalmi_osszefoglalo.csv`,
-lefuttatva 2026-09-18 (ld. `naplo.md`, 22:10-es bejegyzés).
+lefuttatva 2026-09-18.
 
 | szám | jelentés | szkript | dátum |
 |------|----------|---------|-------|
@@ -27,7 +28,7 @@ referencianaphoz mérte a lezárási napokat, és ez a referencia két
 szempontból is rossz volt: (1) más évszak, (2) **szombat**, miközben a
 lezárási napok szerda és csütörtök. A 2026-09-19-én letöltött júliusi
 kontrollnapokkal (07-08 szerda, 07-09 csütörtök, lezárás nélkül) a
-különbség felbontható (ld. `naplo.md`, 2026-09-19 20:44):
+különbség felbontható:
 
 | összehasonlítás | arány | mit mér |
 |---|---|---|
@@ -64,7 +65,7 @@ interpoláció nélkül.
 Forrás: `tarolas_benchmark.py`, kimenet `tarolas_benchmark.csv`,
 lefuttatva 2026-09-18 a két valódi napi AIS fájlon
 (`data/aisdk-2026-07-15.zip`, `data/aisdk-2026-07-16.zip`),
-duckdb 1.5.5 (ld. `naplo.md`, 22:47-es bejegyzés).
+duckdb 1.5.5.
 
 Méret:
 
@@ -119,8 +120,7 @@ eredménye, ez megerősíti a forgalmi kiértékelés számait.
 ## Trajektória-tömörítés (dead reckoning)
 
 Forrás: `trajektoria_tomorites.py`, kimenet `trajektoria_tomorites.csv`,
-lefuttatva 2026-09-19 a `data/aisdk-2026-07-15.zip` fájlon (ld. `naplo.md`,
-2026-09-19 21:07-es bejegyzés). Bounding box: 54.5–56.5°N, 10.0–13.0°E.
+lefuttatva 2026-09-19 a `data/aisdk-2026-07-15.zip` fájlon. Bounding box: 54.5–56.5°N, 10.0–13.0°E.
 Oszlopok: MMSI, ts, Latitude, Longitude, SOG, COG. Kodek: zstd.
 
 | szám | jelentés | szkript | dátum |
@@ -152,7 +152,7 @@ adaton. Csak egyetlen napon (07-15) futott.
 ### A tömörítés hatása az elemzésre és a lekérdezésre
 
 Forrás: `tomorites_hatas.py`, kimenet `tomorites_hatas.csv`, lefuttatva
-2026-09-19, 5 ismétlés / medián (ld. `naplo.md`, 2026-09-19 21:13).
+2026-09-19, 5 ismétlés / medián.
 Lekérdezés: óránkénti egyedi hajószám – az a metrika, amire a forgalmi
 kiértékelés épül.
 
@@ -188,8 +188,7 @@ lehet – azt külön kell mérni, nem szabad ebből általánosítani.
 
 ## Adatminőség a forrásfájlban (2026-07-15)
 
-Forrás: közvetlen mérés a `data/aisdk-2026-07-15.zip` fájlon, 2026-09-19
-(ld. `naplo.md`, 21:27 és 21:36-os bejegyzés). A teljes napi fájlra
+Forrás: közvetlen mérés a `data/aisdk-2026-07-15.zip` fájlon, 2026-09-19. A teljes napi fájlra
 vonatkozik, nem csak a bounding boxra.
 
 ### Hibás pozíciók
@@ -230,7 +229,7 @@ szét kell választani, különben felfújt adatminőségi szám jön ki.
 
 Forrás: `kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox`, kimenet
 `outputs/uticel_feloldas.csv` és `outputs/uticel_feloldatlan.csv`,
-lefuttatva 2026-09-21 (ld. `naplo.md`, 2026-09-21-es bejegyzés).
+lefuttatva 2026-09-21.
 Referenciaadat: UN/LOCODE, `datasets/un-locode` GitHub-tükör (PDDL, közkincs).
 
 | szám | jelentés | szkript | dátum |
@@ -295,8 +294,7 @@ szennyezési veszélykategória (X/Y/Z/OS), és csak töredékesen kitöltött.
 ## Hajótípus és tevékenység (2026-07-15, bounding box)
 
 Forrás: `hajo_statisztika.py data/aisdk-2026-07-15.zip`, kimenet
-`outputs/hajo_statisztika.json` és `.csv`, lefuttatva 2026-09-21
-(ld. `naplo.md`, 2026-09-21-es bejegyzés). A hajónkénti típus és státusz a
+`outputs/hajo_statisztika.json` és `.csv`, lefuttatva 2026-09-21. A hajónkénti típus és státusz a
 hajó által **legtöbbször jelentett** érték (a statikus mezőket kézzel
 állítják, ezért egy hajó többfélét is jelenthet: 2 hajó tett így).
 
@@ -421,8 +419,7 @@ minden típus külön is megnézhető legyen. A weboldal vonaldiagramjai
 
 ## Egy teljes hónap tárhelyigénye (2026. július)
 
-Forrás: `meret_becsles.py 2026-07-01 2026-07-31`, lefuttatva 2026-09-21
-(ld. `naplo.md`, 2026-09-21-es bejegyzés).
+Forrás: `meret_becsles.py 2026-07-01 2026-07-31`, lefuttatva 2026-09-21.
 
 **A letöltendő méret MÉRT, nem becsült:** a napi ZIP-ek `Content-Length`
 értéke HTTP HEAD kéréssel, letöltés nélkül. A módszer keresztvalidálva az
@@ -490,7 +487,7 @@ tartalomból lett 70-szer kisebb.
 ## Duplikált sorok a forrásadatban (2026-07-15)
 
 Forrás: közvetlen mérés a `data/aisdk-2026-07-15.zip` nyers CSV-jén és a
-származtatott Parqueten, 2026-09-21 (ld. `naplo.md`).
+származtatott Parqueten, 2026-09-21.
 
 **A forrásfájl sorainak több mint fele bitre azonos ismétlés.** Ugyanazt az
 AIS-adást több parti vevőállomás is veszi, és a napi fájl mindegyik vételt
@@ -569,8 +566,7 @@ sorára és a bbox-szűrt teljes napra készült.
 ## Külső referenciaadat: IMF PortWatch chokepoint-forgalom
 
 Forrás: `portwatch_letoltes.py` (mind a 28 chokepoint), kimenet
-`data/portwatch_chokepoints.csv`, lefuttatva 2026-09-22
-(ld. `naplo.md`, 2026-09-22-es bejegyzés).
+`data/portwatch_chokepoints.csv`, lefuttatva 2026-09-22.
 Eredeti forrás: IMF PortWatch, `Daily_Chokepoints_Data` FeatureService.
 
 | szám | jelentés | szkript | dátum |

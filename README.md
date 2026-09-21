@@ -4,8 +4,8 @@ BSc szakdolgozat munkaanyaga (Budapesti Corvinus Egyetem,
 gazdaságinformatika). A vizsgálat tárgya: hogyan lehet napi több gigabájtos
 AIS hajóforgalmi adatot hatékonyan tárolni és lekérdezni.
 
-A dolgozat **szövegét** ez a repó nem tartalmazza – itt a kód, a mérések és
-a munkanapló van.
+A dolgozat **szövegét** ez a repó nem tartalmazza – itt a feldolgozó kód és
+a mérési eredmények vannak.
 
 ## Mappaszerkezet
 
@@ -120,8 +120,7 @@ Minden szkript `--help`-pel dokumentálja a kapcsolóit.
 
 ## Főbb eredmények
 
-A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető úttal
-és a zsákutcákkal együtt a [`naplo.md`](naplo.md)-ben vannak.
+A számok forrásostul a [`szamok.md`](szamok.md)-ben találhatók.
 
 - **Tárolás:** a Parquet a kicsomagolt CSV ~17%-a, a natív DuckDB tábla ~25%.
   A lekérdezés 50–150× gyorsul. A konverzió egyetlen elemzési menet alatt

@@ -32,7 +32,7 @@ terkep.html
 # masolja ide az outputs/-bol.
 !docs/terkep.html
 
-# Futtatasi naplok (a lenyeges kimenet a naplo.md-ben van)
+# Futtatasi naplok
 outputs/logs/
 
 # A dolgozat szovege - NEM valo a publikus repoba
