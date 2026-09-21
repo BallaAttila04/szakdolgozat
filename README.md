@@ -79,6 +79,10 @@ python scripts/hajo_statisztika.py data/aisdk-2026-07-15.zip
 
 # 9. A publikus oldal összeállítása a docs/ mappába
 python scripts/oldal_epit.py
+
+# Segédeszköz: mennyi helyet foglalna egy hosszabb időszak?
+# (HTTP HEAD-del méri a napi ZIP-méreteket, letöltés nélkül)
+python scripts/meret_becsles.py 2026-07-01 2026-07-31
 ```
 
 ## Tesztek
@@ -136,6 +140,12 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető útta
   ilyet, és mindössze **10,1%** oldható fel valódi kikötőre. Az AIS statikus
   mezőinek kitöltöttségét ezért hajószinten kell jelenteni, nem üzenetszinten.
   Rakományt az AIS nem közöl, és nyilvános forrásból sem párosítható.
+- **Tárhely egy hónapra:** 2026 júliusának mind a 31 napja **22,2 GiB** nyers
+  ZIP-ben (mérve, nem becsülve). Parquetté alakítva **nem kisebb**, hanem
+  23,8–24,7 GiB — a Parquet a sebességet hozza, nem a helyet. A dán
+  szorosokra szűrve, 6 oszloppal és dead reckoninggel viszont **0,31 GiB**,
+  a nyers adat 1,4%-a: a nagyságrendi nyereség a szűrésből jön, nem a
+  formátumból.
 - **Forgalmi hipotézis:** a Kiel-csatorna lezárásának hatása **nem
   igazolt**. Az eredetileg mért ~2× különbség nagy része évszak- és
   hétvége-hatás volt; a kontrollnapokhoz képest +20,2% marad, ami részben

@@ -409,3 +409,71 @@ Ezért a térképen **három kategória kap saját színt** (ezek fedik a hajók
 minden típus külön is megnézhető legyen. A weboldal vonaldiagramjai
 **szomszédos** párokon validálnak (ott a sorozatok nem keverednek térben), ott
 6 szín is átmegy mindkét témában.
+
+## Egy teljes hónap tárhelyigénye (2026. július)
+
+Forrás: `meret_becsles.py 2026-07-01 2026-07-31`, lefuttatva 2026-09-21
+(ld. `naplo.md`, 2026-09-21-es bejegyzés).
+
+**A letöltendő méret MÉRT, nem becsült:** a napi ZIP-ek `Content-Length`
+értéke HTTP HEAD kéréssel, letöltés nélkül. A módszer keresztvalidálva az
+öt már letöltött napon — mind az ötnél **bájtra egyezik** a szerver által
+jelentett méret a lemezen lévő fájllal.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 31 | elérhető nap 2026 júliusában (hiánytalan) | meret_becsles.py | 2026-09-21 |
+| 23 860 254 786 bájt (**22,2 GiB**) | a teljes hónap nyers ZIP-ben | meret_becsles.py | 2026-09-21 |
+| 734 MiB | átlagos napi ZIP-méret | meret_becsles.py | 2026-09-21 |
+| 583 – 988 MiB | a napi méret szórása (**±35%**) | meret_becsles.py | 2026-09-21 |
+
+A napi méret ±35%-os szórása miatt **egyetlen napból extrapolálni félrevezető
+lett volna** — ezért mértük mind a 31 napot.
+
+Tárolt méret formánként (a benchmark ZIP-hez viszonyított arányaiból, alsó–felső
+sáv a két mért napból):
+
+| tárolási forma | teljes hónap | napi |
+|---|---|---|
+| Nyers ZIP (ahogy letöltjük) | **22,2 GiB** | 734 MiB |
+| Kicsomagolt CSV | 138,0 – 145,3 GiB | 4 559 – 4 799 MiB |
+| **Parquet (snappy, minden oszlop)** | **23,8 – 24,7 GiB** | 787 – 815 MiB |
+| DuckDB natív tábla | 33,9 – 35,7 GiB | 1 120 – 1 181 MiB |
+
+**A Parquet NEM kisebb a ZIP-nél** — 22,2 GiB helyett 23,8–24,7 GiB. Ez
+megerősíti a tárolási benchmark korábbi megfigyelését: a Parquet nyeresége a
+**lekérdezési sebesség**, nem a hely. A ZIP már tömörített; a Parquet azért
+nagyobb, mert oszloponként külön tömörít és row-group statisztikákat is tárol —
+cserébe viszont egy oszlop kiolvasható belőle a fájl kitömörítése nélkül.
+Ezt a dolgozatban ki kell mondani, különben azt sugallná, hogy a Parquet
+helytakarékos is.
+
+Csak a vizsgált területre szűrve (bounding box + 6 oszlop + zstd):
+
+| tárolási forma | teljes hónap | napi | a nyers %-a |
+|---|---|---|---|
+| Parquet, tömörítés nélkül | 1,96 GiB | 65 MiB | 8,8% |
+| **+ dead reckoning (50 m)** | **0,31 GiB** | **10 MiB** | **1,4%** |
+
+**A nagyságrendi nyereség nem a formátumból jön, hanem a szűrésből.** A
+22,2 GiB → 0,31 GiB útból a formátum és a dead reckoning együtt kb. hatszoros,
+a maradékot az adja, hogy nem tároljuk azt, ami nem kell (a sorok ~70%-a a
+bounding boxon kívül esik, és ~26 oszlopból 6 kell).
+
+**Ez a két sor NEM ugyanazt tárolja, mint a fenti táblázat.** Bounding
+boxra szűrt és 6 oszlopos — teljes lefedettséghez vagy a többi oszlophoz nem
+elég. Egy táblázatba keverve azt a hamis látszatot keltené, hogy ugyanabból a
+tartalomból lett 70-szer kisebb.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 46,9 GiB | **átmeneti** helyigény a konverzió alatt (ZIP + Parquet egyszerre) | meret_becsles.py | 2026-09-21 |
+| ~35 perc | becsült CPU-idő a hónap Parquetté alakítására (31 × 66 mp) | benchmark alapján | 2026-09-21 |
+
+**Korlátok:**
+- A tárolt méretek **két napon** (07-15, 07-16) mért arányokból jönnek.
+- A dead reckoning aránya **egyetlen napon** (07-15) mért, ráadásul az egyik
+  legforgalmasabb napon — ha a bounding boxba eső sorok aránya napról napra
+  változik, ez a sor tér el a legjobban.
+- A **zstd vs snappy** különbség a teljes fájlra **továbbra sincs lemérve**;
+  a Parquet-sor snappy-vel készült. Zstd-vel várhatóan kisebb, de nem mértük.
