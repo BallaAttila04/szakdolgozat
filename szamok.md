@@ -225,3 +225,69 @@ szűrés mindkét típust kizárja — de ez szerencse, nem tervezés.
 **Figyelem:** a `hajo_adatok.py` jelenleg minden eltérést „ellentmondásként"
 számol, beleértve a jogos változásokat is (`Destination`). A dolgozatban ezt
 szét kell választani, különben felfújt adatminőségi szám jön ki.
+
+## Úticél-feloldás UN/LOCODE-dal (2026-07-15, bounding box)
+
+Forrás: `kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox`, kimenet
+`outputs/uticel_feloldas.csv` és `outputs/uticel_feloldatlan.csv`,
+lefuttatva 2026-09-21 (ld. `naplo.md`, 2026-09-21-es bejegyzés).
+Referenciaadat: UN/LOCODE, `datasets/un-locode` GitHub-tükör (PDDL, közkincs).
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 116 067 | UN/LOCODE helység összesen | kikoto_feloldas.py | 2026-09-21 |
+| 17 596 | ebből tengeri kikötő (`Function` első karaktere `1`) | kikoto_feloldas.py | 2026-09-21 |
+| 16 723 | egyértelmű (egy országhoz köthető) tengeri kikötőnév | kikoto_feloldas.py | 2026-09-21 |
+| 24 021 314 (65.5%) | üzenet érdemi úticéllel, teljes napi fájl | kikoto_feloldas.py | 2026-09-21 |
+| 4 869 | különböző (hajó, úticél) bejelentés a bounding boxban | kikoto_feloldas.py | 2026-09-21 |
+| 781 | ebből érdemi (nem `Unknown` / üres) | kikoto_feloldas.py | 2026-09-21 |
+| 306 (39.2%) | feloldva **pontos** 5 karakteres LOCODE-ként | kikoto_feloldas.py | 2026-09-21 |
+| 158 (20.2%) | feloldva **egyértelmű kikötőnévként** | kikoto_feloldas.py | 2026-09-21 |
+| 55 (7.0%) | feloldva **LOCODE-prefixként** (leggyengébb szint) | kikoto_feloldas.py | 2026-09-21 |
+| **519 (66.5%)** | összesen feloldva a 781 érdemi bejelentésből | kikoto_feloldas.py | 2026-09-21 |
+| 262 (33.5%) | nem oldható fel | kikoto_feloldas.py | 2026-09-21 |
+| 184 | különböző célkikötő | kikoto_feloldas.py | 2026-09-21 |
+| 83 (45%) | ebből koordináta nélküli az UN/LOCODE-ban (térképre nem rakható) | kikoto_feloldas.py | 2026-09-21 |
+
+Hajószintű lefedettség — **ez a lényeges szám** egy honnan-hová elemzéshez:
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 4 138 | hajó a bounding boxban | kikoto_feloldas.py | 2026-09-21 |
+| 636 (**15.4%**) | hajó, amely egyáltalán jelentett érdemi úticélt | kikoto_feloldas.py | 2026-09-21 |
+| 419 (**10.1%**) | hajó, amelynek az úticélja valódi kikötőre feloldható | kikoto_feloldas.py | 2026-09-21 |
+
+**A legfontosabb megállapítás — az üzenetszintű kitöltöttség félrevezető:**
+üzenetszinten a sorok **65,5%-ában** van érdemi úticél, hajószinten viszont
+csak a hajók **15,4%-a** jelent ilyet. A különbség oka, hogy az üzenetszámot
+néhány folyamatosan sugárzó, rögzített útvonalú hajó (kompok) uralja. Az AIS
+statikus mezőinek kitöltöttségét ezért **hajószinten kell jelenteni**,
+üzenetszinten nem — ez általánosítható a `Ship type`, `Destination`,
+`Draught` mezőkre is.
+
+**Módszertani döntés – csak tengeri kikötő fogadható el.** Kikötőszűrés
+nélkül a 195 célpontból **12 szárazföldi** helység volt, rendszeres hibából:
+
+| hibás találat | valójában | mechanizmus |
+|---|---|---|
+| `BALTI` → Laktasi (BA) | Baltijsk | a `BALTIJSK` első 5 karaktere: BA+LTI |
+| `FREDE` → L'Ile-d'Elle (FR) | Frederikshavn | FR+EDE |
+| `BREME` → Eneas Marques (BR) | Bremerhaven | BR+EME |
+| `BREST` → Estancia (BR) | Brest (= FRBES) | BR+EST |
+| `COPENHAGEN` → USKOG (US) | København (DKCPH) | névegyezés egy New York állami faluval |
+
+116 067 helység mellett a kódtér olyan sűrű, hogy szinte bármely 5 betűs
+szöveg talál valamit, ha az első két karaktere érvényes országkód. A szűkítés
+után **0 nem-kikötő** maradt a 184 célpontból.
+
+**A szűkítés ára:** a `GILLELEJE` (DKGLE) valódi dán halászkikötő, de az
+UN/LOCODE `--3-----` (közúti terminál) kóddal tartja nyilván, ezért kiesik.
+A szigorítás tehát néhány valódi kisebb kikötőt is elveszít.
+
+**Rakomány – amit NEM lehet:** az AIS nem sugároz rakománymegnevezést, és
+nyilvános forrásból sem párosítható ehhez az adathoz. Az egyetlen nyilvános
+rakjegy-adatbázis az amerikai vámhatóságé (19 CFR 103.31(d)), ami csak az
+USA-ba tartó tengeri importot fedi — a dán szorosok Balti-tenger ↔ Északi-
+tenger forgalmával gyakorlatilag nulla átfedésben. Az EU-ban nincs nyilvános
+manifeszt. A `Cargo type` oszlop **nem rakomány**, hanem IMO szerinti
+szennyezési veszélykategória (X/Y/Z/OS), és csak töredékesen kitöltött.

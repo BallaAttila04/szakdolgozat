@@ -65,6 +65,9 @@ python scripts/tomorites_hatas.py \
 python scripts/terkep_adat.py outputs/tomorites_parquet/aisdk-2026-07-15_teljes.parquet
 python scripts/hajo_adatok.py data/aisdk-2026-07-15.zip --csak-bbox
 python scripts/terkep_epit.py
+
+# 7. Úticél feloldása valódi kikötőkre UN/LOCODE-dal
+python scripts/kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox
 ```
 
 Minden szkript `--help`-pel dokumentálja a kapcsolóit.
@@ -84,6 +87,11 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető útta
 - **Adatminőség:** a forrás sorainak **1,58%-a** használhatatlan pozíciójú
   (0,24% az AIS „pozíció nem elérhető" jelzőértéke `lat = 91,0` formában,
   1,34% érvényes tartományú, de földrajzilag képtelen pozíció).
+- **Úticél-feloldás (UN/LOCODE):** üzenetszinten a sorok **65,5%-ában** van
+  érdemi úticél, hajószinten viszont a 4138 hajóból csak **15,4%** jelent
+  ilyet, és mindössze **10,1%** oldható fel valódi kikötőre. Az AIS statikus
+  mezőinek kitöltöttségét ezért hajószinten kell jelenteni, nem üzenetszinten.
+  Rakományt az AIS nem közöl, és nyilvános forrásból sem párosítható.
 - **Forgalmi hipotézis:** a Kiel-csatorna lezárásának hatása **nem
   igazolt**. Az eredetileg mért ~2× különbség nagy része évszak- és
   hétvége-hatás volt; a kontrollnapokhoz képest +20,2% marad, ami részben
