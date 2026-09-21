@@ -34,3 +34,7 @@ terkep.html
 
 # Futtatasi naplok (a lenyeges kimenet a naplo.md-ben van)
 outputs/logs/
+
+# A dolgozat szovege - NEM valo a publikus repoba
+dolgozat/
+*.docx
