@@ -103,6 +103,11 @@ def main():
     ap.add_argument("zip_fajl")
     ap.add_argument("--teljes-fajl", action="store_true",
                     help="Ne szurjon bounding boxra (alapbol szur)")
+    ap.add_argument("--nyers-sorok", action="store_true",
+                    help="NE deduplikaljon. A forras a napi fajl soraiak kb. "
+                         "56%%-at ismetli (ugyanaz az uzenet tobb parti "
+                         "vevorol). Alapbol ezeket kiszurjuk; ezzel a "
+                         "kapcsoloval a nyers sorszamot kapod vissza.")
     ap.add_argument("--ki", default=KIMENET / "hajo_statisztika.json")
     ap.add_argument("--csv", default=KIMENET / "hajo_statisztika.csv")
     args = ap.parse_args()
@@ -130,50 +135,71 @@ def main():
     osszes = 0
     bbox_sor = 0
 
-    print(f"Beolvasas: {path.name}")
+    def feldolgoz(ch):
+        """Egy (mar deduplikalt) darab feldolgozasa."""
+        nonlocal bbox_sor
+        if not args.teljes_fajl:
+            ch = ch[ch["Latitude"].between(LAT_MIN, LAT_MAX)
+                    & ch["Longitude"].between(LON_MIN, LON_MAX)]
+        if ch.empty:
+            return
+        bbox_sor += len(ch)
+
+        ora = pd.to_datetime(ch[TS_OSZLOP], format="%d/%m/%Y %H:%M:%S",
+                             errors="coerce").dt.hour
+
+        for mmsi, tip, stat, osz, o in zip(ch["MMSI"].to_numpy(),
+                                           ch["Ship type"].to_numpy(),
+                                           ch["Navigational status"].to_numpy(),
+                                           ch["Type of mobile"].to_numpy(),
+                                           ora.to_numpy()):
+            uzenet_hajonkent[mmsi] += 1
+            t = tisztit(tip)
+            if t:
+                tipus_szavazat[mmsi][t] += 1
+            s = tisztit(stat)
+            if s:
+                statusz_szavazat[mmsi][s] += 1
+            a = tisztit(osz)
+            if a:
+                osztaly_szavazat[mmsi][a] += 1
+            if o == o:                      # nem NaN
+                o = int(o)
+                ora_uzenet[o] += 1
+                ora_hajok[o].add(mmsi)
+                ora_mmsi_parok.add((o, mmsi))
+
+    print(f"Beolvasas: {path.name}"
+          + ("" if args.nyers_sorok else "  (deduplikalassal)"))
     with zipfile.ZipFile(path) as zf:
         tag = [n for n in zf.namelist() if n.lower().endswith((".csv", ".txt"))][0]
         with zf.open(tag) as raw:
             olvaso = pd.read_csv(raw, usecols=lambda c: c.strip() in COLS,
                                  chunksize=CHUNK, low_memory=False,
                                  encoding="utf-8-sig")
+            # A darabhataron ugyanahhoz az idobelyeghez tartozo sorok
+            # ketteszakadhatnak, ezert az utolso idobelyeg sorait atvisszuk a
+            # kovetkezo darabba. A fajl ido szerint rendezett, ezert ennyi
+            # eleg - nem kell az egesz napot a memoriaban tartani.
+            atvitt = None
             for ch in olvaso:
                 ch.columns = [c.strip() for c in ch.columns]
                 osszes += len(ch)
 
-                if not args.teljes_fajl:
-                    ch = ch[ch["Latitude"].between(LAT_MIN, LAT_MAX)
-                            & ch["Longitude"].between(LON_MIN, LON_MAX)]
-                if ch.empty:
-                    print(f"  {osszes:>12,} sor", end="\r")
-                    continue
-                bbox_sor += len(ch)
+                if not args.nyers_sorok:
+                    if atvitt is not None and len(atvitt):
+                        ch = pd.concat([atvitt, ch], ignore_index=True)
+                    utolso_ido = ch[TS_OSZLOP].iloc[-1]
+                    hatar = ch[TS_OSZLOP] == utolso_ido
+                    atvitt = ch[hatar]
+                    ch = ch[~hatar].drop_duplicates(subset=[TS_OSZLOP, "MMSI"])
 
-                ora = pd.to_datetime(ch[TS_OSZLOP], format="%d/%m/%Y %H:%M:%S",
-                                     errors="coerce").dt.hour
-
-                for mmsi, tip, stat, osz, o in zip(ch["MMSI"].to_numpy(),
-                                                   ch["Ship type"].to_numpy(),
-                                                   ch["Navigational status"].to_numpy(),
-                                                   ch["Type of mobile"].to_numpy(),
-                                                   ora.to_numpy()):
-                    uzenet_hajonkent[mmsi] += 1
-                    t = tisztit(tip)
-                    if t:
-                        tipus_szavazat[mmsi][t] += 1
-                    s = tisztit(stat)
-                    if s:
-                        statusz_szavazat[mmsi][s] += 1
-                    a = tisztit(osz)
-                    if a:
-                        osztaly_szavazat[mmsi][a] += 1
-                    if o == o:                      # nem NaN
-                        o = int(o)
-                        ora_uzenet[o] += 1
-                        ora_hajok[o].add(mmsi)
-                        ora_mmsi_parok.add((o, mmsi))
-
+                feldolgoz(ch)
                 print(f"  {osszes:>12,} sor", end="\r")
+
+            # A legutolso idobelyeg sorai meg az atvitt pufferben vannak
+            if atvitt is not None and len(atvitt):
+                feldolgoz(atvitt.drop_duplicates(subset=[TS_OSZLOP, "MMSI"]))
     print()
 
     hajok = set(uzenet_hajonkent)

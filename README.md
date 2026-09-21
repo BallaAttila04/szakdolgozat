@@ -77,6 +77,9 @@ python scripts/kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox
 # 8. Hajótípus- és tevékenység-statisztika (a nyitólap diagramjaihoz)
 python scripts/hajo_statisztika.py data/aisdk-2026-07-15.zip
 
+# Szemléltetés: mit tart meg és mit dob el a dead reckoning, egy hajón
+python scripts/dr_pelda.py outputs/tomorites_parquet/aisdk-2026-07-15_teljes.parquet
+
 # 9. A publikus oldal összeállítása a docs/ mappába
 python scripts/oldal_epit.py
 
@@ -119,15 +122,20 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető útta
   A lekérdezés 50–150× gyorsul. A konverzió egyetlen elemzési menet alatt
   megtérül.
 - **Trajektória-tömörítés:** dead reckoninggal 50 méteres *garantált*
-  hibakorlát mellett 6,4× kisebb fájl, az óránkénti hajószám mindössze
+  hibakorlát mellett 6,4× kisebb fájl (deduplikálás után **7,8×**; a dead
+  reckoning önmagában, tiszta adaton **5,2×**), az óránkénti hajószám mindössze
   0,42%-os (mindig alulszámoló) torzításával. A lekérdezés viszont csak
   ~2× gyorsul, nem 6,4× – a méret- és a sebességnyereség nem arányos.
 - **Adatminőség:** a forrás sorainak **1,58%-a** használhatatlan pozíciójú
   (0,24% az AIS „pozíció nem elérhető" jelzőértéke `lat = 91,0` formában,
   1,34% érvényes tartományú, de földrajzilag képtelen pozíció).
-- **Mi van a vízen:** a hajók **77,3%-a kedvtelési**, de az üzeneteknek csak
-  27,9%-a jön tőlük; a teherhajók 5,7%-a adja az üzenetek 19,1%-át. Az
-  üzenetszintű megoszlás tehát **nem** a hajómegoszlás.
+- **Duplikált forrásadat:** a napi fájl sorainak **56%-a bitre azonos
+  ismétlés** (ugyanazt az adást több parti vevő is veszi). Ez a forrásban van,
+  nem a feldolgozásban. Típusonként eltérő arányban (tanker 70,5%, kedvtelési
+  40,9%), ezért az üzenetszám-alapú megoszlásokat torzítja.
+- **Mi van a vízen:** a hajók **77,3%-a kedvtelési**, de a (deduplikált)
+  üzeneteknek 37,6%-a jön tőlük; a teherhajók 5,7%-a adja az üzenetek
+  13,6%-át. Az üzenetszintű megoszlás tehát **nem** a hajómegoszlás.
 - **Napszaki ingadozás:** az óránkénti összes hajószám 1,63-szeresére nő
   napközben, de ezt **majdnem teljesen a kedvtelési hajózás hajtja**
   (1248→2343, ×1,88), míg a teherhajóké gyakorlatilag lapos (115→141, ×1,23).

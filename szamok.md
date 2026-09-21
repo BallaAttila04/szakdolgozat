@@ -303,20 +303,29 @@ hajó által **legtöbbször jelentett** érték (a statikus mezőket kézzel
 | szám | jelentés | szkript | dátum |
 |------|----------|---------|-------|
 | 4 138 | egyedi MMSI a bounding boxban | hajo_statisztika.py | 2026-09-21 |
-| 10 860 221 | üzenet a bounding boxban (29,6% a napi fájlból) | hajo_statisztika.py | 2026-09-21 |
+| ~~10 860 221~~ → **4 759 634** | üzenet a bounding boxban (~~29,6%~~ → 13,0% a napi fájlból) — a régi szám 56% duplikátumot tartalmazott | hajo_statisztika.py | ~~2026-09-21~~ → 2026-09-21 (javítva) |
 | 141 (3,4%) | hajó, amely nem jelentett hajótípust | hajo_statisztika.py | 2026-09-21 |
 
 Típusmegoszlás — **a két mértékegység szándékosan egymás mellett**:
 
-| csoport | hajó | hajó % | üzenet | üzenet % |
+| csoport | hajó | hajó % | ~~üzenet (nyers)~~ → **üzenet (dedup.)** | ~~üzenet %~~ → **%** |
 |---|---|---|---|---|
-| Kedvtelési (vitorlás + sport) | 3 200 | **77,3%** | 3 026 786 | **27,9%** |
-| Egyéb / ismeretlen | 278 | 6,7% | 1 489 125 | 13,7% |
-| Teherhajó | 237 | **5,7%** | 2 076 260 | **19,1%** |
-| Szolgálati (vontató, révkalauz, mentő…) | 158 | 3,8% | 1 434 159 | 13,2% |
-| Személyszállító | 133 | 3,2% | 1 503 005 | 13,8% |
-| Tanker | 67 | 1,6% | 675 232 | 6,2% |
-| Halászhajó | 65 | 1,6% | 655 654 | 6,0% |
+| Kedvtelési (vitorlás + sport) | 3 200 | **77,3%** | ~~3 026 786~~ → **1 788 679** | ~~27,9%~~ → **37,6%** |
+| Egyéb / ismeretlen | 278 | 6,7% | ~~1 489 125~~ → **566 479** | ~~13,7%~~ → **11,9%** |
+| Teherhajó | 237 | **5,7%** | ~~2 076 260~~ → **648 421** | ~~19,1%~~ → **13,6%** |
+| Szolgálati (vontató, révkalauz, mentő…) | 158 | 3,8% | ~~1 434 159~~ → **672 383** | ~~13,2%~~ → **14,1%** |
+| Személyszállító | 133 | 3,2% | ~~1 503 005~~ → **600 626** | ~~13,8%~~ → **12,6%** |
+| Tanker | 67 | 1,6% | ~~675 232~~ → **199 095** | ~~6,2%~~ → **4,2%** |
+| Halászhajó | 65 | 1,6% | ~~655 654~~ → **283 951** | ~~6,0%~~ → **6,0%** |
+
+**Az üzenetoszlop áthúzva — miért változott:** kiderült, hogy a forrásadat
+sorainak **56,0%-a bitre azonos duplikátum** (ld. lentebb, „Duplikált sorok").
+A duplikálás aránya **típusonként erősen eltér** (tanker 70,5%, kedvtelési
+40,9%), ezért a nyers sorszámból számolt megoszlás torz volt: felülbecsülte a
+kereskedelmi hajók üzenetrészesedését. A `hajo_statisztika.py` 2026-09-21 óta
+alapból deduplikál; a nyers érték a `--nyers-sorok` kapcsolóval kérhető vissza.
+**A hajószámok változatlanok** — azokat a duplikáció nem érinti, és a rájuk
+épülő megállapítások is állnak.
 
 **Az üzenetszintű megoszlás NEM a hajómegoszlás.** A kedvtelési hajók a hajók
 77,3%-át adják, de az üzenetek 27,9%-át; a teherhajóknál fordított az arány
@@ -477,3 +486,82 @@ tartalomból lett 70-szer kisebb.
   változik, ez a sor tér el a legjobban.
 - A **zstd vs snappy** különbség a teljes fájlra **továbbra sincs lemérve**;
   a Parquet-sor snappy-vel készült. Zstd-vel várhatóan kisebb, de nem mértük.
+
+## Duplikált sorok a forrásadatban (2026-07-15)
+
+Forrás: közvetlen mérés a `data/aisdk-2026-07-15.zip` nyers CSV-jén és a
+származtatott Parqueten, 2026-09-21 (ld. `naplo.md`).
+
+**A forrásfájl sorainak több mint fele bitre azonos ismétlés.** Ugyanazt az
+AIS-adást több parti vevőállomás is veszi, és a napi fájl mindegyik vételt
+külön sorként tartalmazza — megkülönböztető mező nélkül.
+
+| szám | jelentés | forrás | dátum |
+|------|----------|--------|-------|
+| 55,9% | a nyers CSV sorai közül **mind a 26 oszlopban** azonos (első 400 000 sor) | közvetlen mérés | 2026-09-21 |
+| 56,2% | ismétlődő (MMSI, időbélyeg) pár a bounding boxban | közvetlen mérés | 2026-09-21 |
+| 56,0% | ebből **teljesen azonos** sor (pozíció, sebesség, irány is) | közvetlen mérés | 2026-09-21 |
+| 0,1% | azonos időbélyeg, de eltérő pozíció/sebesség (13 499 sor) | közvetlen mérés | 2026-09-21 |
+| 10 860 221 → **4 759 634** | sor a bounding boxban dedup. előtt/után | hajo_statisztika.py | 2026-09-21 |
+
+**Ez a forrásban van, nem a feldolgozásunkban.** Ellenőrizve a nyers CSV-n,
+mindenféle saját szűrés előtt.
+
+A duplikálás aránya **típusonként erősen eltér** — ezért torzítja a
+megoszlásokat:
+
+| csoport | duplikátum-arány |
+|---|---|
+| Tanker | 70,5% |
+| Teherhajó | 68,8% |
+| Személyszállító | 60,0% |
+| Halászhajó | 56,7% |
+| Szolgálati | 53,1% |
+| **Kedvtelési** | **40,9%** |
+
+Valószínű magyarázat (nem mértük, ezért nem állítjuk biztosra): a Class A
+jeladók nagyobb teljesítménnyel és magasabb antennáról sugároznak, így több
+parti állomás veszi őket, mint a kis Class B készülékeket.
+
+**Mit érint és mit nem:**
+- **Érinti** minden üzenetszám-alapú arányt (ld. a fenti áthúzott táblázatot).
+- **Nem érinti** az egyedi hajószámokat, az óránkénti hajószámokat, a
+  napszaki ingadozást, az AIS-osztály megoszlását, sem a Kiel-hipotézis
+  eredményeit — azok mind egyedi MMSI-t számolnak.
+
+**Módszertani eltérés:** a `hajo_statisztika.py` a nyers CSV-n deduplikál
+(bounding box-szűrés **előtt**), egy független ellenőrző mérés a már
+szűrt Parqueten. A kettő 30 sorban tér el (4 759 634 vs 4 759 664, 0,0006%):
+azok a sorok, amelyeknek azonos az (MMSI, idő) párja, de az egyik pozíciója a
+boxon belül, a másiké kívül esik. Nagyságrendileg jelentéktelen.
+
+### A tömörítési arány felbontása (2026-07-15, bbox, 6 oszlop, zstd)
+
+A korábbi 6,39×-es szám olyan adaton mértük, ami 56% duplikátumot
+tartalmazott. Lebontva:
+
+| lépés | méret | arány az eredetihez |
+|---|---|---|
+| eredeti | 84,3 MiB | 1,00× |
+| csak deduplikálva (**veszteségmentes**) | 56,1 MiB | 1,50× |
+| eredeti + dead reckoning 50 m (a korábbi szám) | 13,2 MiB | 6,37× |
+| **deduplikálva + dead reckoning 50 m** | **10,8 MiB** | **7,79×** |
+
+| szám | jelentés | dátum |
+|------|----------|-------|
+| 1,50× | a **deduplikáció** önmagában (veszteségmentes) | 2026-09-21 |
+| **5,19×** | a **dead reckoning** önmagában, már deduplikált adaton | 2026-09-21 |
+| 7,79× | a kettő együtt (1,50 × 5,19 = 7,79) | 2026-09-21 |
+
+**A korábbi 6,39× nem volt „felfújva" annyira, mint a sorszámok sugallnák.**
+A zstd a bitre azonos sorokat eleve jól tömöríti, ezért a dedup bájtban csak
+1,50×-et hoz, nem 2,27×-et (ami a sorszámból jönne). A dead reckoning tiszta
+adaton **5,19×** — ez a módszer valódi hozzájárulása.
+
+**Gyakorlati következmény:** érdemes **előbb deduplikálni, aztán** dead
+reckoninget futtatni: 7,79× vs 6,37×, és a dedup veszteségmentes. A
+tömörítési lánc sorrendje tehát nem mindegy.
+
+**Még nem mért:** hogy a napi fájl egészére (nem csak a bounding boxra)
+ugyanennyi-e a duplikátum-arány; a mérés a teljes nyers CSV első 400 000
+sorára és a bbox-szűrt teljes napra készült.
