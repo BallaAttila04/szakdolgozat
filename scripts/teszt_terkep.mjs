@@ -178,7 +178,7 @@ allit(rajzoltSzinek[2][0] === TOKENEK["--t3"], "2. csoport szine --t3 (kedvteles
 allit(rajzoltSzinek.slice(3).every(([sz]) => sz === TOKENEK["--t0"]),
       "a 3-5. csoport mind a semleges --t0 szint kapja");
 allit(new Set(rajzoltSzinek.map(([sz]) => sz)).size === 4,
-      "osszesen 4 kulonbozo szin kerul a terkepre - ennyi kulonitheto el biztonsagosan");
+      "osszesen 4 kulonbozo szin kerul a terkepre");
 allit(rajzoltSzinek.every(([, a]) => a === 1),
       "szures nelkul minden hajo teljes fedessel rajzolodik");
 

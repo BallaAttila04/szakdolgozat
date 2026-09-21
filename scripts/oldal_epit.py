@@ -37,8 +37,8 @@ MASOLANDO = [
 ]
 
 # Az oranként abra sorozatai: (stat-csoportnevek osszevonva, megjelenő nev,
-# szin-valtozo). Az elso ot sajat hue-t kap - ennyi kulonitheto el biztonsagosan
-# szomszedos parokon -, az "egyeb" semleges szurket.
+# szin-valtozo). Az elso ot kap sajat szint - ennyi kulonitheto el biztonsagosan
+# egymas melletti sorozatokent -, az "egyeb" semleges szurket kap.
 MUNKA_SOROZATOK = [
     (["Teherhajó", "Tanker"], "Áruszállítás", "var(--sor-1)"),
     (["Személyszállító"],     "Személyszállító", "var(--sor-2)"),

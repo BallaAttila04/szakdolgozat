@@ -24,9 +24,10 @@ from hajo_statisztika import csoport as stat_csoport
 
 HELYORZO = "/*ADATHELY*/"
 
-# A terkep megjelenitesi csoportjai. Az elso HAROM kap sajat szint - ennyi az,
-# ami minden szinparon megfelel vilagos es sotet feluleten is
-# (negyedik szin mar nem: se a CVD-, se a normal latasi kuszobot nem hozza).
+# A terkep megjelenitesi csoportjai. Az elso HAROM kap sajat szint: a terkepen
+# barmely ket pont egymas melle kerulhet, ezert az osszes szinpart ellenorizni
+# kellett, es haromnal tobb szin mar nem kulonitheto el megbizhatoan (sem
+# szinlatas-zavar mellett, sem normal latassal).
 # A tobbi csoport semleges szurke, es a jelmagyarazatbol szurheto ki egyesevel.
 # A csoportnevek a hajo_statisztika.py CSOPORTOK ertekeibol jonnek.
 TERKEP_CSOPORTOK = [

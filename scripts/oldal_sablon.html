@@ -18,9 +18,10 @@
     --line:     #d3dbe1;
     --accent:   #0f6f8c;
     --jel-int:  #8a5a10;
-    /* Diagramszinek. Szinlatas-zavarra es kontrasztra ellenorizve, szomszedos parokon,
-       a panel feluletehez (#fbfaf6) merve: minden ellenorzes atment.
-       A --sor-0 semleges, NEM identitas-szin: az "egyeb" kategoria kapja. */
+    /* Diagramszinek. Szinlatas-zavarra (protanopia, deuteranopia) es a panel
+       hatterehez (#fbfaf6) mert kontrasztra ellenorizve, egymas melletti
+       sorozatparokon. A --sor-0 semleges szurke: az "egyeb" kategoria kapja,
+       nem onallo identitasszin. */
     --sor-1: #2a78d6;
     --sor-2: #eb6834;
     --sor-3: #1baf7a;
@@ -95,8 +96,8 @@
   .abra-alcim { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
   .abra { display: block; overflow: visible; }
   .abra text { font-family: "IBM Plex Sans", system-ui, sans-serif; }
-  /* A szoveg mindig szovegszint hord, sosem a sorozat szinet - kiveve a
-     kozvetlen vegcimket, ami maga az azonositas hordozoja. */
+  /* A szoveg szovegszint hasznal, nem a sorozat szinet. Kivetel a vonalak
+     vegen allo kozvetlen cimke, amely maga azonositja a sorozatot. */
   .a-cimke   { font-size: 11.5px; fill: var(--ink-2); }
   .a-ertek   { font-size: 11.5px; fill: var(--ink-3);
                font-family: "IBM Plex Mono", ui-monospace, monospace; }
@@ -143,99 +144,104 @@
 
 <header>
   <h1>Nagy AIS-adathalmaz tárolása és feldolgozása</h1>
-  <p class="alcim">BSc szakdolgozat munkaanyaga — Budapesti Corvinus Egyetem, gazdaságinformatika</p>
-  <p class="meta">Vizsgált terület: dán szorosok, 54,5–56,5° É / 10,0–13,0° K · Adatforrás: dán AIS, napi ~36,6 millió sor</p>
+  <p class="alcim">BSc szakdolgozat munkaanyaga. Budapesti Corvinus Egyetem, gazdaságinformatika</p>
+  <p class="meta">Vizsgált terület: dán szorosok, 54,5–56,5° É / 10,0–13,0° K · Adatforrás: dán AIS, napi kb. 36,6 millió sor</p>
 </header>
 
-<p>Ez az oldal a munka <b>futtatható részének</b> a kimenete: kód, mérések és
-munkanapló. A dolgozat szövegét nem tartalmazza.</p>
+<p>Az oldal a szakdolgozathoz készült adatfeldolgozás eredményeit foglalja
+össze. A mérésekhez tartozó forráskód és a részletes munkanapló a kapcsolódó
+repozitóriumban érhető el. A dolgozat szövegét az oldal nem tartalmazza.</p>
 
 <h2>Interaktív térkép</h2>
 
 <a class="cta" href="terkep.html">
-  <b>Hajóforgalom időcsúszkával →</b>
-  <span>2026-07-15, 4138 hajó egy napja. A csúszkával végigléptethető a nap,
-  a hajók típus szerint színezve. A jelmagyarázatban bármelyik típusra rá lehet
-  szűrni; hajóra kattintva előjön az adatlapja és a teljes napi útvonala.</span>
+  <b>Hajóforgalom időcsúszkával</b>
+  <span>A 2026-07-15-i nap, 4138 hajóval. A csúszkával a nap végigléptethető,
+  a hajók típus szerint színezettek. A jelmagyarázatból bármelyik típusra
+  lehet szűrni; egy hajóra kattintva megjelenik az adatlapja és a teljes napi
+  útvonala.</span>
 </a>
-<p class="meta">Kb. 2,8 MB, böngészőben fut, telepítés nélkül. Mobilon is megnyílik, de nagy képernyőn használható igazán.</p>
+<p class="meta">Mérete kb. 2,8 MB, böngészőben fut, telepítést nem igényel. Mobilon is megnyitható, de nagyobb képernyőn áttekinthetőbb.</p>
 
-<h2>Mi van a vízen?</h2>
+<h2>A forgalom összetétele</h2>
 
-<p>Egyetlen nap alatt <!--HAJO_DB--> különböző hajó fordult meg a vizsgált
-területen. A megoszlásuk viszont attól függ, <b>mit számolunk</b> — és a két
-lehetséges válasz gyökeresen eltér.</p>
+<p>A vizsgált területen egyetlen nap alatt <!--HAJO_DB--> különböző hajó
+fordult meg. A típusok szerinti megoszlás azonban jelentősen eltér attól
+függően, hogy egyedi hajókat vagy AIS-üzeneteket számolunk.</p>
 
 <div class="abra-doboz">
   <p class="abra-cim">Hajótípusok két mértékegységben</p>
-  <p class="abra-alcim">Ugyanaz a nap, ugyanazok a hajók. Balra: hány különböző hajó.
-     Jobbra: hány AIS-üzenet érkezett tőlük.</p>
+  <p class="abra-alcim">Ugyanaz a nap, ugyanazok a hajók. Balra a különböző
+     hajók száma, jobbra a tőlük érkezett AIS-üzenetek száma.</p>
   <!--TIPUS_SAVOK-->
 </div>
 
 <div class="jelzes">
-  <b>A kedvtelési hajók adják a hajók <!--KEDV_HAJO_SZAZ-->-át, de az üzenetek
-  csak <!--KEDV_UZENET_SZAZ-->-át.</b> A teherhajóknál fordított a helyzet.
-  Az ok: a nagy kereskedelmi hajók másodpercenként sugároznak, a kis
-  szabadidős hajók jóval ritkábban. <b>Ezért az „üzenetek hány százaléka ilyen"
-  típusú statisztika félrevezet</b> — a valódi hajómegoszlást csak egyedi
-  hajókat számolva kapjuk meg.
+  A kedvtelési hajók a hajóállomány <!--KEDV_HAJO_SZAZ-->-át teszik ki, az
+  üzeneteknek viszont csak <!--KEDV_UZENET_SZAZ-->-át. A teherhajók esetében
+  az arány fordított. Ennek oka az eltérő adási gyakoriság: a nagyobb
+  kereskedelmi hajók másodperces nagyságrendben sugároznak, a kisebb
+  szabadidős hajók lényegesen ritkábban. Az üzenetszám alapú megoszlás ezért
+  torzít, a flotta tényleges összetétele csak egyedi hajók számlálásával
+  határozható meg.
 </div>
 
-<h2>Miért vannak a vízen?</h2>
+<h2>A hajók tevékenysége</h2>
 
-<p>Erre a kérdésre az AIS <code>Navigational status</code> mezője válaszolna —
-de csak a hajók egy részénél. Az AIS ugyanis kétféle jeladót ismer, és a
-kettő nem ugyanazt sugározza.</p>
+<p>A hajók tevékenységéről az AIS <code>Navigational status</code> mezője
+adna felvilágosítást, ez azonban csak a hajók egy részénél áll rendelkezésre.
+Az AIS kétféle jeladótípust ismer, és a kettő nem azonos tartalmat sugároz.</p>
 
 <div class="racs">
   <!--OSZTALY_KARTYAK-->
 </div>
 
 <div class="jelzes" style="margin-top:16px">
-  <b>A Class B jeladók pozícióüzenete nem tartalmaz navigációs státuszmezőt.</b>
-  Ezért nem adathiba, hogy a hajók többségénél nincs státusz: a szabvány nem is
-  kéri tőlük. Gyakorlati következmény: a „mit csinál a hajó" kérdés
-  <b>kizárólag a Class A flottára</b> válaszolható meg — ami viszont éppen a
-  kereskedelmi forgalom, tehát a lényeg.
+  A Class B jeladók pozícióüzenete az AIS-szabvány szerint nem tartalmaz
+  navigációs státuszmezőt. A státusz hiánya a hajók többségénél ezért nem
+  adathiba, hanem a szabvány következménye. Gyakorlati következménye viszont
+  az, hogy a hajók tevékenységére vonatkozó kérdés kizárólag a Class A
+  flottára válaszolható meg, amely ugyanakkor a kereskedelmi forgalmat fedi le.
 </div>
 
 <div class="abra-doboz">
-  <p class="abra-cim">Mit csinálnak a Class A hajók?</p>
+  <p class="abra-cim">A Class A hajók navigációs státusza</p>
   <p class="abra-alcim">A hajó által legtöbbször jelentett navigációs státusz,
-     <!--CLASS_A_DB--> hajóra. Kézzel beállított mező.</p>
+     <!--CLASS_A_DB--> hajóra vonatkozóan. A mezőt a személyzet kézzel állítja be.</p>
   <!--STATUSZ_SAVOK-->
 </div>
 
-<h2>Forgalom napszak szerint</h2>
+<h2>A forgalom napi ingadozása</h2>
 
-<p>Az óránkénti hajószám a nap folyamán <!--NAPI_INGADOZAS-->-szeresére nő és
-vissza. Ha viszont típusonként bontjuk, kiderül, hogy ezt az ingadozást
-gyakorlatilag <b>egyetlen kategória hajtja</b>.</p>
+<p>Az óránkénti hajószám a nap folyamán <!--NAPI_INGADOZAS-->-szeresére nő,
+majd visszaáll. A típusonkénti bontásból kiderül, hogy az ingadozást
+gyakorlatilag egyetlen kategória okozza.</p>
 
 <div class="abra-doboz">
   <p class="abra-cim">Kedvtelési hajók óránként</p>
-  <p class="abra-alcim">Egyedi hajók száma, 2026-07-15. A görbe a világos
-     napszakot követi.</p>
+  <p class="abra-alcim">Egyedi hajók száma a 2026-07-15-i napon. A görbe a
+     világos napszakot követi.</p>
   <!--ORA_KEDV-->
 </div>
 
 <div class="abra-doboz">
   <p class="abra-cim">Munkahajók óránként</p>
-  <p class="abra-alcim">Ugyanaz a nap, saját léptékkel — figyeld meg, hogy ezek
-     a görbék jóval laposabbak. (Külön ábra kell hozzá, mert a nagyságrend más;
-     közös tengelyen ezek a vonalak beleolvadnának az alapvonalba.)</p>
+  <p class="abra-alcim">Ugyanaz a nap, önálló léptéken ábrázolva. Ezek a
+     görbék lényegesen laposabbak. A külön ábra azért szükséges, mert a
+     nagyságrendi különbség miatt közös tengelyen nem lennének értelmezhetők.</p>
   <!--ORA_MUNKA-->
 </div>
 
 <div class="jelzes">
-  <b>Ez érinti a csatornalezárás vizsgálatát.</b> A forgalmi hipotézist
-  óránkénti <i>összes</i> egyedi hajószámon mértük — ezt a mérőszámot viszont
-  a kedvtelési hajózás uralja, ami időjárás- és napszakfüggő. Egy
-  csatornalezárás ellenben a <b>kereskedelmi átmenő forgalmat</b> terelné el,
-  ami itt alig <!--ARU_DB--> hajó. Vagyis a használt mérőszám nagyrészt olyan
-  hajókat számolt, amikre a lezárásnak semmi hatása. Ez jó magyarázat a mért
-  ±13,6%-os napi zajra, és arra, hogy a hatás miért nem vált ki belőle.
+  A megfigyelésnek közvetlen következménye van a csatornalezárás
+  vizsgálatára. A forgalmi hipotézist óránkénti összes egyedi hajószámon
+  mértük, ezt a mutatót azonban a kedvtelési hajózás dominálja, amely
+  időjárás- és napszakfüggő. A csatornalezárás ezzel szemben a kereskedelmi
+  átmenő forgalmat érinti, amely a vizsgált állománynak mindössze
+  <!--ARU_DB--> hajóját jelenti. A választott mutató tehát túlnyomórészt
+  olyan hajókat számolt, amelyekre a lezárásnak nem volt hatása. Ez
+  magyarázatot ad a mért ±13,6%-os napi ingadozásra, és arra is, hogy a
+  feltételezett hatás miért nem különíthető el tőle.
 </div>
 
 <h2>Főbb mérési eredmények</h2>
@@ -249,68 +255,72 @@ gyakorlatilag <b>egyetlen kategória hajtja</b>.</p>
   <div class="kartya"><span class="szam">10,1%</span><span class="cimke">a hajóknak van valódi kikötőre feloldható úticélja</span></div>
 </div>
 
-<h2>A forgalmi hipotézis — nem igazolt</h2>
+<h2>A forgalmi hipotézis vizsgálata</h2>
 
 <div class="jelzes">
-  <b>A Kiel-csatorna lezárásának hatása a mérések alapján nem igazolható.</b>
-  Az eredetileg mért ~2× különbség nagy része évszak- és hétnap-hatás volt: a
-  referencianap szombat volt, a lezárási napok szerda és csütörtök. Azonos
-  hétnapú kontrollnapokhoz mérve <b>+20,2%</b> marad, miközben két rendes
-  kontrollnap között is <b>±13,6%</b> az ingadozás. A csütörtöki +12,3% tehát a
-  zajszint alatt van. Ez negatív eredmény, és így is szerepel a dolgozatban.
+  A Kiel-csatorna lezárásának hatása a mérések alapján nem igazolható. Az
+  eredetileg mért mintegy kétszeres különbség nagyrészt évszak- és
+  hétnap-hatásból adódott: a referencianap szombatra, a lezárási napok szerdára
+  és csütörtökre estek. Azonos hétnapú kontrollnapokhoz mérve +20,2% marad,
+  miközben két kontrollnap között is ±13,6% az ingadozás. A csütörtökre mért
+  +12,3% így a zajszint alá esik. A vizsgálat eredménye ezért negatív.
 </div>
 
 <figure>
   <img src="abrak/forgalmi_profil.png" alt="Óránkénti egyedi hajószám öt vizsgált napon, a lezárási és a kontrollnapok külön jelölve">
-  <figcaption>Óránkénti egyedi hajószám a bounding boxban, öt napon. A 07-08-i
-  11. óra adathiányos (1084 hajó a szokásos ~2020 helyett), ezért minden
-  napból kihagyva — interpoláció nélkül.</figcaption>
+  <figcaption>Óránkénti egyedi hajószám a vizsgált területen, öt napon. A
+  2026-07-08-i 11. óra adathiányos (1084 hajó a szokásos kb. 2020 helyett),
+  ezért az elemzésből minden napnál kimaradt, interpoláció alkalmazása nélkül.</figcaption>
 </figure>
 
 <figure>
   <img src="abrak/tomorites_tradeoff.png" alt="Fájlméret a dead reckoning hibakorlát függvényében, logaritmikus tengelyen">
-  <figcaption>A trajektória-tömörítés méret/pontosság átváltása. A görbe gyorsan
-  telítődik: a pontok ~16%-a kötelező horgony, ezeket semmilyen küszöb nem dobja el.</figcaption>
+  <figcaption>A trajektória-tömörítés méret és pontosság közötti átváltása. A
+  görbe gyorsan telítődik, mivel a pontok mintegy 16%-a kötelezően megtartott
+  horgonypont, amelyet semmilyen küszöbérték nem hagy el.</figcaption>
 </figure>
 
 <h2>Adatminőség</h2>
 
-<p>A forrásadatban több, egymástól független hibatípust találtunk:</p>
+<p>A forrásadatban több, egymástól független hibatípus azonosítható:</p>
 <ul>
-  <li>egy teljes óra adathiánya 2026-07-08-án (vételi vagy naplózási kiesés, nem valódi forgalom);</li>
-  <li>ellentmondó statikus mezők — a hajók 6,2%-a változó <code>Type of mobile</code> értéket jelentett, ami nem lehetséges;</li>
-  <li>a sorok <b>1,58%-a</b> használhatatlan pozíciójú: 0,24% az AIS „pozíció nem elérhető" jelzőértéke (<code>lat = 91,0</code>), 1,34% érvényes tartományú, de földrajzilag képtelen koordináta;</li>
-  <li><b><!--NEM_HAJO_DB--> azonosító nem is hajó</b>: navigációs jelzők (bóják), parti bázisállomások és mentő-jeladók, amelyek szintén MMSI-vel sugároznak. A „hány hajó" típusú számokból ezeket le kell vonni.</li>
+  <li>egy teljes óra adathiánya 2026-07-08-án, amely vételi vagy naplózási kiesésre, nem valódi forgalomváltozásra vezethető vissza;</li>
+  <li>ellentmondó statikus mezők: a hajók 6,2%-a változó <code>Type of mobile</code> értéket jelentett, ami a mező jelentése alapján nem lehetséges;</li>
+  <li>a sorok 1,58%-a használhatatlan pozíciójú: 0,24% az AIS „pozíció nem elérhető" jelzőértéke (<code>lat = 91,0</code>), 1,34% pedig érvényes tartományba eső, de földrajzilag kizárható koordináta;</li>
+  <li><!--NEM_HAJO_DB--> azonosító nem hajóhoz tartozik, hanem navigációs jelzőhöz (bójához), parti bázisállomáshoz vagy mentő-jeladóhoz, amelyek szintén MMSI-vel sugároznak. A hajószámra vonatkozó értékekből ezeket le kell vonni.</li>
 </ul>
-<p>Az első három az eddigi elemzést nem rontotta el, mert a bounding box szűrés
-kizárja őket — de ez szerencse, nem tervezés, és a dolgozat így is mondja ki.</p>
+<p>Az első három hibatípus az eddigi eredményeket nem befolyásolta, mert a
+területi szűrés kizárja őket. Ez azonban a szűrés mellékhatása, nem célzott
+adattisztítás következménye, és a dolgozat ekként rögzíti.</p>
 
 <h2>Dokumentáció</h2>
 
-<p>Minden szám mellett ott van, melyik szkript, milyen paraméterrel, mikor
-állította elő. A zsákutcák és a visszavont állítások is szerepelnek.</p>
+<p>Minden közölt számhoz rögzítve van, melyik szkript, milyen paraméterekkel
+és mikor állította elő. A dokumentáció a sikertelen kísérleteket és a
+visszavont állításokat is tartalmazza.</p>
 
 <ul>
-  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/szamok.md"><b>szamok.md</b></a> — minden validált szám forrással; a megváltozott számok áthúzva, indoklással</li>
-  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/naplo.md"><b>naplo.md</b></a> — munkanapló: mit futtattam, mi jött ki, mi nem működött</li>
-  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/README.md"><b>README.md</b></a> — a teljes feldolgozási lánc, újrafuttatható parancsokkal</li>
-  <li><a href="https://github.com/BallaAttila04/szakdolgozat">a repó</a> — a szkriptek</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/szamok.md"><b>szamok.md</b></a>: a validált számok forrásmegjelöléssel; a módosult értékek áthúzva, indoklással</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/naplo.md"><b>naplo.md</b></a>: munkanapló a futtatásokról, az eredményekről és a felmerült hibákról</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/README.md"><b>README.md</b></a>: a teljes feldolgozási lánc, újrafuttatható parancsokkal</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat">repozitórium</a>: a feldolgozó szkriptek</li>
 </ul>
 
-<h2>Ami még nincs kész</h2>
+<h2>Korlátok és további feladatok</h2>
 <ul>
-  <li>Az <b>időzóna</b> (UTC vagy helyi) nem tisztázott — ez minden olyan állítást érint, ami a lezárás <i>időzítésére</i> hivatkozik.</li>
-  <li>A <b>kapuvonal-átlépés</b> metrika hiányzik; a Kiel-kérdéshez ez lenne a megfelelő mérőszám, ráadásul <b>csak a kereskedelmi hajókra</b> szűrve.</li>
-  <li>Több <b>kontrollnap</b> kell a zajszint rendes becsléséhez.</li>
-  <li>A tárolási benchmark <b>egyetlen futás</b>, ismétlés nélkül — a számok előzetesek.</li>
-  <li><b>H3 és Spark</b> még érintetlen.</li>
+  <li>Az időzóna (UTC vagy helyi idő) tisztázása. Ez minden olyan megállapítást érint, amely a lezárás időzítésére hivatkozik.</li>
+  <li>A kapuvonal-átlépési mutató kidolgozása. A Kiel-kérdéshez ez lenne a megfelelő mérőszám, kizárólag a kereskedelmi hajókra szűrve.</li>
+  <li>További kontrollnapok bevonása a napi ingadozás pontosabb becsléséhez.</li>
+  <li>A tárolási benchmark jelenleg egyetlen futás eredménye, ismétlés nélkül, ezért a közölt értékek előzetesek.</li>
+  <li>A H3 térbeli indexelés és a Spark alapú feldolgozás vizsgálata még nem történt meg.</li>
 </ul>
 
 <footer>
-  Az AIS-adat a dán AIS-szolgáltatás publikus napi fájljaiból származik.
-  A térkép a mért pozíciókból készült; 10 perces rácsra interpolálva, ami
-  megjelenítési döntés — az elemzés a nyers adaton fut. A statisztikák
-  a(z) <!--NAP--> napra vonatkoznak, a bounding boxon belül.
+  Az AIS-adat a dán AIS-szolgáltatás publikus napi fájljaiból származik. A
+  térkép a mért pozíciókból készült, 10 perces időrácsra interpolálva. Az
+  interpoláció kizárólag megjelenítési célú; az elemzések a nyers adaton
+  futnak. A statisztikák a(z) <!--NAP--> napra vonatkoznak, a vizsgált
+  területen belül.
 </footer>
 
 </div>

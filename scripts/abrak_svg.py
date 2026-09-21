@@ -7,13 +7,14 @@ egyik temahoz keszul. A beagyazott SVG a lap CSS-valtozoit hasznalja
 elesen skalazodik es kereshetok benne a cimkek.
 
 A szinek nem itt dolnek el: a modul CSS-valtozo NEVEKET kap, az ertekuket a
-lap sablonja definialja. Az ottani ertekek szinlatas-zavarra es kontrasztra ellenorizve lettek
-(szomszedos parok, vilagos es sotet feluleten is).
+lap sablonja definialja. Az ottani ertekek szinlatas-zavarra (protanopia,
+deuteranopia) es feluleti kontrasztra ellenorizve lettek, egymas melletti
+sorozatparokon, vilagos es sotet temaban egyarant.
 
-Minden diagramhoz tartozik egy osszecsukott tablazat is: a vilagos temaban
-harom szin 3:1 alatti kontraszttal ul a papirszinu feluleten, amit a
-modszertan csak lathato cimkevel VAGY tablazatos nezettel enged - itt
-mindketto megvan.
+Minden diagramhoz tartozik egy osszecsukott tablazat is. A vilagos temaban
+harom szin 3:1 alatti kontraszttal ul a papirszinu feluleten; az ilyen esetet
+lathato cimkevel vagy tablazatos nezettel kell ellensulyozni, itt mindketto
+megvan.
 """
 
 from html import escape

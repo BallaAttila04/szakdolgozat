@@ -19,9 +19,11 @@
     --v4: #145f7e;
     --v5: #06394f;
     --grid: rgba(22,35,45,0.07);
-    /* Hajotipus-szinek. Minden szinparon ellenorizve (szinlatas-zavar, kontraszt),
-       vilagos feluleten (#e6ecf0): 3 hue az, ami atmegy - negyedik nincs.
-       Ezert a tobbi tipus semleges szurke, es a jelmagyarazat szuro. */
+    /* Hajotipus-szinek. A terkepen barmely ket pont egymas melle kerulhet,
+       ezert az osszes szinpart ellenorizni kellett szinlatas-zavarra es a
+       vizfeluleti (#e6ecf0) kontrasztra. Harom szin felelt meg, negyedik nem,
+       ezert a tobbi tipus semleges szurket kap es a jelmagyarazat szurokent
+       mukodik. */
     --t1: #2a78d6;   /* aruszallitas */
     --t2: #eb6834;   /* szemelyszallitas */
     --t3: #1baf7a;   /* kedvtelesi */
@@ -373,7 +375,7 @@
     </div>
 
     <div id="jm-tipus">
-      <div class="jm-cimke">Hajótípus — kattints a szűréshez</div>
+      <div class="jm-cimke">Hajótípus (szűréshez kattintható)</div>
       <div id="jm-sorok"></div>
     </div>
 
@@ -385,7 +387,7 @@
       <div class="jm-skala"><span>0</span><span>16+ cs</span></div>
     </div>
   </div>
-  <div class="hp-sugo" id="sugo">Kattints egy hajóra</div>
+  <div class="hp-sugo" id="sugo">Válasszon egy hajót</div>
   <div class="hajo-panel" id="panel" hidden>
     <div class="hp-fej">
       <div class="hp-nev" id="hp-nev">–</div>
@@ -479,9 +481,8 @@ const ADAT = /*ADATHELY*/;
     if (csoportok.length) jelmagyarazatEpit();
   }
 
-  // Szinezes modja és a tipusszuro. A szuro a jelmagyarazatbol allithato:
-  // identitast igy sosem kell kizarolag szinbol kiolvasni, ami azert kell,
-  // mert csak harom tipusnak jut sajat szin (ld. a CSS-beli megjegyzest).
+  // Szinezes modja es tipusszuro. A szures a jelmagyarazatbol allithato, igy
+  // az azonositas nem tamaszkodik kizarolag a szinre (ld. a CSS-megjegyzest).
   const csoportok = ADAT.csoportok || [];
   let mod = "tipus";        // "tipus" | "seb"
   let szuro = null;         // null = mind, kulonben csoportindex
@@ -577,9 +578,9 @@ const ADAT = /*ADATHELY*/;
       if (qx === HIANYZO) continue;
 
       const sog = S[i];
-      // Szuresnel a ki nem valasztott hajok NEM tunnek el es NEM valtanak
-      // szint - csak elhalvanyulnak. Igy a szin vegig ugyanazt az entitast
-      // jelenti, es megmarad a terbeli kontextus.
+      // Szureskor a nem kivalasztott hajok elhalvanyulnak, de nem tunnek el es
+      // a szinuk sem valtozik. A szin igy vegig ugyanazt a kategoriat jeloli,
+      // es a terbeli kontextus is megmarad.
       const kiemelt = (szuro === null) || (h.g === szuro);
       if (mod === "tipus") {
         ctx.fillStyle = csoportSzin(h.g);
@@ -606,7 +607,7 @@ const ADAT = /*ADATHELY*/;
       String(Math.floor(perc / 60)).padStart(2, "0") + ":" + String(perc % 60).padStart(2, "0");
     document.getElementById("lathato-cimke").textContent =
       (szuro === null) ? "Látható hajó"
-                       : csoportok[szuro].nev + " — látható";
+                       : csoportok[szuro].nev;
     lathatoEl.textContent = lathato.toLocaleString("hu");
     mozgoEl.textContent = mozgo.toLocaleString("hu");
   }
@@ -697,8 +698,7 @@ const ADAT = /*ADATHELY*/;
       const h = hajok[v];
       const k = f - h.s;
       if (k < 0 || k >= h.n) continue;
-      // Aktiv szuresnel csak a kiemelt hajok valaszthatok - a halvanyra
-      // kattintani es adatlapot kapni megteveszto lenne
+      // Aktiv szures eseten csak a kiemelt hajok valaszthatok ki
       if (szuro !== null && h.g !== szuro) continue;
       const i = eltolas[v] + k;
       const qx = X[i];
@@ -753,8 +753,8 @@ const ADAT = /*ADATHELY*/;
     });
   });
 
-  // Szinezes-mod valto. A tipusszuro modvaltaskor is ervenyben marad, mert
-  // a "mutasd csak a halaszhajokat, de sebesseg szerint szinezve" ertelmes keres.
+  // Szinezes-mod valto. A tipusszuro modvaltaskor is ervenyben marad, hogy egy
+  // kivalasztott tipus sebesseg szerinti szinezessel is vizsgalhato legyen.
   [["mod-tipus", "tipus"], ["mod-seb", "seb"]].forEach(([id, ertek]) => {
     document.getElementById(id).addEventListener("click", () => {
       mod = ertek;
