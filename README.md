@@ -11,6 +11,7 @@ a munkanapló van.
 
 ```
 data/                     nyers, letöltött AIS ZIP-ek (nincs verziózva, ~1 GB/nap)
+                          + letöltött külső referenciaadatok (UN/LOCODE, PortWatch)
 scripts/                  minden futtatható szkript
   utak.py                 közös útvonalak – minden szkript ezt használja
   terkep_sablon.html      az interaktív térkép HTML-sablonja
@@ -86,6 +87,10 @@ python scripts/oldal_epit.py
 # Segédeszköz: mennyi helyet foglalna egy hosszabb időszak?
 # (HTTP HEAD-del méri a napi ZIP-méreteket, letöltés nélkül)
 python scripts/meret_becsles.py 2026-07-01 2026-07-31
+
+# 10. Külső referencia: IMF PortWatch napi chokepoint-forgalom
+# (a dán szoros forgalmának kontextusba helyezése más szorosokhoz képest)
+python scripts/portwatch_letoltes.py
 ```
 
 ## Tesztek

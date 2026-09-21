@@ -565,3 +565,28 @@ tömörítési lánc sorrendje tehát nem mindegy.
 **Még nem mért:** hogy a napi fájl egészére (nem csak a bounding boxra)
 ugyanennyi-e a duplikátum-arány; a mérés a teljes nyers CSV első 400 000
 sorára és a bbox-szűrt teljes napra készült.
+
+## Külső referenciaadat: IMF PortWatch chokepoint-forgalom
+
+Forrás: `portwatch_letoltes.py` (mind a 28 chokepoint), kimenet
+`data/portwatch_chokepoints.csv`, lefuttatva 2026-09-22
+(ld. `naplo.md`, 2026-09-22-es bejegyzés).
+Eredeti forrás: IMF PortWatch, `Daily_Chokepoints_Data` FeatureService.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 78 764 | sor összesen (28 chokepoint × napok) | portwatch_letoltes.py | 2026-09-22 |
+| 28 | chokepoint (tengeri szoros/csatorna) a teljes adathalmazban | portwatch_letoltes.py | 2026-09-22 |
+| 2019-01-01 – 2026-09-13 | lefedett időtartomány | portwatch_letoltes.py | 2026-09-22 |
+| 7 673 KB | a teljes CSV mérete | portwatch_letoltes.py | 2026-09-22 |
+
+**Módszertani korlát:** a PortWatch a dán vizeken csak az **Oresund**-ot
+(`chokepoint10`) követi, a Nagy-Balti-övet és a Kis-Balti-övet nem. A saját
+bounding boxunk (54,5–56,5°É, 10,0–13,0°K) mindhárom átjárót lefedi, ezért a
+saját számolt tanker-forgalmunk strukturálisan nagyobb kell legyen, mint a
+PortWatch Oresund-értéke — ez nem hiba, hanem eltérő területi lehatárolás.
+
+**Nem ellenőrzött, csak feltételezés:** a legutóbbi kb. 2–3 hét (2026-09-22-i
+állapot szerint) feltűnően alacsony értékeket mutat a korábbi hónapokhoz
+képest — valószínűleg feldolgozási késés a PortWatch oldalán, nem valódi
+forgalomesés. Független forrásból nem ellenőrizve.
