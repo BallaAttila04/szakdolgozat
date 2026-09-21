@@ -17,6 +17,9 @@ scripts/                  minden futtatható szkript
 outputs/                  ábrák, táblázatok, köztes fájlok
   logs/                   futtatási naplók (nincs verziózva)
   tomorites_parquet/      származtatott Parquet fájlok (nincs verziózva)
+docs/                     a GitHub Pages által kiszolgált oldal
+  index.html              nyitólap (forráskód, kézzel karbantartott)
+  terkep.html             az interaktív térkép másolata (oldal_epit.py másolja)
 szamok.md                 minden validált szám, forrással és dátummal
 ```
 
@@ -68,6 +71,22 @@ python scripts/terkep_epit.py
 
 # 7. Úticél feloldása valódi kikötőkre UN/LOCODE-dal
 python scripts/kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox
+
+# 8. A publikus oldal összeállítása a docs/ mappába
+python scripts/oldal_epit.py
+```
+
+## Megnyitható változat
+
+A `docs/` mappát a GitHub Pages statikusan kiszolgálja, így az eredmények és az
+interaktív térkép **telepítés és bejelentkezés nélkül**, egyetlen linkről
+megnyithatók. Bekapcsolás: a repó **Settings → Pages**, *Source*: `Deploy from
+a branch`, ág `main`, mappa `/docs`.
+
+Helyi ellenőrzés közzététel előtt:
+
+```bash
+python -m http.server 8000 --directory docs   # majd http://localhost:8000
 ```
 
 Minden szkript `--help`-pel dokumentálja a kapcsolóit.

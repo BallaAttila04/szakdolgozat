@@ -26,3 +26,8 @@ LOGOK = KIMENET / "logs"
 
 # A terkep sablonja a szkriptek mellett van, mert forraskod
 SABLONOK = GYOKER / "scripts"
+
+# A GitHub Pages altal kiszolgalt statikus oldal (docs/ a main agon).
+# A nyitolap (index.html) forraskod, a tobbi fajlt az oldal_epit.py masolja
+# ide az outputs/-bol.
+OLDAL = GYOKER / "docs"

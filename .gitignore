@@ -27,5 +27,10 @@ terkep_adat.json
 hajo_adatok.json
 terkep.html
 
+# KIVETEL: a docs/ a GitHub Pages altal kiszolgalt oldal, ezt verziozni kell,
+# kulonben a konzulensnek kuldott link torott terkepre mutat. Az oldal_epit.py
+# masolja ide az outputs/-bol.
+!docs/terkep.html
+
 # Futtatasi naplok (a lenyeges kimenet a naplo.md-ben van)
 outputs/logs/
