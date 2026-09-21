@@ -17,20 +17,35 @@
     --ink-3:    #8a97a1;
     --line:     #d3dbe1;
     --accent:   #0f6f8c;
-    --jel-jo:   #1d6b4f;
     --jel-int:  #8a5a10;
+    /* Diagramszinek. Szinlatas-zavarra es kontrasztra ellenorizve, szomszedos parokon,
+       a panel feluletehez (#fbfaf6) merve: minden ellenorzes atment.
+       A --sor-0 semleges, NEM identitas-szin: az "egyeb" kategoria kapja. */
+    --sor-1: #2a78d6;
+    --sor-2: #eb6834;
+    --sor-3: #1baf7a;
+    --sor-4: #eda100;
+    --sor-5: #e87ba4;
+    --sor-0: #8a97a1;
+    --racs:  rgba(22,35,45,0.10);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --ground: #070d13;  --panel: #0d151d;  --ink: #d8e6ef;
       --ink-2: #8395a2;   --ink-3: #5d6d7a;  --line: #1c2833;
-      --accent: #3fb9dc;  --jel-jo: #5fc79b; --jel-int: #d9a441;
+      --accent: #3fb9dc;  --jel-int: #d9a441;
+      --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+      --sor-4: #c98500; --sor-5: #d55181; --sor-0: #5d6d7a;
+      --racs: rgba(216,230,239,0.12);
     }
   }
   :root[data-theme="dark"] {
     --ground: #070d13;  --panel: #0d151d;  --ink: #d8e6ef;
     --ink-2: #8395a2;   --ink-3: #5d6d7a;  --line: #1c2833;
-    --accent: #3fb9dc;  --jel-jo: #5fc79b; --jel-int: #d9a441;
+    --accent: #3fb9dc;  --jel-int: #d9a441;
+    --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+    --sor-4: #c98500; --sor-5: #d55181; --sor-0: #5d6d7a;
+    --racs: rgba(216,230,239,0.12);
   }
 
   * { box-sizing: border-box; }
@@ -50,8 +65,9 @@
   .meta { margin-top: 14px; font-family: "IBM Plex Mono", ui-monospace, monospace;
           font-size: 12px; color: var(--ink-3); }
 
-  h2 { font-size: 16px; font-weight: 600; margin: 38px 0 14px;
+  h2 { font-size: 16px; font-weight: 600; margin: 40px 0 14px;
        padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+  h3 { font-size: 13.5px; font-weight: 600; margin: 24px 0 9px; color: var(--ink); }
   p { margin: 0 0 14px; }
   a { color: var(--accent); }
 
@@ -72,10 +88,34 @@
           font-size: 21px; font-weight: 500; letter-spacing: -0.02em; display: block; }
   .cimke { color: var(--ink-2); font-size: 13px; margin-top: 3px; display: block; }
 
-  figure { margin: 0 0 18px; }
-  figure img { width: 100%; height: auto; display: block;
-               border: 1px solid var(--line); border-radius: 3px; background: #fff; }
-  figcaption { color: var(--ink-2); font-size: 13px; margin-top: 7px; }
+  /* --- Diagramok --- */
+  .abra-doboz { background: var(--panel); border: 1px solid var(--line);
+                border-radius: 3px; padding: 15px 16px 12px; margin: 0 0 16px; }
+  .abra-cim { font-size: 13.5px; font-weight: 600; margin: 0 0 2px; }
+  .abra-alcim { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+  .abra { display: block; overflow: visible; }
+  .abra text { font-family: "IBM Plex Sans", system-ui, sans-serif; }
+  /* A szoveg mindig szovegszint hord, sosem a sorozat szinet - kiveve a
+     kozvetlen vegcimket, ami maga az azonositas hordozoja. */
+  .a-cimke   { font-size: 11.5px; fill: var(--ink-2); }
+  .a-ertek   { font-size: 11.5px; fill: var(--ink-3);
+               font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .a-tengely { font-size: 10.5px; fill: var(--ink-3);
+               font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .a-vegcimke{ font-size: 11.5px; font-weight: 500; }
+
+  .parosabra { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 620px) { .parosabra { grid-template-columns: 1fr; } }
+
+  .abra-tabla { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+  .abra-tabla summary { font-size: 12px; color: var(--ink-3); cursor: pointer; }
+  .abra-tabla table { width: 100%; border-collapse: collapse; margin-top: 9px;
+                      font-size: 12px; }
+  .abra-tabla th { text-align: left; font-weight: 500; color: var(--ink-3);
+                   border-bottom: 1px solid var(--line); padding: 4px 6px 4px 0; }
+  .abra-tabla td { padding: 3px 6px 3px 0; border-bottom: 1px solid var(--line);
+                   font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .abra-tabla td:first-child { font-family: inherit; color: var(--ink-2); }
 
   ul { margin: 0 0 14px; padding-left: 20px; }
   li { margin-bottom: 7px; }
@@ -86,8 +126,13 @@
   .jelzes b { color: var(--ink); }
 
   code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.9em;
-         background: var(--panel); border: 1px solid var(--line);
+         background: var(--ground); border: 1px solid var(--line);
          border-radius: 2px; padding: 1px 5px; }
+
+  figure { margin: 0 0 18px; }
+  figure img { width: 100%; height: auto; display: block;
+               border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+  figcaption { color: var(--ink-2); font-size: 13px; margin-top: 7px; }
 
   footer { margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--line);
            color: var(--ink-3); font-size: 13px; }
@@ -109,10 +154,225 @@ munkanapló. A dolgozat szövegét nem tartalmazza.</p>
 
 <a class="cta" href="terkep.html">
   <b>Hajóforgalom időcsúszkával →</b>
-  <span>2026-07-15, 4138 hajó egy napja. A csúszkával végigléptethető a nap;
-  hajóra kattintva előjön az adatlapja és a teljes napi útvonala.</span>
+  <span>2026-07-15, 4138 hajó egy napja. A csúszkával végigléptethető a nap,
+  a hajók típus szerint színezve. A jelmagyarázatban bármelyik típusra rá lehet
+  szűrni; hajóra kattintva előjön az adatlapja és a teljes napi útvonala.</span>
 </a>
 <p class="meta">Kb. 2,8 MB, böngészőben fut, telepítés nélkül. Mobilon is megnyílik, de nagy képernyőn használható igazán.</p>
+
+<h2>Mi van a vízen?</h2>
+
+<p>Egyetlen nap alatt 4 138 különböző hajó fordult meg a vizsgált
+területen. A megoszlásuk viszont attól függ, <b>mit számolunk</b> — és a két
+lehetséges válasz gyökeresen eltér.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Hajótípusok két mértékegységben</p>
+  <p class="abra-alcim">Ugyanaz a nap, ugyanazok a hajók. Balra: hány különböző hajó.
+     Jobbra: hány AIS-üzenet érkezett tőlük.</p>
+  <div class="parosabra"><div><p class="abra-alcim">Hány hajó</p><svg viewBox="0 0 390 188" width="100%" height="188" role="img" class="abra">
+<text class="a-cimke" x="118" y="14.5" text-anchor="end">Kedvtelési</text>
+<path d="M126,3H338.5A4,4 0 0 1 342.5,7V14A4,4 0 0 1 338.5,18H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="349.5" y="14.5">3 200</text>
+<text class="a-cimke" x="118" y="40.5" text-anchor="end">Egyéb / ismeretlen</text>
+<path d="M126,29H140.81A4,4 0 0 1 144.81,33V40A4,4 0 0 1 140.81,44H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="151.81" y="40.5">278</text>
+<text class="a-cimke" x="118" y="66.5" text-anchor="end">Teherhajó</text>
+<path d="M126,55H138.03A4,4 0 0 1 142.03,59V66A4,4 0 0 1 138.03,70H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="149.03" y="66.5">237</text>
+<text class="a-cimke" x="118" y="92.5" text-anchor="end">Szolgálati</text>
+<path d="M126,81H132.69A4,4 0 0 1 136.69,85V92A4,4 0 0 1 132.69,96H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="143.69" y="92.5">158</text>
+<text class="a-cimke" x="118" y="118.5" text-anchor="end">Személyszállító</text>
+<path d="M126,107H131A4,4 0 0 1 135,111V118A4,4 0 0 1 131,122H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="142" y="118.5">133</text>
+<text class="a-cimke" x="118" y="144.5" text-anchor="end">Tanker</text>
+<path d="M126,133H126.53A4,4 0 0 1 130.53,137V144A4,4 0 0 1 126.53,148H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="137.53" y="144.5">67</text>
+<text class="a-cimke" x="118" y="170.5" text-anchor="end">Halászhajó</text>
+<path d="M126,159H126.4A4,4 0 0 1 130.4,163V170A4,4 0 0 1 126.4,174H126Z" fill="var(--sor-1)"/>
+<text class="a-ertek" x="137.4" y="170.5">65</text>
+</svg></div><div><p class="abra-alcim">Hány üzenet</p><svg viewBox="0 0 390 188" width="100%" height="188" role="img" class="abra">
+<text class="a-cimke" x="118" y="14.5" text-anchor="end">Kedvtelési</text>
+<path d="M126,3H310.1A4,4 0 0 1 314.1,7V14A4,4 0 0 1 310.1,18H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="321.1" y="14.5">3 026 786</text>
+<text class="a-cimke" x="118" y="40.5" text-anchor="end">Egyéb / ismeretlen</text>
+<path d="M126,29H214.54A4,4 0 0 1 218.54,33V40A4,4 0 0 1 214.54,44H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="225.54" y="40.5">1 489 125</text>
+<text class="a-cimke" x="118" y="66.5" text-anchor="end">Teherhajó</text>
+<path d="M126,55H251.03A4,4 0 0 1 255.03,59V66A4,4 0 0 1 251.03,70H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="262.03" y="66.5">2 076 260</text>
+<text class="a-cimke" x="118" y="92.5" text-anchor="end">Szolgálati</text>
+<path d="M126,81H211.13A4,4 0 0 1 215.13,85V92A4,4 0 0 1 211.13,96H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="222.13" y="92.5">1 434 159</text>
+<text class="a-cimke" x="118" y="118.5" text-anchor="end">Személyszállító</text>
+<path d="M126,107H215.4A4,4 0 0 1 219.4,111V118A4,4 0 0 1 215.4,122H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="226.4" y="118.5">1 503 005</text>
+<text class="a-cimke" x="118" y="144.5" text-anchor="end">Tanker</text>
+<path d="M126,133H163.96A4,4 0 0 1 167.96,137V144A4,4 0 0 1 163.96,148H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="174.96" y="144.5">675 232</text>
+<text class="a-cimke" x="118" y="170.5" text-anchor="end">Halászhajó</text>
+<path d="M126,159H162.75A4,4 0 0 1 166.75,163V170A4,4 0 0 1 162.75,174H126Z" fill="var(--sor-2)"/>
+<text class="a-ertek" x="173.75" y="170.5">655 654</text>
+</svg></div></div><details class="abra-tabla"><summary>Számok táblázatban</summary><table><thead><tr><th>Típus</th><th>Hajó</th><th>Hajó %</th><th>Üzenet</th><th>Üzenet %</th></tr></thead><tbody><tr><td>Kedvtelési</td><td>3 200</td><td>77,3%</td><td>3 026 786</td><td>27,9%</td></tr><tr><td>Egyéb / ismeretlen</td><td>278</td><td>6,7%</td><td>1 489 125</td><td>13,7%</td></tr><tr><td>Teherhajó</td><td>237</td><td>5,7%</td><td>2 076 260</td><td>19,1%</td></tr><tr><td>Szolgálati</td><td>158</td><td>3,8%</td><td>1 434 159</td><td>13,2%</td></tr><tr><td>Személyszállító</td><td>133</td><td>3,2%</td><td>1 503 005</td><td>13,8%</td></tr><tr><td>Tanker</td><td>67</td><td>1,6%</td><td>675 232</td><td>6,2%</td></tr><tr><td>Halászhajó</td><td>65</td><td>1,6%</td><td>655 654</td><td>6,0%</td></tr></tbody></table></details>
+</div>
+
+<div class="jelzes">
+  <b>A kedvtelési hajók adják a hajók 77,3%-át, de az üzenetek
+  csak 27,9%-át.</b> A teherhajóknál fordított a helyzet.
+  Az ok: a nagy kereskedelmi hajók másodpercenként sugároznak, a kis
+  szabadidős hajók jóval ritkábban. <b>Ezért az „üzenetek hány százaléka ilyen"
+  típusú statisztika félrevezet</b> — a valódi hajómegoszlást csak egyedi
+  hajókat számolva kapjuk meg.
+</div>
+
+<h2>Miért vannak a vízen?</h2>
+
+<p>Erre a kérdésre az AIS <code>Navigational status</code> mezője válaszolna —
+de csak a hajók egy részénél. Az AIS ugyanis kétféle jeladót ismer, és a
+kettő nem ugyanazt sugározza.</p>
+
+<div class="racs">
+  <div class="kartya"><span class="szam">3 389</span><span class="cimke"><b>Class B</b> (81,9%)<br>kisebb és szabadidős hajók egyszerűsített jeladója<br>státuszt jelent: 0,0%</span></div>
+<div class="kartya"><span class="szam">715</span><span class="cimke"><b>Class A</b> (17,3%)<br>kereskedelmi hajók kötelező jeladója<br>státuszt jelent: 96,9%</span></div>
+<div class="kartya"><span class="szam">24</span><span class="cimke"><b>AtoN</b> (0,6%)<br>navigációs jelző (bója) – nem hajó<br>státuszt jelent: 0,0%</span></div>
+<div class="kartya"><span class="szam">8</span><span class="cimke"><b>Base Station</b> (0,2%)<br>parti bázisállomás – nem hajó<br>státuszt jelent: 0,0%</span></div>
+</div>
+
+<div class="jelzes" style="margin-top:16px">
+  <b>A Class B jeladók pozícióüzenete nem tartalmaz navigációs státuszmezőt.</b>
+  Ezért nem adathiba, hogy a hajók többségénél nincs státusz: a szabvány nem is
+  kéri tőlük. Gyakorlati következmény: a „mit csinál a hajó" kérdés
+  <b>kizárólag a Class A flottára</b> válaszolható meg — ami viszont éppen a
+  kereskedelmi forgalom, tehát a lényeg.
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Mit csinálnak a Class A hajók?</p>
+  <p class="abra-alcim">A hajó által legtöbbször jelentett navigációs státusz,
+     715 hajóra. Kézzel beállított mező.</p>
+  <svg viewBox="0 0 820 318" width="100%" height="318" role="img" class="abra">
+<text class="a-cimke" x="224" y="14.5" text-anchor="end">Géppel úton</text>
+<path d="M232,3H782.7A4,4 0 0 1 786.7,7V14A4,4 0 0 1 782.7,18H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="793.7" y="14.5">499</text>
+<text class="a-cimke" x="224" y="40.5" text-anchor="end">Kikötve</text>
+<path d="M232,29H333.6A4,4 0 0 1 337.6,33V40A4,4 0 0 1 333.6,44H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="344.6" y="40.5">95</text>
+<text class="a-cimke" x="224" y="66.5" text-anchor="end">Halászik</text>
+<path d="M232,55H259.13A4,4 0 0 1 263.13,59V66A4,4 0 0 1 259.13,70H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="270.13" y="66.5">28</text>
+<text class="a-cimke" x="224" y="92.5" text-anchor="end">Vitorlával úton</text>
+<path d="M232,81H253.57A4,4 0 0 1 257.57,85V92A4,4 0 0 1 253.57,96H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="264.57" y="92.5">23</text>
+<text class="a-cimke" x="224" y="118.5" text-anchor="end">(nem jelentett)</text>
+<path d="M232,107H252.46A4,4 0 0 1 256.46,111V118A4,4 0 0 1 252.46,122H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="263.46" y="118.5">22</text>
+<text class="a-cimke" x="224" y="144.5" text-anchor="end">Horgonyon</text>
+<path d="M232,133H248.01A4,4 0 0 1 252.01,137V144A4,4 0 0 1 248.01,148H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="259.01" y="144.5">18</text>
+<text class="a-cimke" x="224" y="170.5" text-anchor="end">Korlátozott manőverképesség</text>
+<path d="M232,159H245.79A4,4 0 0 1 249.79,163V170A4,4 0 0 1 245.79,174H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="256.79" y="170.5">16</text>
+<text class="a-cimke" x="224" y="196.5" text-anchor="end">Merülése korlátozza</text>
+<path d="M232,185H236.89A4,4 0 0 1 240.89,189V196A4,4 0 0 1 236.89,200H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="247.89" y="196.5">8</text>
+<text class="a-cimke" x="224" y="222.5" text-anchor="end">(fenntartott kód, HSC)</text>
+<path d="M232,211H232A3.33,3.33 0 0 1 235.33,214.33V222.67A3.33,3.33 0 0 1 232,226H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="242.33" y="222.5">3</text>
+<text class="a-cimke" x="224" y="248.5" text-anchor="end">Hátul vontat</text>
+<path d="M232,237H232A1.11,1.11 0 0 1 233.11,238.11V250.89A1.11,1.11 0 0 1 232,252H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="240.11" y="248.5">1</text>
+<text class="a-cimke" x="224" y="274.5" text-anchor="end">Tol vagy oldalt vontat</text>
+<path d="M232,263H232A1.11,1.11 0 0 1 233.11,264.11V276.89A1.11,1.11 0 0 1 232,278H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="240.11" y="274.5">1</text>
+<text class="a-cimke" x="224" y="300.5" text-anchor="end">(fenntartott kód, WIG)</text>
+<path d="M232,289H232A1.11,1.11 0 0 1 233.11,290.11V302.89A1.11,1.11 0 0 1 232,304H232Z" fill="var(--sor-3)"/>
+<text class="a-ertek" x="240.11" y="300.5">1</text>
+</svg><details class="abra-tabla"><summary>Számok táblázatban</summary><table><thead><tr><th>Státusz (eredeti)</th><th>Magyarul</th><th>Hajó</th><th>Arány</th></tr></thead><tbody><tr><td>Under way using engine</td><td>Géppel úton</td><td>499</td><td>69,8%</td></tr><tr><td>Moored</td><td>Kikötve</td><td>95</td><td>13,3%</td></tr><tr><td>Engaged in fishing</td><td>Halászik</td><td>28</td><td>3,9%</td></tr><tr><td>Under way sailing</td><td>Vitorlával úton</td><td>23</td><td>3,2%</td></tr><tr><td>(nem jelentett)</td><td>(nem jelentett)</td><td>22</td><td>3,1%</td></tr><tr><td>At anchor</td><td>Horgonyon</td><td>18</td><td>2,5%</td></tr><tr><td>Restricted maneuverability</td><td>Korlátozott manőverképesség</td><td>16</td><td>2,2%</td></tr><tr><td>Constrained by her draught</td><td>Merülése korlátozza</td><td>8</td><td>1,1%</td></tr><tr><td>Reserved for future amendment [HSC]</td><td>(fenntartott kód, HSC)</td><td>3</td><td>0,4%</td></tr><tr><td>Power-driven vessel towing astern</td><td>Hátul vontat</td><td>1</td><td>0,1%</td></tr><tr><td>Power-driven vessel pushing ahead or towing alongside</td><td>Tol vagy oldalt vontat</td><td>1</td><td>0,1%</td></tr><tr><td>Reserved for future amendment [WIG]</td><td>(fenntartott kód, WIG)</td><td>1</td><td>0,1%</td></tr></tbody></table></details>
+</div>
+
+<h2>Forgalom napszak szerint</h2>
+
+<p>Az óránkénti hajószám a nap folyamán 1,63-szeresére nő és
+vissza. Ha viszont típusonként bontjuk, kiderül, hogy ezt az ingadozást
+gyakorlatilag <b>egyetlen kategória hajtja</b>.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Kedvtelési hajók óránként</p>
+  <p class="abra-alcim">Egyedi hajók száma, 2026-07-15. A görbe a világos
+     napszakot követi.</p>
+  <svg viewBox="0 0 820 270" width="100%" height="270" role="img" class="abra">
+<line x1="40" y1="240" x2="688" y2="240" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="243.5" text-anchor="end">0</text>
+<line x1="40" y1="183.5" x2="688" y2="183.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="187" text-anchor="end">750</text>
+<line x1="40" y1="127" x2="688" y2="127" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="130.5" text-anchor="end">1 500</text>
+<line x1="40" y1="70.5" x2="688" y2="70.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="74" text-anchor="end">2 250</text>
+<line x1="40" y1="14" x2="688" y2="14" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="17.5" text-anchor="end">3 000</text>
+<text class="a-tengely" x="40" y="258" text-anchor="middle">00</text>
+<text class="a-tengely" x="152.7" y="258" text-anchor="middle">04</text>
+<text class="a-tengely" x="265.39" y="258" text-anchor="middle">08</text>
+<text class="a-tengely" x="378.09" y="258" text-anchor="middle">12</text>
+<text class="a-tengely" x="490.78" y="258" text-anchor="middle">16</text>
+<text class="a-tengely" x="603.48" y="258" text-anchor="middle">20</text>
+<text class="a-tengely" x="688" y="258" text-anchor="middle">23</text>
+<text class="a-tengely" x="364" y="269" text-anchor="middle">óra</text>
+<text class="a-tengely" x="33" y="10" text-anchor="end">hajó</text>
+<polyline points="40,144.93 68.17,144.55 96.35,145.68 124.52,142.44 152.7,135.06 180.87,122.71 209.04,104.55 237.22,83.23 265.39,68.62 293.57,63.49 321.74,64.25 349.91,69.97 378.09,80.07 406.26,90.92 434.43,99.96 462.61,106.66 490.78,115.62 518.96,122.86 547.13,127.75 575.3,130.69 603.48,136.94 631.65,142.14 659.83,145.98 688,145.91" fill="none" stroke="var(--sor-5)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="a-vegcimke" x="697" y="149.41" fill="var(--sor-5)">Kedvtelési</text>
+</svg>
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Munkahajók óránként</p>
+  <p class="abra-alcim">Ugyanaz a nap, saját léptékkel — figyeld meg, hogy ezek
+     a görbék jóval laposabbak. (Külön ábra kell hozzá, mert a nagyságrend más;
+     közös tengelyen ezek a vonalak beleolvadnának az alapvonalba.)</p>
+  <svg viewBox="0 0 820 270" width="100%" height="270" role="img" class="abra">
+<line x1="40" y1="240" x2="688" y2="240" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="243.5" text-anchor="end">0</text>
+<line x1="40" y1="183.5" x2="688" y2="183.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="187" text-anchor="end">50</text>
+<line x1="40" y1="127" x2="688" y2="127" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="130.5" text-anchor="end">100</text>
+<line x1="40" y1="70.5" x2="688" y2="70.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="74" text-anchor="end">150</text>
+<line x1="40" y1="14" x2="688" y2="14" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="17.5" text-anchor="end">200</text>
+<text class="a-tengely" x="40" y="258" text-anchor="middle">00</text>
+<text class="a-tengely" x="152.7" y="258" text-anchor="middle">04</text>
+<text class="a-tengely" x="265.39" y="258" text-anchor="middle">08</text>
+<text class="a-tengely" x="378.09" y="258" text-anchor="middle">12</text>
+<text class="a-tengely" x="490.78" y="258" text-anchor="middle">16</text>
+<text class="a-tengely" x="603.48" y="258" text-anchor="middle">20</text>
+<text class="a-tengely" x="688" y="258" text-anchor="middle">23</text>
+<text class="a-tengely" x="364" y="269" text-anchor="middle">óra</text>
+<text class="a-tengely" x="33" y="10" text-anchor="end">hajó</text>
+<polyline points="40,70.5 68.17,76.15 96.35,73.89 124.52,70.5 152.7,71.63 180.87,68.24 209.04,65.98 237.22,54.68 265.39,60.33 293.57,67.11 321.74,65.98 349.91,67.11 378.09,56.94 406.26,60.33 434.43,56.94 462.61,56.94 490.78,52.42 518.96,54.68 547.13,54.68 575.3,51.29 603.48,61.46 631.65,73.89 659.83,71.63 688,72.76" fill="none" stroke="var(--sor-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,117.96 68.17,121.35 96.35,127 124.52,123.61 152.7,122.48 180.87,119.09 209.04,116.83 237.22,115.7 265.39,113.44 293.57,110.05 321.74,112.31 349.91,116.83 378.09,116.83 406.26,117.96 434.43,119.09 462.61,119.09 490.78,119.09 518.96,121.35 547.13,122.48 575.3,128.13 603.48,128.13 631.65,124.74 659.83,122.48 688,122.48" fill="none" stroke="var(--sor-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,94.23 68.17,95.36 96.35,96.49 124.52,95.36 152.7,94.23 180.87,89.71 209.04,88.58 237.22,89.71 265.39,90.84 293.57,88.58 321.74,84.06 349.91,88.58 378.09,89.71 406.26,89.71 434.43,88.58 462.61,89.71 490.78,87.45 518.96,87.45 547.13,85.19 575.3,85.19 603.48,88.58 631.65,89.71 659.83,91.97 688,93.1" fill="none" stroke="var(--sor-3)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,182.37 68.17,180.11 96.35,181.24 124.52,180.11 152.7,177.85 180.87,177.85 209.04,174.46 237.22,175.59 265.39,176.72 293.57,176.72 321.74,177.85 349.91,174.46 378.09,177.85 406.26,176.72 434.43,176.72 462.61,173.33 490.78,183.5 518.96,181.24 547.13,181.24 575.3,184.63 603.48,183.5 631.65,184.63 659.83,184.63 688,184.63" fill="none" stroke="var(--sor-4)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,72.76 68.17,75.02 96.35,76.15 124.52,77.28 152.7,70.5 180.87,63.72 209.04,63.72 237.22,67.11 265.39,46.77 293.57,47.9 321.74,53.55 349.91,63.72 378.09,62.59 406.26,58.07 434.43,67.11 462.61,63.72 490.78,63.72 518.96,62.59 547.13,68.24 575.3,64.85 603.48,65.98 631.65,71.63 659.83,75.02 688,77.28" fill="none" stroke="var(--sor-0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="a-vegcimke" x="697" y="76.26" fill="var(--sor-1)">Áruszállítás</text>
+<text class="a-vegcimke" x="697" y="89.26" fill="var(--sor-0)">Egyéb</text>
+<text class="a-vegcimke" x="697" y="102.26" fill="var(--sor-3)">Szolgálati</text>
+<text class="a-vegcimke" x="697" y="125.98" fill="var(--sor-2)">Személyszállító</text>
+<text class="a-vegcimke" x="697" y="188.13" fill="var(--sor-4)">Halászhajó</text>
+</svg><details class="abra-tabla"><summary>Óránkénti számok táblázatban</summary><table><thead><tr><th>Óra</th><th>Összes hajó</th><th>Üzenet</th><th>Kedvtelési</th><th>Áruszállítás</th><th>Személyszállító</th><th>Szolgálati</th><th>Halászhajó</th><th>Egyéb</th></tr></thead><tbody><tr><td>00</td><td>1 848</td><td>419 632</td><td>1 262</td><td>150</td><td>108</td><td>129</td><td>51</td><td>148</td></tr><tr><td>01</td><td>1 844</td><td>410 499</td><td>1 267</td><td>145</td><td>105</td><td>128</td><td>53</td><td>146</td></tr><tr><td>02</td><td>1 823</td><td>413 864</td><td>1 252</td><td>147</td><td>100</td><td>127</td><td>52</td><td>145</td></tr><tr><td>03</td><td>1 873</td><td>422 989</td><td>1 295</td><td>150</td><td>103</td><td>128</td><td>53</td><td>144</td></tr><tr><td>04</td><td>1 980</td><td>433 943</td><td>1 393</td><td>149</td><td>104</td><td>129</td><td>55</td><td>150</td></tr><tr><td>05</td><td>2 160</td><td>467 750</td><td>1 557</td><td>152</td><td>107</td><td>133</td><td>55</td><td>156</td></tr><tr><td>06</td><td>2 409</td><td>474 421</td><td>1 798</td><td>154</td><td>109</td><td>134</td><td>58</td><td>156</td></tr><tr><td>07</td><td>2 698</td><td>511 705</td><td>2 081</td><td>164</td><td>110</td><td>133</td><td>57</td><td>153</td></tr><tr><td>08</td><td>2 905</td><td>549 754</td><td>2 275</td><td>159</td><td>112</td><td>132</td><td>56</td><td>171</td></tr><tr><td>09</td><td>2 971</td><td>574 394</td><td>2 343</td><td>153</td><td>115</td><td>134</td><td>56</td><td>170</td></tr><tr><td>10</td><td>2 958</td><td>562 895</td><td>2 333</td><td>154</td><td>113</td><td>138</td><td>55</td><td>165</td></tr><tr><td>11</td><td>2 867</td><td>558 224</td><td>2 257</td><td>153</td><td>109</td><td>134</td><td>58</td><td>156</td></tr><tr><td>12</td><td>2 739</td><td>551 351</td><td>2 123</td><td>162</td><td>109</td><td>133</td><td>55</td><td>157</td></tr><tr><td>13</td><td>2 596</td><td>524 639</td><td>1 979</td><td>159</td><td>108</td><td>133</td><td>56</td><td>161</td></tr><tr><td>14</td><td>2 471</td><td>488 238</td><td>1 859</td><td>162</td><td>107</td><td>134</td><td>56</td><td>153</td></tr><tr><td>15</td><td>2 387</td><td>466 066</td><td>1 770</td><td>162</td><td>107</td><td>133</td><td>59</td><td>156</td></tr><tr><td>16</td><td>2 265</td><td>422 632</td><td>1 651</td><td>166</td><td>107</td><td>135</td><td>50</td><td>156</td></tr><tr><td>17</td><td>2 168</td><td>396 644</td><td>1 555</td><td>164</td><td>105</td><td>135</td><td>52</td><td>157</td></tr><tr><td>18</td><td>2 099</td><td>389 594</td><td>1 490</td><td>164</td><td>104</td><td>137</td><td>52</td><td>152</td></tr><tr><td>19</td><td>2 058</td><td>384 003</td><td>1 451</td><td>167</td><td>99</td><td>137</td><td>49</td><td>155</td></tr><tr><td>20</td><td>1 963</td><td>375 995</td><td>1 368</td><td>158</td><td>99</td><td>134</td><td>50</td><td>154</td></tr><tr><td>21</td><td>1 879</td><td>359 868</td><td>1 299</td><td>147</td><td>102</td><td>133</td><td>49</td><td>149</td></tr><tr><td>22</td><td>1 827</td><td>342 405</td><td>1 248</td><td>149</td><td>104</td><td>131</td><td>49</td><td>146</td></tr><tr><td>23</td><td>1 824</td><td>358 716</td><td>1 249</td><td>148</td><td>104</td><td>130</td><td>49</td><td>144</td></tr></tbody></table></details>
+</div>
+
+<div class="jelzes">
+  <b>Ez érinti a csatornalezárás vizsgálatát.</b> A forgalmi hipotézist
+  óránkénti <i>összes</i> egyedi hajószámon mértük — ezt a mérőszámot viszont
+  a kedvtelési hajózás uralja, ami időjárás- és napszakfüggő. Egy
+  csatornalezárás ellenben a <b>kereskedelmi átmenő forgalmat</b> terelné el,
+  ami itt alig 304 hajó. Vagyis a használt mérőszám nagyrészt olyan
+  hajókat számolt, amikre a lezárásnak semmi hatása. Ez jó magyarázat a mért
+  ±13,6%-os napi zajra, és arra, hogy a hatás miért nem vált ki belőle.
+</div>
 
 <h2>Főbb mérési eredmények</h2>
 
@@ -151,14 +411,15 @@ munkanapló. A dolgozat szövegét nem tartalmazza.</p>
 
 <h2>Adatminőség</h2>
 
-<p>A forrásadatban három, egymástól független hibatípust találtunk:</p>
+<p>A forrásadatban több, egymástól független hibatípust találtunk:</p>
 <ul>
   <li>egy teljes óra adathiánya 2026-07-08-án (vételi vagy naplózási kiesés, nem valódi forgalom);</li>
   <li>ellentmondó statikus mezők — a hajók 6,2%-a változó <code>Type of mobile</code> értéket jelentett, ami nem lehetséges;</li>
-  <li>a sorok <b>1,58%-a</b> használhatatlan pozíciójú: 0,24% az AIS „pozíció nem elérhető" jelzőértéke (<code>lat = 91,0</code>), 1,34% érvényes tartományú, de földrajzilag képtelen koordináta.</li>
+  <li>a sorok <b>1,58%-a</b> használhatatlan pozíciójú: 0,24% az AIS „pozíció nem elérhető" jelzőértéke (<code>lat = 91,0</code>), 1,34% érvényes tartományú, de földrajzilag képtelen koordináta;</li>
+  <li><b>33 azonosító nem is hajó</b>: navigációs jelzők (bóják), parti bázisállomások és mentő-jeladók, amelyek szintén MMSI-vel sugároznak. A „hány hajó" típusú számokból ezeket le kell vonni.</li>
 </ul>
-<p>Ezek az eddigi elemzést nem rontották el, mert a bounding box szűrés
-mindkettőt kizárja — de ez szerencse, nem tervezés, és a dolgozat így is mondja ki.</p>
+<p>Az első három az eddigi elemzést nem rontotta el, mert a bounding box szűrés
+kizárja őket — de ez szerencse, nem tervezés, és a dolgozat így is mondja ki.</p>
 
 <h2>Dokumentáció</h2>
 
@@ -175,7 +436,7 @@ mindkettőt kizárja — de ez szerencse, nem tervezés, és a dolgozat így is 
 <h2>Ami még nincs kész</h2>
 <ul>
   <li>Az <b>időzóna</b> (UTC vagy helyi) nem tisztázott — ez minden olyan állítást érint, ami a lezárás <i>időzítésére</i> hivatkozik.</li>
-  <li>A <b>kapuvonal-átlépés</b> metrika hiányzik; a Kiel-kérdéshez ez lenne a megfelelő mérőszám, nem az egyedi hajó/óra.</li>
+  <li>A <b>kapuvonal-átlépés</b> metrika hiányzik; a Kiel-kérdéshez ez lenne a megfelelő mérőszám, ráadásul <b>csak a kereskedelmi hajókra</b> szűrve.</li>
   <li>Több <b>kontrollnap</b> kell a zajszint rendes becsléséhez.</li>
   <li>A tárolási benchmark <b>egyetlen futás</b>, ismétlés nélkül — a számok előzetesek.</li>
   <li><b>H3 és Spark</b> még érintetlen.</li>
@@ -184,7 +445,8 @@ mindkettőt kizárja — de ez szerencse, nem tervezés, és a dolgozat így is 
 <footer>
   Az AIS-adat a dán AIS-szolgáltatás publikus napi fájljaiból származik.
   A térkép a mért pozíciókból készült; 10 perces rácsra interpolálva, ami
-  megjelenítési döntés — az elemzés a nyers adaton fut.
+  megjelenítési döntés — az elemzés a nyers adaton fut. A statisztikák
+  a(z) 2026-07-15 napra vonatkoznak, a bounding boxon belül.
 </footer>
 
 </div>

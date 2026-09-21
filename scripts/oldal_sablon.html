@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dán szorosok – AIS</title>
+<meta name="description" content="BSc szakdolgozat munkaanyaga: nagy AIS hajóforgalmi adathalmaz tárolása és feldolgozása.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --ground:   #f2f0ea;
+    --panel:    #fbfaf6;
+    --ink:      #16232d;
+    --ink-2:    #55646f;
+    --ink-3:    #8a97a1;
+    --line:     #d3dbe1;
+    --accent:   #0f6f8c;
+    --jel-int:  #8a5a10;
+    /* Diagramszinek. Szinlatas-zavarra es kontrasztra ellenorizve, szomszedos parokon,
+       a panel feluletehez (#fbfaf6) merve: minden ellenorzes atment.
+       A --sor-0 semleges, NEM identitas-szin: az "egyeb" kategoria kapja. */
+    --sor-1: #2a78d6;
+    --sor-2: #eb6834;
+    --sor-3: #1baf7a;
+    --sor-4: #eda100;
+    --sor-5: #e87ba4;
+    --sor-0: #8a97a1;
+    --racs:  rgba(22,35,45,0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #070d13;  --panel: #0d151d;  --ink: #d8e6ef;
+      --ink-2: #8395a2;   --ink-3: #5d6d7a;  --line: #1c2833;
+      --accent: #3fb9dc;  --jel-int: #d9a441;
+      --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+      --sor-4: #c98500; --sor-5: #d55181; --sor-0: #5d6d7a;
+      --racs: rgba(216,230,239,0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #070d13;  --panel: #0d151d;  --ink: #d8e6ef;
+    --ink-2: #8395a2;   --ink-3: #5d6d7a;  --line: #1c2833;
+    --accent: #3fb9dc;  --jel-int: #d9a441;
+    --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+    --sor-4: #c98500; --sor-5: #d55181; --sor-0: #5d6d7a;
+    --racs: rgba(216,230,239,0.12);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+  }
+  .lap { max-width: 860px; margin: 0 auto; padding: 40px 16px 72px; }
+
+  header { border-bottom: 1px solid var(--line); padding-bottom: 22px; margin-bottom: 30px; }
+  h1 { font-size: clamp(21px, 4.2vw, 28px); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .alcim { color: var(--ink-2); font-size: 15px; margin: 0; }
+  .meta { margin-top: 14px; font-family: "IBM Plex Mono", ui-monospace, monospace;
+          font-size: 12px; color: var(--ink-3); }
+
+  h2 { font-size: 16px; font-weight: 600; margin: 40px 0 14px;
+       padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+  h3 { font-size: 13.5px; font-weight: 600; margin: 24px 0 9px; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+
+  .cta {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--panel); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px; padding: 18px 20px; margin: 4px 0 8px;
+  }
+  .cta:hover { border-color: var(--accent); }
+  .cta b { display: block; font-size: 16px; font-weight: 600; margin-bottom: 3px; }
+  .cta span { color: var(--ink-2); font-size: 14px; }
+
+  .racs { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .kartya { background: var(--panel); border: 1px solid var(--line);
+            border-radius: 3px; padding: 14px 15px; }
+  .szam { font-family: "IBM Plex Mono", ui-monospace, monospace;
+          font-size: 21px; font-weight: 500; letter-spacing: -0.02em; display: block; }
+  .cimke { color: var(--ink-2); font-size: 13px; margin-top: 3px; display: block; }
+
+  /* --- Diagramok --- */
+  .abra-doboz { background: var(--panel); border: 1px solid var(--line);
+                border-radius: 3px; padding: 15px 16px 12px; margin: 0 0 16px; }
+  .abra-cim { font-size: 13.5px; font-weight: 600; margin: 0 0 2px; }
+  .abra-alcim { font-size: 12.5px; color: var(--ink-2); margin: 0 0 12px; }
+  .abra { display: block; overflow: visible; }
+  .abra text { font-family: "IBM Plex Sans", system-ui, sans-serif; }
+  /* A szoveg mindig szovegszint hord, sosem a sorozat szinet - kiveve a
+     kozvetlen vegcimket, ami maga az azonositas hordozoja. */
+  .a-cimke   { font-size: 11.5px; fill: var(--ink-2); }
+  .a-ertek   { font-size: 11.5px; fill: var(--ink-3);
+               font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .a-tengely { font-size: 10.5px; fill: var(--ink-3);
+               font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .a-vegcimke{ font-size: 11.5px; font-weight: 500; }
+
+  .parosabra { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 620px) { .parosabra { grid-template-columns: 1fr; } }
+
+  .abra-tabla { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+  .abra-tabla summary { font-size: 12px; color: var(--ink-3); cursor: pointer; }
+  .abra-tabla table { width: 100%; border-collapse: collapse; margin-top: 9px;
+                      font-size: 12px; }
+  .abra-tabla th { text-align: left; font-weight: 500; color: var(--ink-3);
+                   border-bottom: 1px solid var(--line); padding: 4px 6px 4px 0; }
+  .abra-tabla td { padding: 3px 6px 3px 0; border-bottom: 1px solid var(--line);
+                   font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .abra-tabla td:first-child { font-family: inherit; color: var(--ink-2); }
+
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 7px; }
+
+  .jelzes { border-left: 3px solid var(--jel-int); background: var(--panel);
+            padding: 13px 16px; border-radius: 0 3px 3px 0; margin: 0 0 16px;
+            font-size: 14px; color: var(--ink-2); }
+  .jelzes b { color: var(--ink); }
+
+  code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.9em;
+         background: var(--ground); border: 1px solid var(--line);
+         border-radius: 2px; padding: 1px 5px; }
+
+  figure { margin: 0 0 18px; }
+  figure img { width: 100%; height: auto; display: block;
+               border: 1px solid var(--line); border-radius: 3px; background: #fff; }
+  figcaption { color: var(--ink-2); font-size: 13px; margin-top: 7px; }
+
+  footer { margin-top: 46px; padding-top: 18px; border-top: 1px solid var(--line);
+           color: var(--ink-3); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="lap">
+
+<header>
+  <h1>Nagy AIS-adathalmaz tárolása és feldolgozása</h1>
+  <p class="alcim">BSc szakdolgozat munkaanyaga — Budapesti Corvinus Egyetem, gazdaságinformatika</p>
+  <p class="meta">Vizsgált terület: dán szorosok, 54,5–56,5° É / 10,0–13,0° K · Adatforrás: dán AIS, napi ~36,6 millió sor</p>
+</header>
+
+<p>Ez az oldal a munka <b>futtatható részének</b> a kimenete: kód, mérések és
+munkanapló. A dolgozat szövegét nem tartalmazza.</p>
+
+<h2>Interaktív térkép</h2>
+
+<a class="cta" href="terkep.html">
+  <b>Hajóforgalom időcsúszkával →</b>
+  <span>2026-07-15, 4138 hajó egy napja. A csúszkával végigléptethető a nap,
+  a hajók típus szerint színezve. A jelmagyarázatban bármelyik típusra rá lehet
+  szűrni; hajóra kattintva előjön az adatlapja és a teljes napi útvonala.</span>
+</a>
+<p class="meta">Kb. 2,8 MB, böngészőben fut, telepítés nélkül. Mobilon is megnyílik, de nagy képernyőn használható igazán.</p>
+
+<h2>Mi van a vízen?</h2>
+
+<p>Egyetlen nap alatt <!--HAJO_DB--> különböző hajó fordult meg a vizsgált
+területen. A megoszlásuk viszont attól függ, <b>mit számolunk</b> — és a két
+lehetséges válasz gyökeresen eltér.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Hajótípusok két mértékegységben</p>
+  <p class="abra-alcim">Ugyanaz a nap, ugyanazok a hajók. Balra: hány különböző hajó.
+     Jobbra: hány AIS-üzenet érkezett tőlük.</p>
+  <!--TIPUS_SAVOK-->
+</div>
+
+<div class="jelzes">
+  <b>A kedvtelési hajók adják a hajók <!--KEDV_HAJO_SZAZ-->-át, de az üzenetek
+  csak <!--KEDV_UZENET_SZAZ-->-át.</b> A teherhajóknál fordított a helyzet.
+  Az ok: a nagy kereskedelmi hajók másodpercenként sugároznak, a kis
+  szabadidős hajók jóval ritkábban. <b>Ezért az „üzenetek hány százaléka ilyen"
+  típusú statisztika félrevezet</b> — a valódi hajómegoszlást csak egyedi
+  hajókat számolva kapjuk meg.
+</div>
+
+<h2>Miért vannak a vízen?</h2>
+
+<p>Erre a kérdésre az AIS <code>Navigational status</code> mezője válaszolna —
+de csak a hajók egy részénél. Az AIS ugyanis kétféle jeladót ismer, és a
+kettő nem ugyanazt sugározza.</p>
+
+<div class="racs">
+  <!--OSZTALY_KARTYAK-->
+</div>
+
+<div class="jelzes" style="margin-top:16px">
+  <b>A Class B jeladók pozícióüzenete nem tartalmaz navigációs státuszmezőt.</b>
+  Ezért nem adathiba, hogy a hajók többségénél nincs státusz: a szabvány nem is
+  kéri tőlük. Gyakorlati következmény: a „mit csinál a hajó" kérdés
+  <b>kizárólag a Class A flottára</b> válaszolható meg — ami viszont éppen a
+  kereskedelmi forgalom, tehát a lényeg.
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Mit csinálnak a Class A hajók?</p>
+  <p class="abra-alcim">A hajó által legtöbbször jelentett navigációs státusz,
+     <!--CLASS_A_DB--> hajóra. Kézzel beállított mező.</p>
+  <!--STATUSZ_SAVOK-->
+</div>
+
+<h2>Forgalom napszak szerint</h2>
+
+<p>Az óránkénti hajószám a nap folyamán <!--NAPI_INGADOZAS-->-szeresére nő és
+vissza. Ha viszont típusonként bontjuk, kiderül, hogy ezt az ingadozást
+gyakorlatilag <b>egyetlen kategória hajtja</b>.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Kedvtelési hajók óránként</p>
+  <p class="abra-alcim">Egyedi hajók száma, 2026-07-15. A görbe a világos
+     napszakot követi.</p>
+  <!--ORA_KEDV-->
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Munkahajók óránként</p>
+  <p class="abra-alcim">Ugyanaz a nap, saját léptékkel — figyeld meg, hogy ezek
+     a görbék jóval laposabbak. (Külön ábra kell hozzá, mert a nagyságrend más;
+     közös tengelyen ezek a vonalak beleolvadnának az alapvonalba.)</p>
+  <!--ORA_MUNKA-->
+</div>
+
+<div class="jelzes">
+  <b>Ez érinti a csatornalezárás vizsgálatát.</b> A forgalmi hipotézist
+  óránkénti <i>összes</i> egyedi hajószámon mértük — ezt a mérőszámot viszont
+  a kedvtelési hajózás uralja, ami időjárás- és napszakfüggő. Egy
+  csatornalezárás ellenben a <b>kereskedelmi átmenő forgalmat</b> terelné el,
+  ami itt alig <!--ARU_DB--> hajó. Vagyis a használt mérőszám nagyrészt olyan
+  hajókat számolt, amikre a lezárásnak semmi hatása. Ez jó magyarázat a mért
+  ±13,6%-os napi zajra, és arra, hogy a hatás miért nem vált ki belőle.
+</div>
+
+<h2>Főbb mérési eredmények</h2>
+
+<div class="racs">
+  <div class="kartya"><span class="szam">~17%</span><span class="cimke">Parquet mérete a nyers CSV-hez képest</span></div>
+  <div class="kartya"><span class="szam">50–150×</span><span class="cimke">lekérdezési gyorsulás oszlopos tárolással</span></div>
+  <div class="kartya"><span class="szam">6,39×</span><span class="cimke">további tömörítés dead reckoninggal, 50 m garantált hibakorláttal</span></div>
+  <div class="kartya"><span class="szam">0,42%</span><span class="cimke">az ebből fakadó torzítás az óránkénti hajószámban</span></div>
+  <div class="kartya"><span class="szam">1,58%</span><span class="cimke">a forrás sorainak használhatatlan a pozíciója</span></div>
+  <div class="kartya"><span class="szam">10,1%</span><span class="cimke">a hajóknak van valódi kikötőre feloldható úticélja</span></div>
+</div>
+
+<h2>A forgalmi hipotézis — nem igazolt</h2>
+
+<div class="jelzes">
+  <b>A Kiel-csatorna lezárásának hatása a mérések alapján nem igazolható.</b>
+  Az eredetileg mért ~2× különbség nagy része évszak- és hétnap-hatás volt: a
+  referencianap szombat volt, a lezárási napok szerda és csütörtök. Azonos
+  hétnapú kontrollnapokhoz mérve <b>+20,2%</b> marad, miközben két rendes
+  kontrollnap között is <b>±13,6%</b> az ingadozás. A csütörtöki +12,3% tehát a
+  zajszint alatt van. Ez negatív eredmény, és így is szerepel a dolgozatban.
+</div>
+
+<figure>
+  <img src="abrak/forgalmi_profil.png" alt="Óránkénti egyedi hajószám öt vizsgált napon, a lezárási és a kontrollnapok külön jelölve">
+  <figcaption>Óránkénti egyedi hajószám a bounding boxban, öt napon. A 07-08-i
+  11. óra adathiányos (1084 hajó a szokásos ~2020 helyett), ezért minden
+  napból kihagyva — interpoláció nélkül.</figcaption>
+</figure>
+
+<figure>
+  <img src="abrak/tomorites_tradeoff.png" alt="Fájlméret a dead reckoning hibakorlát függvényében, logaritmikus tengelyen">
+  <figcaption>A trajektória-tömörítés méret/pontosság átváltása. A görbe gyorsan
+  telítődik: a pontok ~16%-a kötelező horgony, ezeket semmilyen küszöb nem dobja el.</figcaption>
+</figure>
+
+<h2>Adatminőség</h2>
+
+<p>A forrásadatban több, egymástól független hibatípust találtunk:</p>
+<ul>
+  <li>egy teljes óra adathiánya 2026-07-08-án (vételi vagy naplózási kiesés, nem valódi forgalom);</li>
+  <li>ellentmondó statikus mezők — a hajók 6,2%-a változó <code>Type of mobile</code> értéket jelentett, ami nem lehetséges;</li>
+  <li>a sorok <b>1,58%-a</b> használhatatlan pozíciójú: 0,24% az AIS „pozíció nem elérhető" jelzőértéke (<code>lat = 91,0</code>), 1,34% érvényes tartományú, de földrajzilag képtelen koordináta;</li>
+  <li><b><!--NEM_HAJO_DB--> azonosító nem is hajó</b>: navigációs jelzők (bóják), parti bázisállomások és mentő-jeladók, amelyek szintén MMSI-vel sugároznak. A „hány hajó" típusú számokból ezeket le kell vonni.</li>
+</ul>
+<p>Az első három az eddigi elemzést nem rontotta el, mert a bounding box szűrés
+kizárja őket — de ez szerencse, nem tervezés, és a dolgozat így is mondja ki.</p>
+
+<h2>Dokumentáció</h2>
+
+<p>Minden szám mellett ott van, melyik szkript, milyen paraméterrel, mikor
+állította elő. A zsákutcák és a visszavont állítások is szerepelnek.</p>
+
+<ul>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/szamok.md"><b>szamok.md</b></a> — minden validált szám forrással; a megváltozott számok áthúzva, indoklással</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/naplo.md"><b>naplo.md</b></a> — munkanapló: mit futtattam, mi jött ki, mi nem működött</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat/blob/main/README.md"><b>README.md</b></a> — a teljes feldolgozási lánc, újrafuttatható parancsokkal</li>
+  <li><a href="https://github.com/BallaAttila04/szakdolgozat">a repó</a> — a szkriptek</li>
+</ul>
+
+<h2>Ami még nincs kész</h2>
+<ul>
+  <li>Az <b>időzóna</b> (UTC vagy helyi) nem tisztázott — ez minden olyan állítást érint, ami a lezárás <i>időzítésére</i> hivatkozik.</li>
+  <li>A <b>kapuvonal-átlépés</b> metrika hiányzik; a Kiel-kérdéshez ez lenne a megfelelő mérőszám, ráadásul <b>csak a kereskedelmi hajókra</b> szűrve.</li>
+  <li>Több <b>kontrollnap</b> kell a zajszint rendes becsléséhez.</li>
+  <li>A tárolási benchmark <b>egyetlen futás</b>, ismétlés nélkül — a számok előzetesek.</li>
+  <li><b>H3 és Spark</b> még érintetlen.</li>
+</ul>
+
+<footer>
+  Az AIS-adat a dán AIS-szolgáltatás publikus napi fájljaiból származik.
+  A térkép a mért pozíciókból készült; 10 perces rácsra interpolálva, ami
+  megjelenítési döntés — az elemzés a nyers adaton fut. A statisztikák
+  a(z) <!--NAP--> napra vonatkoznak, a bounding boxon belül.
+</footer>
+
+</div>
+</body>
+</html>

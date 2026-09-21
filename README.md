@@ -14,12 +14,14 @@ data/                     nyers, letöltött AIS ZIP-ek (nincs verziózva, ~1 GB
 scripts/                  minden futtatható szkript
   utak.py                 közös útvonalak – minden szkript ezt használja
   terkep_sablon.html      az interaktív térkép HTML-sablonja
+  oldal_sablon.html       a publikus nyitólap sablonja (helyőrzőkkel)
+  abrak_svg.py            beágyazott SVG-diagramok generálása
+  teszt_terkep.mjs        a térkép JS-logikájának tesztje (node)
 outputs/                  ábrák, táblázatok, köztes fájlok
   logs/                   futtatási naplók (nincs verziózva)
   tomorites_parquet/      származtatott Parquet fájlok (nincs verziózva)
-docs/                     a GitHub Pages által kiszolgált oldal
-  index.html              nyitólap (forráskód, kézzel karbantartott)
-  terkep.html             az interaktív térkép másolata (oldal_epit.py másolja)
+docs/                     a GitHub Pages által kiszolgált oldal – GENERÁLT,
+                          ne szerkeszd kézzel, az oldal_epit.py felülírja
 szamok.md                 minden validált szám, forrással és dátummal
 ```
 
@@ -72,9 +74,22 @@ python scripts/terkep_epit.py
 # 7. Úticél feloldása valódi kikötőkre UN/LOCODE-dal
 python scripts/kikoto_feloldas.py data/aisdk-2026-07-15.zip --csak-bbox
 
-# 8. A publikus oldal összeállítása a docs/ mappába
+# 8. Hajótípus- és tevékenység-statisztika (a nyitólap diagramjaihoz)
+python scripts/hajo_statisztika.py data/aisdk-2026-07-15.zip
+
+# 9. A publikus oldal összeállítása a docs/ mappába
 python scripts/oldal_epit.py
 ```
+
+## Tesztek
+
+```bash
+node scripts/teszt_terkep.mjs     # a térkép színezés- és szűrőlogikája
+```
+
+A térkép JavaScriptjét DOM-csonkon futtatja, valódi böngésző nélkül. 22
+állítást ellenőriz: a csoportszínezést, a jelmagyarázat felépítését, a
+szűrést és a mód váltását.
 
 ## Megnyitható változat
 
@@ -106,6 +121,16 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető útta
 - **Adatminőség:** a forrás sorainak **1,58%-a** használhatatlan pozíciójú
   (0,24% az AIS „pozíció nem elérhető" jelzőértéke `lat = 91,0` formában,
   1,34% érvényes tartományú, de földrajzilag képtelen pozíció).
+- **Mi van a vízen:** a hajók **77,3%-a kedvtelési**, de az üzeneteknek csak
+  27,9%-a jön tőlük; a teherhajók 5,7%-a adja az üzenetek 19,1%-át. Az
+  üzenetszintű megoszlás tehát **nem** a hajómegoszlás.
+- **Napszaki ingadozás:** az óránkénti összes hajószám 1,63-szeresére nő
+  napközben, de ezt **majdnem teljesen a kedvtelési hajózás hajtja**
+  (1248→2343, ×1,88), míg a teherhajóké gyakorlatilag lapos (115→141, ×1,23).
+  Ez magyarázza a forgalmi hipotézisnél mért ±13,6%-os napi zajt.
+- **AIS-osztály:** a hajók 81,9%-a Class B jeladó, ami **nem sugároz
+  navigációs státuszt** – ezért a „mit csinál a hajó" kérdés csak a Class A
+  flottára (17,3%, 715 hajó) válaszolható meg.
 - **Úticél-feloldás (UN/LOCODE):** üzenetszinten a sorok **65,5%-ában** van
   érdemi úticél, hajószinten viszont a 4138 hajóból csak **15,4%** jelent
   ilyet, és mindössze **10,1%** oldható fel valódi kikötőre. Az AIS statikus
@@ -121,3 +146,5 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben, a hozzájuk vezető útta
 ```
 pandas  numpy  matplotlib  requests  duckdb  pyarrow
 ```
+
+A teszt futtatásához `node` is kell (a térkép logikája JavaScript).

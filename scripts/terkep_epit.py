@@ -20,8 +20,29 @@ import json
 from pathlib import Path
 
 from utak import KIMENET, SABLONOK
+from hajo_statisztika import csoport as stat_csoport
 
 HELYORZO = "/*ADATHELY*/"
+
+# A terkep megjelenitesi csoportjai. Az elso HAROM kap sajat szint - ennyi az,
+# ami minden szinparon megfelel vilagos es sotet feluleten is
+# (negyedik szin mar nem: se a CVD-, se a normal latasi kuszobot nem hozza).
+# A tobbi csoport semleges szurke, es a jelmagyarazatbol szurheto ki egyesevel.
+# A csoportnevek a hajo_statisztika.py CSOPORTOK ertekeibol jonnek.
+TERKEP_CSOPORTOK = [
+    ("Áruszállítás",       ["Teherhajó", "Tanker"]),          # sajat szin
+    ("Személyszállítás",   ["Személyszállító"]),              # sajat szin
+    ("Kedvtelési",         ["Kedvtelési"]),                   # sajat szin
+    ("Halászat",           ["Halászhajó"]),                   # semleges
+    ("Szolgálati",         ["Szolgálati"]),                   # semleges
+    ("Egyéb / ismeretlen", ["Egyéb / ismeretlen"]),           # semleges
+]
+SAJAT_SZINU = 3
+
+# stat-csoportnev -> terkep-csoport indexe
+STAT_INDEX = {stat_nev: i
+              for i, (_, stat_nevek) in enumerate(TERKEP_CSOPORTOK)
+              for stat_nev in stat_nevek}
 
 
 def main():
@@ -45,6 +66,22 @@ def main():
     else:
         print(f"  FIGYELEM: {hajo_path} nem letezik - a lap hajoadatok nelkul epul")
         adat["info"] = {}
+
+    # --- Hajonkenti terkep-csoport (szinezeshez es szureshez) ---
+    ismeretlen_idx = len(TERKEP_CSOPORTOK) - 1
+    db = [0] * len(TERKEP_CSOPORTOK)
+    for h in adat["hajok"]:
+        rek = adat["info"].get(str(h["m"]), {})
+        g = STAT_INDEX.get(stat_csoport(rek.get("Ship type", "")), ismeretlen_idx)
+        h["g"] = g
+        db[g] += 1
+
+    adat["csoportok"] = [{"nev": nev, "db": db[i], "sajat_szin": i < SAJAT_SZINU}
+                         for i, (nev, _) in enumerate(TERKEP_CSOPORTOK)]
+    print("  terkep-csoportok:")
+    for i, (nev, _) in enumerate(TERKEP_CSOPORTOK):
+        jel = "szin" if i < SAJAT_SZINU else "szurke"
+        print(f"    {nev:<20} {db[i]:>5} hajo  ({jel})")
 
     sablon = Path(args.sablon).read_text(encoding="utf-8")
     if HELYORZO not in sablon:

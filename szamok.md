@@ -291,3 +291,121 @@ USA-ba tartó tengeri importot fedi — a dán szorosok Balti-tenger ↔ Északi
 tenger forgalmával gyakorlatilag nulla átfedésben. Az EU-ban nincs nyilvános
 manifeszt. A `Cargo type` oszlop **nem rakomány**, hanem IMO szerinti
 szennyezési veszélykategória (X/Y/Z/OS), és csak töredékesen kitöltött.
+
+## Hajótípus és tevékenység (2026-07-15, bounding box)
+
+Forrás: `hajo_statisztika.py data/aisdk-2026-07-15.zip`, kimenet
+`outputs/hajo_statisztika.json` és `.csv`, lefuttatva 2026-09-21
+(ld. `naplo.md`, 2026-09-21-es bejegyzés). A hajónkénti típus és státusz a
+hajó által **legtöbbször jelentett** érték (a statikus mezőket kézzel
+állítják, ezért egy hajó többfélét is jelenthet: 2 hajó tett így).
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 4 138 | egyedi MMSI a bounding boxban | hajo_statisztika.py | 2026-09-21 |
+| 10 860 221 | üzenet a bounding boxban (29,6% a napi fájlból) | hajo_statisztika.py | 2026-09-21 |
+| 141 (3,4%) | hajó, amely nem jelentett hajótípust | hajo_statisztika.py | 2026-09-21 |
+
+Típusmegoszlás — **a két mértékegység szándékosan egymás mellett**:
+
+| csoport | hajó | hajó % | üzenet | üzenet % |
+|---|---|---|---|---|
+| Kedvtelési (vitorlás + sport) | 3 200 | **77,3%** | 3 026 786 | **27,9%** |
+| Egyéb / ismeretlen | 278 | 6,7% | 1 489 125 | 13,7% |
+| Teherhajó | 237 | **5,7%** | 2 076 260 | **19,1%** |
+| Szolgálati (vontató, révkalauz, mentő…) | 158 | 3,8% | 1 434 159 | 13,2% |
+| Személyszállító | 133 | 3,2% | 1 503 005 | 13,8% |
+| Tanker | 67 | 1,6% | 675 232 | 6,2% |
+| Halászhajó | 65 | 1,6% | 655 654 | 6,0% |
+
+**Az üzenetszintű megoszlás NEM a hajómegoszlás.** A kedvtelési hajók a hajók
+77,3%-át adják, de az üzenetek 27,9%-át; a teherhajóknál fordított az arány
+(5,7% vs 19,1%). Oka: a Class A jeladók másodperces nagyságrendben sugároznak,
+a Class B-k jóval ritkábban. Ugyanez a csapda jött elő az úticél-feloldásnál
+(65,5% üzenetszinten vs 15,4% hajószinten) — **tehát rendszerszintű
+tulajdonság, nem egyedi eset.** A dolgozatban minden megoszlási arányt
+hajószinten kell jelenteni, és ki kell mondani, melyiket használjuk.
+
+### AIS-osztály (`Type of mobile`)
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 3 389 (81,9%) | **Class B** jeladó (kisebb és szabadidős hajók) | hajo_statisztika.py | 2026-09-21 |
+| 715 (17,3%) | **Class A** jeladó (kereskedelmi hajók kötelező jeladója) | hajo_statisztika.py | 2026-09-21 |
+| 693 / 715 (96,9%) | Class A hajó, amely jelentett navigációs státuszt | hajo_statisztika.py | 2026-09-21 |
+| 1 / 3 389 (0,0%) | Class B hajó, amely jelentett navigációs státuszt | hajo_statisztika.py | 2026-09-21 |
+| **33** | MMSI, amely **egyáltalán nem hajó**: 24 navigációs jelző (AtoN, bója), 8 parti bázisállomás, 1 mentő-jeladó | hajo_statisztika.py | 2026-09-21 |
+
+**A hiányzó státusz nem adathiba.** A Class B jeladók pozícióüzenete az
+AIS-szabvány szerint nem tartalmaz navigációs státuszmezőt — a 0,0% éppen ezt
+erősíti meg. Következmény: a „mit csinál a hajó" kérdés **csak a Class A
+flottára (17,3%) válaszolható meg** — ami viszont éppen a kereskedelmi
+forgalom, tehát az érdemi rész.
+
+**A 4 138 kb. 0,8%-kal felülszámolja a valódi hajókat**, mert 33 azonosító nem
+hajó. A korábbi számokat ez nem érvényteleníti (nagyságrendileg nem számít),
+de a dolgozatban ki kell mondani, hogy az „egyedi MMSI" és a „hajó" nem
+ugyanaz.
+
+### Class A navigációs státusz (715 hajó)
+
+| státusz | magyarul | hajó | arány |
+|---|---|---|---|
+| Under way using engine | Géppel úton | 499 | 69,8% |
+| Moored | Kikötve | 95 | 13,3% |
+| Engaged in fishing | Halászik | 28 | 3,9% |
+| Under way sailing | Vitorlával úton | 23 | 3,2% |
+| (nem jelentett) | – | 22 | 3,1% |
+| At anchor | Horgonyon | 18 | 2,5% |
+| Restricted maneuverability | Korlátozott manőverképesség | 16 | 2,2% |
+| Constrained by her draught | Merülése korlátozza | 8 | 1,1% |
+
+### Napszaki ingadozás — és ami ebből a Kiel-hipotézisre következik
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 1 824 → 2 971 (**×1,63**) | óránkénti **összes** egyedi hajószám min→max | hajo_statisztika.py | 2026-09-21 |
+| 1 248 → 2 343 (**×1,88**) | óránkénti **kedvtelési** hajószám min→max | hajo_statisztika.py | 2026-09-21 |
+| 115 → 141 (**×1,23**) | óránkénti **teherhajó**-szám min→max | hajo_statisztika.py | 2026-09-21 |
+| 99 → 115 (×1,16) | óránkénti személyszállító-szám min→max | hajo_statisztika.py | 2026-09-21 |
+| 304 | teher + tanker hajó összesen a 4 138-ból (**7,3%**) | hajo_statisztika.py | 2026-09-21 |
+
+**A napi forgalmi görbét majdnem teljesen a szabadidős hajózás hajtja.** A
+kereskedelmi hajók száma a nap 24 órájában gyakorlatilag állandó.
+
+**Ez a forgalmi hipotézis mérőszámát érinti.** A Kiel-lezárás hatását
+óránkénti **összes** egyedi hajószámon mértük (ld. fentebb, „Forgalmi
+kiértékelés"). Ezt a mérőszámot viszont a kedvtelési hajózás uralja, ami
+időjárás- és napszakfüggő, a csatornalezárásra pedig érzéketlen. A lezárás a
+kereskedelmi átmenő forgalmat terelné el — ami itt 304 hajó, a flotta 7,3%-a.
+**Valószínű magyarázat arra, miért volt ±13,6% a napi zaj, és miért nem
+emelkedik ki belőle a +20,2%-os hatás.**
+
+A fenti Kiel-számokat **ez nem érvényteleníti és nem írja felül** — azok
+pontosan azt mérik, amit mérnek. A helyes folytatás egy **kereskedelmi
+hajókra szűrt kapuvonal-metrika**, ami eddig is nyitott tétel volt; most
+konkrét indoklást kapott.
+
+**Korlát:** egyetlen nap (2026-07-15, július közepe). A napszaki mintázat
+erőssége csaknem biztosan évszakfüggő — egy téli napon a kedvtelési hajózás
+töredéke várható. Ezt **nem mértük**, tehát nem is állítjuk.
+
+### Színpaletta-validálás (módszertani melléklet)
+
+A térkép típusszíneit nem szemre választottuk. A színeket egy színlátás-zavart szimuláló ellenőrző szkripttel
+vizsgáltuk a térkép tényleges felületszíneire futtatva,
+**minden színpárra** (a térkép szórásdiagram jellegű, bármely két pont
+szomszédos lehet):
+
+| színek száma | világos (#e6ecf0) | sötét (#0b131b) |
+|---|---|---|
+| 7 | bukás (CVD ΔE 3,2; normál látás ΔE 12,9) | bukás (CVD ΔE 1,6; normál ΔE 9,8) |
+| 5 (6 kombináció) | mind bukás | mind bukás |
+| 4 (5 kombináció) | mind bukás | mind bukás |
+| **3** (kék+narancs+aqua) | **átmegy** | **átmegy** |
+
+Ezért a térképen **három kategória kap saját színt** (ezek fedik a hajók
+88%-át), a többi semleges szürkét, és a jelmagyarázat kattintható szűrő, hogy
+minden típus külön is megnézhető legyen. A weboldal vonaldiagramjai
+**szomszédos** párokon validálnak (ott a sorozatok nem keverednek térben), ott
+6 szín is átmegy mindkét témában.

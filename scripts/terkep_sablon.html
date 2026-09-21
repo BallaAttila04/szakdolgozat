@@ -19,6 +19,13 @@
     --v4: #145f7e;
     --v5: #06394f;
     --grid: rgba(22,35,45,0.07);
+    /* Hajotipus-szinek. Minden szinparon ellenorizve (szinlatas-zavar, kontraszt),
+       vilagos feluleten (#e6ecf0): 3 hue az, ami atmegy - negyedik nincs.
+       Ezert a tobbi tipus semleges szurke, es a jelmagyarazat szuro. */
+    --t1: #2a78d6;   /* aruszallitas */
+    --t2: #eb6834;   /* szemelyszallitas */
+    --t3: #1baf7a;   /* kedvtelesi */
+    --t0: #8a97a1;   /* egyeb - semleges, nem identitas-hue */
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -37,6 +44,10 @@
       --v4: #64d3f0;
       --v5: #aeeeff;
       --grid: rgba(216,230,239,0.06);
+      --t1: #3987e5;
+      --t2: #d95926;
+      --t3: #199e70;
+      --t0: #5d6d7a;
     }
   }
   :root[data-theme="dark"] {
@@ -55,6 +66,10 @@
     --v4: #64d3f0;
     --v5: #aeeeff;
     --grid: rgba(216,230,239,0.06);
+    --t1: #3987e5;
+    --t2: #d95926;
+    --t3: #199e70;
+    --t0: #5d6d7a;
   }
 
   html, body { height: 100%; }
@@ -105,7 +120,59 @@
     padding: 8px 10px;
     font-size: 11px;
     color: var(--ink-2);
-    pointer-events: none;
+    max-width: 190px;
+  }
+  .jm-mod {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 7px;
+  }
+  .jm-mod button {
+    flex: 1;
+    font: inherit;
+    font-size: 10px;
+    padding: 3px 6px;
+    color: var(--ink-2);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .jm-mod button[aria-pressed="true"] {
+    color: var(--panel);
+    background: var(--ink-2);
+    border-color: var(--ink-2);
+  }
+  .jm-sor {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 100%;
+    font: inherit;
+    font-size: 11px;
+    color: var(--ink-2);
+    background: transparent;
+    border: 0;
+    border-radius: 2px;
+    padding: 2px 4px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .jm-sor:hover { background: color-mix(in srgb, var(--ink-3) 14%, transparent); }
+  .jm-sor[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
+  .jm-sor .pont {
+    width: 9px; height: 9px; border-radius: 50%; flex: none;
+  }
+  .jm-sor .nev { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .jm-sor .db {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10px; color: var(--ink-3);
+  }
+  .jm-sor[aria-pressed="true"] .db { color: var(--ink-2); }
+  .jm-vissza {
+    margin-top: 5px; font-size: 10px; color: var(--accent);
+    background: transparent; border: 0; padding: 2px 4px; cursor: pointer;
+    font-family: inherit;
   }
   .jm-cimke {
     text-transform: uppercase;
@@ -299,12 +366,24 @@
 
 <div class="terkep-doboz">
   <canvas id="vaszon"></canvas>
-  <div class="jelmagyarazat">
-    <div class="jm-cimke">Sebesség</div>
-    <div class="jm-sav">
-      <i style="background:var(--v1)"></i><i style="background:var(--v2)"></i><i style="background:var(--v3)"></i><i style="background:var(--v4)"></i><i style="background:var(--v5)"></i>
+  <div class="jelmagyarazat" id="jelmagyarazat">
+    <div class="jm-mod" role="group" aria-label="Színezés módja">
+      <button type="button" id="mod-tipus" aria-pressed="true">Típus</button>
+      <button type="button" id="mod-seb" aria-pressed="false">Sebesség</button>
     </div>
-    <div class="jm-skala"><span>0</span><span>16+ cs</span></div>
+
+    <div id="jm-tipus">
+      <div class="jm-cimke">Hajótípus — kattints a szűréshez</div>
+      <div id="jm-sorok"></div>
+    </div>
+
+    <div id="jm-seb" hidden>
+      <div class="jm-cimke">Sebesség</div>
+      <div class="jm-sav">
+        <i style="background:var(--v1)"></i><i style="background:var(--v2)"></i><i style="background:var(--v3)"></i><i style="background:var(--v4)"></i><i style="background:var(--v5)"></i>
+      </div>
+      <div class="jm-skala"><span>0</span><span>16+ cs</span></div>
+    </div>
   </div>
   <div class="hp-sugo" id="sugo">Kattints egy hajóra</div>
   <div class="hajo-panel" id="panel" hidden>
@@ -327,7 +406,7 @@
     </div>
     <div class="mutato">
       <div class="mut-elem">
-        <span class="mut-cimke">Látható hajó</span>
+        <span class="mut-cimke" id="lathato-cimke">Látható hajó</span>
         <span class="mut-ertek" id="lathato">–</span>
       </div>
       <div class="mut-elem">
@@ -387,13 +466,52 @@ const ADAT = /*ADATHELY*/;
     `AIS, ${meta.nap} · 54,5–56,5° É / 10,0–13,0° K · ${meta.hajo_db.toLocaleString("hu")} hajó`;
 
   const stilus = () => getComputedStyle(document.documentElement);
-  let rampa = [], vizSzin = "#000", racsSzin = "#333";
+  let rampa = [], tipusSzin = [], semleges = "#888";
+  let vizSzin = "#000", racsSzin = "#333";
   function szinekFrissit() {
     const s = stilus();
     rampa = ["--v1", "--v2", "--v3", "--v4", "--v5"].map(v => s.getPropertyValue(v).trim());
+    tipusSzin = ["--t1", "--t2", "--t3"].map(v => s.getPropertyValue(v).trim());
+    semleges = s.getPropertyValue("--t0").trim();
     vizSzin = s.getPropertyValue("--water").trim();
     racsSzin = s.getPropertyValue("--grid").trim();
     hatterKesz = false;
+    if (csoportok.length) jelmagyarazatEpit();
+  }
+
+  // Szinezes modja és a tipusszuro. A szuro a jelmagyarazatbol allithato:
+  // identitast igy sosem kell kizarolag szinbol kiolvasni, ami azert kell,
+  // mert csak harom tipusnak jut sajat szin (ld. a CSS-beli megjegyzest).
+  const csoportok = ADAT.csoportok || [];
+  let mod = "tipus";        // "tipus" | "seb"
+  let szuro = null;         // null = mind, kulonben csoportindex
+
+  const csoportSzin = g => (g < tipusSzin.length ? tipusSzin[g] : semleges);
+
+  function jelmagyarazatEpit() {
+    const doboz = document.getElementById("jm-sorok");
+    if (!doboz) return;
+    doboz.innerHTML = csoportok.map((cs, i) =>
+      `<button type="button" class="jm-sor" data-g="${i}" ` +
+      `aria-pressed="${szuro === i ? "true" : "false"}">` +
+      `<span class="pont" style="background:${csoportSzin(i)}"></span>` +
+      `<span class="nev">${cs.nev}</span>` +
+      `<span class="db">${cs.db.toLocaleString("hu")}</span></button>`).join("") +
+      (szuro !== null
+        ? `<button type="button" class="jm-vissza" id="jm-vissza">Szűrés törlése</button>`
+        : "");
+
+    doboz.querySelectorAll(".jm-sor").forEach(b =>
+      b.addEventListener("click", () => {
+        const g = Number(b.dataset.g);
+        szuro = (szuro === g) ? null : g;
+        jelmagyarazatEpit();
+        rajzol();
+      }));
+    const vissza = document.getElementById("jm-vissza");
+    if (vissza) vissza.addEventListener("click", () => {
+      szuro = null; jelmagyarazatEpit(); rajzol();
+    });
   }
 
   // Valódi arányok: a hosszúsági fok rövidebb a szélesség koszinuszával
@@ -459,21 +577,36 @@ const ADAT = /*ADATHELY*/;
       if (qx === HIANYZO) continue;
 
       const sog = S[i];
-      const sav = sog < 1 ? 0 : sog < 4 ? 1 : sog < 8 ? 2 : sog < 16 ? 3 : 4;
-      ctx.fillStyle = rampa[sav];
+      // Szuresnel a ki nem valasztott hajok NEM tunnek el es NEM valtanak
+      // szint - csak elhalvanyulnak. Igy a szin vegig ugyanazt az entitast
+      // jelenti, es megmarad a terbeli kontextus.
+      const kiemelt = (szuro === null) || (h.g === szuro);
+      if (mod === "tipus") {
+        ctx.fillStyle = csoportSzin(h.g);
+      } else {
+        const sav = sog < 1 ? 0 : sog < 4 ? 1 : sog < 8 ? 2 : sog < 16 ? 3 : 4;
+        ctx.fillStyle = rampa[sav];
+      }
+      ctx.globalAlpha = kiemelt ? 1 : 0.13;
       const x = px(qx), y = py(Y[i]);
-      const m = sog < 1 ? 1.5 : 2.1;
+      const m = kiemelt ? (sog < 1 ? 1.7 : 2.4) : 1.4;
       ctx.fillRect(x - m / 2, y - m / 2, m, m);
 
-      lathato++;
-      if (sog > 1) mozgo++;
+      if (kiemelt) {
+        lathato++;
+        if (sog > 1) mozgo++;
+      }
     }
+    ctx.globalAlpha = 1;
 
     if (kivalasztott >= 0) { kivalasztottRajzol(f); panelFrissit(); }
 
     const perc = f * meta.perc;
     idoEl.textContent =
       String(Math.floor(perc / 60)).padStart(2, "0") + ":" + String(perc % 60).padStart(2, "0");
+    document.getElementById("lathato-cimke").textContent =
+      (szuro === null) ? "Látható hajó"
+                       : csoportok[szuro].nev + " — látható";
     lathatoEl.textContent = lathato.toLocaleString("hu");
     mozgoEl.textContent = mozgo.toLocaleString("hu");
   }
@@ -564,6 +697,9 @@ const ADAT = /*ADATHELY*/;
       const h = hajok[v];
       const k = f - h.s;
       if (k < 0 || k >= h.n) continue;
+      // Aktiv szuresnel csak a kiemelt hajok valaszthatok - a halvanyra
+      // kattintani es adatlapot kapni megteveszto lenne
+      if (szuro !== null && h.g !== szuro) continue;
       const i = eltolas[v] + k;
       const qx = X[i];
       if (qx === HIANYZO) continue;
@@ -614,6 +750,19 @@ const ADAT = /*ADATHELY*/;
       sebesseg = v;
       ["seb1", "seb2", "seb4"].forEach(o =>
         document.getElementById(o).setAttribute("aria-pressed", o === id ? "true" : "false"));
+    });
+  });
+
+  // Szinezes-mod valto. A tipusszuro modvaltaskor is ervenyben marad, mert
+  // a "mutasd csak a halaszhajokat, de sebesseg szerint szinezve" ertelmes keres.
+  [["mod-tipus", "tipus"], ["mod-seb", "seb"]].forEach(([id, ertek]) => {
+    document.getElementById(id).addEventListener("click", () => {
+      mod = ertek;
+      document.getElementById("mod-tipus").setAttribute("aria-pressed", String(mod === "tipus"));
+      document.getElementById("mod-seb").setAttribute("aria-pressed", String(mod === "seb"));
+      document.getElementById("jm-tipus").hidden = (mod !== "tipus");
+      document.getElementById("jm-seb").hidden = (mod !== "seb");
+      rajzol();
     });
   });
 
