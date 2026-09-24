@@ -646,3 +646,111 @@ Az időmérések futásonként akár ~30%-ot is szórnak (pl. az `alap + h3`
 óránkénti értéke: 174 vs. 229 ms), ezért csak a többszörös különbségek
 értelmezhetők; a méret és az átugorható sorcsoportok száma determinisztikus.
 A H3-cellák kiszámítása 20–23 mp a 10,86 millió pontra (egyszeri költség).
+
+### A H3-rendezés haszna a lekérdezett terület méretének függvényében
+
+Forrás: `h3_teruletmeret.py`, kimenet `outputs/h3_teruletmeret.csv` és
+`outputs/h3_teruletmeret.png`, lefuttatva 2026-09-24, két futás. Ugyanaz a
+lekérdezés egyre nagyobb, azonos középpontú (É 55,34 / K 11,00) területen, a
+`h3_tarolas.py` változatain. Minden változat minden területre azonos
+eredményt adott.
+
+A beolvasandó sorcsoportok száma (109-ből) determinisztikus, a két futásban
+azonos:
+
+| terület | a napi sorok aránya | eredeti sorrend | H3 szerint | idő szerint | H3-gyorsulás (2. futás) |
+|---|---|---|---|---|---|
+| 5 km² | 0,07% | 107 | **11** | 109 | 5,6× / 5,5× |
+| 31 km² | 0,86% | 108 | 13 | 109 | 4,2× / 4,9× |
+| 124 km² | 1,43% | 108 | 14 | 109 | 5,9× / 5,0× |
+| 496 km² | 3,99% | 108 | 16 | 109 | 6,7× / 4,1× |
+| 1 983 km² | 8,24% | 108 | 19 | 109 | 3,8× / 3,4× |
+| 7 931 km² | 19,07% | 109 | 44 | 109 | 2,3× / 2,0× |
+| 27 138 km² | 62,98% | 109 | **87** | 109 | 1,2× / 1,1× |
+
+**Megállapítás:** a H3-rendezés haszna a terület növelésével csökken. Amíg a
+lekérdezett terület a napi adat néhány százalékát tartalmazza, a sorcsoportok
+80–90%-át át lehet ugrani, és a lekérdezés 4–6× gyorsabb. A napi adat ötödénél
+nagyobb területen a nyereség 2× alá esik, kétharmadnál gyakorlatilag eltűnik.
+Az eredeti és az idő szerinti sorrendnél területmérettől függetlenül szinte
+minden sorcsoportot be kell olvasni.
+
+**Korlát:** az egyes időmérések nem monotonok (pl. 4,2× → 5,9× → 6,7×), ez
+mérési szórás; a sorcsoportszám monoton. Egyetlen középpont, egyetlen nap.
+
+## Kapuvonal-metrika: kereskedelmi átkelések a dán szorosokon
+
+Forrás: `kapuvonal.py` az 5 letöltött napra, kimenet
+`outputs/kapuvonal_atkelesek.csv` (1 258 átkelés) és
+`outputs/kapuvonal_napi.csv`, lefuttatva 2026-09-24.
+
+Módszer: két kapuvonal szélességi körként a szorosokon keresztben
+(Nagy-Balti-öv: É 55,40, K 10,60–11,35; Øresund: É 56,07, K 12,40–12,85 – a
+Helsingør–Helsingborg komp útvonala alatt). A vonalak partról partra érnek,
+ezt az adatból ellenőriztük. H3-folyosó (8-as felbontás, a vonal menti cellák
+két gyűrűnyi környezete: 314, ill. 194 cella) szűri a vizsgált pozíciókat.
+Átkelés: egy hajó két egymást követő pozíciója a vonal két oldalán van,
+legfeljebb 10 perc különbséggel. Az átkelésfelismerés hét szintetikus
+esetre (átkelés, vételkiesés, visszafordulás, oda-vissza, duplikátum, pontosan
+a vonalra érkezés) helyes eredményt adott. A Kis-Balti-öv a vizsgált területen
+kívül esik.
+
+### Összevetés az IMF PortWatch Oresund-számával
+
+| nap | saját: tanker | saját: teher | saját: össz. | PortWatch: tanker | PortWatch: össz. | arány |
+|---|---|---|---|---|---|---|
+| 2026-07-08 | 11 | 34 | 45 | 8 | 31 | 1,45 |
+| 2026-07-09 | 14 | 48 | 62 | 9 | 41 | 1,51 |
+| 2026-07-15 | 17 | 47 | 64 | 10 | 45 | 1,42 |
+| 2026-07-16 | 12 | 41 | 53 | 8 | 45 | 1,18 |
+| 2026-09-05 | 10 | 25 | 35 | 7 | 32 | 1,09 |
+
+| szám | jelentés |
+|---|---|
+| **r = 0,82** | napi korreláció, összes kereskedelmi (5 nap) |
+| **r = 0,98** | napi korreláció, csak tanker (5 nap) |
+| 1,33 (1,09–1,51) | a saját szám átlagosan ennyiszerese a PortWatch-énak |
+
+**Értelmezés:** a két mérés erősen együtt mozog, a saját szám szisztematikusan
+magasabb. Egy közel állandó szorzó módszertani eltérésre utal, nem véletlen
+hibára. Lehetséges okok (nem ellenőrizve): eltérő kapuhelyzet és -szélesség, a
+PortWatch hajólajstromból veszi a típust, a saját mérés az AIS által bejelentett
+`Ship type`-ot használja, és a PortWatch kiszűrheti a kisebb hajókat.
+**Korlát:** 5 nap, a korreláció ekkora mintán bizonytalan.
+
+### A Kiel-hipotézis újravizsgálata a helyes mérőszámmal
+
+Kereskedelmi (teherhajó + tanker) átkelések, a két kapu együtt, a hibás
+2026-07-08-i 11. órát minden napból kihagyva:
+
+| nap | Nagy-Balti-öv | Øresund | összesen |
+|---|---|---|---|
+| 07-08 (szerda, kontroll) | 47 | 44 | 91 |
+| 07-09 (csütörtök, kontroll) | 45 | 62 | 107 |
+| **07-15 (szerda, lezárás)** | 51 | 61 | **112** |
+| **07-16 (csütörtök, lezárás)** | 43 | 51 | **94** |
+| 09-05 (szombat) | 51 | 32 | 83 |
+
+| összehasonlítás | arány |
+|---|---|
+| szerda: 07-15 / 07-08 | 1,231 (+23,1%) |
+| csütörtök: 07-16 / 07-09 | 0,879 (−12,1%) |
+| zajszint: 07-09 / 07-08 | 1,176 (17,6%) |
+| **lezárási napok / kontrollnapok** | **1,040 (+4,0%)** |
+
+(Teljes napra, a 11. órával: +27,2% / −8,4% / 16,3% zaj / +8,0%.)
+
+**Megállapítás:** a helyes, kereskedelmi átkelésekre szűrt mérőszámmal sem
+mutatható ki a lezárás hatása: a két nap együtt +4%, a csütörtök pedig
+**kevesebb** a kontrollnál. A korábbi negatív eredmény tehát nem a rossz
+mérőszám terméke. Napi kb. 100 kereskedelmi átkelés és kb. 15–18%-os napi
+ingadozás mellett egy-egy nap összevetésével csak nagy (kb. 30% feletti) hatás
+lenne kimutatható.
+
+**Mellékeredmény:** a szeptemberi szombaton a Nagy-Balti-övön ugyanannyi
+kereskedelmi hajó kelt át (51), mint a júliusi hétköznapokon (43–51), miközben
+az óránkénti összes hajószám ott fele akkora volt. A korábbi „~2×-es
+különbség" tehát valóban a szabadidős hajózásból adódott.
+
+A kereskedelmi hajók közül 481 egyszer, 10 kétszer kelt át ugyanazon a napon
+ugyanazon a kapun (visszaút).

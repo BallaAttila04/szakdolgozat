@@ -94,6 +94,10 @@ python scripts/portwatch_letoltes.py
 
 # 11. H3 térbeli index: a tárolási sorrend hatása a lekérdezésekre
 python scripts/h3_tarolas.py
+python scripts/h3_teruletmeret.py        # a haszon a terület méretével
+
+# 12. Kapuvonal-metrika: kereskedelmi átkelések a Nagy-Balti-övön és az Øresundon
+python scripts/kapuvonal.py data/aisdk-2026-07-*.zip data/aisdk-2026-09-05.zip
 ```
 
 ## Tesztek
@@ -165,10 +169,15 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben találhatók.
   kb. 5×, idő szerint rendezve az időbeli lekérdezés kb. 8× gyorsabb, mert a
   sorcsoportok nagy részét a motor be sem olvassa. Mindkettőre optimális
   sorrend nincs, és mindkettő nagyobb fájlt ad (+12%, ill. +22%).
+- **Kapuvonal-metrika:** a saját Øresund-átkelésszám erősen együtt mozog az
+  IMF PortWatch értékével (napi r = 0,82, tankerekre 0,98, 5 nap), de
+  szisztematikusan ~1,33× magasabb – módszertani eltérés.
 - **Forgalmi hipotézis:** a Kiel-csatorna lezárásának hatása **nem
   igazolt**. Az eredetileg mért ~2× különbség nagy része évszak- és
   hétvége-hatás volt; a kontrollnapokhoz képest +20,2% marad, ami részben
-  a napi ingadozás (±13,6%) zajába esik.
+  a napi ingadozás (±13,6%) zajába esik. A helyes, kereskedelmi átkelésekre
+  szűrt mérőszámmal a különbség +4% (szerda +23%, csütörtök −12%, zaj 18%),
+  tehát a negatív eredmény nem a mérőszám terméke.
 
 ## Függőségek
 
