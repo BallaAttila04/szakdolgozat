@@ -91,6 +91,9 @@ python scripts/meret_becsles.py 2026-07-01 2026-07-31
 # 10. Külső referencia: IMF PortWatch napi chokepoint-forgalom
 # (a dán szoros forgalmának kontextusba helyezése más szorosokhoz képest)
 python scripts/portwatch_letoltes.py
+
+# 11. H3 térbeli index: a tárolási sorrend hatása a lekérdezésekre
+python scripts/h3_tarolas.py
 ```
 
 ## Tesztek
@@ -158,6 +161,10 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben találhatók.
   szorosokra szűrve, 6 oszloppal és dead reckoninggel viszont **0,31 GiB**,
   a nyers adat 1,4%-a: a nagyságrendi nyereség a szűrésből jön, nem a
   formátumból.
+- **Tárolási sorrend (H3):** H3-cella szerint rendezve a térbeli lekérdezés
+  kb. 5×, idő szerint rendezve az időbeli lekérdezés kb. 8× gyorsabb, mert a
+  sorcsoportok nagy részét a motor be sem olvassa. Mindkettőre optimális
+  sorrend nincs, és mindkettő nagyobb fájlt ad (+12%, ill. +22%).
 - **Forgalmi hipotézis:** a Kiel-csatorna lezárásának hatása **nem
   igazolt**. Az eredetileg mért ~2× különbség nagy része évszak- és
   hétvége-hatás volt; a kontrollnapokhoz képest +20,2% marad, ami részben
@@ -166,7 +173,7 @@ A számok forrásostul a [`szamok.md`](szamok.md)-ben találhatók.
 ## Függőségek
 
 ```
-pandas  numpy  matplotlib  requests  duckdb  pyarrow
+pandas  numpy  matplotlib  requests  duckdb  pyarrow  h3
 ```
 
 A teszt futtatásához `node` is kell (a térkép logikája JavaScript).

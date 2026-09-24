@@ -586,3 +586,63 @@ PortWatch Oresund-értéke — ez nem hiba, hanem eltérő területi lehatárol�
 állapot szerint) feltűnően alacsony értékeket mutat a korábbi hónapokhoz
 képest — valószínűleg feldolgozási késés a PortWatch oldalán, nem valódi
 forgalomesés. Független forrásból nem ellenőrizve.
+
+## H3 térbeli index hatása a tárolásra és a lekérdezésre (2026-07-15)
+
+Forrás: `h3_tarolas.py`, kimenet `outputs/h3_tarolas.csv`, lefuttatva
+2026-09-24, két független futás. Bemenet: a vizsgált terület 10 860 221
+pozíciója (6 oszlop). Minden változat azonos adatot, zstd kódeket és
+100 000 soros sorcsoportot használ; csak a sorrend és a `h3` oszlop tér el.
+H3-felbontás: 8 (~0,74 km²/cella), a nap során 32 214 különböző cella.
+
+Vizsgálati lekérdezések:
+- térbeli: a Nagy-Balti-híd környéke (É 55,28–55,40, K 10,85–11,15) –
+  189 egyedi hajó, 350 049 sor;
+- időbeli: 09:00–10:00 – 574 394 sor;
+- óránkénti egyedi hajószám (a forgalmi kiértékelés mutatója).
+
+Mind a négy változat mindhárom lekérdezésre **azonos eredményt** adott.
+
+Determinisztikus mérőszámok (a két futásban bájtra azonosak):
+
+| változat | méret | sorcsoport | térbeli lekérdezésnél átugorható | időbelinél átugorható |
+|---|---|---|---|---|
+| alap (hajó, idő sorrend) | 68,7 MiB | 109 | 1 | 0 |
+| alap + `h3` oszlop | 70,0 MiB (+1,9%) | 109 | 1 | 0 |
+| **H3 szerint rendezve** | 76,7 MiB (+11,6%) | 109 | **94** | 0 |
+| **idő szerint rendezve** | 83,9 MiB (+22,1%) | 109 | 0 | **102** |
+
+Lekérdezési idők, medián ms (5 ismétlés, meleg gyorsítótár; két futás
+értékei):
+
+| változat | térbeli | térbeli `h3` cellalistával | időbeli | óránkénti |
+|---|---|---|---|---|
+| alap | 115 / 117 | – | 63 / 65 | 170 / 171 |
+| alap + `h3` | 112 / 125 | 135 / 161 | 65 / 67 | 174 / 229 |
+| H3 szerint rendezve | **21 / 25** | 22 / 23 | 68 / 80 | 178 / 175 |
+| idő szerint rendezve | 184 / 189 | – | **8 / 7** | 163 / 163 |
+
+**Megállapítások:**
+- **A H3 szerinti rendezés a térbeli lekérdezést kb. 5×-ösére gyorsítja**
+  (115 → 21–25 ms), mert a 109 sorcsoportból 94-et a min/max statisztika
+  alapján be sem kell olvasni.
+- **Az idő szerinti rendezés az időbeli lekérdezést kb. 8×-osára gyorsítja**
+  (63 → 7–8 ms), 102 sorcsoport átugrásával – a térbelit viszont lassítja.
+- **Nincs mindkettőre optimális sorrend:** a tárolási sorrend eldönti, melyik
+  lekérdezéstípus lesz gyors. A választás a várható munkaterheléstől függ.
+- **A nyereség a rendezésből jön, nem magából a `h3` oszlopból.** Rendezett
+  adaton a cellalistás szűrés nem gyorsabb a sima szélesség–hosszúság
+  szűrésnél (22–23 vs. 21–25 ms), rendezetlenen pedig lassabb. A H3 szerepe
+  az, hogy jó **rendezési kulcs**: a térben közeli pontokat egy sorcsoportba
+  gyűjti.
+- **Ára a méret:** az eredeti (hajó, idő) sorrend tömörít a legjobban, mert
+  egy hajó egymást követő pozíciói alig térnek el. A H3-rendezés +11,6%-kal,
+  az időrendezés +22,1%-kal nagyobb fájlt ad. Maga a `h3` oszlop +1,9%.
+- Az óránkénti mutató (teljes beolvasás) a sorrendtől gyakorlatilag
+  független.
+
+**Korlátok:** egyetlen nap, egyetlen vizsgálati terület, meleg gyorsítótár.
+Az időmérések futásonként akár ~30%-ot is szórnak (pl. az `alap + h3`
+óránkénti értéke: 174 vs. 229 ms), ezért csak a többszörös különbségek
+értelmezhetők; a méret és az átugorható sorcsoportok száma determinisztikus.
+A H3-cellák kiszámítása 20–23 mp a 10,86 millió pontra (egyszeri költség).
