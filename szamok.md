@@ -754,3 +754,20 @@ különbség" tehát valóban a szabadidős hajózásból adódott.
 
 A kereskedelmi hajók közül 481 egyszer, 10 kétszer kelt át ugyanazon a napon
 ugyanazon a kapun (visszaút).
+
+### Tanker-merülés kapunként
+
+Forrás: `outputs/kapuvonal_atkelesek.csv` (`merules_m` = a hajó bejelentett
+`Draught` értékeinek mediánja), 5 nap, kiértékelve 2026-09-24.
+
+| kapu | tanker-átkelés merüléssel | medián | 90. percentilis | max. | 10 m feletti |
+|---|---|---|---|---|---|
+| Nagy-Balti-öv | 83 | 9,5 m | 14,7 m | **15,0 m** | **37** |
+| Øresund | 64 | 6,0 m | 7,0 m | **8,0 m** | **0** |
+
+**Megállapítás:** az Øresundon egyetlen 8 m-nél mélyebb merülésű tanker sem
+kelt át, a Nagy-Balti-övön a tanker-átkelések 45%-a 10 m fölötti merüléssel
+történt. A mérés összhangban van azzal, hogy a nagy, rakott tankerek számára a
+dán szorosok közül csak a Nagy-Balti-öv elég mély.
+**Korlát:** a `Draught` kézzel beállított mező, és a hajó rakott/üres
+állapotát nem feltétlenül frissítik.
