@@ -109,6 +109,17 @@
   @media (max-width: 620px) { .parosabra { grid-template-columns: 1fr; } }
 
   .abra-tabla { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+  .adat-tabla { width: 100%; border-collapse: collapse; font-size: 13px; margin: 4px 0 6px; }
+  .adat-tabla th { text-align: right; font-weight: 500; color: var(--ink-3);
+                   border-bottom: 1px solid var(--line); padding: 5px 8px 5px 0; }
+  .adat-tabla td { text-align: right; padding: 4px 8px 4px 0;
+                   border-bottom: 1px solid var(--line);
+                   font-family: "IBM Plex Mono", ui-monospace, monospace;
+                   font-variant-numeric: tabular-nums; }
+  .adat-tabla th:first-child, .adat-tabla td:first-child {
+                   text-align: left; font-family: inherit; color: var(--ink-2); }
+  .adat-tabla tr.kiemelt td { color: var(--ink); font-weight: 600; }
+  .tabla-gorgeto { overflow-x: auto; }
   .abra-tabla summary { font-size: 12px; color: var(--ink-3); cursor: pointer; }
   .abra-tabla table { width: 100%; border-collapse: collapse; margin-top: 9px;
                       font-size: 12px; }
@@ -280,6 +291,81 @@ gyakorlatilag egyetlen kategória okozza.</p>
   horgonypont, amelyet semmilyen küszöbérték nem hagy el.</figcaption>
 </figure>
 
+<h2>Tárolási sorrend: H3 térbeli index</h2>
+
+<p>A Parquet sorcsoportonként minimum- és maximumstatisztikát tárol minden
+oszlopról. Ha a térben közeli pontok egy sorcsoportba kerülnek, egy kis
+területre szűrő lekérdezés a sorcsoportok nagy részét be sem olvassa. A
+pontokat ehhez H3-cella (8-as felbontás, kb. 0,74 km²) szerint rendeztem. A
+változatok azonos adatot, kódeket és sorcsoport-méretet használnak; csak a
+sorrend tér el, és mindegyik azonos lekérdezési eredményt adott.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Méret és lekérdezési idő tárolási sorrend szerint</p>
+  <p class="abra-alcim">A 2026-07-15-i nap pozíciói, <!--H3_SORCSOPORT--> sorcsoportban.
+     Térbeli lekérdezés: a Nagy-Balti-híd környéke; időbeli: 09–10 óra. Öt ismétlés
+     mediánja, meleg gyorsítótárral; az időmérések futásonként akár 30%-ot is szórnak,
+     az átugorható sorcsoportok száma determinisztikus.</p>
+  <div class="tabla-gorgeto"><!--H3_TABLA--></div>
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Beolvasandó sorcsoportok a lekérdezett terület méretének függvényében</p>
+  <p class="abra-alcim">Azonos középpontú, egyre nagyobb területek, a beolvasandó
+     sorcsoportok arányában. A vízszintes tengely a terület méretét mutatja, nem
+     lineáris léptékben.</p>
+  <!--H3_GORBE-->
+</div>
+
+<div class="jelzes">
+  A H3 szerinti rendezés a térbeli lekérdezést kis területen mintegy
+  <!--H3_GYORS-->-szeresére gyorsítja, az idő szerinti rendezés az időbelit.
+  Mindkét lekérdezéstípusra egyszerre optimális sorrend nincs, és mindkettő
+  nagyobb fájlt ad, mint az eredeti (hajó, idő) sorrend. A nyereség a
+  lekérdezett terület növekedésével csökken, a napi adat kétharmadát lefedő
+  területen gyakorlatilag eltűnik. A nyereség forrása a rendezés: a cellalistás
+  szűrés rendezett adaton nem gyorsabb a koordináta-szűrésnél.
+</div>
+
+<h2>Kapuvonal-metrika: kereskedelmi átkelések</h2>
+
+<p>Az óránkénti összes hajószám helyett ez a mutató azt számolja, hány
+kereskedelmi hajó (teherhajó és tanker) kelt át ténylegesen a szorosokon. Két
+kapuvonal fut partról partra: a Nagy-Balti-övön (É 55,40°) és az Øresundon
+(É 56,07°). A vonal menti H3-cellafolyosó szűri a vizsgált pozíciókat; átkelés
+akkor van, ha egy hajó két egymást követő pozíciója a vonal két oldalára esik,
+legfeljebb 10 perc különbséggel.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Összevetés az IMF PortWatch Øresund-adatával</p>
+  <p class="abra-alcim">Kereskedelmi átkelések naponta. A PortWatch AIS-ből származtatott,
+     független intézményi becslés.</p>
+  <div class="tabla-gorgeto"><!--KAPU_PW_TABLA--></div>
+</div>
+
+<div class="jelzes">
+  A két mérés erősen együtt mozog (napi korreláció r = <!--KAPU_R-->, csak
+  tankerekre r = <!--KAPU_R_TANKER-->), a saját érték azonban
+  szisztematikusan mintegy <!--KAPU_ARANY-->-szerese a PortWatch-énak. A közel
+  állandó szorzó módszertani eltérésre utal (kapuhelyzet, típusbesorolás), nem
+  véletlen hibára. Öt nap alapján ez előzetes eredmény.
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">A csatornalezárás hatása a kapuvonal-metrikával</p>
+  <p class="abra-alcim">Kereskedelmi átkelések a két kapun összesen; a 2026-07-08-i
+     adathiányos 11. óra minden napból kihagyva.</p>
+  <div class="tabla-gorgeto"><!--KAPU_KIEL_TABLA--></div>
+</div>
+
+<div class="jelzes">
+  A kereskedelmi átkelésekre szűrt mérőszámmal sem mutatható ki a lezárás
+  hatása: a lezárási napokon összesen <!--KAPU_KIEL--> a különbség a
+  kontrollnapokhoz képest, miközben két kontrollnap között is
+  <!--KAPU_ZAJ--> az eltérés. A korábbi negatív eredmény tehát nem a
+  mérőszám választásából adódott.
+</div>
+
 <h2>Adatminőség</h2>
 
 <p>A forrásadatban több, egymástól független hibatípus azonosítható:</p>
@@ -308,10 +394,10 @@ tartalmazza, az eredeti értékeket áthúzva.</p>
 <h2>Korlátok és további feladatok</h2>
 <ul>
   <li>Az időzóna (UTC vagy helyi idő) tisztázása. Ez minden olyan megállapítást érint, amely a lezárás időzítésére hivatkozik.</li>
-  <li>A kapuvonal-átlépési mutató kidolgozása. A Kiel-kérdéshez ez lenne a megfelelő mérőszám, kizárólag a kereskedelmi hajókra szűrve.</li>
   <li>További kontrollnapok bevonása a napi ingadozás pontosabb becsléséhez.</li>
   <li>A tárolási benchmark jelenleg egyetlen futás eredménye, ismétlés nélkül, ezért a közölt értékek előzetesek.</li>
-  <li>A H3 térbeli indexelés és a Spark alapú feldolgozás vizsgálata még nem történt meg.</li>
+  <li>A kapuvonal-metrika és a PortWatch közötti szisztematikus eltérés okának tisztázása, több nap bevonásával.</li>
+  <li>A Spark alapú feldolgozás összevetése a DuckDB-vel még nem történt meg.</li>
 </ul>
 
 <footer>

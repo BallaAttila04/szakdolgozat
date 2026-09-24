@@ -21,12 +21,16 @@ Hasznalat:
 """
 
 import argparse
+from html import escape
 import json
 import shutil
 import sys
 from pathlib import Path
 
-from utak import KIMENET, OLDAL, SABLONOK
+import numpy as np
+import pandas as pd
+
+from utak import ADAT, KIMENET, OLDAL, SABLONOK
 from abrak_svg import savdiagram, vonaldiagram, tablazat, _ezres
 
 # (forras az outputs/-bol, celutvonal a docs/-on belul)
@@ -163,6 +167,125 @@ def ora_abrak(stat):
     return kedv_svg, munka_svg + tabla
 
 
+# --- H3 es kapuvonal szakaszok ------------------------------------------------
+
+H3_NEVEK = {
+    "alap": "eredeti (hajó, idő) sorrend",
+    "alap_h3": "eredeti sorrend + h3 oszlop",
+    "h3_rendezett": "H3 szerint rendezve",
+    "ido_rendezett": "idő szerint rendezve",
+}
+NAP_CIMKE = {
+    "2026-07-08": "07-08 szerda (kontroll)",
+    "2026-07-09": "07-09 csütörtök (kontroll)",
+    "2026-07-15": "07-15 szerda (lezárás)",
+    "2026-07-16": "07-16 csütörtök (lezárás)",
+    "2026-09-05": "09-05 szombat",
+}
+LEZARASI = {"2026-07-15", "2026-07-16"}
+KERESKEDELMI = {"Teherhajó", "Tanker"}
+KIHAGYOTT_ORA = 11
+
+
+def html_tabla(fejlec, sorok, kiemelt=()):
+    fej = "".join(f"<th>{escape(str(c))}</th>" for c in fejlec)
+    test = "".join(
+        f'<tr{" class=kiemelt" if i in kiemelt else ""}>'
+        + "".join(f"<td>{escape(str(c))}</td>" for c in sor) + "</tr>"
+        for i, sor in enumerate(sorok))
+    return f'<table class="adat-tabla"><thead><tr>{fej}</tr></thead><tbody>{test}</tbody></table>'
+
+
+def tized(x, jegy=1):
+    return f"{x:.{jegy}f}".replace(".", ",")
+
+
+def elojeles_szazalek(arany):
+    v = (arany - 1) * 100
+    return ("+" if v >= 0 else "−") + tized(abs(v)) + "%"
+
+
+def h3_szakasz(tarolas_csv, gorbe_csv):
+    t = pd.read_csv(tarolas_csv).set_index("valtozat")
+    sorok = []
+    for k, nev in H3_NEVEK.items():
+        r = t.loc[k]
+        sorok.append([nev, tized(r.meret_mib), f"{int(r.ter_atugorhato)} / {int(r.sorcsoport)}",
+                      tized(r.terbeli_ms, 0) + " ms", f"{int(r.ido_atugorhato)} / {int(r.sorcsoport)}",
+                      tized(r.idobeli_ms, 0) + " ms"])
+    tabla = html_tabla(["változat", "MiB", "térbeli: átugorható", "térbeli", "időbeli: átugorható",
+                        "időbeli"], sorok, kiemelt=(2, 3))
+    gyors = t.loc["alap", "terbeli_ms"] / t.loc["h3_rendezett", "terbeli_ms"]
+
+    g = pd.read_csv(gorbe_csv)
+    cimkek = [f"{_ezres(int(round(v)))} km²" for v in g.terulet_km2]
+    rg = g.sorcsoport
+    sorozatok = [
+        ("H3 szerint", list((g.h3_rendezett_olvasott_rg / rg * 100).round(1)), "var(--sor-1)"),
+        ("eredeti", list((g.alap_olvasott_rg / rg * 100).round(1)), "var(--sor-0)"),
+        ("idő szerint", list((g.ido_rendezett_olvasott_rg / rg * 100).round(1)), "var(--sor-2)"),
+    ]
+    svg = vonaldiagram(cimkek, sorozatok, y_cimke="%", x_cimke="lekérdezett terület",
+                       y_max=100, x_lepes=1)
+    reszlet = tablazat(
+        ["Terület", "Napi sorok aránya", "Olvasott sorcsoport: H3 / eredeti / idő", "H3-gyorsulás"],
+        [[c, tized(r.sor_arany_szazalek, 2) + "%",
+          f"{int(r.h3_rendezett_olvasott_rg)} / {int(r.alap_olvasott_rg)} / {int(r.ido_rendezett_olvasott_rg)}",
+          tized(r.h3_gyorsulas) + "×"] for c, r in zip(cimkek, g.itertuples())])
+    return {
+        "<!--H3_TABLA-->": tabla,
+        "<!--H3_SORCSOPORT-->": str(int(t.loc["alap", "sorcsoport"])),
+        "<!--H3_GYORS-->": tized(gyors),
+        "<!--H3_GORBE-->": svg + reszlet,
+    }
+
+
+def kapu_szakasz(atkeles_csv, pw_csv):
+    a = pd.read_csv(atkeles_csv)
+    a["ora"] = pd.to_datetime(a["ts"]).dt.hour
+    k = a[a["csoport"].isin(KERESKEDELMI)]
+    pw = pd.read_csv(pw_csv)
+    pw = pw[pw["portid"] == "chokepoint10"].set_index("date")
+
+    napok = sorted(k["nap"].unique())
+    sorok, mi_o, pw_o, mi_t, pw_t = [], [], [], [], []
+    for nap in napok:
+        o = k[(k.nap == nap) & (k.kapu == "Øresund")]
+        t = int((o.csoport == "Tanker").sum())
+        c = int((o.csoport == "Teherhajó").sum())
+        pt, po = int(pw.loc[nap, "n_tanker"]), int(pw.loc[nap, "n_total"])
+        mi_o.append(t + c); pw_o.append(po); mi_t.append(t); pw_t.append(pt)
+        sorok.append([NAP_CIMKE.get(nap, nap), t, c, t + c, pt, po, tized((t + c) / po, 2)])
+    pw_tabla = html_tabla(["nap", "saját: tanker", "saját: teher", "saját: össz.",
+                           "PortWatch: tanker", "PortWatch: össz.", "arány"], sorok)
+    r = np.corrcoef(mi_o, pw_o)[0, 1]
+    r_t = np.corrcoef(mi_t, pw_t)[0, 1]
+    arany = np.mean(np.array(mi_o) / np.array(pw_o))
+
+    k2 = k[k.ora != KIHAGYOTT_ORA]
+    tabla = k2.groupby(["nap", "kapu"]).size().unstack(fill_value=0)
+    ossz = tabla.sum(axis=1)
+    kiel_sorok, kiemelt = [], []
+    for i, nap in enumerate(napok):
+        kiel_sorok.append([NAP_CIMKE.get(nap, nap), int(tabla.loc[nap, "Nagy-Balti-öv"]),
+                           int(tabla.loc[nap, "Øresund"]), int(ossz[nap])])
+        if nap in LEZARASI:
+            kiemelt.append(i)
+    kiel_tabla = html_tabla(["nap", "Nagy-Balti-öv", "Øresund", "összesen"], kiel_sorok,
+                            kiemelt=tuple(kiemelt))
+    lez = (ossz["2026-07-15"] + ossz["2026-07-16"]) / (ossz["2026-07-08"] + ossz["2026-07-09"])
+    zaj = ossz["2026-07-09"] / ossz["2026-07-08"]
+    return {
+        "<!--KAPU_PW_TABLA-->": pw_tabla,
+        "<!--KAPU_R-->": tized(r, 2),
+        "<!--KAPU_R_TANKER-->": tized(r_t, 2),
+        "<!--KAPU_ARANY-->": tized(arany, 2),
+        "<!--KAPU_KIEL_TABLA-->": kiel_tabla,
+        "<!--KAPU_KIEL-->": elojeles_szazalek(lez),
+        "<!--KAPU_ZAJ-->": tized((zaj - 1) * 100) + "%",
+    }
+
+
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__,
@@ -212,6 +335,9 @@ def main():
         "<!--ORA_MUNKA-->": munka_svg,
         "<!--ARU_DB-->": _ezres(aru),
         "<!--NEM_HAJO_DB-->": _ezres(stat["nem_hajo_db"]),
+        **h3_szakasz(KIMENET / "h3_tarolas.csv", KIMENET / "h3_teruletmeret.csv"),
+        **kapu_szakasz(KIMENET / "kapuvonal_atkelesek.csv",
+                       ADAT / "portwatch_chokepoints.csv"),
     }
 
     lap = sablon_fajl.read_text(encoding="utf-8")

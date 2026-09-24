@@ -109,6 +109,17 @@
   @media (max-width: 620px) { .parosabra { grid-template-columns: 1fr; } }
 
   .abra-tabla { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+  .adat-tabla { width: 100%; border-collapse: collapse; font-size: 13px; margin: 4px 0 6px; }
+  .adat-tabla th { text-align: right; font-weight: 500; color: var(--ink-3);
+                   border-bottom: 1px solid var(--line); padding: 5px 8px 5px 0; }
+  .adat-tabla td { text-align: right; padding: 4px 8px 4px 0;
+                   border-bottom: 1px solid var(--line);
+                   font-family: "IBM Plex Mono", ui-monospace, monospace;
+                   font-variant-numeric: tabular-nums; }
+  .adat-tabla th:first-child, .adat-tabla td:first-child {
+                   text-align: left; font-family: inherit; color: var(--ink-2); }
+  .adat-tabla tr.kiemelt td { color: var(--ink); font-weight: 600; }
+  .tabla-gorgeto { overflow-x: auto; }
   .abra-tabla summary { font-size: 12px; color: var(--ink-3); cursor: pointer; }
   .abra-tabla table { width: 100%; border-collapse: collapse; margin-top: 9px;
                       font-size: 12px; }
@@ -416,6 +427,107 @@ gyakorlatilag egyetlen kategória okozza.</p>
   horgonypont, amelyet semmilyen küszöbérték nem hagy el.</figcaption>
 </figure>
 
+<h2>Tárolási sorrend: H3 térbeli index</h2>
+
+<p>A Parquet sorcsoportonként minimum- és maximumstatisztikát tárol minden
+oszlopról. Ha a térben közeli pontok egy sorcsoportba kerülnek, egy kis
+területre szűrő lekérdezés a sorcsoportok nagy részét be sem olvassa. A
+pontokat ehhez H3-cella (8-as felbontás, kb. 0,74 km²) szerint rendeztem. A
+változatok azonos adatot, kódeket és sorcsoport-méretet használnak; csak a
+sorrend tér el, és mindegyik azonos lekérdezési eredményt adott.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Méret és lekérdezési idő tárolási sorrend szerint</p>
+  <p class="abra-alcim">A 2026-07-15-i nap pozíciói, 109 sorcsoportban.
+     Térbeli lekérdezés: a Nagy-Balti-híd környéke; időbeli: 09–10 óra. Öt ismétlés
+     mediánja, meleg gyorsítótárral; az időmérések futásonként akár 30%-ot is szórnak,
+     az átugorható sorcsoportok száma determinisztikus.</p>
+  <div class="tabla-gorgeto"><table class="adat-tabla"><thead><tr><th>változat</th><th>MiB</th><th>térbeli: átugorható</th><th>térbeli</th><th>időbeli: átugorható</th><th>időbeli</th></tr></thead><tbody><tr><td>eredeti (hajó, idő) sorrend</td><td>68,7</td><td>1 / 109</td><td>117 ms</td><td>0 / 109</td><td>65 ms</td></tr><tr><td>eredeti sorrend + h3 oszlop</td><td>70,0</td><td>1 / 109</td><td>125 ms</td><td>0 / 109</td><td>67 ms</td></tr><tr class=kiemelt><td>H3 szerint rendezve</td><td>76,7</td><td>94 / 109</td><td>25 ms</td><td>0 / 109</td><td>80 ms</td></tr><tr class=kiemelt><td>idő szerint rendezve</td><td>83,9</td><td>0 / 109</td><td>188 ms</td><td>102 / 109</td><td>7 ms</td></tr></tbody></table></div>
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Beolvasandó sorcsoportok a lekérdezett terület méretének függvényében</p>
+  <p class="abra-alcim">Azonos középpontú, egyre nagyobb területek, a beolvasandó
+     sorcsoportok arányában. A vízszintes tengely a terület méretét mutatja, nem
+     lineáris léptékben.</p>
+  <svg viewBox="0 0 820 270" width="100%" height="270" role="img" class="abra">
+<line x1="40" y1="240" x2="688" y2="240" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="243.5" text-anchor="end">0</text>
+<line x1="40" y1="183.5" x2="688" y2="183.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="187" text-anchor="end">25</text>
+<line x1="40" y1="127" x2="688" y2="127" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="130.5" text-anchor="end">50</text>
+<line x1="40" y1="70.5" x2="688" y2="70.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="74" text-anchor="end">75</text>
+<line x1="40" y1="14" x2="688" y2="14" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="17.5" text-anchor="end">100</text>
+<text class="a-tengely" x="40" y="258" text-anchor="middle">5 km²</text>
+<text class="a-tengely" x="148" y="258" text-anchor="middle">31 km²</text>
+<text class="a-tengely" x="256" y="258" text-anchor="middle">124 km²</text>
+<text class="a-tengely" x="364" y="258" text-anchor="middle">496 km²</text>
+<text class="a-tengely" x="472" y="258" text-anchor="middle">1 983 km²</text>
+<text class="a-tengely" x="580" y="258" text-anchor="middle">7 931 km²</text>
+<text class="a-tengely" x="688" y="258" text-anchor="middle">27 138 km²</text>
+<text class="a-tengely" x="364" y="269" text-anchor="middle">lekérdezett terület</text>
+<text class="a-tengely" x="33" y="10" text-anchor="end">%</text>
+<polyline points="40,217.17 148,213.11 256,211.07 364,206.78 472,200.68 580,148.7 688,59.65" fill="none" stroke="var(--sor-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,18.07 148,16.03 256,16.03 364,16.03 472,16.03 580,14 688,14" fill="none" stroke="var(--sor-0)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,14 148,14 256,14 364,14 472,14 580,14 688,14" fill="none" stroke="var(--sor-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="a-vegcimke" x="697" y="17.5" fill="var(--sor-0)">eredeti</text>
+<text class="a-vegcimke" x="697" y="30.5" fill="var(--sor-2)">idő szerint</text>
+<text class="a-vegcimke" x="697" y="63.15" fill="var(--sor-1)">H3 szerint</text>
+</svg><details class="abra-tabla"><summary>Számok táblázatban</summary><table><thead><tr><th>Terület</th><th>Napi sorok aránya</th><th>Olvasott sorcsoport: H3 / eredeti / idő</th><th>H3-gyorsulás</th></tr></thead><tbody><tr><td>5 km²</td><td>0,07%</td><td>11 / 107 / 109</td><td>5,5×</td></tr><tr><td>31 km²</td><td>0,86%</td><td>13 / 108 / 109</td><td>4,9×</td></tr><tr><td>124 km²</td><td>1,43%</td><td>14 / 108 / 109</td><td>5,0×</td></tr><tr><td>496 km²</td><td>3,99%</td><td>16 / 108 / 109</td><td>4,1×</td></tr><tr><td>1 983 km²</td><td>8,24%</td><td>19 / 108 / 109</td><td>3,4×</td></tr><tr><td>7 931 km²</td><td>19,07%</td><td>44 / 109 / 109</td><td>2,0×</td></tr><tr><td>27 138 km²</td><td>62,98%</td><td>87 / 109 / 109</td><td>1,1×</td></tr></tbody></table></details>
+</div>
+
+<div class="jelzes">
+  A H3 szerinti rendezés a térbeli lekérdezést kis területen mintegy
+  4,6-szeresére gyorsítja, az idő szerinti rendezés az időbelit.
+  Mindkét lekérdezéstípusra egyszerre optimális sorrend nincs, és mindkettő
+  nagyobb fájlt ad, mint az eredeti (hajó, idő) sorrend. A nyereség a
+  lekérdezett terület növekedésével csökken, a napi adat kétharmadát lefedő
+  területen gyakorlatilag eltűnik. A nyereség forrása a rendezés: a cellalistás
+  szűrés rendezett adaton nem gyorsabb a koordináta-szűrésnél.
+</div>
+
+<h2>Kapuvonal-metrika: kereskedelmi átkelések</h2>
+
+<p>Az óránkénti összes hajószám helyett ez a mutató azt számolja, hány
+kereskedelmi hajó (teherhajó és tanker) kelt át ténylegesen a szorosokon. Két
+kapuvonal fut partról partra: a Nagy-Balti-övön (É 55,40°) és az Øresundon
+(É 56,07°). A vonal menti H3-cellafolyosó szűri a vizsgált pozíciókat; átkelés
+akkor van, ha egy hajó két egymást követő pozíciója a vonal két oldalára esik,
+legfeljebb 10 perc különbséggel.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Összevetés az IMF PortWatch Øresund-adatával</p>
+  <p class="abra-alcim">Kereskedelmi átkelések naponta. A PortWatch AIS-ből származtatott,
+     független intézményi becslés.</p>
+  <div class="tabla-gorgeto"><table class="adat-tabla"><thead><tr><th>nap</th><th>saját: tanker</th><th>saját: teher</th><th>saját: össz.</th><th>PortWatch: tanker</th><th>PortWatch: össz.</th><th>arány</th></tr></thead><tbody><tr><td>07-08 szerda (kontroll)</td><td>11</td><td>34</td><td>45</td><td>8</td><td>31</td><td>1,45</td></tr><tr><td>07-09 csütörtök (kontroll)</td><td>14</td><td>48</td><td>62</td><td>9</td><td>41</td><td>1,51</td></tr><tr><td>07-15 szerda (lezárás)</td><td>17</td><td>47</td><td>64</td><td>10</td><td>45</td><td>1,42</td></tr><tr><td>07-16 csütörtök (lezárás)</td><td>12</td><td>41</td><td>53</td><td>8</td><td>45</td><td>1,18</td></tr><tr><td>09-05 szombat</td><td>10</td><td>25</td><td>35</td><td>7</td><td>32</td><td>1,09</td></tr></tbody></table></div>
+</div>
+
+<div class="jelzes">
+  A két mérés erősen együtt mozog (napi korreláció r = 0,82, csak
+  tankerekre r = 0,98), a saját érték azonban
+  szisztematikusan mintegy 1,33-szerese a PortWatch-énak. A közel
+  állandó szorzó módszertani eltérésre utal (kapuhelyzet, típusbesorolás), nem
+  véletlen hibára. Öt nap alapján ez előzetes eredmény.
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">A csatornalezárás hatása a kapuvonal-metrikával</p>
+  <p class="abra-alcim">Kereskedelmi átkelések a két kapun összesen; a 2026-07-08-i
+     adathiányos 11. óra minden napból kihagyva.</p>
+  <div class="tabla-gorgeto"><table class="adat-tabla"><thead><tr><th>nap</th><th>Nagy-Balti-öv</th><th>Øresund</th><th>összesen</th></tr></thead><tbody><tr><td>07-08 szerda (kontroll)</td><td>47</td><td>44</td><td>91</td></tr><tr><td>07-09 csütörtök (kontroll)</td><td>45</td><td>62</td><td>107</td></tr><tr class=kiemelt><td>07-15 szerda (lezárás)</td><td>51</td><td>61</td><td>112</td></tr><tr class=kiemelt><td>07-16 csütörtök (lezárás)</td><td>43</td><td>51</td><td>94</td></tr><tr><td>09-05 szombat</td><td>51</td><td>32</td><td>83</td></tr></tbody></table></div>
+</div>
+
+<div class="jelzes">
+  A kereskedelmi átkelésekre szűrt mérőszámmal sem mutatható ki a lezárás
+  hatása: a lezárási napokon összesen +4,0% a különbség a
+  kontrollnapokhoz képest, miközben két kontrollnap között is
+  17,6% az eltérés. A korábbi negatív eredmény tehát nem a
+  mérőszám választásából adódott.
+</div>
+
 <h2>Adatminőség</h2>
 
 <p>A forrásadatban több, egymástól független hibatípus azonosítható:</p>
@@ -444,10 +556,10 @@ tartalmazza, az eredeti értékeket áthúzva.</p>
 <h2>Korlátok és további feladatok</h2>
 <ul>
   <li>Az időzóna (UTC vagy helyi idő) tisztázása. Ez minden olyan megállapítást érint, amely a lezárás időzítésére hivatkozik.</li>
-  <li>A kapuvonal-átlépési mutató kidolgozása. A Kiel-kérdéshez ez lenne a megfelelő mérőszám, kizárólag a kereskedelmi hajókra szűrve.</li>
   <li>További kontrollnapok bevonása a napi ingadozás pontosabb becsléséhez.</li>
   <li>A tárolási benchmark jelenleg egyetlen futás eredménye, ismétlés nélkül, ezért a közölt értékek előzetesek.</li>
-  <li>A H3 térbeli indexelés és a Spark alapú feldolgozás vizsgálata még nem történt meg.</li>
+  <li>A kapuvonal-metrika és a PortWatch közötti szisztematikus eltérés okának tisztázása, több nap bevonásával.</li>
+  <li>A Spark alapú feldolgozás összevetése a DuckDB-vel még nem történt meg.</li>
 </ul>
 
 <footer>

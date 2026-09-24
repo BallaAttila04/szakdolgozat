@@ -102,7 +102,7 @@ def savdiagram(sorok, szin_var="var(--sor-1)", szelesseg=390,
 
 
 def vonaldiagram(x_cimkek, sorozatok, szelesseg=820, magassag=270,
-                 y_cimke="", x_cimke=""):
+                 y_cimke="", x_cimke="", y_max=None, x_lepes=4):
     """Tobbsorozatos vonaldiagram, kozvetlen cimkekkel a vonalak vegen.
 
     sorozatok: [(nev, [ertekek], szin_var)] - a szinek sorrendje a hivo
@@ -123,6 +123,8 @@ def vonaldiagram(x_cimkek, sorozatok, szelesseg=820, magassag=270,
     while csucs / lepes > 5:
         lepes *= 2
     teto = (int(csucs / lepes) + 1) * lepes
+    if y_max is not None:          # pl. szazalekos tengely: fixen 100
+        teto = y_max
 
     n = len(x_cimkek)
     X = lambda i: bal + (px_sz * i / max(n - 1, 1))
@@ -143,7 +145,7 @@ def vonaldiagram(x_cimkek, sorozatok, szelesseg=820, magassag=270,
 
     # x tengely cimkek - minden 4. ora, hogy ne torlodjon
     for i, c in enumerate(x_cimkek):
-        if i % 4 and i != n - 1:
+        if i % x_lepes and i != n - 1:
             continue
         r.append(f'<text class="a-tengely" x="{_sz(X(i))}" '
                  f'y="{magassag - 12}" text-anchor="middle">{escape(c)}</text>')
