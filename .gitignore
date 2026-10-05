@@ -38,3 +38,10 @@ outputs/logs/
 # A dolgozat szovege - NEM valo a publikus repoba
 dolgozat/
 *.docx
+
+# A pipeline.py Parquet-tarolja es munkakonyvtara (napi tobb szaz MB, ujrageneralhato)
+outputs/tarolo/
+outputs/tarolo_dr50/
+outputs/tarolo_munka/
+outputs/skalazas_csv_*/
+outputs/geoparquet/

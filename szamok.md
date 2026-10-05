@@ -771,3 +771,35 @@ történt. A mérés összhangban van azzal, hogy a nagy, rakott tankerek szám�
 dán szorosok közül csak a Nagy-Balti-öv elég mély.
 **Korlát:** a `Draught` kézzel beállított mező, és a hajó rakott/üres
 állapotát nem feltétlenül frissítik.
+
+## Feldolgozó lánc: `pipeline.py` (Parquet-tároló)
+
+Forrás: `pipeline.py --zipbol`, kimenet `outputs/pipeline_napok.csv`, lefuttatva
+2026-10-05 az 5 letöltött napon. Tároló: 16 oszlop (amit bármely szkript olvas),
+mind a 26 oszlopban bitre azonos sorok összevonva (`dup_db` = példányszám),
+H3 (8) oszlop, (h3, ts) rendezés, zstd, 100 000 soros sorcsoport.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 140 430 880 | nyers sor az 5 napon (= a ZIP-ek sorszáma, mind validálva) | pipeline.py | 2026-10-05 |
+| 70 926 117 | sor a deduplikált tárolóban (5 nap) | pipeline.py | 2026-10-05 |
+| 49,5% | bitre azonos duplikátum, 5 nap, teljes fájl | pipeline.py | 2026-10-05 |
+| **54,6%** | bitre azonos duplikátum, 2026-07-15, **teljes napi fájl** (eddig nem mért) | pipeline.py | 2026-10-05 |
+| 56,03% | ugyanez a bounding boxban (10 860 221 → 4 775 542) – egyezik a korábbi 56,0%-kal | pipeline.py | 2026-10-05 |
+| 37,7% – 54,6% | a teljes fájlra vonatkozó duplikátum-arány napi szórása (09-05 – 07-15) | pipeline.py | 2026-10-05 |
+| 3 990 MiB → 941 MiB | ZIP → Parquet-tároló, 5 nap (**23,6%**) | pipeline.py | 2026-10-05 |
+| 226,7 MiB | 2026-07-15 a tárolóban (vö. 1 061 MiB: snappy, 26 oszlop, dedup. nélkül) | pipeline.py | 2026-10-05 |
+| 126 MiB | DR 50 m-es réteg, 5 nap, teljes terület, 6 oszlop | pipeline.py | 2026-10-05 |
+| 131 – 348 mp | futási idő/nap (medián 183 mp), meglévő ZIP-ből | pipeline.py | 2026-10-05 |
+| ~6,0 GiB | csúcsmemória/nap (a beállított 6 GB-os DuckDB-korlát) | pipeline.py | 2026-10-05 |
+| 6,2 – 14,0 GB | csúcs lemezhasználat/nap (kicsomagolt CSV + DuckDB-lapozás) | pipeline.py | 2026-10-05 |
+
+**Keresztellenőrzés:** a 07-15-i 36 650 571 sor, a 10 860 221 bbox-sor és a
+13 387 egyedi MMSI pontosan egyezik a korábbi független mérésekkel; a
+tárolóból a korábbi módon képzett bbox/6 oszlop/DR 50 m adat bájtra a régi
+56,1 → 10,8 MiB-ot (7,79×, DR önmagában 5,19×) adja.
+
+**Fontos:** a 23,6% NEM vethető össze a „Parquet NEM kisebb a ZIP-nél” korábbi
+megállapítással (az snappy, 26 oszlop, duplikátumokkal). A különbség forrása a
+deduplikálás, a zstd és az elhagyott 10 oszlop együtt; ezek hatását külön nem
+bontottuk fel.
