@@ -22,13 +22,18 @@ Kimenet:
   outputs/kapuvonal_atkelesek.csv  - atkelesenkent egy sor
   outputs/kapuvonal_napi.csv       - naponkent, kapunkent, tipusonkent
 
+Bemenet lehet a napi ZIP, vagy a pipeline.py altal irt Parquet-tarolo napi
+fajlja (a ketto ugyanazt az eredmenyt adja, ld. naplo, 2. fazis).
+
 Hasznalat:
     python kapuvonal.py data/aisdk-2026-07-15.zip
     python kapuvonal.py data/aisdk-2026-07-*.zip data/aisdk-2026-09-05.zip
+    python kapuvonal.py "outputs/tarolo/ev=2026/ho=07/*.parquet"
 """
 
 import argparse
 import csv
+import glob
 import sys
 import zipfile
 from collections import Counter, defaultdict
@@ -107,6 +112,8 @@ def atkelesek(df, kapu_lat):
 
 
 def feldolgoz(zip_ut, folyosok):
+    if Path(zip_ut).suffix == ".parquet":
+        return feldolgoz_parquet(zip_ut, folyosok)
     gyujto = {k: [] for k in KAPUK}
     tipus = defaultdict(Counter)
     merules = defaultdict(list)
@@ -140,13 +147,57 @@ def feldolgoz(zip_ut, folyosok):
                     gyujto[nev].append(sav[[TS, "MMSI", "Latitude", "Longitude"]])
                 print(f"  {osszes:>12,} sor", end="\r")
     print(f"  {osszes:>12,} sor beolvasva")
+    return osszesit(gyujto, tipus, merules), osszes
 
+
+def feldolgoz_parquet(pq_ut, folyosok):
+    """Ugyanaz, mint a feldolgoz(), a pipeline.py Parquet-tarolojabol.
+
+    A tarolo deduplikalt: a bitre azonos sorokbol egy maradt, a `dup_db`
+    oszlop mondja meg, hany volt belole. A tipus-szavazas es a merules-median
+    a nyers sorokon tortent, ezert itt `dup_db`-vel sulyozunk; az atkeles-
+    felismeres a deduplikalt pontokon fut (egy pont ismetlese nem atkeles).
+    A H3-folyosot a tarolt `h3` oszlop adja, nem kell ujraszamolni.
+    Az azonos masodpercu sorok forrasbeli sorrendjet a `sorrend` oszlop orzi;
+    enelkul hamis oda-vissza atkelesek keletkeznek (ld. naplo, 2. fazis).
+    """
+    import duckdb
+    gyujto = {k: [] for k in KAPUK}
+    tipus = defaultdict(Counter)
+    merules = defaultdict(list)
+    con = duckdb.connect()
+    f = Path(pq_ut).as_posix()
+    osszes = con.execute(f"SELECT sum(dup_db) FROM read_parquet('{f}')").fetchone()[0]
+    for nev, (lat, lo0, lo1) in KAPUK.items():
+        sav = con.execute(f"""
+            SELECT ts, MMSI, Latitude, Longitude, "Ship type", Draught, dup_db, h3
+            FROM read_parquet('{f}')
+            WHERE Latitude BETWEEN {lat - 0.04} AND {lat + 0.04}
+              AND Longitude BETWEEN {lo0} AND {lo1}
+            ORDER BY MMSI, ts, sorrend""").df()
+        sav = sav[np.isin(sav["h3"].to_numpy(), list(folyosok[nev]))]
+        if sav.empty:
+            continue
+        for mm, st, dr, db in zip(sav["MMSI"], sav["Ship type"], sav["Draught"], sav["dup_db"]):
+            s = tisztit(st)
+            if s:
+                tipus[mm][s] += int(db)
+            if dr == dr and dr > 0:
+                merules[mm].extend([float(dr)] * int(db))
+        gyujto[nev].append(sav[["ts", "MMSI", "Latitude", "Longitude"]])
+    con.close()
+    print(f"  {osszes:>12,} nyers sor a Parquetben")
+    return osszesit(gyujto, tipus, merules, ts_kesz=True), osszes
+
+
+def osszesit(gyujto, tipus, merules, ts_kesz=False):
     ki = []
     for nev, darabok in gyujto.items():
         if not darabok:
             continue
         df = pd.concat(darabok, ignore_index=True)
-        df["ts"] = pd.to_datetime(df[TS], format="%d/%m/%Y %H:%M:%S", errors="coerce")
+        if not ts_kesz:
+            df["ts"] = pd.to_datetime(df[TS], format="%d/%m/%Y %H:%M:%S", errors="coerce")
         df = df.dropna(subset=["ts"])
         a = atkelesek(df, KAPUK[nev][0])
         a["kapu"] = nev
@@ -157,7 +208,7 @@ def feldolgoz(zip_ut, folyosok):
                       for m in atk["MMSI"]]
     atk["merules_m"] = [round(float(np.median(merules[m])), 1) if merules[m] else None
                         for m in atk["MMSI"]]
-    return atk, osszes
+    return atk
 
 
 def main():
@@ -172,8 +223,13 @@ def main():
     for n, c in folyosok.items():
         print(f"Kapu: {n:<14} lat {KAPUK[n][0]}, H3-folyoso: {len(c)} cella")
 
-    minden = []
+    # a PowerShell nem bontja ki a *-ot, ezert itt tesszuk meg
+    bemenetek = []
     for z in args.zipek:
+        bemenetek += sorted(glob.glob(z)) if any(c in z for c in "*?[") else [z]
+
+    minden = []
+    for z in bemenetek:
         p = Path(z)
         if not p.exists():
             sys.exit(f"Nem letezik: {p}")

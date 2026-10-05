@@ -113,6 +113,12 @@ H3_MINTA = 2000
 
 MERES_IDOKOZ_MP = 0.2
 
+# A tarolo semajanak verzioja. Ha valtozik, a regebbi semaju napokat az
+# ujrafuttatas magatol ujracsinalja (nem kell --felulir).
+#   1: elso valtozat
+#   2: + `sorrend` oszlop (azonos masodpercu sorok forrasbeli sorrendje)
+SEMA = 2
+
 
 # --- Segedfuggvenyek -------------------------------------------------------
 
@@ -196,9 +202,9 @@ def kicsomagol(zip_fajl: Path, cel_dir: Path):
     return cel, sorok - 1                               # fejlec nelkul
 
 
-def duckdb_kapcsolat(munka: Path):
+def duckdb_kapcsolat(munka: Path, memoria: str = DUCKDB_MEMORIA):
     con = duckdb.connect()
-    con.execute(f"SET memory_limit = '{DUCKDB_MEMORIA}'")
+    con.execute(f"SET memory_limit = '{memoria}'")
     con.execute(f"SET temp_directory = '{(munka / 'duckdb_tmp').as_posix()}'")
     con.execute("SET preserve_insertion_order = false")
     con.execute("INSTALL h3 FROM community")
@@ -212,28 +218,39 @@ def csv_parquetbe(con, csv_fajl: Path, cel: Path):
     tipusos = ",\n".join(
         f'TRY_CAST("{o}" AS {t}) AS "{o}"' if t != "VARCHAR" else f'"{o}"'
         for o, t in OSZLOPOK)
+    # A `sorrend` oszlop: az azonos (MMSI, ts) parú, de eltero tartalmu sorok
+    # forrasbeli sorrendje (1, 2, ...). Egy hajonak ugyanarra a masodpercre
+    # lehet ket kulonbozo pozicioja; ha ezek sorrendje elveszik, egy kapuvonal
+    # mellett hamis oda-vissza atkeles keletkezik (ld. naplo, 2. fazis). A
+    # sorok ~99,9%-anal az ertek 1, ezert a tarolasa gyakorlatilag ingyenes.
+    con.execute("SET preserve_insertion_order = true")   # a row_number() miatt
     con.execute(f"""
         COPY (
-          WITH nyers AS (
-            SELECT *, count(*)::INTEGER AS dup_db
+          WITH szamozott AS (
+            SELECT *, row_number() OVER () AS rn
             FROM read_csv('{csv_fajl.as_posix()}', header = true,
                           all_varchar = true, delim = ',', quote = '"')
+          ), nyers AS (
+            SELECT * EXCLUDE (rn), count(*)::INTEGER AS dup_db, min(rn) AS elso
+            FROM szamozott
             GROUP BY ALL
           ), t AS (
             SELECT TRY_STRPTIME("{TS_FORRAS}", '{TS_FORMATUM}') AS ts,
                    {tipusos},
-                   dup_db
+                   dup_db, elso
             FROM nyers
           )
-          SELECT ts, * EXCLUDE (ts, dup_db),
+          SELECT ts, * EXCLUDE (ts, dup_db, elso),
                  CASE WHEN {ervenyes}
                       THEN h3_latlng_to_cell(Latitude, Longitude, {FELBONTAS})::BIGINT
                  END AS h3,
-                 dup_db
+                 dup_db,
+                 row_number() OVER (PARTITION BY MMSI, ts ORDER BY elso)::SMALLINT AS sorrend
           FROM t
-          ORDER BY h3, ts, MMSI
+          ORDER BY h3, ts, MMSI, sorrend
         ) TO '{cel.as_posix()}'
         (FORMAT parquet, COMPRESSION zstd, ROW_GROUP_SIZE {SORCSOPORT})""")
+    con.execute("SET preserve_insertion_order = false")
 
 
 def validal(con, pq: Path, zip_sorok: int) -> dict:
@@ -273,7 +290,7 @@ def dr_reteg(con, pq: Path, cel: Path) -> dict:
         SELECT {', '.join(DR_OSZLOPOK)} FROM read_parquet('{pq.as_posix()}')
         WHERE ts IS NOT NULL AND MMSI IS NOT NULL
           AND Latitude BETWEEN -90 AND 90 AND Longitude BETWEEN -180 AND 180
-        ORDER BY MMSI, ts, Latitude, Longitude, SOG, COG""").df()
+        ORDER BY MMSI, ts, sorrend""").df()
     # a DuckDB mikroszekundumos, a pandas nanoszekundumos idot adhat: egysegesitjuk
     t_mp = df["ts"].to_numpy().astype("datetime64[ns]").astype(np.int64) / 1e9
     tart, atlag, maxh = dead_reckoning_maszk(
@@ -291,7 +308,7 @@ def dr_reteg(con, pq: Path, cel: Path) -> dict:
 
 # --- Naplotabla (pipeline_napok.csv) ----------------------------------------
 
-MEZOK = ["nap", "statusz", "hiba", "zip_mib", "csv_mib", "zip_sor", "nyers_sor",
+MEZOK = ["nap", "statusz", "sema", "hiba","zip_mib", "csv_mib", "zip_sor", "nyers_sor",
          "dedup_sor", "dup_arany", "bbox_nyers_sor", "bbox_dedup_sor", "bbox_dup_arany",
          "ts_hibas_sor", "h3_nelkuli_sor", "egyedi_mmsi", "h3_minta_egyezik",
          "parquet_mib", "dr_bemenet_sor", "dr_megtartott_sor", "dr_atlag_hiba_m",
@@ -320,6 +337,7 @@ def naplo_ir(ut: Path, sorok: dict):
 
 def kesz(sor, args, nap) -> bool:
     return (sor is not None and sor.get("statusz") == "validalt"
+            and str(sor.get("sema")) == str(SEMA)
             and parquet_ut(args.tarolo, nap).exists()
             and (args.dr_kihagy or parquet_ut(args.tarolo_dr, nap).exists()))
 
@@ -327,7 +345,7 @@ def kesz(sor, args, nap) -> bool:
 # --- Egy nap ---------------------------------------------------------------
 
 def egy_nap(nap: date, args, letoltes_jovo) -> dict:
-    sor = {"nap": nap.isoformat(), "statusz": "hiba", "hiba": "",
+    sor = {"nap": nap.isoformat(), "statusz": "hiba", "sema": SEMA, "hiba": "",
            "feldolgozva": datetime.now().isoformat(timespec="seconds")}
     t_kezd = time.perf_counter()
     zf = zip_ut(nap, args.adat)
@@ -357,11 +375,14 @@ def egy_nap(nap: date, args, letoltes_jovo) -> dict:
             sor["kicsomagolas_mp"] = round(time.perf_counter() - t0, 1)
             sor["csv_mib"] = round(mib(csv_fajl), 1)
             sor["zip_sor"] = zip_sorok
+            if args.torol_zip_kicsomagolas_utan:
+                zf.unlink()
+                sor["zip_torolve"] = "kicsomagolas utan"
             print(f"  kicsomagolva: {sor['csv_mib']:,.0f} MiB, {zip_sorok:,} sor "
                   f"({sor['kicsomagolas_mp']} mp)")
 
             # 3. Parquet (dedup + H3 + rendezes), atmeneti nevre
-            con = duckdb_kapcsolat(munka)
+            con = duckdb_kapcsolat(munka, args.memoria)
             pq.parent.mkdir(parents=True, exist_ok=True)
             pq_tmp = pq.with_suffix(".parquet.tmp")
             t0 = time.perf_counter()
@@ -439,6 +460,12 @@ def main():
                     help="Ezeknek a napoknak a ZIP-jet --torol-zip mellett sem torli")
     ap.add_argument("--dr-kihagy", action="store_true",
                     help="A dead reckoning reteget nem kesziti el")
+    ap.add_argument("--memoria", default=DUCKDB_MEMORIA,
+                    help=f"DuckDB memoriakorlat (alap: {DUCKDB_MEMORIA}); nagyobb "
+                         "ertek kevesebb lemezre lapozast jelent")
+    ap.add_argument("--torol-zip-kicsomagolas-utan", action="store_true",
+                    help="A ZIP-et mar a kicsomagolas utan torli (szuk lemezu "
+                         "futtatohoz; hiba eseten ujra le kell tolteni)")
     ap.add_argument("--nincs-elotoltes", action="store_true",
                     help="Ne toltse le a kovetkezo napot az aktualis feldolgozasa alatt")
     args = ap.parse_args()

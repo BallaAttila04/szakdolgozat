@@ -787,12 +787,12 @@ H3 (8) oszlop, (h3, ts) rendezés, zstd, 100 000 soros sorcsoport.
 | **54,6%** | bitre azonos duplikátum, 2026-07-15, **teljes napi fájl** (eddig nem mért) | pipeline.py | 2026-10-05 |
 | 56,03% | ugyanez a bounding boxban (10 860 221 → 4 775 542) – egyezik a korábbi 56,0%-kal | pipeline.py | 2026-10-05 |
 | 37,7% – 54,6% | a teljes fájlra vonatkozó duplikátum-arány napi szórása (09-05 – 07-15) | pipeline.py | 2026-10-05 |
-| 3 990 MiB → 941 MiB | ZIP → Parquet-tároló, 5 nap (**23,6%**) | pipeline.py | 2026-10-05 |
+| 3 990 MiB → ~~941 MiB~~ → 941,7 MiB | ZIP → Parquet-tároló, 5 nap (**23,6%**); 2. séma: +0,7 MiB a `sorrend` oszlop miatt | pipeline.py | ~~2026-10-05~~ → 2026-10-06 |
 | 226,7 MiB | 2026-07-15 a tárolóban (vö. 1 061 MiB: snappy, 26 oszlop, dedup. nélkül) | pipeline.py | 2026-10-05 |
 | 126 MiB | DR 50 m-es réteg, 5 nap, teljes terület, 6 oszlop | pipeline.py | 2026-10-05 |
-| 131 – 348 mp | futási idő/nap (medián 183 mp), meglévő ZIP-ből | pipeline.py | 2026-10-05 |
+| ~~131 – 348 mp~~ → **196 – 385 mp** | futási idő/nap, meglévő ZIP-ből (~~medián 183 mp~~ → medián 264 mp); a változás oka a `sorrend` oszlop (2. séma), ld. lent | pipeline.py | ~~2026-10-05~~ → 2026-10-06 |
 | ~6,0 GiB | csúcsmemória/nap (a beállított 6 GB-os DuckDB-korlát) | pipeline.py | 2026-10-05 |
-| 6,2 – 14,0 GB | csúcs lemezhasználat/nap (kicsomagolt CSV + DuckDB-lapozás) | pipeline.py | 2026-10-05 |
+| ~~6,2 – 14,0 GB~~ → **7,7 – 16,5 GB** | csúcs lemezhasználat/nap (kicsomagolt CSV + DuckDB-lapozás), 2. séma | pipeline.py | ~~2026-10-05~~ → 2026-10-06 |
 
 **Keresztellenőrzés:** a 07-15-i 36 650 571 sor, a 10 860 221 bbox-sor és a
 13 387 egyedi MMSI pontosan egyezik a korábbi független mérésekkel; a
@@ -803,3 +803,24 @@ tárolóból a korábbi módon képzett bbox/6 oszlop/DR 50 m adat bájtra a ré
 megállapítással (az snappy, 26 oszlop, duplikátumokkal). A különbség forrása a
 deduplikálás, a zstd és az elhagyott 10 oszlop együtt; ezek hatását külön nem
 bontottuk fel.
+
+**Módosítás 2026-10-06 – a tároló 2. sémája (`sorrend` oszlop):** a 2. fázis
+ellenőrzése kimutatta, hogy az 1. sémából elveszett az azonos (MMSI, ts) párú,
+de eltérő pozíciójú sorok forrásbeli sorrendje, ami 8 hamis kapuvonal-átkelést
+okozott (1 266 vs. 1 258). A javított séma ezt egy kis egész oszlopban őrzi.
+Hatása: Parquet-méret +0,1–0,2 MiB/nap; a DR-réteg pontszáma a 07-15-i napon
+3 537 278 → 3 536 660 (a DR az azonos másodpercű pontok sorrendjére érzékeny).
+A Parquet-lépés ideje nőtt (a sorszámozáshoz a DuckDB-nek meg kell őriznie a
+beolvasási sorrendet), és a csúcs lemezhasználat is (a legnagyobb napon
+16,5 GB).
+
+## Kapuvonal-metrika a Parquet-tárolóból (2. fázis ellenőrzése)
+
+Forrás: `kapuvonal.py` a tároló 5 napi Parquet-fájlján, kimenet
+`outputs/kapuvonal_napi_parquet.csv`, `outputs/kapuvonal_atkelesek_parquet.csv`,
+lefuttatva 2026-10-06.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 1 258 = 1 258 | átkelés: ZIP-ből vs. Parquet-tárolóból (2. séma) – **bájtra azonos CSV** | kapuvonal.py | 2026-10-06 |
+| ~~1 266~~ | ugyanez az 1. sémájú tárolóból – hibás, a `sorrend` oszlop hiánya miatt | kapuvonal.py | 2026-10-05 |
