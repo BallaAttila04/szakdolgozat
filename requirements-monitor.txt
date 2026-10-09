@@ -1,0 +1,8 @@
+# A napi monitor (scripts/napi_futas.py) futtatasi fuggosegei - a GitHub
+# Actions workflow ezt telepiti. A verziok a helyben validalt kornyezeteibol.
+duckdb==1.5.5
+h3==4.5.0
+numpy==2.1.3
+pandas==2.2.3
+psutil==7.2.2
+requests==2.32.3

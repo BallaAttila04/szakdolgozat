@@ -286,10 +286,115 @@ def kapu_szakasz(atkeles_csv, pw_csv):
     }
 
 
+# --- Napi monitor szakasz -----------------------------------------------------
+
+MONITOR_KEZDET, MONITOR_VEG = "<!--MONITOR_KEZDET-->", "<!--MONITOR_VEG-->"
+MONITOR_NAPOK = 30
+JELZES_OSZTALY = {"szokatlanul magas": "jelzes-fel", "szokatlanul alacsony": "jelzes-le"}
+
+
+def monitor_szakasz(mappa: Path) -> str:
+    """A "Napi monitor" szakasz HTML-je az outputs/monitor/ fajljaibol.
+    A jelolok kozti resz a --csak-monitor modban onalloan cserelheto."""
+    allapot_f, jel_f = mappa / "allapot.json", mappa / "jelzesek.csv"
+    if not (allapot_f.exists() and jel_f.exists()):
+        return f"{MONITOR_KEZDET}<p>A monitor még nem futott.</p>{MONITOR_VEG}"
+    a = json.loads(allapot_f.read_text(encoding="utf-8"))
+    j = pd.read_csv(jel_f, dtype={"datum": str})
+    sorozat_nevek = list(dict.fromkeys(j["sorozat"]))
+    utolso = a["utolso_nap"]
+    frissitve = a["frissitve_utc"].replace("T", " ").replace("+00:00", "")
+
+    hiba = ""
+    if a.get("utolso_futas", {}).get("statusz") not in (None, "ok"):
+        f = a["utolso_futas"]
+        hiba = (f'<div class="jelzes">A legutóbbi futás ({escape(f.get("ido_utc", "").replace("T", " ").replace("+00:00", ""))} UTC) '
+                f'nem frissítette az adatot: {escape(f.get("uzenet", ""))}. Az alábbi számok '
+                f'a(z) {utolso} napra vonatkoznak.</div>')
+
+    # utolso nap kartyai
+    u = j[j["datum"] == utolso].set_index("sorozat")
+    kartyak = []
+    for nev in sorozat_nevek:
+        r = u.loc[nev]
+        if pd.isna(r["alapszint"]):
+            al = "alapszint még nincs (kevés korábbi nap)"
+        else:
+            al = (f"4 hét azonos napja: {tized(r['alapszint'])} · "
+                  f"{elojeles_szazalek(1 + r['elteres'])} · {r['jelzes']}")
+        kartyak.append(f'<div class="kartya"><span class="szam">{int(r["ertek"])}</span>'
+                       f'<span class="cimke"><b>{escape(nev)}</b><br>{al}</span></div>')
+
+    # utolso 30 nap idosora
+    napok = sorted(j["datum"].unique())[-MONITOR_NAPOK:]
+    szinek = ["var(--sor-1)", "var(--sor-2)", "var(--sor-0)"]
+    sorozatok = []
+    for nev, szin in zip(sorozat_nevek, szinek):
+        s = j[j["sorozat"] == nev].set_index("datum")["ertek"]
+        sorozatok.append((nev, [int(s.get(d, 0)) for d in napok], szin))
+    svg = vonaldiagram([d[5:] for d in napok], sorozatok, y_cimke="átkelés",
+                       x_cimke="nap", x_lepes=5)
+
+    # jelzesek az utolso 30 napban
+    jel = j[j["datum"].isin(napok) & j["jelzes"].str.startswith("szokatlanul")]
+    jel_tabla = (html_tabla(
+        ["nap", "sorozat", "átkelés", "alapszint", "eltérés", "jelzés"],
+        [[r.datum, r.sorozat, int(r.ertek), tized(r.alapszint), elojeles_szazalek(1 + r.elteres),
+          r.jelzes] for r in jel.itertuples()])
+        if len(jel) else "<p>Az utolsó 30 napban nem volt jelzés.</p>")
+
+    kuszob = ", ".join(f"{escape(n)}: ±{tized(v * 100)}%" for n, v in a["kuszob"].items())
+    return f"""{MONITOR_KEZDET}
+<h2 id="monitor">Napi monitor</h2>
+
+<p class="frissites">Utoljára frissítve: <b>{frissitve} UTC</b> · a legutóbbi
+feldolgozott nap: <b>{utolso}</b> · idősor: {a['elso_nap']} – {utolso}
+({a['napok_szama']} nap)</p>
+{hiba}
+<p>A lánc naponta, emberi beavatkozás nélkül fut: letölti az előző napok AIS-fájlját,
+validálja és Parquet-formátumba alakítja, majd kiszámolja a kereskedelmi
+(teherhajó és tanker) kapuvonal-átkeléseket. A dán szolgáltató a napi fájlt kb.
+48 órával a nap vége után teszi közzé, ezért a legfrissebb adat 2–3 napos. Minden
+napot az előző négy hét azonos napjainak mediánjához mérünk; a jelzési küszöb a
+teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): {kuszob}.</p>
+
+<div class="racs">{''.join(kartyak)}</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Kereskedelmi átkelések naponta, utolsó {len(napok)} nap</p>
+  {svg}
+</div>
+
+<div class="abra-doboz">
+  <p class="abra-cim">Jelzések az utolsó {len(napok)} napban</p>
+  <div class="tabla-gorgeto">{jel_tabla}</div>
+</div>
+{MONITOR_VEG}"""
+
+
+def csak_monitor(oldal: Path, mappa: Path) -> int:
+    """A kesz docs/index.html-ben csak a monitor-szakaszt csereli ki. A napi
+    utemezett futas ezt hivja: igy nem kellenek hozza a tobbi szakasz
+    bemenetei (amelyek egy resze nincs a repoban)."""
+    f = oldal / "index.html"
+    lap = f.read_text(encoding="utf-8")
+    k, v = lap.find(MONITOR_KEZDET), lap.find(MONITOR_VEG)
+    if k < 0 or v < 0:
+        sys.exit(f"A {f} nem tartalmazza a monitor-jeloloket - "
+                 f"elobb egy teljes 'python scripts/oldal_epit.py' kell.")
+    lap = lap[:k] + monitor_szakasz(mappa) + lap[v + len(MONITOR_VEG):]
+    f.write_text(lap, encoding="utf-8")
+    print(f"  {f}: a monitor-szakasz frissitve")
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--csak-monitor", action="store_true",
+                    help="Csak a 'Napi monitor' szakaszt frissiti a meglevo index.html-ben")
+    ap.add_argument("--monitor", default=KIMENET / "monitor")
     ap.add_argument("--kimenet", default=KIMENET,
                     help="A generalt fajlok forrasa (alap: outputs/)")
     ap.add_argument("--oldal", default=OLDAL,
@@ -297,6 +402,9 @@ def main():
     ap.add_argument("--sablon", default=SABLONOK / "oldal_sablon.html")
     ap.add_argument("--stat", default=KIMENET / "hajo_statisztika.json")
     args = ap.parse_args()
+
+    if args.csak_monitor:
+        return csak_monitor(Path(args.oldal), Path(args.monitor))
 
     forras = Path(args.kimenet)
     cel = Path(args.oldal)
@@ -338,6 +446,7 @@ def main():
         **h3_szakasz(KIMENET / "h3_tarolas.csv", KIMENET / "h3_teruletmeret.csv"),
         **kapu_szakasz(KIMENET / "kapuvonal_atkelesek.csv",
                        ADAT / "portwatch_chokepoints.csv"),
+        "<!--MONITOR-->": monitor_szakasz(Path(args.monitor)),
     }
 
     lap = sablon_fajl.read_text(encoding="utf-8")

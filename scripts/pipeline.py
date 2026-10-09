@@ -388,6 +388,7 @@ def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
             if allapot == "hiba" or not zf.exists():
                 sor["statusz"] = "nincs_adat"
                 sor["hiba"] = "a ZIP nem toltheto le (404 vagy halozati hiba)"
+                sor.update(osszes_mp=0.0, csucs_memoria_mib=0, csucs_lemez_mib=0)
                 return sor
             sor["zip_mib"] = round(mib(zf), 1)
 

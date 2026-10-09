@@ -903,3 +903,25 @@ Forrás: `geoparquet_proba.py`, kimenet `outputs/geoparquet_proba.csv`, 2026-10-
 | 30,7 vs 39,1 ms | térbeli lekérdezés DuckDB-vel: lat/lon vs GeoParquet bbox-oszlop | geoparquet_proba.py | 2026-10-09 |
 | 245,5 ms | ugyanez GeoPandasszal (`read_parquet(bbox=...)`) | geoparquet_proba.py | 2026-10-09 |
 | 1,57 vs 16,1 mp | teljes beolvasás: pandas vs GeoPandas | geoparquet_proba.py | 2026-10-09 |
+
+## Napi forgalmi monitor (6b–6c)
+
+Forrás: `monitor.py` (`outputs/monitor/`), lefuttatva 2026-10-09. Sorozat: a
+kereskedelmi (teher + tanker) kapuvonal-átkelések naponta; alapszint: az előző
+4 hét azonos napjának mediánja; küszöb: 2 × 1,4826 × MAD az idősor relatív
+eltéréseiből.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 93 nap (06-01 – 09-05), 72 alapszinttel | a visszamenőleges futás idősora | monitor.py | 2026-10-09 |
+| **11,8%** | a két kapu együttes napi kereskedelmi átkelésének robusztus szórása (a korábbi egypáros 17,6% helyett; medián abszolút eltérés 7,8%, p90 22,0%) | monitor.py | 2026-10-09 |
+| 17,8% / 12,8% | ugyanez a Nagy-Balti-övön / az Øresundon | monitor.py | 2026-10-09 |
+| ±23,5% / ±35,7% / ±25,7% | jelzési küszöb (Mindkét kapu / Nagy-Balti-öv / Øresund), 93 napos idősor | monitor.py | 2026-10-09 |
+| 8,3% / 5,6% / 12,5% | a jelzett napok aránya (ugyanebben a sorrendben) | monitor.py | 2026-10-09 |
+| +33,0% (117 vs 88,0) – szokatlanul magas | 2026-07-15, mindkét kapu; a 72 napból a 2. legnagyobb eltérés | monitor.py | 2026-10-09 |
+| −7,1% (98 vs 105,5) – normál | 2026-07-16, mindkét kapu | monitor.py | 2026-10-09 |
+| 124 nap, 2 882 sor | a monitortábla a helyi napi futás után (06-01 – 10-06) | napi_futas.py | 2026-10-09 |
+| 96 – 141 mp, 8,6 – 10,1 GiB | napi idő és csúcsmemória a napi futásban (`--kozvetlen-zip`) | napi_futas.py | 2026-10-09 |
+
+A küszöbök az idősor bővülésével változnak (117 napon: ±22,7% / ±35,3% /
+±24,9%; 124 napon az oldal szerint ±23,5% / ±35,6% / ±25,4%).

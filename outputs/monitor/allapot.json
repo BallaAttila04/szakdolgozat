@@ -1,0 +1,39 @@
+{
+ "utolso_nap": "2026-10-06",
+ "napok_szama": 124,
+ "elso_nap": "2026-06-01",
+ "frissitve_utc": "2026-10-09T05:08:32+00:00",
+ "kuszob": {
+  "Mindkét kapu": 0.2348,
+  "Nagy-Balti-öv": 0.3558,
+  "Øresund": 0.2542
+ },
+ "zajszint": {
+  "Mindkét kapu": {
+   "napok": 103,
+   "median_abs_elteres": 0.0777,
+   "robusztus_szoras": 0.1174,
+   "p90_abs_elteres": 0.2192
+  },
+  "Nagy-Balti-öv": {
+   "napok": 103,
+   "median_abs_elteres": 0.12,
+   "robusztus_szoras": 0.1779,
+   "p90_abs_elteres": 0.25
+  },
+  "Øresund": {
+   "napok": 103,
+   "median_abs_elteres": 0.0857,
+   "robusztus_szoras": 0.1271,
+   "p90_abs_elteres": 0.2959
+  }
+ },
+ "alap_hetek": 4,
+ "min_alapnap": 3,
+ "kuszob_szorzo": 2.0,
+ "utolso_futas": {
+  "ido_utc": "2026-10-09T05:09:49+00:00",
+  "statusz": "ok",
+  "uzenet": "nincs uj nap"
+ }
+}

@@ -1,0 +1,2883 @@
+datum,kapu,irany,csoport,atkeles
+2026-06-01,Nagy-Balti-öv,dél,Kedvtelési,7
+2026-06-01,Nagy-Balti-öv,dél,Személyszállító,2
+2026-06-01,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-01,Nagy-Balti-öv,dél,Tanker,9
+2026-06-01,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-01,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-01,Nagy-Balti-öv,észak,Kedvtelési,17
+2026-06-01,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-01,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-01,Nagy-Balti-öv,észak,Tanker,9
+2026-06-01,Nagy-Balti-öv,észak,Teherhajó,16
+2026-06-01,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-01,Øresund,dél,Kedvtelési,6
+2026-06-01,Øresund,dél,Személyszállító,3
+2026-06-01,Øresund,dél,Szolgálati,7
+2026-06-01,Øresund,dél,Tanker,4
+2026-06-01,Øresund,dél,Teherhajó,15
+2026-06-01,Øresund,észak,Egyéb / ismeretlen,1
+2026-06-01,Øresund,észak,Kedvtelési,11
+2026-06-01,Øresund,észak,Személyszállító,4
+2026-06-01,Øresund,észak,Szolgálati,4
+2026-06-01,Øresund,észak,Tanker,8
+2026-06-01,Øresund,észak,Teherhajó,18
+2026-06-02,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-06-02,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-02,Nagy-Balti-öv,dél,Szolgálati,3
+2026-06-02,Nagy-Balti-öv,dél,Tanker,10
+2026-06-02,Nagy-Balti-öv,dél,Teherhajó,20
+2026-06-02,Nagy-Balti-öv,észak,Kedvtelési,22
+2026-06-02,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-02,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-02,Nagy-Balti-öv,észak,Tanker,15
+2026-06-02,Nagy-Balti-öv,észak,Teherhajó,20
+2026-06-02,Øresund,dél,Halászhajó,2
+2026-06-02,Øresund,dél,Kedvtelési,6
+2026-06-02,Øresund,dél,Személyszállító,2
+2026-06-02,Øresund,dél,Szolgálati,3
+2026-06-02,Øresund,dél,Tanker,7
+2026-06-02,Øresund,dél,Teherhajó,26
+2026-06-02,Øresund,észak,Halászhajó,2
+2026-06-02,Øresund,észak,Kedvtelési,11
+2026-06-02,Øresund,észak,Személyszállító,2
+2026-06-02,Øresund,észak,Szolgálati,8
+2026-06-02,Øresund,észak,Tanker,3
+2026-06-02,Øresund,észak,Teherhajó,16
+2026-06-03,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-06-03,Nagy-Balti-öv,dél,Kedvtelési,6
+2026-06-03,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-03,Nagy-Balti-öv,dél,Szolgálati,6
+2026-06-03,Nagy-Balti-öv,dél,Tanker,7
+2026-06-03,Nagy-Balti-öv,dél,Teherhajó,18
+2026-06-03,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-03,Nagy-Balti-öv,észak,Kedvtelési,12
+2026-06-03,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-03,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-03,Nagy-Balti-öv,észak,Tanker,3
+2026-06-03,Nagy-Balti-öv,észak,Teherhajó,18
+2026-06-03,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-03,Øresund,dél,Halászhajó,1
+2026-06-03,Øresund,dél,Kedvtelési,10
+2026-06-03,Øresund,dél,Személyszállító,2
+2026-06-03,Øresund,dél,Szolgálati,7
+2026-06-03,Øresund,dél,Tanker,13
+2026-06-03,Øresund,dél,Teherhajó,18
+2026-06-03,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-03,Øresund,észak,Kedvtelési,8
+2026-06-03,Øresund,észak,Személyszállító,1
+2026-06-03,Øresund,észak,Szolgálati,7
+2026-06-03,Øresund,észak,Tanker,5
+2026-06-03,Øresund,észak,Teherhajó,16
+2026-06-04,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-06-04,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-04,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-04,Nagy-Balti-öv,dél,Tanker,8
+2026-06-04,Nagy-Balti-öv,dél,Teherhajó,11
+2026-06-04,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-06-04,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-04,Nagy-Balti-öv,észak,Szolgálati,5
+2026-06-04,Nagy-Balti-öv,észak,Tanker,9
+2026-06-04,Nagy-Balti-öv,észak,Teherhajó,29
+2026-06-04,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-04,Øresund,dél,Kedvtelési,5
+2026-06-04,Øresund,dél,Személyszállító,1
+2026-06-04,Øresund,dél,Szolgálati,5
+2026-06-04,Øresund,dél,Tanker,11
+2026-06-04,Øresund,dél,Teherhajó,19
+2026-06-04,Øresund,észak,Kedvtelési,9
+2026-06-04,Øresund,észak,Személyszállító,1
+2026-06-04,Øresund,észak,Szolgálati,2
+2026-06-04,Øresund,észak,Tanker,6
+2026-06-04,Øresund,észak,Teherhajó,22
+2026-06-05,Nagy-Balti-öv,dél,Kedvtelési,9
+2026-06-05,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-05,Nagy-Balti-öv,dél,Szolgálati,4
+2026-06-05,Nagy-Balti-öv,dél,Tanker,4
+2026-06-05,Nagy-Balti-öv,dél,Teherhajó,12
+2026-06-05,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-06-05,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-05,Nagy-Balti-öv,észak,Szolgálati,5
+2026-06-05,Nagy-Balti-öv,észak,Tanker,9
+2026-06-05,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-05,Øresund,dél,Egyéb / ismeretlen,2
+2026-06-05,Øresund,dél,Halászhajó,1
+2026-06-05,Øresund,dél,Kedvtelési,10
+2026-06-05,Øresund,dél,Személyszállító,2
+2026-06-05,Øresund,dél,Szolgálati,8
+2026-06-05,Øresund,dél,Tanker,7
+2026-06-05,Øresund,dél,Teherhajó,31
+2026-06-05,Øresund,észak,Halászhajó,1
+2026-06-05,Øresund,észak,Kedvtelési,20
+2026-06-05,Øresund,észak,Személyszállító,5
+2026-06-05,Øresund,észak,Szolgálati,4
+2026-06-05,Øresund,észak,Tanker,4
+2026-06-05,Øresund,észak,Teherhajó,12
+2026-06-06,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-06,Nagy-Balti-öv,dél,Kedvtelési,6
+2026-06-06,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-06,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-06,Nagy-Balti-öv,dél,Tanker,6
+2026-06-06,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-06,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-06,Nagy-Balti-öv,észak,Kedvtelési,23
+2026-06-06,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-06,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-06,Nagy-Balti-öv,észak,Tanker,14
+2026-06-06,Nagy-Balti-öv,észak,Teherhajó,17
+2026-06-06,Øresund,dél,Egyéb / ismeretlen,2
+2026-06-06,Øresund,dél,Kedvtelési,14
+2026-06-06,Øresund,dél,Személyszállító,6
+2026-06-06,Øresund,dél,Szolgálati,3
+2026-06-06,Øresund,dél,Tanker,8
+2026-06-06,Øresund,dél,Teherhajó,25
+2026-06-06,Øresund,észak,Egyéb / ismeretlen,4
+2026-06-06,Øresund,észak,Kedvtelési,12
+2026-06-06,Øresund,észak,Személyszállító,4
+2026-06-06,Øresund,észak,Szolgálati,3
+2026-06-06,Øresund,észak,Tanker,7
+2026-06-06,Øresund,észak,Teherhajó,13
+2026-06-07,Nagy-Balti-öv,dél,Egyéb / ismeretlen,4
+2026-06-07,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-06-07,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-07,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-07,Nagy-Balti-öv,dél,Tanker,3
+2026-06-07,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-07,Nagy-Balti-öv,észak,Kedvtelési,22
+2026-06-07,Nagy-Balti-öv,észak,Személyszállító,5
+2026-06-07,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-07,Nagy-Balti-öv,észak,Tanker,9
+2026-06-07,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-07,Øresund,dél,Egyéb / ismeretlen,4
+2026-06-07,Øresund,dél,Kedvtelési,16
+2026-06-07,Øresund,dél,Személyszállító,4
+2026-06-07,Øresund,dél,Szolgálati,3
+2026-06-07,Øresund,dél,Tanker,7
+2026-06-07,Øresund,dél,Teherhajó,26
+2026-06-07,Øresund,észak,Egyéb / ismeretlen,5
+2026-06-07,Øresund,észak,Kedvtelési,26
+2026-06-07,Øresund,észak,Személyszállító,4
+2026-06-07,Øresund,észak,Szolgálati,7
+2026-06-07,Øresund,észak,Tanker,8
+2026-06-07,Øresund,észak,Teherhajó,19
+2026-06-08,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-06-08,Nagy-Balti-öv,dél,Személyszállító,5
+2026-06-08,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-08,Nagy-Balti-öv,dél,Tanker,10
+2026-06-08,Nagy-Balti-öv,dél,Teherhajó,14
+2026-06-08,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-06-08,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-06-08,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-08,Nagy-Balti-öv,észak,Tanker,8
+2026-06-08,Nagy-Balti-öv,észak,Teherhajó,15
+2026-06-08,Øresund,dél,Egyéb / ismeretlen,5
+2026-06-08,Øresund,dél,Halászhajó,1
+2026-06-08,Øresund,dél,Kedvtelési,11
+2026-06-08,Øresund,dél,Személyszállító,3
+2026-06-08,Øresund,dél,Szolgálati,6
+2026-06-08,Øresund,dél,Teherhajó,25
+2026-06-08,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-08,Øresund,észak,Kedvtelési,7
+2026-06-08,Øresund,észak,Személyszállító,4
+2026-06-08,Øresund,észak,Szolgálati,6
+2026-06-08,Øresund,észak,Tanker,6
+2026-06-08,Øresund,észak,Teherhajó,17
+2026-06-09,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-09,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-06-09,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-09,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-09,Nagy-Balti-öv,dél,Tanker,15
+2026-06-09,Nagy-Balti-öv,dél,Teherhajó,12
+2026-06-09,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-09,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-06-09,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-09,Nagy-Balti-öv,észak,Szolgálati,3
+2026-06-09,Nagy-Balti-öv,észak,Tanker,6
+2026-06-09,Nagy-Balti-öv,észak,Teherhajó,14
+2026-06-09,Øresund,dél,Egyéb / ismeretlen,2
+2026-06-09,Øresund,dél,Halászhajó,1
+2026-06-09,Øresund,dél,Kedvtelési,18
+2026-06-09,Øresund,dél,Személyszállító,1
+2026-06-09,Øresund,dél,Szolgálati,4
+2026-06-09,Øresund,dél,Tanker,1
+2026-06-09,Øresund,dél,Teherhajó,24
+2026-06-09,Øresund,észak,Egyéb / ismeretlen,1
+2026-06-09,Øresund,észak,Kedvtelési,5
+2026-06-09,Øresund,észak,Személyszállító,3
+2026-06-09,Øresund,észak,Szolgálati,5
+2026-06-09,Øresund,észak,Tanker,7
+2026-06-09,Øresund,észak,Teherhajó,17
+2026-06-10,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-06-10,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-10,Nagy-Balti-öv,dél,Szolgálati,5
+2026-06-10,Nagy-Balti-öv,dél,Tanker,4
+2026-06-10,Nagy-Balti-öv,dél,Teherhajó,17
+2026-06-10,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-10,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-06-10,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-10,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-10,Nagy-Balti-öv,észak,Tanker,9
+2026-06-10,Nagy-Balti-öv,észak,Teherhajó,14
+2026-06-10,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-10,Øresund,dél,Kedvtelési,16
+2026-06-10,Øresund,dél,Személyszállító,2
+2026-06-10,Øresund,dél,Szolgálati,8
+2026-06-10,Øresund,dél,Tanker,4
+2026-06-10,Øresund,dél,Teherhajó,21
+2026-06-10,Øresund,észak,Egyéb / ismeretlen,4
+2026-06-10,Øresund,észak,Kedvtelési,9
+2026-06-10,Øresund,észak,Személyszállító,1
+2026-06-10,Øresund,észak,Szolgálati,4
+2026-06-10,Øresund,észak,Tanker,5
+2026-06-10,Øresund,észak,Teherhajó,14
+2026-06-11,Nagy-Balti-öv,dél,Kedvtelési,7
+2026-06-11,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-11,Nagy-Balti-öv,dél,Tanker,8
+2026-06-11,Nagy-Balti-öv,dél,Teherhajó,14
+2026-06-11,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-11,Nagy-Balti-öv,észak,Halászhajó,2
+2026-06-11,Nagy-Balti-öv,észak,Kedvtelési,14
+2026-06-11,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-11,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-11,Nagy-Balti-öv,észak,Tanker,9
+2026-06-11,Nagy-Balti-öv,észak,Teherhajó,22
+2026-06-11,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-11,Øresund,dél,Halászhajó,1
+2026-06-11,Øresund,dél,Kedvtelési,15
+2026-06-11,Øresund,dél,Személyszállító,3
+2026-06-11,Øresund,dél,Szolgálati,4
+2026-06-11,Øresund,dél,Tanker,5
+2026-06-11,Øresund,dél,Teherhajó,21
+2026-06-11,Øresund,észak,Egyéb / ismeretlen,1
+2026-06-11,Øresund,észak,Halászhajó,1
+2026-06-11,Øresund,észak,Kedvtelési,5
+2026-06-11,Øresund,észak,Személyszállító,3
+2026-06-11,Øresund,észak,Szolgálati,3
+2026-06-11,Øresund,észak,Tanker,9
+2026-06-11,Øresund,észak,Teherhajó,25
+2026-06-12,Nagy-Balti-öv,dél,Halászhajó,1
+2026-06-12,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-06-12,Nagy-Balti-öv,dél,Személyszállító,5
+2026-06-12,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-12,Nagy-Balti-öv,dél,Tanker,10
+2026-06-12,Nagy-Balti-öv,dél,Teherhajó,14
+2026-06-12,Nagy-Balti-öv,észak,Kedvtelési,41
+2026-06-12,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-12,Nagy-Balti-öv,észak,Tanker,10
+2026-06-12,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-12,Øresund,dél,Egyéb / ismeretlen,2
+2026-06-12,Øresund,dél,Kedvtelési,17
+2026-06-12,Øresund,dél,Személyszállító,2
+2026-06-12,Øresund,dél,Szolgálati,5
+2026-06-12,Øresund,dél,Tanker,10
+2026-06-12,Øresund,dél,Teherhajó,23
+2026-06-12,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-12,Øresund,észak,Kedvtelési,11
+2026-06-12,Øresund,észak,Személyszállító,3
+2026-06-12,Øresund,észak,Szolgálati,6
+2026-06-12,Øresund,észak,Tanker,4
+2026-06-12,Øresund,észak,Teherhajó,13
+2026-06-13,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-13,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-13,Nagy-Balti-öv,dél,Tanker,5
+2026-06-13,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-13,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-13,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-06-13,Nagy-Balti-öv,észak,Személyszállító,5
+2026-06-13,Nagy-Balti-öv,észak,Szolgálati,1
+2026-06-13,Nagy-Balti-öv,észak,Tanker,8
+2026-06-13,Nagy-Balti-öv,észak,Teherhajó,16
+2026-06-13,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-13,Øresund,dél,Halászhajó,1
+2026-06-13,Øresund,dél,Kedvtelési,23
+2026-06-13,Øresund,dél,Személyszállító,7
+2026-06-13,Øresund,dél,Szolgálati,4
+2026-06-13,Øresund,dél,Tanker,9
+2026-06-13,Øresund,dél,Teherhajó,25
+2026-06-13,Øresund,észak,Egyéb / ismeretlen,3
+2026-06-13,Øresund,észak,Halászhajó,1
+2026-06-13,Øresund,észak,Kedvtelési,13
+2026-06-13,Øresund,észak,Személyszállító,4
+2026-06-13,Øresund,észak,Szolgálati,4
+2026-06-13,Øresund,észak,Tanker,11
+2026-06-13,Øresund,észak,Teherhajó,16
+2026-06-14,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-06-14,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-06-14,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-14,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-14,Nagy-Balti-öv,dél,Tanker,5
+2026-06-14,Nagy-Balti-öv,dél,Teherhajó,24
+2026-06-14,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-14,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-06-14,Nagy-Balti-öv,észak,Személyszállító,5
+2026-06-14,Nagy-Balti-öv,észak,Tanker,13
+2026-06-14,Nagy-Balti-öv,észak,Teherhajó,23
+2026-06-14,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-14,Øresund,dél,Kedvtelési,11
+2026-06-14,Øresund,dél,Személyszállító,3
+2026-06-14,Øresund,dél,Szolgálati,4
+2026-06-14,Øresund,dél,Tanker,7
+2026-06-14,Øresund,dél,Teherhajó,25
+2026-06-14,Øresund,észak,Kedvtelési,8
+2026-06-14,Øresund,észak,Személyszállító,3
+2026-06-14,Øresund,észak,Szolgálati,2
+2026-06-14,Øresund,észak,Tanker,4
+2026-06-14,Øresund,észak,Teherhajó,12
+2026-06-15,Nagy-Balti-öv,dél,Kedvtelési,7
+2026-06-15,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-15,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-15,Nagy-Balti-öv,dél,Tanker,6
+2026-06-15,Nagy-Balti-öv,dél,Teherhajó,14
+2026-06-15,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-06-15,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-15,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-06-15,Nagy-Balti-öv,észak,Személyszállító,6
+2026-06-15,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-15,Nagy-Balti-öv,észak,Tanker,11
+2026-06-15,Nagy-Balti-öv,észak,Teherhajó,14
+2026-06-15,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-15,Øresund,dél,Kedvtelési,3
+2026-06-15,Øresund,dél,Személyszállító,6
+2026-06-15,Øresund,dél,Szolgálati,4
+2026-06-15,Øresund,dél,Tanker,8
+2026-06-15,Øresund,dél,Teherhajó,21
+2026-06-15,Øresund,észak,Egyéb / ismeretlen,3
+2026-06-15,Øresund,észak,Halászhajó,2
+2026-06-15,Øresund,észak,Kedvtelési,6
+2026-06-15,Øresund,észak,Személyszállító,4
+2026-06-15,Øresund,észak,Szolgálati,7
+2026-06-15,Øresund,észak,Tanker,2
+2026-06-15,Øresund,észak,Teherhajó,22
+2026-06-16,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-16,Nagy-Balti-öv,dél,Kedvtelési,14
+2026-06-16,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-16,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-16,Nagy-Balti-öv,dél,Tanker,8
+2026-06-16,Nagy-Balti-öv,dél,Teherhajó,12
+2026-06-16,Nagy-Balti-öv,észak,Egyéb / ismeretlen,4
+2026-06-16,Nagy-Balti-öv,észak,Kedvtelési,12
+2026-06-16,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-16,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-16,Nagy-Balti-öv,észak,Tanker,9
+2026-06-16,Nagy-Balti-öv,észak,Teherhajó,22
+2026-06-16,Øresund,dél,Kedvtelési,23
+2026-06-16,Øresund,dél,Személyszállító,2
+2026-06-16,Øresund,dél,Szolgálati,5
+2026-06-16,Øresund,dél,Tanker,7
+2026-06-16,Øresund,dél,Teherhajó,22
+2026-06-16,Øresund,észak,Halászhajó,1
+2026-06-16,Øresund,észak,Kedvtelési,28
+2026-06-16,Øresund,észak,Személyszállító,3
+2026-06-16,Øresund,észak,Szolgálati,8
+2026-06-16,Øresund,észak,Tanker,6
+2026-06-16,Øresund,észak,Teherhajó,22
+2026-06-17,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-06-17,Nagy-Balti-öv,dél,Személyszállító,5
+2026-06-17,Nagy-Balti-öv,dél,Szolgálati,4
+2026-06-17,Nagy-Balti-öv,dél,Tanker,7
+2026-06-17,Nagy-Balti-öv,dél,Teherhajó,18
+2026-06-17,Nagy-Balti-öv,észak,Kedvtelési,20
+2026-06-17,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-17,Nagy-Balti-öv,észak,Szolgálati,6
+2026-06-17,Nagy-Balti-öv,észak,Tanker,9
+2026-06-17,Nagy-Balti-öv,észak,Teherhajó,20
+2026-06-17,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-17,Øresund,dél,Kedvtelési,12
+2026-06-17,Øresund,dél,Személyszállító,2
+2026-06-17,Øresund,dél,Szolgálati,7
+2026-06-17,Øresund,dél,Tanker,5
+2026-06-17,Øresund,dél,Teherhajó,22
+2026-06-17,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-17,Øresund,észak,Kedvtelési,23
+2026-06-17,Øresund,észak,Személyszállító,1
+2026-06-17,Øresund,észak,Szolgálati,6
+2026-06-17,Øresund,észak,Tanker,10
+2026-06-17,Øresund,észak,Teherhajó,17
+2026-06-18,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-18,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-06-18,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-18,Nagy-Balti-öv,dél,Szolgálati,4
+2026-06-18,Nagy-Balti-öv,dél,Tanker,7
+2026-06-18,Nagy-Balti-öv,dél,Teherhajó,11
+2026-06-18,Nagy-Balti-öv,észak,Kedvtelési,19
+2026-06-18,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-18,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-18,Nagy-Balti-öv,észak,Tanker,11
+2026-06-18,Nagy-Balti-öv,észak,Teherhajó,23
+2026-06-18,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-18,Øresund,dél,Kedvtelési,13
+2026-06-18,Øresund,dél,Személyszállító,1
+2026-06-18,Øresund,dél,Szolgálati,6
+2026-06-18,Øresund,dél,Tanker,7
+2026-06-18,Øresund,dél,Teherhajó,29
+2026-06-18,Øresund,észak,Kedvtelési,17
+2026-06-18,Øresund,észak,Személyszállító,1
+2026-06-18,Øresund,észak,Szolgálati,7
+2026-06-18,Øresund,észak,Tanker,5
+2026-06-18,Øresund,észak,Teherhajó,16
+2026-06-19,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-06-19,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-06-19,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-19,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-19,Nagy-Balti-öv,dél,Tanker,7
+2026-06-19,Nagy-Balti-öv,dél,Teherhajó,16
+2026-06-19,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-06-19,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-19,Nagy-Balti-öv,észak,Kedvtelési,29
+2026-06-19,Nagy-Balti-öv,észak,Személyszállító,5
+2026-06-19,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-19,Nagy-Balti-öv,észak,Tanker,13
+2026-06-19,Nagy-Balti-öv,észak,Teherhajó,20
+2026-06-19,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-19,Øresund,dél,Halászhajó,2
+2026-06-19,Øresund,dél,Kedvtelési,12
+2026-06-19,Øresund,dél,Személyszállító,1
+2026-06-19,Øresund,dél,Szolgálati,4
+2026-06-19,Øresund,dél,Tanker,9
+2026-06-19,Øresund,dél,Teherhajó,21
+2026-06-19,Øresund,észak,Egyéb / ismeretlen,1
+2026-06-19,Øresund,észak,Halászhajó,2
+2026-06-19,Øresund,észak,Kedvtelési,32
+2026-06-19,Øresund,észak,Személyszállító,2
+2026-06-19,Øresund,észak,Szolgálati,6
+2026-06-19,Øresund,észak,Tanker,3
+2026-06-19,Øresund,észak,Teherhajó,14
+2026-06-20,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-06-20,Nagy-Balti-öv,dél,Személyszállító,5
+2026-06-20,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-20,Nagy-Balti-öv,dél,Tanker,8
+2026-06-20,Nagy-Balti-öv,dél,Teherhajó,16
+2026-06-20,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-06-20,Nagy-Balti-öv,észak,Kedvtelési,15
+2026-06-20,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-20,Nagy-Balti-öv,észak,Szolgálati,1
+2026-06-20,Nagy-Balti-öv,észak,Tanker,15
+2026-06-20,Nagy-Balti-öv,észak,Teherhajó,13
+2026-06-20,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-20,Øresund,dél,Kedvtelési,13
+2026-06-20,Øresund,dél,Személyszállító,6
+2026-06-20,Øresund,dél,Szolgálati,5
+2026-06-20,Øresund,dél,Tanker,5
+2026-06-20,Øresund,dél,Teherhajó,23
+2026-06-20,Øresund,észak,Kedvtelési,24
+2026-06-20,Øresund,észak,Személyszállító,5
+2026-06-20,Øresund,észak,Szolgálati,4
+2026-06-20,Øresund,észak,Tanker,6
+2026-06-20,Øresund,észak,Teherhajó,19
+2026-06-21,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-21,Nagy-Balti-öv,dél,Kedvtelési,12
+2026-06-21,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-21,Nagy-Balti-öv,dél,Szolgálati,3
+2026-06-21,Nagy-Balti-öv,dél,Tanker,7
+2026-06-21,Nagy-Balti-öv,dél,Teherhajó,11
+2026-06-21,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-21,Nagy-Balti-öv,észak,Kedvtelési,9
+2026-06-21,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-21,Nagy-Balti-öv,észak,Szolgálati,1
+2026-06-21,Nagy-Balti-öv,észak,Tanker,4
+2026-06-21,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-21,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-21,Øresund,dél,Kedvtelési,42
+2026-06-21,Øresund,dél,Személyszállító,3
+2026-06-21,Øresund,dél,Szolgálati,5
+2026-06-21,Øresund,dél,Tanker,7
+2026-06-21,Øresund,dél,Teherhajó,15
+2026-06-21,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-21,Øresund,észak,Kedvtelési,21
+2026-06-21,Øresund,észak,Személyszállító,4
+2026-06-21,Øresund,észak,Szolgálati,4
+2026-06-21,Øresund,észak,Tanker,8
+2026-06-21,Øresund,észak,Teherhajó,21
+2026-06-22,Nagy-Balti-öv,dél,Halászhajó,1
+2026-06-22,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-06-22,Nagy-Balti-öv,dél,Személyszállító,2
+2026-06-22,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-22,Nagy-Balti-öv,dél,Tanker,5
+2026-06-22,Nagy-Balti-öv,dél,Teherhajó,18
+2026-06-22,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-22,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-22,Nagy-Balti-öv,észak,Kedvtelési,17
+2026-06-22,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-22,Nagy-Balti-öv,észak,Szolgálati,3
+2026-06-22,Nagy-Balti-öv,észak,Tanker,10
+2026-06-22,Nagy-Balti-öv,észak,Teherhajó,22
+2026-06-22,Øresund,dél,Egyéb / ismeretlen,2
+2026-06-22,Øresund,dél,Kedvtelési,16
+2026-06-22,Øresund,dél,Személyszállító,2
+2026-06-22,Øresund,dél,Szolgálati,2
+2026-06-22,Øresund,dél,Tanker,5
+2026-06-22,Øresund,dél,Teherhajó,22
+2026-06-22,Øresund,észak,Egyéb / ismeretlen,3
+2026-06-22,Øresund,észak,Kedvtelési,16
+2026-06-22,Øresund,észak,Személyszállító,3
+2026-06-22,Øresund,észak,Szolgálati,4
+2026-06-22,Øresund,észak,Tanker,7
+2026-06-22,Øresund,észak,Teherhajó,19
+2026-06-23,Nagy-Balti-öv,dél,Kedvtelési,14
+2026-06-23,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-23,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-23,Nagy-Balti-öv,dél,Tanker,5
+2026-06-23,Nagy-Balti-öv,dél,Teherhajó,23
+2026-06-23,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-23,Nagy-Balti-öv,észak,Kedvtelési,18
+2026-06-23,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-23,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-23,Nagy-Balti-öv,észak,Tanker,7
+2026-06-23,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-23,Øresund,dél,Egyéb / ismeretlen,4
+2026-06-23,Øresund,dél,Kedvtelési,9
+2026-06-23,Øresund,dél,Személyszállító,4
+2026-06-23,Øresund,dél,Szolgálati,7
+2026-06-23,Øresund,dél,Tanker,6
+2026-06-23,Øresund,dél,Teherhajó,24
+2026-06-23,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-23,Øresund,észak,Kedvtelési,21
+2026-06-23,Øresund,észak,Személyszállító,4
+2026-06-23,Øresund,észak,Szolgálati,7
+2026-06-23,Øresund,észak,Tanker,5
+2026-06-23,Øresund,észak,Teherhajó,13
+2026-06-24,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-24,Nagy-Balti-öv,dél,Kedvtelési,9
+2026-06-24,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-24,Nagy-Balti-öv,dél,Tanker,10
+2026-06-24,Nagy-Balti-öv,dél,Teherhajó,9
+2026-06-24,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-06-24,Nagy-Balti-öv,észak,Kedvtelési,19
+2026-06-24,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-24,Nagy-Balti-öv,észak,Szolgálati,1
+2026-06-24,Nagy-Balti-öv,észak,Tanker,7
+2026-06-24,Nagy-Balti-öv,észak,Teherhajó,15
+2026-06-24,Øresund,dél,Egyéb / ismeretlen,5
+2026-06-24,Øresund,dél,Kedvtelési,11
+2026-06-24,Øresund,dél,Személyszállító,4
+2026-06-24,Øresund,dél,Szolgálati,8
+2026-06-24,Øresund,dél,Tanker,4
+2026-06-24,Øresund,dél,Teherhajó,16
+2026-06-24,Øresund,észak,Egyéb / ismeretlen,5
+2026-06-24,Øresund,észak,Kedvtelési,16
+2026-06-24,Øresund,észak,Személyszállító,2
+2026-06-24,Øresund,észak,Szolgálati,8
+2026-06-24,Øresund,észak,Tanker,9
+2026-06-24,Øresund,észak,Teherhajó,13
+2026-06-25,Nagy-Balti-öv,dél,Halászhajó,2
+2026-06-25,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-06-25,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-25,Nagy-Balti-öv,dél,Szolgálati,3
+2026-06-25,Nagy-Balti-öv,dél,Tanker,7
+2026-06-25,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-25,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-25,Nagy-Balti-öv,észak,Kedvtelési,17
+2026-06-25,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-25,Nagy-Balti-öv,észak,Szolgálati,3
+2026-06-25,Nagy-Balti-öv,észak,Tanker,5
+2026-06-25,Nagy-Balti-öv,észak,Teherhajó,23
+2026-06-25,Øresund,dél,Kedvtelési,23
+2026-06-25,Øresund,dél,Személyszállító,2
+2026-06-25,Øresund,dél,Szolgálati,7
+2026-06-25,Øresund,dél,Tanker,4
+2026-06-25,Øresund,dél,Teherhajó,23
+2026-06-25,Øresund,észak,Kedvtelési,19
+2026-06-25,Øresund,észak,Személyszállító,2
+2026-06-25,Øresund,észak,Szolgálati,5
+2026-06-25,Øresund,észak,Tanker,7
+2026-06-25,Øresund,észak,Teherhajó,20
+2026-06-26,Nagy-Balti-öv,dél,Halászhajó,1
+2026-06-26,Nagy-Balti-öv,dél,Kedvtelési,14
+2026-06-26,Nagy-Balti-öv,dél,Személyszállító,4
+2026-06-26,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-26,Nagy-Balti-öv,dél,Tanker,9
+2026-06-26,Nagy-Balti-öv,dél,Teherhajó,9
+2026-06-26,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-26,Nagy-Balti-öv,észak,Kedvtelési,20
+2026-06-26,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-26,Nagy-Balti-öv,észak,Tanker,11
+2026-06-26,Nagy-Balti-öv,észak,Teherhajó,22
+2026-06-26,Øresund,dél,Egyéb / ismeretlen,11
+2026-06-26,Øresund,dél,Kedvtelési,12
+2026-06-26,Øresund,dél,Személyszállító,3
+2026-06-26,Øresund,dél,Szolgálati,5
+2026-06-26,Øresund,dél,Tanker,6
+2026-06-26,Øresund,dél,Teherhajó,24
+2026-06-26,Øresund,észak,Egyéb / ismeretlen,10
+2026-06-26,Øresund,észak,Kedvtelési,33
+2026-06-26,Øresund,észak,Személyszállító,3
+2026-06-26,Øresund,észak,Szolgálati,5
+2026-06-26,Øresund,észak,Tanker,7
+2026-06-26,Øresund,észak,Teherhajó,21
+2026-06-27,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-27,Nagy-Balti-öv,dél,Halászhajó,2
+2026-06-27,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-06-27,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-27,Nagy-Balti-öv,dél,Szolgálati,1
+2026-06-27,Nagy-Balti-öv,dél,Tanker,9
+2026-06-27,Nagy-Balti-öv,dél,Teherhajó,15
+2026-06-27,Nagy-Balti-öv,észak,Halászhajó,1
+2026-06-27,Nagy-Balti-öv,észak,Kedvtelési,15
+2026-06-27,Nagy-Balti-öv,észak,Személyszállító,4
+2026-06-27,Nagy-Balti-öv,észak,Szolgálati,2
+2026-06-27,Nagy-Balti-öv,észak,Tanker,5
+2026-06-27,Nagy-Balti-öv,észak,Teherhajó,21
+2026-06-27,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-27,Øresund,dél,Kedvtelési,27
+2026-06-27,Øresund,dél,Személyszállító,5
+2026-06-27,Øresund,dél,Szolgálati,4
+2026-06-27,Øresund,dél,Tanker,7
+2026-06-27,Øresund,dél,Teherhajó,18
+2026-06-27,Øresund,észak,Egyéb / ismeretlen,5
+2026-06-27,Øresund,észak,Kedvtelési,28
+2026-06-27,Øresund,észak,Személyszállító,6
+2026-06-27,Øresund,észak,Szolgálati,7
+2026-06-27,Øresund,észak,Tanker,8
+2026-06-27,Øresund,észak,Teherhajó,15
+2026-06-28,Nagy-Balti-öv,dél,Halászhajó,1
+2026-06-28,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-06-28,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-28,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-28,Nagy-Balti-öv,dél,Tanker,4
+2026-06-28,Nagy-Balti-öv,dél,Teherhajó,17
+2026-06-28,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-06-28,Nagy-Balti-öv,észak,Kedvtelési,26
+2026-06-28,Nagy-Balti-öv,észak,Személyszállító,2
+2026-06-28,Nagy-Balti-öv,észak,Szolgálati,1
+2026-06-28,Nagy-Balti-öv,észak,Tanker,11
+2026-06-28,Nagy-Balti-öv,észak,Teherhajó,11
+2026-06-28,Øresund,dél,Egyéb / ismeretlen,5
+2026-06-28,Øresund,dél,Kedvtelési,42
+2026-06-28,Øresund,dél,Személyszállító,3
+2026-06-28,Øresund,dél,Szolgálati,2
+2026-06-28,Øresund,dél,Tanker,9
+2026-06-28,Øresund,dél,Teherhajó,16
+2026-06-28,Øresund,észak,Egyéb / ismeretlen,5
+2026-06-28,Øresund,észak,Kedvtelési,29
+2026-06-28,Øresund,észak,Személyszállító,3
+2026-06-28,Øresund,észak,Szolgálati,4
+2026-06-28,Øresund,észak,Tanker,4
+2026-06-28,Øresund,észak,Teherhajó,21
+2026-06-29,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-06-29,Nagy-Balti-öv,dél,Kedvtelési,16
+2026-06-29,Nagy-Balti-öv,dél,Személyszállító,2
+2026-06-29,Nagy-Balti-öv,dél,Szolgálati,3
+2026-06-29,Nagy-Balti-öv,dél,Tanker,13
+2026-06-29,Nagy-Balti-öv,dél,Teherhajó,17
+2026-06-29,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-06-29,Nagy-Balti-öv,észak,Kedvtelési,16
+2026-06-29,Nagy-Balti-öv,észak,Személyszállító,5
+2026-06-29,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-29,Nagy-Balti-öv,észak,Tanker,6
+2026-06-29,Nagy-Balti-öv,észak,Teherhajó,21
+2026-06-29,Øresund,dél,Egyéb / ismeretlen,1
+2026-06-29,Øresund,dél,Kedvtelési,32
+2026-06-29,Øresund,dél,Személyszállító,2
+2026-06-29,Øresund,dél,Szolgálati,3
+2026-06-29,Øresund,dél,Tanker,5
+2026-06-29,Øresund,dél,Teherhajó,26
+2026-06-29,Øresund,észak,Egyéb / ismeretlen,2
+2026-06-29,Øresund,észak,Halászhajó,1
+2026-06-29,Øresund,észak,Kedvtelési,17
+2026-06-29,Øresund,észak,Személyszállító,3
+2026-06-29,Øresund,észak,Szolgálati,4
+2026-06-29,Øresund,észak,Tanker,4
+2026-06-29,Øresund,észak,Teherhajó,16
+2026-06-30,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-06-30,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-06-30,Nagy-Balti-öv,dél,Személyszállító,3
+2026-06-30,Nagy-Balti-öv,dél,Szolgálati,2
+2026-06-30,Nagy-Balti-öv,dél,Tanker,11
+2026-06-30,Nagy-Balti-öv,dél,Teherhajó,7
+2026-06-30,Nagy-Balti-öv,észak,Kedvtelési,17
+2026-06-30,Nagy-Balti-öv,észak,Személyszállító,3
+2026-06-30,Nagy-Balti-öv,észak,Szolgálati,4
+2026-06-30,Nagy-Balti-öv,észak,Tanker,12
+2026-06-30,Nagy-Balti-öv,észak,Teherhajó,19
+2026-06-30,Øresund,dél,Egyéb / ismeretlen,3
+2026-06-30,Øresund,dél,Kedvtelési,30
+2026-06-30,Øresund,dél,Személyszállító,5
+2026-06-30,Øresund,dél,Szolgálati,6
+2026-06-30,Øresund,dél,Tanker,5
+2026-06-30,Øresund,dél,Teherhajó,23
+2026-06-30,Øresund,észak,Egyéb / ismeretlen,1
+2026-06-30,Øresund,észak,Kedvtelési,17
+2026-06-30,Øresund,észak,Személyszállító,4
+2026-06-30,Øresund,észak,Szolgálati,2
+2026-06-30,Øresund,észak,Tanker,3
+2026-06-30,Øresund,észak,Teherhajó,17
+2026-07-01,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-07-01,Nagy-Balti-öv,dél,Halászhajó,1
+2026-07-01,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-07-01,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-01,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-01,Nagy-Balti-öv,dél,Tanker,9
+2026-07-01,Nagy-Balti-öv,dél,Teherhajó,7
+2026-07-01,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-01,Nagy-Balti-öv,észak,Kedvtelési,16
+2026-07-01,Nagy-Balti-öv,észak,Személyszállító,4
+2026-07-01,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-01,Nagy-Balti-öv,észak,Tanker,5
+2026-07-01,Nagy-Balti-öv,észak,Teherhajó,21
+2026-07-01,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-01,Øresund,dél,Halászhajó,1
+2026-07-01,Øresund,dél,Kedvtelési,36
+2026-07-01,Øresund,dél,Személyszállító,6
+2026-07-01,Øresund,dél,Szolgálati,11
+2026-07-01,Øresund,dél,Tanker,5
+2026-07-01,Øresund,dél,Teherhajó,21
+2026-07-01,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-01,Øresund,észak,Halászhajó,1
+2026-07-01,Øresund,észak,Kedvtelési,17
+2026-07-01,Øresund,észak,Személyszállító,5
+2026-07-01,Øresund,észak,Szolgálati,5
+2026-07-01,Øresund,észak,Tanker,5
+2026-07-01,Øresund,észak,Teherhajó,11
+2026-07-02,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-02,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-07-02,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-02,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-02,Nagy-Balti-öv,dél,Tanker,5
+2026-07-02,Nagy-Balti-öv,dél,Teherhajó,19
+2026-07-02,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-02,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-07-02,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-02,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-02,Nagy-Balti-öv,észak,Tanker,9
+2026-07-02,Nagy-Balti-öv,észak,Teherhajó,8
+2026-07-02,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-02,Øresund,dél,Kedvtelési,21
+2026-07-02,Øresund,dél,Személyszállító,3
+2026-07-02,Øresund,dél,Szolgálati,4
+2026-07-02,Øresund,dél,Tanker,2
+2026-07-02,Øresund,dél,Teherhajó,11
+2026-07-02,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-02,Øresund,észak,Kedvtelési,6
+2026-07-02,Øresund,észak,Személyszállító,2
+2026-07-02,Øresund,észak,Szolgálati,4
+2026-07-02,Øresund,észak,Tanker,8
+2026-07-02,Øresund,észak,Teherhajó,18
+2026-07-03,Nagy-Balti-öv,dél,Személyszállító,5
+2026-07-03,Nagy-Balti-öv,dél,Tanker,8
+2026-07-03,Nagy-Balti-öv,dél,Teherhajó,12
+2026-07-03,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-03,Nagy-Balti-öv,észak,Tanker,6
+2026-07-03,Nagy-Balti-öv,észak,Teherhajó,24
+2026-07-03,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-03,Øresund,dél,Személyszállító,2
+2026-07-03,Øresund,dél,Szolgálati,4
+2026-07-03,Øresund,dél,Tanker,5
+2026-07-03,Øresund,dél,Teherhajó,19
+2026-07-03,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-03,Øresund,észak,Személyszállító,3
+2026-07-03,Øresund,észak,Szolgálati,4
+2026-07-03,Øresund,észak,Tanker,9
+2026-07-03,Øresund,észak,Teherhajó,12
+2026-07-04,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-07-04,Nagy-Balti-öv,dél,Kedvtelési,15
+2026-07-04,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-04,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-04,Nagy-Balti-öv,dél,Tanker,6
+2026-07-04,Nagy-Balti-öv,dél,Teherhajó,15
+2026-07-04,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-04,Nagy-Balti-öv,észak,Halászhajó,1
+2026-07-04,Nagy-Balti-öv,észak,Kedvtelési,17
+2026-07-04,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-04,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-04,Nagy-Balti-öv,észak,Tanker,10
+2026-07-04,Nagy-Balti-öv,észak,Teherhajó,19
+2026-07-04,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-04,Øresund,dél,Halászhajó,2
+2026-07-04,Øresund,dél,Kedvtelési,28
+2026-07-04,Øresund,dél,Személyszállító,5
+2026-07-04,Øresund,dél,Szolgálati,7
+2026-07-04,Øresund,dél,Tanker,5
+2026-07-04,Øresund,dél,Teherhajó,17
+2026-07-04,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-04,Øresund,észak,Kedvtelési,14
+2026-07-04,Øresund,észak,Személyszállító,4
+2026-07-04,Øresund,észak,Szolgálati,8
+2026-07-04,Øresund,észak,Tanker,10
+2026-07-04,Øresund,észak,Teherhajó,17
+2026-07-05,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-07-05,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-05,Nagy-Balti-öv,dél,Tanker,7
+2026-07-05,Nagy-Balti-öv,dél,Teherhajó,17
+2026-07-05,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-05,Nagy-Balti-öv,észak,Kedvtelési,4
+2026-07-05,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-05,Nagy-Balti-öv,észak,Tanker,10
+2026-07-05,Nagy-Balti-öv,észak,Teherhajó,20
+2026-07-05,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-05,Øresund,dél,Kedvtelési,2
+2026-07-05,Øresund,dél,Személyszállító,2
+2026-07-05,Øresund,dél,Szolgálati,12
+2026-07-05,Øresund,dél,Tanker,10
+2026-07-05,Øresund,dél,Teherhajó,27
+2026-07-05,Øresund,észak,Személyszállító,3
+2026-07-05,Øresund,észak,Szolgálati,9
+2026-07-05,Øresund,észak,Tanker,6
+2026-07-05,Øresund,észak,Teherhajó,24
+2026-07-06,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-07-06,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-07-06,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-06,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-06,Nagy-Balti-öv,dél,Tanker,12
+2026-07-06,Nagy-Balti-öv,dél,Teherhajó,12
+2026-07-06,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-07-06,Nagy-Balti-öv,észak,Kedvtelési,32
+2026-07-06,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-06,Nagy-Balti-öv,észak,Szolgálati,4
+2026-07-06,Nagy-Balti-öv,észak,Tanker,4
+2026-07-06,Nagy-Balti-öv,észak,Teherhajó,15
+2026-07-06,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-06,Øresund,dél,Halászhajó,1
+2026-07-06,Øresund,dél,Kedvtelési,22
+2026-07-06,Øresund,dél,Személyszállító,3
+2026-07-06,Øresund,dél,Szolgálati,4
+2026-07-06,Øresund,dél,Tanker,5
+2026-07-06,Øresund,dél,Teherhajó,16
+2026-07-06,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-06,Øresund,észak,Kedvtelési,31
+2026-07-06,Øresund,észak,Személyszállító,2
+2026-07-06,Øresund,észak,Szolgálati,6
+2026-07-06,Øresund,észak,Tanker,4
+2026-07-06,Øresund,észak,Teherhajó,20
+2026-07-07,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-07,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-07-07,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-07,Nagy-Balti-öv,dél,Tanker,7
+2026-07-07,Nagy-Balti-öv,dél,Teherhajó,13
+2026-07-07,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-07-07,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-07,Nagy-Balti-öv,észak,Tanker,4
+2026-07-07,Nagy-Balti-öv,észak,Teherhajó,17
+2026-07-07,Øresund,dél,Kedvtelési,6
+2026-07-07,Øresund,dél,Személyszállító,3
+2026-07-07,Øresund,dél,Szolgálati,7
+2026-07-07,Øresund,dél,Tanker,6
+2026-07-07,Øresund,dél,Teherhajó,19
+2026-07-07,Øresund,észak,Személyszállító,3
+2026-07-07,Øresund,észak,Szolgálati,5
+2026-07-07,Øresund,észak,Tanker,6
+2026-07-07,Øresund,észak,Teherhajó,14
+2026-07-08,Nagy-Balti-öv,dél,Egyéb / ismeretlen,4
+2026-07-08,Nagy-Balti-öv,dél,Kedvtelési,26
+2026-07-08,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-08,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-08,Nagy-Balti-öv,dél,Tanker,10
+2026-07-08,Nagy-Balti-öv,dél,Teherhajó,15
+2026-07-08,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-07-08,Nagy-Balti-öv,észak,Kedvtelési,34
+2026-07-08,Nagy-Balti-öv,észak,Személyszállító,4
+2026-07-08,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-08,Nagy-Balti-öv,észak,Tanker,8
+2026-07-08,Nagy-Balti-öv,észak,Teherhajó,14
+2026-07-08,Øresund,dél,Kedvtelési,18
+2026-07-08,Øresund,dél,Személyszállító,3
+2026-07-08,Øresund,dél,Szolgálati,6
+2026-07-08,Øresund,dél,Tanker,7
+2026-07-08,Øresund,dél,Teherhajó,22
+2026-07-08,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-08,Øresund,észak,Kedvtelési,6
+2026-07-08,Øresund,észak,Személyszállító,2
+2026-07-08,Øresund,észak,Szolgálati,6
+2026-07-08,Øresund,észak,Tanker,4
+2026-07-08,Øresund,észak,Teherhajó,12
+2026-07-09,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-09,Nagy-Balti-öv,dél,Kedvtelési,16
+2026-07-09,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-09,Nagy-Balti-öv,dél,Tanker,10
+2026-07-09,Nagy-Balti-öv,dél,Teherhajó,10
+2026-07-09,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-09,Nagy-Balti-öv,észak,Kedvtelési,36
+2026-07-09,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-09,Nagy-Balti-öv,észak,Tanker,11
+2026-07-09,Nagy-Balti-öv,észak,Teherhajó,14
+2026-07-09,Øresund,dél,Egyéb / ismeretlen,2
+2026-07-09,Øresund,dél,Kedvtelési,47
+2026-07-09,Øresund,dél,Személyszállító,6
+2026-07-09,Øresund,dél,Szolgálati,12
+2026-07-09,Øresund,dél,Tanker,7
+2026-07-09,Øresund,dél,Teherhajó,25
+2026-07-09,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-09,Øresund,észak,Kedvtelési,72
+2026-07-09,Øresund,észak,Személyszállító,4
+2026-07-09,Øresund,észak,Szolgálati,16
+2026-07-09,Øresund,észak,Tanker,7
+2026-07-09,Øresund,észak,Teherhajó,23
+2026-07-10,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-10,Nagy-Balti-öv,dél,Kedvtelési,21
+2026-07-10,Nagy-Balti-öv,dél,Személyszállító,6
+2026-07-10,Nagy-Balti-öv,dél,Szolgálati,3
+2026-07-10,Nagy-Balti-öv,dél,Tanker,10
+2026-07-10,Nagy-Balti-öv,dél,Teherhajó,12
+2026-07-10,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-10,Nagy-Balti-öv,észak,Kedvtelési,23
+2026-07-10,Nagy-Balti-öv,észak,Személyszállító,4
+2026-07-10,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-10,Nagy-Balti-öv,észak,Tanker,6
+2026-07-10,Nagy-Balti-öv,észak,Teherhajó,17
+2026-07-10,Øresund,dél,Egyéb / ismeretlen,2
+2026-07-10,Øresund,dél,Kedvtelési,55
+2026-07-10,Øresund,dél,Személyszállító,2
+2026-07-10,Øresund,dél,Szolgálati,6
+2026-07-10,Øresund,dél,Tanker,6
+2026-07-10,Øresund,dél,Teherhajó,18
+2026-07-10,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-10,Øresund,észak,Kedvtelési,66
+2026-07-10,Øresund,észak,Személyszállító,3
+2026-07-10,Øresund,észak,Szolgálati,6
+2026-07-10,Øresund,észak,Tanker,4
+2026-07-10,Øresund,észak,Teherhajó,22
+2026-07-11,Nagy-Balti-öv,dél,Kedvtelési,29
+2026-07-11,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-11,Nagy-Balti-öv,dél,Szolgálati,3
+2026-07-11,Nagy-Balti-öv,dél,Tanker,8
+2026-07-11,Nagy-Balti-öv,dél,Teherhajó,15
+2026-07-11,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-11,Nagy-Balti-öv,észak,Kedvtelési,32
+2026-07-11,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-11,Nagy-Balti-öv,észak,Tanker,14
+2026-07-11,Nagy-Balti-öv,észak,Teherhajó,18
+2026-07-11,Øresund,dél,Egyéb / ismeretlen,5
+2026-07-11,Øresund,dél,Kedvtelési,35
+2026-07-11,Øresund,dél,Személyszállító,4
+2026-07-11,Øresund,dél,Szolgálati,11
+2026-07-11,Øresund,dél,Tanker,5
+2026-07-11,Øresund,dél,Teherhajó,33
+2026-07-11,Øresund,észak,Egyéb / ismeretlen,3
+2026-07-11,Øresund,észak,Kedvtelési,47
+2026-07-11,Øresund,észak,Személyszállító,5
+2026-07-11,Øresund,észak,Szolgálati,13
+2026-07-11,Øresund,észak,Tanker,6
+2026-07-11,Øresund,észak,Teherhajó,22
+2026-07-12,Nagy-Balti-öv,dél,Egyéb / ismeretlen,5
+2026-07-12,Nagy-Balti-öv,dél,Kedvtelési,27
+2026-07-12,Nagy-Balti-öv,dél,Személyszállító,5
+2026-07-12,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-12,Nagy-Balti-öv,dél,Tanker,7
+2026-07-12,Nagy-Balti-öv,dél,Teherhajó,7
+2026-07-12,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-07-12,Nagy-Balti-öv,észak,Kedvtelési,34
+2026-07-12,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-12,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-12,Nagy-Balti-öv,észak,Tanker,6
+2026-07-12,Nagy-Balti-öv,észak,Teherhajó,24
+2026-07-12,Øresund,dél,Kedvtelési,33
+2026-07-12,Øresund,dél,Személyszállító,3
+2026-07-12,Øresund,dél,Szolgálati,7
+2026-07-12,Øresund,dél,Tanker,10
+2026-07-12,Øresund,dél,Teherhajó,20
+2026-07-12,Øresund,észak,Kedvtelési,28
+2026-07-12,Øresund,észak,Személyszállító,3
+2026-07-12,Øresund,észak,Szolgálati,7
+2026-07-12,Øresund,észak,Tanker,4
+2026-07-12,Øresund,észak,Teherhajó,20
+2026-07-13,Nagy-Balti-öv,dél,Kedvtelési,17
+2026-07-13,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-13,Nagy-Balti-öv,dél,Szolgálati,3
+2026-07-13,Nagy-Balti-öv,dél,Tanker,8
+2026-07-13,Nagy-Balti-öv,dél,Teherhajó,10
+2026-07-13,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-13,Nagy-Balti-öv,észak,Kedvtelési,30
+2026-07-13,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-13,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-13,Nagy-Balti-öv,észak,Tanker,11
+2026-07-13,Nagy-Balti-öv,észak,Teherhajó,21
+2026-07-13,Øresund,dél,Kedvtelési,19
+2026-07-13,Øresund,dél,Személyszállító,2
+2026-07-13,Øresund,dél,Szolgálati,7
+2026-07-13,Øresund,dél,Tanker,8
+2026-07-13,Øresund,dél,Teherhajó,14
+2026-07-13,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-13,Øresund,észak,Kedvtelési,39
+2026-07-13,Øresund,észak,Személyszállító,2
+2026-07-13,Øresund,észak,Szolgálati,8
+2026-07-13,Øresund,észak,Tanker,6
+2026-07-13,Øresund,észak,Teherhajó,17
+2026-07-14,Nagy-Balti-öv,dél,Kedvtelési,42
+2026-07-14,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-14,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-14,Nagy-Balti-öv,dél,Tanker,9
+2026-07-14,Nagy-Balti-öv,dél,Teherhajó,11
+2026-07-14,Nagy-Balti-öv,észak,Halászhajó,1
+2026-07-14,Nagy-Balti-öv,észak,Kedvtelési,36
+2026-07-14,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-14,Nagy-Balti-öv,észak,Szolgálati,3
+2026-07-14,Nagy-Balti-öv,észak,Tanker,13
+2026-07-14,Nagy-Balti-öv,észak,Teherhajó,23
+2026-07-14,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-14,Øresund,dél,Kedvtelési,30
+2026-07-14,Øresund,dél,Személyszállító,4
+2026-07-14,Øresund,dél,Szolgálati,5
+2026-07-14,Øresund,dél,Tanker,10
+2026-07-14,Øresund,dél,Teherhajó,26
+2026-07-14,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-14,Øresund,észak,Kedvtelési,47
+2026-07-14,Øresund,észak,Személyszállító,3
+2026-07-14,Øresund,észak,Szolgálati,7
+2026-07-14,Øresund,észak,Tanker,5
+2026-07-14,Øresund,észak,Teherhajó,10
+2026-07-15,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-15,Nagy-Balti-öv,dél,Kedvtelési,22
+2026-07-15,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-15,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-15,Nagy-Balti-öv,dél,Tanker,6
+2026-07-15,Nagy-Balti-öv,dél,Teherhajó,14
+2026-07-15,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-07-15,Nagy-Balti-öv,észak,Halászhajó,1
+2026-07-15,Nagy-Balti-öv,észak,Kedvtelési,43
+2026-07-15,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-15,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-15,Nagy-Balti-öv,észak,Tanker,8
+2026-07-15,Nagy-Balti-öv,észak,Teherhajó,25
+2026-07-15,Øresund,dél,Kedvtelési,45
+2026-07-15,Øresund,dél,Személyszállító,4
+2026-07-15,Øresund,dél,Szolgálati,6
+2026-07-15,Øresund,dél,Tanker,7
+2026-07-15,Øresund,dél,Teherhajó,26
+2026-07-15,Øresund,észak,Egyéb / ismeretlen,4
+2026-07-15,Øresund,észak,Kedvtelési,30
+2026-07-15,Øresund,észak,Személyszállító,3
+2026-07-15,Øresund,észak,Szolgálati,8
+2026-07-15,Øresund,észak,Tanker,10
+2026-07-15,Øresund,észak,Teherhajó,21
+2026-07-16,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-16,Nagy-Balti-öv,dél,Kedvtelési,18
+2026-07-16,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-16,Nagy-Balti-öv,dél,Szolgálati,4
+2026-07-16,Nagy-Balti-öv,dél,Tanker,6
+2026-07-16,Nagy-Balti-öv,dél,Teherhajó,13
+2026-07-16,Nagy-Balti-öv,észak,Kedvtelési,42
+2026-07-16,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-16,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-16,Nagy-Balti-öv,észak,Tanker,8
+2026-07-16,Nagy-Balti-öv,észak,Teherhajó,18
+2026-07-16,Øresund,dél,Halászhajó,1
+2026-07-16,Øresund,dél,Kedvtelési,42
+2026-07-16,Øresund,dél,Személyszállító,4
+2026-07-16,Øresund,dél,Szolgálati,7
+2026-07-16,Øresund,dél,Tanker,6
+2026-07-16,Øresund,dél,Teherhajó,26
+2026-07-16,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-16,Øresund,észak,Halászhajó,1
+2026-07-16,Øresund,észak,Kedvtelési,39
+2026-07-16,Øresund,észak,Személyszállító,5
+2026-07-16,Øresund,észak,Szolgálati,5
+2026-07-16,Øresund,észak,Tanker,6
+2026-07-16,Øresund,észak,Teherhajó,15
+2026-07-17,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-17,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-07-17,Nagy-Balti-öv,dél,Személyszállító,5
+2026-07-17,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-17,Nagy-Balti-öv,dél,Tanker,8
+2026-07-17,Nagy-Balti-öv,dél,Teherhajó,29
+2026-07-17,Nagy-Balti-öv,észak,Kedvtelési,40
+2026-07-17,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-17,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-17,Nagy-Balti-öv,észak,Tanker,9
+2026-07-17,Nagy-Balti-öv,észak,Teherhajó,27
+2026-07-17,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-17,Øresund,dél,Kedvtelési,52
+2026-07-17,Øresund,dél,Személyszállító,1
+2026-07-17,Øresund,dél,Szolgálati,4
+2026-07-17,Øresund,dél,Tanker,8
+2026-07-17,Øresund,dél,Teherhajó,21
+2026-07-17,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-17,Øresund,észak,Halászhajó,1
+2026-07-17,Øresund,észak,Kedvtelési,44
+2026-07-17,Øresund,észak,Személyszállító,3
+2026-07-17,Øresund,észak,Szolgálati,5
+2026-07-17,Øresund,észak,Tanker,7
+2026-07-17,Øresund,észak,Teherhajó,20
+2026-07-18,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-07-18,Nagy-Balti-öv,dél,Kedvtelési,22
+2026-07-18,Nagy-Balti-öv,dél,Személyszállító,5
+2026-07-18,Nagy-Balti-öv,dél,Szolgálati,5
+2026-07-18,Nagy-Balti-öv,dél,Tanker,6
+2026-07-18,Nagy-Balti-öv,dél,Teherhajó,18
+2026-07-18,Nagy-Balti-öv,észak,Egyéb / ismeretlen,4
+2026-07-18,Nagy-Balti-öv,észak,Kedvtelési,23
+2026-07-18,Nagy-Balti-öv,észak,Személyszállító,6
+2026-07-18,Nagy-Balti-öv,észak,Szolgálati,3
+2026-07-18,Nagy-Balti-öv,észak,Tanker,8
+2026-07-18,Nagy-Balti-öv,észak,Teherhajó,10
+2026-07-18,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-18,Øresund,dél,Kedvtelési,36
+2026-07-18,Øresund,dél,Személyszállító,6
+2026-07-18,Øresund,dél,Tanker,2
+2026-07-18,Øresund,dél,Teherhajó,25
+2026-07-18,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-18,Øresund,észak,Kedvtelési,18
+2026-07-18,Øresund,észak,Személyszállító,7
+2026-07-18,Øresund,észak,Szolgálati,2
+2026-07-18,Øresund,észak,Tanker,7
+2026-07-18,Øresund,észak,Teherhajó,21
+2026-07-19,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-07-19,Nagy-Balti-öv,dél,Kedvtelési,11
+2026-07-19,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-19,Nagy-Balti-öv,dél,Tanker,7
+2026-07-19,Nagy-Balti-öv,dél,Teherhajó,13
+2026-07-19,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-19,Nagy-Balti-öv,észak,Halászhajó,2
+2026-07-19,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-07-19,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-19,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-19,Nagy-Balti-öv,észak,Tanker,9
+2026-07-19,Nagy-Balti-öv,észak,Teherhajó,19
+2026-07-19,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-19,Øresund,dél,Kedvtelési,18
+2026-07-19,Øresund,dél,Személyszállító,3
+2026-07-19,Øresund,dél,Szolgálati,4
+2026-07-19,Øresund,dél,Tanker,6
+2026-07-19,Øresund,dél,Teherhajó,8
+2026-07-19,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-19,Øresund,észak,Halászhajó,1
+2026-07-19,Øresund,észak,Kedvtelési,24
+2026-07-19,Øresund,észak,Személyszállító,4
+2026-07-19,Øresund,észak,Szolgálati,4
+2026-07-19,Øresund,észak,Tanker,8
+2026-07-19,Øresund,észak,Teherhajó,17
+2026-07-20,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-20,Nagy-Balti-öv,dél,Kedvtelési,9
+2026-07-20,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-20,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-20,Nagy-Balti-öv,dél,Tanker,8
+2026-07-20,Nagy-Balti-öv,dél,Teherhajó,13
+2026-07-20,Nagy-Balti-öv,észak,Kedvtelési,4
+2026-07-20,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-20,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-20,Nagy-Balti-öv,észak,Tanker,10
+2026-07-20,Nagy-Balti-öv,észak,Teherhajó,22
+2026-07-20,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-20,Øresund,dél,Kedvtelési,12
+2026-07-20,Øresund,dél,Személyszállító,1
+2026-07-20,Øresund,dél,Szolgálati,3
+2026-07-20,Øresund,dél,Tanker,7
+2026-07-20,Øresund,dél,Teherhajó,24
+2026-07-20,Øresund,észak,Kedvtelési,13
+2026-07-20,Øresund,észak,Személyszállító,2
+2026-07-20,Øresund,észak,Szolgálati,3
+2026-07-20,Øresund,észak,Tanker,3
+2026-07-20,Øresund,észak,Teherhajó,15
+2026-07-21,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-21,Nagy-Balti-öv,dél,Kedvtelési,51
+2026-07-21,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-21,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-21,Nagy-Balti-öv,dél,Tanker,8
+2026-07-21,Nagy-Balti-öv,dél,Teherhajó,7
+2026-07-21,Nagy-Balti-öv,észak,Egyéb / ismeretlen,6
+2026-07-21,Nagy-Balti-öv,észak,Kedvtelési,45
+2026-07-21,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-21,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-21,Nagy-Balti-öv,észak,Tanker,5
+2026-07-21,Nagy-Balti-öv,észak,Teherhajó,16
+2026-07-21,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-21,Øresund,dél,Kedvtelési,59
+2026-07-21,Øresund,dél,Személyszállító,3
+2026-07-21,Øresund,dél,Szolgálati,4
+2026-07-21,Øresund,dél,Tanker,7
+2026-07-21,Øresund,dél,Teherhajó,21
+2026-07-21,Øresund,észak,Egyéb / ismeretlen,5
+2026-07-21,Øresund,észak,Kedvtelési,52
+2026-07-21,Øresund,észak,Személyszállító,3
+2026-07-21,Øresund,észak,Szolgálati,3
+2026-07-21,Øresund,észak,Tanker,5
+2026-07-21,Øresund,észak,Teherhajó,13
+2026-07-22,Nagy-Balti-öv,dél,Kedvtelési,12
+2026-07-22,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-22,Nagy-Balti-öv,dél,Tanker,4
+2026-07-22,Nagy-Balti-öv,dél,Teherhajó,18
+2026-07-22,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-22,Nagy-Balti-öv,észak,Kedvtelési,10
+2026-07-22,Nagy-Balti-öv,észak,Személyszállító,2
+2026-07-22,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-22,Nagy-Balti-öv,észak,Tanker,10
+2026-07-22,Nagy-Balti-öv,észak,Teherhajó,14
+2026-07-22,Øresund,dél,Kedvtelési,20
+2026-07-22,Øresund,dél,Személyszállító,2
+2026-07-22,Øresund,dél,Szolgálati,5
+2026-07-22,Øresund,dél,Tanker,4
+2026-07-22,Øresund,dél,Teherhajó,18
+2026-07-22,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-22,Øresund,észak,Kedvtelési,14
+2026-07-22,Øresund,észak,Személyszállító,3
+2026-07-22,Øresund,észak,Szolgálati,3
+2026-07-22,Øresund,észak,Tanker,6
+2026-07-22,Øresund,észak,Teherhajó,13
+2026-07-23,Nagy-Balti-öv,dél,Kedvtelési,33
+2026-07-23,Nagy-Balti-öv,dél,Személyszállító,5
+2026-07-23,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-23,Nagy-Balti-öv,dél,Tanker,7
+2026-07-23,Nagy-Balti-öv,dél,Teherhajó,14
+2026-07-23,Nagy-Balti-öv,észak,Egyéb / ismeretlen,4
+2026-07-23,Nagy-Balti-öv,észak,Kedvtelési,48
+2026-07-23,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-23,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-23,Nagy-Balti-öv,észak,Tanker,9
+2026-07-23,Nagy-Balti-öv,észak,Teherhajó,11
+2026-07-23,Øresund,dél,Egyéb / ismeretlen,2
+2026-07-23,Øresund,dél,Kedvtelési,62
+2026-07-23,Øresund,dél,Személyszállító,3
+2026-07-23,Øresund,dél,Szolgálati,6
+2026-07-23,Øresund,dél,Tanker,9
+2026-07-23,Øresund,dél,Teherhajó,18
+2026-07-23,Øresund,észak,Egyéb / ismeretlen,1
+2026-07-23,Øresund,észak,Kedvtelési,27
+2026-07-23,Øresund,észak,Személyszállító,3
+2026-07-23,Øresund,észak,Szolgálati,4
+2026-07-23,Øresund,észak,Tanker,5
+2026-07-23,Øresund,észak,Teherhajó,13
+2026-07-24,Nagy-Balti-öv,dél,Kedvtelési,30
+2026-07-24,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-24,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-24,Nagy-Balti-öv,dél,Tanker,10
+2026-07-24,Nagy-Balti-öv,dél,Teherhajó,10
+2026-07-24,Nagy-Balti-öv,észak,Kedvtelési,54
+2026-07-24,Nagy-Balti-öv,észak,Személyszállító,4
+2026-07-24,Nagy-Balti-öv,észak,Szolgálati,4
+2026-07-24,Nagy-Balti-öv,észak,Tanker,7
+2026-07-24,Nagy-Balti-öv,észak,Teherhajó,17
+2026-07-24,Øresund,dél,Kedvtelési,28
+2026-07-24,Øresund,dél,Személyszállító,4
+2026-07-24,Øresund,dél,Szolgálati,2
+2026-07-24,Øresund,dél,Tanker,7
+2026-07-24,Øresund,dél,Teherhajó,21
+2026-07-24,Øresund,észak,Kedvtelési,22
+2026-07-24,Øresund,észak,Személyszállító,2
+2026-07-24,Øresund,észak,Szolgálati,4
+2026-07-24,Øresund,észak,Tanker,6
+2026-07-24,Øresund,észak,Teherhajó,23
+2026-07-25,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-25,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-07-25,Nagy-Balti-öv,dél,Személyszállító,6
+2026-07-25,Nagy-Balti-öv,dél,Tanker,3
+2026-07-25,Nagy-Balti-öv,dél,Teherhajó,11
+2026-07-25,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-07-25,Nagy-Balti-öv,észak,Kedvtelési,55
+2026-07-25,Nagy-Balti-öv,észak,Személyszállító,8
+2026-07-25,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-25,Nagy-Balti-öv,észak,Tanker,10
+2026-07-25,Nagy-Balti-öv,észak,Teherhajó,19
+2026-07-25,Øresund,dél,Egyéb / ismeretlen,2
+2026-07-25,Øresund,dél,Kedvtelési,35
+2026-07-25,Øresund,dél,Személyszállító,7
+2026-07-25,Øresund,dél,Szolgálati,4
+2026-07-25,Øresund,dél,Tanker,4
+2026-07-25,Øresund,dél,Teherhajó,18
+2026-07-25,Øresund,észak,Egyéb / ismeretlen,3
+2026-07-25,Øresund,észak,Kedvtelési,26
+2026-07-25,Øresund,észak,Személyszállító,8
+2026-07-25,Øresund,észak,Szolgálati,4
+2026-07-25,Øresund,észak,Tanker,2
+2026-07-25,Øresund,észak,Teherhajó,24
+2026-07-26,Nagy-Balti-öv,dél,Egyéb / ismeretlen,4
+2026-07-26,Nagy-Balti-öv,dél,Kedvtelési,32
+2026-07-26,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-26,Nagy-Balti-öv,dél,Tanker,6
+2026-07-26,Nagy-Balti-öv,dél,Teherhajó,14
+2026-07-26,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-07-26,Nagy-Balti-öv,észak,Kedvtelési,49
+2026-07-26,Nagy-Balti-öv,észak,Személyszállító,5
+2026-07-26,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-26,Nagy-Balti-öv,észak,Tanker,8
+2026-07-26,Nagy-Balti-öv,észak,Teherhajó,19
+2026-07-26,Øresund,dél,Egyéb / ismeretlen,3
+2026-07-26,Øresund,dél,Halászhajó,1
+2026-07-26,Øresund,dél,Kedvtelési,81
+2026-07-26,Øresund,dél,Személyszállító,4
+2026-07-26,Øresund,dél,Szolgálati,11
+2026-07-26,Øresund,dél,Tanker,6
+2026-07-26,Øresund,dél,Teherhajó,19
+2026-07-26,Øresund,észak,Egyéb / ismeretlen,3
+2026-07-26,Øresund,észak,Kedvtelési,26
+2026-07-26,Øresund,észak,Személyszállító,5
+2026-07-26,Øresund,észak,Szolgálati,8
+2026-07-26,Øresund,észak,Tanker,10
+2026-07-26,Øresund,észak,Teherhajó,19
+2026-07-27,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-27,Nagy-Balti-öv,dél,Halászhajó,1
+2026-07-27,Nagy-Balti-öv,dél,Kedvtelési,9
+2026-07-27,Nagy-Balti-öv,dél,Személyszállító,2
+2026-07-27,Nagy-Balti-öv,dél,Szolgálati,1
+2026-07-27,Nagy-Balti-öv,dél,Tanker,7
+2026-07-27,Nagy-Balti-öv,dél,Teherhajó,14
+2026-07-27,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-07-27,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-07-27,Nagy-Balti-öv,észak,Személyszállító,4
+2026-07-27,Nagy-Balti-öv,észak,Szolgálati,3
+2026-07-27,Nagy-Balti-öv,észak,Tanker,13
+2026-07-27,Nagy-Balti-öv,észak,Teherhajó,15
+2026-07-27,Øresund,dél,Kedvtelési,4
+2026-07-27,Øresund,dél,Személyszállító,2
+2026-07-27,Øresund,dél,Szolgálati,4
+2026-07-27,Øresund,dél,Tanker,1
+2026-07-27,Øresund,dél,Teherhajó,19
+2026-07-27,Øresund,észak,Személyszállító,3
+2026-07-27,Øresund,észak,Szolgálati,5
+2026-07-27,Øresund,észak,Tanker,11
+2026-07-27,Øresund,észak,Teherhajó,15
+2026-07-28,Nagy-Balti-öv,dél,Kedvtelési,38
+2026-07-28,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-28,Nagy-Balti-öv,dél,Tanker,10
+2026-07-28,Nagy-Balti-öv,dél,Teherhajó,10
+2026-07-28,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-28,Nagy-Balti-öv,észak,Halászhajó,1
+2026-07-28,Nagy-Balti-öv,észak,Kedvtelési,43
+2026-07-28,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-28,Nagy-Balti-öv,észak,Szolgálati,5
+2026-07-28,Nagy-Balti-öv,észak,Tanker,9
+2026-07-28,Nagy-Balti-öv,észak,Teherhajó,18
+2026-07-28,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-28,Øresund,dél,Kedvtelési,22
+2026-07-28,Øresund,dél,Személyszállító,1
+2026-07-28,Øresund,dél,Tanker,5
+2026-07-28,Øresund,dél,Teherhajó,20
+2026-07-28,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-28,Øresund,észak,Kedvtelési,14
+2026-07-28,Øresund,észak,Személyszállító,1
+2026-07-28,Øresund,észak,Tanker,2
+2026-07-28,Øresund,észak,Teherhajó,12
+2026-07-29,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-29,Nagy-Balti-öv,dél,Halászhajó,2
+2026-07-29,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-07-29,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-29,Nagy-Balti-öv,dél,Szolgálati,3
+2026-07-29,Nagy-Balti-öv,dél,Tanker,7
+2026-07-29,Nagy-Balti-öv,dél,Teherhajó,13
+2026-07-29,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-07-29,Nagy-Balti-öv,észak,Halászhajó,1
+2026-07-29,Nagy-Balti-öv,észak,Kedvtelési,46
+2026-07-29,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-29,Nagy-Balti-öv,észak,Szolgálati,2
+2026-07-29,Nagy-Balti-öv,észak,Tanker,8
+2026-07-29,Nagy-Balti-öv,észak,Teherhajó,11
+2026-07-29,Øresund,dél,Egyéb / ismeretlen,4
+2026-07-29,Øresund,dél,Kedvtelési,42
+2026-07-29,Øresund,dél,Személyszállító,2
+2026-07-29,Øresund,dél,Szolgálati,11
+2026-07-29,Øresund,dél,Tanker,10
+2026-07-29,Øresund,dél,Teherhajó,18
+2026-07-29,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-29,Øresund,észak,Halászhajó,1
+2026-07-29,Øresund,észak,Kedvtelési,76
+2026-07-29,Øresund,észak,Személyszállító,3
+2026-07-29,Øresund,észak,Szolgálati,9
+2026-07-29,Øresund,észak,Tanker,5
+2026-07-29,Øresund,észak,Teherhajó,18
+2026-07-30,Nagy-Balti-öv,dél,Halászhajó,1
+2026-07-30,Nagy-Balti-öv,dél,Kedvtelési,9
+2026-07-30,Nagy-Balti-öv,dél,Személyszállító,3
+2026-07-30,Nagy-Balti-öv,dél,Szolgálati,2
+2026-07-30,Nagy-Balti-öv,dél,Tanker,4
+2026-07-30,Nagy-Balti-öv,dél,Teherhajó,15
+2026-07-30,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-07-30,Nagy-Balti-öv,észak,Kedvtelési,27
+2026-07-30,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-30,Nagy-Balti-öv,észak,Tanker,10
+2026-07-30,Nagy-Balti-öv,észak,Teherhajó,18
+2026-07-30,Øresund,dél,Kedvtelési,26
+2026-07-30,Øresund,dél,Személyszállító,4
+2026-07-30,Øresund,dél,Szolgálati,5
+2026-07-30,Øresund,dél,Tanker,3
+2026-07-30,Øresund,dél,Teherhajó,22
+2026-07-30,Øresund,észak,Egyéb / ismeretlen,3
+2026-07-30,Øresund,észak,Kedvtelési,38
+2026-07-30,Øresund,észak,Személyszállító,4
+2026-07-30,Øresund,észak,Szolgálati,5
+2026-07-30,Øresund,észak,Tanker,7
+2026-07-30,Øresund,észak,Teherhajó,22
+2026-07-31,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-07-31,Nagy-Balti-öv,dél,Kedvtelési,28
+2026-07-31,Nagy-Balti-öv,dél,Személyszállító,4
+2026-07-31,Nagy-Balti-öv,dél,Szolgálati,3
+2026-07-31,Nagy-Balti-öv,dél,Tanker,10
+2026-07-31,Nagy-Balti-öv,dél,Teherhajó,16
+2026-07-31,Nagy-Balti-öv,észak,Kedvtelési,16
+2026-07-31,Nagy-Balti-öv,észak,Személyszállító,3
+2026-07-31,Nagy-Balti-öv,észak,Szolgálati,1
+2026-07-31,Nagy-Balti-öv,észak,Tanker,8
+2026-07-31,Nagy-Balti-öv,észak,Teherhajó,18
+2026-07-31,Øresund,dél,Egyéb / ismeretlen,1
+2026-07-31,Øresund,dél,Kedvtelési,68
+2026-07-31,Øresund,dél,Személyszállító,2
+2026-07-31,Øresund,dél,Szolgálati,5
+2026-07-31,Øresund,dél,Tanker,5
+2026-07-31,Øresund,dél,Teherhajó,21
+2026-07-31,Øresund,észak,Egyéb / ismeretlen,2
+2026-07-31,Øresund,észak,Kedvtelési,13
+2026-07-31,Øresund,észak,Személyszállító,4
+2026-07-31,Øresund,észak,Szolgálati,8
+2026-07-31,Øresund,észak,Tanker,4
+2026-07-31,Øresund,észak,Teherhajó,21
+2026-08-01,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-01,Nagy-Balti-öv,dél,Kedvtelési,23
+2026-08-01,Nagy-Balti-öv,dél,Személyszállító,6
+2026-08-01,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-01,Nagy-Balti-öv,dél,Tanker,10
+2026-08-01,Nagy-Balti-öv,dél,Teherhajó,10
+2026-08-01,Nagy-Balti-öv,észak,Kedvtelési,16
+2026-08-01,Nagy-Balti-öv,észak,Személyszállító,6
+2026-08-01,Nagy-Balti-öv,észak,Tanker,15
+2026-08-01,Nagy-Balti-öv,észak,Teherhajó,21
+2026-08-01,Øresund,dél,Egyéb / ismeretlen,2
+2026-08-01,Øresund,dél,Kedvtelési,51
+2026-08-01,Øresund,dél,Személyszállító,6
+2026-08-01,Øresund,dél,Szolgálati,4
+2026-08-01,Øresund,dél,Tanker,7
+2026-08-01,Øresund,dél,Teherhajó,22
+2026-08-01,Øresund,észak,Egyéb / ismeretlen,1
+2026-08-01,Øresund,észak,Halászhajó,1
+2026-08-01,Øresund,észak,Kedvtelési,24
+2026-08-01,Øresund,észak,Személyszállító,6
+2026-08-01,Øresund,észak,Szolgálati,5
+2026-08-01,Øresund,észak,Tanker,6
+2026-08-01,Øresund,észak,Teherhajó,14
+2026-08-02,Nagy-Balti-öv,dél,Kedvtelési,37
+2026-08-02,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-02,Nagy-Balti-öv,dél,Szolgálati,2
+2026-08-02,Nagy-Balti-öv,dél,Tanker,10
+2026-08-02,Nagy-Balti-öv,dél,Teherhajó,7
+2026-08-02,Nagy-Balti-öv,észak,Kedvtelési,24
+2026-08-02,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-02,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-02,Nagy-Balti-öv,észak,Tanker,7
+2026-08-02,Nagy-Balti-öv,észak,Teherhajó,19
+2026-08-02,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-02,Øresund,dél,Kedvtelési,46
+2026-08-02,Øresund,dél,Személyszállító,9
+2026-08-02,Øresund,dél,Szolgálati,3
+2026-08-02,Øresund,dél,Tanker,4
+2026-08-02,Øresund,dél,Teherhajó,25
+2026-08-02,Øresund,észak,Egyéb / ismeretlen,4
+2026-08-02,Øresund,észak,Kedvtelési,36
+2026-08-02,Øresund,észak,Személyszállító,7
+2026-08-02,Øresund,észak,Szolgálati,4
+2026-08-02,Øresund,észak,Tanker,6
+2026-08-02,Øresund,észak,Teherhajó,19
+2026-08-03,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-03,Nagy-Balti-öv,dél,Kedvtelési,29
+2026-08-03,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-03,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-03,Nagy-Balti-öv,dél,Tanker,4
+2026-08-03,Nagy-Balti-öv,dél,Teherhajó,14
+2026-08-03,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-08-03,Nagy-Balti-öv,észak,Kedvtelési,20
+2026-08-03,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-03,Nagy-Balti-öv,észak,Tanker,13
+2026-08-03,Nagy-Balti-öv,észak,Teherhajó,18
+2026-08-03,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-03,Øresund,dél,Halászhajó,1
+2026-08-03,Øresund,dél,Kedvtelési,61
+2026-08-03,Øresund,dél,Személyszállító,8
+2026-08-03,Øresund,dél,Szolgálati,5
+2026-08-03,Øresund,dél,Tanker,7
+2026-08-03,Øresund,dél,Teherhajó,15
+2026-08-03,Øresund,észak,Egyéb / ismeretlen,3
+2026-08-03,Øresund,észak,Kedvtelési,45
+2026-08-03,Øresund,észak,Személyszállító,5
+2026-08-03,Øresund,észak,Szolgálati,4
+2026-08-03,Øresund,észak,Tanker,2
+2026-08-03,Øresund,észak,Teherhajó,15
+2026-08-04,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-04,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-08-04,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-04,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-04,Nagy-Balti-öv,dél,Tanker,9
+2026-08-04,Nagy-Balti-öv,dél,Teherhajó,12
+2026-08-04,Nagy-Balti-öv,észak,Kedvtelési,30
+2026-08-04,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-04,Nagy-Balti-öv,észak,Szolgálati,1
+2026-08-04,Nagy-Balti-öv,észak,Tanker,14
+2026-08-04,Nagy-Balti-öv,észak,Teherhajó,17
+2026-08-04,Øresund,dél,Egyéb / ismeretlen,2
+2026-08-04,Øresund,dél,Kedvtelési,31
+2026-08-04,Øresund,dél,Személyszállító,7
+2026-08-04,Øresund,dél,Szolgálati,5
+2026-08-04,Øresund,dél,Tanker,5
+2026-08-04,Øresund,dél,Teherhajó,23
+2026-08-04,Øresund,észak,Egyéb / ismeretlen,2
+2026-08-04,Øresund,észak,Kedvtelési,31
+2026-08-04,Øresund,észak,Személyszállító,8
+2026-08-04,Øresund,észak,Szolgálati,7
+2026-08-04,Øresund,észak,Tanker,5
+2026-08-04,Øresund,észak,Teherhajó,13
+2026-08-05,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-05,Nagy-Balti-öv,dél,Kedvtelési,17
+2026-08-05,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-05,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-05,Nagy-Balti-öv,dél,Tanker,7
+2026-08-05,Nagy-Balti-öv,dél,Teherhajó,13
+2026-08-05,Nagy-Balti-öv,észak,Kedvtelési,18
+2026-08-05,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-05,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-05,Nagy-Balti-öv,észak,Tanker,6
+2026-08-05,Nagy-Balti-öv,észak,Teherhajó,15
+2026-08-05,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-05,Øresund,dél,Halászhajó,2
+2026-08-05,Øresund,dél,Kedvtelési,52
+2026-08-05,Øresund,dél,Személyszállító,5
+2026-08-05,Øresund,dél,Szolgálati,8
+2026-08-05,Øresund,dél,Tanker,6
+2026-08-05,Øresund,dél,Teherhajó,24
+2026-08-05,Øresund,észak,Egyéb / ismeretlen,3
+2026-08-05,Øresund,észak,Halászhajó,1
+2026-08-05,Øresund,észak,Kedvtelési,26
+2026-08-05,Øresund,észak,Személyszállító,3
+2026-08-05,Øresund,észak,Szolgálati,6
+2026-08-05,Øresund,észak,Tanker,3
+2026-08-05,Øresund,észak,Teherhajó,15
+2026-08-06,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-06,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-08-06,Nagy-Balti-öv,dél,Személyszállító,4
+2026-08-06,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-06,Nagy-Balti-öv,dél,Tanker,5
+2026-08-06,Nagy-Balti-öv,dél,Teherhajó,11
+2026-08-06,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-08-06,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-06,Nagy-Balti-öv,észak,Szolgálati,2
+2026-08-06,Nagy-Balti-öv,észak,Tanker,9
+2026-08-06,Nagy-Balti-öv,észak,Teherhajó,21
+2026-08-06,Øresund,dél,Kedvtelési,23
+2026-08-06,Øresund,dél,Személyszállító,2
+2026-08-06,Øresund,dél,Szolgálati,6
+2026-08-06,Øresund,dél,Tanker,2
+2026-08-06,Øresund,dél,Teherhajó,21
+2026-08-06,Øresund,észak,Kedvtelési,3
+2026-08-06,Øresund,észak,Személyszállító,2
+2026-08-06,Øresund,észak,Szolgálati,3
+2026-08-06,Øresund,észak,Tanker,9
+2026-08-06,Øresund,észak,Teherhajó,19
+2026-08-07,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-07,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-07,Nagy-Balti-öv,dél,Kedvtelési,31
+2026-08-07,Nagy-Balti-öv,dél,Személyszállító,6
+2026-08-07,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-07,Nagy-Balti-öv,dél,Tanker,15
+2026-08-07,Nagy-Balti-öv,dél,Teherhajó,10
+2026-08-07,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-08-07,Nagy-Balti-öv,észak,Kedvtelési,13
+2026-08-07,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-07,Nagy-Balti-öv,észak,Szolgálati,2
+2026-08-07,Nagy-Balti-öv,észak,Tanker,4
+2026-08-07,Nagy-Balti-öv,észak,Teherhajó,11
+2026-08-07,Øresund,dél,Egyéb / ismeretlen,1
+2026-08-07,Øresund,dél,Kedvtelési,12
+2026-08-07,Øresund,dél,Személyszállító,2
+2026-08-07,Øresund,dél,Szolgálati,6
+2026-08-07,Øresund,dél,Tanker,4
+2026-08-07,Øresund,dél,Teherhajó,20
+2026-08-07,Øresund,észak,Egyéb / ismeretlen,1
+2026-08-07,Øresund,észak,Kedvtelési,2
+2026-08-07,Øresund,észak,Személyszállító,2
+2026-08-07,Øresund,észak,Szolgálati,4
+2026-08-07,Øresund,észak,Tanker,1
+2026-08-07,Øresund,észak,Teherhajó,12
+2026-08-08,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-08,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-08,Nagy-Balti-öv,dél,Kedvtelési,38
+2026-08-08,Nagy-Balti-öv,dél,Személyszállító,6
+2026-08-08,Nagy-Balti-öv,dél,Tanker,8
+2026-08-08,Nagy-Balti-öv,dél,Teherhajó,13
+2026-08-08,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-08,Nagy-Balti-öv,észak,Kedvtelési,22
+2026-08-08,Nagy-Balti-öv,észak,Személyszállító,4
+2026-08-08,Nagy-Balti-öv,észak,Szolgálati,2
+2026-08-08,Nagy-Balti-öv,észak,Tanker,19
+2026-08-08,Nagy-Balti-öv,észak,Teherhajó,23
+2026-08-08,Øresund,dél,Egyéb / ismeretlen,1
+2026-08-08,Øresund,dél,Kedvtelési,41
+2026-08-08,Øresund,dél,Személyszállító,11
+2026-08-08,Øresund,dél,Szolgálati,4
+2026-08-08,Øresund,dél,Tanker,7
+2026-08-08,Øresund,dél,Teherhajó,23
+2026-08-08,Øresund,észak,Egyéb / ismeretlen,5
+2026-08-08,Øresund,észak,Kedvtelési,26
+2026-08-08,Øresund,észak,Személyszállító,11
+2026-08-08,Øresund,észak,Szolgálati,7
+2026-08-08,Øresund,észak,Tanker,4
+2026-08-08,Øresund,észak,Teherhajó,25
+2026-08-09,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-09,Nagy-Balti-öv,dél,Kedvtelési,15
+2026-08-09,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-09,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-09,Nagy-Balti-öv,dél,Tanker,15
+2026-08-09,Nagy-Balti-öv,dél,Teherhajó,16
+2026-08-09,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-09,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-09,Nagy-Balti-öv,észak,Kedvtelési,23
+2026-08-09,Nagy-Balti-öv,észak,Személyszállító,4
+2026-08-09,Nagy-Balti-öv,észak,Szolgálati,1
+2026-08-09,Nagy-Balti-öv,észak,Tanker,5
+2026-08-09,Nagy-Balti-öv,észak,Teherhajó,18
+2026-08-09,Øresund,dél,Egyéb / ismeretlen,6
+2026-08-09,Øresund,dél,Kedvtelési,20
+2026-08-09,Øresund,dél,Személyszállító,15
+2026-08-09,Øresund,dél,Szolgálati,5
+2026-08-09,Øresund,dél,Tanker,3
+2026-08-09,Øresund,dél,Teherhajó,27
+2026-08-09,Øresund,észak,Egyéb / ismeretlen,7
+2026-08-09,Øresund,észak,Halászhajó,1
+2026-08-09,Øresund,észak,Kedvtelési,35
+2026-08-09,Øresund,észak,Személyszállító,17
+2026-08-09,Øresund,észak,Szolgálati,6
+2026-08-09,Øresund,észak,Tanker,8
+2026-08-09,Øresund,észak,Teherhajó,16
+2026-08-10,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-10,Nagy-Balti-öv,dél,Kedvtelési,26
+2026-08-10,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-10,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-10,Nagy-Balti-öv,dél,Tanker,9
+2026-08-10,Nagy-Balti-öv,dél,Teherhajó,15
+2026-08-10,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-08-10,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-08-10,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-10,Nagy-Balti-öv,észak,Szolgálati,6
+2026-08-10,Nagy-Balti-öv,észak,Tanker,4
+2026-08-10,Nagy-Balti-öv,észak,Teherhajó,18
+2026-08-10,Øresund,dél,Egyéb / ismeretlen,1
+2026-08-10,Øresund,dél,Kedvtelési,22
+2026-08-10,Øresund,dél,Személyszállító,6
+2026-08-10,Øresund,dél,Szolgálati,7
+2026-08-10,Øresund,dél,Tanker,8
+2026-08-10,Øresund,dél,Teherhajó,21
+2026-08-10,Øresund,észak,Egyéb / ismeretlen,2
+2026-08-10,Øresund,észak,Kedvtelési,2
+2026-08-10,Øresund,észak,Személyszállító,6
+2026-08-10,Øresund,észak,Szolgálati,7
+2026-08-10,Øresund,észak,Tanker,5
+2026-08-10,Øresund,észak,Teherhajó,14
+2026-08-11,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-11,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-11,Nagy-Balti-öv,dél,Kedvtelési,23
+2026-08-11,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-11,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-11,Nagy-Balti-öv,dél,Tanker,9
+2026-08-11,Nagy-Balti-öv,dél,Teherhajó,9
+2026-08-11,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-08-11,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-11,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-11,Nagy-Balti-öv,észak,Tanker,8
+2026-08-11,Nagy-Balti-öv,észak,Teherhajó,14
+2026-08-11,Øresund,dél,Kedvtelési,15
+2026-08-11,Øresund,dél,Személyszállító,2
+2026-08-11,Øresund,dél,Szolgálati,2
+2026-08-11,Øresund,dél,Tanker,2
+2026-08-11,Øresund,dél,Teherhajó,24
+2026-08-11,Øresund,észak,Kedvtelési,5
+2026-08-11,Øresund,észak,Személyszállító,5
+2026-08-11,Øresund,észak,Szolgálati,4
+2026-08-11,Øresund,észak,Tanker,6
+2026-08-11,Øresund,észak,Teherhajó,18
+2026-08-12,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-12,Nagy-Balti-öv,dél,Kedvtelési,25
+2026-08-12,Nagy-Balti-öv,dél,Személyszállító,5
+2026-08-12,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-12,Nagy-Balti-öv,dél,Tanker,10
+2026-08-12,Nagy-Balti-öv,dél,Teherhajó,17
+2026-08-12,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-12,Nagy-Balti-öv,észak,Kedvtelési,19
+2026-08-12,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-12,Nagy-Balti-öv,észak,Szolgálati,1
+2026-08-12,Nagy-Balti-öv,észak,Tanker,11
+2026-08-12,Nagy-Balti-öv,észak,Teherhajó,23
+2026-08-12,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-12,Øresund,dél,Kedvtelési,40
+2026-08-12,Øresund,dél,Személyszállító,9
+2026-08-12,Øresund,dél,Szolgálati,5
+2026-08-12,Øresund,dél,Tanker,5
+2026-08-12,Øresund,dél,Teherhajó,23
+2026-08-12,Øresund,észak,Egyéb / ismeretlen,9
+2026-08-12,Øresund,észak,Kedvtelési,35
+2026-08-12,Øresund,észak,Személyszállító,10
+2026-08-12,Øresund,észak,Szolgálati,6
+2026-08-12,Øresund,észak,Tanker,6
+2026-08-12,Øresund,észak,Teherhajó,21
+2026-08-13,Nagy-Balti-öv,dél,Kedvtelési,19
+2026-08-13,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-13,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-13,Nagy-Balti-öv,dél,Tanker,12
+2026-08-13,Nagy-Balti-öv,dél,Teherhajó,12
+2026-08-13,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-08-13,Nagy-Balti-öv,észak,Kedvtelési,19
+2026-08-13,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-13,Nagy-Balti-öv,észak,Szolgálati,4
+2026-08-13,Nagy-Balti-öv,észak,Tanker,8
+2026-08-13,Nagy-Balti-öv,észak,Teherhajó,16
+2026-08-13,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-13,Øresund,dél,Halászhajó,1
+2026-08-13,Øresund,dél,Kedvtelési,24
+2026-08-13,Øresund,dél,Személyszállító,4
+2026-08-13,Øresund,dél,Szolgálati,6
+2026-08-13,Øresund,dél,Tanker,10
+2026-08-13,Øresund,dél,Teherhajó,20
+2026-08-13,Øresund,észak,Egyéb / ismeretlen,6
+2026-08-13,Øresund,észak,Halászhajó,1
+2026-08-13,Øresund,észak,Kedvtelési,23
+2026-08-13,Øresund,észak,Személyszállító,5
+2026-08-13,Øresund,észak,Szolgálati,4
+2026-08-13,Øresund,észak,Tanker,9
+2026-08-13,Øresund,észak,Teherhajó,16
+2026-08-14,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-14,Nagy-Balti-öv,dél,Kedvtelési,7
+2026-08-14,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-14,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-14,Nagy-Balti-öv,dél,Tanker,6
+2026-08-14,Nagy-Balti-öv,dél,Teherhajó,18
+2026-08-14,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-14,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-14,Nagy-Balti-öv,észak,Kedvtelési,18
+2026-08-14,Nagy-Balti-öv,észak,Személyszállító,4
+2026-08-14,Nagy-Balti-öv,észak,Tanker,8
+2026-08-14,Nagy-Balti-öv,észak,Teherhajó,22
+2026-08-14,Øresund,dél,Egyéb / ismeretlen,4
+2026-08-14,Øresund,dél,Halászhajó,1
+2026-08-14,Øresund,dél,Kedvtelési,31
+2026-08-14,Øresund,dél,Személyszállító,10
+2026-08-14,Øresund,dél,Szolgálati,12
+2026-08-14,Øresund,dél,Tanker,7
+2026-08-14,Øresund,dél,Teherhajó,15
+2026-08-14,Øresund,észak,Egyéb / ismeretlen,4
+2026-08-14,Øresund,észak,Kedvtelési,26
+2026-08-14,Øresund,észak,Személyszállító,8
+2026-08-14,Øresund,észak,Szolgálati,4
+2026-08-14,Øresund,észak,Tanker,8
+2026-08-14,Øresund,észak,Teherhajó,11
+2026-08-15,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-15,Nagy-Balti-öv,dél,Kedvtelési,24
+2026-08-15,Nagy-Balti-öv,dél,Személyszállító,6
+2026-08-15,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-15,Nagy-Balti-öv,dél,Tanker,8
+2026-08-15,Nagy-Balti-öv,dél,Teherhajó,4
+2026-08-15,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-08-15,Nagy-Balti-öv,észak,Kedvtelési,10
+2026-08-15,Nagy-Balti-öv,észak,Személyszállító,4
+2026-08-15,Nagy-Balti-öv,észak,Tanker,3
+2026-08-15,Nagy-Balti-öv,észak,Teherhajó,16
+2026-08-15,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-15,Øresund,dél,Halászhajó,1
+2026-08-15,Øresund,dél,Kedvtelési,54
+2026-08-15,Øresund,dél,Személyszállító,13
+2026-08-15,Øresund,dél,Szolgálati,10
+2026-08-15,Øresund,dél,Tanker,5
+2026-08-15,Øresund,dél,Teherhajó,27
+2026-08-15,Øresund,észak,Egyéb / ismeretlen,5
+2026-08-15,Øresund,észak,Kedvtelési,12
+2026-08-15,Øresund,észak,Személyszállító,14
+2026-08-15,Øresund,észak,Szolgálati,5
+2026-08-15,Øresund,észak,Tanker,5
+2026-08-15,Øresund,észak,Teherhajó,15
+2026-08-16,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-16,Nagy-Balti-öv,dél,Kedvtelési,33
+2026-08-16,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-16,Nagy-Balti-öv,dél,Szolgálati,2
+2026-08-16,Nagy-Balti-öv,dél,Tanker,8
+2026-08-16,Nagy-Balti-öv,dél,Teherhajó,22
+2026-08-16,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-08-16,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-08-16,Nagy-Balti-öv,észak,Személyszállító,6
+2026-08-16,Nagy-Balti-öv,észak,Szolgálati,2
+2026-08-16,Nagy-Balti-öv,észak,Tanker,6
+2026-08-16,Nagy-Balti-öv,észak,Teherhajó,16
+2026-08-16,Øresund,dél,Kedvtelési,11
+2026-08-16,Øresund,dél,Személyszállító,12
+2026-08-16,Øresund,dél,Szolgálati,6
+2026-08-16,Øresund,dél,Tanker,7
+2026-08-16,Øresund,dél,Teherhajó,33
+2026-08-16,Øresund,észak,Egyéb / ismeretlen,1
+2026-08-16,Øresund,észak,Kedvtelési,5
+2026-08-16,Øresund,észak,Személyszállító,12
+2026-08-16,Øresund,észak,Szolgálati,12
+2026-08-16,Øresund,észak,Tanker,8
+2026-08-16,Øresund,észak,Teherhajó,22
+2026-08-17,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-17,Nagy-Balti-öv,dél,Kedvtelési,18
+2026-08-17,Nagy-Balti-öv,dél,Személyszállító,4
+2026-08-17,Nagy-Balti-öv,dél,Szolgálati,2
+2026-08-17,Nagy-Balti-öv,dél,Tanker,8
+2026-08-17,Nagy-Balti-öv,dél,Teherhajó,12
+2026-08-17,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-17,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-08-17,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-17,Nagy-Balti-öv,észak,Szolgálati,6
+2026-08-17,Nagy-Balti-öv,észak,Tanker,14
+2026-08-17,Nagy-Balti-öv,észak,Teherhajó,19
+2026-08-17,Øresund,dél,Egyéb / ismeretlen,1
+2026-08-17,Øresund,dél,Halászhajó,2
+2026-08-17,Øresund,dél,Kedvtelési,19
+2026-08-17,Øresund,dél,Személyszállító,2
+2026-08-17,Øresund,dél,Szolgálati,5
+2026-08-17,Øresund,dél,Tanker,6
+2026-08-17,Øresund,dél,Teherhajó,23
+2026-08-17,Øresund,észak,Egyéb / ismeretlen,2
+2026-08-17,Øresund,észak,Kedvtelési,13
+2026-08-17,Øresund,észak,Személyszállító,5
+2026-08-17,Øresund,észak,Szolgálati,4
+2026-08-17,Øresund,észak,Tanker,4
+2026-08-17,Øresund,észak,Teherhajó,16
+2026-08-18,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-18,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-08-18,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-18,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-18,Nagy-Balti-öv,dél,Tanker,12
+2026-08-18,Nagy-Balti-öv,dél,Teherhajó,24
+2026-08-18,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-08-18,Nagy-Balti-öv,észak,Kedvtelési,23
+2026-08-18,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-18,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-18,Nagy-Balti-öv,észak,Tanker,6
+2026-08-18,Nagy-Balti-öv,észak,Teherhajó,23
+2026-08-18,Øresund,dél,Egyéb / ismeretlen,2
+2026-08-18,Øresund,dél,Halászhajó,1
+2026-08-18,Øresund,dél,Kedvtelési,13
+2026-08-18,Øresund,dél,Személyszállító,8
+2026-08-18,Øresund,dél,Szolgálati,8
+2026-08-18,Øresund,dél,Tanker,8
+2026-08-18,Øresund,dél,Teherhajó,29
+2026-08-18,Øresund,észak,Egyéb / ismeretlen,2
+2026-08-18,Øresund,észak,Kedvtelési,12
+2026-08-18,Øresund,észak,Személyszállító,6
+2026-08-18,Øresund,észak,Szolgálati,10
+2026-08-18,Øresund,észak,Tanker,5
+2026-08-18,Øresund,észak,Teherhajó,16
+2026-08-19,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-08-19,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-08-19,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-19,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-19,Nagy-Balti-öv,dél,Tanker,7
+2026-08-19,Nagy-Balti-öv,dél,Teherhajó,15
+2026-08-19,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-08-19,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-19,Nagy-Balti-öv,észak,Szolgálati,2
+2026-08-19,Nagy-Balti-öv,észak,Tanker,10
+2026-08-19,Nagy-Balti-öv,észak,Teherhajó,17
+2026-08-19,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-19,Øresund,dél,Kedvtelési,12
+2026-08-19,Øresund,dél,Személyszállító,9
+2026-08-19,Øresund,dél,Szolgálati,9
+2026-08-19,Øresund,dél,Tanker,7
+2026-08-19,Øresund,dél,Teherhajó,19
+2026-08-19,Øresund,észak,Egyéb / ismeretlen,3
+2026-08-19,Øresund,észak,Kedvtelési,7
+2026-08-19,Øresund,észak,Személyszállító,10
+2026-08-19,Øresund,észak,Szolgálati,3
+2026-08-19,Øresund,észak,Tanker,9
+2026-08-19,Øresund,észak,Teherhajó,14
+2026-08-20,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-20,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-20,Nagy-Balti-öv,dél,Kedvtelési,22
+2026-08-20,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-20,Nagy-Balti-öv,dél,Szolgálati,2
+2026-08-20,Nagy-Balti-öv,dél,Tanker,10
+2026-08-20,Nagy-Balti-öv,dél,Teherhajó,15
+2026-08-20,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-20,Nagy-Balti-öv,észak,Kedvtelési,12
+2026-08-20,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-20,Nagy-Balti-öv,észak,Tanker,5
+2026-08-20,Nagy-Balti-öv,észak,Teherhajó,25
+2026-08-20,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-20,Øresund,dél,Halászhajó,2
+2026-08-20,Øresund,dél,Kedvtelési,20
+2026-08-20,Øresund,dél,Személyszállító,6
+2026-08-20,Øresund,dél,Szolgálati,3
+2026-08-20,Øresund,dél,Tanker,7
+2026-08-20,Øresund,dél,Teherhajó,22
+2026-08-20,Øresund,észak,Egyéb / ismeretlen,4
+2026-08-20,Øresund,észak,Halászhajó,2
+2026-08-20,Øresund,észak,Kedvtelési,15
+2026-08-20,Øresund,észak,Személyszállító,8
+2026-08-20,Øresund,észak,Szolgálati,7
+2026-08-20,Øresund,észak,Tanker,11
+2026-08-20,Øresund,észak,Teherhajó,20
+2026-08-21,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-21,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-21,Nagy-Balti-öv,dél,Kedvtelési,19
+2026-08-21,Nagy-Balti-öv,dél,Személyszállító,6
+2026-08-21,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-21,Nagy-Balti-öv,dél,Tanker,8
+2026-08-21,Nagy-Balti-öv,dél,Teherhajó,12
+2026-08-21,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-08-21,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-21,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-21,Nagy-Balti-öv,észak,Tanker,13
+2026-08-21,Nagy-Balti-öv,észak,Teherhajó,21
+2026-08-21,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-21,Øresund,dél,Kedvtelési,31
+2026-08-21,Øresund,dél,Személyszállító,9
+2026-08-21,Øresund,dél,Szolgálati,6
+2026-08-21,Øresund,dél,Tanker,5
+2026-08-21,Øresund,dél,Teherhajó,27
+2026-08-21,Øresund,észak,Egyéb / ismeretlen,6
+2026-08-21,Øresund,észak,Kedvtelési,27
+2026-08-21,Øresund,észak,Személyszállító,11
+2026-08-21,Øresund,észak,Szolgálati,6
+2026-08-21,Øresund,észak,Tanker,4
+2026-08-21,Øresund,észak,Teherhajó,20
+2026-08-22,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-22,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-08-22,Nagy-Balti-öv,dél,Személyszállító,5
+2026-08-22,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-22,Nagy-Balti-öv,dél,Tanker,8
+2026-08-22,Nagy-Balti-öv,dél,Teherhajó,11
+2026-08-22,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-22,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-08-22,Nagy-Balti-öv,észak,Személyszállító,6
+2026-08-22,Nagy-Balti-öv,észak,Szolgálati,1
+2026-08-22,Nagy-Balti-öv,észak,Tanker,7
+2026-08-22,Nagy-Balti-öv,észak,Teherhajó,16
+2026-08-22,Øresund,dél,Kedvtelési,15
+2026-08-22,Øresund,dél,Személyszállító,9
+2026-08-22,Øresund,dél,Szolgálati,2
+2026-08-22,Øresund,dél,Tanker,2
+2026-08-22,Øresund,dél,Teherhajó,29
+2026-08-22,Øresund,észak,Kedvtelési,7
+2026-08-22,Øresund,észak,Személyszállító,7
+2026-08-22,Øresund,észak,Szolgálati,4
+2026-08-22,Øresund,észak,Tanker,9
+2026-08-22,Øresund,észak,Teherhajó,13
+2026-08-23,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-08-23,Nagy-Balti-öv,dél,Kedvtelési,11
+2026-08-23,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-23,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-23,Nagy-Balti-öv,dél,Tanker,10
+2026-08-23,Nagy-Balti-öv,dél,Teherhajó,13
+2026-08-23,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-08-23,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-08-23,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-23,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-23,Nagy-Balti-öv,észak,Tanker,13
+2026-08-23,Nagy-Balti-öv,észak,Teherhajó,22
+2026-08-23,Øresund,dél,Kedvtelési,3
+2026-08-23,Øresund,dél,Személyszállító,13
+2026-08-23,Øresund,dél,Szolgálati,8
+2026-08-23,Øresund,dél,Tanker,6
+2026-08-23,Øresund,dél,Teherhajó,27
+2026-08-23,Øresund,észak,Egyéb / ismeretlen,1
+2026-08-23,Øresund,észak,Kedvtelési,6
+2026-08-23,Øresund,észak,Személyszállító,10
+2026-08-23,Øresund,észak,Szolgálati,9
+2026-08-23,Øresund,észak,Tanker,3
+2026-08-23,Øresund,észak,Teherhajó,20
+2026-08-24,Nagy-Balti-öv,dél,Egyéb / ismeretlen,6
+2026-08-24,Nagy-Balti-öv,dél,Kedvtelési,19
+2026-08-24,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-24,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-24,Nagy-Balti-öv,dél,Tanker,6
+2026-08-24,Nagy-Balti-öv,dél,Teherhajó,13
+2026-08-24,Nagy-Balti-öv,észak,Egyéb / ismeretlen,6
+2026-08-24,Nagy-Balti-öv,észak,Kedvtelési,14
+2026-08-24,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-24,Nagy-Balti-öv,észak,Szolgálati,4
+2026-08-24,Nagy-Balti-öv,észak,Tanker,6
+2026-08-24,Nagy-Balti-öv,észak,Teherhajó,17
+2026-08-24,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-24,Øresund,dél,Kedvtelési,19
+2026-08-24,Øresund,dél,Személyszállító,10
+2026-08-24,Øresund,dél,Szolgálati,5
+2026-08-24,Øresund,dél,Tanker,7
+2026-08-24,Øresund,dél,Teherhajó,22
+2026-08-24,Øresund,észak,Egyéb / ismeretlen,4
+2026-08-24,Øresund,észak,Kedvtelési,18
+2026-08-24,Øresund,észak,Személyszállító,8
+2026-08-24,Øresund,észak,Szolgálati,9
+2026-08-24,Øresund,észak,Tanker,7
+2026-08-24,Øresund,észak,Teherhajó,17
+2026-08-25,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-08-25,Nagy-Balti-öv,dél,Kedvtelési,13
+2026-08-25,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-25,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-25,Nagy-Balti-öv,dél,Tanker,14
+2026-08-25,Nagy-Balti-öv,dél,Teherhajó,15
+2026-08-25,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-25,Nagy-Balti-öv,észak,Kedvtelési,10
+2026-08-25,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-25,Nagy-Balti-öv,észak,Tanker,12
+2026-08-25,Nagy-Balti-öv,észak,Teherhajó,21
+2026-08-25,Øresund,dél,Egyéb / ismeretlen,6
+2026-08-25,Øresund,dél,Kedvtelési,40
+2026-08-25,Øresund,dél,Személyszállító,8
+2026-08-25,Øresund,dél,Szolgálati,8
+2026-08-25,Øresund,dél,Tanker,5
+2026-08-25,Øresund,dél,Teherhajó,25
+2026-08-25,Øresund,észak,Egyéb / ismeretlen,7
+2026-08-25,Øresund,észak,Kedvtelési,52
+2026-08-25,Øresund,észak,Személyszállító,8
+2026-08-25,Øresund,észak,Szolgálati,5
+2026-08-25,Øresund,észak,Tanker,4
+2026-08-25,Øresund,észak,Teherhajó,16
+2026-08-26,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-26,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-08-26,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-26,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-26,Nagy-Balti-öv,dél,Tanker,10
+2026-08-26,Nagy-Balti-öv,dél,Teherhajó,13
+2026-08-26,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-26,Nagy-Balti-öv,észak,Kedvtelési,13
+2026-08-26,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-26,Nagy-Balti-öv,észak,Szolgálati,4
+2026-08-26,Nagy-Balti-öv,észak,Tanker,10
+2026-08-26,Nagy-Balti-öv,észak,Teherhajó,13
+2026-08-26,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-26,Øresund,dél,Kedvtelési,32
+2026-08-26,Øresund,dél,Személyszállító,10
+2026-08-26,Øresund,dél,Szolgálati,4
+2026-08-26,Øresund,dél,Tanker,6
+2026-08-26,Øresund,dél,Teherhajó,25
+2026-08-26,Øresund,észak,Egyéb / ismeretlen,5
+2026-08-26,Øresund,észak,Halászhajó,1
+2026-08-26,Øresund,észak,Kedvtelési,24
+2026-08-26,Øresund,észak,Személyszállító,12
+2026-08-26,Øresund,észak,Szolgálati,5
+2026-08-26,Øresund,észak,Tanker,10
+2026-08-26,Øresund,észak,Teherhajó,20
+2026-08-27,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-27,Nagy-Balti-öv,dél,Kedvtelési,7
+2026-08-27,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-27,Nagy-Balti-öv,dél,Szolgálati,1
+2026-08-27,Nagy-Balti-öv,dél,Tanker,7
+2026-08-27,Nagy-Balti-öv,dél,Teherhajó,17
+2026-08-27,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-27,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-08-27,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-27,Nagy-Balti-öv,észak,Szolgálati,1
+2026-08-27,Nagy-Balti-öv,észak,Tanker,5
+2026-08-27,Nagy-Balti-öv,észak,Teherhajó,15
+2026-08-27,Øresund,dél,Egyéb / ismeretlen,6
+2026-08-27,Øresund,dél,Kedvtelési,18
+2026-08-27,Øresund,dél,Személyszállító,4
+2026-08-27,Øresund,dél,Szolgálati,7
+2026-08-27,Øresund,dél,Tanker,2
+2026-08-27,Øresund,dél,Teherhajó,24
+2026-08-27,Øresund,észak,Egyéb / ismeretlen,3
+2026-08-27,Øresund,észak,Kedvtelési,8
+2026-08-27,Øresund,észak,Személyszállító,5
+2026-08-27,Øresund,észak,Szolgálati,5
+2026-08-27,Øresund,észak,Tanker,4
+2026-08-27,Øresund,észak,Teherhajó,20
+2026-08-28,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-28,Nagy-Balti-öv,dél,Szolgálati,5
+2026-08-28,Nagy-Balti-öv,dél,Tanker,6
+2026-08-28,Nagy-Balti-öv,dél,Teherhajó,21
+2026-08-28,Nagy-Balti-öv,észak,Személyszállító,3
+2026-08-28,Nagy-Balti-öv,észak,Szolgálati,4
+2026-08-28,Nagy-Balti-öv,észak,Tanker,9
+2026-08-28,Nagy-Balti-öv,észak,Teherhajó,25
+2026-08-28,Øresund,dél,Egyéb / ismeretlen,2
+2026-08-28,Øresund,dél,Kedvtelési,2
+2026-08-28,Øresund,dél,Személyszállító,8
+2026-08-28,Øresund,dél,Szolgálati,2
+2026-08-28,Øresund,dél,Tanker,6
+2026-08-28,Øresund,dél,Teherhajó,23
+2026-08-28,Øresund,észak,Egyéb / ismeretlen,5
+2026-08-28,Øresund,észak,Kedvtelési,8
+2026-08-28,Øresund,észak,Személyszállító,8
+2026-08-28,Øresund,észak,Szolgálati,3
+2026-08-28,Øresund,észak,Tanker,5
+2026-08-28,Øresund,észak,Teherhajó,16
+2026-08-29,Nagy-Balti-öv,dél,Kedvtelési,6
+2026-08-29,Nagy-Balti-öv,dél,Személyszállító,7
+2026-08-29,Nagy-Balti-öv,dél,Szolgálati,3
+2026-08-29,Nagy-Balti-öv,dél,Tanker,10
+2026-08-29,Nagy-Balti-öv,dél,Teherhajó,18
+2026-08-29,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-08-29,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-29,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-29,Nagy-Balti-öv,észak,Tanker,14
+2026-08-29,Nagy-Balti-öv,észak,Teherhajó,23
+2026-08-29,Øresund,dél,Egyéb / ismeretlen,2
+2026-08-29,Øresund,dél,Halászhajó,3
+2026-08-29,Øresund,dél,Kedvtelési,63
+2026-08-29,Øresund,dél,Személyszállító,8
+2026-08-29,Øresund,dél,Szolgálati,7
+2026-08-29,Øresund,dél,Tanker,9
+2026-08-29,Øresund,dél,Teherhajó,21
+2026-08-29,Øresund,észak,Egyéb / ismeretlen,6
+2026-08-29,Øresund,észak,Halászhajó,2
+2026-08-29,Øresund,észak,Kedvtelési,66
+2026-08-29,Øresund,észak,Személyszállító,6
+2026-08-29,Øresund,észak,Szolgálati,10
+2026-08-29,Øresund,észak,Tanker,10
+2026-08-29,Øresund,észak,Teherhajó,17
+2026-08-30,Nagy-Balti-öv,dél,Halászhajó,1
+2026-08-30,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-08-30,Nagy-Balti-öv,dél,Személyszállító,3
+2026-08-30,Nagy-Balti-öv,dél,Szolgálati,4
+2026-08-30,Nagy-Balti-öv,dél,Tanker,9
+2026-08-30,Nagy-Balti-öv,dél,Teherhajó,8
+2026-08-30,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-30,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-30,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-08-30,Nagy-Balti-öv,észak,Személyszállító,5
+2026-08-30,Nagy-Balti-öv,észak,Tanker,9
+2026-08-30,Nagy-Balti-öv,észak,Teherhajó,17
+2026-08-30,Øresund,dél,Egyéb / ismeretlen,3
+2026-08-30,Øresund,dél,Halászhajó,3
+2026-08-30,Øresund,dél,Kedvtelési,91
+2026-08-30,Øresund,dél,Személyszállító,15
+2026-08-30,Øresund,dél,Szolgálati,8
+2026-08-30,Øresund,dél,Tanker,15
+2026-08-30,Øresund,dél,Teherhajó,31
+2026-08-30,Øresund,észak,Egyéb / ismeretlen,2
+2026-08-30,Øresund,észak,Halászhajó,3
+2026-08-30,Øresund,észak,Kedvtelési,88
+2026-08-30,Øresund,észak,Személyszállító,16
+2026-08-30,Øresund,észak,Szolgálati,5
+2026-08-30,Øresund,észak,Tanker,2
+2026-08-30,Øresund,észak,Teherhajó,17
+2026-08-31,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-08-31,Nagy-Balti-öv,dél,Kedvtelési,6
+2026-08-31,Nagy-Balti-öv,dél,Személyszállító,2
+2026-08-31,Nagy-Balti-öv,dél,Szolgálati,2
+2026-08-31,Nagy-Balti-öv,dél,Tanker,8
+2026-08-31,Nagy-Balti-öv,dél,Teherhajó,9
+2026-08-31,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-08-31,Nagy-Balti-öv,észak,Halászhajó,1
+2026-08-31,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-08-31,Nagy-Balti-öv,észak,Személyszállító,2
+2026-08-31,Nagy-Balti-öv,észak,Szolgálati,3
+2026-08-31,Nagy-Balti-öv,észak,Tanker,13
+2026-08-31,Nagy-Balti-öv,észak,Teherhajó,25
+2026-08-31,Øresund,dél,Egyéb / ismeretlen,5
+2026-08-31,Øresund,dél,Halászhajó,2
+2026-08-31,Øresund,dél,Kedvtelési,29
+2026-08-31,Øresund,dél,Személyszállító,3
+2026-08-31,Øresund,dél,Szolgálati,8
+2026-08-31,Øresund,dél,Tanker,3
+2026-08-31,Øresund,dél,Teherhajó,23
+2026-08-31,Øresund,észak,Egyéb / ismeretlen,5
+2026-08-31,Øresund,észak,Halászhajó,2
+2026-08-31,Øresund,észak,Kedvtelési,36
+2026-08-31,Øresund,észak,Személyszállító,3
+2026-08-31,Øresund,észak,Szolgálati,12
+2026-08-31,Øresund,észak,Tanker,4
+2026-08-31,Øresund,észak,Teherhajó,14
+2026-09-05,Nagy-Balti-öv,dél,Kedvtelési,8
+2026-09-05,Nagy-Balti-öv,dél,Személyszállító,5
+2026-09-05,Nagy-Balti-öv,dél,Szolgálati,3
+2026-09-05,Nagy-Balti-öv,dél,Tanker,5
+2026-09-05,Nagy-Balti-öv,dél,Teherhajó,18
+2026-09-05,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-09-05,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-05,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-05,Nagy-Balti-öv,észak,Tanker,11
+2026-09-05,Nagy-Balti-öv,észak,Teherhajó,18
+2026-09-05,Øresund,dél,Halászhajó,1
+2026-09-05,Øresund,dél,Személyszállító,9
+2026-09-05,Øresund,dél,Szolgálati,9
+2026-09-05,Øresund,dél,Tanker,3
+2026-09-05,Øresund,dél,Teherhajó,23
+2026-09-05,Øresund,észak,Személyszállító,10
+2026-09-05,Øresund,észak,Szolgálati,10
+2026-09-05,Øresund,észak,Tanker,7
+2026-09-05,Øresund,észak,Teherhajó,2
+2026-09-06,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-06,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-06,Nagy-Balti-öv,dél,Kedvtelési,15
+2026-09-06,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-06,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-06,Nagy-Balti-öv,dél,Tanker,7
+2026-09-06,Nagy-Balti-öv,dél,Teherhajó,12
+2026-09-06,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-09-06,Nagy-Balti-öv,észak,Személyszállító,6
+2026-09-06,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-06,Nagy-Balti-öv,észak,Tanker,11
+2026-09-06,Nagy-Balti-öv,észak,Teherhajó,15
+2026-09-06,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-06,Øresund,dél,Kedvtelési,8
+2026-09-06,Øresund,dél,Személyszállító,10
+2026-09-06,Øresund,dél,Szolgálati,8
+2026-09-06,Øresund,dél,Tanker,5
+2026-09-06,Øresund,dél,Teherhajó,17
+2026-09-06,Øresund,észak,Egyéb / ismeretlen,5
+2026-09-06,Øresund,észak,Kedvtelési,8
+2026-09-06,Øresund,észak,Személyszállító,7
+2026-09-06,Øresund,észak,Szolgálati,7
+2026-09-06,Øresund,észak,Tanker,5
+2026-09-06,Øresund,észak,Teherhajó,14
+2026-09-07,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-07,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-09-07,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-07,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-07,Nagy-Balti-öv,dél,Tanker,5
+2026-09-07,Nagy-Balti-öv,dél,Teherhajó,22
+2026-09-07,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-07,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-09-07,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-07,Nagy-Balti-öv,észak,Szolgálati,5
+2026-09-07,Nagy-Balti-öv,észak,Tanker,7
+2026-09-07,Nagy-Balti-öv,észak,Teherhajó,19
+2026-09-07,Øresund,dél,Egyéb / ismeretlen,2
+2026-09-07,Øresund,dél,Halászhajó,1
+2026-09-07,Øresund,dél,Kedvtelési,5
+2026-09-07,Øresund,dél,Személyszállító,4
+2026-09-07,Øresund,dél,Szolgálati,5
+2026-09-07,Øresund,dél,Tanker,9
+2026-09-07,Øresund,dél,Teherhajó,18
+2026-09-07,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-07,Øresund,észak,Kedvtelési,6
+2026-09-07,Øresund,észak,Személyszállító,4
+2026-09-07,Øresund,észak,Szolgálati,10
+2026-09-07,Øresund,észak,Tanker,7
+2026-09-07,Øresund,észak,Teherhajó,13
+2026-09-08,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-09-08,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-08,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-08,Nagy-Balti-öv,dél,Tanker,12
+2026-09-08,Nagy-Balti-öv,dél,Teherhajó,12
+2026-09-08,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-09-08,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-08,Nagy-Balti-öv,észak,Szolgálati,4
+2026-09-08,Nagy-Balti-öv,észak,Tanker,8
+2026-09-08,Nagy-Balti-öv,észak,Teherhajó,20
+2026-09-08,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-08,Øresund,dél,Kedvtelési,6
+2026-09-08,Øresund,dél,Személyszállító,2
+2026-09-08,Øresund,dél,Szolgálati,1
+2026-09-08,Øresund,dél,Tanker,7
+2026-09-08,Øresund,dél,Teherhajó,30
+2026-09-08,Øresund,észak,Egyéb / ismeretlen,4
+2026-09-08,Øresund,észak,Kedvtelési,3
+2026-09-08,Øresund,észak,Személyszállító,3
+2026-09-08,Øresund,észak,Szolgálati,4
+2026-09-08,Øresund,észak,Tanker,6
+2026-09-08,Øresund,észak,Teherhajó,14
+2026-09-09,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-09,Nagy-Balti-öv,dél,Kedvtelési,8
+2026-09-09,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-09,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-09,Nagy-Balti-öv,dél,Tanker,4
+2026-09-09,Nagy-Balti-öv,dél,Teherhajó,23
+2026-09-09,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-09-09,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-09,Nagy-Balti-öv,észak,Tanker,7
+2026-09-09,Nagy-Balti-öv,észak,Teherhajó,15
+2026-09-09,Øresund,dél,Egyéb / ismeretlen,8
+2026-09-09,Øresund,dél,Halászhajó,2
+2026-09-09,Øresund,dél,Kedvtelési,30
+2026-09-09,Øresund,dél,Személyszállító,5
+2026-09-09,Øresund,dél,Szolgálati,7
+2026-09-09,Øresund,dél,Tanker,7
+2026-09-09,Øresund,dél,Teherhajó,21
+2026-09-09,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-09,Øresund,észak,Kedvtelési,13
+2026-09-09,Øresund,észak,Személyszállító,5
+2026-09-09,Øresund,észak,Szolgálati,3
+2026-09-09,Øresund,észak,Tanker,9
+2026-09-09,Øresund,észak,Teherhajó,16
+2026-09-10,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-10,Nagy-Balti-öv,dél,Kedvtelési,12
+2026-09-10,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-10,Nagy-Balti-öv,dél,Tanker,8
+2026-09-10,Nagy-Balti-öv,dél,Teherhajó,9
+2026-09-10,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-10,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-10,Nagy-Balti-öv,észak,Személyszállító,5
+2026-09-10,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-10,Nagy-Balti-öv,észak,Tanker,7
+2026-09-10,Nagy-Balti-öv,észak,Teherhajó,18
+2026-09-10,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-10,Øresund,dél,Halászhajó,2
+2026-09-10,Øresund,dél,Kedvtelési,3
+2026-09-10,Øresund,dél,Személyszállító,1
+2026-09-10,Øresund,dél,Szolgálati,1
+2026-09-10,Øresund,dél,Tanker,5
+2026-09-10,Øresund,dél,Teherhajó,21
+2026-09-10,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-10,Øresund,észak,Kedvtelési,2
+2026-09-10,Øresund,észak,Személyszállító,1
+2026-09-10,Øresund,észak,Szolgálati,3
+2026-09-10,Øresund,észak,Tanker,8
+2026-09-10,Øresund,észak,Teherhajó,16
+2026-09-11,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-11,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-09-11,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-11,Nagy-Balti-öv,dél,Szolgálati,3
+2026-09-11,Nagy-Balti-öv,dél,Tanker,12
+2026-09-11,Nagy-Balti-öv,dél,Teherhajó,19
+2026-09-11,Nagy-Balti-öv,észak,Kedvtelési,4
+2026-09-11,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-11,Nagy-Balti-öv,észak,Szolgálati,3
+2026-09-11,Nagy-Balti-öv,észak,Tanker,8
+2026-09-11,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-11,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-11,Øresund,dél,Kedvtelési,12
+2026-09-11,Øresund,dél,Személyszállító,8
+2026-09-11,Øresund,dél,Szolgálati,5
+2026-09-11,Øresund,dél,Tanker,7
+2026-09-11,Øresund,dél,Teherhajó,23
+2026-09-11,Øresund,észak,Egyéb / ismeretlen,6
+2026-09-11,Øresund,észak,Kedvtelési,6
+2026-09-11,Øresund,észak,Személyszállító,7
+2026-09-11,Øresund,észak,Szolgálati,5
+2026-09-11,Øresund,észak,Tanker,6
+2026-09-11,Øresund,észak,Teherhajó,16
+2026-09-12,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-12,Nagy-Balti-öv,dél,Halászhajó,2
+2026-09-12,Nagy-Balti-öv,dél,Kedvtelési,19
+2026-09-12,Nagy-Balti-öv,dél,Személyszállító,5
+2026-09-12,Nagy-Balti-öv,dél,Szolgálati,3
+2026-09-12,Nagy-Balti-öv,dél,Tanker,7
+2026-09-12,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-12,Nagy-Balti-öv,észak,Kedvtelési,11
+2026-09-12,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-12,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-12,Nagy-Balti-öv,észak,Tanker,9
+2026-09-12,Nagy-Balti-öv,észak,Teherhajó,17
+2026-09-12,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-12,Øresund,dél,Halászhajó,1
+2026-09-12,Øresund,dél,Kedvtelési,10
+2026-09-12,Øresund,dél,Személyszállító,11
+2026-09-12,Øresund,dél,Szolgálati,3
+2026-09-12,Øresund,dél,Tanker,11
+2026-09-12,Øresund,dél,Teherhajó,31
+2026-09-12,Øresund,észak,Egyéb / ismeretlen,5
+2026-09-12,Øresund,észak,Kedvtelési,10
+2026-09-12,Øresund,észak,Személyszállító,9
+2026-09-12,Øresund,észak,Szolgálati,7
+2026-09-12,Øresund,észak,Tanker,6
+2026-09-12,Øresund,észak,Teherhajó,17
+2026-09-13,Nagy-Balti-öv,dél,Kedvtelési,11
+2026-09-13,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-13,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-13,Nagy-Balti-öv,dél,Tanker,9
+2026-09-13,Nagy-Balti-öv,dél,Teherhajó,12
+2026-09-13,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-09-13,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-13,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-13,Nagy-Balti-öv,észak,Tanker,10
+2026-09-13,Nagy-Balti-öv,észak,Teherhajó,19
+2026-09-13,Øresund,dél,Egyéb / ismeretlen,12
+2026-09-13,Øresund,dél,Halászhajó,2
+2026-09-13,Øresund,dél,Kedvtelési,22
+2026-09-13,Øresund,dél,Személyszállító,9
+2026-09-13,Øresund,dél,Szolgálati,6
+2026-09-13,Øresund,dél,Tanker,5
+2026-09-13,Øresund,dél,Teherhajó,26
+2026-09-13,Øresund,észak,Egyéb / ismeretlen,10
+2026-09-13,Øresund,észak,Halászhajó,2
+2026-09-13,Øresund,észak,Kedvtelési,12
+2026-09-13,Øresund,észak,Személyszállító,10
+2026-09-13,Øresund,észak,Szolgálati,7
+2026-09-13,Øresund,észak,Tanker,5
+2026-09-13,Øresund,észak,Teherhajó,20
+2026-09-14,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-14,Nagy-Balti-öv,dél,Kedvtelési,20
+2026-09-14,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-14,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-14,Nagy-Balti-öv,dél,Tanker,9
+2026-09-14,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-14,Nagy-Balti-öv,észak,Kedvtelési,4
+2026-09-14,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-14,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-14,Nagy-Balti-öv,észak,Tanker,8
+2026-09-14,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-14,Øresund,dél,Egyéb / ismeretlen,2
+2026-09-14,Øresund,dél,Halászhajó,1
+2026-09-14,Øresund,dél,Kedvtelési,4
+2026-09-14,Øresund,dél,Személyszállító,5
+2026-09-14,Øresund,dél,Szolgálati,8
+2026-09-14,Øresund,dél,Tanker,5
+2026-09-14,Øresund,dél,Teherhajó,29
+2026-09-14,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-14,Øresund,észak,Halászhajó,1
+2026-09-14,Øresund,észak,Kedvtelési,1
+2026-09-14,Øresund,észak,Személyszállító,6
+2026-09-14,Øresund,észak,Szolgálati,6
+2026-09-14,Øresund,észak,Tanker,5
+2026-09-14,Øresund,észak,Teherhajó,12
+2026-09-15,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-09-15,Nagy-Balti-öv,dél,Személyszállító,5
+2026-09-15,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-15,Nagy-Balti-öv,dél,Tanker,8
+2026-09-15,Nagy-Balti-öv,dél,Teherhajó,16
+2026-09-15,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-09-15,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-15,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-15,Nagy-Balti-öv,észak,Tanker,11
+2026-09-15,Nagy-Balti-öv,észak,Teherhajó,17
+2026-09-15,Øresund,dél,Egyéb / ismeretlen,7
+2026-09-15,Øresund,dél,Halászhajó,1
+2026-09-15,Øresund,dél,Kedvtelési,32
+2026-09-15,Øresund,dél,Személyszállító,7
+2026-09-15,Øresund,dél,Szolgálati,8
+2026-09-15,Øresund,dél,Tanker,2
+2026-09-15,Øresund,dél,Teherhajó,24
+2026-09-15,Øresund,észak,Egyéb / ismeretlen,7
+2026-09-15,Øresund,észak,Kedvtelési,16
+2026-09-15,Øresund,észak,Személyszállító,6
+2026-09-15,Øresund,észak,Szolgálati,8
+2026-09-15,Øresund,észak,Tanker,8
+2026-09-15,Øresund,észak,Teherhajó,9
+2026-09-16,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-16,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-16,Nagy-Balti-öv,dél,Kedvtelési,14
+2026-09-16,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-16,Nagy-Balti-öv,dél,Szolgálati,6
+2026-09-16,Nagy-Balti-öv,dél,Tanker,6
+2026-09-16,Nagy-Balti-öv,dél,Teherhajó,20
+2026-09-16,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-16,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-16,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-16,Nagy-Balti-öv,észak,Tanker,11
+2026-09-16,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-16,Øresund,dél,Egyéb / ismeretlen,5
+2026-09-16,Øresund,dél,Kedvtelési,21
+2026-09-16,Øresund,dél,Személyszállító,6
+2026-09-16,Øresund,dél,Szolgálati,4
+2026-09-16,Øresund,dél,Tanker,4
+2026-09-16,Øresund,dél,Teherhajó,25
+2026-09-16,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-16,Øresund,észak,Kedvtelési,14
+2026-09-16,Øresund,észak,Személyszállító,5
+2026-09-16,Øresund,észak,Szolgálati,3
+2026-09-16,Øresund,észak,Tanker,4
+2026-09-16,Øresund,észak,Teherhajó,16
+2026-09-17,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-09-17,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-17,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-09-17,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-17,Nagy-Balti-öv,dél,Szolgálati,6
+2026-09-17,Nagy-Balti-öv,dél,Tanker,9
+2026-09-17,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-17,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-09-17,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-17,Nagy-Balti-öv,észak,Szolgálati,3
+2026-09-17,Nagy-Balti-öv,észak,Tanker,9
+2026-09-17,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-17,Øresund,dél,Egyéb / ismeretlen,2
+2026-09-17,Øresund,dél,Kedvtelési,2
+2026-09-17,Øresund,dél,Személyszállító,3
+2026-09-17,Øresund,dél,Szolgálati,5
+2026-09-17,Øresund,dél,Tanker,7
+2026-09-17,Øresund,dél,Teherhajó,19
+2026-09-17,Øresund,észak,Egyéb / ismeretlen,4
+2026-09-17,Øresund,észak,Személyszállító,3
+2026-09-17,Øresund,észak,Szolgálati,7
+2026-09-17,Øresund,észak,Tanker,3
+2026-09-17,Øresund,észak,Teherhajó,17
+2026-09-18,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-18,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-18,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-09-18,Nagy-Balti-öv,dél,Személyszállító,5
+2026-09-18,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-18,Nagy-Balti-öv,dél,Tanker,8
+2026-09-18,Nagy-Balti-öv,dél,Teherhajó,19
+2026-09-18,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-18,Nagy-Balti-öv,észak,Kedvtelési,144
+2026-09-18,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-18,Nagy-Balti-öv,észak,Szolgálati,3
+2026-09-18,Nagy-Balti-öv,észak,Tanker,6
+2026-09-18,Nagy-Balti-öv,észak,Teherhajó,26
+2026-09-18,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-18,Øresund,dél,Kedvtelési,3
+2026-09-18,Øresund,dél,Személyszállító,4
+2026-09-18,Øresund,dél,Szolgálati,5
+2026-09-18,Øresund,dél,Tanker,7
+2026-09-18,Øresund,dél,Teherhajó,27
+2026-09-18,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-18,Øresund,észak,Személyszállító,4
+2026-09-18,Øresund,észak,Szolgálati,4
+2026-09-18,Øresund,észak,Tanker,9
+2026-09-18,Øresund,észak,Teherhajó,13
+2026-09-19,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-09-19,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-19,Nagy-Balti-öv,dél,Szolgálati,4
+2026-09-19,Nagy-Balti-öv,dél,Tanker,6
+2026-09-19,Nagy-Balti-öv,dél,Teherhajó,13
+2026-09-19,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-09-19,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-19,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-19,Nagy-Balti-öv,észak,Szolgálati,4
+2026-09-19,Nagy-Balti-öv,észak,Tanker,7
+2026-09-19,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-19,Øresund,dél,Kedvtelési,1
+2026-09-19,Øresund,dél,Személyszállító,5
+2026-09-19,Øresund,dél,Szolgálati,3
+2026-09-19,Øresund,dél,Tanker,8
+2026-09-19,Øresund,dél,Teherhajó,27
+2026-09-19,Øresund,észak,Egyéb / ismeretlen,1
+2026-09-19,Øresund,észak,Halászhajó,1
+2026-09-19,Øresund,észak,Személyszállító,5
+2026-09-19,Øresund,észak,Szolgálati,3
+2026-09-19,Øresund,észak,Tanker,5
+2026-09-19,Øresund,észak,Teherhajó,17
+2026-09-20,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-20,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-20,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-20,Nagy-Balti-öv,dél,Tanker,6
+2026-09-20,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-20,Nagy-Balti-öv,észak,Kedvtelési,8
+2026-09-20,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-20,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-20,Nagy-Balti-öv,észak,Tanker,13
+2026-09-20,Nagy-Balti-öv,észak,Teherhajó,24
+2026-09-20,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-20,Øresund,dél,Személyszállító,6
+2026-09-20,Øresund,dél,Szolgálati,4
+2026-09-20,Øresund,dél,Tanker,9
+2026-09-20,Øresund,dél,Teherhajó,18
+2026-09-20,Øresund,észak,Személyszállító,6
+2026-09-20,Øresund,észak,Szolgálati,6
+2026-09-20,Øresund,észak,Tanker,2
+2026-09-20,Øresund,észak,Teherhajó,10
+2026-09-21,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-09-21,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-21,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-21,Nagy-Balti-öv,dél,Tanker,6
+2026-09-21,Nagy-Balti-öv,dél,Teherhajó,13
+2026-09-21,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-21,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-21,Nagy-Balti-öv,észak,Személyszállító,5
+2026-09-21,Nagy-Balti-öv,észak,Tanker,6
+2026-09-21,Nagy-Balti-öv,észak,Teherhajó,16
+2026-09-21,Øresund,dél,Személyszállító,1
+2026-09-21,Øresund,dél,Szolgálati,6
+2026-09-21,Øresund,dél,Tanker,5
+2026-09-21,Øresund,dél,Teherhajó,17
+2026-09-21,Øresund,észak,Egyéb / ismeretlen,1
+2026-09-21,Øresund,észak,Kedvtelési,1
+2026-09-21,Øresund,észak,Személyszállító,2
+2026-09-21,Øresund,észak,Szolgálati,7
+2026-09-21,Øresund,észak,Tanker,11
+2026-09-21,Øresund,észak,Teherhajó,15
+2026-09-22,Nagy-Balti-öv,dél,Kedvtelési,10
+2026-09-22,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-22,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-22,Nagy-Balti-öv,dél,Tanker,10
+2026-09-22,Nagy-Balti-öv,dél,Teherhajó,12
+2026-09-22,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-09-22,Nagy-Balti-öv,észak,Kedvtelési,10
+2026-09-22,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-22,Nagy-Balti-öv,észak,Szolgálati,3
+2026-09-22,Nagy-Balti-öv,észak,Tanker,5
+2026-09-22,Nagy-Balti-öv,észak,Teherhajó,19
+2026-09-22,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-22,Øresund,dél,Kedvtelési,10
+2026-09-22,Øresund,dél,Személyszállító,6
+2026-09-22,Øresund,dél,Szolgálati,6
+2026-09-22,Øresund,dél,Tanker,2
+2026-09-22,Øresund,dél,Teherhajó,26
+2026-09-22,Øresund,észak,Egyéb / ismeretlen,11
+2026-09-22,Øresund,észak,Kedvtelési,10
+2026-09-22,Øresund,észak,Személyszállító,5
+2026-09-22,Øresund,észak,Szolgálati,9
+2026-09-22,Øresund,észak,Tanker,8
+2026-09-22,Øresund,észak,Teherhajó,14
+2026-09-23,Nagy-Balti-öv,dél,Halászhajó,2
+2026-09-23,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-09-23,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-23,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-23,Nagy-Balti-öv,dél,Tanker,10
+2026-09-23,Nagy-Balti-öv,dél,Teherhajó,19
+2026-09-23,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-09-23,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-23,Nagy-Balti-öv,észak,Tanker,6
+2026-09-23,Nagy-Balti-öv,észak,Teherhajó,17
+2026-09-23,Øresund,dél,Egyéb / ismeretlen,5
+2026-09-23,Øresund,dél,Személyszállító,2
+2026-09-23,Øresund,dél,Szolgálati,3
+2026-09-23,Øresund,dél,Tanker,5
+2026-09-23,Øresund,dél,Teherhajó,21
+2026-09-23,Øresund,észak,Egyéb / ismeretlen,1
+2026-09-23,Øresund,észak,Személyszállító,1
+2026-09-23,Øresund,észak,Szolgálati,5
+2026-09-23,Øresund,észak,Tanker,6
+2026-09-23,Øresund,észak,Teherhajó,27
+2026-09-24,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-24,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-09-24,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-24,Nagy-Balti-öv,dél,Szolgálati,3
+2026-09-24,Nagy-Balti-öv,dél,Tanker,10
+2026-09-24,Nagy-Balti-öv,dél,Teherhajó,17
+2026-09-24,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-24,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-24,Nagy-Balti-öv,észak,Személyszállító,3
+2026-09-24,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-24,Nagy-Balti-öv,észak,Tanker,12
+2026-09-24,Nagy-Balti-öv,észak,Teherhajó,18
+2026-09-24,Øresund,dél,Halászhajó,1
+2026-09-24,Øresund,dél,Kedvtelési,2
+2026-09-24,Øresund,dél,Személyszállító,1
+2026-09-24,Øresund,dél,Szolgálati,5
+2026-09-24,Øresund,dél,Tanker,3
+2026-09-24,Øresund,dél,Teherhajó,33
+2026-09-24,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-24,Øresund,észak,Kedvtelési,1
+2026-09-24,Øresund,észak,Személyszállító,1
+2026-09-24,Øresund,észak,Szolgálati,6
+2026-09-24,Øresund,észak,Tanker,2
+2026-09-24,Øresund,észak,Teherhajó,12
+2026-09-25,Nagy-Balti-öv,dél,Kedvtelési,6
+2026-09-25,Nagy-Balti-öv,dél,Személyszállító,5
+2026-09-25,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-25,Nagy-Balti-öv,dél,Tanker,9
+2026-09-25,Nagy-Balti-öv,dél,Teherhajó,18
+2026-09-25,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-25,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-09-25,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-25,Nagy-Balti-öv,észak,Szolgálati,3
+2026-09-25,Nagy-Balti-öv,észak,Tanker,6
+2026-09-25,Nagy-Balti-öv,észak,Teherhajó,24
+2026-09-25,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-25,Øresund,dél,Kedvtelési,1
+2026-09-25,Øresund,dél,Személyszállító,2
+2026-09-25,Øresund,dél,Szolgálati,4
+2026-09-25,Øresund,dél,Tanker,5
+2026-09-25,Øresund,dél,Teherhajó,15
+2026-09-25,Øresund,észak,Egyéb / ismeretlen,6
+2026-09-25,Øresund,észak,Személyszállító,3
+2026-09-25,Øresund,észak,Szolgálati,5
+2026-09-25,Øresund,észak,Tanker,5
+2026-09-25,Øresund,észak,Teherhajó,9
+2026-09-26,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-09-26,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-09-26,Nagy-Balti-öv,dél,Személyszállító,4
+2026-09-26,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-26,Nagy-Balti-öv,dél,Tanker,12
+2026-09-26,Nagy-Balti-öv,dél,Teherhajó,17
+2026-09-26,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-26,Nagy-Balti-öv,észak,Kedvtelési,7
+2026-09-26,Nagy-Balti-öv,észak,Személyszállító,5
+2026-09-26,Nagy-Balti-öv,észak,Szolgálati,1
+2026-09-26,Nagy-Balti-öv,észak,Tanker,12
+2026-09-26,Nagy-Balti-öv,észak,Teherhajó,23
+2026-09-26,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-26,Øresund,dél,Kedvtelési,2
+2026-09-26,Øresund,dél,Személyszállító,6
+2026-09-26,Øresund,dél,Szolgálati,3
+2026-09-26,Øresund,dél,Tanker,8
+2026-09-26,Øresund,dél,Teherhajó,17
+2026-09-26,Øresund,észak,Egyéb / ismeretlen,6
+2026-09-26,Øresund,észak,Kedvtelési,1
+2026-09-26,Øresund,észak,Személyszállító,7
+2026-09-26,Øresund,észak,Szolgálati,4
+2026-09-26,Øresund,észak,Tanker,3
+2026-09-26,Øresund,észak,Teherhajó,18
+2026-09-27,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-27,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-09-27,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-27,Nagy-Balti-öv,dél,Szolgálati,2
+2026-09-27,Nagy-Balti-öv,dél,Tanker,10
+2026-09-27,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-27,Nagy-Balti-öv,észak,Egyéb / ismeretlen,3
+2026-09-27,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-09-27,Nagy-Balti-öv,észak,Személyszállító,4
+2026-09-27,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-27,Nagy-Balti-öv,észak,Tanker,11
+2026-09-27,Nagy-Balti-öv,észak,Teherhajó,30
+2026-09-27,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-27,Øresund,dél,Kedvtelési,5
+2026-09-27,Øresund,dél,Személyszállító,7
+2026-09-27,Øresund,dél,Szolgálati,8
+2026-09-27,Øresund,dél,Tanker,8
+2026-09-27,Øresund,dél,Teherhajó,29
+2026-09-27,Øresund,észak,Egyéb / ismeretlen,2
+2026-09-27,Øresund,észak,Halászhajó,1
+2026-09-27,Øresund,észak,Kedvtelési,5
+2026-09-27,Øresund,észak,Személyszállító,7
+2026-09-27,Øresund,észak,Szolgálati,7
+2026-09-27,Øresund,észak,Tanker,8
+2026-09-27,Øresund,észak,Teherhajó,11
+2026-09-28,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-09-28,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-09-28,Nagy-Balti-öv,dél,Személyszállító,2
+2026-09-28,Nagy-Balti-öv,dél,Szolgálati,3
+2026-09-28,Nagy-Balti-öv,dél,Tanker,7
+2026-09-28,Nagy-Balti-öv,dél,Teherhajó,15
+2026-09-28,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-09-28,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-09-28,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-28,Nagy-Balti-öv,észak,Szolgálati,7
+2026-09-28,Nagy-Balti-öv,észak,Tanker,7
+2026-09-28,Nagy-Balti-öv,észak,Teherhajó,21
+2026-09-28,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-28,Øresund,dél,Kedvtelési,2
+2026-09-28,Øresund,dél,Személyszállító,1
+2026-09-28,Øresund,dél,Szolgálati,8
+2026-09-28,Øresund,dél,Tanker,7
+2026-09-28,Øresund,dél,Teherhajó,30
+2026-09-28,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-28,Øresund,észak,Kedvtelési,1
+2026-09-28,Øresund,észak,Személyszállító,2
+2026-09-28,Øresund,észak,Szolgálati,8
+2026-09-28,Øresund,észak,Tanker,8
+2026-09-28,Øresund,észak,Teherhajó,9
+2026-09-29,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-29,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-09-29,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-29,Nagy-Balti-öv,dél,Szolgálati,4
+2026-09-29,Nagy-Balti-öv,dél,Tanker,3
+2026-09-29,Nagy-Balti-öv,dél,Teherhajó,16
+2026-09-29,Nagy-Balti-öv,észak,Kedvtelési,6
+2026-09-29,Nagy-Balti-öv,észak,Személyszállító,2
+2026-09-29,Nagy-Balti-öv,észak,Szolgálati,2
+2026-09-29,Nagy-Balti-öv,észak,Tanker,11
+2026-09-29,Nagy-Balti-öv,észak,Teherhajó,15
+2026-09-29,Øresund,dél,Egyéb / ismeretlen,4
+2026-09-29,Øresund,dél,Kedvtelési,5
+2026-09-29,Øresund,dél,Személyszállító,1
+2026-09-29,Øresund,dél,Szolgálati,6
+2026-09-29,Øresund,dél,Tanker,6
+2026-09-29,Øresund,dél,Teherhajó,12
+2026-09-29,Øresund,észak,Egyéb / ismeretlen,3
+2026-09-29,Øresund,észak,Kedvtelési,3
+2026-09-29,Øresund,észak,Személyszállító,1
+2026-09-29,Øresund,észak,Szolgálati,2
+2026-09-29,Øresund,észak,Tanker,1
+2026-09-29,Øresund,észak,Teherhajó,14
+2026-09-30,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-09-30,Nagy-Balti-öv,dél,Halászhajó,1
+2026-09-30,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-09-30,Nagy-Balti-öv,dél,Személyszállító,3
+2026-09-30,Nagy-Balti-öv,dél,Szolgálati,1
+2026-09-30,Nagy-Balti-öv,dél,Tanker,6
+2026-09-30,Nagy-Balti-öv,dél,Teherhajó,9
+2026-09-30,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-09-30,Nagy-Balti-öv,észak,Kedvtelési,5
+2026-09-30,Nagy-Balti-öv,észak,Személyszállító,5
+2026-09-30,Nagy-Balti-öv,észak,Szolgálati,6
+2026-09-30,Nagy-Balti-öv,észak,Tanker,4
+2026-09-30,Nagy-Balti-öv,észak,Teherhajó,25
+2026-09-30,Øresund,dél,Egyéb / ismeretlen,3
+2026-09-30,Øresund,dél,Személyszállító,2
+2026-09-30,Øresund,dél,Szolgálati,8
+2026-09-30,Øresund,dél,Tanker,7
+2026-09-30,Øresund,dél,Teherhajó,24
+2026-09-30,Øresund,észak,Egyéb / ismeretlen,5
+2026-09-30,Øresund,észak,Kedvtelési,5
+2026-09-30,Øresund,észak,Személyszállító,2
+2026-09-30,Øresund,észak,Szolgálati,9
+2026-09-30,Øresund,észak,Tanker,5
+2026-09-30,Øresund,észak,Teherhajó,16
+2026-10-01,Nagy-Balti-öv,dél,Halászhajó,1
+2026-10-01,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-01,Nagy-Balti-öv,dél,Tanker,6
+2026-10-01,Nagy-Balti-öv,dél,Teherhajó,21
+2026-10-01,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-10-01,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-01,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-01,Nagy-Balti-öv,észak,Tanker,8
+2026-10-01,Nagy-Balti-öv,észak,Teherhajó,26
+2026-10-01,Øresund,dél,Egyéb / ismeretlen,2
+2026-10-01,Øresund,dél,Halászhajó,1
+2026-10-01,Øresund,dél,Személyszállító,3
+2026-10-01,Øresund,dél,Szolgálati,9
+2026-10-01,Øresund,dél,Tanker,5
+2026-10-01,Øresund,dél,Teherhajó,24
+2026-10-01,Øresund,észak,Egyéb / ismeretlen,4
+2026-10-01,Øresund,észak,Kedvtelési,1
+2026-10-01,Øresund,észak,Személyszállító,3
+2026-10-01,Øresund,észak,Szolgálati,10
+2026-10-01,Øresund,észak,Tanker,7
+2026-10-01,Øresund,észak,Teherhajó,32
+2026-10-02,Nagy-Balti-öv,dél,Egyéb / ismeretlen,5
+2026-10-02,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-10-02,Nagy-Balti-öv,dél,Személyszállító,5
+2026-10-02,Nagy-Balti-öv,dél,Szolgálati,4
+2026-10-02,Nagy-Balti-öv,dél,Tanker,9
+2026-10-02,Nagy-Balti-öv,dél,Teherhajó,12
+2026-10-02,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-02,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-10-02,Nagy-Balti-öv,észak,Személyszállító,5
+2026-10-02,Nagy-Balti-öv,észak,Szolgálati,3
+2026-10-02,Nagy-Balti-öv,észak,Tanker,8
+2026-10-02,Nagy-Balti-öv,észak,Teherhajó,20
+2026-10-02,Øresund,dél,Egyéb / ismeretlen,5
+2026-10-02,Øresund,dél,Halászhajó,1
+2026-10-02,Øresund,dél,Kedvtelési,1
+2026-10-02,Øresund,dél,Személyszállító,3
+2026-10-02,Øresund,dél,Szolgálati,3
+2026-10-02,Øresund,dél,Tanker,11
+2026-10-02,Øresund,dél,Teherhajó,16
+2026-10-02,Øresund,észak,Egyéb / ismeretlen,5
+2026-10-02,Øresund,észak,Kedvtelési,1
+2026-10-02,Øresund,észak,Személyszállító,2
+2026-10-02,Øresund,észak,Szolgálati,4
+2026-10-02,Øresund,észak,Tanker,6
+2026-10-02,Øresund,észak,Teherhajó,17
+2026-10-03,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-10-03,Nagy-Balti-öv,dél,Személyszállító,4
+2026-10-03,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-03,Nagy-Balti-öv,dél,Tanker,10
+2026-10-03,Nagy-Balti-öv,dél,Teherhajó,15
+2026-10-03,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-03,Nagy-Balti-öv,észak,Halászhajó,1
+2026-10-03,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-10-03,Nagy-Balti-öv,észak,Személyszállító,4
+2026-10-03,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-03,Nagy-Balti-öv,észak,Tanker,15
+2026-10-03,Nagy-Balti-öv,észak,Teherhajó,22
+2026-10-03,Øresund,dél,Egyéb / ismeretlen,8
+2026-10-03,Øresund,dél,Kedvtelési,4
+2026-10-03,Øresund,dél,Személyszállító,6
+2026-10-03,Øresund,dél,Szolgálati,11
+2026-10-03,Øresund,dél,Tanker,5
+2026-10-03,Øresund,dél,Teherhajó,26
+2026-10-03,Øresund,észak,Egyéb / ismeretlen,6
+2026-10-03,Øresund,észak,Kedvtelési,7
+2026-10-03,Øresund,észak,Személyszállító,4
+2026-10-03,Øresund,észak,Szolgálati,8
+2026-10-03,Øresund,észak,Tanker,7
+2026-10-03,Øresund,észak,Teherhajó,6
+2026-10-04,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-04,Nagy-Balti-öv,dél,Kedvtelési,5
+2026-10-04,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-04,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-04,Nagy-Balti-öv,dél,Tanker,12
+2026-10-04,Nagy-Balti-öv,dél,Teherhajó,10
+2026-10-04,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-10-04,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-10-04,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-04,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-04,Nagy-Balti-öv,észak,Tanker,6
+2026-10-04,Nagy-Balti-öv,észak,Teherhajó,20
+2026-10-04,Øresund,dél,Egyéb / ismeretlen,3
+2026-10-04,Øresund,dél,Kedvtelési,2
+2026-10-04,Øresund,dél,Személyszállító,2
+2026-10-04,Øresund,dél,Szolgálati,3
+2026-10-04,Øresund,dél,Tanker,7
+2026-10-04,Øresund,dél,Teherhajó,25
+2026-10-04,Øresund,észak,Egyéb / ismeretlen,1
+2026-10-04,Øresund,észak,Kedvtelési,1
+2026-10-04,Øresund,észak,Személyszállító,2
+2026-10-04,Øresund,észak,Szolgálati,5
+2026-10-04,Øresund,észak,Tanker,4
+2026-10-04,Øresund,észak,Teherhajó,14
+2026-10-05,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-10-05,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-05,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-05,Nagy-Balti-öv,dél,Tanker,6
+2026-10-05,Nagy-Balti-öv,dél,Teherhajó,13
+2026-10-05,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-10-05,Nagy-Balti-öv,észak,Kedvtelési,4
+2026-10-05,Nagy-Balti-öv,észak,Személyszállító,4
+2026-10-05,Nagy-Balti-öv,észak,Szolgálati,2
+2026-10-05,Nagy-Balti-öv,észak,Tanker,8
+2026-10-05,Nagy-Balti-öv,észak,Teherhajó,27
+2026-10-05,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-05,Øresund,dél,Személyszállító,1
+2026-10-05,Øresund,dél,Szolgálati,5
+2026-10-05,Øresund,dél,Tanker,7
+2026-10-05,Øresund,dél,Teherhajó,31
+2026-10-05,Øresund,észak,Egyéb / ismeretlen,1
+2026-10-05,Øresund,észak,Személyszállító,2
+2026-10-05,Øresund,észak,Szolgálati,2
+2026-10-05,Øresund,észak,Tanker,4
+2026-10-05,Øresund,észak,Teherhajó,12
+2026-10-06,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-06,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-06,Nagy-Balti-öv,dél,Szolgálati,1
+2026-10-06,Nagy-Balti-öv,dél,Tanker,8
+2026-10-06,Nagy-Balti-öv,dél,Teherhajó,11
+2026-10-06,Nagy-Balti-öv,észak,Egyéb / ismeretlen,4
+2026-10-06,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-10-06,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-06,Nagy-Balti-öv,észak,Szolgálati,4
+2026-10-06,Nagy-Balti-öv,észak,Tanker,13
+2026-10-06,Nagy-Balti-öv,észak,Teherhajó,20
+2026-10-06,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-06,Øresund,dél,Személyszállító,2
+2026-10-06,Øresund,dél,Szolgálati,3
+2026-10-06,Øresund,dél,Tanker,6
+2026-10-06,Øresund,dél,Teherhajó,25
+2026-10-06,Øresund,észak,Egyéb / ismeretlen,3
+2026-10-06,Øresund,észak,Halászhajó,1
+2026-10-06,Øresund,észak,Személyszállító,1
+2026-10-06,Øresund,észak,Tanker,5
+2026-10-06,Øresund,észak,Teherhajó,18

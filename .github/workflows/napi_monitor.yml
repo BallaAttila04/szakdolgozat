@@ -1,0 +1,60 @@
+# Napi forgalmi monitor: letoltes -> validalt Parquet -> kapuvonal-atkelesek
+# -> jelzesek -> a publikus oldal "Napi monitor" szakasza.
+#
+# Idozites (ld. naplo, 6a): a dan szerver a D napi fajlt D+3 00:18-00:24 UTC
+# kozott teszi kozze (14 nap Last-Modified fejlece). 03:30 UTC-kor tehat a
+# D = ma-3 nap mar biztosan fenn van; a 30. perc az oran beluli csucsterhelest
+# is elkeruli (a GitHub a teljes orakban kesleltetheti az utemezett futast).
+#
+# Csak az aggregalt tablak (outputs/monitor/) es a docs/ kerul vissza a repoba;
+# a nyers ZIP es a napi Parquet a futtato gepen marad, es a futas vegen torlodik.
+
+name: Napi forgalmi monitor
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: napi-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-monitor.txt
+
+      - name: Fuggosegek
+        run: pip install -r requirements-monitor.txt
+
+      - name: Napi futas (pipeline -> monitor -> oldal)
+        # --kozvetlen-zip: a CSV nem kerul lemezre (a legnagyobb napon is ~4,7 GiB
+        # lemez, ~11 GB memoria; ld. naplo 6a)
+        run: python scripts/napi_futas.py --parquet-torol --kozvetlen-zip
+
+      # Akkor is lefut, ha a napi futas hibaval allt le: az allapot.json-ban
+      # rogzitett hiba igy megjelenik az oldalon, a korabbi adat pedig marad.
+      - name: Eredmeny visszairasa
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add outputs/monitor docs/index.html
+          if git diff --cached --quiet; then
+            echo "Nincs valtozas."
+          else
+            git commit -m "Napi monitor: $(date -u +%Y-%m-%d)"
+            git push
+          fi
