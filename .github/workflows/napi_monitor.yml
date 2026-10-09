@@ -1,7 +1,7 @@
 # Napi forgalmi monitor: letoltes -> validalt Parquet -> kapuvonal-atkelesek
 # -> jelzesek -> a publikus oldal "Napi monitor" szakasza.
 #
-# Idozites (ld. naplo, 6a): a dan szerver a D napi fajlt D+3 00:18-00:24 UTC
+# Idozites (ld. naplo, 6a): a dan szerver a D napi fajlt D+3 00:18-00:42 UTC
 # kozott teszi kozze (14 nap Last-Modified fejlece). 03:30 UTC-kor tehat a
 # D = ma-3 nap mar biztosan fenn van; a 30. perc az oran beluli csucsterhelest
 # is elkeruli (a GitHub a teljes orakban kesleltetheti az utemezett futast).
@@ -15,6 +15,14 @@ on:
   schedule:
     - cron: "30 3 * * *"
   workflow_dispatch:
+    inputs:
+      meresi_nap:
+        description: >-
+          Csak eroforras-meres: ezt a napot (YYYY-MM-DD) dolgozza fel a napi
+          beallitassal, es az eredmenyt megjegyzeskent irja ki. A repoba nem ir.
+          Uresen hagyva a normal napi futas indul.
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -42,6 +50,7 @@ jobs:
         run: pip install -r requirements-monitor.txt
 
       - name: Napi futas (pipeline -> monitor -> oldal)
+        if: inputs.meresi_nap == ''
         # --kozvetlen-zip: a CSV nem kerul lemezre (a legnagyobb napon is ~4,7 GiB
         # lemez, ~11 GB memoria; ld. naplo 6a)
         run: python scripts/napi_futas.py --parquet-torol --kozvetlen-zip
@@ -49,7 +58,7 @@ jobs:
       # Akkor is lefut, ha a napi futas hibaval allt le: az allapot.json-ban
       # rogzitett hiba igy megjelenik az oldalon, a korabbi adat pedig marad.
       - name: Eredmeny visszairasa
-        if: always()
+        if: always() && inputs.meresi_nap == ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -60,3 +69,16 @@ jobs:
             git commit -m "Napi monitor: $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      # Eroforras-meres a futtaton (6a ellenorzese): a megadott napot a napi
+      # beallitassal dolgozza fel, az eredmeny a futas megjegyzesei kozott
+      # (annotations) jelenik meg. Semmit nem commitol.
+      - name: Eroforras-meres
+        if: inputs.meresi_nap != ''
+        env:
+          NAP: ${{ inputs.meresi_nap }}
+        run: |
+          echo "::notice title=Futtato::$(nproc) CPU, $(free -m | awk '/Mem:/{print $2}') MiB RAM, szabad lemez indulaskor: $(df -BM --output=avail . | tail -1 | tr -d ' ')"
+          python scripts/pipeline.py "$NAP" --felulir --kozvetlen-zip --dr-kihagy --naplo /tmp/meres.csv
+          python -c "import csv; r=list(csv.DictReader(open('/tmp/meres.csv')))[0]; print('::notice title=Meres ' + r['nap'] + '::' + ' '.join(k + '=' + str(r.get(k, '')) for k in ['statusz', 'zip_mib', 'nyers_sor', 'letoltes_mp', 'kicsomagolas_mp', 'parquet_mp', 'validalas_mp', 'osszes_mp', 'csucs_memoria_mib', 'csucs_munka_mib', 'csucs_lemez_mib', 'parquet_mib']))"
+          echo "::notice title=Lemez a vegen::szabad: $(df -BM --output=avail . | tail -1 | tr -d ' ')"
