@@ -45,7 +45,7 @@ import sys
 import threading
 import time
 import zipfile
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from datetime import date, datetime
 from pathlib import Path
 
@@ -344,7 +344,11 @@ def kesz(sor, args, nap) -> bool:
 
 # --- Egy nap ---------------------------------------------------------------
 
-def egy_nap(nap: date, args, letoltes_jovo) -> dict:
+def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
+    """Egy nap feldolgozasa. A main() kulon gyerekfolyamatban hivja: egy
+    hosszan futo folyamatban a napi ido a feldolgozott napok szamaval
+    linearisan nott (6,5 -> 36,7 mp/millio sor 52 nap alatt; friss
+    folyamatban ugyanaz a nap 8x gyorsabb volt - ld. naplo, 3. fazis)."""
     sor = {"nap": nap.isoformat(), "statusz": "hiba", "sema": SEMA, "hiba": "",
            "feldolgozva": datetime.now().isoformat(timespec="seconds")}
     t_kezd = time.perf_counter()
@@ -354,12 +358,12 @@ def egy_nap(nap: date, args, letoltes_jovo) -> dict:
 
     with Mero(args.munka.parent) as mero:
         try:
-            # 1. letoltes (az elotoltes szalbol, ha volt)
+            # 1. letoltes (a szulofolyamat elotolto szalabol, ha volt)
             t0 = time.perf_counter()
-            allapot = letoltes_jovo.result() if letoltes_jovo else (
-                "mar_megvan" if zf.exists() and ellenoriz_zip(zf)
-                else letolt_egy_napot(nap, args.adat, False))
-            sor["letoltes_mp"] = round(time.perf_counter() - t0, 1)
+            if allapot is None:
+                allapot = ("mar_megvan" if zf.exists() and ellenoriz_zip(zf)
+                           else letolt_egy_napot(nap, args.adat, False))
+            sor["letoltes_mp"] = round(letoltes_mp + time.perf_counter() - t0, 1)
             if allapot == "hiba" or not zf.exists():
                 sor["statusz"] = "nincs_adat"
                 sor["hiba"] = "a ZIP nem toltheto le (404 vagy halozati hiba)"
@@ -502,7 +506,8 @@ def main():
             return "mar_megvan"
         return letolt_egy_napot(n, args.adat, False)
 
-    with ThreadPoolExecutor(max_workers=1) as pool:
+    with ThreadPoolExecutor(max_workers=1) as pool, \
+            ProcessPoolExecutor(max_workers=1, max_tasks_per_child=1) as napi:
         jovo = None
         for i, nap in enumerate(teendo):
             print(f"\n=== {nap} ({i + 1}/{len(teendo)}) ===")
@@ -511,7 +516,11 @@ def main():
             # a kovetkezo nap letoltese elindul, mikozben ezt feldolgozzuk
             kov = (pool.submit(letolt, teendo[i + 1])
                    if not args.nincs_elotoltes and i + 1 < len(teendo) else None)
-            sor = egy_nap(nap, args, jovo)
+            t0 = time.perf_counter()
+            allapot = jovo.result()          # a letoltesre varas a nap idejebe szamit
+            # minden nap friss gyerekfolyamatban (max_tasks_per_child=1)
+            sor = napi.submit(egy_nap, nap, args, allapot,
+                              time.perf_counter() - t0).result()
             zip_torles(nap, sor, args)
             naplo[nap.isoformat()] = sor
             naplo_ir(args.naplo, naplo)

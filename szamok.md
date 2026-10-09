@@ -824,3 +824,24 @@ lefuttatva 2026-10-06.
 |------|----------|---------|-------|
 | 1 258 = 1 258 | átkelés: ZIP-ből vs. Parquet-tárolóból (2. séma) – **bájtra azonos CSV** | kapuvonal.py | 2026-10-06 |
 | ~~1 266~~ | ugyanez az 1. sémájú tárolóból – hibás, a `sorrend` oszlop hiánya miatt | kapuvonal.py | 2026-10-05 |
+
+## Három hónap a Parquet-tárolóban (2026. június–augusztus)
+
+Forrás: `pipeline.py 2026-06-01 2026-08-31 --torol-zip ...`, kimenet
+`outputs/pipeline_napok.csv`, lefuttatva 2026-10-06 – 2026-10-09.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 92 / 92 | validált nap (a szerveren mind elérhető, hiba 0) | pipeline.py | 2026-10-09 |
+| 2 085 308 912 | nyers AIS-sor, 3 hónap | pipeline.py | 2026-10-09 |
+| 1 182 974 452 | sor a deduplikált tárolóban | pipeline.py | 2026-10-09 |
+| 43,3% | bitre azonos duplikátum, 3 hónap, teljes fájl (napi 35,0–58,8%, medián 39,1%) | pipeline.py | 2026-10-09 |
+| 63,9 GiB (65 390 MiB) | nyers ZIP, 3 hónap | pipeline.py | 2026-10-09 |
+| **15,1 GiB (15 422 MiB)** | Parquet-tároló, 3 hónap (**23,6%** a ZIP-hez; havonta 23,3–23,9%) | pipeline.py | 2026-10-09 |
+| 1,9 GiB (1 940 MiB) | DR 50 m-es réteg, 3 hónap | pipeline.py | 2026-10-09 |
+| 4,7 – 5,3 GiB | Parquet-tároló havonta | pipeline.py | 2026-10-09 |
+
+**Futási idő – NEM jellemző szám:** a 3. fázis napi ideje (medián 560 mp,
+max. 1 160 mp) egy azóta javított hibát tartalmaz (a hosszan futó folyamat
+lassult, ld. naplo 2026-10-09). Friss folyamatban ugyanaz a nap 8,2×
+gyorsabb volt (08-28: 638,5 → 78,3 mp Parquet-lépés).
