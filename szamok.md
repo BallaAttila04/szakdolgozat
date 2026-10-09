@@ -858,3 +858,48 @@ beállítással (2026-10-09, `outputs/logs/lemezmeres_0715.log`), friss folyamat
 | 204 mp / 10,6 GiB / 2,5 GiB | ugyanez közvetlen ZIP-olvasással (`--kozvetlen-zip`) – a GitHub-futtató beállítása | pipeline.py | 2026-10-09 |
 | ≈ 4,6 GiB | becsült lemezigény a futtatón (lapozás + ZIP + előtöltött ZIP + Parquet) | számolt | 2026-10-09 |
 | 16 GB RAM / 14 GB SSD / 6 óra | a nyilvános repó standard Linux runnere (GitHub-dokumentáció) | – | 2026-10-05 |
+
+## Motorok és skálázás a Parquet-tárolón (4. fázis)
+
+Forrás: `skalazas.py` (→ `tarolas_benchmark.py --tarolo-meres`), kimenet
+`outputs/skalazas.csv`, `outputs/skalazas.png`, lefuttatva 2026-10-09.
+A négy lekérdezés: sorszám, egyedi hajó, bbox-szűrés, óránkénti bbox-bontás;
+3 ismétlés mediánja, a négy együtt; minden motor minden méreten azonos
+eredményt adott. duckdb 1.5.5, polars 1.44.2 (streaming), pyspark 4.2.0 helyi
+mód (JDK 21, 8 GB driver), egy 8 szálas, 16 GB-os laptopon.
+
+| adat | nyers sor | Parquet | DuckDB | Polars | Spark (+ indulás) | DuckDB-CSV | pandas-CSV |
+|---|---|---|---|---|---|---|---|
+| 1 nap (07-15) | 36,7 M | 227 MiB | 0,51 mp | 0,38 mp | 8,5 mp (+23,5) | 51,3 mp | 113,6 mp |
+| 7 nap | 190,0 M | 1,3 GiB | 3,8 mp | 2,9 mp | 22,1 mp (+13,2) | – | – |
+| 1 hónap (július) | 739,2 M | 5,3 GiB | 15,0 mp | 12,4 mp | 87,2 mp (+12,2) | – | – |
+| 3 hónap (jún–aug) | 2 085,3 M | 15,1 GiB | 42,0 mp | 33,4 mp | 233,4 mp (+16,1) | – | – |
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 140 / 197 / 377 / 619 MiB | DuckDB csúcsmemória (1 nap … 3 hónap) | skalazas.py | 2026-10-09 |
+| 564 / 1 848 / 3 030 / 3 728 MiB | Polars csúcsmemória | skalazas.py | 2026-10-09 |
+| 1 603 / 2 502 / 2 882 / 3 589 MiB | Spark csúcsmemória (Python + JVM) | skalazas.py | 2026-10-09 |
+| 17× → 5,6× | a Spark lassúsága a DuckDB-hez (1 nap → 3 hónap), session-indulás nélkül | skalazas.py | 2026-10-09 |
+| 94,4 mp vs 3,1 mp | `count(DISTINCT MMSI)` 3 hónapon: Spark vs DuckDB | skalazas.py | 2026-10-09 |
+| 101× / 225× | a DuckDB-CSV / pandas-CSV lassúsága a DuckDB-Parquethez, 1 nap | skalazas.py | 2026-10-09 |
+
+**Az 1 napos tárolós DuckDB-szám (0,51 mp) nem vethető össze a régi
+benchmark 3,10 / 1,64 mp-ével:** az a nyers (26 oszlopos, duplikátumos,
+snappy) Parquet volt, egyetlen futás.
+
+**Spark-telepítés:** pip (polars + pyspark + geopandas együtt) 228 mp; hordozható
+Temurin JDK 21, 205 MB, 26 mp; winutils az olvasáshoz nem kellett; első
+kísérletre működött. Session-indulás 12–39 mp.
+
+### GeoParquet vs. lat/lon Parquet (2026-07-15, 16 638 836 sor)
+
+Forrás: `geoparquet_proba.py`, kimenet `outputs/geoparquet_proba.csv`, 2026-10-09, 5 ismétlés.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 274,0 vs 560,6 MiB (**2,05×**) | lat/lon Parquet vs GeoParquet 1.1 (WKB + bbox-oszlop) | geoparquet_proba.py | 2026-10-09 |
+| 10,2 vs 39,8 mp | írás (a GeoParquetnél a GeoDataFrame-építéssel) | geoparquet_proba.py | 2026-10-09 |
+| 30,7 vs 39,1 ms | térbeli lekérdezés DuckDB-vel: lat/lon vs GeoParquet bbox-oszlop | geoparquet_proba.py | 2026-10-09 |
+| 245,5 ms | ugyanez GeoPandasszal (`read_parquet(bbox=...)`) | geoparquet_proba.py | 2026-10-09 |
+| 1,57 vs 16,1 mp | teljes beolvasás: pandas vs GeoPandas | geoparquet_proba.py | 2026-10-09 |

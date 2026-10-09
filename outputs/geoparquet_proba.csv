@@ -1,0 +1,8 @@
+kerdes,valtozat,median_mp,fajl_mib,eredmeny
+terbeli,duckdb_latlon,0.0307,274.0,"(189, 123866)"
+terbeli,duckdb_geoparquet_bbox,0.0391,560.6,"(189, 123866)"
+terbeli,geopandas_geoparquet_bbox,0.2455,560.6,"(189, 123866)"
+teljes_beolvasas,pandas_latlon,1.5672,274.0,16638836
+teljes_beolvasas,geopandas_geoparquet,16.103,560.6,16638836
+iras,latlon,10.25,274.0,
+iras,geoparquet,39.77,560.6,
