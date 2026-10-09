@@ -1,39 +1,64 @@
 {
  "utolso_nap": "2026-10-06",
- "napok_szama": 124,
+ "napok_szama": 128,
  "elso_nap": "2026-06-01",
- "frissitve_utc": "2026-10-09T05:08:32+00:00",
+ "frissitve_utc": "2026-10-09T15:09:21+00:00",
  "kuszob": {
-  "Mindkét kapu": 0.2348,
-  "Nagy-Balti-öv": 0.3558,
-  "Øresund": 0.2542
+  "Mindkét kapu": 0.2303,
+  "Nagy-Balti-öv": 0.3437,
+  "Øresund": 0.2578
  },
  "zajszint": {
   "Mindkét kapu": {
-   "napok": 103,
+   "napok": 107,
    "median_abs_elteres": 0.0777,
-   "robusztus_szoras": 0.1174,
-   "p90_abs_elteres": 0.2192
+   "robusztus_szoras": 0.1152,
+   "p90_abs_elteres": 0.2176
   },
   "Nagy-Balti-öv": {
-   "napok": 103,
-   "median_abs_elteres": 0.12,
-   "robusztus_szoras": 0.1779,
-   "p90_abs_elteres": 0.25
+   "napok": 107,
+   "median_abs_elteres": 0.1111,
+   "robusztus_szoras": 0.1718,
+   "p90_abs_elteres": 0.2318
   },
   "Øresund": {
-   "napok": 103,
-   "median_abs_elteres": 0.0857,
-   "robusztus_szoras": 0.1271,
-   "p90_abs_elteres": 0.2959
+   "napok": 107,
+   "median_abs_elteres": 0.087,
+   "robusztus_szoras": 0.1289,
+   "p90_abs_elteres": 0.2918
   }
  },
  "alap_hetek": 4,
  "min_alapnap": 3,
  "kuszob_szorzo": 2.0,
- "utolso_futas": {
-  "ido_utc": "2026-10-09T06:13:51+00:00",
-  "statusz": "ok",
-  "uzenet": "nincs uj nap"
- }
+ "kuszob_megrakottsag": {
+  "Megrakott tanker (7 nap)": 0.1305,
+  "Megrakott teherhajó (7 nap)": 0.2006,
+  "Tanker-volumen (7 nap, 1000 m³)": 0.2051
+ },
+ "zajszint_megrakottsag": {
+  "Megrakott tanker (7 nap)": {
+   "napok": 101,
+   "median_abs_elteres": 0.0435,
+   "robusztus_szoras": 0.0653,
+   "p90_abs_elteres": 0.1081
+  },
+  "Megrakott teherhajó (7 nap)": {
+   "napok": 101,
+   "median_abs_elteres": 0.0682,
+   "robusztus_szoras": 0.1003,
+   "p90_abs_elteres": 0.1401
+  },
+  "Tanker-volumen (7 nap, 1000 m³)": {
+   "napok": 101,
+   "median_abs_elteres": 0.0678,
+   "robusztus_szoras": 0.1025,
+   "p90_abs_elteres": 0.1278
+  }
+ },
+ "megrakott_kuszob_relativ_merules": {
+  "Tanker": 0.8148,
+  "Teherhajó": 0.7871
+ },
+ "gordulo_nap": 7
 }

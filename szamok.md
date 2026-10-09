@@ -943,3 +943,38 @@ futás <https://github.com/BallaAttila04/szakdolgozat/actions/runs/37910491337>,
 | 54,6% / 16 638 836 / 227,0 MiB | duplikátum-arány / dedup. sor / Parquet – egyezik a helyi futással | pipeline.py | 2026-10-09 |
 | 87,2 mp | ugyanez, 2. futás (<https://github.com/BallaAttila04/szakdolgozat/actions/runs/37914275224>, a javított kóddal, zöld): letöltés 50,9, sorszámlálás 11,4, Parquet 74,6 mp – a két futás közti eltérés a futtatógépek szórása | pipeline.py | 2026-10-09 |
 | 12 565 MiB / 2 699 MiB | 2. futás: csúcsmemória / munkakönyvtár-csúcs (szabad lemez a végén 86 580 MB) | pipeline.py | 2026-10-09 |
+
+## Megrakottsági mutató (7. fázis)
+
+Forrás: `megrakottsag.py` (`--lefedettseg`, `--szamol`, `--teszt`) és a
+`monitor.py` napi frissítése, kimenet `outputs/monitor/megrakottsag_napi.csv`,
+`outputs/megrakottsag_*.csv`, `outputs/megrakottsag_hisztogram.png`, lefuttatva
+2026-10-09, a 2026-06-01 – 2026-10-06 folytonos, 128 napos idősoron.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 1,0 ≤ d < 25,5 m | hihető merülés (az 1 m alatti sáv: tanker 1 343 sor a 208,7 M-ból; 25,5 = telített érték) | megrakottsag.py | 2026-10-09 |
+| 96,5% / 97,3% | hihető és változó merülésű átkelés, tanker / teher, mindkét kapu – **K3 TELJESÜL** (≥ 80%) | megrakottsag.py | 2026-10-09 |
+| 3 737 / 9 232 | tanker- / teher-átkelés (mindkét kapu) | megrakottsag.py | 2026-10-09 |
+| 89,2% / 92,0% | a kapun átkelő hajók közül változó merülésű, tanker (1 045 / 1 172) / teher (2 471 / 2 685) | megrakottsag.py | 2026-10-09 |
+| 3,3 m / 2,4 m | a merülés terjedelmének mediánja hajónként, tanker / teher | megrakottsag.py | 2026-10-09 |
+| **0,815 / 0,787** | megrakott-küszöb (Otsu) a relatív merülésre, tanker / teher | megrakottsag.py | 2026-10-09 |
+| 57,9% / 71,0% | megrakott átkelés aránya, tanker / teher (értékelhető átkelésekből) | megrakottsag.py | 2026-10-09 |
+| 68,8% / 43,0% | megrakott tanker-arány: Nagy-Balti-öv / Øresund | megrakottsag.py | 2026-10-09 |
+| 10 / 10 | szúrópróba: relatív merülés a nyers tárolóból függetlenül visszaszámolva | ellenőrző szkript | 2026-10-09 |
+| ±13,1% / ±20,1% / ±20,5% | jelzési küszöb (7 napos gördülő): megrakott tanker / teher / tanker-volumen | monitor.py | 2026-10-09 |
+| 7 / 101 nap | téves riasztás, megrakott tanker (júl. 2, aug. 2, szept. 3); teher 0, volumen 1 | megrakottsag.py | 2026-10-09 |
+| 13/13, 13/13, 12/13 | mesterséges 40 / 30 / 20%-os csökkenés észlelése 14 napon belül | megrakottsag.py | 2026-10-09 |
+| 2 / 3 / 4 nap | ugyanez, a jelzés napjának mediánja (0 = a hét első napja) | megrakottsag.py | 2026-10-09 |
+
+**Korábbi szám pontosítva (nem áthúzva, mert érvényes marad):** „Øresund: 0 db
+8 m-nél mélyebb tanker” (2026-09-24, 5 nap). A 128 napon az Øresund-kapun 55
+tanker-átkelés mélyebb 8 m-nél (max. 11,7 m); közülük csak 4 ment le a Drogden
+alá (É 55,55°, legmélyebb 8,8 m), a többi a koppenhágai kikötőknél megállt.
+Az *átmenő* forgalomra a korábbi állítás igaz; a kapu a kikötőbe tartó
+forgalmat is számolja.
+
+**Monitor-küszöbök a folytonos idősoron:** a 09-01 – 09-04 napok hiányoztak
+(ld. napló); pótlás után (128 nap) a kapuvonal-jelzés küszöbe ~~±23,5%~~ →
+**±23,0%** (mindkét kapu), ~~±35,6%~~ → ±34,4% (Nagy-Balti-öv), ~~±25,4%~~ →
+±25,8% (Øresund).

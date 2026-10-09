@@ -23,9 +23,17 @@ on:
           Uresen hagyva a normal napi futas indul.
         required: false
         default: ""
+      teszt_jelzes:
+        description: >-
+          Ertesites tesztje: mesterseges jelzesre GitHub Issue-t nyit
+          ([Monitor-teszt] cimmel). A normal napi futas ettol meg lefut.
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
+  issues: write      # ertesites jelzeskor (ertesites.py)
 
 concurrency:
   group: napi-monitor
@@ -68,6 +76,21 @@ jobs:
           else
             git commit -m "Napi monitor: $(date -u +%Y-%m-%d)"
             git push
+          fi
+
+      # Ertesites: ha a legutolso nap jelez, GitHub Issue nyilik (a GitHub errol
+      # e-mailt kuld). Egy jelzeshez egy nyitott issue tartozik; megszunesekor
+      # lezarul. Titkos kulcs nem kell, a workflow sajat tokenje eleg.
+      - name: Ertesites (GitHub Issue)
+        if: always() && inputs.meresi_nap == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TESZT: ${{ inputs.teszt_jelzes }}
+        run: |
+          if [ "$TESZT" = "true" ]; then
+            python scripts/ertesites.py --teszt
+          else
+            python scripts/ertesites.py
           fi
 
       # Eroforras-meres a futtaton (6a ellenorzese): a megadott napot a napi

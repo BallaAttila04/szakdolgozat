@@ -42,6 +42,7 @@ import pandas as pd
 from utak import KIMENET
 from kapuvonal import KAPUK, feldolgoz, folyoso
 from pipeline import NAPLO_CSV, SEMA, TAROLO, parquet_ut
+import megrakottsag
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
@@ -62,8 +63,12 @@ KUSZOB_SZORZO = 2.0
 MAD_SKALA = 1.4826     # MAD -> szoras normalis eloszlasnal
 
 
-def napi_aggregatum(nap: date, tarolo: Path, folyosok) -> pd.DataFrame:
-    atk, _ = feldolgoz(parquet_ut(tarolo, nap), folyosok)
+def napi_aggregatum(nap: date, tarolo: Path, folyosok, ki: Path = MONITOR) -> pd.DataFrame:
+    pq = parquet_ut(tarolo, nap)
+    atk, _ = feldolgoz(pq, folyosok)
+    # a megrakottsagi mutatohoz: merules-tortenet es reszletes atkelesek,
+    # amig a napi Parquet meg megvan (a futtaton utana torlodik)
+    megrakottsag.napi_frissites(nap.isoformat(), pq, atk, ki)
     if atk.empty:
         return pd.DataFrame(columns=["datum", "kapu", "irany", "csoport", "atkeles"])
     g = atk.groupby(["kapu", "irany", "csoport"]).size().reset_index(name="atkeles")
@@ -167,7 +172,7 @@ def main():
         uj_sorok = []
         for d in uj:
             print(f"\n{d}:")
-            uj_sorok.append(napi_aggregatum(date.fromisoformat(d), args.tarolo, folyosok))
+            uj_sorok.append(napi_aggregatum(date.fromisoformat(d), args.tarolo, folyosok, args.ki))
         tabla = pd.concat([tabla[~tabla["datum"].isin(uj)]] + uj_sorok, ignore_index=True)
         tabla = tabla.sort_values(["datum", "kapu", "irany", "csoport"]).reset_index(drop=True)
         tabla["atkeles"] = tabla["atkeles"].astype(int)
@@ -181,6 +186,16 @@ def main():
     j, kuszob, zaj = jelzesek(s)
     atomi_csv(j, args.ki / "jelzesek.csv")
 
+    # Megrakottsag: ugyanaz a jelzesi logika, 7 napos gordulo ablakon
+    mk, mz, mparam = {}, {}, {}
+    if (args.ki / megrakottsag.RESZLETES.name).exists():
+        _, mkusz, mt = megrakottsag.szamol(args.ki)
+        ms = megrakottsag.gordulo_sorozatok(mt, list(s.index))
+        if not ms.empty:          # 7 napnal rovidebb idosoron meg nincs gordulo ertek
+            mj, mk, mz = jelzesek(ms)
+            atomi_csv(mj, args.ki / "jelzesek_megrakottsag.csv")
+        mparam = {k: round(v, 4) for k, v in mkusz.items()}
+
     allapot = {
         "utolso_nap": s.index.max(),
         "napok_szama": len(s),
@@ -191,6 +206,11 @@ def main():
                          for kk, vv in v.items()} for k, v in zaj.items()},
         "alap_hetek": ALAP_HETEK, "min_alapnap": MIN_ALAPNAP,
         "kuszob_szorzo": KUSZOB_SZORZO,
+        "kuszob_megrakottsag": {k: round(v, 4) for k, v in mk.items()},
+        "zajszint_megrakottsag": {k: {kk: round(vv, 4) if isinstance(vv, float) else vv
+                                      for kk, vv in v.items()} for k, v in mz.items()},
+        "megrakott_kuszob_relativ_merules": mparam,
+        "gordulo_nap": megrakottsag.GORDULO_NAP,
     }
     (args.ki / "allapot.json").write_text(json.dumps(allapot, ensure_ascii=False, indent=1),
                                          encoding="utf-8")

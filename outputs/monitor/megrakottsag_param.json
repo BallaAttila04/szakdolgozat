@@ -1,0 +1,14 @@
+{
+ "kuszob": {
+  "Tanker": 0.8148,
+  "Teherhajó": 0.7871
+ },
+ "max_percentilis": 95,
+ "hiheto": [
+  1.0,
+  25.5
+ ],
+ "min_kulonbozo_ertek": 2,
+ "elso_nap": "2026-06-01",
+ "utolso_nap": "2026-10-06"
+}

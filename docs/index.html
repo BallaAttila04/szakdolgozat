@@ -531,16 +531,16 @@ legfeljebb 10 perc különbséggel.</p>
 <!--MONITOR_KEZDET-->
 <h2 id="monitor">Napi monitor</h2>
 
-<p class="frissites">Utoljára frissítve: <b>2026-10-09 05:08:32 UTC</b> · a legutóbbi
+<p class="frissites">Utoljára frissítve: <b>2026-10-09 15:09:21 UTC</b> · a legutóbbi
 feldolgozott nap: <b>2026-10-06</b> · idősor: 2026-06-01 – 2026-10-06
-(124 nap)</p>
+(128 nap)</p>
 
 <p>A lánc naponta, emberi beavatkozás nélkül fut: letölti az előző napok AIS-fájlját,
 validálja és Parquet-formátumba alakítja, majd kiszámolja a kereskedelmi
 (teherhajó és tanker) kapuvonal-átkeléseket. A dán szolgáltató a napi fájlt kb.
 48 órával a nap vége után teszi közzé, ezért a legfrissebb adat 2–3 napos. Minden
 napot az előző négy hét azonos napjainak mediánjához mérünk; a jelzési küszöb a
-teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): Mindkét kapu: ±23,5%, Nagy-Balti-öv: ±35,6%, Øresund: ±25,4%.</p>
+teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): Mindkét kapu: ±23,0%, Nagy-Balti-öv: ±34,4%, Øresund: ±25,8%.</p>
 
 <div class="racs"><div class="kartya"><span class="szam">52</span><span class="cimke"><b>Nagy-Balti-öv</b><br>4 hét azonos napja: 49,0 · +6,1% · normál</span></div><div class="kartya"><span class="szam">54</span><span class="cimke"><b>Øresund</b><br>4 hét azonos napja: 46,5 · +16,1% · normál</span></div><div class="kartya"><span class="szam">106</span><span class="cimke"><b>Mindkét kapu</b><br>4 hét azonos napja: 95,5 · +11,0% · normál</span></div></div>
 
@@ -576,8 +576,41 @@ teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): M
 </div>
 
 <div class="abra-doboz">
+  <p class="abra-cim">Megrakott tankerek és teherhajók átkelése, 7 napos gördülő összeg, utolsó 30 nap</p>
+  <p class="abra-alcim">Megrakottnak számít az átkelés, ha a hajó jelentett merülése a saját
+     (95. percentilis) merülésének legalább 81%-a (tanker), illetve
+     79%-a (teherhajó); a küszöb a relatív merülés
+     eloszlásából számolódik. Jelzési küszöb: ±13,1% (tanker),
+     ±20,1% (teherhajó).</p>
+  <svg viewBox="0 0 820 270" width="100%" height="270" role="img" class="abra">
+<line x1="40" y1="240" x2="688" y2="240" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="243.5" text-anchor="end">0</text>
+<line x1="40" y1="183.5" x2="688" y2="183.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="187" text-anchor="end">100</text>
+<line x1="40" y1="127" x2="688" y2="127" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="130.5" text-anchor="end">200</text>
+<line x1="40" y1="70.5" x2="688" y2="70.5" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="74" text-anchor="end">300</text>
+<line x1="40" y1="14" x2="688" y2="14" stroke="var(--racs)" stroke-width="1"/>
+<text class="a-tengely" x="33" y="17.5" text-anchor="end">400</text>
+<text class="a-tengely" x="40" y="258" text-anchor="middle">09-07</text>
+<text class="a-tengely" x="151.72" y="258" text-anchor="middle">09-12</text>
+<text class="a-tengely" x="263.45" y="258" text-anchor="middle">09-17</text>
+<text class="a-tengely" x="375.17" y="258" text-anchor="middle">09-22</text>
+<text class="a-tengely" x="486.9" y="258" text-anchor="middle">09-27</text>
+<text class="a-tengely" x="598.62" y="258" text-anchor="middle">10-02</text>
+<text class="a-tengely" x="688" y="258" text-anchor="middle">10-06</text>
+<text class="a-tengely" x="364" y="269" text-anchor="middle">nap</text>
+<text class="a-tengely" x="33" y="10" text-anchor="end">átkelés / 7 nap</text>
+<polyline points="40,172.2 62.34,169.94 84.69,175.59 107.03,177.28 129.38,178.98 151.72,178.42 174.07,176.72 196.41,175.03 218.76,174.46 241.1,172.2 263.45,176.16 285.79,176.72 308.14,178.42 330.48,177.85 352.83,177.85 375.17,180.68 397.52,180.11 419.86,175.03 442.21,175.59 464.55,173.33 486.9,173.9 509.24,175.59 531.59,178.42 553.93,178.42 576.28,182.37 598.62,181.24 620.97,177.28 643.31,173.9 665.66,173.33 688,168.25" fill="none" stroke="var(--sor-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="40,64.85 62.34,63.16 84.69,64.28 107.03,69.37 129.38,67.11 151.72,65.42 174.07,60.33 196.41,58.64 218.76,62.59 241.1,55.24 263.45,49.03 285.79,43.38 308.14,38.86 330.48,39.43 352.83,47.33 375.17,42.81 397.52,44.51 419.86,42.81 442.21,48.46 464.55,47.9 486.9,37.73 509.24,28.69 531.59,33.21 553.93,34.91 576.28,20.21 598.62,21.91 620.97,24.17 643.31,33.21 665.66,28.12 688,22.47" fill="none" stroke="var(--sor-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="a-vegcimke" x="697" y="25.97" fill="var(--sor-1)">Megrakott teherhajó (7 nap)</text>
+<text class="a-vegcimke" x="697" y="171.75" fill="var(--sor-2)">Megrakott tanker (7 nap)</text>
+</svg>
+</div>
+<div class="abra-doboz">
   <p class="abra-cim">Jelzések az utolsó 30 napban</p>
-  <div class="tabla-gorgeto"><table class="adat-tabla"><thead><tr><th>nap</th><th>sorozat</th><th>átkelés</th><th>alapszint</th><th>eltérés</th><th>jelzés</th></tr></thead><tbody><tr><td>2026-09-27</td><td>Nagy-Balti-öv</td><td>66</td><td>47,5</td><td>+38,9%</td><td>szokatlanul magas</td></tr><tr><td>2026-09-20</td><td>Øresund</td><td>39</td><td>56,0</td><td>−30,4%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-09-25</td><td>Øresund</td><td>34</td><td>52,0</td><td>−34,6%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-09-29</td><td>Øresund</td><td>33</td><td>50,0</td><td>−34,0%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-10-01</td><td>Øresund</td><td>68</td><td>50,0</td><td>+36,0%</td><td>szokatlanul magas</td></tr><tr><td>2026-09-12</td><td>Mindkét kapu</td><td>113</td><td>91,0</td><td>+24,2%</td><td>szokatlanul magas</td></tr><tr><td>2026-10-01</td><td>Mindkét kapu</td><td>129</td><td>100,0</td><td>+29,0%</td><td>szokatlanul magas</td></tr></tbody></table></div>
+  <div class="tabla-gorgeto"><table class="adat-tabla"><thead><tr><th>nap</th><th>sorozat</th><th>érték</th><th>alapszint</th><th>eltérés</th><th>jelzés</th></tr></thead><tbody><tr><td>2026-09-27</td><td>Nagy-Balti-öv</td><td>66</td><td>47,5</td><td>+38,9%</td><td>szokatlanul magas</td></tr><tr><td>2026-09-20</td><td>Øresund</td><td>39</td><td>56,0</td><td>−30,4%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-09-25</td><td>Øresund</td><td>34</td><td>51,0</td><td>−33,3%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-09-29</td><td>Øresund</td><td>33</td><td>46,5</td><td>−29,0%</td><td>szokatlanul alacsony</td></tr><tr><td>2026-10-01</td><td>Øresund</td><td>68</td><td>50,0</td><td>+36,0%</td><td>szokatlanul magas</td></tr><tr><td>2026-09-12</td><td>Mindkét kapu</td><td>113</td><td>91,0</td><td>+24,2%</td><td>szokatlanul magas</td></tr><tr><td>2026-10-01</td><td>Mindkét kapu</td><td>129</td><td>103,0</td><td>+25,2%</td><td>szokatlanul magas</td></tr></tbody></table></div>
 </div>
 <!--MONITOR_VEG-->
 

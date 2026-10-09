@@ -335,10 +335,36 @@ def monitor_szakasz(mappa: Path) -> str:
     svg = vonaldiagram([d[5:] for d in napok], sorozatok, y_cimke="átkelés",
                        x_cimke="nap", x_lepes=5)
 
-    # jelzesek az utolso 30 napban
+    # megrakottsag: 7 napos gordulo osszeg (ha a monitor mar szamolja)
+    mj_f = mappa / "jelzesek_megrakottsag.csv"
+    mj = pd.read_csv(mj_f, dtype={"datum": str}) if mj_f.exists() else None
+    m_doboz = ""
+    if mj is not None and len(mj):
+        m_napok = [d for d in napok if d in set(mj["datum"])]
+        m_sor = []
+        for nev, szin in zip(["Megrakott tanker (7 nap)", "Megrakott teherhajó (7 nap)"],
+                             ["var(--sor-2)", "var(--sor-1)"]):
+            ss = mj[mj["sorozat"] == nev].set_index("datum")["ertek"]
+            if len(ss):
+                m_sor.append((nev, [int(ss.get(d, 0)) for d in m_napok], szin))
+        mk = a.get("kuszob_megrakottsag", {})
+        rk = a.get("megrakott_kuszob_relativ_merules", {})
+        m_doboz = f"""
+<div class="abra-doboz">
+  <p class="abra-cim">Megrakott tankerek és teherhajók átkelése, 7 napos gördülő összeg, utolsó {len(m_napok)} nap</p>
+  <p class="abra-alcim">Megrakottnak számít az átkelés, ha a hajó jelentett merülése a saját
+     (95. percentilis) merülésének legalább {tized(rk.get('Tanker', 0) * 100, 0)}%-a (tanker), illetve
+     {tized(rk.get('Teherhajó', 0) * 100, 0)}%-a (teherhajó); a küszöb a relatív merülés
+     eloszlásából számolódik. Jelzési küszöb: ±{tized(mk.get('Megrakott tanker (7 nap)', 0) * 100)}% (tanker),
+     ±{tized(mk.get('Megrakott teherhajó (7 nap)', 0) * 100)}% (teherhajó).</p>
+  {vonaldiagram([d[5:] for d in m_napok], m_sor, y_cimke="átkelés / 7 nap", x_cimke="nap", x_lepes=5)}
+</div>"""
+        j = pd.concat([j, mj], ignore_index=True)
+
+    # jelzesek az utolso 30 napban (atkelesek es megrakottsag)
     jel = j[j["datum"].isin(napok) & j["jelzes"].str.startswith("szokatlanul")]
     jel_tabla = (html_tabla(
-        ["nap", "sorozat", "átkelés", "alapszint", "eltérés", "jelzés"],
+        ["nap", "sorozat", "érték", "alapszint", "eltérés", "jelzés"],
         [[r.datum, r.sorozat, int(r.ertek), tized(r.alapszint), elojeles_szazalek(1 + r.elteres),
           r.jelzes] for r in jel.itertuples()])
         if len(jel) else "<p>Az utolsó 30 napban nem volt jelzés.</p>")
@@ -364,7 +390,7 @@ teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): {
   <p class="abra-cim">Kereskedelmi átkelések naponta, utolsó {len(napok)} nap</p>
   {svg}
 </div>
-
+{m_doboz}
 <div class="abra-doboz">
   <p class="abra-cim">Jelzések az utolsó {len(napok)} napban</p>
   <div class="tabla-gorgeto">{jel_tabla}</div>
