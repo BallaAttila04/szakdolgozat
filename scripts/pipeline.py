@@ -139,8 +139,10 @@ class Mero:
     """Hatterszal: csucs memoria (a folyamat + gyerekei RSS-e) es csucs
     lemezhasznalat (a szabad hely csokkenese a meres kezdetehez kepest)."""
 
-    def __init__(self, lemez_ut: Path):
+    def __init__(self, lemez_ut: Path, munka_ut: Path = None):
         self.lemez_ut = lemez_ut
+        self.munka_ut = munka_ut
+        self.munka_csucs = 0
         self.proc = psutil.Process()
         self.csucs_rss = 0
         self.kezdo_szabad = psutil.disk_usage(str(lemez_ut)).free
@@ -160,6 +162,14 @@ class Mero:
                 self.csucs_rss = max(self.csucs_rss, rss)
                 self.min_szabad = min(self.min_szabad,
                                       psutil.disk_usage(str(self.lemez_ut)).free)
+                if self.munka_ut is not None and self.munka_ut.exists():
+                    m = 0
+                    for f in self.munka_ut.rglob("*"):
+                        try:
+                            m += f.stat().st_size
+                        except OSError:
+                            pass
+                    self.munka_csucs = max(self.munka_csucs, m)
             except psutil.Error:
                 pass
             self._stop.wait(MERES_IDOKOZ_MP)
@@ -181,25 +191,33 @@ class Mero:
         return (self.kezdo_szabad - self.min_szabad) / 1_048_576
 
 
-def kicsomagol(zip_fajl: Path, cel_dir: Path):
+def kicsomagol(zip_fajl: Path, cel_dir: Path, lemezre: bool = True):
     """A ZIP egyetlen CSV-jet kicsomagolja, kozben megszamolja a sorokat
-    (sortores-bajtok). Visszaad: (csv ut, adatsorok szama fejlec nelkul)."""
+    (sortores-bajtok). Visszaad: (csv forras a DuckDB-nek, adatsorok szama
+    fejlec nelkul). lemezre=False: nem ir semmit, csak szamol, es a DuckDB
+    `zipfs` kiegeszitojenek zip:// utvonalat adja vissza (szuk lemezu
+    futtatohoz; a sorszamlalas igy is fuggetlen marad a DuckDB-tol)."""
     with zipfile.ZipFile(zip_fajl) as zf:
         tagok = [n for n in zf.namelist() if n.lower().endswith((".csv", ".txt"))]
         if len(tagok) != 1:
             raise RuntimeError(f"{zip_fajl.name}: {len(tagok)} CSV a ZIP-ben (1 kell)")
         cel = cel_dir / Path(tagok[0]).name
         sortores, utolso = 0, b"\n"
-        with zf.open(tagok[0]) as be, open(cel, "wb") as ki:
+        with zf.open(tagok[0]) as be:
+            ki = open(cel, "wb") if lemezre else None
             while True:
                 darab = be.read(16 * 1024 * 1024)
                 if not darab:
                     break
                 sortores += darab.count(b"\n")
                 utolso = darab[-1:]
-                ki.write(darab)
+                if ki:
+                    ki.write(darab)
+            if ki:
+                ki.close()
     sorok = sortores + (0 if utolso == b"\n" else 1)   # zaro sortores nelkul is
-    return cel, sorok - 1                               # fejlec nelkul
+    forras = cel.as_posix() if lemezre else f"zip://{zip_fajl.as_posix()}/{tagok[0]}"
+    return forras, sorok - 1                            # fejlec nelkul
 
 
 def duckdb_kapcsolat(munka: Path, memoria: str = DUCKDB_MEMORIA):
@@ -207,12 +225,15 @@ def duckdb_kapcsolat(munka: Path, memoria: str = DUCKDB_MEMORIA):
     con.execute(f"SET memory_limit = '{memoria}'")
     con.execute(f"SET temp_directory = '{(munka / 'duckdb_tmp').as_posix()}'")
     con.execute("SET preserve_insertion_order = false")
+    con.execute("SET enable_progress_bar = false")
     con.execute("INSTALL h3 FROM community")
     con.execute("LOAD h3")
+    con.execute("INSTALL zipfs FROM community")
+    con.execute("LOAD zipfs")
     return con
 
 
-def csv_parquetbe(con, csv_fajl: Path, cel: Path):
+def csv_parquetbe(con, csv_forras: str, cel: Path):
     """Dedup + tipusok + H3 + rendezes egyetlen DuckDB-lekerdezesben."""
     ervenyes = ("Latitude BETWEEN -90 AND 90 AND Longitude BETWEEN -180 AND 180")
     tipusos = ",\n".join(
@@ -228,7 +249,7 @@ def csv_parquetbe(con, csv_fajl: Path, cel: Path):
         COPY (
           WITH szamozott AS (
             SELECT *, row_number() OVER () AS rn
-            FROM read_csv('{csv_fajl.as_posix()}', header = true,
+            FROM read_csv('{csv_forras}', header = true,
                           all_varchar = true, delim = ',', quote = '"')
           ), nyers AS (
             SELECT * EXCLUDE (rn), count(*)::INTEGER AS dup_db, min(rn) AS elso
@@ -313,7 +334,7 @@ MEZOK = ["nap", "statusz", "sema", "hiba","zip_mib", "csv_mib", "zip_sor", "nyer
          "ts_hibas_sor", "h3_nelkuli_sor", "egyedi_mmsi", "h3_minta_egyezik",
          "parquet_mib", "dr_bemenet_sor", "dr_megtartott_sor", "dr_atlag_hiba_m",
          "dr_max_hiba_m", "dr_mib", "letoltes_mp", "kicsomagolas_mp", "parquet_mp",
-         "validalas_mp", "dr_mp", "osszes_mp", "csucs_memoria_mib", "csucs_lemez_mib",
+         "validalas_mp", "dr_mp", "osszes_mp", "csucs_memoria_mib", "csucs_lemez_mib", "csucs_munka_mib",
          "zip_torolve", "feldolgozva"]
 
 
@@ -356,7 +377,7 @@ def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
     pq, dr = parquet_ut(args.tarolo, nap), parquet_ut(args.tarolo_dr, nap)
     munka = args.munka / nap.isoformat()
 
-    with Mero(args.munka.parent) as mero:
+    with Mero(args.munka.parent, munka) as mero:
         try:
             # 1. letoltes (a szulofolyamat elotolto szalabol, ha volt)
             t0 = time.perf_counter()
@@ -375,14 +396,15 @@ def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
                 shutil.rmtree(munka)
             munka.mkdir(parents=True)
             t0 = time.perf_counter()
-            csv_fajl, zip_sorok = kicsomagol(zf, munka)
+            csv_forras, zip_sorok = kicsomagol(zf, munka, not args.kozvetlen_zip)
             sor["kicsomagolas_mp"] = round(time.perf_counter() - t0, 1)
-            sor["csv_mib"] = round(mib(csv_fajl), 1)
+            sor["csv_mib"] = round(mib(Path(csv_forras)), 1) if not args.kozvetlen_zip else 0
             sor["zip_sor"] = zip_sorok
-            if args.torol_zip_kicsomagolas_utan:
+            if args.torol_zip_kicsomagolas_utan and not args.kozvetlen_zip:
                 zf.unlink()
                 sor["zip_torolve"] = "kicsomagolas utan"
-            print(f"  kicsomagolva: {sor['csv_mib']:,.0f} MiB, {zip_sorok:,} sor "
+            print(f"  {'sorszamlalas (kozvetlen ZIP)' if args.kozvetlen_zip else 'kicsomagolva'}: "
+                  f"{sor['csv_mib']:,.0f} MiB, {zip_sorok:,} sor "
                   f"({sor['kicsomagolas_mp']} mp)")
 
             # 3. Parquet (dedup + H3 + rendezes), atmeneti nevre
@@ -390,9 +412,10 @@ def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
             pq.parent.mkdir(parents=True, exist_ok=True)
             pq_tmp = pq.with_suffix(".parquet.tmp")
             t0 = time.perf_counter()
-            csv_parquetbe(con, csv_fajl, pq_tmp)
+            csv_parquetbe(con, csv_forras, pq_tmp)
             sor["parquet_mp"] = round(time.perf_counter() - t0, 1)
-            csv_fajl.unlink()          # a nagy CSV-t minel elobb eltakaritjuk
+            if not args.kozvetlen_zip:
+                Path(csv_forras).unlink()   # a nagy CSV-t minel elobb eltakaritjuk
 
             # 4. validalas
             t0 = time.perf_counter()
@@ -430,6 +453,10 @@ def egy_nap(nap: date, args, allapot=None, letoltes_mp=0.0) -> dict:
     sor["osszes_mp"] = round(time.perf_counter() - t_kezd, 1)
     sor["csucs_memoria_mib"] = round(mero.csucs_mib)
     sor["csucs_lemez_mib"] = round(mero.lemez_csucs_mib)
+    # a munkakonyvtar (kicsomagolt CSV + DuckDB-lapozas) tenyleges csucsa; a
+    # csucs_lemez_mib a meghajto szabad helyebol szamol, abba mas folyamatok
+    # (pl. a lapozofajl) is belezavarhatnak
+    sor["csucs_munka_mib"] = round(mero.munka_csucs / 1_048_576)
     return sor
 
 
@@ -470,6 +497,9 @@ def main():
     ap.add_argument("--torol-zip-kicsomagolas-utan", action="store_true",
                     help="A ZIP-et mar a kicsomagolas utan torli (szuk lemezu "
                          "futtatohoz; hiba eseten ujra le kell tolteni)")
+    ap.add_argument("--kozvetlen-zip", action="store_true",
+                    help="Nem csomagolja ki a CSV-t: a DuckDB zipfs-szel a ZIP-bol "
+                         "olvas (-6 GiB lemez/nap; szuk lemezu futtatohoz)")
     ap.add_argument("--nincs-elotoltes", action="store_true",
                     help="Ne toltse le a kovetkezo napot az aktualis feldolgozasa alatt")
     args = ap.parse_args()

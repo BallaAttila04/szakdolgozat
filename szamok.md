@@ -845,3 +845,16 @@ Forrás: `pipeline.py 2026-06-01 2026-08-31 --torol-zip ...`, kimenet
 max. 1 160 mp) egy azóta javított hibát tartalmaz (a hosszan futó folyamat
 lassult, ld. naplo 2026-10-09). Friss folyamatban ugyanaz a nap 8,2×
 gyorsabb volt (08-28: 638,5 → 78,3 mp Parquet-lépés).
+
+## A napi monitor erőforrásigénye (6a)
+
+Forrás: `szerver_napok.py` (2026-10-05) és `pipeline.py 2026-07-15` négy
+beállítással (2026-10-09, `outputs/logs/lemezmeres_0715.log`), friss folyamatban.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 48,3 óra (48,3–48,7) | a napi fájl megjelenése a nap vége (UTC) után, 14 + 92 nap HEAD | szerver_napok.py | 2026-10-05 |
+| 174 mp / 6,0 GiB / 8,7 GiB | a legnagyobb nap (07-15): idő / csúcsmemória / munkakönyvtár-csúcs, kicsomagolással, 6 GB-os korláttal | pipeline.py | 2026-10-09 |
+| 204 mp / 10,6 GiB / 2,5 GiB | ugyanez közvetlen ZIP-olvasással (`--kozvetlen-zip`) – a GitHub-futtató beállítása | pipeline.py | 2026-10-09 |
+| ≈ 4,6 GiB | becsült lemezigény a futtatón (lapozás + ZIP + előtöltött ZIP + Parquet) | számolt | 2026-10-09 |
+| 16 GB RAM / 14 GB SSD / 6 óra | a nyilvános repó standard Linux runnere (GitHub-dokumentáció) | – | 2026-10-05 |

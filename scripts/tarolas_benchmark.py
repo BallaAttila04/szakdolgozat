@@ -291,7 +291,184 @@ def benchmark_nap(bemenet: Path, munka_dir: Path) -> list:
     return sorok
 
 
+# --- Motorok a pipeline.py Parquet-tarolojan ----------------------------------
+#
+# Ugyanaz a negy lekerdezes, a deduplikalt tarolohoz igazitva: a tarolo egy
+# sora `dup_db` darab nyers sort kepvisel, ezert a sorszamok SUM(dup_db)-kent
+# szamolodnak. Igy az eredmeny a nyers CSV-n futo motorokeval is pontosan
+# osszevetheto (ugyanannyi uzenet, ugyanannyi hajo).
+#
+# Minden motor ugyanazt a normalizalt alakot adja vissza:
+#   {"sorszam": int, "egyedi_hajo": int, "bbox_szures": int,
+#    "oranankenti_bbox": [(ora, uzenet, hajo), ...]}
+
+TAROLO_MOTOROK = ("duckdb_parquet", "polars_parquet", "spark_parquet")
+CSV_MOTOROK = ("duckdb_csv", "pandas_csv")
+
+
+def _duckdb_tarolo(fajlok):
+    con = duckdb.connect()
+    src = "read_parquet([" + ",".join(f"'{Path(f).as_posix()}'" for f in fajlok) + "])"
+    bbox = (f"Latitude BETWEEN {LAT_MIN} AND {LAT_MAX} "
+            f"AND Longitude BETWEEN {LON_MIN} AND {LON_MAX}")
+    sql = {
+        "sorszam": f"SELECT sum(dup_db) FROM {src}",
+        "egyedi_hajo": f"SELECT count(DISTINCT MMSI) FROM {src}",
+        "bbox_szures": f"SELECT sum(dup_db) FROM {src} WHERE {bbox}",
+        "oranankenti_bbox": f"SELECT hour(ts), sum(dup_db), count(DISTINCT MMSI) "
+                            f"FROM {src} WHERE {bbox} GROUP BY 1 ORDER BY 1",
+    }
+
+    def futtat(nev):
+        r = con.execute(sql[nev]).fetchall()
+        return [tuple(int(x) for x in s) for s in r] if nev == "oranankenti_bbox" else int(r[0][0])
+    return futtat, con.close
+
+
+def _polars_tarolo(fajlok):
+    import polars as pl
+    lf = pl.scan_parquet([str(f) for f in fajlok])
+    # streaming vegrehajtas: a 3 honapos adaton (1,18 mrd sor) a teljes MMSI-
+    # oszlop memoriaba huzasa ~9 GB lenne
+    eng = "streaming"
+    bbox = (pl.col("Latitude").is_between(LAT_MIN, LAT_MAX)
+            & pl.col("Longitude").is_between(LON_MIN, LON_MAX))
+    q = {
+        "sorszam": lambda: lf.select(pl.col("dup_db").sum()).collect(engine=eng).item(),
+        "egyedi_hajo": lambda: lf.select(pl.col("MMSI").drop_nulls().n_unique()).collect(engine=eng).item(),
+        "bbox_szures": lambda: lf.filter(bbox).select(pl.col("dup_db").sum()).collect(engine=eng).item(),
+        "oranankenti_bbox": lambda: [
+            tuple(int(x) for x in s) for s in
+            lf.filter(bbox).group_by(pl.col("ts").dt.hour().alias("ora"))
+              .agg(pl.col("dup_db").sum(), pl.col("MMSI").drop_nulls().n_unique())
+              .sort("ora").collect(engine=eng).rows()],
+    }
+    return (lambda nev: (lambda r: r if isinstance(r, list) else int(r))(q[nev]())), (lambda: None)
+
+
+def spark_session(memoria="8g"):
+    """Helyi modu Spark-session a felhasznaloi konyvtarba telepitett JDK-val
+    (ld. naplo, 4. fazis). A JAVA_HOME-ot, ha nincs beallitva, a ~/jdk alatt
+    keresi."""
+    import glob
+    import os
+    if not os.environ.get("JAVA_HOME"):
+        jdk = sorted(glob.glob(os.path.expanduser("~/jdk/jdk-21*")))
+        if jdk:
+            os.environ["JAVA_HOME"] = jdk[-1]
+    os.environ.setdefault("PYSPARK_PYTHON", sys.executable)
+    from pyspark.sql import SparkSession
+    return (SparkSession.builder.master("local[*]").appName("ais_benchmark")
+            .config("spark.driver.memory", memoria)
+            .config("spark.sql.session.timeZone", "UTC")
+            .config("spark.ui.enabled", "false")
+            .getOrCreate())
+
+
+def _spark_tarolo(fajlok, spark):
+    from pyspark.sql import functions as F
+    df = spark.read.parquet(*[Path(f).as_posix() for f in fajlok])
+    bbox = (F.col("Latitude").between(LAT_MIN, LAT_MAX)
+            & F.col("Longitude").between(LON_MIN, LON_MAX))
+    q = {
+        "sorszam": lambda: df.agg(F.sum("dup_db")).collect()[0][0],
+        "egyedi_hajo": lambda: df.agg(F.countDistinct("MMSI")).collect()[0][0],
+        "bbox_szures": lambda: df.filter(bbox).agg(F.sum("dup_db")).collect()[0][0],
+        "oranankenti_bbox": lambda: [
+            tuple(int(x) for x in s) for s in
+            df.filter(bbox).groupBy(F.hour("ts").alias("ora"))
+              .agg(F.sum("dup_db"), F.countDistinct("MMSI")).orderBy("ora").collect()],
+    }
+    return (lambda nev: (lambda r: r if isinstance(r, list) else int(r))(q[nev]())), (lambda: None)
+
+
+def _duckdb_csv(csvk):
+    con = duckdb.connect()
+    src = "read_csv_auto([" + ",".join(f"'{Path(c).as_posix()}'" for c in csvk) + "])"
+    ora = ora_kifejezes(con, src)
+
+    def futtat(nev):
+        r = con.execute(DUCKDB_LEKERDEZESEK[nev].format(src=src, ora=ora)).fetchall()
+        return [tuple(int(x) for x in s) for s in r] if nev == "oranankenti_bbox" else int(r[0][0])
+    return futtat, con.close
+
+
+def tarolo_meres(motor, fajlok, ismetles, spark_memoria="8g"):
+    """Egy motor, egy adatmeret: `ismetles`-szer mind a negy lekerdezes.
+    Visszaad: eredmenyek, lekerdezesenkenti idok, session-inditasi ido."""
+    t0 = time.perf_counter()
+    spark = None
+    if motor == "duckdb_parquet":
+        futtat, zar = _duckdb_tarolo(fajlok)
+    elif motor == "polars_parquet":
+        futtat, zar = _polars_tarolo(fajlok)
+    elif motor == "spark_parquet":
+        spark = spark_session(spark_memoria)
+        futtat, zar = _spark_tarolo(fajlok, spark)
+    elif motor == "duckdb_csv":
+        futtat, zar = _duckdb_csv(fajlok)
+    elif motor == "pandas_csv":
+        futtat, zar = None, (lambda: None)   # lent kulon ag: egy vegigolvasas
+    else:
+        raise ValueError(motor)
+    inditas = time.perf_counter() - t0
+
+    eredmeny, idok = {}, {nev: [] for nev in DUCKDB_LEKERDEZESEK}
+    if motor == "pandas_csv":
+        for _ in range(ismetles):
+            t = time.perf_counter()
+            r = {}
+            for c in fajlok:      # napi CSV-nkent egy chunkolt vegigolvasas
+                d = pandas_osszes_lekerdezes(Path(c))
+                for k, v in d.items():
+                    r[k] = r.get(k, 0) + v
+            idok.setdefault("mind_a_negy_egyutt", []).append(time.perf_counter() - t)
+            eredmeny = r
+        return eredmeny, idok, inditas
+
+    for i in range(ismetles):
+        for nev in DUCKDB_LEKERDEZESEK:
+            t = time.perf_counter()
+            r = futtat(nev)
+            idok[nev].append(time.perf_counter() - t)
+            if i == 0:
+                eredmeny[nev] = r
+            elif r != eredmeny[nev]:
+                raise RuntimeError(f"{motor}/{nev}: ismetlesenkent mas eredmeny")
+    zar()
+    if spark is not None:
+        spark.stop()
+    return eredmeny, idok, inditas
+
+
+def tarolo_meres_main():
+    """Egyetlen meres kulon folyamatban (a skalazas.py hivja), hogy a csucs
+    memoria ehhez a motorhoz es adatmerethez legyen rendelheto.
+
+        python tarolas_benchmark.py --tarolo-meres --motor polars_parquet \\
+            --ismetles 3 --json ki.json f1.parquet f2.parquet ...
+    """
+    import json
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tarolo-meres", action="store_true")
+    ap.add_argument("--motor", required=True, choices=TAROLO_MOTOROK + CSV_MOTOROK)
+    ap.add_argument("--ismetles", type=int, default=3)
+    ap.add_argument("--spark-memoria", default="8g")
+    ap.add_argument("--json", required=True)
+    ap.add_argument("fajlok", nargs="+")
+    a = ap.parse_args()
+    eredmeny, idok, inditas = tarolo_meres(a.motor, a.fajlok, a.ismetles, a.spark_memoria)
+    Path(a.json).write_text(json.dumps(
+        {"motor": a.motor, "eredmeny": eredmeny, "idok": idok, "inditas_mp": inditas}),
+        encoding="utf-8")
+    print(f"{a.motor}: inditas {inditas:.1f} mp, " + ", ".join(
+        f"{k} {sorted(v)[len(v) // 2]:.3f} mp" for k, v in idok.items() if v))
+    return 0
+
+
 def main():
+    if "--tarolo-meres" in sys.argv:
+        return tarolo_meres_main()
     ap = argparse.ArgumentParser(description=__doc__,
                                   formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("bemenetek", nargs="+", help="Napi AIS ZIP vagy CSV fajlok")
