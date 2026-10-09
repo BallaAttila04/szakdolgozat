@@ -60,5 +60,10 @@
   "Tanker": 0.8148,
   "Teherhajó": 0.7871
  },
- "gordulo_nap": 7
+ "gordulo_nap": 7,
+ "utolso_futas": {
+  "ido_utc": "2026-10-09T15:17:48+00:00",
+  "statusz": "ok",
+  "uzenet": "nincs uj nap"
+ }
 }
