@@ -110,9 +110,11 @@ def main():
         aktiv_cimek.add(c)
         if c in nyitott:
             szam = nyitott[c]
-            megj = json.loads(gh("issue", "view", str(szam), "--json", "comments",
+            megj = json.loads(gh("issue", "view", str(szam), "--json", "body,comments",
                                  szaraz=args.szaraz, kimenet=True) or '{"comments": []}')
-            if any(nap in m.get("body", "") for m in megj.get("comments", [])):
+            # az adott nap mar szerepel az issue szovegeben vagy egy megjegyzesben
+            if nap in megj.get("body", "") or any(nap in m.get("body", "")
+                                                  for m in megj.get("comments", [])):
                 print(f"  #{szam} mar tartalmazza a(z) {nap} napot - nincs teendo")
                 continue
             gh("issue", "comment", str(szam), "--body",
