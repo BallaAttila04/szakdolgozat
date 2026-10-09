@@ -568,7 +568,7 @@ def main():
           f"{eredmeny['nincs_adat']} nincs adat")
     print(f"Validalt napok osszesen: {len(ok)}/{len(napok)}")
     if ok:
-        osszeg = lambda k: sum(float(s[k] or 0) for s in ok)
+        osszeg = lambda k: sum(float(s.get(k) or 0) for s in ok)   # --dr-kihagy mellett nincs dr_mib
         print(f"  nyers sor:   {osszeg('nyers_sor'):>15,.0f}")
         print(f"  dedup. sor:  {osszeg('dedup_sor'):>15,.0f}  "
               f"(duplikatum {1 - osszeg('dedup_sor') / osszeg('nyers_sor'):.1%})")
