@@ -921,7 +921,25 @@ eltéréseiből.
 | +33,0% (117 vs 88,0) – szokatlanul magas | 2026-07-15, mindkét kapu; a 72 napból a 2. legnagyobb eltérés | monitor.py | 2026-10-09 |
 | −7,1% (98 vs 105,5) – normál | 2026-07-16, mindkét kapu | monitor.py | 2026-10-09 |
 | 124 nap, 2 882 sor | a monitortábla a helyi napi futás után (06-01 – 10-06) | napi_futas.py | 2026-10-09 |
-| 96 – 141 mp, 8,6 – 10,1 GiB | napi idő és csúcsmemória a napi futásban (`--kozvetlen-zip`) | napi_futas.py | 2026-10-09 |
+| 96 – 141 mp, ~~8,6 – 10,1 GiB~~ → **8,4 – 9,9 GiB** | napi idő és csúcsmemória a napi futásban (`--kozvetlen-zip`); a régi érték MiB-ból GiB-ra váltásnál hibás volt (8 626–10 128 MiB ÷ 1024) | napi_futas.py | 2026-10-09 |
 
 A küszöbök az idősor bővülésével változnak (117 napon: ±22,7% / ±35,3% /
 ±24,9%; 124 napon az oldal szerint ±23,5% / ±35,6% / ±25,4%).
+
+## Mérés a GitHub-futtatón (6a ellenőrzése)
+
+Forrás: GitHub Actions, `napi_monitor.yml` mérési mód (`meresi_nap=2026-07-15`),
+futás <https://github.com/BallaAttila04/szakdolgozat/actions/runs/37910491337>,
+2026-10-09, `ubuntu-24.04`; `pipeline.py --felulir --kozvetlen-zip --dr-kihagy`.
+
+| szám | jelentés | szkript | dátum |
+|------|----------|---------|-------|
+| 4 CPU, 15 989 MiB RAM | a futtató (nproc, free -m) | napi_monitor.yml | 2026-10-09 |
+| 87 777 MB | szabad lemez a mérés indulásakor (df) – a dokumentált 14 GB-nál jóval több | napi_monitor.yml | 2026-10-09 |
+| 49 mp | a 955,7 MB-os napi ZIP letöltése | pipeline.py | 2026-10-09 |
+| **130,2 mp** | a legnagyobb nap feldolgozása (sorszámlálás 17,0 + Parquet 111,5 mp) | pipeline.py | 2026-10-09 |
+| **12 539 MiB** | csúcsmemória (helyben ugyanez 10 871 MiB) – a tartalék ~3,4 GiB | pipeline.py | 2026-10-09 |
+| 2 761 MiB | csúcs lemezhasználat a letöltött ZIP-en felül | pipeline.py | 2026-10-09 |
+| 54,6% / 16 638 836 / 227,0 MiB | duplikátum-arány / dedup. sor / Parquet – egyezik a helyi futással | pipeline.py | 2026-10-09 |
+| 87,2 mp | ugyanez, 2. futás (<https://github.com/BallaAttila04/szakdolgozat/actions/runs/37914275224>, a javított kóddal, zöld): letöltés 50,9, sorszámlálás 11,4, Parquet 74,6 mp – a két futás közti eltérés a futtatógépek szórása | pipeline.py | 2026-10-09 |
+| 12 565 MiB / 2 699 MiB | 2. futás: csúcsmemória / munkakönyvtár-csúcs (szabad lemez a végén 86 580 MB) | pipeline.py | 2026-10-09 |
