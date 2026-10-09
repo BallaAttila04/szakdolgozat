@@ -38,6 +38,8 @@ MASOLANDO = [
     ("terkep.html", "terkep.html"),
     ("forgalmi_profil.png", "abrak/forgalmi_profil.png"),
     ("tomorites_tradeoff.png", "abrak/tomorites_tradeoff.png"),
+    ("skalazas.png", "abrak/skalazas.png"),
+    ("megrakottsag_hisztogram.png", "abrak/megrakottsag_hisztogram.png"),
 ]
 
 # Az oranként abra sorozatai: (stat-csoportnevek osszevonva, megjelenő nev,
@@ -286,6 +288,51 @@ def kapu_szakasz(atkeles_csv, pw_csv):
     }
 
 
+# --- Feldolgozo lanc es skalazas ------------------------------------------------
+
+MOTOR_NEV = {"duckdb_parquet": "DuckDB", "polars_parquet": "Polars",
+             "spark_parquet": "Spark (helyi mód)"}
+MERET_NEV = {"1_nap": "1 nap", "7_nap": "7 nap", "1_honap": "1 hónap", "3_honap": "3 hónap"}
+
+
+def skalazas_szakasz(skala_csv, napok_csv):
+    """A Parquet-tarolo merete es a motorok skalazasa a mert CSV-kbol."""
+    sk = pd.read_csv(skala_csv)
+    nk = pd.read_csv(napok_csv)
+    nyar = nk[(nk["statusz"] == "validalt") & nk["nap"].between("2026-06-01", "2026-08-31")]
+    tarolo_arany = nyar["parquet_mib"].sum() / nyar["zip_mib"].sum()
+
+    def ido(meret, motor):
+        r = sk[(sk.meret == meret) & (sk.motor == motor)]
+        return float(r["negy_egyutt_mp"].iloc[0]) if len(r) else None
+
+    csv_szor = ido("1_nap", "pandas_csv") / ido("1_nap", "duckdb_parquet")
+    spark_szor = [ido(m, "spark_parquet") / ido(m, "duckdb_parquet") for m in MERET_NEV]
+
+    sorok = []
+    for m, mnev in MERET_NEV.items():
+        r0 = sk[sk.meret == m].iloc[0]
+        sor = [mnev, f"{r0.nyers_sor / 1e6:,.1f} M".replace(",", " ").replace(".", ","),
+               tized(r0.bemenet_mib / 1024, 1) + " GiB"]
+        for mo in MOTOR_NEV:
+            r = sk[(sk.meret == m) & (sk.motor == mo)].iloc[0]
+            t = tized(r.negy_egyutt_mp, 2 if r.negy_egyutt_mp < 10 else 1) + " mp"
+            if mo == "spark_parquet":
+                t += f" (+{tized(r.inditas_mp, 0)} mp indulás)"
+            sor.append(t)
+        sorok.append(sor)
+    tabla = html_tabla(["adat", "nyers sor", "Parquet", *MOTOR_NEV.values()], sorok)
+    return {
+        "<!--KARTYA_TAROLO-->": tized(tarolo_arany * 100, 1) + "%",
+        "<!--KARTYA_CSV_SZOR-->": f"{csv_szor:.0f}×",
+        "<!--SKALA_TABLA-->": tabla,
+        "<!--SKALA_SPARK-->": f"{tized(min(spark_szor), 1)}–{tized(max(spark_szor), 0)}",
+        "<!--SKALA_HONAP_NAP-->": str(len(nyar)),
+        "<!--SKALA_ZIP_GIB-->": tized(nyar["zip_mib"].sum() / 1024, 1),
+        "<!--SKALA_PQ_GIB-->": tized(nyar["parquet_mib"].sum() / 1024, 1),
+    }
+
+
 # --- Napi monitor szakasz -----------------------------------------------------
 
 MONITOR_KEZDET, MONITOR_VEG = "<!--MONITOR_KEZDET-->", "<!--MONITOR_VEG-->"
@@ -358,6 +405,7 @@ def monitor_szakasz(mappa: Path) -> str:
      eloszlásából számolódik. Jelzési küszöb: ±{tized(mk.get('Megrakott tanker (7 nap)', 0) * 100)}% (tanker),
      ±{tized(mk.get('Megrakott teherhajó (7 nap)', 0) * 100)}% (teherhajó).</p>
   {vonaldiagram([d[5:] for d in m_napok], m_sor, y_cimke="átkelés / 7 nap", x_cimke="nap", x_lepes=5)}
+  <img src="abrak/megrakottsag_hisztogram.png" alt="A relatív merülés eloszlása tankereknél és teherhajóknál, a megrakott-küszöbbel">
 </div>"""
         j = pd.concat([j, mj], ignore_index=True)
 
@@ -473,6 +521,7 @@ def main():
         **kapu_szakasz(KIMENET / "kapuvonal_atkelesek.csv",
                        ADAT / "portwatch_chokepoints.csv"),
         "<!--MONITOR-->": monitor_szakasz(Path(args.monitor)),
+        **skalazas_szakasz(KIMENET / "skalazas.csv", KIMENET / "pipeline_napok.csv"),
     }
 
     lap = sablon_fajl.read_text(encoding="utf-8")

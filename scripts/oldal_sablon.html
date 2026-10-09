@@ -258,8 +258,8 @@ gyakorlatilag egyetlen kategória okozza.</p>
 <h2>Főbb mérési eredmények</h2>
 
 <div class="racs">
-  <div class="kartya"><span class="szam">~17%</span><span class="cimke">Parquet mérete a nyers CSV-hez képest</span></div>
-  <div class="kartya"><span class="szam">50–150×</span><span class="cimke">lekérdezési gyorsulás oszlopos tárolással</span></div>
+  <div class="kartya"><span class="szam"><!--KARTYA_TAROLO--></span><span class="cimke">a Parquet-tároló mérete a letöltött ZIP-hez képest (deduplikálva, Zstandard, három hónap)</span></div>
+  <div class="kartya"><span class="szam"><!--KARTYA_CSV_SZOR--></span><span class="cimke">lekérdezési gyorsulás a nyers CSV pandas-feldolgozásához képest (egy nap, DuckDB)</span></div>
   <div class="kartya"><span class="szam">6,39×</span><span class="cimke">további tömörítés dead reckoninggal, 50 m garantált hibakorláttal</span></div>
   <div class="kartya"><span class="szam">0,42%</span><span class="cimke">az ebből fakadó torzítás az óránkénti hajószámban</span></div>
   <div class="kartya"><span class="szam">1,58%</span><span class="cimke">a forrás sorainak használhatatlan a pozíciója</span></div>
@@ -290,6 +290,38 @@ gyakorlatilag egyetlen kategória okozza.</p>
   görbe gyorsan telítődik, mivel a pontok mintegy 16%-a kötelezően megtartott
   horgonypont, amelyet semmilyen küszöbérték nem hagy el.</figcaption>
 </figure>
+
+<h2>Feldolgozó lánc és skálázás</h2>
+
+<p>A napi AIS-fájlokat egy automatizált lánc dolgozza fel: letöltés, a sorszám
+ellenőrzése, átalakítás oszlopos Parquet-formátumba, a bitre azonos ismétlődő
+sorok összevonása, H3-cella szerinti rendezés. 2026 júniusától augusztusáig
+mind a(z) <!--SKALA_HONAP_NAP--> nap validált tárolóba került:
+<!--SKALA_ZIP_GIB--> GiB letöltött ZIP-ből <!--SKALA_PQ_GIB--> GiB Parquet lett.
+A négy mintalekérdezés (sorszám, egyedi hajók, területi szűrés, óránkénti
+bontás) ideje három lekérdező motorral, egy laptopon, három ismétlés mediánja;
+minden motor minden adatméreten azonos eredményt adott.</p>
+
+<div class="abra-doboz">
+  <p class="abra-cim">A négy lekérdezés együttes ideje az adatméret függvényében</p>
+  <div class="tabla-gorgeto"><!--SKALA_TABLA--></div>
+</div>
+
+<figure>
+  <img src="abrak/skalazas.png" alt="Lekérdezési idő az adatméret függvényében, logaritmikus tengelyeken, öt motorral">
+  <figcaption>Lekérdezési idő az adatméret függvényében (logaritmikus tengelyek).
+  A nyers CSV-t csak egy napon mértük.</figcaption>
+</figure>
+
+<div class="jelzes">
+  Az egy gépen futó, beágyazott motorok (DuckDB, Polars) minden vizsgált méreten
+  gyorsabbak voltak az elosztott Sparknál helyi módban: a Spark
+  <!--SKALA_SPARK-->-szer lassabb volt a DuckDB-nél, és a különbség három hónapnyi
+  adaton sem tűnt el. A három hónapos tároló egyetlen gépen kényelmesen
+  feldolgozható, így az elosztott végrehajtás itt csak többletköltség. A
+  geometria-oszlopos GeoParquet ugyanezen az adaton kétszer akkora volt, és
+  minden mért műveletben lassabb.
+</div>
 
 <h2>Tárolási sorrend: H3 térbeli index</h2>
 
@@ -396,8 +428,8 @@ tartalmazza, az eredeti értékeket áthúzva.</p>
 <h2>Korlátok és további feladatok</h2>
 <ul>
   <li>Az időzóna (UTC vagy helyi idő) tisztázása. Ez minden olyan megállapítást érint, amely a lezárás időzítésére hivatkozik.</li>
-  <li>További kontrollnapok bevonása a napi ingadozás pontosabb becsléséhez.</li>
-  <li>A tárolási benchmark jelenleg egyetlen futás eredménye, ismétlés nélkül, ezért a közölt értékek előzetesek.</li>
+  <li>A napi monitor jelzési küszöbe a teljes eddigi idősorból számolódik, ezért az idősor bővülésével visszamenőleg változhat; élő üzemhez egy rögzített tanulóidőszak tisztább lenne.</li>
+  <li>A megrakottsági mutató a kézzel beállított merülésre épül, és a hajó megfigyelt legnagyobb merüléséhez viszonyít, nem a tervezési merüléséhez; ha egy hajót csak üresen látunk, tévesen megrakottnak számít.</li>
   <li>A kapuvonal-metrika és a PortWatch közötti szisztematikus eltérés okának tisztázása, több nap bevonásával.</li>
   <li>A Spark (helyi mód) és a Polars összevetése a DuckDB-vel egy gépen megtörtént (eredményei a <code>szamok.md</code>-ben); több gépes, elosztott futtatást nem vizsgáltunk.</li>
 </ul>
