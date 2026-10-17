@@ -1,58 +1,58 @@
 {
- "utolso_nap": "2026-10-13",
- "napok_szama": 135,
+ "utolso_nap": "2026-10-14",
+ "napok_szama": 136,
  "elso_nap": "2026-06-01",
- "frissitve_utc": "2026-10-16T08:27:53+00:00",
+ "frissitve_utc": "2026-10-17T08:00:36+00:00",
  "kuszob": {
-  "Mindkét kapu": 0.2211,
-  "Nagy-Balti-öv": 0.3258,
-  "Øresund": 0.2438
+  "Mindkét kapu": 0.2258,
+  "Nagy-Balti-öv": 0.3319,
+  "Øresund": 0.2575
  },
  "zajszint": {
   "Mindkét kapu": {
-   "napok": 114,
-   "median_abs_elteres": 0.0762,
-   "robusztus_szoras": 0.1105,
-   "p90_abs_elteres": 0.2136
+   "napok": 115,
+   "median_abs_elteres": 0.0761,
+   "robusztus_szoras": 0.1129,
+   "p90_abs_elteres": 0.2128
   },
   "Nagy-Balti-öv": {
-   "napok": 114,
+   "napok": 115,
    "median_abs_elteres": 0.1111,
-   "robusztus_szoras": 0.1629,
-   "p90_abs_elteres": 0.2248
+   "robusztus_szoras": 0.1659,
+   "p90_abs_elteres": 0.2243
   },
   "Øresund": {
-   "napok": 114,
+   "napok": 115,
    "median_abs_elteres": 0.087,
-   "robusztus_szoras": 0.1219,
-   "p90_abs_elteres": 0.2815
+   "robusztus_szoras": 0.1287,
+   "p90_abs_elteres": 0.2785
   }
  },
  "alap_hetek": 4,
  "min_alapnap": 3,
  "kuszob_szorzo": 2.0,
  "kuszob_megrakottsag": {
-  "Megrakott tanker (7 nap)": 0.1342,
-  "Megrakott teherhajó (7 nap)": 0.1778,
-  "Tanker-volumen (7 nap, 1000 m³)": 0.2072
+  "Megrakott tanker (7 nap)": 0.1188,
+  "Megrakott teherhajó (7 nap)": 0.1751,
+  "Tanker-volumen (7 nap, 1000 m³)": 0.209
  },
  "zajszint_megrakottsag": {
   "Megrakott tanker (7 nap)": {
-   "napok": 108,
-   "median_abs_elteres": 0.0457,
-   "robusztus_szoras": 0.0671,
-   "p90_abs_elteres": 0.1214
+   "napok": 109,
+   "median_abs_elteres": 0.04,
+   "robusztus_szoras": 0.0594,
+   "p90_abs_elteres": 0.1121
   },
   "Megrakott teherhajó (7 nap)": {
-   "napok": 108,
-   "median_abs_elteres": 0.0638,
-   "robusztus_szoras": 0.0889,
+   "napok": 109,
+   "median_abs_elteres": 0.064,
+   "robusztus_szoras": 0.0875,
    "p90_abs_elteres": 0.1343
   },
   "Tanker-volumen (7 nap, 1000 m³)": {
-   "napok": 108,
-   "median_abs_elteres": 0.0677,
-   "robusztus_szoras": 0.1036,
+   "napok": 109,
+   "median_abs_elteres": 0.0678,
+   "robusztus_szoras": 0.1045,
    "p90_abs_elteres": 0.1277
   }
  },
@@ -62,7 +62,7 @@
  },
  "gordulo_nap": 7,
  "utolso_futas": {
-  "ido_utc": "2026-10-16T08:26:44+00:00",
+  "ido_utc": "2026-10-17T07:59:25+00:00",
   "statusz": "ok",
   "uzenet": "1 uj nap"
  }
