@@ -45,3 +45,7 @@ outputs/tarolo_dr50/
 outputs/tarolo_munka/
 outputs/skalazas_csv_*/
 outputs/geoparquet/
+
+# A kapu_kiterjesztes.py napi koztes fajljai (ujrainditashoz); az osszesitett
+# atkelesek.csv es kapuvonal_napi.csv verziozott
+outputs/kapuk_kiterjesztes/napok/

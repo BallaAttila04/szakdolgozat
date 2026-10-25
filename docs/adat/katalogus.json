@@ -1,0 +1,171 @@
+{
+ "sema_verzio": 1,
+ "fajlok": [
+  {
+   "fajl": "legutobbi.json",
+   "leiras": "Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota.",
+   "bajt": 4006,
+   "sha256": "3142005aac42512dc71b4418a499d9b1109cc3fbf5c6593029a38981edef1ce2"
+  },
+  {
+   "fajl": "jelzesek.csv",
+   "leiras": "A monitor összes jelzés-sora (forgalom és megrakottság).",
+   "bajt": 59184,
+   "sha256": "5e86833cf561631704ee0114b1a2e823a7a171830405e259ada230a39a56c73e",
+   "sorok": 768,
+   "oszlopok": [
+    {
+     "nev": "datum",
+     "leiras": "nap (ÉÉÉÉ-HH-NN, UTC)"
+    },
+    {
+     "nev": "tipus",
+     "leiras": "forgalom | megrakottsag"
+    },
+    {
+     "nev": "sorozat",
+     "leiras": "a sorozat neve"
+    },
+    {
+     "nev": "ertek",
+     "leiras": "a nap értéke (átkelés; a 7 napos sorozatoknál gördülő összeg)"
+    },
+    {
+     "nev": "alapnapok",
+     "leiras": "az alapszinthez talált korábbi azonos hétnapok száma (0–4)"
+    },
+    {
+     "nev": "alapszint",
+     "leiras": "az előző 4 hét azonos napjainak mediánja (üres: kevesebb mint 3 nap)"
+    },
+    {
+     "nev": "elteres",
+     "leiras": "ertek / alapszint − 1"
+    },
+    {
+     "nev": "kuszob",
+     "leiras": "a sorozat jelzési küszöbe (relatív)"
+    },
+    {
+     "nev": "jelzes",
+     "leiras": "normál | szokatlanul magas | szokatlanul alacsony | nincs alapszint"
+    }
+   ]
+  },
+  {
+   "fajl": "idosor_forgalom.csv",
+   "leiras": "Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint.",
+   "bajt": 135407,
+   "sha256": "9faa2a3a72ff8b2f19dcc0a982d2a7851f83dd4f66599c9d9d7a72d11db013e1",
+   "sorok": 3035,
+   "oszlopok": [
+    {
+     "nev": "datum",
+     "leiras": "nap"
+    },
+    {
+     "nev": "kapu",
+     "leiras": "Nagy-Balti-öv | Øresund"
+    },
+    {
+     "nev": "irany",
+     "leiras": "átkelési irány"
+    },
+    {
+     "nev": "csoport",
+     "leiras": "hajócsoport (AIS Ship type alapján)"
+    },
+    {
+     "nev": "atkeles",
+     "leiras": "átkelések száma"
+    }
+   ]
+  },
+  {
+   "fajl": "idosor_megrakottsag.csv",
+   "leiras": "Napi megrakottsági tábla (tanker, teherhajó).",
+   "bajt": 63521,
+   "sha256": "c97f1b1c5bae6954719ddcff31471be603379582575fca9c52e066e70c335d14",
+   "sorok": 1047,
+   "oszlopok": [
+    {
+     "nev": "datum",
+     "leiras": "nap"
+    },
+    {
+     "nev": "kapu",
+     "leiras": "kapu"
+    },
+    {
+     "nev": "irany",
+     "leiras": "irány"
+    },
+    {
+     "nev": "csoport",
+     "leiras": "Tanker | Teherhajó"
+    },
+    {
+     "nev": "atkeles",
+     "leiras": "átkelés"
+    },
+    {
+     "nev": "ertekelheto",
+     "leiras": "értékelhető merülésű átkelés"
+    },
+    {
+     "nev": "megrakott",
+     "leiras": "megrakottnak minősített átkelés"
+    },
+    {
+     "nev": "volumenindex",
+     "leiras": "Σ hossz × szélesség × merülés (m³)"
+    },
+    {
+     "nev": "megrakott_arany",
+     "leiras": "megrakott / értékelhető"
+    }
+   ]
+  },
+  {
+   "fajl": "kiserleti_kapuk_napi.csv",
+   "leiras": "A kísérleti kapuk napi kereskedelmi (teher + tanker) átkelései – kísérleti, nem a monitor része.",
+   "bajt": 62050,
+   "sha256": "4e9d87387c36b6c9533c8a5312db0518e0e90d603cc11728b9122116994af16d",
+   "sorok": 1742,
+   "oszlopok": [
+    {
+     "nev": "datum",
+     "leiras": "nap"
+    },
+    {
+     "nev": "kapu",
+     "leiras": "kapu"
+    },
+    {
+     "nev": "irany",
+     "leiras": "irány"
+    },
+    {
+     "nev": "kereskedelmi_atkeles",
+     "leiras": "teherhajó + tanker átkelés"
+    },
+    {
+     "nev": "kiserleti",
+     "leiras": "1 = kísérleti kapu, 0 = monitor-kapu"
+    }
+   ]
+  },
+  {
+   "fajl": "backtest.json",
+   "leiras": "A jelzési szabály backtestjének összefoglalója (pillanatkép).",
+   "bajt": 191185,
+   "sha256": "15486133f667516d4c6633999b2e0ded8f5a6ee1d017d91f00bd87f71065d9bc"
+  },
+  {
+   "fajl": "kiserleti_kapuk.json",
+   "leiras": "A kísérleti kapuk blokkja: sorozatok, statisztika, PortWatch-összevetés (pillanatkép).",
+   "bajt": 44463,
+   "sha256": "32e662536e1d2921eab442f8fa823431be7d67c50808daffa427e0bb7d35be71"
+  }
+ ]
+}

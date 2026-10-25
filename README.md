@@ -104,6 +104,8 @@ python scripts/kapuvonal.py data/aisdk-2026-07-*.zip data/aisdk-2026-09-05.zip
 
 ```bash
 node scripts/teszt_terkep.mjs     # a térkép színezés- és szűrőlogikája
+node scripts/teszt_dashboard.mjs  # a dashboard logikája + egyezés a monitor CSV-ivel
+python scripts/aismonitor.py teszt   # mindhárom tesztcsomag egyben
 ```
 
 A térkép JavaScriptjét DOM-csonkon futtatja, valódi böngésző nélkül. 22
@@ -124,6 +126,87 @@ python -m http.server 8000 --directory docs   # majd http://localhost:8000
 ```
 
 Minden szkript `--help`-pel dokumentálja a kapcsolóit.
+
+## Termék: napi monitor és dashboard
+
+A napi forgalmi monitor elemzőknek, kutatóknak és közpolitikai szereplőknek
+szóló felülete: naponta frissülő jelzés a dán szorosok (Nagy-Balti-öv,
+Øresund) kereskedelmi forgalmáról és megrakottságáról. Nincs saját szerver és
+nincs bejelentkezés: az ütemezett GitHub Actions futás (`napi_monitor.yml`)
+állítja elő a statikus fájlokat, a GitHub Pages szolgálja ki őket.
+
+**Mit tud**
+
+- `docs/dashboard.html` – önálló oldal, külső függőség nélkül (beágyazott
+  adat, inline SVG), világos és sötét módban, mobilon is (360 px-en sincs
+  vízszintes görgetés). Nézetek:
+  - *Áttekintés*: utolsó feldolgozott nap, frissítés ideje, az utolsó futás
+    állapota, sorozatonként egy csempe (érték, alapszint, eltérés, küszöb,
+    jelzés, 30 napos mini-idősor), aktív jelzések, az utolsó 30 nap jelzései;
+  - *Forgalom*: kapu, irány, hajócsoport és időszak szerint választható
+    idősor az alapszinttel, a ±küszöb sávval, a jelzett napokkal és a
+    Kiel-lezárás (07-15–16) jelölésével; tooltip egérrel és billentyűzettel
+    (nyilak, Home/End), táblázatos nézet;
+  - *Megrakottság*: a 7 napos gördülő sorozatok (megrakott átkelés,
+    megrakott arány, volumenindex) csoport, kapu és irány szerint;
+  - *Backtest*: téves riasztás és Kiel-méretű esemény észlelése
+    konfidenciaintervallummal, ROC-szerű görbe a szabályváltozatokra,
+    észlelés és késés az esemény mérete szerint, walk-forward vs.
+    retrospektív küszöb, placebo, PortWatch-egyezés, reprodukció;
+  - *Kapuk*: a kísérleti kapuk sorozatai és összevetése, egyértelmű
+    „kísérleti” jelöléssel;
+  - *Adat és módszer*: a mutató és a jelzési szabály leírása, korlátok, a
+    letölthető fájlok és oszlopaik.
+- A Forgalom és a Megrakottság nézetben bármely kombinációra a böngésző
+  ugyanazt a szabályt számolja, mint a `monitor.py`; hivatalos jelzés csak a
+  hat monitor-sorozatra van, a többi „tájékoztató sáv”. A
+  `teszt_dashboard.mjs` a beágyazott adatból újraszámolja a monitor összes
+  jelzés-sorát, és napra pontos egyezést vár.
+- Jelzéskor GitHub Issue nyílik (`ertesites.py`), benne a dashboard linkjével.
+
+**Adat-feed (`docs/adat/`)** – a termék gépi felülete, a dashboarddal együtt
+frissül. UTF-8; CSV: vessző, fejléc, tizedespont; dátum: ÉÉÉÉ-HH-NN (UTC).
+
+| fájl | tartalom |
+|---|---|
+| `legutobbi.json` | utolsó nap; sorozatonként `ertek`, `alapszint`, `elteres`, `kuszob`, `jelzes`; `aktiv_jelzesek`; `utolso_futas` (`statusz`, `uzenet`); `szabaly` |
+| `jelzesek.csv` | a monitor összes jelzés-sora: `datum, tipus, sorozat, ertek, alapnapok, alapszint, elteres, kuszob, jelzes` |
+| `idosor_forgalom.csv` | napi átkelések: `datum, kapu, irany, csoport, atkeles` |
+| `idosor_megrakottsag.csv` | `datum, kapu, irany, csoport, atkeles, ertekelheto, megrakott, volumenindex, megrakott_arany` |
+| `kiserleti_kapuk_napi.csv` | `datum, kapu, irany, kereskedelmi_atkeles, kiserleti` |
+| `backtest.json`, `kiserleti_kapuk.json` | a dashboard backtest- és kapu-nézetének adatai (pillanatkép, `keszult` mezővel) |
+| `katalogus.json` | minden fájl leírása, oszlopai, sorszáma, mérete és SHA-256 ujjlenyomata; `sema_verzio` |
+| `README.md` | a feed leírása (a katalógusból generálva) |
+
+**Parancssor** – `scripts/aismonitor.py`, vékony burok a meglévő szkriptek
+fölött (a `--` utáni kapcsolók változatlanul a hívott szkripthez kerülnek):
+
+```bash
+python scripts/aismonitor.py allapot             # utolsó nap, sorozatok, aktív jelzések
+python scripts/aismonitor.py allapot --json      # ugyanez a legutobbi.json formátumában
+python scripts/aismonitor.py dashboard           # docs/dashboard.html + docs/adat/
+python scripts/aismonitor.py oldal               # docs/index.html (teljes építés)
+python scripts/aismonitor.py backtest            # outputs/backtest/
+python scripts/aismonitor.py kapuk -- --napok 2026-07-15 2026-07-16
+python scripts/aismonitor.py napi -- --szaraz    # a napi futás terve, letöltés nélkül
+python scripts/aismonitor.py napi -- --parquet-torol --kozvetlen-zip   # a workflow parancsa
+python scripts/aismonitor.py teszt
+```
+
+**Napi frissítés.** A `napi_futas.py` a monitor után az `oldal_epit.py
+--csak-monitor`, majd a `dashboard_epit.py` szkriptet hívja (a hibaágban is,
+hogy az oldal a futás állapotát mutassa); a workflow a `docs/dashboard.html`-t
+és a `docs/adat/`-ot is visszaírja. A backtest és a kísérleti kapuk nem futnak
+naponta (a PortWatch-adat és a Parquet-tároló nincs a futtatón): ha a forrásuk
+hiányzik, a `dashboard_epit.py` a legutóbb publikált `backtest.json`-t és
+`kiserleti_kapuk.json`-t viszi tovább.
+
+**Korlátok.** Az adat 2–3 napos (a napi AIS-fájl kb. 48 órával a nap vége
+után jelenik meg), ezért valós idejű riasztásra nem alkalmas. A küszöb a teljes
+eddigi idősorból számolódik, így visszamenőleg változhat. A jelzés azt mondja
+meg, hogy egy nap szokatlan, azt nem, hogy miért. A típus és a merülés a hajók
+saját, kézzel kitöltött AIS-mezőiből jön. A kísérleti kapuk és a backtest
+pillanatképek.
 
 ## Főbb eredmények
 

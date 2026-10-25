@@ -432,6 +432,9 @@ validálja és Parquet-formátumba alakítja, majd kiszámolja a kereskedelmi
 napot az előző négy hét azonos napjainak mediánjához mérünk; a jelzési küszöb a
 teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): {kuszob}.</p>
 
+<p><a href="dashboard.html"><b>A teljes dashboard</b></a>: sorozatválasztó, időszak, jelzési sáv,
+backtest és kísérleti kapuk · gépi adat-feed: <a href="adat/legutobbi.json">adat/legutobbi.json</a></p>
+
 <div class="racs">{''.join(kartyak)}</div>
 
 <div class="abra-doboz">

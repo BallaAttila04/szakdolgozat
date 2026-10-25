@@ -6,7 +6,8 @@
 # D = ma-3 nap mar biztosan fenn van; a 30. perc az oran beluli csucsterhelest
 # is elkeruli (a GitHub a teljes orakban kesleltetheti az utemezett futast).
 #
-# Csak az aggregalt tablak (outputs/monitor/) es a docs/ kerul vissza a repoba;
+# Csak az aggregalt tablak (outputs/monitor/) es a docs/ (nyitolap, dashboard,
+# adat-feed) kerul vissza a repoba;
 # a nyers ZIP es a napi Parquet a futtato gepen marad, es a futas vegen torlodik.
 
 name: Napi forgalmi monitor
@@ -57,7 +58,7 @@ jobs:
       - name: Fuggosegek
         run: pip install -r requirements-monitor.txt
 
-      - name: Napi futas (pipeline -> monitor -> oldal)
+      - name: Napi futas (pipeline -> monitor -> oldal -> dashboard)
         if: inputs.meresi_nap == ''
         # --kozvetlen-zip: a CSV nem kerul lemezre (a legnagyobb napon is ~4,7 GiB
         # lemez, ~11 GB memoria; ld. naplo 6a)
@@ -71,6 +72,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add outputs/monitor docs/index.html
+          # a dashboard es a gepi adat-feed (dashboard_epit.py); ha egy utvonal
+          # meg nem letezik, az nem akasztja meg a visszairast
+          for p in docs/dashboard.html docs/adat; do
+            if [ -e "$p" ]; then git add "$p"; fi
+          done
           if git diff --cached --quiet; then
             echo "Nincs valtozas."
           else

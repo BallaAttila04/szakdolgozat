@@ -8,6 +8,8 @@ A napi forgalmi monitor egy teljes futasa - ezt hivja az utemezo.
      validalas utan torli)
   3. monitor.py: csak a validalt napok kerulnek a tablaba
   4. oldal_epit.py --csak-monitor: a publikus oldal monitor-szakasza
+  5. dashboard_epit.py: a dashboard (docs/dashboard.html) es az adat-feed
+     (docs/adat/) - a hibaagban is lefut, hogy az oldal a futas allapotat mutassa
 
 Hibakezeles: ha a napi fajl meg nincs fenn, vagy a validalas bukik, a
 monitor-tabla nem valtozik (a korabbi jo adat marad), es az oldalon latszik,
@@ -16,6 +18,7 @@ hogy a legutobbi futas nem frissitett, illetve melyik nap a legutolso.
 Hasznalat:
     python napi_futas.py                 # helyben vagy GitHub Actionsben
     python napi_futas.py --parquet-torol # a napi Parquetet a vegen torli (runner)
+    python napi_futas.py --szaraz        # csak a terv: mely napok jonnenek
 """
 
 import argparse
@@ -60,6 +63,8 @@ def main():
     ap.add_argument("--memoria", help="DuckDB memoriakorlat a pipeline.py-nak")
     ap.add_argument("--kozvetlen-zip", action="store_true",
                     help="Szuk lemezu futtatohoz: a CSV-t nem csomagolja ki (ld. naplo 6a)")
+    ap.add_argument("--szaraz", action="store_true",
+                    help="Csak kiirja, mely napokat dolgozna fel; nem tolt le es nem ir semmit")
     args = ap.parse_args()
 
     ma = date.fromisoformat(args.ma) if args.ma else datetime.now(timezone.utc).date()
@@ -71,6 +76,11 @@ def main():
     kezdo = max(utolso + timedelta(days=1), utolso_elerheto - timedelta(days=MAX_POTLAS - 1))
     print(f"Futas: {ma}; a monitor utolso napja: {utolso}; "
           f"feldolgozando: {kezdo} - {utolso_elerheto}")
+    if args.szaraz:
+        db = max(0, (utolso_elerheto - kezdo).days + 1)
+        print(f"Szaraz futas: {db} nap kerulne feldolgozasra"
+              + ("" if db else " (nincs uj nap)") + "; letoltes es iras nem tortent.")
+        return 0
 
     futas = {"ido_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
              "statusz": "ok", "uzenet": ""}
@@ -109,6 +119,10 @@ def main():
 
     if allapot.get("utolso_nap"):
         futtat(SZKRIPTEK / "oldal_epit.py", "--csak-monitor", "--oldal", args.oldal)
+        # A dashboard hibaja nem bontja meg a napi futast (a monitor-tabla es az
+        # index.html mar frissult), de a naplobol latszodjon.
+        if futtat(SZKRIPTEK / "dashboard_epit.py", "--oldal", args.oldal) != 0:
+            print("FIGYELEM: a dashboard_epit.py hibaval allt le - a dashboard a korabbi allapoton maradt")
     # Ha nem volt uj adat, az nem hiba; a validalas bukasa igen (a workflow jelezze).
     return 1 if futas["statusz"] == "hiba" else 0
 

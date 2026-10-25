@@ -1,0 +1,9 @@
+ellenorzes,sorok,jelzes_elteres,barmely_mezo_elteres
+megrakottsag_napi.csv ujraszamolva (memoriaban),1047,,0
+monitor.jelzesek() vs jelzesek.csv,393,0,0
+monitor.jelzesek(gordulo) vs jelzesek_megrakottsag.csv,375,0,0
+napi megrakottsagi alap 7 napra gorditve vs gordulo_sorozatok(),375,,0
+sajat vektorizalt motor (retrospektiv) vs jelzesek.csv,393,0,0
+sajat vektorizalt motor (retrospektiv) vs jelzesek_megrakottsag.csv,375,0,0
+"nulla-injektalas: reszleges futas (t0, CUSUM-allapot) = teljes futas",230517,0,0
+"elorenezes-teszt: a t utani napok elrontasa nem valtoztat a [0, t] osztalyokon (minden 7. t)",229824,0,0

@@ -38,6 +38,7 @@ MONITOR = KIMENET / "monitor"
 CIMKE = "monitor-jelzes"
 FAJLOK = ["jelzesek.csv", "jelzesek_megrakottsag.csv"]
 OLDAL = "https://ballaattila04.github.io/szakdolgozat/#monitor"
+DASHBOARD = "https://ballaattila04.github.io/szakdolgozat/dashboard.html"
 
 
 def gh(*arg, szaraz=False, kimenet=False):
@@ -74,7 +75,7 @@ def torzs(r, nap):
             f"|---|---|---|---|---|\n"
             f"| {r['sorozat']} | {r['ertek']} | {r['alapszint']:.1f} | {r['elteres']:+.1%} | "
             f"±{r['kuszob']:.1%} |\n\n"
-            f"Minősítés: **{r['jelzes']}**. Részletek: {OLDAL}\n\n"
+            f"Minősítés: **{r['jelzes']}**. Részletek: {OLDAL} · dashboard: {DASHBOARD}\n\n"
             f"_Automatikus értesítés (napi_monitor.yml). Amíg a jelzés fennáll, ez az "
             f"issue naponta egy megjegyzést kap; ha a sorozat visszaáll normálra, lezárul._")
 

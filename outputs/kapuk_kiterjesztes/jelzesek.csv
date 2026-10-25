@@ -1,0 +1,2689 @@
+datum,sorozat,ertek,alapnapok,alapszint,elteres,kuszob,jelzes
+2026-06-01,Nagy-Balti-öv,49,0,,,0.3437,nincs alapszint
+2026-06-02,Nagy-Balti-öv,65,0,,,0.3437,nincs alapszint
+2026-06-03,Nagy-Balti-öv,46,0,,,0.3437,nincs alapszint
+2026-06-04,Nagy-Balti-öv,57,0,,,0.3437,nincs alapszint
+2026-06-05,Nagy-Balti-öv,44,0,,,0.3437,nincs alapszint
+2026-06-06,Nagy-Balti-öv,52,0,,,0.3437,nincs alapszint
+2026-06-07,Nagy-Balti-öv,46,0,,,0.3437,nincs alapszint
+2026-06-08,Nagy-Balti-öv,47,1,,,0.3437,nincs alapszint
+2026-06-09,Nagy-Balti-öv,47,1,,,0.3437,nincs alapszint
+2026-06-10,Nagy-Balti-öv,44,1,,,0.3437,nincs alapszint
+2026-06-11,Nagy-Balti-öv,53,1,,,0.3437,nincs alapszint
+2026-06-12,Nagy-Balti-öv,53,1,,,0.3437,nincs alapszint
+2026-06-13,Nagy-Balti-öv,44,1,,,0.3437,nincs alapszint
+2026-06-14,Nagy-Balti-öv,65,1,,,0.3437,nincs alapszint
+2026-06-15,Nagy-Balti-öv,45,2,,,0.3437,nincs alapszint
+2026-06-16,Nagy-Balti-öv,51,2,,,0.3437,nincs alapszint
+2026-06-17,Nagy-Balti-öv,54,2,,,0.3437,nincs alapszint
+2026-06-18,Nagy-Balti-öv,52,2,,,0.3437,nincs alapszint
+2026-06-19,Nagy-Balti-öv,56,2,,,0.3437,nincs alapszint
+2026-06-20,Nagy-Balti-öv,52,2,,,0.3437,nincs alapszint
+2026-06-21,Nagy-Balti-öv,41,2,,,0.3437,nincs alapszint
+2026-06-22,Nagy-Balti-öv,55,3,47.0,0.1702,0.3437,normál
+2026-06-23,Nagy-Balti-öv,54,3,51.0,0.0588,0.3437,normál
+2026-06-24,Nagy-Balti-öv,41,3,46.0,-0.1087,0.3437,normál
+2026-06-25,Nagy-Balti-öv,50,3,53.0,-0.0566,0.3437,normál
+2026-06-26,Nagy-Balti-öv,51,3,53.0,-0.0377,0.3437,normál
+2026-06-27,Nagy-Balti-öv,50,3,52.0,-0.0385,0.3437,normál
+2026-06-28,Nagy-Balti-öv,43,3,46.0,-0.0652,0.3437,normál
+2026-06-29,Nagy-Balti-öv,57,4,48.0,0.1875,0.3437,normál
+2026-06-30,Nagy-Balti-öv,49,4,52.5,-0.0667,0.3437,normál
+2026-07-01,Nagy-Balti-öv,42,4,45.0,-0.0667,0.3437,normál
+2026-07-02,Nagy-Balti-öv,41,4,52.5,-0.219,0.3437,normál
+2026-07-03,Nagy-Balti-öv,50,4,52.0,-0.0385,0.3437,normál
+2026-07-04,Nagy-Balti-öv,50,4,51.0,-0.0196,0.3437,normál
+2026-07-05,Nagy-Balti-öv,54,4,44.5,0.2135,0.3437,normál
+2026-07-06,Nagy-Balti-öv,43,4,51.0,-0.1569,0.3437,normál
+2026-07-07,Nagy-Balti-öv,41,4,50.0,-0.18,0.3437,normál
+2026-07-08,Nagy-Balti-öv,47,4,43.0,0.093,0.3437,normál
+2026-07-09,Nagy-Balti-öv,45,4,51.0,-0.1176,0.3437,normál
+2026-07-10,Nagy-Balti-öv,45,4,52.0,-0.1346,0.3437,normál
+2026-07-11,Nagy-Balti-öv,55,4,50.0,0.1,0.3437,normál
+2026-07-12,Nagy-Balti-öv,44,4,48.5,-0.0928,0.3437,normál
+2026-07-13,Nagy-Balti-öv,50,4,50.0,0.0,0.3437,normál
+2026-07-14,Nagy-Balti-öv,56,4,50.0,0.12,0.3437,normál
+2026-07-15,Nagy-Balti-öv,53,4,44.5,0.191,0.3437,normál
+2026-07-16,Nagy-Balti-öv,45,4,47.5,-0.0526,0.3437,normál
+2026-07-17,Nagy-Balti-öv,73,4,50.5,0.4455,0.3437,szokatlanul magas
+2026-07-18,Nagy-Balti-öv,42,4,51.0,-0.1765,0.3437,normál
+2026-07-19,Nagy-Balti-öv,48,4,43.5,0.1034,0.3437,normál
+2026-07-20,Nagy-Balti-öv,53,4,52.5,0.0095,0.3437,normál
+2026-07-21,Nagy-Balti-öv,36,4,51.5,-0.301,0.3437,normál
+2026-07-22,Nagy-Balti-öv,46,4,44.5,0.0337,0.3437,normál
+2026-07-23,Nagy-Balti-öv,41,4,45.0,-0.0889,0.3437,normál
+2026-07-24,Nagy-Balti-öv,44,4,50.5,-0.1287,0.3437,normál
+2026-07-25,Nagy-Balti-öv,43,4,50.0,-0.14,0.3437,normál
+2026-07-26,Nagy-Balti-öv,47,4,46.0,0.0217,0.3437,normál
+2026-07-27,Nagy-Balti-öv,49,4,51.5,-0.0485,0.3437,normál
+2026-07-28,Nagy-Balti-öv,47,4,45.0,0.0444,0.3437,normál
+2026-07-29,Nagy-Balti-öv,39,4,46.5,-0.1613,0.3437,normál
+2026-07-30,Nagy-Balti-öv,47,4,43.0,0.093,0.3437,normál
+2026-07-31,Nagy-Balti-öv,52,4,47.5,0.0947,0.3437,normál
+2026-08-01,Nagy-Balti-öv,56,4,46.5,0.2043,0.3437,normál
+2026-08-02,Nagy-Balti-öv,43,4,47.5,-0.0947,0.3437,normál
+2026-08-03,Nagy-Balti-öv,49,4,49.5,-0.0101,0.3437,normál
+2026-08-04,Nagy-Balti-öv,52,4,44.0,0.1818,0.3437,normál
+2026-08-05,Nagy-Balti-öv,41,4,46.5,-0.1183,0.3437,normál
+2026-08-06,Nagy-Balti-öv,46,4,45.0,0.0222,0.3437,normál
+2026-08-07,Nagy-Balti-öv,40,4,48.5,-0.1753,0.3437,normál
+2026-08-08,Nagy-Balti-öv,63,4,49.0,0.2857,0.3437,normál
+2026-08-09,Nagy-Balti-öv,54,4,45.5,0.1868,0.3437,normál
+2026-08-10,Nagy-Balti-öv,46,4,49.5,-0.0707,0.3437,normál
+2026-08-11,Nagy-Balti-öv,40,4,49.5,-0.1919,0.3437,normál
+2026-08-12,Nagy-Balti-öv,61,4,43.5,0.4023,0.3437,szokatlanul magas
+2026-08-13,Nagy-Balti-öv,48,4,45.5,0.0549,0.3437,normál
+2026-08-14,Nagy-Balti-öv,54,4,48.0,0.125,0.3437,normál
+2026-08-15,Nagy-Balti-öv,31,4,49.5,-0.3737,0.3437,szokatlanul alacsony
+2026-08-16,Nagy-Balti-öv,52,4,47.5,0.0947,0.3437,normál
+2026-08-17,Nagy-Balti-öv,53,4,49.0,0.0816,0.3437,normál
+2026-08-18,Nagy-Balti-öv,65,4,43.5,0.4943,0.3437,szokatlanul magas
+2026-08-19,Nagy-Balti-öv,49,4,43.5,0.1264,0.3437,normál
+2026-08-20,Nagy-Balti-öv,55,4,46.5,0.1828,0.3437,normál
+2026-08-21,Nagy-Balti-öv,54,4,48.0,0.125,0.3437,normál
+2026-08-22,Nagy-Balti-öv,42,4,49.5,-0.1515,0.3437,normál
+2026-08-23,Nagy-Balti-öv,58,4,49.5,0.1717,0.3437,normál
+2026-08-24,Nagy-Balti-öv,42,4,49.0,-0.1429,0.3437,normál
+2026-08-25,Nagy-Balti-öv,62,4,49.5,0.2525,0.3437,normál
+2026-08-26,Nagy-Balti-öv,46,4,45.0,0.0222,0.3437,normál
+2026-08-27,Nagy-Balti-öv,44,4,47.5,-0.0737,0.3437,normál
+2026-08-28,Nagy-Balti-öv,61,4,53.0,0.1509,0.3437,normál
+2026-08-29,Nagy-Balti-öv,65,4,49.0,0.3265,0.3437,normál
+2026-08-30,Nagy-Balti-öv,43,4,53.0,-0.1887,0.3437,normál
+2026-08-31,Nagy-Balti-öv,55,4,47.5,0.1579,0.3437,normál
+2026-09-01,Nagy-Balti-öv,55,4,57.0,-0.0351,0.3437,normál
+2026-09-02,Nagy-Balti-öv,48,4,47.5,0.0105,0.3437,normál
+2026-09-03,Nagy-Balti-öv,54,4,47.0,0.1489,0.3437,normál
+2026-09-04,Nagy-Balti-öv,55,4,54.0,0.0185,0.3437,normál
+2026-09-05,Nagy-Balti-öv,52,4,52.5,-0.0095,0.3437,normál
+2026-09-06,Nagy-Balti-öv,45,4,53.0,-0.1509,0.3437,normál
+2026-09-07,Nagy-Balti-öv,53,4,49.5,0.0707,0.3437,normál
+2026-09-08,Nagy-Balti-öv,52,4,58.5,-0.1111,0.3437,normál
+2026-09-09,Nagy-Balti-öv,49,4,48.5,0.0103,0.3437,normál
+2026-09-10,Nagy-Balti-öv,42,4,51.0,-0.1765,0.3437,normál
+2026-09-11,Nagy-Balti-öv,60,4,54.5,0.1009,0.3437,normál
+2026-09-12,Nagy-Balti-öv,48,4,47.0,0.0213,0.3437,normál
+2026-09-13,Nagy-Balti-öv,50,4,48.5,0.0309,0.3437,normál
+2026-09-14,Nagy-Balti-öv,53,4,53.0,0.0,0.3437,normál
+2026-09-15,Nagy-Balti-öv,52,4,58.5,-0.1111,0.3437,normál
+2026-09-16,Nagy-Balti-öv,58,4,48.5,0.1959,0.3437,normál
+2026-09-17,Nagy-Balti-öv,54,4,49.0,0.102,0.3437,normál
+2026-09-18,Nagy-Balti-öv,59,4,57.5,0.0261,0.3437,normál
+2026-09-19,Nagy-Balti-öv,47,4,50.0,-0.06,0.3437,normál
+2026-09-20,Nagy-Balti-öv,58,4,47.5,0.2211,0.3437,normál
+2026-09-21,Nagy-Balti-öv,41,4,53.0,-0.2264,0.3437,normál
+2026-09-22,Nagy-Balti-öv,46,4,53.5,-0.1402,0.3437,normál
+2026-09-23,Nagy-Balti-öv,52,4,48.5,0.0722,0.3437,normál
+2026-09-24,Nagy-Balti-öv,57,4,49.0,0.1633,0.3437,normál
+2026-09-25,Nagy-Balti-öv,57,4,59.5,-0.042,0.3437,normál
+2026-09-26,Nagy-Balti-öv,64,4,50.0,0.28,0.3437,normál
+2026-09-27,Nagy-Balti-öv,66,4,47.5,0.3895,0.3437,szokatlanul magas
+2026-09-28,Nagy-Balti-öv,50,4,53.0,-0.0566,0.3437,normál
+2026-09-29,Nagy-Balti-öv,45,4,52.0,-0.1346,0.3437,normál
+2026-09-30,Nagy-Balti-öv,44,4,50.5,-0.1287,0.3437,normál
+2026-10-01,Nagy-Balti-öv,61,4,54.0,0.1296,0.3437,normál
+2026-10-02,Nagy-Balti-öv,49,4,58.0,-0.1552,0.3437,normál
+2026-10-03,Nagy-Balti-öv,62,4,50.0,0.24,0.3437,normál
+2026-10-04,Nagy-Balti-öv,48,4,54.0,-0.1111,0.3437,normál
+2026-10-05,Nagy-Balti-öv,54,4,51.5,0.0485,0.3437,normál
+2026-10-06,Nagy-Balti-öv,52,4,49.0,0.0612,0.3437,normál
+2026-06-01,Øresund,45,0,,,0.2578,nincs alapszint
+2026-06-02,Øresund,52,0,,,0.2578,nincs alapszint
+2026-06-03,Øresund,52,0,,,0.2578,nincs alapszint
+2026-06-04,Øresund,58,0,,,0.2578,nincs alapszint
+2026-06-05,Øresund,54,0,,,0.2578,nincs alapszint
+2026-06-06,Øresund,53,0,,,0.2578,nincs alapszint
+2026-06-07,Øresund,60,0,,,0.2578,nincs alapszint
+2026-06-08,Øresund,48,1,,,0.2578,nincs alapszint
+2026-06-09,Øresund,49,1,,,0.2578,nincs alapszint
+2026-06-10,Øresund,44,1,,,0.2578,nincs alapszint
+2026-06-11,Øresund,60,1,,,0.2578,nincs alapszint
+2026-06-12,Øresund,50,1,,,0.2578,nincs alapszint
+2026-06-13,Øresund,61,1,,,0.2578,nincs alapszint
+2026-06-14,Øresund,48,1,,,0.2578,nincs alapszint
+2026-06-15,Øresund,53,2,,,0.2578,nincs alapszint
+2026-06-16,Øresund,57,2,,,0.2578,nincs alapszint
+2026-06-17,Øresund,54,2,,,0.2578,nincs alapszint
+2026-06-18,Øresund,57,2,,,0.2578,nincs alapszint
+2026-06-19,Øresund,47,2,,,0.2578,nincs alapszint
+2026-06-20,Øresund,53,2,,,0.2578,nincs alapszint
+2026-06-21,Øresund,51,2,,,0.2578,nincs alapszint
+2026-06-22,Øresund,53,3,48.0,0.1042,0.2578,normál
+2026-06-23,Øresund,48,3,52.0,-0.0769,0.2578,normál
+2026-06-24,Øresund,42,3,52.0,-0.1923,0.2578,normál
+2026-06-25,Øresund,54,3,58.0,-0.069,0.2578,normál
+2026-06-26,Øresund,58,3,50.0,0.16,0.2578,normál
+2026-06-27,Øresund,48,3,53.0,-0.0943,0.2578,normál
+2026-06-28,Øresund,50,3,51.0,-0.0196,0.2578,normál
+2026-06-29,Øresund,51,4,50.5,0.0099,0.2578,normál
+2026-06-30,Øresund,48,4,50.5,-0.0495,0.2578,normál
+2026-07-01,Øresund,42,4,48.0,-0.125,0.2578,normál
+2026-07-02,Øresund,39,4,57.5,-0.3217,0.2578,szokatlanul alacsony
+2026-07-03,Øresund,45,4,52.0,-0.1346,0.2578,normál
+2026-07-04,Øresund,49,4,53.0,-0.0755,0.2578,normál
+2026-07-05,Øresund,67,4,50.5,0.3267,0.2578,szokatlanul magas
+2026-07-06,Øresund,45,4,52.0,-0.1346,0.2578,normál
+2026-07-07,Øresund,45,4,48.5,-0.0722,0.2578,normál
+2026-07-08,Øresund,45,4,43.0,0.0465,0.2578,normál
+2026-07-09,Øresund,62,4,55.5,0.1171,0.2578,normál
+2026-07-10,Øresund,50,4,48.5,0.0309,0.2578,normál
+2026-07-11,Øresund,66,4,51.0,0.2941,0.2578,szokatlanul magas
+2026-07-12,Øresund,54,4,50.5,0.0693,0.2578,normál
+2026-07-13,Øresund,45,4,52.0,-0.1346,0.2578,normál
+2026-07-14,Øresund,51,4,48.0,0.0625,0.2578,normál
+2026-07-15,Øresund,64,4,43.5,0.4713,0.2578,szokatlanul magas
+2026-07-16,Øresund,53,4,55.5,-0.045,0.2578,normál
+2026-07-17,Øresund,56,4,48.5,0.1546,0.2578,normál
+2026-07-18,Øresund,55,4,51.0,0.0784,0.2578,normál
+2026-07-19,Øresund,39,4,52.5,-0.2571,0.2578,normál
+2026-07-20,Øresund,49,4,48.0,0.0208,0.2578,normál
+2026-07-21,Øresund,46,4,48.0,-0.0417,0.2578,normál
+2026-07-22,Øresund,41,4,43.5,-0.0575,0.2578,normál
+2026-07-23,Øresund,45,4,53.5,-0.1589,0.2578,normál
+2026-07-24,Øresund,57,4,53.0,0.0755,0.2578,normál
+2026-07-25,Øresund,48,4,52.0,-0.0769,0.2578,normál
+2026-07-26,Øresund,54,4,52.0,0.0385,0.2578,normál
+2026-07-27,Øresund,46,4,47.0,-0.0213,0.2578,normál
+2026-07-28,Øresund,39,4,47.0,-0.1702,0.2578,normál
+2026-07-29,Øresund,51,4,43.5,0.1724,0.2578,normál
+2026-07-30,Øresund,54,4,49.0,0.102,0.2578,normál
+2026-07-31,Øresund,51,4,53.0,-0.0377,0.2578,normál
+2026-08-01,Øresund,49,4,52.0,-0.0577,0.2578,normál
+2026-08-02,Øresund,54,4,54.0,0.0,0.2578,normál
+2026-08-03,Øresund,39,4,45.5,-0.1429,0.2578,normál
+2026-08-04,Øresund,46,4,45.5,0.011,0.2578,normál
+2026-08-05,Øresund,48,4,48.0,0.0,0.2578,normál
+2026-08-06,Øresund,51,4,53.5,-0.0467,0.2578,normál
+2026-08-07,Øresund,37,4,53.5,-0.3084,0.2578,szokatlanul alacsony
+2026-08-08,Øresund,59,4,52.0,0.1346,0.2578,normál
+2026-08-09,Øresund,54,4,54.0,0.0,0.2578,normál
+2026-08-10,Øresund,48,4,45.5,0.0549,0.2578,normál
+2026-08-11,Øresund,50,4,46.0,0.087,0.2578,normál
+2026-08-12,Øresund,55,4,49.5,0.1111,0.2578,normál
+2026-08-13,Øresund,55,4,52.0,0.0577,0.2578,normál
+2026-08-14,Øresund,41,4,53.5,-0.2336,0.2578,normál
+2026-08-15,Øresund,52,4,52.0,0.0,0.2578,normál
+2026-08-16,Øresund,70,4,54.0,0.2963,0.2578,szokatlanul magas
+2026-08-17,Øresund,49,4,47.0,0.0426,0.2578,normál
+2026-08-18,Øresund,58,4,46.0,0.2609,0.2578,szokatlanul magas
+2026-08-19,Øresund,49,4,49.5,-0.0101,0.2578,normál
+2026-08-20,Øresund,60,4,52.5,0.1429,0.2578,normál
+2026-08-21,Øresund,56,4,46.0,0.2174,0.2578,normál
+2026-08-22,Øresund,53,4,50.5,0.0495,0.2578,normál
+2026-08-23,Øresund,56,4,54.0,0.037,0.2578,normál
+2026-08-24,Øresund,53,4,47.0,0.1277,0.2578,normál
+2026-08-25,Øresund,50,4,48.0,0.0417,0.2578,normál
+2026-08-26,Øresund,61,4,50.0,0.22,0.2578,normál
+2026-08-27,Øresund,50,4,54.5,-0.0826,0.2578,normál
+2026-08-28,Øresund,50,4,46.0,0.087,0.2578,normál
+2026-08-29,Øresund,57,4,52.5,0.0857,0.2578,normál
+2026-08-30,Øresund,65,4,55.0,0.1818,0.2578,normál
+2026-08-31,Øresund,44,4,48.5,-0.0928,0.2578,normál
+2026-09-01,Øresund,38,4,50.0,-0.24,0.2578,normál
+2026-09-02,Øresund,59,4,52.0,0.1346,0.2578,normál
+2026-09-03,Øresund,52,4,53.0,-0.0189,0.2578,normál
+2026-09-04,Øresund,48,4,45.5,0.0549,0.2578,normál
+2026-09-05,Øresund,35,4,55.0,-0.3636,0.2578,szokatlanul alacsony
+2026-09-06,Øresund,41,4,60.5,-0.3223,0.2578,szokatlanul alacsony
+2026-09-07,Øresund,47,4,48.5,-0.0309,0.2578,normál
+2026-09-08,Øresund,57,4,50.0,0.14,0.2578,normál
+2026-09-09,Øresund,53,4,57.0,-0.0702,0.2578,normál
+2026-09-10,Øresund,50,4,53.5,-0.0654,0.2578,normál
+2026-09-11,Øresund,52,4,49.0,0.0612,0.2578,normál
+2026-09-12,Øresund,65,4,52.5,0.2381,0.2578,normál
+2026-09-13,Øresund,56,4,60.5,-0.0744,0.2578,normál
+2026-09-14,Øresund,51,4,48.0,0.0625,0.2578,normál
+2026-09-15,Øresund,43,4,53.5,-0.1963,0.2578,normál
+2026-09-16,Øresund,49,4,56.0,-0.125,0.2578,normál
+2026-09-17,Øresund,46,4,51.0,-0.098,0.2578,normál
+2026-09-18,Øresund,56,4,51.0,0.098,0.2578,normál
+2026-09-19,Øresund,57,4,55.0,0.0364,0.2578,normál
+2026-09-20,Øresund,39,4,56.0,-0.3036,0.2578,szokatlanul alacsony
+2026-09-21,Øresund,48,4,49.0,-0.0204,0.2578,normál
+2026-09-22,Øresund,50,4,46.5,0.0753,0.2578,normál
+2026-09-23,Øresund,59,4,56.0,0.0536,0.2578,normál
+2026-09-24,Øresund,50,4,50.0,0.0,0.2578,normál
+2026-09-25,Øresund,34,4,51.0,-0.3333,0.2578,szokatlanul alacsony
+2026-09-26,Øresund,46,4,57.0,-0.193,0.2578,normál
+2026-09-27,Øresund,56,4,48.5,0.1546,0.2578,normál
+2026-09-28,Øresund,54,4,47.5,0.1368,0.2578,normál
+2026-09-29,Øresund,33,4,46.5,-0.2903,0.2578,szokatlanul alacsony
+2026-09-30,Øresund,52,4,56.0,-0.0714,0.2578,normál
+2026-10-01,Øresund,68,4,50.0,0.36,0.2578,szokatlanul magas
+2026-10-02,Øresund,50,4,50.0,0.0,0.2578,normál
+2026-10-03,Øresund,44,4,51.5,-0.1456,0.2578,normál
+2026-10-04,Øresund,50,4,48.5,0.0309,0.2578,normál
+2026-10-05,Øresund,54,4,49.5,0.0909,0.2578,normál
+2026-10-06,Øresund,54,4,46.5,0.1613,0.2578,normál
+2026-06-01,Øresund – Drogden,35,0,,,0.4145,nincs alapszint
+2026-06-02,Øresund – Drogden,52,0,,,0.4145,nincs alapszint
+2026-06-03,Øresund – Drogden,45,0,,,0.4145,nincs alapszint
+2026-06-04,Øresund – Drogden,53,0,,,0.4145,nincs alapszint
+2026-06-05,Øresund – Drogden,53,0,,,0.4145,nincs alapszint
+2026-06-06,Øresund – Drogden,52,0,,,0.4145,nincs alapszint
+2026-06-07,Øresund – Drogden,43,0,,,0.4145,nincs alapszint
+2026-06-08,Øresund – Drogden,45,1,,,0.4145,nincs alapszint
+2026-06-09,Øresund – Drogden,46,1,,,0.4145,nincs alapszint
+2026-06-10,Øresund – Drogden,47,1,,,0.4145,nincs alapszint
+2026-06-11,Øresund – Drogden,54,1,,,0.4145,nincs alapszint
+2026-06-12,Øresund – Drogden,45,1,,,0.4145,nincs alapszint
+2026-06-13,Øresund – Drogden,57,1,,,0.4145,nincs alapszint
+2026-06-14,Øresund – Drogden,36,1,,,0.4145,nincs alapszint
+2026-06-15,Øresund – Drogden,47,2,,,0.4145,nincs alapszint
+2026-06-16,Øresund – Drogden,52,2,,,0.4145,nincs alapszint
+2026-06-17,Øresund – Drogden,49,2,,,0.4145,nincs alapszint
+2026-06-18,Øresund – Drogden,42,2,,,0.4145,nincs alapszint
+2026-06-19,Øresund – Drogden,45,2,,,0.4145,nincs alapszint
+2026-06-20,Øresund – Drogden,51,2,,,0.4145,nincs alapszint
+2026-06-21,Øresund – Drogden,44,2,,,0.4145,nincs alapszint
+2026-06-22,Øresund – Drogden,39,3,45.0,-0.1333,0.4145,normál
+2026-06-23,Øresund – Drogden,46,3,52.0,-0.1154,0.4145,normál
+2026-06-24,Øresund – Drogden,35,3,47.0,-0.2553,0.4145,normál
+2026-06-25,Øresund – Drogden,45,3,53.0,-0.1509,0.4145,normál
+2026-06-26,Øresund – Drogden,59,3,45.0,0.3111,0.4145,normál
+2026-06-27,Øresund – Drogden,42,3,52.0,-0.1923,0.4145,normál
+2026-06-28,Øresund – Drogden,49,3,43.0,0.1395,0.4145,normál
+2026-06-29,Øresund – Drogden,46,4,42.0,0.0952,0.4145,normál
+2026-06-30,Øresund – Drogden,46,4,49.0,-0.0612,0.4145,normál
+2026-07-01,Øresund – Drogden,39,4,46.0,-0.1522,0.4145,normál
+2026-07-02,Øresund – Drogden,39,4,49.0,-0.2041,0.4145,normál
+2026-07-03,Øresund – Drogden,43,4,49.0,-0.1224,0.4145,normál
+2026-07-04,Øresund – Drogden,54,4,51.5,0.0485,0.4145,normál
+2026-07-05,Øresund – Drogden,51,4,43.5,0.1724,0.4145,normál
+2026-07-06,Øresund – Drogden,45,4,45.5,-0.011,0.4145,normál
+2026-07-07,Øresund – Drogden,41,4,46.0,-0.1087,0.4145,normál
+2026-07-08,Øresund – Drogden,37,4,43.0,-0.1395,0.4145,normál
+2026-07-09,Øresund – Drogden,51,4,43.5,0.1724,0.4145,normál
+2026-07-10,Øresund – Drogden,44,4,45.0,-0.0222,0.4145,normál
+2026-07-11,Øresund – Drogden,63,4,52.5,0.2,0.4145,normál
+2026-07-12,Øresund – Drogden,50,4,46.5,0.0753,0.4145,normál
+2026-07-13,Øresund – Drogden,39,4,45.5,-0.1429,0.4145,normál
+2026-07-14,Øresund – Drogden,41,4,46.0,-0.1087,0.4145,normál
+2026-07-15,Øresund – Drogden,57,4,38.0,0.5,0.4145,szokatlanul magas
+2026-07-16,Øresund – Drogden,50,4,43.5,0.1494,0.4145,normál
+2026-07-17,Øresund – Drogden,54,4,44.5,0.2135,0.4145,normál
+2026-07-18,Øresund – Drogden,50,4,52.5,-0.0476,0.4145,normál
+2026-07-19,Øresund – Drogden,34,4,49.5,-0.3131,0.4145,normál
+2026-07-20,Øresund – Drogden,46,4,42.0,0.0952,0.4145,normál
+2026-07-21,Øresund – Drogden,46,4,43.5,0.0575,0.4145,normál
+2026-07-22,Øresund – Drogden,40,4,38.0,0.0526,0.4145,normál
+2026-07-23,Øresund – Drogden,39,4,47.5,-0.1789,0.4145,normál
+2026-07-24,Øresund – Drogden,54,4,49.0,0.102,0.4145,normál
+2026-07-25,Øresund – Drogden,50,4,52.0,-0.0385,0.4145,normál
+2026-07-26,Øresund – Drogden,45,4,49.5,-0.0909,0.4145,normál
+2026-07-27,Øresund – Drogden,33,4,45.5,-0.2747,0.4145,normál
+2026-07-28,Øresund – Drogden,31,4,43.5,-0.2874,0.4145,normál
+2026-07-29,Øresund – Drogden,41,4,39.5,0.038,0.4145,normál
+2026-07-30,Øresund – Drogden,41,4,44.5,-0.0787,0.4145,normál
+2026-07-31,Øresund – Drogden,51,4,49.0,0.0408,0.4145,normál
+2026-08-01,Øresund – Drogden,50,4,52.0,-0.0385,0.4145,normál
+2026-08-02,Øresund – Drogden,42,4,47.5,-0.1158,0.4145,normál
+2026-08-03,Øresund – Drogden,37,4,42.0,-0.119,0.4145,normál
+2026-08-04,Øresund – Drogden,42,4,41.0,0.0244,0.4145,normál
+2026-08-05,Øresund – Drogden,35,4,40.5,-0.1358,0.4145,normál
+2026-08-06,Øresund – Drogden,47,4,45.5,0.033,0.4145,normál
+2026-08-07,Øresund – Drogden,35,4,52.5,-0.3333,0.4145,normál
+2026-08-08,Øresund – Drogden,63,4,50.0,0.26,0.4145,normál
+2026-08-09,Øresund – Drogden,47,4,43.5,0.0805,0.4145,normál
+2026-08-10,Øresund – Drogden,46,4,38.0,0.2105,0.4145,normál
+2026-08-11,Øresund – Drogden,41,4,41.5,-0.012,0.4145,normál
+2026-08-12,Øresund – Drogden,54,4,40.5,0.3333,0.4145,normál
+2026-08-13,Øresund – Drogden,46,4,44.0,0.0455,0.4145,normál
+2026-08-14,Øresund – Drogden,33,4,52.5,-0.3714,0.4145,normál
+2026-08-15,Øresund – Drogden,47,4,50.0,-0.06,0.4145,normál
+2026-08-16,Øresund – Drogden,63,4,43.5,0.4483,0.4145,szokatlanul magas
+2026-08-17,Øresund – Drogden,49,4,41.5,0.1807,0.4145,normál
+2026-08-18,Øresund – Drogden,44,4,41.5,0.0602,0.4145,normál
+2026-08-19,Øresund – Drogden,42,4,40.5,0.037,0.4145,normál
+2026-08-20,Øresund – Drogden,45,4,43.5,0.0345,0.4145,normál
+2026-08-21,Øresund – Drogden,53,4,43.0,0.2326,0.4145,normál
+2026-08-22,Øresund – Drogden,52,4,50.0,0.04,0.4145,normál
+2026-08-23,Øresund – Drogden,46,4,46.0,0.0,0.4145,normál
+2026-08-24,Øresund – Drogden,49,4,41.5,0.1807,0.4145,normál
+2026-08-25,Øresund – Drogden,49,4,41.5,0.1807,0.4145,normál
+2026-08-26,Øresund – Drogden,48,4,41.5,0.1566,0.4145,normál
+2026-08-27,Øresund – Drogden,46,4,45.5,0.011,0.4145,normál
+2026-08-28,Øresund – Drogden,44,4,43.0,0.0233,0.4145,normál
+2026-08-29,Øresund – Drogden,55,4,51.0,0.0784,0.4145,normál
+2026-08-30,Øresund – Drogden,57,4,46.5,0.2258,0.4145,normál
+2026-08-31,Øresund – Drogden,34,4,47.5,-0.2842,0.4145,normál
+2026-09-01,Øresund – Drogden,39,4,43.0,-0.093,0.4145,normál
+2026-09-02,Øresund – Drogden,55,4,45.0,0.2222,0.4145,normál
+2026-09-03,Øresund – Drogden,58,4,46.0,0.2609,0.4145,normál
+2026-09-04,Øresund – Drogden,39,4,39.5,-0.0127,0.4145,normál
+2026-09-05,Øresund – Drogden,35,4,53.5,-0.3458,0.4145,normál
+2026-09-06,Øresund – Drogden,35,4,52.0,-0.3269,0.4145,normál
+2026-09-07,Øresund – Drogden,37,4,47.5,-0.2211,0.4145,normál
+2026-09-08,Øresund – Drogden,60,4,42.5,0.4118,0.4145,normál
+2026-09-09,Øresund – Drogden,48,4,51.0,-0.0588,0.4145,normál
+2026-09-10,Øresund – Drogden,47,4,46.0,0.0217,0.4145,normál
+2026-09-11,Øresund – Drogden,44,4,41.5,0.0602,0.4145,normál
+2026-09-12,Øresund – Drogden,67,4,49.5,0.3535,0.4145,normál
+2026-09-13,Øresund – Drogden,53,4,51.5,0.0291,0.4145,normál
+2026-09-14,Øresund – Drogden,48,4,43.0,0.1163,0.4145,normál
+2026-09-15,Øresund – Drogden,41,4,46.5,-0.1183,0.4145,normál
+2026-09-16,Øresund – Drogden,49,4,48.0,0.0208,0.4145,normál
+2026-09-17,Øresund – Drogden,43,4,46.5,-0.0753,0.4145,normál
+2026-09-18,Øresund – Drogden,58,4,44.0,0.3182,0.4145,normál
+2026-09-19,Øresund – Drogden,59,4,53.5,0.1028,0.4145,normál
+2026-09-20,Øresund – Drogden,35,4,49.5,-0.2929,0.4145,normál
+2026-09-21,Øresund – Drogden,35,4,42.5,-0.1765,0.4145,normál
+2026-09-22,Øresund – Drogden,41,4,45.0,-0.0889,0.4145,normál
+2026-09-23,Øresund – Drogden,56,4,48.5,0.1546,0.4145,normál
+2026-09-24,Øresund – Drogden,47,4,46.5,0.0108,0.4145,normál
+2026-09-25,Øresund – Drogden,32,4,44.0,-0.2727,0.4145,normál
+2026-09-26,Øresund – Drogden,51,4,57.0,-0.1053,0.4145,normál
+2026-09-27,Øresund – Drogden,48,4,44.0,0.0909,0.4145,normál
+2026-09-28,Øresund – Drogden,50,4,36.0,0.3889,0.4145,normál
+2026-09-29,Øresund – Drogden,44,4,41.0,0.0732,0.4145,normál
+2026-09-30,Øresund – Drogden,38,4,52.0,-0.2692,0.4145,normál
+2026-10-01,Øresund – Drogden,58,4,47.0,0.234,0.4145,normál
+2026-10-02,Øresund – Drogden,46,4,41.5,0.1084,0.4145,normál
+2026-10-03,Øresund – Drogden,39,4,55.0,-0.2909,0.4145,normál
+2026-10-04,Øresund – Drogden,49,4,41.5,0.1807,0.4145,normál
+2026-10-05,Øresund – Drogden,53,4,42.5,0.2471,0.4145,normál
+2026-10-06,Øresund – Drogden,53,4,42.5,0.2471,0.4145,normál
+2026-06-01,Fehmarn-öv,90,0,,,0.2596,nincs alapszint
+2026-06-02,Fehmarn-öv,79,0,,,0.2596,nincs alapszint
+2026-06-03,Fehmarn-öv,82,0,,,0.2596,nincs alapszint
+2026-06-04,Fehmarn-öv,84,0,,,0.2596,nincs alapszint
+2026-06-05,Fehmarn-öv,81,0,,,0.2596,nincs alapszint
+2026-06-06,Fehmarn-öv,93,0,,,0.2596,nincs alapszint
+2026-06-07,Fehmarn-öv,85,0,,,0.2596,nincs alapszint
+2026-06-08,Fehmarn-öv,75,1,,,0.2596,nincs alapszint
+2026-06-09,Fehmarn-öv,66,1,,,0.2596,nincs alapszint
+2026-06-10,Fehmarn-öv,65,1,,,0.2596,nincs alapszint
+2026-06-11,Fehmarn-öv,86,1,,,0.2596,nincs alapszint
+2026-06-12,Fehmarn-öv,97,1,,,0.2596,nincs alapszint
+2026-06-13,Fehmarn-öv,84,1,,,0.2596,nincs alapszint
+2026-06-14,Fehmarn-öv,114,1,,,0.2596,nincs alapszint
+2026-06-15,Fehmarn-öv,68,2,,,0.2596,nincs alapszint
+2026-06-16,Fehmarn-öv,86,2,,,0.2596,nincs alapszint
+2026-06-17,Fehmarn-öv,73,2,,,0.2596,nincs alapszint
+2026-06-18,Fehmarn-öv,70,2,,,0.2596,nincs alapszint
+2026-06-19,Fehmarn-öv,103,2,,,0.2596,nincs alapszint
+2026-06-20,Fehmarn-öv,85,2,,,0.2596,nincs alapszint
+2026-06-21,Fehmarn-öv,100,2,,,0.2596,nincs alapszint
+2026-06-22,Fehmarn-öv,81,3,75.0,0.08,0.2596,normál
+2026-06-23,Fehmarn-öv,66,3,79.0,-0.1646,0.2596,normál
+2026-06-24,Fehmarn-öv,63,3,73.0,-0.137,0.2596,normál
+2026-06-25,Fehmarn-öv,76,3,84.0,-0.0952,0.2596,normál
+2026-06-26,Fehmarn-öv,80,3,97.0,-0.1753,0.2596,normál
+2026-06-27,Fehmarn-öv,90,3,85.0,0.0588,0.2596,normál
+2026-06-28,Fehmarn-öv,82,3,100.0,-0.18,0.2596,normál
+2026-06-29,Fehmarn-öv,86,4,78.0,0.1026,0.2596,normál
+2026-06-30,Fehmarn-öv,88,4,72.5,0.2138,0.2596,normál
+2026-07-01,Fehmarn-öv,70,4,69.0,0.0145,0.2596,normál
+2026-07-02,Fehmarn-öv,81,4,80.0,0.0125,0.2596,normál
+2026-07-03,Fehmarn-öv,86,4,89.0,-0.0337,0.2596,normál
+2026-07-04,Fehmarn-öv,72,4,87.5,-0.1771,0.2596,normál
+2026-07-05,Fehmarn-öv,85,4,92.5,-0.0811,0.2596,normál
+2026-07-06,Fehmarn-öv,104,4,78.0,0.3333,0.2596,szokatlanul magas
+2026-07-07,Fehmarn-öv,65,4,76.0,-0.1447,0.2596,normál
+2026-07-08,Fehmarn-öv,82,4,67.5,0.2148,0.2596,normál
+2026-07-09,Fehmarn-öv,64,4,78.5,-0.1847,0.2596,normál
+2026-07-10,Fehmarn-öv,81,4,91.5,-0.1148,0.2596,normál
+2026-07-11,Fehmarn-öv,79,4,84.5,-0.0651,0.2596,normál
+2026-07-12,Fehmarn-öv,70,4,92.5,-0.2432,0.2596,normál
+2026-07-13,Fehmarn-öv,84,4,83.5,0.006,0.2596,normál
+2026-07-14,Fehmarn-öv,93,4,76.0,0.2237,0.2596,normál
+2026-07-15,Fehmarn-öv,63,4,71.5,-0.1189,0.2596,normál
+2026-07-16,Fehmarn-öv,72,4,73.0,-0.0137,0.2596,normál
+2026-07-17,Fehmarn-öv,108,4,83.5,0.2934,0.2596,szokatlanul magas
+2026-07-18,Fehmarn-öv,83,4,82.0,0.0122,0.2596,normál
+2026-07-19,Fehmarn-öv,91,4,83.5,0.0898,0.2596,normál
+2026-07-20,Fehmarn-öv,76,4,85.0,-0.1059,0.2596,normál
+2026-07-21,Fehmarn-öv,69,4,77.0,-0.1039,0.2596,normál
+2026-07-22,Fehmarn-öv,74,4,66.5,0.1128,0.2596,normál
+2026-07-23,Fehmarn-öv,71,4,74.0,-0.0405,0.2596,normál
+2026-07-24,Fehmarn-öv,72,4,83.5,-0.1377,0.2596,normál
+2026-07-25,Fehmarn-öv,83,4,81.0,0.0247,0.2596,normál
+2026-07-26,Fehmarn-öv,82,4,83.5,-0.018,0.2596,normál
+2026-07-27,Fehmarn-öv,81,4,85.0,-0.0471,0.2596,normál
+2026-07-28,Fehmarn-öv,76,4,78.5,-0.0318,0.2596,normál
+2026-07-29,Fehmarn-öv,65,4,72.0,-0.0972,0.2596,normál
+2026-07-30,Fehmarn-öv,77,4,71.5,0.0769,0.2596,normál
+2026-07-31,Fehmarn-öv,75,4,83.5,-0.1018,0.2596,normál
+2026-08-01,Fehmarn-öv,89,4,81.0,0.0988,0.2596,normál
+2026-08-02,Fehmarn-öv,87,4,83.5,0.0419,0.2596,normál
+2026-08-03,Fehmarn-öv,74,4,82.5,-0.103,0.2596,normál
+2026-08-04,Fehmarn-öv,72,4,72.5,-0.0069,0.2596,normál
+2026-08-05,Fehmarn-öv,76,4,69.5,0.0935,0.2596,normál
+2026-08-06,Fehmarn-öv,69,4,71.5,-0.035,0.2596,normál
+2026-08-07,Fehmarn-öv,82,4,78.0,0.0513,0.2596,normál
+2026-08-08,Fehmarn-öv,92,4,83.0,0.1084,0.2596,normál
+2026-08-09,Fehmarn-öv,89,4,84.5,0.0533,0.2596,normál
+2026-08-10,Fehmarn-öv,53,4,78.5,-0.3248,0.2596,szokatlanul alacsony
+2026-08-11,Fehmarn-öv,71,4,74.0,-0.0405,0.2596,normál
+2026-08-12,Fehmarn-öv,73,4,69.5,0.0504,0.2596,normál
+2026-08-13,Fehmarn-öv,87,4,71.5,0.2168,0.2596,normál
+2026-08-14,Fehmarn-öv,90,4,78.5,0.1465,0.2596,normál
+2026-08-15,Fehmarn-öv,78,4,86.0,-0.093,0.2596,normál
+2026-08-16,Fehmarn-öv,85,4,88.0,-0.0341,0.2596,normál
+2026-08-17,Fehmarn-öv,80,4,75.0,0.0667,0.2596,normál
+2026-08-18,Fehmarn-öv,77,4,71.5,0.0769,0.2596,normál
+2026-08-19,Fehmarn-öv,81,4,73.5,0.102,0.2596,normál
+2026-08-20,Fehmarn-öv,91,4,74.0,0.2297,0.2596,normál
+2026-08-21,Fehmarn-öv,79,4,78.5,0.0064,0.2596,normál
+2026-08-22,Fehmarn-öv,80,4,86.0,-0.0698,0.2596,normál
+2026-08-23,Fehmarn-öv,109,4,86.0,0.2674,0.2596,szokatlanul magas
+2026-08-24,Fehmarn-öv,69,4,77.0,-0.1039,0.2596,normál
+2026-08-25,Fehmarn-öv,79,4,74.0,0.0676,0.2596,normál
+2026-08-26,Fehmarn-öv,87,4,74.5,0.1678,0.2596,normál
+2026-08-27,Fehmarn-öv,64,4,82.0,-0.2195,0.2596,normál
+2026-08-28,Fehmarn-öv,93,4,80.5,0.1553,0.2596,normál
+2026-08-29,Fehmarn-öv,110,4,84.5,0.3018,0.2596,szokatlanul magas
+2026-08-30,Fehmarn-öv,95,4,88.0,0.0795,0.2596,normál
+2026-08-31,Fehmarn-öv,88,4,71.5,0.2308,0.2596,normál
+2026-09-01,Fehmarn-öv,77,4,74.5,0.0336,0.2596,normál
+2026-09-02,Fehmarn-öv,63,4,78.5,-0.1975,0.2596,normál
+2026-09-03,Fehmarn-öv,87,4,78.0,0.1154,0.2596,normál
+2026-09-04,Fehmarn-öv,86,4,86.0,0.0,0.2596,normál
+2026-09-05,Fehmarn-öv,80,4,86.0,-0.0698,0.2596,normál
+2026-09-06,Fehmarn-öv,99,4,92.0,0.0761,0.2596,normál
+2026-09-07,Fehmarn-öv,91,4,74.5,0.2215,0.2596,normál
+2026-09-08,Fehmarn-öv,80,4,77.0,0.039,0.2596,normál
+2026-09-09,Fehmarn-öv,85,4,77.0,0.1039,0.2596,normál
+2026-09-10,Fehmarn-öv,71,4,87.0,-0.1839,0.2596,normál
+2026-09-11,Fehmarn-öv,83,4,88.0,-0.0568,0.2596,normál
+2026-09-12,Fehmarn-öv,98,4,80.0,0.225,0.2596,normál
+2026-09-13,Fehmarn-öv,100,4,97.0,0.0309,0.2596,normál
+2026-09-14,Fehmarn-öv,86,4,84.0,0.0238,0.2596,normál
+2026-09-15,Fehmarn-öv,79,4,78.0,0.0128,0.2596,normál
+2026-09-16,Fehmarn-öv,80,4,83.0,-0.0361,0.2596,normál
+2026-09-17,Fehmarn-öv,93,4,79.0,0.1772,0.2596,normál
+2026-09-18,Fehmarn-öv,99,4,84.5,0.1716,0.2596,normál
+2026-09-19,Fehmarn-öv,102,4,89.0,0.1461,0.2596,normál
+2026-09-20,Fehmarn-öv,96,4,99.5,-0.0352,0.2596,normál
+2026-09-21,Fehmarn-öv,85,4,87.0,-0.023,0.2596,normál
+2026-09-22,Fehmarn-öv,72,4,79.0,-0.0886,0.2596,normál
+2026-09-23,Fehmarn-öv,76,4,82.5,-0.0788,0.2596,normál
+2026-09-24,Fehmarn-öv,98,4,79.0,0.2405,0.2596,normál
+2026-09-25,Fehmarn-öv,95,4,89.5,0.0615,0.2596,normál
+2026-09-26,Fehmarn-öv,113,4,100.0,0.13,0.2596,normál
+2026-09-27,Fehmarn-öv,98,4,97.5,0.0051,0.2596,normál
+2026-09-28,Fehmarn-öv,89,4,87.0,0.023,0.2596,normál
+2026-09-29,Fehmarn-öv,81,4,78.0,0.0385,0.2596,normál
+2026-09-30,Fehmarn-öv,79,4,78.0,0.0128,0.2596,normál
+2026-10-01,Fehmarn-öv,83,4,90.0,-0.0778,0.2596,normál
+2026-10-02,Fehmarn-öv,87,4,90.5,-0.0387,0.2596,normál
+2026-10-03,Fehmarn-öv,106,4,100.0,0.06,0.2596,normál
+2026-10-04,Fehmarn-öv,101,4,98.5,0.0254,0.2596,normál
+2026-10-05,Fehmarn-öv,101,4,87.5,0.1543,0.2596,normál
+2026-10-06,Fehmarn-öv,82,4,79.5,0.0314,0.2596,normál
+2026-06-01,Kadet-rende,93,0,,,0.2839,nincs alapszint
+2026-06-02,Kadet-rende,82,0,,,0.2839,nincs alapszint
+2026-06-03,Kadet-rende,86,0,,,0.2839,nincs alapszint
+2026-06-04,Kadet-rende,93,0,,,0.2839,nincs alapszint
+2026-06-05,Kadet-rende,91,0,,,0.2839,nincs alapszint
+2026-06-06,Kadet-rende,90,0,,,0.2839,nincs alapszint
+2026-06-07,Kadet-rende,98,0,,,0.2839,nincs alapszint
+2026-06-08,Kadet-rende,76,1,,,0.2839,nincs alapszint
+2026-06-09,Kadet-rende,67,1,,,0.2839,nincs alapszint
+2026-06-10,Kadet-rende,80,1,,,0.2839,nincs alapszint
+2026-06-11,Kadet-rende,85,1,,,0.2839,nincs alapszint
+2026-06-12,Kadet-rende,97,1,,,0.2839,nincs alapszint
+2026-06-13,Kadet-rende,100,1,,,0.2839,nincs alapszint
+2026-06-14,Kadet-rende,105,1,,,0.2839,nincs alapszint
+2026-06-15,Kadet-rende,78,2,,,0.2839,nincs alapszint
+2026-06-16,Kadet-rende,91,2,,,0.2839,nincs alapszint
+2026-06-17,Kadet-rende,84,2,,,0.2839,nincs alapszint
+2026-06-18,Kadet-rende,82,2,,,0.2839,nincs alapszint
+2026-06-19,Kadet-rende,99,2,,,0.2839,nincs alapszint
+2026-06-20,Kadet-rende,87,2,,,0.2839,nincs alapszint
+2026-06-21,Kadet-rende,108,2,,,0.2839,nincs alapszint
+2026-06-22,Kadet-rende,79,3,78.0,0.0128,0.2839,normál
+2026-06-23,Kadet-rende,66,3,82.0,-0.1951,0.2839,normál
+2026-06-24,Kadet-rende,73,3,84.0,-0.131,0.2839,normál
+2026-06-25,Kadet-rende,75,3,85.0,-0.1176,0.2839,normál
+2026-06-26,Kadet-rende,82,3,97.0,-0.1546,0.2839,normál
+2026-06-27,Kadet-rende,94,3,90.0,0.0444,0.2839,normál
+2026-06-28,Kadet-rende,94,3,105.0,-0.1048,0.2839,normál
+2026-06-29,Kadet-rende,83,4,78.5,0.0573,0.2839,normál
+2026-06-30,Kadet-rende,91,4,74.5,0.2215,0.2839,normál
+2026-07-01,Kadet-rende,88,4,82.0,0.0732,0.2839,normál
+2026-07-02,Kadet-rende,89,4,83.5,0.0659,0.2839,normál
+2026-07-03,Kadet-rende,78,4,94.0,-0.1702,0.2839,normál
+2026-07-04,Kadet-rende,80,4,92.0,-0.1304,0.2839,normál
+2026-07-05,Kadet-rende,89,4,101.5,-0.1232,0.2839,normál
+2026-07-06,Kadet-rende,96,4,78.5,0.2229,0.2839,normál
+2026-07-07,Kadet-rende,60,4,79.0,-0.2405,0.2839,normál
+2026-07-08,Kadet-rende,108,4,82.0,0.3171,0.2839,szokatlanul magas
+2026-07-09,Kadet-rende,84,4,83.5,0.006,0.2839,normál
+2026-07-10,Kadet-rende,93,4,89.5,0.0391,0.2839,normál
+2026-07-11,Kadet-rende,81,4,90.5,-0.105,0.2839,normál
+2026-07-12,Kadet-rende,77,4,99.5,-0.2261,0.2839,normál
+2026-07-13,Kadet-rende,76,4,81.0,-0.0617,0.2839,normál
+2026-07-14,Kadet-rende,91,4,78.5,0.1592,0.2839,normál
+2026-07-15,Kadet-rende,84,4,86.0,-0.0233,0.2839,normál
+2026-07-16,Kadet-rende,69,4,83.0,-0.1687,0.2839,normál
+2026-07-17,Kadet-rende,97,4,87.5,0.1086,0.2839,normál
+2026-07-18,Kadet-rende,81,4,84.0,-0.0357,0.2839,normál
+2026-07-19,Kadet-rende,100,4,91.5,0.0929,0.2839,normál
+2026-07-20,Kadet-rende,65,4,81.0,-0.1975,0.2839,normál
+2026-07-21,Kadet-rende,75,4,78.5,-0.0446,0.2839,normál
+2026-07-22,Kadet-rende,73,4,86.0,-0.1512,0.2839,normál
+2026-07-23,Kadet-rende,71,4,79.5,-0.1069,0.2839,normál
+2026-07-24,Kadet-rende,82,4,87.5,-0.0629,0.2839,normál
+2026-07-25,Kadet-rende,73,4,81.0,-0.0988,0.2839,normál
+2026-07-26,Kadet-rende,94,4,91.5,0.0273,0.2839,normál
+2026-07-27,Kadet-rende,80,4,79.5,0.0063,0.2839,normál
+2026-07-28,Kadet-rende,71,4,83.0,-0.1446,0.2839,normál
+2026-07-29,Kadet-rende,78,4,86.0,-0.093,0.2839,normál
+2026-07-30,Kadet-rende,73,4,77.5,-0.0581,0.2839,normál
+2026-07-31,Kadet-rende,81,4,87.5,-0.0743,0.2839,normál
+2026-08-01,Kadet-rende,83,4,80.5,0.0311,0.2839,normál
+2026-08-02,Kadet-rende,101,4,91.5,0.1038,0.2839,normál
+2026-08-03,Kadet-rende,83,4,78.0,0.0641,0.2839,normál
+2026-08-04,Kadet-rende,71,4,73.0,-0.0274,0.2839,normál
+2026-08-05,Kadet-rende,80,4,81.0,-0.0123,0.2839,normál
+2026-08-06,Kadet-rende,71,4,72.0,-0.0139,0.2839,normál
+2026-08-07,Kadet-rende,91,4,87.5,0.04,0.2839,normál
+2026-08-08,Kadet-rende,97,4,81.0,0.1975,0.2839,normál
+2026-08-09,Kadet-rende,90,4,97.0,-0.0722,0.2839,normál
+2026-08-10,Kadet-rende,60,4,78.0,-0.2308,0.2839,normál
+2026-08-11,Kadet-rende,81,4,73.0,0.1096,0.2839,normál
+2026-08-12,Kadet-rende,82,4,79.0,0.038,0.2839,normál
+2026-08-13,Kadet-rende,79,4,71.0,0.1127,0.2839,normál
+2026-08-14,Kadet-rende,90,4,86.5,0.0405,0.2839,normál
+2026-08-15,Kadet-rende,77,4,82.0,-0.061,0.2839,normál
+2026-08-16,Kadet-rende,87,4,97.0,-0.1031,0.2839,normál
+2026-08-17,Kadet-rende,82,4,72.5,0.131,0.2839,normál
+2026-08-18,Kadet-rende,77,4,73.0,0.0548,0.2839,normál
+2026-08-19,Kadet-rende,77,4,79.0,-0.0253,0.2839,normál
+2026-08-20,Kadet-rende,92,4,72.0,0.2778,0.2839,normál
+2026-08-21,Kadet-rende,78,4,86.0,-0.093,0.2839,normál
+2026-08-22,Kadet-rende,83,4,80.0,0.0375,0.2839,normál
+2026-08-23,Kadet-rende,109,4,92.0,0.1848,0.2839,normál
+2026-08-24,Kadet-rende,65,4,81.0,-0.1975,0.2839,normál
+2026-08-25,Kadet-rende,77,4,74.0,0.0405,0.2839,normál
+2026-08-26,Kadet-rende,90,4,79.0,0.1392,0.2839,normál
+2026-08-27,Kadet-rende,61,4,76.0,-0.1974,0.2839,normál
+2026-08-28,Kadet-rende,97,4,85.5,0.1345,0.2839,normál
+2026-08-29,Kadet-rende,115,4,83.0,0.3855,0.2839,szokatlanul magas
+2026-08-30,Kadet-rende,93,4,95.5,-0.0262,0.2839,normál
+2026-08-31,Kadet-rende,90,4,73.5,0.2245,0.2839,normál
+2026-09-01,Kadet-rende,76,4,77.0,-0.013,0.2839,normál
+2026-09-02,Kadet-rende,71,4,81.0,-0.1235,0.2839,normál
+2026-09-03,Kadet-rende,92,4,75.0,0.2267,0.2839,normál
+2026-09-04,Kadet-rende,86,4,90.5,-0.0497,0.2839,normál
+2026-09-05,Kadet-rende,80,4,90.0,-0.1111,0.2839,normál
+2026-09-06,Kadet-rende,96,4,91.5,0.0492,0.2839,normál
+2026-09-07,Kadet-rende,91,4,73.5,0.2381,0.2839,normál
+2026-09-08,Kadet-rende,85,4,77.0,0.1039,0.2839,normál
+2026-09-09,Kadet-rende,86,4,79.5,0.0818,0.2839,normál
+2026-09-10,Kadet-rende,75,4,85.5,-0.1228,0.2839,normál
+2026-09-11,Kadet-rende,95,4,88.0,0.0795,0.2839,normál
+2026-09-12,Kadet-rende,86,4,81.5,0.0552,0.2839,normál
+2026-09-13,Kadet-rende,99,4,94.5,0.0476,0.2839,normál
+2026-09-14,Kadet-rende,92,4,86.0,0.0698,0.2839,normál
+2026-09-15,Kadet-rende,76,4,77.0,-0.013,0.2839,normál
+2026-09-16,Kadet-rende,92,4,81.5,0.1288,0.2839,normál
+2026-09-17,Kadet-rende,101,4,83.5,0.2096,0.2839,normál
+2026-09-18,Kadet-rende,101,4,90.5,0.116,0.2839,normál
+2026-09-19,Kadet-rende,97,4,84.5,0.1479,0.2839,normál
+2026-09-20,Kadet-rende,105,4,97.5,0.0769,0.2839,normál
+2026-09-21,Kadet-rende,90,4,90.5,-0.0055,0.2839,normál
+2026-09-22,Kadet-rende,70,4,76.5,-0.085,0.2839,normál
+2026-09-23,Kadet-rende,89,4,88.0,0.0114,0.2839,normál
+2026-09-24,Kadet-rende,107,4,83.5,0.2814,0.2839,normál
+2026-09-25,Kadet-rende,103,4,96.0,0.0729,0.2839,normál
+2026-09-26,Kadet-rende,110,4,91.5,0.2022,0.2839,normál
+2026-09-27,Kadet-rende,98,4,97.5,0.0051,0.2839,normál
+2026-09-28,Kadet-rende,79,4,90.5,-0.1271,0.2839,normál
+2026-09-29,Kadet-rende,89,4,76.0,0.1711,0.2839,normál
+2026-09-30,Kadet-rende,85,4,87.5,-0.0286,0.2839,normál
+2026-10-01,Kadet-rende,84,4,96.5,-0.1295,0.2839,normál
+2026-10-02,Kadet-rende,98,4,98.0,0.0,0.2839,normál
+2026-10-03,Kadet-rende,108,4,91.5,0.1803,0.2839,normál
+2026-10-04,Kadet-rende,109,4,98.5,0.1066,0.2839,normál
+2026-10-05,Kadet-rende,95,4,90.5,0.0497,0.2839,normál
+2026-10-06,Kadet-rende,85,4,80.5,0.0559,0.2839,normál
+2026-06-01,Kis-Balti-öv,1,0,,,1.2879,nincs alapszint
+2026-06-02,Kis-Balti-öv,3,0,,,1.2879,nincs alapszint
+2026-06-03,Kis-Balti-öv,4,0,,,1.2879,nincs alapszint
+2026-06-04,Kis-Balti-öv,6,0,,,1.2879,nincs alapszint
+2026-06-05,Kis-Balti-öv,2,0,,,1.2879,nincs alapszint
+2026-06-06,Kis-Balti-öv,5,0,,,1.2879,nincs alapszint
+2026-06-07,Kis-Balti-öv,1,0,,,1.2879,nincs alapszint
+2026-06-08,Kis-Balti-öv,1,1,,,1.2879,nincs alapszint
+2026-06-09,Kis-Balti-öv,3,1,,,1.2879,nincs alapszint
+2026-06-10,Kis-Balti-öv,2,1,,,1.2879,nincs alapszint
+2026-06-11,Kis-Balti-öv,2,1,,,1.2879,nincs alapszint
+2026-06-12,Kis-Balti-öv,3,1,,,1.2879,nincs alapszint
+2026-06-13,Kis-Balti-öv,0,1,,,1.2879,nincs alapszint
+2026-06-14,Kis-Balti-öv,4,1,,,1.2879,nincs alapszint
+2026-06-15,Kis-Balti-öv,3,2,,,1.2879,nincs alapszint
+2026-06-16,Kis-Balti-öv,7,2,,,1.2879,nincs alapszint
+2026-06-17,Kis-Balti-öv,5,2,,,1.2879,nincs alapszint
+2026-06-18,Kis-Balti-öv,2,2,,,1.2879,nincs alapszint
+2026-06-19,Kis-Balti-öv,4,2,,,1.2879,nincs alapszint
+2026-06-20,Kis-Balti-öv,2,2,,,1.2879,nincs alapszint
+2026-06-21,Kis-Balti-öv,1,2,,,1.2879,nincs alapszint
+2026-06-22,Kis-Balti-öv,5,3,1.0,4.0,1.2879,szokatlanul magas
+2026-06-23,Kis-Balti-öv,5,3,3.0,0.6667,1.2879,normál
+2026-06-24,Kis-Balti-öv,7,3,4.0,0.75,1.2879,normál
+2026-06-25,Kis-Balti-öv,4,3,2.0,1.0,1.2879,normál
+2026-06-26,Kis-Balti-öv,1,3,3.0,-0.6667,1.2879,normál
+2026-06-27,Kis-Balti-öv,3,3,2.0,0.5,1.2879,normál
+2026-06-28,Kis-Balti-öv,1,3,1.0,0.0,1.2879,normál
+2026-06-29,Kis-Balti-öv,3,4,2.0,0.5,1.2879,normál
+2026-06-30,Kis-Balti-öv,3,4,4.0,-0.25,1.2879,normál
+2026-07-01,Kis-Balti-öv,4,4,4.5,-0.1111,1.2879,normál
+2026-07-02,Kis-Balti-öv,7,4,3.0,1.3333,1.2879,szokatlanul magas
+2026-07-03,Kis-Balti-öv,1,4,2.5,-0.6,1.2879,normál
+2026-07-04,Kis-Balti-öv,2,4,2.5,-0.2,1.2879,normál
+2026-07-05,Kis-Balti-öv,0,4,1.0,-1.0,1.2879,normál
+2026-07-06,Kis-Balti-öv,2,4,3.0,-0.3333,1.2879,normál
+2026-07-07,Kis-Balti-öv,4,4,4.0,0.0,1.2879,normál
+2026-07-08,Kis-Balti-öv,7,4,4.5,0.5556,1.2879,normál
+2026-07-09,Kis-Balti-öv,1,4,3.0,-0.6667,1.2879,normál
+2026-07-10,Kis-Balti-öv,3,4,2.0,0.5,1.2879,normál
+2026-07-11,Kis-Balti-öv,2,4,2.0,0.0,1.2879,normál
+2026-07-12,Kis-Balti-öv,5,4,1.0,4.0,1.2879,szokatlanul magas
+2026-07-13,Kis-Balti-öv,4,4,3.0,0.3333,1.2879,normál
+2026-07-14,Kis-Balti-öv,6,4,4.5,0.3333,1.2879,normál
+2026-07-15,Kis-Balti-öv,2,4,6.0,-0.6667,1.2879,normál
+2026-07-16,Kis-Balti-öv,0,4,3.0,-1.0,1.2879,normál
+2026-07-17,Kis-Balti-öv,2,4,2.0,0.0,1.2879,normál
+2026-07-18,Kis-Balti-öv,0,4,2.0,-1.0,1.2879,normál
+2026-07-19,Kis-Balti-öv,1,4,1.0,0.0,1.2879,normál
+2026-07-20,Kis-Balti-öv,1,4,3.5,-0.7143,1.2879,normál
+2026-07-21,Kis-Balti-öv,0,4,4.5,-1.0,1.2879,normál
+2026-07-22,Kis-Balti-öv,3,4,5.5,-0.4545,1.2879,normál
+2026-07-23,Kis-Balti-öv,4,4,2.5,0.6,1.2879,normál
+2026-07-24,Kis-Balti-öv,1,4,1.5,-0.3333,1.2879,normál
+2026-07-25,Kis-Balti-öv,0,4,2.0,-1.0,1.2879,normál
+2026-07-26,Kis-Balti-öv,1,4,1.0,0.0,1.2879,normál
+2026-07-27,Kis-Balti-öv,3,4,2.5,0.2,1.2879,normál
+2026-07-28,Kis-Balti-öv,6,4,3.5,0.7143,1.2879,normál
+2026-07-29,Kis-Balti-öv,3,4,3.5,-0.1429,1.2879,normál
+2026-07-30,Kis-Balti-öv,7,4,2.5,1.8,1.2879,szokatlanul magas
+2026-07-31,Kis-Balti-öv,2,4,1.5,0.3333,1.2879,normál
+2026-08-01,Kis-Balti-öv,0,4,1.0,-1.0,1.2879,normál
+2026-08-02,Kis-Balti-öv,2,4,1.0,1.0,1.2879,normál
+2026-08-03,Kis-Balti-öv,3,4,2.5,0.2,1.2879,normál
+2026-08-04,Kis-Balti-öv,3,4,5.0,-0.4,1.2879,normál
+2026-08-05,Kis-Balti-öv,4,4,3.0,0.3333,1.2879,normál
+2026-08-06,Kis-Balti-öv,4,4,2.5,0.6,1.2879,normál
+2026-08-07,Kis-Balti-öv,4,4,2.0,1.0,1.2879,normál
+2026-08-08,Kis-Balti-öv,0,4,,,1.2879,nincs alapszint
+2026-08-09,Kis-Balti-öv,2,4,1.5,0.3333,1.2879,normál
+2026-08-10,Kis-Balti-öv,3,4,3.0,0.0,1.2879,normál
+2026-08-11,Kis-Balti-öv,1,4,4.5,-0.7778,1.2879,normál
+2026-08-12,Kis-Balti-öv,5,4,3.0,0.6667,1.2879,normál
+2026-08-13,Kis-Balti-öv,4,4,4.0,0.0,1.2879,normál
+2026-08-14,Kis-Balti-öv,3,4,2.0,0.5,1.2879,normál
+2026-08-15,Kis-Balti-öv,4,4,,,1.2879,nincs alapszint
+2026-08-16,Kis-Balti-öv,6,4,1.5,3.0,1.2879,szokatlanul magas
+2026-08-17,Kis-Balti-öv,5,4,3.0,0.6667,1.2879,normál
+2026-08-18,Kis-Balti-öv,5,4,2.0,1.5,1.2879,szokatlanul magas
+2026-08-19,Kis-Balti-öv,5,4,3.5,0.4286,1.2879,normál
+2026-08-20,Kis-Balti-öv,6,4,4.0,0.5,1.2879,normál
+2026-08-21,Kis-Balti-öv,3,4,2.5,0.2,1.2879,normál
+2026-08-22,Kis-Balti-öv,1,4,,,1.2879,nincs alapszint
+2026-08-23,Kis-Balti-öv,1,4,2.0,-0.5,1.2879,normál
+2026-08-24,Kis-Balti-öv,8,4,3.0,1.6667,1.2879,szokatlanul magas
+2026-08-25,Kis-Balti-öv,6,4,4.0,0.5,1.2879,normál
+2026-08-26,Kis-Balti-öv,5,4,4.5,0.1111,1.2879,normál
+2026-08-27,Kis-Balti-öv,1,4,5.0,-0.8,1.2879,normál
+2026-08-28,Kis-Balti-öv,4,4,3.0,0.3333,1.2879,normál
+2026-08-29,Kis-Balti-öv,3,4,0.5,5.0,1.2879,szokatlanul magas
+2026-08-30,Kis-Balti-öv,2,4,2.0,0.0,1.2879,normál
+2026-08-31,Kis-Balti-öv,8,4,4.0,1.0,1.2879,normál
+2026-09-01,Kis-Balti-öv,5,4,4.0,0.25,1.2879,normál
+2026-09-02,Kis-Balti-öv,4,4,5.0,-0.2,1.2879,normál
+2026-09-03,Kis-Balti-öv,2,4,4.0,-0.5,1.2879,normál
+2026-09-04,Kis-Balti-öv,3,4,3.5,-0.1429,1.2879,normál
+2026-09-05,Kis-Balti-öv,4,4,2.0,1.0,1.2879,normál
+2026-09-06,Kis-Balti-öv,1,4,2.0,-0.5,1.2879,normál
+2026-09-07,Kis-Balti-öv,4,4,6.5,-0.3846,1.2879,normál
+2026-09-08,Kis-Balti-öv,6,4,5.0,0.2,1.2879,normál
+2026-09-09,Kis-Balti-öv,2,4,5.0,-0.6,1.2879,normál
+2026-09-10,Kis-Balti-öv,4,4,3.0,0.3333,1.2879,normál
+2026-09-11,Kis-Balti-öv,3,4,3.0,0.0,1.2879,normál
+2026-09-12,Kis-Balti-öv,2,4,3.5,-0.4286,1.2879,normál
+2026-09-13,Kis-Balti-öv,2,4,1.5,0.3333,1.2879,normál
+2026-09-14,Kis-Balti-öv,6,4,6.5,-0.0769,1.2879,normál
+2026-09-15,Kis-Balti-öv,3,4,5.5,-0.4545,1.2879,normál
+2026-09-16,Kis-Balti-öv,3,4,4.5,-0.3333,1.2879,normál
+2026-09-17,Kis-Balti-öv,4,4,3.0,0.3333,1.2879,normál
+2026-09-18,Kis-Balti-öv,2,4,3.0,-0.3333,1.2879,normál
+2026-09-19,Kis-Balti-öv,2,4,2.5,-0.2,1.2879,normál
+2026-09-20,Kis-Balti-öv,3,4,1.5,1.0,1.2879,normál
+2026-09-21,Kis-Balti-öv,3,4,7.0,-0.5714,1.2879,normál
+2026-09-22,Kis-Balti-öv,6,4,5.5,0.0909,1.2879,normál
+2026-09-23,Kis-Balti-öv,4,4,3.5,0.1429,1.2879,normál
+2026-09-24,Kis-Balti-öv,2,4,3.0,-0.3333,1.2879,normál
+2026-09-25,Kis-Balti-öv,2,4,3.0,-0.3333,1.2879,normál
+2026-09-26,Kis-Balti-öv,5,4,2.5,1.0,1.2879,normál
+2026-09-27,Kis-Balti-öv,4,4,2.0,1.0,1.2879,normál
+2026-09-28,Kis-Balti-öv,8,4,5.0,0.6,1.2879,normál
+2026-09-29,Kis-Balti-öv,7,4,5.5,0.2727,1.2879,normál
+2026-09-30,Kis-Balti-öv,3,4,3.5,-0.1429,1.2879,normál
+2026-10-01,Kis-Balti-öv,2,4,3.0,-0.3333,1.2879,normál
+2026-10-02,Kis-Balti-öv,3,4,2.5,0.2,1.2879,normál
+2026-10-03,Kis-Balti-öv,1,4,3.0,-0.6667,1.2879,normál
+2026-10-04,Kis-Balti-öv,4,4,2.5,0.6,1.2879,normál
+2026-10-05,Kis-Balti-öv,3,4,5.0,-0.4,1.2879,normál
+2026-10-06,Kis-Balti-öv,8,4,6.0,0.3333,1.2879,normál
+2026-06-01,Skagen,106,0,,,0.2713,nincs alapszint
+2026-06-02,Skagen,110,0,,,0.2713,nincs alapszint
+2026-06-03,Skagen,102,0,,,0.2713,nincs alapszint
+2026-06-04,Skagen,114,0,,,0.2713,nincs alapszint
+2026-06-05,Skagen,131,0,,,0.2713,nincs alapszint
+2026-06-06,Skagen,107,0,,,0.2713,nincs alapszint
+2026-06-07,Skagen,107,0,,,0.2713,nincs alapszint
+2026-06-08,Skagen,117,1,,,0.2713,nincs alapszint
+2026-06-09,Skagen,106,1,,,0.2713,nincs alapszint
+2026-06-10,Skagen,112,1,,,0.2713,nincs alapszint
+2026-06-11,Skagen,119,1,,,0.2713,nincs alapszint
+2026-06-12,Skagen,129,1,,,0.2713,nincs alapszint
+2026-06-13,Skagen,121,1,,,0.2713,nincs alapszint
+2026-06-14,Skagen,102,1,,,0.2713,nincs alapszint
+2026-06-15,Skagen,100,2,,,0.2713,nincs alapszint
+2026-06-16,Skagen,107,2,,,0.2713,nincs alapszint
+2026-06-17,Skagen,104,2,,,0.2713,nincs alapszint
+2026-06-18,Skagen,131,2,,,0.2713,nincs alapszint
+2026-06-19,Skagen,123,2,,,0.2713,nincs alapszint
+2026-06-20,Skagen,128,2,,,0.2713,nincs alapszint
+2026-06-21,Skagen,100,2,,,0.2713,nincs alapszint
+2026-06-22,Skagen,116,3,106.0,0.0943,0.2713,normál
+2026-06-23,Skagen,114,3,107.0,0.0654,0.2713,normál
+2026-06-24,Skagen,95,3,104.0,-0.0865,0.2713,normál
+2026-06-25,Skagen,116,3,119.0,-0.0252,0.2713,normál
+2026-06-26,Skagen,122,3,129.0,-0.0543,0.2713,normál
+2026-06-27,Skagen,124,3,121.0,0.0248,0.2713,normál
+2026-06-28,Skagen,112,3,102.0,0.098,0.2713,normál
+2026-06-29,Skagen,123,4,111.0,0.1081,0.2713,normál
+2026-06-30,Skagen,111,4,108.5,0.023,0.2713,normál
+2026-07-01,Skagen,97,4,103.0,-0.0583,0.2713,normál
+2026-07-02,Skagen,89,4,117.5,-0.2426,0.2713,normál
+2026-07-03,Skagen,91,4,126.0,-0.2778,0.2713,szokatlanul alacsony
+2026-07-04,Skagen,142,4,122.5,0.1592,0.2713,normál
+2026-07-05,Skagen,122,4,104.5,0.1675,0.2713,normál
+2026-07-06,Skagen,126,4,116.5,0.0815,0.2713,normál
+2026-07-07,Skagen,104,4,109.0,-0.0459,0.2713,normál
+2026-07-08,Skagen,111,4,100.5,0.1045,0.2713,normál
+2026-07-09,Skagen,120,4,117.5,0.0213,0.2713,normál
+2026-07-10,Skagen,133,4,122.5,0.0857,0.2713,normál
+2026-07-11,Skagen,121,4,126.0,-0.0397,0.2713,normál
+2026-07-12,Skagen,97,4,107.0,-0.0935,0.2713,normál
+2026-07-13,Skagen,128,4,119.5,0.0711,0.2713,normál
+2026-07-14,Skagen,126,4,109.0,0.156,0.2713,normál
+2026-07-15,Skagen,107,4,100.5,0.0647,0.2713,normál
+2026-07-16,Skagen,135,4,118.0,0.1441,0.2713,normál
+2026-07-17,Skagen,107,4,122.5,-0.1265,0.2713,normál
+2026-07-18,Skagen,102,4,126.0,-0.1905,0.2713,normál
+2026-07-19,Skagen,96,4,106.0,-0.0943,0.2713,normál
+2026-07-20,Skagen,109,4,124.5,-0.1245,0.2713,normál
+2026-07-21,Skagen,112,4,112.5,-0.0044,0.2713,normál
+2026-07-22,Skagen,88,4,102.0,-0.1373,0.2713,normál
+2026-07-23,Skagen,118,4,118.0,0.0,0.2713,normál
+2026-07-24,Skagen,98,4,114.5,-0.1441,0.2713,normál
+2026-07-25,Skagen,104,4,122.5,-0.151,0.2713,normál
+2026-07-26,Skagen,115,4,104.5,0.1005,0.2713,normál
+2026-07-27,Skagen,81,4,124.5,-0.3494,0.2713,szokatlanul alacsony
+2026-07-28,Skagen,120,4,111.5,0.0762,0.2713,normál
+2026-07-29,Skagen,106,4,102.0,0.0392,0.2713,normál
+2026-07-30,Skagen,119,4,119.0,0.0,0.2713,normál
+2026-07-31,Skagen,114,4,102.5,0.1122,0.2713,normál
+2026-08-01,Skagen,129,4,112.5,0.1467,0.2713,normál
+2026-08-02,Skagen,103,4,106.0,-0.0283,0.2713,normál
+2026-08-03,Skagen,95,4,117.5,-0.1915,0.2713,normál
+2026-08-04,Skagen,117,4,116.0,0.0086,0.2713,normál
+2026-08-05,Skagen,73,4,106.5,-0.3146,0.2713,szokatlanul alacsony
+2026-08-06,Skagen,105,4,119.5,-0.1213,0.2713,normál
+2026-08-07,Skagen,108,4,110.5,-0.0226,0.2713,normál
+2026-08-08,Skagen,124,4,112.5,0.1022,0.2713,normál
+2026-08-09,Skagen,134,4,100.0,0.34,0.2713,szokatlanul magas
+2026-08-10,Skagen,102,4,102.0,0.0,0.2713,normál
+2026-08-11,Skagen,101,4,118.5,-0.1477,0.2713,normál
+2026-08-12,Skagen,111,4,97.0,0.1443,0.2713,normál
+2026-08-13,Skagen,105,4,118.5,-0.1139,0.2713,normál
+2026-08-14,Skagen,111,4,107.5,0.0326,0.2713,normál
+2026-08-15,Skagen,128,4,114.0,0.1228,0.2713,normál
+2026-08-16,Skagen,119,4,109.0,0.0917,0.2713,normál
+2026-08-17,Skagen,111,4,98.5,0.1269,0.2713,normál
+2026-08-18,Skagen,114,4,114.5,-0.0044,0.2713,normál
+2026-08-19,Skagen,101,4,97.0,0.0412,0.2713,normál
+2026-08-20,Skagen,130,4,111.5,0.1659,0.2713,normál
+2026-08-21,Skagen,130,4,109.5,0.1872,0.2713,normál
+2026-08-22,Skagen,126,4,126.0,0.0,0.2713,normál
+2026-08-23,Skagen,99,4,117.0,-0.1538,0.2713,normál
+2026-08-24,Skagen,127,4,98.5,0.2893,0.2713,szokatlanul magas
+2026-08-25,Skagen,130,4,115.5,0.1255,0.2713,normál
+2026-08-26,Skagen,119,4,103.5,0.1498,0.2713,normál
+2026-08-27,Skagen,115,4,112.0,0.0268,0.2713,normál
+2026-08-28,Skagen,122,4,112.5,0.0844,0.2713,normál
+2026-08-29,Skagen,132,4,127.0,0.0394,0.2713,normál
+2026-08-30,Skagen,121,4,111.0,0.0901,0.2713,normál
+2026-08-31,Skagen,134,4,106.5,0.2582,0.2713,normál
+2026-09-01,Skagen,117,4,115.5,0.013,0.2713,normál
+2026-09-02,Skagen,121,4,106.0,0.1415,0.2713,normál
+2026-09-03,Skagen,140,4,110.0,0.2727,0.2713,szokatlanul magas
+2026-09-04,Skagen,131,4,116.5,0.1245,0.2713,normál
+2026-09-05,Skagen,100,4,127.0,-0.2126,0.2713,normál
+2026-09-06,Skagen,118,4,120.0,-0.0167,0.2713,normál
+2026-09-07,Skagen,130,4,119.0,0.0924,0.2713,normál
+2026-09-08,Skagen,102,4,115.5,-0.1169,0.2713,normál
+2026-09-09,Skagen,108,4,115.0,-0.0609,0.2713,normál
+2026-09-10,Skagen,107,4,122.5,-0.1265,0.2713,normál
+2026-09-11,Skagen,125,4,126.0,-0.0079,0.2713,normál
+2026-09-12,Skagen,121,4,127.0,-0.0472,0.2713,normál
+2026-09-13,Skagen,129,4,118.5,0.0886,0.2713,normál
+2026-09-14,Skagen,123,4,128.5,-0.0428,0.2713,normál
+2026-09-15,Skagen,127,4,115.5,0.0996,0.2713,normál
+2026-09-16,Skagen,111,4,113.5,-0.022,0.2713,normál
+2026-09-17,Skagen,127,4,122.5,0.0367,0.2713,normál
+2026-09-18,Skagen,117,4,127.5,-0.0824,0.2713,normál
+2026-09-19,Skagen,121,4,123.5,-0.0202,0.2713,normál
+2026-09-20,Skagen,94,4,119.5,-0.2134,0.2713,normál
+2026-09-21,Skagen,106,4,128.5,-0.1751,0.2713,normál
+2026-09-22,Skagen,109,4,122.0,-0.1066,0.2713,normál
+2026-09-23,Skagen,120,4,115.0,0.0435,0.2713,normál
+2026-09-24,Skagen,118,4,121.0,-0.0248,0.2713,normál
+2026-09-25,Skagen,137,4,123.5,0.1093,0.2713,normál
+2026-09-26,Skagen,134,4,121.0,0.1074,0.2713,normál
+2026-09-27,Skagen,135,4,119.5,0.1297,0.2713,normál
+2026-09-28,Skagen,104,4,126.5,-0.1779,0.2713,normál
+2026-09-29,Skagen,103,4,113.0,-0.0885,0.2713,normál
+2026-09-30,Skagen,100,4,115.5,-0.1342,0.2713,normál
+2026-10-01,Skagen,114,4,122.5,-0.0694,0.2713,normál
+2026-10-02,Skagen,132,4,128.0,0.0312,0.2713,normál
+2026-10-03,Skagen,135,4,121.0,0.1157,0.2713,normál
+2026-10-04,Skagen,99,4,123.5,-0.1984,0.2713,normál
+2026-10-05,Skagen,112,4,114.5,-0.0218,0.2713,normál
+2026-10-06,Skagen,110,4,106.0,0.0377,0.2713,normál
+2026-06-01,Nagy-Balti-öv | észak,25,0,,,0.4824,nincs alapszint
+2026-06-02,Nagy-Balti-öv | észak,35,0,,,0.4824,nincs alapszint
+2026-06-03,Nagy-Balti-öv | észak,21,0,,,0.4824,nincs alapszint
+2026-06-04,Nagy-Balti-öv | észak,38,0,,,0.4824,nincs alapszint
+2026-06-05,Nagy-Balti-öv | észak,28,0,,,0.4824,nincs alapszint
+2026-06-06,Nagy-Balti-öv | észak,31,0,,,0.4824,nincs alapszint
+2026-06-07,Nagy-Balti-öv | észak,28,0,,,0.4824,nincs alapszint
+2026-06-08,Nagy-Balti-öv | észak,23,1,,,0.4824,nincs alapszint
+2026-06-09,Nagy-Balti-öv | észak,20,1,,,0.4824,nincs alapszint
+2026-06-10,Nagy-Balti-öv | észak,23,1,,,0.4824,nincs alapszint
+2026-06-11,Nagy-Balti-öv | észak,31,1,,,0.4824,nincs alapszint
+2026-06-12,Nagy-Balti-öv | észak,29,1,,,0.4824,nincs alapszint
+2026-06-13,Nagy-Balti-öv | észak,24,1,,,0.4824,nincs alapszint
+2026-06-14,Nagy-Balti-öv | észak,36,1,,,0.4824,nincs alapszint
+2026-06-15,Nagy-Balti-öv | észak,25,2,,,0.4824,nincs alapszint
+2026-06-16,Nagy-Balti-öv | észak,31,2,,,0.4824,nincs alapszint
+2026-06-17,Nagy-Balti-öv | észak,29,2,,,0.4824,nincs alapszint
+2026-06-18,Nagy-Balti-öv | észak,34,2,,,0.4824,nincs alapszint
+2026-06-19,Nagy-Balti-öv | észak,33,2,,,0.4824,nincs alapszint
+2026-06-20,Nagy-Balti-öv | észak,28,2,,,0.4824,nincs alapszint
+2026-06-21,Nagy-Balti-öv | észak,23,2,,,0.4824,nincs alapszint
+2026-06-22,Nagy-Balti-öv | észak,32,3,25.0,0.28,0.4824,normál
+2026-06-23,Nagy-Balti-öv | észak,26,3,31.0,-0.1613,0.4824,normál
+2026-06-24,Nagy-Balti-öv | észak,22,3,23.0,-0.0435,0.4824,normál
+2026-06-25,Nagy-Balti-öv | észak,28,3,34.0,-0.1765,0.4824,normál
+2026-06-26,Nagy-Balti-öv | észak,33,3,29.0,0.1379,0.4824,normál
+2026-06-27,Nagy-Balti-öv | észak,26,3,28.0,-0.0714,0.4824,normál
+2026-06-28,Nagy-Balti-öv | észak,22,3,28.0,-0.2143,0.4824,normál
+2026-06-29,Nagy-Balti-öv | észak,27,4,25.0,0.08,0.4824,normál
+2026-06-30,Nagy-Balti-öv | észak,31,4,28.5,0.0877,0.4824,normál
+2026-07-01,Nagy-Balti-öv | észak,26,4,22.5,0.1556,0.4824,normál
+2026-07-02,Nagy-Balti-öv | észak,17,4,32.5,-0.4769,0.4824,normál
+2026-07-03,Nagy-Balti-öv | észak,30,4,31.0,-0.0323,0.4824,normál
+2026-07-04,Nagy-Balti-öv | észak,29,4,27.0,0.0741,0.4824,normál
+2026-07-05,Nagy-Balti-öv | észak,30,4,25.5,0.1765,0.4824,normál
+2026-07-06,Nagy-Balti-öv | észak,19,4,26.0,-0.2692,0.4824,normál
+2026-07-07,Nagy-Balti-öv | észak,21,4,28.5,-0.2632,0.4824,normál
+2026-07-08,Nagy-Balti-öv | észak,22,4,24.5,-0.102,0.4824,normál
+2026-07-09,Nagy-Balti-öv | észak,25,4,29.5,-0.1525,0.4824,normál
+2026-07-10,Nagy-Balti-öv | észak,23,4,31.5,-0.2698,0.4824,normál
+2026-07-11,Nagy-Balti-öv | észak,32,4,27.0,0.1852,0.4824,normál
+2026-07-12,Nagy-Balti-öv | észak,30,4,26.5,0.1321,0.4824,normál
+2026-07-13,Nagy-Balti-öv | észak,32,4,26.0,0.2308,0.4824,normál
+2026-07-14,Nagy-Balti-öv | észak,36,4,28.5,0.2632,0.4824,normál
+2026-07-15,Nagy-Balti-öv | észak,33,4,24.0,0.375,0.4824,normál
+2026-07-16,Nagy-Balti-öv | észak,26,4,26.5,-0.0189,0.4824,normál
+2026-07-17,Nagy-Balti-öv | észak,36,4,31.5,0.1429,0.4824,normál
+2026-07-18,Nagy-Balti-öv | észak,18,4,28.5,-0.3684,0.4824,normál
+2026-07-19,Nagy-Balti-öv | észak,28,4,26.5,0.0566,0.4824,normál
+2026-07-20,Nagy-Balti-öv | észak,32,4,29.5,0.0847,0.4824,normál
+2026-07-21,Nagy-Balti-öv | észak,21,4,28.5,-0.2632,0.4824,normál
+2026-07-22,Nagy-Balti-öv | észak,24,4,24.0,0.0,0.4824,normál
+2026-07-23,Nagy-Balti-öv | észak,20,4,25.5,-0.2157,0.4824,normál
+2026-07-24,Nagy-Balti-öv | észak,24,4,31.5,-0.2381,0.4824,normál
+2026-07-25,Nagy-Balti-öv | észak,29,4,27.5,0.0545,0.4824,normál
+2026-07-26,Nagy-Balti-öv | észak,27,4,29.0,-0.069,0.4824,normál
+2026-07-27,Nagy-Balti-öv | észak,28,4,29.5,-0.0508,0.4824,normál
+2026-07-28,Nagy-Balti-öv | észak,27,4,26.0,0.0385,0.4824,normál
+2026-07-29,Nagy-Balti-öv | észak,19,4,25.0,-0.24,0.4824,normál
+2026-07-30,Nagy-Balti-öv | észak,28,4,22.5,0.2444,0.4824,normál
+2026-07-31,Nagy-Balti-öv | észak,26,4,27.0,-0.037,0.4824,normál
+2026-08-01,Nagy-Balti-öv | észak,36,4,29.0,0.2414,0.4824,normál
+2026-08-02,Nagy-Balti-öv | észak,26,4,29.0,-0.1034,0.4824,normál
+2026-08-03,Nagy-Balti-öv | észak,31,4,30.0,0.0333,0.4824,normál
+2026-08-04,Nagy-Balti-öv | észak,31,4,24.0,0.2917,0.4824,normál
+2026-08-05,Nagy-Balti-öv | észak,21,4,23.0,-0.087,0.4824,normál
+2026-08-06,Nagy-Balti-öv | észak,30,4,25.5,0.1765,0.4824,normál
+2026-08-07,Nagy-Balti-öv | észak,15,4,25.0,-0.4,0.4824,normál
+2026-08-08,Nagy-Balti-öv | észak,42,4,30.5,0.377,0.4824,normál
+2026-08-09,Nagy-Balti-öv | észak,23,4,27.5,-0.1636,0.4824,normál
+2026-08-10,Nagy-Balti-öv | észak,22,4,31.5,-0.3016,0.4824,normál
+2026-08-11,Nagy-Balti-öv | észak,22,4,29.0,-0.2414,0.4824,normál
+2026-08-12,Nagy-Balti-öv | észak,34,4,22.5,0.5111,0.4824,szokatlanul magas
+2026-08-13,Nagy-Balti-öv | észak,24,4,27.0,-0.1111,0.4824,normál
+2026-08-14,Nagy-Balti-öv | észak,30,4,25.0,0.2,0.4824,normál
+2026-08-15,Nagy-Balti-öv | észak,19,4,32.5,-0.4154,0.4824,normál
+2026-08-16,Nagy-Balti-öv | észak,22,4,26.5,-0.1698,0.4824,normál
+2026-08-17,Nagy-Balti-öv | észak,33,4,29.5,0.1186,0.4824,normál
+2026-08-18,Nagy-Balti-öv | észak,29,4,24.5,0.1837,0.4824,normál
+2026-08-19,Nagy-Balti-öv | észak,27,4,22.5,0.2,0.4824,normál
+2026-08-20,Nagy-Balti-öv | észak,30,4,26.0,0.1538,0.4824,normál
+2026-08-21,Nagy-Balti-öv | észak,34,4,25.0,0.36,0.4824,normál
+2026-08-22,Nagy-Balti-öv | észak,23,4,32.5,-0.2923,0.4824,normál
+2026-08-23,Nagy-Balti-öv | észak,35,4,24.5,0.4286,0.4824,normál
+2026-08-24,Nagy-Balti-öv | észak,23,4,29.5,-0.2203,0.4824,normál
+2026-08-25,Nagy-Balti-öv | észak,33,4,28.0,0.1786,0.4824,normál
+2026-08-26,Nagy-Balti-öv | észak,23,4,24.0,-0.0417,0.4824,normál
+2026-08-27,Nagy-Balti-öv | észak,20,4,29.0,-0.3103,0.4824,normál
+2026-08-28,Nagy-Balti-öv | észak,34,4,28.0,0.2143,0.4824,normál
+2026-08-29,Nagy-Balti-öv | észak,37,4,29.5,0.2542,0.4824,normál
+2026-08-30,Nagy-Balti-öv | észak,26,4,24.5,0.0612,0.4824,normál
+2026-08-31,Nagy-Balti-öv | észak,38,4,27.0,0.4074,0.4824,normál
+2026-09-01,Nagy-Balti-öv | észak,29,4,30.0,-0.0333,0.4824,normál
+2026-09-02,Nagy-Balti-öv | észak,30,4,25.0,0.2,0.4824,normál
+2026-09-03,Nagy-Balti-öv | észak,30,4,27.0,0.1111,0.4824,normál
+2026-09-04,Nagy-Balti-öv | észak,23,4,32.0,-0.2812,0.4824,normál
+2026-09-05,Nagy-Balti-öv | észak,29,4,30.0,-0.0333,0.4824,normál
+2026-09-06,Nagy-Balti-öv | észak,26,4,24.5,0.0612,0.4824,normál
+2026-09-07,Nagy-Balti-öv | észak,26,4,28.0,-0.0714,0.4824,normál
+2026-09-08,Nagy-Balti-öv | észak,28,4,29.0,-0.0345,0.4824,normál
+2026-09-09,Nagy-Balti-öv | észak,22,4,28.5,-0.2281,0.4824,normál
+2026-09-10,Nagy-Balti-öv | észak,25,4,27.0,-0.0741,0.4824,normál
+2026-09-11,Nagy-Balti-öv | észak,29,4,32.0,-0.0938,0.4824,normál
+2026-09-12,Nagy-Balti-öv | észak,26,4,26.0,0.0,0.4824,normál
+2026-09-13,Nagy-Balti-öv | észak,29,4,26.0,0.1154,0.4824,normál
+2026-09-14,Nagy-Balti-öv | észak,29,4,29.5,-0.0169,0.4824,normál
+2026-09-15,Nagy-Balti-öv | észak,28,4,29.0,-0.0345,0.4824,normál
+2026-09-16,Nagy-Balti-öv | észak,32,4,25.0,0.28,0.4824,normál
+2026-09-17,Nagy-Balti-öv | észak,30,4,27.5,0.0909,0.4824,normál
+2026-09-18,Nagy-Balti-öv | észak,32,4,31.5,0.0159,0.4824,normál
+2026-09-19,Nagy-Balti-öv | észak,28,4,27.5,0.0182,0.4824,normál
+2026-09-20,Nagy-Balti-öv | észak,37,4,27.5,0.3455,0.4824,normál
+2026-09-21,Nagy-Balti-öv | észak,22,4,27.5,-0.2,0.4824,normál
+2026-09-22,Nagy-Balti-öv | észak,24,4,28.5,-0.1579,0.4824,normál
+2026-09-23,Nagy-Balti-öv | észak,23,4,26.5,-0.1321,0.4824,normál
+2026-09-24,Nagy-Balti-öv | észak,30,4,27.5,0.0909,0.4824,normál
+2026-09-25,Nagy-Balti-öv | észak,30,4,30.5,-0.0164,0.4824,normál
+2026-09-26,Nagy-Balti-öv | észak,35,4,28.5,0.2281,0.4824,normál
+2026-09-27,Nagy-Balti-öv | észak,41,4,27.5,0.4909,0.4824,szokatlanul magas
+2026-09-28,Nagy-Balti-öv | észak,28,4,27.5,0.0182,0.4824,normál
+2026-09-29,Nagy-Balti-öv | észak,26,4,28.0,-0.0714,0.4824,normál
+2026-09-30,Nagy-Balti-öv | észak,29,4,26.5,0.0943,0.4824,normál
+2026-10-01,Nagy-Balti-öv | észak,34,4,30.0,0.1333,0.4824,normál
+2026-10-02,Nagy-Balti-öv | észak,28,4,29.5,-0.0508,0.4824,normál
+2026-10-03,Nagy-Balti-öv | észak,37,4,28.5,0.2982,0.4824,normál
+2026-10-04,Nagy-Balti-öv | észak,26,4,33.0,-0.2121,0.4824,normál
+2026-10-05,Nagy-Balti-öv | észak,35,4,27.0,0.2963,0.4824,normál
+2026-10-06,Nagy-Balti-öv | észak,33,4,27.0,0.2222,0.4824,normál
+2026-06-01,Nagy-Balti-öv | dél,24,0,,,0.3802,nincs alapszint
+2026-06-02,Nagy-Balti-öv | dél,30,0,,,0.3802,nincs alapszint
+2026-06-03,Nagy-Balti-öv | dél,25,0,,,0.3802,nincs alapszint
+2026-06-04,Nagy-Balti-öv | dél,19,0,,,0.3802,nincs alapszint
+2026-06-05,Nagy-Balti-öv | dél,16,0,,,0.3802,nincs alapszint
+2026-06-06,Nagy-Balti-öv | dél,21,0,,,0.3802,nincs alapszint
+2026-06-07,Nagy-Balti-öv | dél,18,0,,,0.3802,nincs alapszint
+2026-06-08,Nagy-Balti-öv | dél,24,1,,,0.3802,nincs alapszint
+2026-06-09,Nagy-Balti-öv | dél,27,1,,,0.3802,nincs alapszint
+2026-06-10,Nagy-Balti-öv | dél,21,1,,,0.3802,nincs alapszint
+2026-06-11,Nagy-Balti-öv | dél,22,1,,,0.3802,nincs alapszint
+2026-06-12,Nagy-Balti-öv | dél,24,1,,,0.3802,nincs alapszint
+2026-06-13,Nagy-Balti-öv | dél,20,1,,,0.3802,nincs alapszint
+2026-06-14,Nagy-Balti-öv | dél,29,1,,,0.3802,nincs alapszint
+2026-06-15,Nagy-Balti-öv | dél,20,2,,,0.3802,nincs alapszint
+2026-06-16,Nagy-Balti-öv | dél,20,2,,,0.3802,nincs alapszint
+2026-06-17,Nagy-Balti-öv | dél,25,2,,,0.3802,nincs alapszint
+2026-06-18,Nagy-Balti-öv | dél,18,2,,,0.3802,nincs alapszint
+2026-06-19,Nagy-Balti-öv | dél,23,2,,,0.3802,nincs alapszint
+2026-06-20,Nagy-Balti-öv | dél,24,2,,,0.3802,nincs alapszint
+2026-06-21,Nagy-Balti-öv | dél,18,2,,,0.3802,nincs alapszint
+2026-06-22,Nagy-Balti-öv | dél,23,3,24.0,-0.0417,0.3802,normál
+2026-06-23,Nagy-Balti-öv | dél,28,3,27.0,0.037,0.3802,normál
+2026-06-24,Nagy-Balti-öv | dél,19,3,25.0,-0.24,0.3802,normál
+2026-06-25,Nagy-Balti-öv | dél,22,3,19.0,0.1579,0.3802,normál
+2026-06-26,Nagy-Balti-öv | dél,18,3,23.0,-0.2174,0.3802,normál
+2026-06-27,Nagy-Balti-öv | dél,24,3,21.0,0.1429,0.3802,normál
+2026-06-28,Nagy-Balti-öv | dél,21,3,18.0,0.1667,0.3802,normál
+2026-06-29,Nagy-Balti-öv | dél,30,4,23.5,0.2766,0.3802,normál
+2026-06-30,Nagy-Balti-öv | dél,18,4,27.5,-0.3455,0.3802,normál
+2026-07-01,Nagy-Balti-öv | dél,16,4,23.0,-0.3043,0.3802,normál
+2026-07-02,Nagy-Balti-öv | dél,24,4,20.5,0.1707,0.3802,normál
+2026-07-03,Nagy-Balti-öv | dél,20,4,20.5,-0.0244,0.3802,normál
+2026-07-04,Nagy-Balti-öv | dél,21,4,22.5,-0.0667,0.3802,normál
+2026-07-05,Nagy-Balti-öv | dél,24,4,19.5,0.2308,0.3802,normál
+2026-07-06,Nagy-Balti-öv | dél,24,4,23.5,0.0213,0.3802,normál
+2026-07-07,Nagy-Balti-öv | dél,20,4,23.5,-0.1489,0.3802,normál
+2026-07-08,Nagy-Balti-öv | dél,25,4,20.0,0.25,0.3802,normál
+2026-07-09,Nagy-Balti-öv | dél,20,4,22.0,-0.0909,0.3802,normál
+2026-07-10,Nagy-Balti-öv | dél,22,4,21.5,0.0233,0.3802,normál
+2026-07-11,Nagy-Balti-öv | dél,23,4,22.5,0.0222,0.3802,normál
+2026-07-12,Nagy-Balti-öv | dél,14,4,22.5,-0.3778,0.3802,normál
+2026-07-13,Nagy-Balti-öv | dél,18,4,23.5,-0.234,0.3802,normál
+2026-07-14,Nagy-Balti-öv | dél,20,4,20.0,0.0,0.3802,normál
+2026-07-15,Nagy-Balti-öv | dél,20,4,22.0,-0.0909,0.3802,normál
+2026-07-16,Nagy-Balti-öv | dél,19,4,21.0,-0.0952,0.3802,normál
+2026-07-17,Nagy-Balti-öv | dél,37,4,21.0,0.7619,0.3802,szokatlanul magas
+2026-07-18,Nagy-Balti-öv | dél,24,4,23.5,0.0213,0.3802,normál
+2026-07-19,Nagy-Balti-öv | dél,20,4,19.5,0.0256,0.3802,normál
+2026-07-20,Nagy-Balti-öv | dél,21,4,23.5,-0.1064,0.3802,normál
+2026-07-21,Nagy-Balti-öv | dél,15,4,20.0,-0.25,0.3802,normál
+2026-07-22,Nagy-Balti-öv | dél,22,4,19.5,0.1282,0.3802,normál
+2026-07-23,Nagy-Balti-öv | dél,21,4,21.0,0.0,0.3802,normál
+2026-07-24,Nagy-Balti-öv | dél,20,4,21.0,-0.0476,0.3802,normál
+2026-07-25,Nagy-Balti-öv | dél,14,4,23.5,-0.4043,0.3802,szokatlanul alacsony
+2026-07-26,Nagy-Balti-öv | dél,20,4,20.5,-0.0244,0.3802,normál
+2026-07-27,Nagy-Balti-öv | dél,21,4,22.5,-0.0667,0.3802,normál
+2026-07-28,Nagy-Balti-öv | dél,20,4,19.0,0.0526,0.3802,normál
+2026-07-29,Nagy-Balti-öv | dél,20,4,21.0,-0.0476,0.3802,normál
+2026-07-30,Nagy-Balti-öv | dél,19,4,20.5,-0.0732,0.3802,normál
+2026-07-31,Nagy-Balti-öv | dél,26,4,21.0,0.2381,0.3802,normál
+2026-08-01,Nagy-Balti-öv | dél,20,4,22.0,-0.0909,0.3802,normál
+2026-08-02,Nagy-Balti-öv | dél,17,4,20.0,-0.15,0.3802,normál
+2026-08-03,Nagy-Balti-öv | dél,18,4,21.0,-0.1429,0.3802,normál
+2026-08-04,Nagy-Balti-öv | dél,21,4,20.0,0.05,0.3802,normál
+2026-08-05,Nagy-Balti-öv | dél,20,4,21.0,-0.0476,0.3802,normál
+2026-08-06,Nagy-Balti-öv | dél,16,4,19.5,-0.1795,0.3802,normál
+2026-08-07,Nagy-Balti-öv | dél,25,4,24.0,0.0417,0.3802,normál
+2026-08-08,Nagy-Balti-öv | dél,21,4,21.5,-0.0233,0.3802,normál
+2026-08-09,Nagy-Balti-öv | dél,31,4,18.5,0.6757,0.3802,szokatlanul magas
+2026-08-10,Nagy-Balti-öv | dél,24,4,19.5,0.2308,0.3802,normál
+2026-08-11,Nagy-Balti-öv | dél,18,4,20.0,-0.1,0.3802,normál
+2026-08-12,Nagy-Balti-öv | dél,27,4,20.0,0.35,0.3802,normál
+2026-08-13,Nagy-Balti-öv | dél,24,4,19.0,0.2632,0.3802,normál
+2026-08-14,Nagy-Balti-öv | dél,24,4,25.5,-0.0588,0.3802,normál
+2026-08-15,Nagy-Balti-öv | dél,12,4,20.5,-0.4146,0.3802,szokatlanul alacsony
+2026-08-16,Nagy-Balti-öv | dél,30,4,20.0,0.5,0.3802,szokatlanul magas
+2026-08-17,Nagy-Balti-öv | dél,20,4,21.0,-0.0476,0.3802,normál
+2026-08-18,Nagy-Balti-öv | dél,36,4,19.0,0.8947,0.3802,szokatlanul magas
+2026-08-19,Nagy-Balti-öv | dél,22,4,21.0,0.0476,0.3802,normál
+2026-08-20,Nagy-Balti-öv | dél,25,4,20.0,0.25,0.3802,normál
+2026-08-21,Nagy-Balti-öv | dél,20,4,24.5,-0.1837,0.3802,normál
+2026-08-22,Nagy-Balti-öv | dél,19,4,17.0,0.1176,0.3802,normál
+2026-08-23,Nagy-Balti-öv | dél,23,4,25.0,-0.08,0.3802,normál
+2026-08-24,Nagy-Balti-öv | dél,19,4,20.5,-0.0732,0.3802,normál
+2026-08-25,Nagy-Balti-öv | dél,29,4,20.5,0.4146,0.3802,szokatlanul magas
+2026-08-26,Nagy-Balti-öv | dél,23,4,21.0,0.0952,0.3802,normál
+2026-08-27,Nagy-Balti-öv | dél,24,4,21.5,0.1163,0.3802,normál
+2026-08-28,Nagy-Balti-öv | dél,27,4,24.5,0.102,0.3802,normál
+2026-08-29,Nagy-Balti-öv | dél,28,4,19.5,0.4359,0.3802,szokatlanul magas
+2026-08-30,Nagy-Balti-öv | dél,17,4,26.5,-0.3585,0.3802,normál
+2026-08-31,Nagy-Balti-öv | dél,17,4,19.5,-0.1282,0.3802,normál
+2026-09-01,Nagy-Balti-öv | dél,26,4,25.0,0.04,0.3802,normál
+2026-09-02,Nagy-Balti-öv | dél,18,4,22.5,-0.2,0.3802,normál
+2026-09-03,Nagy-Balti-öv | dél,24,4,24.0,0.0,0.3802,normál
+2026-09-04,Nagy-Balti-öv | dél,32,4,24.5,0.3061,0.3802,normál
+2026-09-05,Nagy-Balti-öv | dél,23,4,20.0,0.15,0.3802,normál
+2026-09-06,Nagy-Balti-öv | dél,19,4,26.5,-0.283,0.3802,normál
+2026-09-07,Nagy-Balti-öv | dél,27,4,19.5,0.3846,0.3802,szokatlanul magas
+2026-09-08,Nagy-Balti-öv | dél,24,4,27.5,-0.1273,0.3802,normál
+2026-09-09,Nagy-Balti-öv | dél,27,4,22.5,0.2,0.3802,normál
+2026-09-10,Nagy-Balti-öv | dél,17,4,24.0,-0.2917,0.3802,normál
+2026-09-11,Nagy-Balti-öv | dél,31,4,25.5,0.2157,0.3802,normál
+2026-09-12,Nagy-Balti-öv | dél,22,4,21.0,0.0476,0.3802,normál
+2026-09-13,Nagy-Balti-öv | dél,21,4,21.0,0.0,0.3802,normál
+2026-09-14,Nagy-Balti-öv | dél,24,4,19.5,0.2308,0.3802,normál
+2026-09-15,Nagy-Balti-öv | dél,24,4,27.5,-0.1273,0.3802,normál
+2026-09-16,Nagy-Balti-öv | dél,26,4,22.5,0.1556,0.3802,normál
+2026-09-17,Nagy-Balti-öv | dél,24,4,24.0,0.0,0.3802,normál
+2026-09-18,Nagy-Balti-öv | dél,27,4,29.0,-0.069,0.3802,normál
+2026-09-19,Nagy-Balti-öv | dél,19,4,22.5,-0.1556,0.3802,normál
+2026-09-20,Nagy-Balti-öv | dél,21,4,20.0,0.05,0.3802,normál
+2026-09-21,Nagy-Balti-öv | dél,19,4,21.5,-0.1163,0.3802,normál
+2026-09-22,Nagy-Balti-öv | dél,22,4,25.0,-0.12,0.3802,normál
+2026-09-23,Nagy-Balti-öv | dél,29,4,24.5,0.1837,0.3802,normál
+2026-09-24,Nagy-Balti-öv | dél,27,4,24.0,0.125,0.3802,normál
+2026-09-25,Nagy-Balti-öv | dél,27,4,29.0,-0.069,0.3802,normál
+2026-09-26,Nagy-Balti-öv | dél,29,4,22.5,0.2889,0.3802,normál
+2026-09-27,Nagy-Balti-öv | dél,25,4,20.0,0.25,0.3802,normál
+2026-09-28,Nagy-Balti-öv | dél,22,4,21.5,0.0233,0.3802,normál
+2026-09-29,Nagy-Balti-öv | dél,19,4,24.0,-0.2083,0.3802,normál
+2026-09-30,Nagy-Balti-öv | dél,15,4,26.5,-0.434,0.3802,szokatlanul alacsony
+2026-10-01,Nagy-Balti-öv | dél,27,4,24.0,0.125,0.3802,normál
+2026-10-02,Nagy-Balti-öv | dél,21,4,29.0,-0.2759,0.3802,normál
+2026-10-03,Nagy-Balti-öv | dél,25,4,22.5,0.1111,0.3802,normál
+2026-10-04,Nagy-Balti-öv | dél,22,4,21.0,0.0476,0.3802,normál
+2026-10-05,Nagy-Balti-öv | dél,19,4,23.0,-0.1739,0.3802,normál
+2026-10-06,Nagy-Balti-öv | dél,19,4,23.0,-0.1739,0.3802,normál
+2026-06-01,Øresund | észak,26,0,,,0.3883,nincs alapszint
+2026-06-02,Øresund | észak,19,0,,,0.3883,nincs alapszint
+2026-06-03,Øresund | észak,21,0,,,0.3883,nincs alapszint
+2026-06-04,Øresund | észak,28,0,,,0.3883,nincs alapszint
+2026-06-05,Øresund | észak,16,0,,,0.3883,nincs alapszint
+2026-06-06,Øresund | észak,20,0,,,0.3883,nincs alapszint
+2026-06-07,Øresund | észak,27,0,,,0.3883,nincs alapszint
+2026-06-08,Øresund | észak,23,1,,,0.3883,nincs alapszint
+2026-06-09,Øresund | észak,24,1,,,0.3883,nincs alapszint
+2026-06-10,Øresund | észak,19,1,,,0.3883,nincs alapszint
+2026-06-11,Øresund | észak,34,1,,,0.3883,nincs alapszint
+2026-06-12,Øresund | észak,17,1,,,0.3883,nincs alapszint
+2026-06-13,Øresund | észak,27,1,,,0.3883,nincs alapszint
+2026-06-14,Øresund | észak,16,1,,,0.3883,nincs alapszint
+2026-06-15,Øresund | észak,24,2,,,0.3883,nincs alapszint
+2026-06-16,Øresund | észak,28,2,,,0.3883,nincs alapszint
+2026-06-17,Øresund | észak,27,2,,,0.3883,nincs alapszint
+2026-06-18,Øresund | észak,21,2,,,0.3883,nincs alapszint
+2026-06-19,Øresund | észak,17,2,,,0.3883,nincs alapszint
+2026-06-20,Øresund | észak,25,2,,,0.3883,nincs alapszint
+2026-06-21,Øresund | észak,29,2,,,0.3883,nincs alapszint
+2026-06-22,Øresund | észak,26,3,24.0,0.0833,0.3883,normál
+2026-06-23,Øresund | észak,18,3,24.0,-0.25,0.3883,normál
+2026-06-24,Øresund | észak,22,3,21.0,0.0476,0.3883,normál
+2026-06-25,Øresund | észak,27,3,28.0,-0.0357,0.3883,normál
+2026-06-26,Øresund | észak,28,3,17.0,0.6471,0.3883,szokatlanul magas
+2026-06-27,Øresund | észak,23,3,25.0,-0.08,0.3883,normál
+2026-06-28,Øresund | észak,25,3,27.0,-0.0741,0.3883,normál
+2026-06-29,Øresund | észak,20,4,25.0,-0.2,0.3883,normál
+2026-06-30,Øresund | észak,20,4,21.5,-0.0698,0.3883,normál
+2026-07-01,Øresund | észak,16,4,21.5,-0.2558,0.3883,normál
+2026-07-02,Øresund | észak,26,4,27.5,-0.0545,0.3883,normál
+2026-07-03,Øresund | észak,21,4,17.0,0.2353,0.3883,normál
+2026-07-04,Øresund | észak,27,4,24.0,0.125,0.3883,normál
+2026-07-05,Øresund | észak,30,4,26.0,0.1538,0.3883,normál
+2026-07-06,Øresund | észak,24,4,23.5,0.0213,0.3883,normál
+2026-07-07,Øresund | észak,20,4,22.0,-0.0909,0.3883,normál
+2026-07-08,Øresund | észak,16,4,20.5,-0.2195,0.3883,normál
+2026-07-09,Øresund | észak,30,4,26.5,0.1321,0.3883,normál
+2026-07-10,Øresund | észak,26,4,19.0,0.3684,0.3883,normál
+2026-07-11,Øresund | észak,28,4,26.0,0.0769,0.3883,normál
+2026-07-12,Øresund | észak,24,4,27.0,-0.1111,0.3883,normál
+2026-07-13,Øresund | észak,23,4,24.0,-0.0417,0.3883,normál
+2026-07-14,Øresund | észak,15,4,20.0,-0.25,0.3883,normál
+2026-07-15,Øresund | észak,31,4,19.0,0.6316,0.3883,szokatlanul magas
+2026-07-16,Øresund | észak,21,4,26.5,-0.2075,0.3883,normál
+2026-07-17,Øresund | észak,27,4,23.5,0.1489,0.3883,normál
+2026-07-18,Øresund | észak,28,4,26.0,0.0769,0.3883,normál
+2026-07-19,Øresund | észak,25,4,27.0,-0.0741,0.3883,normál
+2026-07-20,Øresund | észak,18,4,23.5,-0.234,0.3883,normál
+2026-07-21,Øresund | észak,18,4,19.0,-0.0526,0.3883,normál
+2026-07-22,Øresund | észak,19,4,19.0,0.0,0.3883,normál
+2026-07-23,Øresund | észak,18,4,26.5,-0.3208,0.3883,normál
+2026-07-24,Øresund | észak,29,4,26.5,0.0943,0.3883,normál
+2026-07-25,Øresund | észak,26,4,27.5,-0.0545,0.3883,normál
+2026-07-26,Øresund | észak,29,4,25.0,0.16,0.3883,normál
+2026-07-27,Øresund | észak,26,4,21.5,0.2093,0.3883,normál
+2026-07-28,Øresund | észak,14,4,19.0,-0.2632,0.3883,normál
+2026-07-29,Øresund | észak,23,4,17.5,0.3143,0.3883,normál
+2026-07-30,Øresund | észak,29,4,23.5,0.234,0.3883,normál
+2026-07-31,Øresund | észak,25,4,26.5,-0.0566,0.3883,normál
+2026-08-01,Øresund | észak,20,4,27.5,-0.2727,0.3883,normál
+2026-08-02,Øresund | észak,25,4,27.0,-0.0741,0.3883,normál
+2026-08-03,Øresund | észak,17,4,23.5,-0.2766,0.3883,normál
+2026-08-04,Øresund | észak,18,4,16.5,0.0909,0.3883,normál
+2026-08-05,Øresund | észak,18,4,21.0,-0.1429,0.3883,normál
+2026-08-06,Øresund | észak,28,4,25.0,0.12,0.3883,normál
+2026-08-07,Øresund | észak,13,4,26.5,-0.5094,0.3883,szokatlanul alacsony
+2026-08-08,Øresund | észak,29,4,27.0,0.0741,0.3883,normál
+2026-08-09,Øresund | észak,24,4,25.0,-0.04,0.3883,normál
+2026-08-10,Øresund | észak,19,4,20.5,-0.0732,0.3883,normál
+2026-08-11,Øresund | észak,24,4,16.5,0.4545,0.3883,szokatlanul magas
+2026-08-12,Øresund | észak,27,4,21.0,0.2857,0.3883,normál
+2026-08-13,Øresund | észak,25,4,24.5,0.0204,0.3883,normál
+2026-08-14,Øresund | észak,19,4,26.0,-0.2692,0.3883,normál
+2026-08-15,Øresund | észak,20,4,27.0,-0.2593,0.3883,normál
+2026-08-16,Øresund | észak,30,4,25.0,0.2,0.3883,normál
+2026-08-17,Øresund | észak,20,4,18.5,0.0811,0.3883,normál
+2026-08-18,Øresund | észak,21,4,18.0,0.1667,0.3883,normál
+2026-08-19,Øresund | észak,23,4,21.0,0.0952,0.3883,normál
+2026-08-20,Øresund | észak,31,4,26.5,0.1698,0.3883,normál
+2026-08-21,Øresund | észak,24,4,22.0,0.0909,0.3883,normál
+2026-08-22,Øresund | észak,22,4,23.0,-0.0435,0.3883,normál
+2026-08-23,Øresund | észak,23,4,27.0,-0.1481,0.3883,normál
+2026-08-24,Øresund | észak,24,4,19.5,0.2308,0.3883,normál
+2026-08-25,Øresund | észak,20,4,19.5,0.0256,0.3883,normál
+2026-08-26,Øresund | észak,30,4,23.0,0.3043,0.3883,normál
+2026-08-27,Øresund | észak,24,4,28.5,-0.1579,0.3883,normál
+2026-08-28,Øresund | észak,21,4,21.5,-0.0233,0.3883,normál
+2026-08-29,Øresund | észak,27,4,21.0,0.2857,0.3883,normál
+2026-08-30,Øresund | észak,19,4,24.5,-0.2245,0.3883,normál
+2026-08-31,Øresund | észak,18,4,19.5,-0.0769,0.3883,normál
+2026-09-01,Øresund | észak,13,4,20.5,-0.3659,0.3883,normál
+2026-09-02,Øresund | észak,25,4,25.0,0.0,0.3883,normál
+2026-09-03,Øresund | észak,24,4,26.5,-0.0943,0.3883,normál
+2026-09-04,Øresund | észak,21,4,20.0,0.05,0.3883,normál
+2026-09-05,Øresund | észak,9,4,24.5,-0.6327,0.3883,szokatlanul alacsony
+2026-09-06,Øresund | észak,19,4,23.5,-0.1915,0.3883,normál
+2026-09-07,Øresund | észak,20,4,19.5,0.0256,0.3883,normál
+2026-09-08,Øresund | észak,20,4,20.5,-0.0244,0.3883,normál
+2026-09-09,Øresund | észak,25,4,26.0,-0.0385,0.3883,normál
+2026-09-10,Øresund | észak,24,4,24.5,-0.0204,0.3883,normál
+2026-09-11,Øresund | észak,22,4,21.0,0.0476,0.3883,normál
+2026-09-12,Øresund | észak,23,4,21.0,0.0952,0.3883,normál
+2026-09-13,Øresund | észak,25,4,21.0,0.1905,0.3883,normál
+2026-09-14,Øresund | észak,17,4,20.0,-0.15,0.3883,normál
+2026-09-15,Øresund | észak,17,4,20.0,-0.15,0.3883,normál
+2026-09-16,Øresund | észak,20,4,25.0,-0.2,0.3883,normál
+2026-09-17,Øresund | észak,20,4,24.0,-0.1667,0.3883,normál
+2026-09-18,Øresund | észak,22,4,21.5,0.0233,0.3883,normál
+2026-09-19,Øresund | észak,22,4,22.5,-0.0222,0.3883,normál
+2026-09-20,Øresund | észak,12,4,21.0,-0.4286,0.3883,szokatlanul alacsony
+2026-09-21,Øresund | észak,26,4,19.0,0.3684,0.3883,normál
+2026-09-22,Øresund | észak,22,4,18.5,0.1892,0.3883,normál
+2026-09-23,Øresund | észak,33,4,25.0,0.32,0.3883,normál
+2026-09-24,Øresund | észak,14,4,24.0,-0.4167,0.3883,szokatlanul alacsony
+2026-09-25,Øresund | észak,14,4,21.5,-0.3488,0.3883,normál
+2026-09-26,Øresund | észak,21,4,22.5,-0.0667,0.3883,normál
+2026-09-27,Øresund | észak,19,4,19.0,0.0,0.3883,normál
+2026-09-28,Øresund | észak,17,4,19.0,-0.1053,0.3883,normál
+2026-09-29,Øresund | észak,15,4,18.5,-0.1892,0.3883,normál
+2026-09-30,Øresund | észak,21,4,25.0,-0.16,0.3883,normál
+2026-10-01,Øresund | észak,39,4,22.0,0.7727,0.3883,szokatlanul magas
+2026-10-02,Øresund | észak,23,4,21.5,0.0698,0.3883,normál
+2026-10-03,Øresund | észak,13,4,21.5,-0.3953,0.3883,szokatlanul alacsony
+2026-10-04,Øresund | észak,18,4,19.0,-0.0526,0.3883,normál
+2026-10-05,Øresund | észak,16,4,18.5,-0.1351,0.3883,normál
+2026-10-06,Øresund | észak,23,4,18.5,0.2432,0.3883,normál
+2026-06-01,Øresund | dél,19,0,,,0.3836,nincs alapszint
+2026-06-02,Øresund | dél,33,0,,,0.3836,nincs alapszint
+2026-06-03,Øresund | dél,31,0,,,0.3836,nincs alapszint
+2026-06-04,Øresund | dél,30,0,,,0.3836,nincs alapszint
+2026-06-05,Øresund | dél,38,0,,,0.3836,nincs alapszint
+2026-06-06,Øresund | dél,33,0,,,0.3836,nincs alapszint
+2026-06-07,Øresund | dél,33,0,,,0.3836,nincs alapszint
+2026-06-08,Øresund | dél,25,1,,,0.3836,nincs alapszint
+2026-06-09,Øresund | dél,25,1,,,0.3836,nincs alapszint
+2026-06-10,Øresund | dél,25,1,,,0.3836,nincs alapszint
+2026-06-11,Øresund | dél,26,1,,,0.3836,nincs alapszint
+2026-06-12,Øresund | dél,33,1,,,0.3836,nincs alapszint
+2026-06-13,Øresund | dél,34,1,,,0.3836,nincs alapszint
+2026-06-14,Øresund | dél,32,1,,,0.3836,nincs alapszint
+2026-06-15,Øresund | dél,29,2,,,0.3836,nincs alapszint
+2026-06-16,Øresund | dél,29,2,,,0.3836,nincs alapszint
+2026-06-17,Øresund | dél,27,2,,,0.3836,nincs alapszint
+2026-06-18,Øresund | dél,36,2,,,0.3836,nincs alapszint
+2026-06-19,Øresund | dél,30,2,,,0.3836,nincs alapszint
+2026-06-20,Øresund | dél,28,2,,,0.3836,nincs alapszint
+2026-06-21,Øresund | dél,22,2,,,0.3836,nincs alapszint
+2026-06-22,Øresund | dél,27,3,25.0,0.08,0.3836,normál
+2026-06-23,Øresund | dél,30,3,29.0,0.0345,0.3836,normál
+2026-06-24,Øresund | dél,20,3,27.0,-0.2593,0.3836,normál
+2026-06-25,Øresund | dél,27,3,30.0,-0.1,0.3836,normál
+2026-06-26,Øresund | dél,30,3,33.0,-0.0909,0.3836,normál
+2026-06-27,Øresund | dél,25,3,33.0,-0.2424,0.3836,normál
+2026-06-28,Øresund | dél,25,3,32.0,-0.2188,0.3836,normál
+2026-06-29,Øresund | dél,31,4,26.0,0.1923,0.3836,normál
+2026-06-30,Øresund | dél,28,4,29.5,-0.0508,0.3836,normál
+2026-07-01,Øresund | dél,26,4,26.0,0.0,0.3836,normál
+2026-07-02,Øresund | dél,13,4,28.5,-0.5439,0.3836,szokatlanul alacsony
+2026-07-03,Øresund | dél,24,4,31.5,-0.2381,0.3836,normál
+2026-07-04,Øresund | dél,22,4,30.5,-0.2787,0.3836,normál
+2026-07-05,Øresund | dél,37,4,28.5,0.2982,0.3836,normál
+2026-07-06,Øresund | dél,21,4,28.0,-0.25,0.3836,normál
+2026-07-07,Øresund | dél,25,4,28.5,-0.1228,0.3836,normál
+2026-07-08,Øresund | dél,29,4,25.5,0.1373,0.3836,normál
+2026-07-09,Øresund | dél,32,4,26.5,0.2075,0.3836,normál
+2026-07-10,Øresund | dél,24,4,30.0,-0.2,0.3836,normál
+2026-07-11,Øresund | dél,38,4,26.5,0.434,0.3836,szokatlanul magas
+2026-07-12,Øresund | dél,30,4,28.5,0.0526,0.3836,normál
+2026-07-13,Øresund | dél,22,4,28.0,-0.2143,0.3836,normál
+2026-07-14,Øresund | dél,36,4,28.5,0.2632,0.3836,normál
+2026-07-15,Øresund | dél,33,4,26.5,0.2453,0.3836,normál
+2026-07-16,Øresund | dél,32,4,29.5,0.0847,0.3836,normál
+2026-07-17,Øresund | dél,29,4,27.0,0.0741,0.3836,normál
+2026-07-18,Øresund | dél,27,4,26.5,0.0189,0.3836,normál
+2026-07-19,Øresund | dél,14,4,27.5,-0.4909,0.3836,szokatlanul alacsony
+2026-07-20,Øresund | dél,31,4,24.5,0.2653,0.3836,normál
+2026-07-21,Øresund | dél,28,4,29.0,-0.0345,0.3836,normál
+2026-07-22,Øresund | dél,22,4,27.5,-0.2,0.3836,normál
+2026-07-23,Øresund | dél,27,4,29.5,-0.0847,0.3836,normál
+2026-07-24,Øresund | dél,28,4,26.5,0.0566,0.3836,normál
+2026-07-25,Øresund | dél,22,4,26.0,-0.1538,0.3836,normál
+2026-07-26,Øresund | dél,25,4,27.5,-0.0909,0.3836,normál
+2026-07-27,Øresund | dél,20,4,26.5,-0.2453,0.3836,normál
+2026-07-28,Øresund | dél,25,4,28.0,-0.1071,0.3836,normál
+2026-07-29,Øresund | dél,28,4,27.5,0.0182,0.3836,normál
+2026-07-30,Øresund | dél,25,4,29.5,-0.1525,0.3836,normál
+2026-07-31,Øresund | dél,26,4,26.0,0.0,0.3836,normál
+2026-08-01,Øresund | dél,29,4,24.5,0.1837,0.3836,normál
+2026-08-02,Øresund | dél,29,4,27.5,0.0545,0.3836,normál
+2026-08-03,Øresund | dél,22,4,21.5,0.0233,0.3836,normál
+2026-08-04,Øresund | dél,28,4,26.5,0.0566,0.3836,normál
+2026-08-05,Øresund | dél,30,4,28.5,0.0526,0.3836,normál
+2026-08-06,Øresund | dél,23,4,29.5,-0.2203,0.3836,normál
+2026-08-07,Øresund | dél,24,4,27.0,-0.1111,0.3836,normál
+2026-08-08,Øresund | dél,30,4,28.0,0.0714,0.3836,normál
+2026-08-09,Øresund | dél,30,4,27.0,0.1111,0.3836,normál
+2026-08-10,Øresund | dél,29,4,22.0,0.3182,0.3836,normál
+2026-08-11,Øresund | dél,26,4,28.0,-0.0714,0.3836,normál
+2026-08-12,Øresund | dél,28,4,29.0,-0.0345,0.3836,normál
+2026-08-13,Øresund | dél,30,4,26.0,0.1538,0.3836,normál
+2026-08-14,Øresund | dél,22,4,27.0,-0.1852,0.3836,normál
+2026-08-15,Øresund | dél,32,4,28.0,0.1429,0.3836,normál
+2026-08-16,Øresund | dél,40,4,27.0,0.4815,0.3836,szokatlanul magas
+2026-08-17,Øresund | dél,29,4,25.5,0.1373,0.3836,normál
+2026-08-18,Øresund | dél,37,4,27.0,0.3704,0.3836,normál
+2026-08-19,Øresund | dél,26,4,28.0,-0.0714,0.3836,normál
+2026-08-20,Øresund | dél,29,4,26.0,0.1154,0.3836,normál
+2026-08-21,Øresund | dél,32,4,25.0,0.28,0.3836,normál
+2026-08-22,Øresund | dél,31,4,29.5,0.0508,0.3836,normál
+2026-08-23,Øresund | dél,33,4,29.5,0.1186,0.3836,normál
+2026-08-24,Øresund | dél,29,4,25.5,0.1373,0.3836,normál
+2026-08-25,Øresund | dél,30,4,27.0,0.1111,0.3836,normál
+2026-08-26,Øresund | dél,31,4,28.0,0.1071,0.3836,normál
+2026-08-27,Øresund | dél,26,4,27.0,-0.037,0.3836,normál
+2026-08-28,Øresund | dél,29,4,25.0,0.16,0.3836,normál
+2026-08-29,Øresund | dél,30,4,30.5,-0.0164,0.3836,normál
+2026-08-30,Øresund | dél,46,4,31.5,0.4603,0.3836,szokatlanul magas
+2026-08-31,Øresund | dél,26,4,29.0,-0.1034,0.3836,normál
+2026-09-01,Øresund | dél,25,4,29.0,-0.1379,0.3836,normál
+2026-09-02,Øresund | dél,34,4,29.0,0.1724,0.3836,normál
+2026-09-03,Øresund | dél,28,4,27.5,0.0182,0.3836,normál
+2026-09-04,Øresund | dél,27,4,26.5,0.0189,0.3836,normál
+2026-09-05,Øresund | dél,26,4,30.5,-0.1475,0.3836,normál
+2026-09-06,Øresund | dél,22,4,36.5,-0.3973,0.3836,szokatlanul alacsony
+2026-09-07,Øresund | dél,27,4,29.0,-0.069,0.3836,normál
+2026-09-08,Øresund | dél,37,4,28.0,0.3214,0.3836,normál
+2026-09-09,Øresund | dél,28,4,29.5,-0.0508,0.3836,normál
+2026-09-10,Øresund | dél,26,4,28.5,-0.0877,0.3836,normál
+2026-09-11,Øresund | dél,30,4,28.0,0.0714,0.3836,normál
+2026-09-12,Øresund | dél,42,4,30.5,0.377,0.3836,normál
+2026-09-13,Øresund | dél,31,4,36.5,-0.1507,0.3836,normál
+2026-09-14,Øresund | dél,34,4,28.0,0.2143,0.3836,normál
+2026-09-15,Øresund | dél,26,4,33.5,-0.2239,0.3836,normál
+2026-09-16,Øresund | dél,29,4,29.5,-0.0169,0.3836,normál
+2026-09-17,Øresund | dél,26,4,27.0,-0.037,0.3836,normál
+2026-09-18,Øresund | dél,34,4,29.5,0.1525,0.3836,normál
+2026-09-19,Øresund | dél,35,4,30.5,0.1475,0.3836,normál
+2026-09-20,Øresund | dél,27,4,32.0,-0.1562,0.3836,normál
+2026-09-21,Øresund | dél,22,4,28.0,-0.2143,0.3836,normál
+2026-09-22,Øresund | dél,28,4,28.0,0.0,0.3836,normál
+2026-09-23,Øresund | dél,26,4,30.0,-0.1333,0.3836,normál
+2026-09-24,Øresund | dél,36,4,26.0,0.3846,0.3836,szokatlanul magas
+2026-09-25,Øresund | dél,20,4,29.5,-0.322,0.3836,normál
+2026-09-26,Øresund | dél,25,4,32.5,-0.2308,0.3836,normál
+2026-09-27,Øresund | dél,37,4,29.0,0.2759,0.3836,normál
+2026-09-28,Øresund | dél,37,4,26.5,0.3962,0.3836,szokatlanul magas
+2026-09-29,Øresund | dél,18,4,27.0,-0.3333,0.3836,normál
+2026-09-30,Øresund | dél,31,4,28.5,0.0877,0.3836,normál
+2026-10-01,Øresund | dél,29,4,27.0,0.0741,0.3836,normál
+2026-10-02,Øresund | dél,27,4,28.5,-0.0526,0.3836,normál
+2026-10-03,Øresund | dél,31,4,30.5,0.0164,0.3836,normál
+2026-10-04,Øresund | dél,32,4,29.0,0.1034,0.3836,normál
+2026-10-05,Øresund | dél,38,4,30.5,0.2459,0.3836,normál
+2026-10-06,Øresund | dél,31,4,27.0,0.1481,0.3836,normál
+2026-06-01,Øresund – Drogden | észak,21,0,,,0.4886,nincs alapszint
+2026-06-02,Øresund – Drogden | észak,20,0,,,0.4886,nincs alapszint
+2026-06-03,Øresund – Drogden | észak,19,0,,,0.4886,nincs alapszint
+2026-06-04,Øresund – Drogden | észak,24,0,,,0.4886,nincs alapszint
+2026-06-05,Øresund – Drogden | észak,14,0,,,0.4886,nincs alapszint
+2026-06-06,Øresund – Drogden | észak,19,0,,,0.4886,nincs alapszint
+2026-06-07,Øresund – Drogden | észak,20,0,,,0.4886,nincs alapszint
+2026-06-08,Øresund – Drogden | észak,20,1,,,0.4886,nincs alapszint
+2026-06-09,Øresund – Drogden | észak,26,1,,,0.4886,nincs alapszint
+2026-06-10,Øresund – Drogden | észak,18,1,,,0.4886,nincs alapszint
+2026-06-11,Øresund – Drogden | észak,31,1,,,0.4886,nincs alapszint
+2026-06-12,Øresund – Drogden | észak,13,1,,,0.4886,nincs alapszint
+2026-06-13,Øresund – Drogden | észak,28,1,,,0.4886,nincs alapszint
+2026-06-14,Øresund – Drogden | észak,13,1,,,0.4886,nincs alapszint
+2026-06-15,Øresund – Drogden | észak,18,2,,,0.4886,nincs alapszint
+2026-06-16,Øresund – Drogden | észak,24,2,,,0.4886,nincs alapszint
+2026-06-17,Øresund – Drogden | észak,25,2,,,0.4886,nincs alapszint
+2026-06-18,Øresund – Drogden | észak,17,2,,,0.4886,nincs alapszint
+2026-06-19,Øresund – Drogden | észak,14,2,,,0.4886,nincs alapszint
+2026-06-20,Øresund – Drogden | észak,25,2,,,0.4886,nincs alapszint
+2026-06-21,Øresund – Drogden | észak,26,2,,,0.4886,nincs alapszint
+2026-06-22,Øresund – Drogden | észak,18,3,20.0,-0.1,0.4886,normál
+2026-06-23,Øresund – Drogden | észak,18,3,24.0,-0.25,0.4886,normál
+2026-06-24,Øresund – Drogden | észak,17,3,19.0,-0.1053,0.4886,normál
+2026-06-25,Øresund – Drogden | észak,20,3,24.0,-0.1667,0.4886,normál
+2026-06-26,Øresund – Drogden | észak,31,3,14.0,1.2143,0.4886,szokatlanul magas
+2026-06-27,Øresund – Drogden | észak,19,3,25.0,-0.24,0.4886,normál
+2026-06-28,Øresund – Drogden | észak,23,3,20.0,0.15,0.4886,normál
+2026-06-29,Øresund – Drogden | észak,22,4,19.0,0.1579,0.4886,normál
+2026-06-30,Øresund – Drogden | észak,18,4,22.0,-0.1818,0.4886,normál
+2026-07-01,Øresund – Drogden | észak,12,4,18.5,-0.3514,0.4886,normál
+2026-07-02,Øresund – Drogden | észak,23,4,22.0,0.0455,0.4886,normál
+2026-07-03,Øresund – Drogden | észak,23,4,14.0,0.6429,0.4886,szokatlanul magas
+2026-07-04,Øresund – Drogden | észak,34,4,22.0,0.5455,0.4886,szokatlanul magas
+2026-07-05,Øresund – Drogden | észak,21,4,21.5,-0.0233,0.4886,normál
+2026-07-06,Øresund – Drogden | észak,25,4,19.0,0.3158,0.4886,normál
+2026-07-07,Øresund – Drogden | észak,16,4,21.0,-0.2381,0.4886,normál
+2026-07-08,Øresund – Drogden | észak,15,4,17.5,-0.1429,0.4886,normál
+2026-07-09,Øresund – Drogden | észak,21,4,21.5,-0.0233,0.4886,normál
+2026-07-10,Øresund – Drogden | észak,22,4,18.5,0.1892,0.4886,normál
+2026-07-11,Øresund – Drogden | észak,29,4,26.5,0.0943,0.4886,normál
+2026-07-12,Øresund – Drogden | észak,24,4,22.0,0.0909,0.4886,normál
+2026-07-13,Øresund – Drogden | észak,20,4,20.0,0.0,0.4886,normál
+2026-07-14,Øresund – Drogden | észak,8,4,18.0,-0.5556,0.4886,szokatlanul alacsony
+2026-07-15,Øresund – Drogden | észak,28,4,16.0,0.75,0.4886,szokatlanul magas
+2026-07-16,Øresund – Drogden | észak,23,4,20.5,0.122,0.4886,normál
+2026-07-17,Øresund – Drogden | észak,25,4,22.5,0.1111,0.4886,normál
+2026-07-18,Øresund – Drogden | észak,22,4,27.0,-0.1852,0.4886,normál
+2026-07-19,Øresund – Drogden | észak,24,4,23.5,0.0213,0.4886,normál
+2026-07-20,Øresund – Drogden | észak,16,4,21.0,-0.2381,0.4886,normál
+2026-07-21,Øresund – Drogden | észak,15,4,17.0,-0.1176,0.4886,normál
+2026-07-22,Øresund – Drogden | észak,20,4,16.0,0.25,0.4886,normál
+2026-07-23,Øresund – Drogden | észak,18,4,22.0,-0.1818,0.4886,normál
+2026-07-24,Øresund – Drogden | észak,26,4,24.0,0.0833,0.4886,normál
+2026-07-25,Øresund – Drogden | észak,29,4,25.5,0.1373,0.4886,normál
+2026-07-26,Øresund – Drogden | észak,24,4,23.5,0.0213,0.4886,normál
+2026-07-27,Øresund – Drogden | észak,17,4,21.0,-0.1905,0.4886,normál
+2026-07-28,Øresund – Drogden | észak,14,4,15.5,-0.0968,0.4886,normál
+2026-07-29,Øresund – Drogden | észak,14,4,17.5,-0.2,0.4886,normál
+2026-07-30,Øresund – Drogden | észak,22,4,22.0,0.0,0.4886,normál
+2026-07-31,Øresund – Drogden | észak,26,4,24.0,0.0833,0.4886,normál
+2026-08-01,Øresund – Drogden | észak,21,4,29.0,-0.2759,0.4886,normál
+2026-08-02,Øresund – Drogden | észak,18,4,24.0,-0.25,0.4886,normál
+2026-08-03,Øresund – Drogden | észak,14,4,18.5,-0.2432,0.4886,normál
+2026-08-04,Øresund – Drogden | észak,15,4,14.5,0.0345,0.4886,normál
+2026-08-05,Øresund – Drogden | észak,15,4,17.5,-0.1429,0.4886,normál
+2026-08-06,Øresund – Drogden | észak,25,4,21.5,0.1628,0.4886,normál
+2026-08-07,Øresund – Drogden | észak,14,4,25.5,-0.451,0.4886,normál
+2026-08-08,Øresund – Drogden | észak,28,4,25.5,0.098,0.4886,normál
+2026-08-09,Øresund – Drogden | észak,22,4,24.0,-0.0833,0.4886,normál
+2026-08-10,Øresund – Drogden | észak,22,4,16.5,0.3333,0.4886,normál
+2026-08-11,Øresund – Drogden | észak,18,4,14.5,0.2414,0.4886,normál
+2026-08-12,Øresund – Drogden | észak,22,4,17.5,0.2571,0.4886,normál
+2026-08-13,Øresund – Drogden | észak,22,4,22.5,-0.0222,0.4886,normál
+2026-08-14,Øresund – Drogden | észak,18,4,25.5,-0.2941,0.4886,normál
+2026-08-15,Øresund – Drogden | észak,17,4,25.0,-0.32,0.4886,normál
+2026-08-16,Øresund – Drogden | észak,26,4,23.0,0.1304,0.4886,normál
+2026-08-17,Øresund – Drogden | észak,19,4,16.5,0.1515,0.4886,normál
+2026-08-18,Øresund – Drogden | észak,15,4,15.0,0.0,0.4886,normál
+2026-08-19,Øresund – Drogden | észak,17,4,17.5,-0.0286,0.4886,normál
+2026-08-20,Øresund – Drogden | észak,21,4,22.0,-0.0455,0.4886,normál
+2026-08-21,Øresund – Drogden | észak,22,4,22.0,0.0,0.4886,normál
+2026-08-22,Øresund – Drogden | észak,24,4,24.5,-0.0204,0.4886,normál
+2026-08-23,Øresund – Drogden | észak,21,4,23.0,-0.087,0.4886,normál
+2026-08-24,Øresund – Drogden | észak,17,4,18.0,-0.0556,0.4886,normál
+2026-08-25,Øresund – Drogden | észak,21,4,15.0,0.4,0.4886,normál
+2026-08-26,Øresund – Drogden | észak,21,4,16.0,0.3125,0.4886,normál
+2026-08-27,Øresund – Drogden | észak,20,4,22.0,-0.0909,0.4886,normál
+2026-08-28,Øresund – Drogden | észak,20,4,20.0,0.0,0.4886,normál
+2026-08-29,Øresund – Drogden | észak,27,4,22.5,0.2,0.4886,normál
+2026-08-30,Øresund – Drogden | észak,15,4,21.5,-0.3023,0.4886,normál
+2026-08-31,Øresund – Drogden | észak,15,4,18.0,-0.1667,0.4886,normál
+2026-09-01,Øresund – Drogden | észak,11,4,16.5,-0.3333,0.4886,normál
+2026-09-02,Øresund – Drogden | észak,22,4,19.0,0.1579,0.4886,normál
+2026-09-03,Øresund – Drogden | észak,30,4,21.5,0.3953,0.4886,normál
+2026-09-04,Øresund – Drogden | észak,14,4,19.0,-0.2632,0.4886,normál
+2026-09-05,Øresund – Drogden | észak,8,4,25.5,-0.6863,0.4886,szokatlanul alacsony
+2026-09-06,Øresund – Drogden | észak,13,4,21.5,-0.3953,0.4886,normál
+2026-09-07,Øresund – Drogden | észak,17,4,18.0,-0.0556,0.4886,normál
+2026-09-08,Øresund – Drogden | észak,25,4,16.5,0.5152,0.4886,szokatlanul magas
+2026-09-09,Øresund – Drogden | észak,22,4,21.5,0.0233,0.4886,normál
+2026-09-10,Øresund – Drogden | észak,21,4,21.5,-0.0233,0.4886,normál
+2026-09-11,Øresund – Drogden | észak,17,4,19.0,-0.1053,0.4886,normál
+2026-09-12,Øresund – Drogden | észak,25,4,20.5,0.2195,0.4886,normál
+2026-09-13,Øresund – Drogden | észak,26,4,18.0,0.4444,0.4886,normál
+2026-09-14,Øresund – Drogden | észak,14,4,17.0,-0.1765,0.4886,normál
+2026-09-15,Øresund – Drogden | észak,13,4,18.0,-0.2778,0.4886,normál
+2026-09-16,Øresund – Drogden | észak,21,4,21.5,-0.0233,0.4886,normál
+2026-09-17,Øresund – Drogden | észak,21,4,21.0,0.0,0.4886,normál
+2026-09-18,Øresund – Drogden | észak,21,4,18.5,0.1351,0.4886,normál
+2026-09-19,Øresund – Drogden | észak,24,4,24.5,-0.0204,0.4886,normál
+2026-09-20,Øresund – Drogden | észak,14,4,18.0,-0.2222,0.4886,normál
+2026-09-21,Øresund – Drogden | észak,16,4,16.0,0.0,0.4886,normál
+2026-09-22,Øresund – Drogden | észak,20,4,17.0,0.1765,0.4886,normál
+2026-09-23,Øresund – Drogden | észak,27,4,21.5,0.2558,0.4886,normál
+2026-09-24,Øresund – Drogden | észak,16,4,21.0,-0.2381,0.4886,normál
+2026-09-25,Øresund – Drogden | észak,10,4,18.5,-0.4595,0.4886,normál
+2026-09-26,Øresund – Drogden | észak,23,4,24.5,-0.0612,0.4886,normál
+2026-09-27,Øresund – Drogden | észak,17,4,14.5,0.1724,0.4886,normál
+2026-09-28,Øresund – Drogden | észak,15,4,15.5,-0.0323,0.4886,normál
+2026-09-29,Øresund – Drogden | észak,20,4,16.5,0.2121,0.4886,normál
+2026-09-30,Øresund – Drogden | észak,14,4,22.0,-0.3636,0.4886,normál
+2026-10-01,Øresund – Drogden | észak,37,4,21.0,0.7619,0.4886,szokatlanul magas
+2026-10-02,Øresund – Drogden | észak,17,4,15.5,0.0968,0.4886,normál
+2026-10-03,Øresund – Drogden | észak,9,4,23.5,-0.617,0.4886,szokatlanul alacsony
+2026-10-04,Øresund – Drogden | észak,20,4,15.5,0.2903,0.4886,normál
+2026-10-05,Øresund – Drogden | észak,16,4,15.5,0.0323,0.4886,normál
+2026-10-06,Øresund – Drogden | észak,22,4,20.0,0.1,0.4886,normál
+2026-06-01,Øresund – Drogden | dél,14,0,,,0.5256,nincs alapszint
+2026-06-02,Øresund – Drogden | dél,32,0,,,0.5256,nincs alapszint
+2026-06-03,Øresund – Drogden | dél,26,0,,,0.5256,nincs alapszint
+2026-06-04,Øresund – Drogden | dél,29,0,,,0.5256,nincs alapszint
+2026-06-05,Øresund – Drogden | dél,39,0,,,0.5256,nincs alapszint
+2026-06-06,Øresund – Drogden | dél,33,0,,,0.5256,nincs alapszint
+2026-06-07,Øresund – Drogden | dél,23,0,,,0.5256,nincs alapszint
+2026-06-08,Øresund – Drogden | dél,25,1,,,0.5256,nincs alapszint
+2026-06-09,Øresund – Drogden | dél,20,1,,,0.5256,nincs alapszint
+2026-06-10,Øresund – Drogden | dél,29,1,,,0.5256,nincs alapszint
+2026-06-11,Øresund – Drogden | dél,23,1,,,0.5256,nincs alapszint
+2026-06-12,Øresund – Drogden | dél,32,1,,,0.5256,nincs alapszint
+2026-06-13,Øresund – Drogden | dél,29,1,,,0.5256,nincs alapszint
+2026-06-14,Øresund – Drogden | dél,23,1,,,0.5256,nincs alapszint
+2026-06-15,Øresund – Drogden | dél,29,2,,,0.5256,nincs alapszint
+2026-06-16,Øresund – Drogden | dél,28,2,,,0.5256,nincs alapszint
+2026-06-17,Øresund – Drogden | dél,24,2,,,0.5256,nincs alapszint
+2026-06-18,Øresund – Drogden | dél,25,2,,,0.5256,nincs alapszint
+2026-06-19,Øresund – Drogden | dél,31,2,,,0.5256,nincs alapszint
+2026-06-20,Øresund – Drogden | dél,26,2,,,0.5256,nincs alapszint
+2026-06-21,Øresund – Drogden | dél,18,2,,,0.5256,nincs alapszint
+2026-06-22,Øresund – Drogden | dél,21,3,25.0,-0.16,0.5256,normál
+2026-06-23,Øresund – Drogden | dél,28,3,28.0,0.0,0.5256,normál
+2026-06-24,Øresund – Drogden | dél,18,3,26.0,-0.3077,0.5256,normál
+2026-06-25,Øresund – Drogden | dél,25,3,25.0,0.0,0.5256,normál
+2026-06-26,Øresund – Drogden | dél,28,3,32.0,-0.125,0.5256,normál
+2026-06-27,Øresund – Drogden | dél,23,3,29.0,-0.2069,0.5256,normál
+2026-06-28,Øresund – Drogden | dél,26,3,23.0,0.1304,0.5256,normál
+2026-06-29,Øresund – Drogden | dél,24,4,23.0,0.0435,0.5256,normál
+2026-06-30,Øresund – Drogden | dél,28,4,28.0,0.0,0.5256,normál
+2026-07-01,Øresund – Drogden | dél,27,4,25.0,0.08,0.5256,normál
+2026-07-02,Øresund – Drogden | dél,16,4,25.0,-0.36,0.5256,normál
+2026-07-03,Øresund – Drogden | dél,20,4,31.5,-0.3651,0.5256,normál
+2026-07-04,Øresund – Drogden | dél,20,4,27.5,-0.2727,0.5256,normál
+2026-07-05,Øresund – Drogden | dél,30,4,23.0,0.3043,0.5256,normál
+2026-07-06,Øresund – Drogden | dél,20,4,24.5,-0.1837,0.5256,normál
+2026-07-07,Øresund – Drogden | dél,25,4,28.0,-0.1071,0.5256,normál
+2026-07-08,Øresund – Drogden | dél,22,4,25.5,-0.1373,0.5256,normál
+2026-07-09,Øresund – Drogden | dél,30,4,24.0,0.25,0.5256,normál
+2026-07-10,Øresund – Drogden | dél,22,4,29.5,-0.2542,0.5256,normál
+2026-07-11,Øresund – Drogden | dél,34,4,24.5,0.3878,0.5256,normál
+2026-07-12,Øresund – Drogden | dél,26,4,24.5,0.0612,0.5256,normál
+2026-07-13,Øresund – Drogden | dél,19,4,22.5,-0.1556,0.5256,normál
+2026-07-14,Øresund – Drogden | dél,33,4,28.0,0.1786,0.5256,normál
+2026-07-15,Øresund – Drogden | dél,29,4,23.0,0.2609,0.5256,normál
+2026-07-16,Øresund – Drogden | dél,27,4,25.0,0.08,0.5256,normál
+2026-07-17,Øresund – Drogden | dél,29,4,25.0,0.16,0.5256,normál
+2026-07-18,Øresund – Drogden | dél,28,4,24.5,0.1429,0.5256,normál
+2026-07-19,Øresund – Drogden | dél,10,4,26.0,-0.6154,0.5256,szokatlanul alacsony
+2026-07-20,Øresund – Drogden | dél,30,4,20.5,0.4634,0.5256,normál
+2026-07-21,Øresund – Drogden | dél,31,4,28.0,0.1071,0.5256,normál
+2026-07-22,Øresund – Drogden | dél,20,4,24.5,-0.1837,0.5256,normál
+2026-07-23,Øresund – Drogden | dél,21,4,26.0,-0.1923,0.5256,normál
+2026-07-24,Øresund – Drogden | dél,28,4,25.0,0.12,0.5256,normál
+2026-07-25,Øresund – Drogden | dél,21,4,25.5,-0.1765,0.5256,normál
+2026-07-26,Øresund – Drogden | dél,21,4,26.0,-0.1923,0.5256,normál
+2026-07-27,Øresund – Drogden | dél,16,4,22.0,-0.2727,0.5256,normál
+2026-07-28,Øresund – Drogden | dél,17,4,29.5,-0.4237,0.5256,normál
+2026-07-29,Øresund – Drogden | dél,27,4,24.5,0.102,0.5256,normál
+2026-07-30,Øresund – Drogden | dél,19,4,24.0,-0.2083,0.5256,normál
+2026-07-31,Øresund – Drogden | dél,25,4,25.0,0.0,0.5256,normál
+2026-08-01,Øresund – Drogden | dél,29,4,24.5,0.1837,0.5256,normál
+2026-08-02,Øresund – Drogden | dél,24,4,23.5,0.0213,0.5256,normál
+2026-08-03,Øresund – Drogden | dél,23,4,19.5,0.1795,0.5256,normál
+2026-08-04,Øresund – Drogden | dél,27,4,28.0,-0.0357,0.5256,normál
+2026-08-05,Øresund – Drogden | dél,20,4,24.5,-0.1837,0.5256,normál
+2026-08-06,Øresund – Drogden | dél,22,4,24.0,-0.0833,0.5256,normál
+2026-08-07,Øresund – Drogden | dél,21,4,26.5,-0.2075,0.5256,normál
+2026-08-08,Øresund – Drogden | dél,35,4,28.5,0.2281,0.5256,normál
+2026-08-09,Øresund – Drogden | dél,25,4,22.5,0.1111,0.5256,normál
+2026-08-10,Øresund – Drogden | dél,24,4,21.0,0.1429,0.5256,normál
+2026-08-11,Øresund – Drogden | dél,23,4,29.0,-0.2069,0.5256,normál
+2026-08-12,Øresund – Drogden | dél,32,4,23.5,0.3617,0.5256,normál
+2026-08-13,Øresund – Drogden | dél,24,4,21.5,0.1163,0.5256,normál
+2026-08-14,Øresund – Drogden | dél,15,4,26.5,-0.434,0.5256,normál
+2026-08-15,Øresund – Drogden | dél,30,4,28.5,0.0526,0.5256,normál
+2026-08-16,Øresund – Drogden | dél,37,4,22.5,0.6444,0.5256,szokatlanul magas
+2026-08-17,Øresund – Drogden | dél,30,4,23.5,0.2766,0.5256,normál
+2026-08-18,Øresund – Drogden | dél,29,4,25.0,0.16,0.5256,normál
+2026-08-19,Øresund – Drogden | dél,25,4,23.5,0.0638,0.5256,normál
+2026-08-20,Øresund – Drogden | dél,24,4,21.5,0.1163,0.5256,normál
+2026-08-21,Øresund – Drogden | dél,31,4,23.0,0.3478,0.5256,normál
+2026-08-22,Øresund – Drogden | dél,28,4,29.5,-0.0508,0.5256,normál
+2026-08-23,Øresund – Drogden | dél,25,4,24.5,0.0204,0.5256,normál
+2026-08-24,Øresund – Drogden | dél,32,4,23.5,0.3617,0.5256,normál
+2026-08-25,Øresund – Drogden | dél,28,4,25.0,0.12,0.5256,normál
+2026-08-26,Øresund – Drogden | dél,27,4,26.0,0.0385,0.5256,normál
+2026-08-27,Øresund – Drogden | dél,26,4,23.0,0.1304,0.5256,normál
+2026-08-28,Øresund – Drogden | dél,24,4,23.0,0.0435,0.5256,normál
+2026-08-29,Øresund – Drogden | dél,28,4,29.5,-0.0508,0.5256,normál
+2026-08-30,Øresund – Drogden | dél,42,4,25.0,0.68,0.5256,szokatlanul magas
+2026-08-31,Øresund – Drogden | dél,19,4,27.0,-0.2963,0.5256,normál
+2026-09-01,Øresund – Drogden | dél,28,4,27.5,0.0182,0.5256,normál
+2026-09-02,Øresund – Drogden | dél,33,4,26.0,0.2692,0.5256,normál
+2026-09-03,Øresund – Drogden | dél,28,4,24.0,0.1667,0.5256,normál
+2026-09-04,Øresund – Drogden | dél,25,4,22.5,0.1111,0.5256,normál
+2026-09-05,Øresund – Drogden | dél,27,4,29.0,-0.069,0.5256,normál
+2026-09-06,Øresund – Drogden | dél,22,4,31.0,-0.2903,0.5256,normál
+2026-09-07,Øresund – Drogden | dél,20,4,27.0,-0.2593,0.5256,normál
+2026-09-08,Øresund – Drogden | dél,35,4,28.0,0.25,0.5256,normál
+2026-09-09,Øresund – Drogden | dél,26,4,29.5,-0.1186,0.5256,normál
+2026-09-10,Øresund – Drogden | dél,26,4,25.0,0.04,0.5256,normál
+2026-09-11,Øresund – Drogden | dél,27,4,24.5,0.102,0.5256,normál
+2026-09-12,Øresund – Drogden | dél,42,4,28.0,0.5,0.5256,normál
+2026-09-13,Øresund – Drogden | dél,27,4,31.0,-0.129,0.5256,normál
+2026-09-14,Øresund – Drogden | dél,34,4,25.0,0.36,0.5256,normál
+2026-09-15,Øresund – Drogden | dél,28,4,28.5,-0.0175,0.5256,normál
+2026-09-16,Øresund – Drogden | dél,28,4,26.5,0.0566,0.5256,normál
+2026-09-17,Øresund – Drogden | dél,22,4,26.0,-0.1538,0.5256,normál
+2026-09-18,Øresund – Drogden | dél,37,4,26.0,0.4231,0.5256,normál
+2026-09-19,Øresund – Drogden | dél,35,4,28.0,0.25,0.5256,normál
+2026-09-20,Øresund – Drogden | dél,21,4,26.0,-0.1923,0.5256,normál
+2026-09-21,Øresund – Drogden | dél,19,4,26.0,-0.2692,0.5256,normál
+2026-09-22,Øresund – Drogden | dél,21,4,28.0,-0.25,0.5256,normál
+2026-09-23,Øresund – Drogden | dél,29,4,27.5,0.0545,0.5256,normál
+2026-09-24,Øresund – Drogden | dél,31,4,26.0,0.1923,0.5256,normál
+2026-09-25,Øresund – Drogden | dél,22,4,26.0,-0.1538,0.5256,normál
+2026-09-26,Øresund – Drogden | dél,28,4,31.5,-0.1111,0.5256,normál
+2026-09-27,Øresund – Drogden | dél,31,4,24.5,0.2653,0.5256,normál
+2026-09-28,Øresund – Drogden | dél,35,4,19.5,0.7949,0.5256,szokatlanul magas
+2026-09-29,Øresund – Drogden | dél,24,4,28.0,-0.1429,0.5256,normál
+2026-09-30,Øresund – Drogden | dél,24,4,28.5,-0.1579,0.5256,normál
+2026-10-01,Øresund – Drogden | dél,21,4,27.0,-0.2222,0.5256,normál
+2026-10-02,Øresund – Drogden | dél,29,4,26.0,0.1154,0.5256,normál
+2026-10-03,Øresund – Drogden | dél,30,4,31.5,-0.0476,0.5256,normál
+2026-10-04,Øresund – Drogden | dél,29,4,24.5,0.1837,0.5256,normál
+2026-10-05,Øresund – Drogden | dél,37,4,27.0,0.3704,0.5256,normál
+2026-10-06,Øresund – Drogden | dél,31,4,26.0,0.1923,0.5256,normál
+2026-06-01,Fehmarn-öv | nyugat,45,0,,,0.3726,nincs alapszint
+2026-06-02,Fehmarn-öv | nyugat,40,0,,,0.3726,nincs alapszint
+2026-06-03,Fehmarn-öv | nyugat,39,0,,,0.3726,nincs alapszint
+2026-06-04,Fehmarn-öv | nyugat,50,0,,,0.3726,nincs alapszint
+2026-06-05,Fehmarn-öv | nyugat,46,0,,,0.3726,nincs alapszint
+2026-06-06,Fehmarn-öv | nyugat,50,0,,,0.3726,nincs alapszint
+2026-06-07,Fehmarn-öv | nyugat,40,0,,,0.3726,nincs alapszint
+2026-06-08,Fehmarn-öv | nyugat,41,1,,,0.3726,nincs alapszint
+2026-06-09,Fehmarn-öv | nyugat,31,1,,,0.3726,nincs alapszint
+2026-06-10,Fehmarn-öv | nyugat,34,1,,,0.3726,nincs alapszint
+2026-06-11,Fehmarn-öv | nyugat,48,1,,,0.3726,nincs alapszint
+2026-06-12,Fehmarn-öv | nyugat,51,1,,,0.3726,nincs alapszint
+2026-06-13,Fehmarn-öv | nyugat,49,1,,,0.3726,nincs alapszint
+2026-06-14,Fehmarn-öv | nyugat,61,1,,,0.3726,nincs alapszint
+2026-06-15,Fehmarn-öv | nyugat,34,2,,,0.3726,nincs alapszint
+2026-06-16,Fehmarn-öv | nyugat,51,2,,,0.3726,nincs alapszint
+2026-06-17,Fehmarn-öv | nyugat,41,2,,,0.3726,nincs alapszint
+2026-06-18,Fehmarn-öv | nyugat,44,2,,,0.3726,nincs alapszint
+2026-06-19,Fehmarn-öv | nyugat,64,2,,,0.3726,nincs alapszint
+2026-06-20,Fehmarn-öv | nyugat,45,2,,,0.3726,nincs alapszint
+2026-06-21,Fehmarn-öv | nyugat,48,2,,,0.3726,nincs alapszint
+2026-06-22,Fehmarn-öv | nyugat,51,3,41.0,0.2439,0.3726,normál
+2026-06-23,Fehmarn-öv | nyugat,25,3,40.0,-0.375,0.3726,szokatlanul alacsony
+2026-06-24,Fehmarn-öv | nyugat,39,3,39.0,0.0,0.3726,normál
+2026-06-25,Fehmarn-öv | nyugat,42,3,48.0,-0.125,0.3726,normál
+2026-06-26,Fehmarn-öv | nyugat,41,3,51.0,-0.1961,0.3726,normál
+2026-06-27,Fehmarn-öv | nyugat,50,3,49.0,0.0204,0.3726,normál
+2026-06-28,Fehmarn-öv | nyugat,43,3,48.0,-0.1042,0.3726,normál
+2026-06-29,Fehmarn-öv | nyugat,38,4,43.0,-0.1163,0.3726,normál
+2026-06-30,Fehmarn-öv | nyugat,49,4,35.5,0.3803,0.3726,szokatlanul magas
+2026-07-01,Fehmarn-öv | nyugat,35,4,39.0,-0.1026,0.3726,normál
+2026-07-02,Fehmarn-öv | nyugat,41,4,46.0,-0.1087,0.3726,normál
+2026-07-03,Fehmarn-öv | nyugat,42,4,48.5,-0.134,0.3726,normál
+2026-07-04,Fehmarn-öv | nyugat,41,4,49.5,-0.1717,0.3726,normál
+2026-07-05,Fehmarn-öv | nyugat,43,4,45.5,-0.0549,0.3726,normál
+2026-07-06,Fehmarn-öv | nyugat,50,4,39.5,0.2658,0.3726,normál
+2026-07-07,Fehmarn-öv | nyugat,30,4,40.0,-0.25,0.3726,normál
+2026-07-08,Fehmarn-öv | nyugat,38,4,37.0,0.027,0.3726,normál
+2026-07-09,Fehmarn-öv | nyugat,34,4,43.0,-0.2093,0.3726,normál
+2026-07-10,Fehmarn-öv | nyugat,41,4,46.5,-0.1183,0.3726,normál
+2026-07-11,Fehmarn-öv | nyugat,46,4,47.0,-0.0213,0.3726,normál
+2026-07-12,Fehmarn-öv | nyugat,46,4,45.5,0.011,0.3726,normál
+2026-07-13,Fehmarn-öv | nyugat,53,4,44.0,0.2045,0.3726,normál
+2026-07-14,Fehmarn-öv | nyugat,54,4,39.5,0.3671,0.3726,normál
+2026-07-15,Fehmarn-öv | nyugat,32,4,38.5,-0.1688,0.3726,normál
+2026-07-16,Fehmarn-öv | nyugat,44,4,41.5,0.0602,0.3726,normál
+2026-07-17,Fehmarn-öv | nyugat,56,4,41.5,0.3494,0.3726,normál
+2026-07-18,Fehmarn-öv | nyugat,40,4,45.5,-0.1209,0.3726,normál
+2026-07-19,Fehmarn-öv | nyugat,47,4,44.5,0.0562,0.3726,normál
+2026-07-20,Fehmarn-öv | nyugat,45,4,50.5,-0.1089,0.3726,normál
+2026-07-21,Fehmarn-öv | nyugat,31,4,39.5,-0.2152,0.3726,normál
+2026-07-22,Fehmarn-öv | nyugat,38,4,36.5,0.0411,0.3726,normál
+2026-07-23,Fehmarn-öv | nyugat,35,4,41.5,-0.1566,0.3726,normál
+2026-07-24,Fehmarn-öv | nyugat,35,4,41.5,-0.1566,0.3726,normál
+2026-07-25,Fehmarn-öv | nyugat,47,4,43.5,0.0805,0.3726,normál
+2026-07-26,Fehmarn-öv | nyugat,38,4,44.5,-0.1461,0.3726,normál
+2026-07-27,Fehmarn-öv | nyugat,48,4,47.5,0.0105,0.3726,normál
+2026-07-28,Fehmarn-öv | nyugat,42,4,40.0,0.05,0.3726,normál
+2026-07-29,Fehmarn-öv | nyugat,33,4,36.5,-0.0959,0.3726,normál
+2026-07-30,Fehmarn-öv | nyugat,41,4,38.0,0.0789,0.3726,normál
+2026-07-31,Fehmarn-öv | nyugat,42,4,41.5,0.012,0.3726,normál
+2026-08-01,Fehmarn-öv | nyugat,53,4,43.5,0.2184,0.3726,normál
+2026-08-02,Fehmarn-öv | nyugat,46,4,44.5,0.0337,0.3726,normál
+2026-08-03,Fehmarn-öv | nyugat,44,4,49.0,-0.102,0.3726,normál
+2026-08-04,Fehmarn-öv | nyugat,44,4,36.5,0.2055,0.3726,normál
+2026-08-05,Fehmarn-öv | nyugat,32,4,35.5,-0.0986,0.3726,normál
+2026-08-06,Fehmarn-öv | nyugat,42,4,38.0,0.1053,0.3726,normál
+2026-08-07,Fehmarn-öv | nyugat,36,4,41.5,-0.1325,0.3726,normál
+2026-08-08,Fehmarn-öv | nyugat,50,4,46.5,0.0753,0.3726,normál
+2026-08-09,Fehmarn-öv | nyugat,43,4,46.0,-0.0652,0.3726,normál
+2026-08-10,Fehmarn-öv | nyugat,21,4,46.5,-0.5484,0.3726,szokatlanul alacsony
+2026-08-11,Fehmarn-öv | nyugat,40,4,43.0,-0.0698,0.3726,normál
+2026-08-12,Fehmarn-öv | nyugat,42,4,32.5,0.2923,0.3726,normál
+2026-08-13,Fehmarn-öv | nyugat,47,4,41.5,0.1325,0.3726,normál
+2026-08-14,Fehmarn-öv | nyugat,53,4,39.0,0.359,0.3726,normál
+2026-08-15,Fehmarn-öv | nyugat,38,4,48.5,-0.2165,0.3726,normál
+2026-08-16,Fehmarn-öv | nyugat,39,4,44.5,-0.1236,0.3726,normál
+2026-08-17,Fehmarn-öv | nyugat,41,4,44.5,-0.0787,0.3726,normál
+2026-08-18,Fehmarn-öv | nyugat,38,4,41.0,-0.0732,0.3726,normál
+2026-08-19,Fehmarn-öv | nyugat,37,4,35.5,0.0423,0.3726,normál
+2026-08-20,Fehmarn-öv | nyugat,54,4,41.5,0.3012,0.3726,normál
+2026-08-21,Fehmarn-öv | nyugat,42,4,39.0,0.0769,0.3726,normál
+2026-08-22,Fehmarn-öv | nyugat,35,4,48.5,-0.2784,0.3726,normál
+2026-08-23,Fehmarn-öv | nyugat,55,4,41.0,0.3415,0.3726,normál
+2026-08-24,Fehmarn-öv | nyugat,45,4,42.5,0.0588,0.3726,normál
+2026-08-25,Fehmarn-öv | nyugat,45,4,41.0,0.0976,0.3726,normál
+2026-08-26,Fehmarn-öv | nyugat,43,4,35.0,0.2286,0.3726,normál
+2026-08-27,Fehmarn-öv | nyugat,26,4,44.5,-0.4157,0.3726,szokatlanul alacsony
+2026-08-28,Fehmarn-öv | nyugat,56,4,42.0,0.3333,0.3726,normál
+2026-08-29,Fehmarn-öv | nyugat,60,4,44.0,0.3636,0.3726,normál
+2026-08-30,Fehmarn-öv | nyugat,52,4,44.5,0.1685,0.3726,normál
+2026-08-31,Fehmarn-öv | nyugat,50,4,42.5,0.1765,0.3726,normál
+2026-09-01,Fehmarn-öv | nyugat,42,4,42.0,0.0,0.3726,normál
+2026-09-02,Fehmarn-öv | nyugat,31,4,39.5,-0.2152,0.3726,normál
+2026-09-03,Fehmarn-öv | nyugat,48,4,44.5,0.0787,0.3726,normál
+2026-09-04,Fehmarn-öv | nyugat,43,4,47.5,-0.0947,0.3726,normál
+2026-09-05,Fehmarn-öv | nyugat,44,4,44.0,0.0,0.3726,normál
+2026-09-06,Fehmarn-öv | nyugat,59,4,47.5,0.2421,0.3726,normál
+2026-09-07,Fehmarn-öv | nyugat,41,4,43.0,-0.0465,0.3726,normál
+2026-09-08,Fehmarn-öv | nyugat,46,4,41.0,0.122,0.3726,normál
+2026-09-09,Fehmarn-öv | nyugat,36,4,39.5,-0.0886,0.3726,normál
+2026-09-10,Fehmarn-öv | nyugat,41,4,47.5,-0.1368,0.3726,normál
+2026-09-11,Fehmarn-öv | nyugat,42,4,48.0,-0.125,0.3726,normál
+2026-09-12,Fehmarn-öv | nyugat,52,4,41.0,0.2683,0.3726,normál
+2026-09-13,Fehmarn-öv | nyugat,49,4,53.5,-0.0841,0.3726,normál
+2026-09-14,Fehmarn-öv | nyugat,51,4,43.0,0.186,0.3726,normál
+2026-09-15,Fehmarn-öv | nyugat,41,4,43.5,-0.0575,0.3726,normál
+2026-09-16,Fehmarn-öv | nyugat,35,4,36.5,-0.0411,0.3726,normál
+2026-09-17,Fehmarn-öv | nyugat,49,4,44.5,0.1011,0.3726,normál
+2026-09-18,Fehmarn-öv | nyugat,52,4,42.5,0.2235,0.3726,normál
+2026-09-19,Fehmarn-öv | nyugat,54,4,48.0,0.125,0.3726,normál
+2026-09-20,Fehmarn-öv | nyugat,50,4,53.5,-0.0654,0.3726,normál
+2026-09-21,Fehmarn-öv | nyugat,55,4,47.5,0.1579,0.3726,normál
+2026-09-22,Fehmarn-öv | nyugat,45,4,43.5,0.0345,0.3726,normál
+2026-09-23,Fehmarn-öv | nyugat,31,4,35.5,-0.1268,0.3726,normál
+2026-09-24,Fehmarn-öv | nyugat,51,4,44.5,0.1461,0.3726,normál
+2026-09-25,Fehmarn-öv | nyugat,54,4,47.5,0.1368,0.3726,normál
+2026-09-26,Fehmarn-öv | nyugat,63,4,53.0,0.1887,0.3726,normál
+2026-09-27,Fehmarn-öv | nyugat,55,4,51.0,0.0784,0.3726,normál
+2026-09-28,Fehmarn-öv | nyugat,42,4,50.5,-0.1683,0.3726,normál
+2026-09-29,Fehmarn-öv | nyugat,49,4,43.5,0.1264,0.3726,normál
+2026-09-30,Fehmarn-öv | nyugat,45,4,33.0,0.3636,0.3726,normál
+2026-10-01,Fehmarn-öv | nyugat,51,4,48.5,0.0515,0.3726,normál
+2026-10-02,Fehmarn-öv | nyugat,49,4,47.5,0.0316,0.3726,normál
+2026-10-03,Fehmarn-öv | nyugat,60,4,53.0,0.1321,0.3726,normál
+2026-10-04,Fehmarn-öv | nyugat,56,4,52.5,0.0667,0.3726,normál
+2026-10-05,Fehmarn-öv | nyugat,59,4,46.5,0.2688,0.3726,normál
+2026-10-06,Fehmarn-öv | nyugat,45,4,45.5,-0.011,0.3726,normál
+2026-06-01,Fehmarn-öv | kelet,45,0,,,0.3889,nincs alapszint
+2026-06-02,Fehmarn-öv | kelet,39,0,,,0.3889,nincs alapszint
+2026-06-03,Fehmarn-öv | kelet,43,0,,,0.3889,nincs alapszint
+2026-06-04,Fehmarn-öv | kelet,34,0,,,0.3889,nincs alapszint
+2026-06-05,Fehmarn-öv | kelet,35,0,,,0.3889,nincs alapszint
+2026-06-06,Fehmarn-öv | kelet,43,0,,,0.3889,nincs alapszint
+2026-06-07,Fehmarn-öv | kelet,45,0,,,0.3889,nincs alapszint
+2026-06-08,Fehmarn-öv | kelet,34,1,,,0.3889,nincs alapszint
+2026-06-09,Fehmarn-öv | kelet,35,1,,,0.3889,nincs alapszint
+2026-06-10,Fehmarn-öv | kelet,31,1,,,0.3889,nincs alapszint
+2026-06-11,Fehmarn-öv | kelet,38,1,,,0.3889,nincs alapszint
+2026-06-12,Fehmarn-öv | kelet,46,1,,,0.3889,nincs alapszint
+2026-06-13,Fehmarn-öv | kelet,35,1,,,0.3889,nincs alapszint
+2026-06-14,Fehmarn-öv | kelet,53,1,,,0.3889,nincs alapszint
+2026-06-15,Fehmarn-öv | kelet,34,2,,,0.3889,nincs alapszint
+2026-06-16,Fehmarn-öv | kelet,35,2,,,0.3889,nincs alapszint
+2026-06-17,Fehmarn-öv | kelet,32,2,,,0.3889,nincs alapszint
+2026-06-18,Fehmarn-öv | kelet,26,2,,,0.3889,nincs alapszint
+2026-06-19,Fehmarn-öv | kelet,39,2,,,0.3889,nincs alapszint
+2026-06-20,Fehmarn-öv | kelet,40,2,,,0.3889,nincs alapszint
+2026-06-21,Fehmarn-öv | kelet,52,2,,,0.3889,nincs alapszint
+2026-06-22,Fehmarn-öv | kelet,30,3,34.0,-0.1176,0.3889,normál
+2026-06-23,Fehmarn-öv | kelet,41,3,35.0,0.1714,0.3889,normál
+2026-06-24,Fehmarn-öv | kelet,24,3,32.0,-0.25,0.3889,normál
+2026-06-25,Fehmarn-öv | kelet,34,3,34.0,0.0,0.3889,normál
+2026-06-26,Fehmarn-öv | kelet,39,3,39.0,0.0,0.3889,normál
+2026-06-27,Fehmarn-öv | kelet,40,3,40.0,0.0,0.3889,normál
+2026-06-28,Fehmarn-öv | kelet,39,3,52.0,-0.25,0.3889,normál
+2026-06-29,Fehmarn-öv | kelet,48,4,34.0,0.4118,0.3889,szokatlanul magas
+2026-06-30,Fehmarn-öv | kelet,39,4,37.0,0.0541,0.3889,normál
+2026-07-01,Fehmarn-öv | kelet,35,4,31.5,0.1111,0.3889,normál
+2026-07-02,Fehmarn-öv | kelet,40,4,34.0,0.1765,0.3889,normál
+2026-07-03,Fehmarn-öv | kelet,44,4,39.0,0.1282,0.3889,normál
+2026-07-04,Fehmarn-öv | kelet,31,4,40.0,-0.225,0.3889,normál
+2026-07-05,Fehmarn-öv | kelet,42,4,48.5,-0.134,0.3889,normál
+2026-07-06,Fehmarn-öv | kelet,54,4,34.0,0.5882,0.3889,szokatlanul magas
+2026-07-07,Fehmarn-öv | kelet,35,4,37.0,-0.0541,0.3889,normál
+2026-07-08,Fehmarn-öv | kelet,44,4,31.5,0.3968,0.3889,szokatlanul magas
+2026-07-09,Fehmarn-öv | kelet,30,4,36.0,-0.1667,0.3889,normál
+2026-07-10,Fehmarn-öv | kelet,40,4,41.5,-0.0361,0.3889,normál
+2026-07-11,Fehmarn-öv | kelet,33,4,37.5,-0.12,0.3889,normál
+2026-07-12,Fehmarn-öv | kelet,24,4,47.0,-0.4894,0.3889,szokatlanul alacsony
+2026-07-13,Fehmarn-öv | kelet,31,4,41.0,-0.2439,0.3889,normál
+2026-07-14,Fehmarn-öv | kelet,39,4,37.0,0.0541,0.3889,normál
+2026-07-15,Fehmarn-öv | kelet,31,4,33.5,-0.0746,0.3889,normál
+2026-07-16,Fehmarn-öv | kelet,28,4,32.0,-0.125,0.3889,normál
+2026-07-17,Fehmarn-öv | kelet,52,4,39.5,0.3165,0.3889,normál
+2026-07-18,Fehmarn-öv | kelet,43,4,36.5,0.1781,0.3889,normál
+2026-07-19,Fehmarn-öv | kelet,44,4,40.5,0.0864,0.3889,normál
+2026-07-20,Fehmarn-öv | kelet,31,4,39.5,-0.2152,0.3889,normál
+2026-07-21,Fehmarn-öv | kelet,38,4,39.0,-0.0256,0.3889,normál
+2026-07-22,Fehmarn-öv | kelet,36,4,33.0,0.0909,0.3889,normál
+2026-07-23,Fehmarn-öv | kelet,36,4,32.0,0.125,0.3889,normál
+2026-07-24,Fehmarn-öv | kelet,37,4,42.0,-0.119,0.3889,normál
+2026-07-25,Fehmarn-öv | kelet,36,4,36.5,-0.0137,0.3889,normál
+2026-07-26,Fehmarn-öv | kelet,44,4,40.5,0.0864,0.3889,normál
+2026-07-27,Fehmarn-öv | kelet,33,4,39.5,-0.1646,0.3889,normál
+2026-07-28,Fehmarn-öv | kelet,34,4,38.5,-0.1169,0.3889,normál
+2026-07-29,Fehmarn-öv | kelet,32,4,35.5,-0.0986,0.3889,normál
+2026-07-30,Fehmarn-öv | kelet,36,4,33.0,0.0909,0.3889,normál
+2026-07-31,Fehmarn-öv | kelet,33,4,42.0,-0.2143,0.3889,normál
+2026-08-01,Fehmarn-öv | kelet,36,4,34.5,0.0435,0.3889,normál
+2026-08-02,Fehmarn-öv | kelet,41,4,43.0,-0.0465,0.3889,normál
+2026-08-03,Fehmarn-öv | kelet,30,4,32.0,-0.0625,0.3889,normál
+2026-08-04,Fehmarn-öv | kelet,28,4,36.5,-0.2329,0.3889,normál
+2026-08-05,Fehmarn-öv | kelet,44,4,34.0,0.2941,0.3889,normál
+2026-08-06,Fehmarn-öv | kelet,27,4,33.0,-0.1818,0.3889,normál
+2026-08-07,Fehmarn-öv | kelet,46,4,38.5,0.1948,0.3889,normál
+2026-08-08,Fehmarn-öv | kelet,42,4,36.0,0.1667,0.3889,normál
+2026-08-09,Fehmarn-öv | kelet,46,4,42.5,0.0824,0.3889,normál
+2026-08-10,Fehmarn-öv | kelet,32,4,31.0,0.0323,0.3889,normál
+2026-08-11,Fehmarn-öv | kelet,31,4,36.0,-0.1389,0.3889,normál
+2026-08-12,Fehmarn-öv | kelet,31,4,34.0,-0.0882,0.3889,normál
+2026-08-13,Fehmarn-öv | kelet,40,4,32.0,0.25,0.3889,normál
+2026-08-14,Fehmarn-öv | kelet,37,4,41.5,-0.1084,0.3889,normál
+2026-08-15,Fehmarn-öv | kelet,40,4,39.0,0.0256,0.3889,normál
+2026-08-16,Fehmarn-öv | kelet,46,4,44.0,0.0455,0.3889,normál
+2026-08-17,Fehmarn-öv | kelet,39,4,31.5,0.2381,0.3889,normál
+2026-08-18,Fehmarn-öv | kelet,39,4,32.5,0.2,0.3889,normál
+2026-08-19,Fehmarn-öv | kelet,44,4,34.0,0.2941,0.3889,normál
+2026-08-20,Fehmarn-öv | kelet,37,4,36.0,0.0278,0.3889,normál
+2026-08-21,Fehmarn-öv | kelet,37,4,37.0,0.0,0.3889,normál
+2026-08-22,Fehmarn-öv | kelet,45,4,38.0,0.1842,0.3889,normál
+2026-08-23,Fehmarn-öv | kelet,54,4,45.0,0.2,0.3889,normál
+2026-08-24,Fehmarn-öv | kelet,24,4,32.5,-0.2615,0.3889,normál
+2026-08-25,Fehmarn-öv | kelet,34,4,32.5,0.0462,0.3889,normál
+2026-08-26,Fehmarn-öv | kelet,44,4,38.0,0.1579,0.3889,normál
+2026-08-27,Fehmarn-öv | kelet,38,4,36.5,0.0411,0.3889,normál
+2026-08-28,Fehmarn-öv | kelet,37,4,37.0,0.0,0.3889,normál
+2026-08-29,Fehmarn-öv | kelet,50,4,41.0,0.2195,0.3889,normál
+2026-08-30,Fehmarn-öv | kelet,43,4,46.0,-0.0652,0.3889,normál
+2026-08-31,Fehmarn-öv | kelet,38,4,31.0,0.2258,0.3889,normál
+2026-09-01,Fehmarn-öv | kelet,35,4,32.5,0.0769,0.3889,normál
+2026-09-02,Fehmarn-öv | kelet,32,4,44.0,-0.2727,0.3889,normál
+2026-09-03,Fehmarn-öv | kelet,39,4,37.5,0.04,0.3889,normál
+2026-09-04,Fehmarn-öv | kelet,43,4,37.0,0.1622,0.3889,normál
+2026-09-05,Fehmarn-öv | kelet,36,4,43.5,-0.1724,0.3889,normál
+2026-09-06,Fehmarn-öv | kelet,40,4,46.0,-0.1304,0.3889,normál
+2026-09-07,Fehmarn-öv | kelet,50,4,35.0,0.4286,0.3889,szokatlanul magas
+2026-09-08,Fehmarn-öv | kelet,34,4,34.5,-0.0145,0.3889,normál
+2026-09-09,Fehmarn-öv | kelet,49,4,38.0,0.2895,0.3889,normál
+2026-09-10,Fehmarn-öv | kelet,30,4,38.5,-0.2208,0.3889,normál
+2026-09-11,Fehmarn-öv | kelet,41,4,37.0,0.1081,0.3889,normál
+2026-09-12,Fehmarn-öv | kelet,46,4,42.5,0.0824,0.3889,normál
+2026-09-13,Fehmarn-öv | kelet,51,4,44.5,0.1461,0.3889,normál
+2026-09-14,Fehmarn-öv | kelet,35,4,38.5,-0.0909,0.3889,normál
+2026-09-15,Fehmarn-öv | kelet,38,4,34.5,0.1014,0.3889,normál
+2026-09-16,Fehmarn-öv | kelet,45,4,44.0,0.0227,0.3889,normál
+2026-09-17,Fehmarn-öv | kelet,44,4,37.5,0.1733,0.3889,normál
+2026-09-18,Fehmarn-öv | kelet,47,4,39.0,0.2051,0.3889,normál
+2026-09-19,Fehmarn-öv | kelet,48,4,45.5,0.0549,0.3889,normál
+2026-09-20,Fehmarn-öv | kelet,46,4,47.0,-0.0213,0.3889,normál
+2026-09-21,Fehmarn-öv | kelet,30,4,36.5,-0.1781,0.3889,normál
+2026-09-22,Fehmarn-öv | kelet,27,4,34.5,-0.2174,0.3889,normál
+2026-09-23,Fehmarn-öv | kelet,45,4,44.5,0.0112,0.3889,normál
+2026-09-24,Fehmarn-öv | kelet,47,4,38.5,0.2208,0.3889,normál
+2026-09-25,Fehmarn-öv | kelet,41,4,42.0,-0.0238,0.3889,normál
+2026-09-26,Fehmarn-öv | kelet,50,4,47.0,0.0638,0.3889,normál
+2026-09-27,Fehmarn-öv | kelet,43,4,44.5,-0.0337,0.3889,normál
+2026-09-28,Fehmarn-öv | kelet,47,4,36.5,0.2877,0.3889,normál
+2026-09-29,Fehmarn-öv | kelet,32,4,34.5,-0.0725,0.3889,normál
+2026-09-30,Fehmarn-öv | kelet,34,4,45.0,-0.2444,0.3889,normál
+2026-10-01,Fehmarn-öv | kelet,32,4,41.5,-0.2289,0.3889,normál
+2026-10-02,Fehmarn-öv | kelet,38,4,42.0,-0.0952,0.3889,normál
+2026-10-03,Fehmarn-öv | kelet,46,4,47.0,-0.0213,0.3889,normál
+2026-10-04,Fehmarn-öv | kelet,45,4,44.5,0.0112,0.3889,normál
+2026-10-05,Fehmarn-öv | kelet,42,4,41.0,0.0244,0.3889,normál
+2026-10-06,Fehmarn-öv | kelet,37,4,33.0,0.1212,0.3889,normál
+2026-06-01,Kadet-rende | északkelet,47,0,,,0.3841,nincs alapszint
+2026-06-02,Kadet-rende | északkelet,42,0,,,0.3841,nincs alapszint
+2026-06-03,Kadet-rende | északkelet,42,0,,,0.3841,nincs alapszint
+2026-06-04,Kadet-rende | északkelet,45,0,,,0.3841,nincs alapszint
+2026-06-05,Kadet-rende | északkelet,37,0,,,0.3841,nincs alapszint
+2026-06-06,Kadet-rende | északkelet,44,0,,,0.3841,nincs alapszint
+2026-06-07,Kadet-rende | északkelet,47,0,,,0.3841,nincs alapszint
+2026-06-08,Kadet-rende | északkelet,38,1,,,0.3841,nincs alapszint
+2026-06-09,Kadet-rende | északkelet,35,1,,,0.3841,nincs alapszint
+2026-06-10,Kadet-rende | északkelet,35,1,,,0.3841,nincs alapszint
+2026-06-11,Kadet-rende | északkelet,43,1,,,0.3841,nincs alapszint
+2026-06-12,Kadet-rende | északkelet,40,1,,,0.3841,nincs alapszint
+2026-06-13,Kadet-rende | északkelet,44,1,,,0.3841,nincs alapszint
+2026-06-14,Kadet-rende | északkelet,46,1,,,0.3841,nincs alapszint
+2026-06-15,Kadet-rende | északkelet,39,2,,,0.3841,nincs alapszint
+2026-06-16,Kadet-rende | északkelet,42,2,,,0.3841,nincs alapszint
+2026-06-17,Kadet-rende | északkelet,41,2,,,0.3841,nincs alapszint
+2026-06-18,Kadet-rende | északkelet,29,2,,,0.3841,nincs alapszint
+2026-06-19,Kadet-rende | északkelet,36,2,,,0.3841,nincs alapszint
+2026-06-20,Kadet-rende | északkelet,44,2,,,0.3841,nincs alapszint
+2026-06-21,Kadet-rende | északkelet,47,2,,,0.3841,nincs alapszint
+2026-06-22,Kadet-rende | északkelet,37,3,39.0,-0.0513,0.3841,normál
+2026-06-23,Kadet-rende | északkelet,40,3,42.0,-0.0476,0.3841,normál
+2026-06-24,Kadet-rende | északkelet,28,3,41.0,-0.3171,0.3841,normál
+2026-06-25,Kadet-rende | északkelet,34,3,43.0,-0.2093,0.3841,normál
+2026-06-26,Kadet-rende | északkelet,45,3,37.0,0.2162,0.3841,normál
+2026-06-27,Kadet-rende | északkelet,36,3,44.0,-0.1818,0.3841,normál
+2026-06-28,Kadet-rende | északkelet,46,3,47.0,-0.0213,0.3841,normál
+2026-06-29,Kadet-rende | északkelet,43,4,38.5,0.1169,0.3841,normál
+2026-06-30,Kadet-rende | északkelet,45,4,41.0,0.0976,0.3841,normál
+2026-07-01,Kadet-rende | északkelet,40,4,38.0,0.0526,0.3841,normál
+2026-07-02,Kadet-rende | északkelet,43,4,38.5,0.1169,0.3841,normál
+2026-07-03,Kadet-rende | északkelet,41,4,38.5,0.0649,0.3841,normál
+2026-07-04,Kadet-rende | északkelet,40,4,44.0,-0.0909,0.3841,normál
+2026-07-05,Kadet-rende | északkelet,39,4,46.5,-0.1613,0.3841,normál
+2026-07-06,Kadet-rende | északkelet,49,4,38.5,0.2727,0.3841,normál
+2026-07-07,Kadet-rende | északkelet,29,4,41.0,-0.2927,0.3841,normál
+2026-07-08,Kadet-rende | északkelet,59,4,37.5,0.5733,0.3841,szokatlanul magas
+2026-07-09,Kadet-rende | északkelet,47,4,38.5,0.2208,0.3841,normál
+2026-07-10,Kadet-rende | északkelet,45,4,40.5,0.1111,0.3841,normál
+2026-07-11,Kadet-rende | északkelet,35,4,42.0,-0.1667,0.3841,normál
+2026-07-12,Kadet-rende | északkelet,24,4,46.0,-0.4783,0.3841,szokatlanul alacsony
+2026-07-13,Kadet-rende | északkelet,29,4,41.0,-0.2927,0.3841,normál
+2026-07-14,Kadet-rende | északkelet,40,4,41.0,-0.0244,0.3841,normál
+2026-07-15,Kadet-rende | északkelet,39,4,40.5,-0.037,0.3841,normál
+2026-07-16,Kadet-rende | északkelet,30,4,38.5,-0.2208,0.3841,normál
+2026-07-17,Kadet-rende | északkelet,41,4,43.0,-0.0465,0.3841,normál
+2026-07-18,Kadet-rende | északkelet,37,4,38.0,-0.0263,0.3841,normál
+2026-07-19,Kadet-rende | északkelet,47,4,42.5,0.1059,0.3841,normál
+2026-07-20,Kadet-rende | északkelet,31,4,40.0,-0.225,0.3841,normál
+2026-07-21,Kadet-rende | északkelet,45,4,40.0,0.125,0.3841,normál
+2026-07-22,Kadet-rende | északkelet,39,4,39.5,-0.0127,0.3841,normál
+2026-07-23,Kadet-rende | északkelet,31,4,38.5,-0.1948,0.3841,normál
+2026-07-24,Kadet-rende | északkelet,41,4,43.0,-0.0465,0.3841,normál
+2026-07-25,Kadet-rende | északkelet,31,4,36.5,-0.1507,0.3841,normál
+2026-07-26,Kadet-rende | északkelet,49,4,42.5,0.1529,0.3841,normál
+2026-07-27,Kadet-rende | északkelet,31,4,37.0,-0.1622,0.3841,normál
+2026-07-28,Kadet-rende | északkelet,36,4,42.5,-0.1529,0.3841,normál
+2026-07-29,Kadet-rende | északkelet,39,4,39.5,-0.0127,0.3841,normál
+2026-07-30,Kadet-rende | északkelet,32,4,37.0,-0.1351,0.3841,normál
+2026-07-31,Kadet-rende | északkelet,35,4,41.0,-0.1463,0.3841,normál
+2026-08-01,Kadet-rende | északkelet,35,4,36.0,-0.0278,0.3841,normál
+2026-08-02,Kadet-rende | északkelet,46,4,43.0,0.0698,0.3841,normál
+2026-08-03,Kadet-rende | északkelet,33,4,31.0,0.0645,0.3841,normál
+2026-08-04,Kadet-rende | északkelet,29,4,38.0,-0.2368,0.3841,normál
+2026-08-05,Kadet-rende | északkelet,47,4,39.0,0.2051,0.3841,normál
+2026-08-06,Kadet-rende | északkelet,29,4,31.5,-0.0794,0.3841,normál
+2026-08-07,Kadet-rende | északkelet,52,4,41.0,0.2683,0.3841,normál
+2026-08-08,Kadet-rende | északkelet,47,4,35.0,0.3429,0.3841,normál
+2026-08-09,Kadet-rende | északkelet,44,4,46.5,-0.0538,0.3841,normál
+2026-08-10,Kadet-rende | északkelet,33,4,31.0,0.0645,0.3841,normál
+2026-08-11,Kadet-rende | északkelet,42,4,38.0,0.1053,0.3841,normál
+2026-08-12,Kadet-rende | északkelet,29,4,39.0,-0.2564,0.3841,normál
+2026-08-13,Kadet-rende | északkelet,40,4,30.5,0.3115,0.3841,normál
+2026-08-14,Kadet-rende | északkelet,44,4,41.0,0.0732,0.3841,normál
+2026-08-15,Kadet-rende | északkelet,34,4,36.0,-0.0556,0.3841,normál
+2026-08-16,Kadet-rende | északkelet,42,4,46.5,-0.0968,0.3841,normál
+2026-08-17,Kadet-rende | északkelet,44,4,32.0,0.375,0.3841,normál
+2026-08-18,Kadet-rende | északkelet,40,4,39.0,0.0256,0.3841,normál
+2026-08-19,Kadet-rende | északkelet,37,4,39.0,-0.0513,0.3841,normál
+2026-08-20,Kadet-rende | északkelet,42,4,31.5,0.3333,0.3841,normál
+2026-08-21,Kadet-rende | északkelet,40,4,42.5,-0.0588,0.3841,normál
+2026-08-22,Kadet-rende | északkelet,47,4,34.5,0.3623,0.3841,normál
+2026-08-23,Kadet-rende | északkelet,50,4,45.0,0.1111,0.3841,normál
+2026-08-24,Kadet-rende | északkelet,27,4,33.0,-0.1818,0.3841,normál
+2026-08-25,Kadet-rende | északkelet,31,4,38.0,-0.1842,0.3841,normál
+2026-08-26,Kadet-rende | északkelet,47,4,38.0,0.2368,0.3841,normál
+2026-08-27,Kadet-rende | északkelet,38,4,36.0,0.0556,0.3841,normál
+2026-08-28,Kadet-rende | északkelet,35,4,42.0,-0.1667,0.3841,normál
+2026-08-29,Kadet-rende | északkelet,57,4,41.0,0.3902,0.3841,szokatlanul magas
+2026-08-30,Kadet-rende | északkelet,37,4,45.0,-0.1778,0.3841,normál
+2026-08-31,Kadet-rende | északkelet,39,4,33.0,0.1818,0.3841,normál
+2026-09-01,Kadet-rende | északkelet,39,4,35.5,0.0986,0.3841,normál
+2026-09-02,Kadet-rende | északkelet,34,4,42.0,-0.1905,0.3841,normál
+2026-09-03,Kadet-rende | északkelet,45,4,39.0,0.1538,0.3841,normál
+2026-09-04,Kadet-rende | északkelet,37,4,42.0,-0.119,0.3841,normál
+2026-09-05,Kadet-rende | északkelet,39,4,47.0,-0.1702,0.3841,normál
+2026-09-06,Kadet-rende | északkelet,39,4,43.0,-0.093,0.3841,normál
+2026-09-07,Kadet-rende | északkelet,45,4,36.0,0.25,0.3841,normál
+2026-09-08,Kadet-rende | északkelet,36,4,39.5,-0.0886,0.3841,normál
+2026-09-09,Kadet-rende | északkelet,50,4,35.5,0.4085,0.3841,szokatlanul magas
+2026-09-10,Kadet-rende | északkelet,35,4,41.0,-0.1463,0.3841,normál
+2026-09-11,Kadet-rende | északkelet,47,4,38.5,0.2208,0.3841,normál
+2026-09-12,Kadet-rende | északkelet,43,4,43.0,0.0,0.3841,normál
+2026-09-13,Kadet-rende | északkelet,43,4,40.5,0.0617,0.3841,normál
+2026-09-14,Kadet-rende | északkelet,40,4,41.5,-0.0361,0.3841,normál
+2026-09-15,Kadet-rende | északkelet,42,4,37.5,0.12,0.3841,normál
+2026-09-16,Kadet-rende | északkelet,46,4,42.0,0.0952,0.3841,normál
+2026-09-17,Kadet-rende | északkelet,45,4,40.0,0.125,0.3841,normál
+2026-09-18,Kadet-rende | északkelet,49,4,38.5,0.2727,0.3841,normál
+2026-09-19,Kadet-rende | északkelet,48,4,45.0,0.0667,0.3841,normál
+2026-09-20,Kadet-rende | északkelet,50,4,41.0,0.2195,0.3841,normál
+2026-09-21,Kadet-rende | északkelet,35,4,39.5,-0.1139,0.3841,normál
+2026-09-22,Kadet-rende | északkelet,31,4,37.5,-0.1733,0.3841,normál
+2026-09-23,Kadet-rende | északkelet,48,4,46.5,0.0323,0.3841,normál
+2026-09-24,Kadet-rende | északkelet,49,4,41.5,0.1807,0.3841,normál
+2026-09-25,Kadet-rende | északkelet,48,4,42.0,0.1429,0.3841,normál
+2026-09-26,Kadet-rende | északkelet,50,4,45.5,0.0989,0.3841,normál
+2026-09-27,Kadet-rende | északkelet,37,4,41.0,-0.0976,0.3841,normál
+2026-09-28,Kadet-rende | északkelet,43,4,39.5,0.0886,0.3841,normál
+2026-09-29,Kadet-rende | északkelet,36,4,37.5,-0.04,0.3841,normál
+2026-09-30,Kadet-rende | északkelet,42,4,47.0,-0.1064,0.3841,normál
+2026-10-01,Kadet-rende | északkelet,32,4,45.0,-0.2889,0.3841,normál
+2026-10-02,Kadet-rende | északkelet,43,4,47.5,-0.0947,0.3841,normál
+2026-10-03,Kadet-rende | északkelet,49,4,45.5,0.0769,0.3841,normál
+2026-10-04,Kadet-rende | északkelet,47,4,41.0,0.1463,0.3841,normál
+2026-10-05,Kadet-rende | északkelet,39,4,41.5,-0.0602,0.3841,normál
+2026-10-06,Kadet-rende | északkelet,39,4,36.0,0.0833,0.3841,normál
+2026-06-01,Kadet-rende | délnyugat,46,0,,,0.353,nincs alapszint
+2026-06-02,Kadet-rende | délnyugat,40,0,,,0.353,nincs alapszint
+2026-06-03,Kadet-rende | délnyugat,44,0,,,0.353,nincs alapszint
+2026-06-04,Kadet-rende | délnyugat,48,0,,,0.353,nincs alapszint
+2026-06-05,Kadet-rende | délnyugat,54,0,,,0.353,nincs alapszint
+2026-06-06,Kadet-rende | délnyugat,46,0,,,0.353,nincs alapszint
+2026-06-07,Kadet-rende | délnyugat,51,0,,,0.353,nincs alapszint
+2026-06-08,Kadet-rende | délnyugat,38,1,,,0.353,nincs alapszint
+2026-06-09,Kadet-rende | délnyugat,32,1,,,0.353,nincs alapszint
+2026-06-10,Kadet-rende | délnyugat,45,1,,,0.353,nincs alapszint
+2026-06-11,Kadet-rende | délnyugat,42,1,,,0.353,nincs alapszint
+2026-06-12,Kadet-rende | délnyugat,57,1,,,0.353,nincs alapszint
+2026-06-13,Kadet-rende | délnyugat,56,1,,,0.353,nincs alapszint
+2026-06-14,Kadet-rende | délnyugat,59,1,,,0.353,nincs alapszint
+2026-06-15,Kadet-rende | délnyugat,39,2,,,0.353,nincs alapszint
+2026-06-16,Kadet-rende | délnyugat,49,2,,,0.353,nincs alapszint
+2026-06-17,Kadet-rende | délnyugat,43,2,,,0.353,nincs alapszint
+2026-06-18,Kadet-rende | délnyugat,53,2,,,0.353,nincs alapszint
+2026-06-19,Kadet-rende | délnyugat,63,2,,,0.353,nincs alapszint
+2026-06-20,Kadet-rende | délnyugat,43,2,,,0.353,nincs alapszint
+2026-06-21,Kadet-rende | délnyugat,61,2,,,0.353,nincs alapszint
+2026-06-22,Kadet-rende | délnyugat,42,3,39.0,0.0769,0.353,normál
+2026-06-23,Kadet-rende | délnyugat,26,3,40.0,-0.35,0.353,normál
+2026-06-24,Kadet-rende | délnyugat,45,3,44.0,0.0227,0.353,normál
+2026-06-25,Kadet-rende | délnyugat,41,3,48.0,-0.1458,0.353,normál
+2026-06-26,Kadet-rende | délnyugat,37,3,57.0,-0.3509,0.353,normál
+2026-06-27,Kadet-rende | délnyugat,58,3,46.0,0.2609,0.353,normál
+2026-06-28,Kadet-rende | délnyugat,48,3,59.0,-0.1864,0.353,normál
+2026-06-29,Kadet-rende | délnyugat,40,4,40.5,-0.0123,0.353,normál
+2026-06-30,Kadet-rende | délnyugat,46,4,36.0,0.2778,0.353,normál
+2026-07-01,Kadet-rende | délnyugat,48,4,44.5,0.0787,0.353,normál
+2026-07-02,Kadet-rende | délnyugat,46,4,45.0,0.0222,0.353,normál
+2026-07-03,Kadet-rende | délnyugat,37,4,55.5,-0.3333,0.353,normál
+2026-07-04,Kadet-rende | délnyugat,40,4,51.0,-0.2157,0.353,normál
+2026-07-05,Kadet-rende | délnyugat,50,4,55.0,-0.0909,0.353,normál
+2026-07-06,Kadet-rende | délnyugat,47,4,39.5,0.1899,0.353,normál
+2026-07-07,Kadet-rende | délnyugat,31,4,39.0,-0.2051,0.353,normál
+2026-07-08,Kadet-rende | délnyugat,49,4,45.0,0.0889,0.353,normál
+2026-07-09,Kadet-rende | délnyugat,37,4,44.0,-0.1591,0.353,normál
+2026-07-10,Kadet-rende | délnyugat,48,4,47.0,0.0213,0.353,normál
+2026-07-11,Kadet-rende | délnyugat,46,4,49.5,-0.0707,0.353,normál
+2026-07-12,Kadet-rende | délnyugat,53,4,54.5,-0.0275,0.353,normál
+2026-07-13,Kadet-rende | délnyugat,47,4,41.0,0.1463,0.353,normál
+2026-07-14,Kadet-rende | délnyugat,51,4,38.5,0.3247,0.353,normál
+2026-07-15,Kadet-rende | délnyugat,45,4,46.5,-0.0323,0.353,normál
+2026-07-16,Kadet-rende | délnyugat,39,4,43.5,-0.1034,0.353,normál
+2026-07-17,Kadet-rende | délnyugat,56,4,42.5,0.3176,0.353,normál
+2026-07-18,Kadet-rende | délnyugat,44,4,44.5,-0.0112,0.353,normál
+2026-07-19,Kadet-rende | délnyugat,53,4,51.5,0.0291,0.353,normál
+2026-07-20,Kadet-rende | délnyugat,34,4,44.5,-0.236,0.353,normál
+2026-07-21,Kadet-rende | délnyugat,30,4,38.5,-0.2208,0.353,normál
+2026-07-22,Kadet-rende | délnyugat,34,4,46.5,-0.2688,0.353,normál
+2026-07-23,Kadet-rende | délnyugat,40,4,40.0,0.0,0.353,normál
+2026-07-24,Kadet-rende | délnyugat,41,4,42.5,-0.0353,0.353,normál
+2026-07-25,Kadet-rende | délnyugat,42,4,45.0,-0.0667,0.353,normál
+2026-07-26,Kadet-rende | délnyugat,45,4,51.5,-0.1262,0.353,normál
+2026-07-27,Kadet-rende | délnyugat,49,4,43.5,0.1264,0.353,normál
+2026-07-28,Kadet-rende | délnyugat,35,4,38.5,-0.0909,0.353,normál
+2026-07-29,Kadet-rende | délnyugat,39,4,46.5,-0.1613,0.353,normál
+2026-07-30,Kadet-rende | délnyugat,41,4,39.5,0.038,0.353,normál
+2026-07-31,Kadet-rende | délnyugat,46,4,44.5,0.0337,0.353,normál
+2026-08-01,Kadet-rende | délnyugat,48,4,43.0,0.1163,0.353,normál
+2026-08-02,Kadet-rende | délnyugat,55,4,51.5,0.068,0.353,normál
+2026-08-03,Kadet-rende | délnyugat,50,4,47.0,0.0638,0.353,normál
+2026-08-04,Kadet-rende | délnyugat,42,4,33.0,0.2727,0.353,normál
+2026-08-05,Kadet-rende | délnyugat,33,4,42.0,-0.2143,0.353,normál
+2026-08-06,Kadet-rende | délnyugat,42,4,39.5,0.0633,0.353,normál
+2026-08-07,Kadet-rende | délnyugat,39,4,47.0,-0.1702,0.353,normál
+2026-08-08,Kadet-rende | délnyugat,50,4,45.0,0.1111,0.353,normál
+2026-08-09,Kadet-rende | délnyugat,46,4,53.0,-0.1321,0.353,normál
+2026-08-10,Kadet-rende | délnyugat,27,4,48.0,-0.4375,0.353,szokatlanul alacsony
+2026-08-11,Kadet-rende | délnyugat,39,4,38.5,0.013,0.353,normál
+2026-08-12,Kadet-rende | délnyugat,53,4,36.5,0.4521,0.353,szokatlanul magas
+2026-08-13,Kadet-rende | délnyugat,39,4,40.5,-0.037,0.353,normál
+2026-08-14,Kadet-rende | délnyugat,46,4,43.5,0.0575,0.353,normál
+2026-08-15,Kadet-rende | délnyugat,43,4,46.0,-0.0652,0.353,normál
+2026-08-16,Kadet-rende | délnyugat,45,4,49.5,-0.0909,0.353,normál
+2026-08-17,Kadet-rende | délnyugat,38,4,41.5,-0.0843,0.353,normál
+2026-08-18,Kadet-rende | délnyugat,37,4,37.0,0.0,0.353,normál
+2026-08-19,Kadet-rende | délnyugat,40,4,36.5,0.0959,0.353,normál
+2026-08-20,Kadet-rende | délnyugat,50,4,40.5,0.2346,0.353,normál
+2026-08-21,Kadet-rende | délnyugat,38,4,43.5,-0.1264,0.353,normál
+2026-08-22,Kadet-rende | délnyugat,36,4,45.5,-0.2088,0.353,normál
+2026-08-23,Kadet-rende | délnyugat,59,4,45.5,0.2967,0.353,normál
+2026-08-24,Kadet-rende | délnyugat,38,4,43.5,-0.1264,0.353,normál
+2026-08-25,Kadet-rende | délnyugat,46,4,38.0,0.2105,0.353,normál
+2026-08-26,Kadet-rende | délnyugat,43,4,39.5,0.0886,0.353,normál
+2026-08-27,Kadet-rende | délnyugat,23,4,41.5,-0.4458,0.353,szokatlanul alacsony
+2026-08-28,Kadet-rende | délnyugat,62,4,42.5,0.4588,0.353,szokatlanul magas
+2026-08-29,Kadet-rende | délnyugat,58,4,45.5,0.2747,0.353,normál
+2026-08-30,Kadet-rende | délnyugat,56,4,50.5,0.1089,0.353,normál
+2026-08-31,Kadet-rende | délnyugat,51,4,38.0,0.3421,0.353,normál
+2026-09-01,Kadet-rende | délnyugat,37,4,40.5,-0.0864,0.353,normál
+2026-09-02,Kadet-rende | délnyugat,37,4,41.5,-0.1084,0.353,normál
+2026-09-03,Kadet-rende | délnyugat,47,4,40.5,0.1605,0.353,normál
+2026-09-04,Kadet-rende | délnyugat,49,4,42.5,0.1529,0.353,normál
+2026-09-05,Kadet-rende | délnyugat,41,4,46.5,-0.1183,0.353,normál
+2026-09-06,Kadet-rende | délnyugat,57,4,51.0,0.1176,0.353,normál
+2026-09-07,Kadet-rende | délnyugat,46,4,38.0,0.2105,0.353,normál
+2026-09-08,Kadet-rende | délnyugat,49,4,38.0,0.2895,0.353,normál
+2026-09-09,Kadet-rende | délnyugat,36,4,41.5,-0.1325,0.353,normál
+2026-09-10,Kadet-rende | délnyugat,40,4,43.0,-0.0698,0.353,normál
+2026-09-11,Kadet-rende | délnyugat,48,4,47.5,0.0105,0.353,normál
+2026-09-12,Kadet-rende | délnyugat,43,4,42.0,0.0238,0.353,normál
+2026-09-13,Kadet-rende | délnyugat,56,4,56.5,-0.0088,0.353,normál
+2026-09-14,Kadet-rende | délnyugat,52,4,42.0,0.2381,0.353,normál
+2026-09-15,Kadet-rende | délnyugat,34,4,41.5,-0.1807,0.353,normál
+2026-09-16,Kadet-rende | délnyugat,46,4,38.5,0.1948,0.353,normál
+2026-09-17,Kadet-rende | délnyugat,56,4,43.5,0.2874,0.353,normál
+2026-09-18,Kadet-rende | délnyugat,52,4,48.5,0.0722,0.353,normál
+2026-09-19,Kadet-rende | délnyugat,49,4,42.0,0.1667,0.353,normál
+2026-09-20,Kadet-rende | délnyugat,55,4,56.5,-0.0265,0.353,normál
+2026-09-21,Kadet-rende | délnyugat,55,4,48.5,0.134,0.353,normál
+2026-09-22,Kadet-rende | délnyugat,39,4,41.5,-0.0602,0.353,normál
+2026-09-23,Kadet-rende | délnyugat,41,4,40.0,0.025,0.353,normál
+2026-09-24,Kadet-rende | délnyugat,58,4,43.5,0.3333,0.353,normál
+2026-09-25,Kadet-rende | délnyugat,55,4,50.5,0.0891,0.353,normál
+2026-09-26,Kadet-rende | délnyugat,60,4,46.0,0.3043,0.353,normál
+2026-09-27,Kadet-rende | délnyugat,61,4,56.0,0.0893,0.353,normál
+2026-09-28,Kadet-rende | délnyugat,36,4,51.5,-0.301,0.353,normál
+2026-09-29,Kadet-rende | délnyugat,53,4,38.0,0.3947,0.353,szokatlanul magas
+2026-09-30,Kadet-rende | délnyugat,43,4,39.0,0.1026,0.353,normál
+2026-10-01,Kadet-rende | délnyugat,52,4,51.5,0.0097,0.353,normál
+2026-10-02,Kadet-rende | délnyugat,55,4,50.5,0.0891,0.353,normál
+2026-10-03,Kadet-rende | délnyugat,59,4,46.0,0.2826,0.353,normál
+2026-10-04,Kadet-rende | délnyugat,62,4,56.5,0.0973,0.353,normál
+2026-10-05,Kadet-rende | délnyugat,56,4,49.0,0.1429,0.353,normál
+2026-10-06,Kadet-rende | délnyugat,46,4,44.0,0.0455,0.353,normál
+2026-06-01,Kis-Balti-öv | észak,1,0,,,1.4826,nincs alapszint
+2026-06-02,Kis-Balti-öv | észak,3,0,,,1.4826,nincs alapszint
+2026-06-03,Kis-Balti-öv | észak,2,0,,,1.4826,nincs alapszint
+2026-06-04,Kis-Balti-öv | észak,3,0,,,1.4826,nincs alapszint
+2026-06-05,Kis-Balti-öv | észak,2,0,,,1.4826,nincs alapszint
+2026-06-06,Kis-Balti-öv | észak,4,0,,,1.4826,nincs alapszint
+2026-06-07,Kis-Balti-öv | észak,1,0,,,1.4826,nincs alapszint
+2026-06-08,Kis-Balti-öv | észak,0,1,,,1.4826,nincs alapszint
+2026-06-09,Kis-Balti-öv | észak,1,1,,,1.4826,nincs alapszint
+2026-06-10,Kis-Balti-öv | észak,1,1,,,1.4826,nincs alapszint
+2026-06-11,Kis-Balti-öv | észak,1,1,,,1.4826,nincs alapszint
+2026-06-12,Kis-Balti-öv | észak,2,1,,,1.4826,nincs alapszint
+2026-06-13,Kis-Balti-öv | észak,0,1,,,1.4826,nincs alapszint
+2026-06-14,Kis-Balti-öv | észak,1,1,,,1.4826,nincs alapszint
+2026-06-15,Kis-Balti-öv | észak,3,2,,,1.4826,nincs alapszint
+2026-06-16,Kis-Balti-öv | észak,5,2,,,1.4826,nincs alapszint
+2026-06-17,Kis-Balti-öv | észak,4,2,,,1.4826,nincs alapszint
+2026-06-18,Kis-Balti-öv | észak,1,2,,,1.4826,nincs alapszint
+2026-06-19,Kis-Balti-öv | észak,3,2,,,1.4826,nincs alapszint
+2026-06-20,Kis-Balti-öv | észak,1,2,,,1.4826,nincs alapszint
+2026-06-21,Kis-Balti-öv | észak,1,2,,,1.4826,nincs alapszint
+2026-06-22,Kis-Balti-öv | észak,2,3,1.0,1.0,1.4826,normál
+2026-06-23,Kis-Balti-öv | észak,1,3,3.0,-0.6667,1.4826,normál
+2026-06-24,Kis-Balti-öv | észak,2,3,2.0,0.0,1.4826,normál
+2026-06-25,Kis-Balti-öv | észak,4,3,1.0,3.0,1.4826,szokatlanul magas
+2026-06-26,Kis-Balti-öv | észak,0,3,2.0,-1.0,1.4826,normál
+2026-06-27,Kis-Balti-öv | észak,1,3,1.0,0.0,1.4826,normál
+2026-06-28,Kis-Balti-öv | észak,1,3,1.0,0.0,1.4826,normál
+2026-06-29,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-06-30,Kis-Balti-öv | észak,2,4,2.0,0.0,1.4826,normál
+2026-07-01,Kis-Balti-öv | észak,2,4,2.0,0.0,1.4826,normál
+2026-07-02,Kis-Balti-öv | észak,4,4,2.0,1.0,1.4826,normál
+2026-07-03,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-07-04,Kis-Balti-öv | észak,2,4,1.0,1.0,1.4826,normál
+2026-07-05,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-07-06,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-07-07,Kis-Balti-öv | észak,3,4,1.5,1.0,1.4826,normál
+2026-07-08,Kis-Balti-öv | észak,5,4,2.0,1.5,1.4826,szokatlanul magas
+2026-07-09,Kis-Balti-öv | észak,0,4,2.5,-1.0,1.4826,normál
+2026-07-10,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-07-11,Kis-Balti-öv | észak,1,4,1.0,0.0,1.4826,normál
+2026-07-12,Kis-Balti-öv | észak,1,4,1.0,0.0,1.4826,normál
+2026-07-13,Kis-Balti-öv | észak,4,4,2.0,1.0,1.4826,normál
+2026-07-14,Kis-Balti-öv | észak,4,4,2.5,0.6,1.4826,normál
+2026-07-15,Kis-Balti-öv | észak,1,4,3.0,-0.6667,1.4826,normál
+2026-07-16,Kis-Balti-öv | észak,0,4,2.5,-1.0,1.4826,normál
+2026-07-17,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-07-18,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-07-19,Kis-Balti-öv | észak,1,4,1.0,0.0,1.4826,normál
+2026-07-20,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-07-21,Kis-Balti-öv | észak,0,4,2.5,-1.0,1.4826,normál
+2026-07-22,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-07-23,Kis-Balti-öv | észak,3,4,2.0,0.5,1.4826,normál
+2026-07-24,Kis-Balti-öv | észak,1,4,0.5,1.0,1.4826,normál
+2026-07-25,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-07-26,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-07-27,Kis-Balti-öv | észak,3,4,1.5,1.0,1.4826,normál
+2026-07-28,Kis-Balti-öv | észak,3,4,2.5,0.2,1.4826,normál
+2026-07-29,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-07-30,Kis-Balti-öv | észak,3,4,1.5,1.0,1.4826,normál
+2026-07-31,Kis-Balti-öv | észak,1,4,1.0,0.0,1.4826,normál
+2026-08-01,Kis-Balti-öv | észak,0,4,0.5,-1.0,1.4826,normál
+2026-08-02,Kis-Balti-öv | észak,2,4,0.5,3.0,1.4826,szokatlanul magas
+2026-08-03,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-08-04,Kis-Balti-öv | észak,1,4,3.0,-0.6667,1.4826,normál
+2026-08-05,Kis-Balti-öv | észak,3,4,1.0,2.0,1.4826,szokatlanul magas
+2026-08-06,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-08-07,Kis-Balti-öv | észak,3,4,1.0,2.0,1.4826,szokatlanul magas
+2026-08-08,Kis-Balti-öv | észak,0,4,,,1.4826,nincs alapszint
+2026-08-09,Kis-Balti-öv | észak,2,4,1.0,1.0,1.4826,normál
+2026-08-10,Kis-Balti-öv | észak,0,4,2.0,-1.0,1.4826,normál
+2026-08-11,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-08-12,Kis-Balti-öv | észak,2,4,1.0,1.0,1.4826,normál
+2026-08-13,Kis-Balti-öv | észak,2,4,2.0,0.0,1.4826,normál
+2026-08-14,Kis-Balti-öv | észak,2,4,1.0,1.0,1.4826,normál
+2026-08-15,Kis-Balti-öv | észak,2,4,,,1.4826,nincs alapszint
+2026-08-16,Kis-Balti-öv | észak,5,4,1.5,2.3333,1.4826,szokatlanul magas
+2026-08-17,Kis-Balti-öv | észak,3,4,1.0,2.0,1.4826,szokatlanul magas
+2026-08-18,Kis-Balti-öv | észak,1,4,1.0,0.0,1.4826,normál
+2026-08-19,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-08-20,Kis-Balti-öv | észak,3,4,2.5,0.2,1.4826,normál
+2026-08-21,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-08-22,Kis-Balti-öv | észak,1,4,,,1.4826,nincs alapszint
+2026-08-23,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-08-24,Kis-Balti-öv | észak,4,4,2.0,1.0,1.4826,normál
+2026-08-25,Kis-Balti-öv | észak,3,4,1.0,2.0,1.4826,szokatlanul magas
+2026-08-26,Kis-Balti-öv | észak,4,4,2.0,1.0,1.4826,normál
+2026-08-27,Kis-Balti-öv | észak,0,4,2.5,-1.0,1.4826,normál
+2026-08-28,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-08-29,Kis-Balti-öv | észak,3,4,0.5,5.0,1.4826,szokatlanul magas
+2026-08-30,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-08-31,Kis-Balti-öv | észak,4,4,2.0,1.0,1.4826,normál
+2026-09-01,Kis-Balti-öv | észak,4,4,1.0,3.0,1.4826,szokatlanul magas
+2026-09-02,Kis-Balti-öv | észak,2,4,2.5,-0.2,1.4826,normál
+2026-09-03,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-04,Kis-Balti-öv | észak,2,4,2.0,0.0,1.4826,normál
+2026-09-05,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-09-06,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-07,Kis-Balti-öv | észak,3,4,3.5,-0.1429,1.4826,normál
+2026-09-08,Kis-Balti-öv | észak,3,4,2.0,0.5,1.4826,normál
+2026-09-09,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-09-10,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-09-11,Kis-Balti-öv | észak,2,4,2.0,0.0,1.4826,normál
+2026-09-12,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-09-13,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-09-14,Kis-Balti-öv | észak,4,4,3.5,0.1429,1.4826,normál
+2026-09-15,Kis-Balti-öv | észak,2,4,3.0,-0.3333,1.4826,normál
+2026-09-16,Kis-Balti-öv | észak,0,4,2.0,-1.0,1.4826,normál
+2026-09-17,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-09-18,Kis-Balti-öv | észak,1,4,2.0,-0.5,1.4826,normál
+2026-09-19,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-20,Kis-Balti-öv | észak,0,4,1.0,-1.0,1.4826,normál
+2026-09-21,Kis-Balti-öv | észak,2,4,4.0,-0.5,1.4826,normál
+2026-09-22,Kis-Balti-öv | észak,4,4,3.0,0.3333,1.4826,normál
+2026-09-23,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-24,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-25,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-09-26,Kis-Balti-öv | észak,3,4,1.5,1.0,1.4826,normál
+2026-09-27,Kis-Balti-öv | észak,1,4,0.5,1.0,1.4826,normál
+2026-09-28,Kis-Balti-öv | észak,6,4,3.5,0.7143,1.4826,normál
+2026-09-29,Kis-Balti-öv | észak,4,4,3.5,0.1429,1.4826,normál
+2026-09-30,Kis-Balti-öv | észak,2,4,1.0,1.0,1.4826,normál
+2026-10-01,Kis-Balti-öv | észak,0,4,1.5,-1.0,1.4826,normál
+2026-10-02,Kis-Balti-öv | észak,2,4,1.5,0.3333,1.4826,normál
+2026-10-03,Kis-Balti-öv | észak,1,4,1.5,-0.3333,1.4826,normál
+2026-10-04,Kis-Balti-öv | észak,3,4,0.5,5.0,1.4826,szokatlanul magas
+2026-10-05,Kis-Balti-öv | észak,1,4,3.5,-0.7143,1.4826,normál
+2026-10-06,Kis-Balti-öv | észak,4,4,3.5,0.1429,1.4826,normál
+2026-06-01,Kis-Balti-öv | dél,0,0,,,1.9768,nincs alapszint
+2026-06-02,Kis-Balti-öv | dél,0,0,,,1.9768,nincs alapszint
+2026-06-03,Kis-Balti-öv | dél,2,0,,,1.9768,nincs alapszint
+2026-06-04,Kis-Balti-öv | dél,3,0,,,1.9768,nincs alapszint
+2026-06-05,Kis-Balti-öv | dél,0,0,,,1.9768,nincs alapszint
+2026-06-06,Kis-Balti-öv | dél,1,0,,,1.9768,nincs alapszint
+2026-06-07,Kis-Balti-öv | dél,0,0,,,1.9768,nincs alapszint
+2026-06-08,Kis-Balti-öv | dél,1,1,,,1.9768,nincs alapszint
+2026-06-09,Kis-Balti-öv | dél,2,1,,,1.9768,nincs alapszint
+2026-06-10,Kis-Balti-öv | dél,1,1,,,1.9768,nincs alapszint
+2026-06-11,Kis-Balti-öv | dél,1,1,,,1.9768,nincs alapszint
+2026-06-12,Kis-Balti-öv | dél,1,1,,,1.9768,nincs alapszint
+2026-06-13,Kis-Balti-öv | dél,0,1,,,1.9768,nincs alapszint
+2026-06-14,Kis-Balti-öv | dél,3,1,,,1.9768,nincs alapszint
+2026-06-15,Kis-Balti-öv | dél,0,2,,,1.9768,nincs alapszint
+2026-06-16,Kis-Balti-öv | dél,2,2,,,1.9768,nincs alapszint
+2026-06-17,Kis-Balti-öv | dél,1,2,,,1.9768,nincs alapszint
+2026-06-18,Kis-Balti-öv | dél,1,2,,,1.9768,nincs alapszint
+2026-06-19,Kis-Balti-öv | dél,1,2,,,1.9768,nincs alapszint
+2026-06-20,Kis-Balti-öv | dél,1,2,,,1.9768,nincs alapszint
+2026-06-21,Kis-Balti-öv | dél,0,2,,,1.9768,nincs alapszint
+2026-06-22,Kis-Balti-öv | dél,3,3,,,1.9768,nincs alapszint
+2026-06-23,Kis-Balti-öv | dél,4,3,2.0,1.0,1.9768,normál
+2026-06-24,Kis-Balti-öv | dél,5,3,1.0,4.0,1.9768,szokatlanul magas
+2026-06-25,Kis-Balti-öv | dél,0,3,1.0,-1.0,1.9768,normál
+2026-06-26,Kis-Balti-öv | dél,1,3,1.0,0.0,1.9768,normál
+2026-06-27,Kis-Balti-öv | dél,2,3,1.0,1.0,1.9768,normál
+2026-06-28,Kis-Balti-öv | dél,0,3,,,1.9768,nincs alapszint
+2026-06-29,Kis-Balti-öv | dél,1,4,0.5,1.0,1.9768,normál
+2026-06-30,Kis-Balti-öv | dél,1,4,2.0,-0.5,1.9768,normál
+2026-07-01,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-07-02,Kis-Balti-öv | dél,3,4,1.0,2.0,1.9768,szokatlanul magas
+2026-07-03,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-04,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-05,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-07-06,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-07-07,Kis-Balti-öv | dél,1,4,2.0,-0.5,1.9768,normál
+2026-07-08,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-07-09,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-07-10,Kis-Balti-öv | dél,2,4,1.0,1.0,1.9768,normál
+2026-07-11,Kis-Balti-öv | dél,1,4,0.5,1.0,1.9768,normál
+2026-07-12,Kis-Balti-öv | dél,4,4,,,1.9768,nincs alapszint
+2026-07-13,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-14,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-07-15,Kis-Balti-öv | dél,1,4,2.0,-0.5,1.9768,normál
+2026-07-16,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-17,Kis-Balti-öv | dél,2,4,1.0,1.0,1.9768,normál
+2026-07-18,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-19,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-07-20,Kis-Balti-öv | dél,0,4,1.0,-1.0,1.9768,normál
+2026-07-21,Kis-Balti-öv | dél,0,4,1.5,-1.0,1.9768,normál
+2026-07-22,Kis-Balti-öv | dél,2,4,2.0,0.0,1.9768,normál
+2026-07-23,Kis-Balti-öv | dél,1,4,0.5,1.0,1.9768,normál
+2026-07-24,Kis-Balti-öv | dél,0,4,1.5,-1.0,1.9768,normál
+2026-07-25,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-07-26,Kis-Balti-öv | dél,1,4,,,1.9768,nincs alapszint
+2026-07-27,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-07-28,Kis-Balti-öv | dél,3,4,1.0,2.0,1.9768,szokatlanul magas
+2026-07-29,Kis-Balti-öv | dél,2,4,2.0,0.0,1.9768,normál
+2026-07-30,Kis-Balti-öv | dél,4,4,1.0,3.0,1.9768,szokatlanul magas
+2026-07-31,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-08-01,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-08-02,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-08-03,Kis-Balti-öv | dél,2,4,,,1.9768,nincs alapszint
+2026-08-04,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-08-05,Kis-Balti-öv | dél,1,4,2.0,-0.5,1.9768,normál
+2026-08-06,Kis-Balti-öv | dél,3,4,1.0,2.0,1.9768,szokatlanul magas
+2026-08-07,Kis-Balti-öv | dél,1,4,1.5,-0.3333,1.9768,normál
+2026-08-08,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-08-09,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-08-10,Kis-Balti-öv | dél,3,4,,,1.9768,nincs alapszint
+2026-08-11,Kis-Balti-öv | dél,0,4,2.0,-1.0,1.9768,normál
+2026-08-12,Kis-Balti-öv | dél,3,4,1.5,1.0,1.9768,normál
+2026-08-13,Kis-Balti-öv | dél,2,4,2.0,0.0,1.9768,normál
+2026-08-14,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-08-15,Kis-Balti-öv | dél,2,4,,,1.9768,nincs alapszint
+2026-08-16,Kis-Balti-öv | dél,1,4,,,1.9768,nincs alapszint
+2026-08-17,Kis-Balti-öv | dél,2,4,1.0,1.0,1.9768,normál
+2026-08-18,Kis-Balti-öv | dél,4,4,1.0,3.0,1.9768,szokatlanul magas
+2026-08-19,Kis-Balti-öv | dél,3,4,2.0,0.5,1.9768,normál
+2026-08-20,Kis-Balti-öv | dél,3,4,2.5,0.2,1.9768,normál
+2026-08-21,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-08-22,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-08-23,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-08-24,Kis-Balti-öv | dél,4,4,2.0,1.0,1.9768,normál
+2026-08-25,Kis-Balti-öv | dél,3,4,2.5,0.2,1.9768,normál
+2026-08-26,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-08-27,Kis-Balti-öv | dél,1,4,3.0,-0.6667,1.9768,normál
+2026-08-28,Kis-Balti-öv | dél,3,4,1.0,2.0,1.9768,szokatlanul magas
+2026-08-29,Kis-Balti-öv | dél,0,4,,,1.9768,nincs alapszint
+2026-08-30,Kis-Balti-öv | dél,1,4,,,1.9768,nincs alapszint
+2026-08-31,Kis-Balti-öv | dél,4,4,2.5,0.6,1.9768,normál
+2026-09-01,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-09-02,Kis-Balti-öv | dél,2,4,2.0,0.0,1.9768,normál
+2026-09-03,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-09-04,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-09-05,Kis-Balti-öv | dél,2,4,,,1.9768,nincs alapszint
+2026-09-06,Kis-Balti-öv | dél,0,4,0.5,-1.0,1.9768,normál
+2026-09-07,Kis-Balti-öv | dél,1,4,3.5,-0.7143,1.9768,normál
+2026-09-08,Kis-Balti-öv | dél,3,4,2.0,0.5,1.9768,normál
+2026-09-09,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-09-10,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-09-11,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-09-12,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-09-13,Kis-Balti-öv | dél,2,4,0.5,3.0,1.9768,szokatlanul magas
+2026-09-14,Kis-Balti-öv | dél,2,4,3.0,-0.3333,1.9768,normál
+2026-09-15,Kis-Balti-öv | dél,1,4,3.0,-0.6667,1.9768,normál
+2026-09-16,Kis-Balti-öv | dél,3,4,1.5,1.0,1.9768,normál
+2026-09-17,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-09-18,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-09-19,Kis-Balti-öv | dél,1,4,0.5,1.0,1.9768,normál
+2026-09-20,Kis-Balti-öv | dél,3,4,0.5,5.0,1.9768,szokatlanul magas
+2026-09-21,Kis-Balti-öv | dél,1,4,3.0,-0.6667,1.9768,normál
+2026-09-22,Kis-Balti-öv | dél,2,4,2.0,0.0,1.9768,normál
+2026-09-23,Kis-Balti-öv | dél,3,4,1.5,1.0,1.9768,normál
+2026-09-24,Kis-Balti-öv | dél,1,4,1.5,-0.3333,1.9768,normál
+2026-09-25,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-09-26,Kis-Balti-öv | dél,2,4,1.0,1.0,1.9768,normál
+2026-09-27,Kis-Balti-öv | dél,3,4,1.5,1.0,1.9768,normál
+2026-09-28,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-09-29,Kis-Balti-öv | dél,3,4,1.5,1.0,1.9768,normál
+2026-09-30,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-10-01,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-10-02,Kis-Balti-öv | dél,1,4,1.0,0.0,1.9768,normál
+2026-10-03,Kis-Balti-öv | dél,0,4,1.5,-1.0,1.9768,normál
+2026-10-04,Kis-Balti-öv | dél,1,4,2.5,-0.6,1.9768,normál
+2026-10-05,Kis-Balti-öv | dél,2,4,1.5,0.3333,1.9768,normál
+2026-10-06,Kis-Balti-öv | dél,4,4,2.5,0.6,1.9768,normál
+2026-06-01,Skagen | észak,52,0,,,0.3084,nincs alapszint
+2026-06-02,Skagen | észak,55,0,,,0.3084,nincs alapszint
+2026-06-03,Skagen | észak,47,0,,,0.3084,nincs alapszint
+2026-06-04,Skagen | észak,65,0,,,0.3084,nincs alapszint
+2026-06-05,Skagen | észak,68,0,,,0.3084,nincs alapszint
+2026-06-06,Skagen | észak,50,0,,,0.3084,nincs alapszint
+2026-06-07,Skagen | észak,50,0,,,0.3084,nincs alapszint
+2026-06-08,Skagen | észak,57,1,,,0.3084,nincs alapszint
+2026-06-09,Skagen | észak,42,1,,,0.3084,nincs alapszint
+2026-06-10,Skagen | észak,60,1,,,0.3084,nincs alapszint
+2026-06-11,Skagen | észak,58,1,,,0.3084,nincs alapszint
+2026-06-12,Skagen | észak,71,1,,,0.3084,nincs alapszint
+2026-06-13,Skagen | észak,60,1,,,0.3084,nincs alapszint
+2026-06-14,Skagen | észak,45,1,,,0.3084,nincs alapszint
+2026-06-15,Skagen | észak,55,2,,,0.3084,nincs alapszint
+2026-06-16,Skagen | észak,51,2,,,0.3084,nincs alapszint
+2026-06-17,Skagen | észak,61,2,,,0.3084,nincs alapszint
+2026-06-18,Skagen | észak,65,2,,,0.3084,nincs alapszint
+2026-06-19,Skagen | észak,71,2,,,0.3084,nincs alapszint
+2026-06-20,Skagen | észak,66,2,,,0.3084,nincs alapszint
+2026-06-21,Skagen | észak,43,2,,,0.3084,nincs alapszint
+2026-06-22,Skagen | észak,57,3,55.0,0.0364,0.3084,normál
+2026-06-23,Skagen | észak,63,3,51.0,0.2353,0.3084,normál
+2026-06-24,Skagen | észak,40,3,60.0,-0.3333,0.3084,szokatlanul alacsony
+2026-06-25,Skagen | észak,62,3,65.0,-0.0462,0.3084,normál
+2026-06-26,Skagen | észak,71,3,71.0,0.0,0.3084,normál
+2026-06-27,Skagen | észak,63,3,60.0,0.05,0.3084,normál
+2026-06-28,Skagen | észak,50,3,45.0,0.1111,0.3084,normál
+2026-06-29,Skagen | észak,61,4,56.0,0.0893,0.3084,normál
+2026-06-30,Skagen | észak,61,4,53.0,0.1509,0.3084,normál
+2026-07-01,Skagen | észak,50,4,53.5,-0.0654,0.3084,normál
+2026-07-02,Skagen | észak,44,4,63.5,-0.3071,0.3084,normál
+2026-07-03,Skagen | észak,53,4,71.0,-0.2535,0.3084,normál
+2026-07-04,Skagen | észak,77,4,61.5,0.252,0.3084,normál
+2026-07-05,Skagen | észak,50,4,47.5,0.0526,0.3084,normál
+2026-07-06,Skagen | észak,68,4,57.0,0.193,0.3084,normál
+2026-07-07,Skagen | észak,52,4,56.0,-0.0714,0.3084,normál
+2026-07-08,Skagen | észak,52,4,55.0,-0.0545,0.3084,normál
+2026-07-09,Skagen | észak,61,4,60.0,0.0167,0.3084,normál
+2026-07-10,Skagen | észak,67,4,71.0,-0.0563,0.3084,normál
+2026-07-11,Skagen | észak,71,4,64.5,0.1008,0.3084,normál
+2026-07-12,Skagen | észak,51,4,47.5,0.0737,0.3084,normál
+2026-07-13,Skagen | észak,59,4,59.0,0.0,0.3084,normál
+2026-07-14,Skagen | észak,68,4,56.5,0.2035,0.3084,normál
+2026-07-15,Skagen | észak,49,4,51.0,-0.0392,0.3084,normál
+2026-07-16,Skagen | észak,70,4,61.5,0.1382,0.3084,normál
+2026-07-17,Skagen | észak,58,4,69.0,-0.1594,0.3084,normál
+2026-07-18,Skagen | észak,55,4,68.5,-0.1971,0.3084,normál
+2026-07-19,Skagen | észak,44,4,50.0,-0.12,0.3084,normál
+2026-07-20,Skagen | észak,57,4,60.0,-0.05,0.3084,normál
+2026-07-21,Skagen | észak,62,4,62.0,0.0,0.3084,normál
+2026-07-22,Skagen | észak,49,4,49.5,-0.0101,0.3084,normál
+2026-07-23,Skagen | észak,51,4,61.5,-0.1707,0.3084,normál
+2026-07-24,Skagen | észak,56,4,62.5,-0.104,0.3084,normál
+2026-07-25,Skagen | észak,49,4,67.0,-0.2687,0.3084,normál
+2026-07-26,Skagen | észak,59,4,50.0,0.18,0.3084,normál
+2026-07-27,Skagen | észak,47,4,60.0,-0.2167,0.3084,normál
+2026-07-28,Skagen | észak,70,4,61.5,0.1382,0.3084,normál
+2026-07-29,Skagen | észak,48,4,49.5,-0.0303,0.3084,normál
+2026-07-30,Skagen | észak,55,4,56.0,-0.0179,0.3084,normál
+2026-07-31,Skagen | észak,68,4,57.0,0.193,0.3084,normál
+2026-08-01,Skagen | észak,62,4,63.0,-0.0159,0.3084,normál
+2026-08-02,Skagen | észak,54,4,50.5,0.0693,0.3084,normál
+2026-08-03,Skagen | észak,45,4,58.0,-0.2241,0.3084,normál
+2026-08-04,Skagen | észak,62,4,65.0,-0.0462,0.3084,normál
+2026-08-05,Skagen | észak,41,4,49.0,-0.1633,0.3084,normál
+2026-08-06,Skagen | észak,51,4,58.0,-0.1207,0.3084,normál
+2026-08-07,Skagen | észak,58,4,62.5,-0.072,0.3084,normál
+2026-08-08,Skagen | észak,53,4,58.5,-0.094,0.3084,normál
+2026-08-09,Skagen | észak,62,4,52.5,0.181,0.3084,normál
+2026-08-10,Skagen | észak,49,4,52.0,-0.0577,0.3084,normál
+2026-08-11,Skagen | észak,54,4,65.0,-0.1692,0.3084,normál
+2026-08-12,Skagen | észak,54,4,48.5,0.1134,0.3084,normál
+2026-08-13,Skagen | észak,57,4,53.0,0.0755,0.3084,normál
+2026-08-14,Skagen | észak,55,4,58.0,-0.0517,0.3084,normál
+2026-08-15,Skagen | észak,57,4,54.0,0.0556,0.3084,normál
+2026-08-16,Skagen | észak,51,4,56.5,-0.0973,0.3084,normál
+2026-08-17,Skagen | észak,49,4,48.0,0.0208,0.3084,normál
+2026-08-18,Skagen | észak,52,4,62.0,-0.1613,0.3084,normál
+2026-08-19,Skagen | észak,54,4,48.5,0.1134,0.3084,normál
+2026-08-20,Skagen | észak,62,4,53.0,0.1698,0.3084,normál
+2026-08-21,Skagen | észak,73,4,57.0,0.2807,0.3084,normál
+2026-08-22,Skagen | észak,64,4,55.0,0.1636,0.3084,normál
+2026-08-23,Skagen | észak,43,4,56.5,-0.2389,0.3084,normál
+2026-08-24,Skagen | észak,63,4,48.0,0.3125,0.3084,szokatlanul magas
+2026-08-25,Skagen | észak,75,4,58.0,0.2931,0.3084,normál
+2026-08-26,Skagen | észak,53,4,51.0,0.0392,0.3084,normál
+2026-08-27,Skagen | észak,57,4,56.0,0.0179,0.3084,normál
+2026-08-28,Skagen | észak,61,4,63.0,-0.0317,0.3084,normál
+2026-08-29,Skagen | észak,66,4,59.5,0.1092,0.3084,normál
+2026-08-30,Skagen | észak,56,4,52.5,0.0667,0.3084,normál
+2026-08-31,Skagen | észak,72,4,49.0,0.4694,0.3084,szokatlanul magas
+2026-09-01,Skagen | észak,63,4,58.0,0.0862,0.3084,normál
+2026-09-02,Skagen | észak,52,4,53.5,-0.028,0.3084,normál
+2026-09-03,Skagen | észak,66,4,57.0,0.1579,0.3084,normál
+2026-09-04,Skagen | észak,66,4,59.5,0.1092,0.3084,normál
+2026-09-05,Skagen | észak,46,4,60.5,-0.2397,0.3084,normál
+2026-09-06,Skagen | észak,61,4,53.5,0.1402,0.3084,normál
+2026-09-07,Skagen | észak,66,4,56.0,0.1786,0.3084,normál
+2026-09-08,Skagen | észak,43,4,58.5,-0.265,0.3084,normál
+2026-09-09,Skagen | észak,50,4,53.5,-0.0654,0.3084,normál
+2026-09-10,Skagen | észak,53,4,59.5,-0.1092,0.3084,normál
+2026-09-11,Skagen | észak,59,4,63.5,-0.0709,0.3084,normál
+2026-09-12,Skagen | észak,55,4,60.5,-0.0909,0.3084,normál
+2026-09-13,Skagen | észak,57,4,53.5,0.0654,0.3084,normál
+2026-09-14,Skagen | észak,58,4,64.5,-0.1008,0.3084,normál
+2026-09-15,Skagen | észak,64,4,57.5,0.113,0.3084,normál
+2026-09-16,Skagen | észak,46,4,52.5,-0.1238,0.3084,normál
+2026-09-17,Skagen | észak,62,4,59.5,0.042,0.3084,normál
+2026-09-18,Skagen | észak,61,4,63.5,-0.0394,0.3084,normál
+2026-09-19,Skagen | észak,57,4,59.5,-0.042,0.3084,normál
+2026-09-20,Skagen | észak,42,4,56.5,-0.2566,0.3084,normál
+2026-09-21,Skagen | észak,66,4,64.5,0.0233,0.3084,normál
+2026-09-22,Skagen | észak,58,4,63.5,-0.0866,0.3084,normál
+2026-09-23,Skagen | észak,40,4,51.0,-0.2157,0.3084,normál
+2026-09-24,Skagen | észak,65,4,59.5,0.0924,0.3084,normál
+2026-09-25,Skagen | észak,68,4,61.0,0.1148,0.3084,normál
+2026-09-26,Skagen | észak,63,4,56.0,0.125,0.3084,normál
+2026-09-27,Skagen | észak,66,4,56.5,0.1681,0.3084,normál
+2026-09-28,Skagen | észak,61,4,66.0,-0.0758,0.3084,normál
+2026-09-29,Skagen | észak,51,4,60.5,-0.157,0.3084,normál
+2026-09-30,Skagen | észak,48,4,48.0,0.0,0.3084,normál
+2026-10-01,Skagen | észak,57,4,63.5,-0.1024,0.3084,normál
+2026-10-02,Skagen | észak,79,4,63.5,0.2441,0.3084,normál
+2026-10-03,Skagen | észak,58,4,56.0,0.0357,0.3084,normál
+2026-10-04,Skagen | észak,45,4,59.0,-0.2373,0.3084,normál
+2026-10-05,Skagen | észak,48,4,63.5,-0.2441,0.3084,normál
+2026-10-06,Skagen | észak,60,4,54.5,0.1009,0.3084,normál
+2026-06-01,Skagen | dél,54,0,,,0.375,nincs alapszint
+2026-06-02,Skagen | dél,55,0,,,0.375,nincs alapszint
+2026-06-03,Skagen | dél,55,0,,,0.375,nincs alapszint
+2026-06-04,Skagen | dél,49,0,,,0.375,nincs alapszint
+2026-06-05,Skagen | dél,63,0,,,0.375,nincs alapszint
+2026-06-06,Skagen | dél,57,0,,,0.375,nincs alapszint
+2026-06-07,Skagen | dél,57,0,,,0.375,nincs alapszint
+2026-06-08,Skagen | dél,60,1,,,0.375,nincs alapszint
+2026-06-09,Skagen | dél,64,1,,,0.375,nincs alapszint
+2026-06-10,Skagen | dél,52,1,,,0.375,nincs alapszint
+2026-06-11,Skagen | dél,61,1,,,0.375,nincs alapszint
+2026-06-12,Skagen | dél,58,1,,,0.375,nincs alapszint
+2026-06-13,Skagen | dél,61,1,,,0.375,nincs alapszint
+2026-06-14,Skagen | dél,57,1,,,0.375,nincs alapszint
+2026-06-15,Skagen | dél,45,2,,,0.375,nincs alapszint
+2026-06-16,Skagen | dél,56,2,,,0.375,nincs alapszint
+2026-06-17,Skagen | dél,43,2,,,0.375,nincs alapszint
+2026-06-18,Skagen | dél,66,2,,,0.375,nincs alapszint
+2026-06-19,Skagen | dél,52,2,,,0.375,nincs alapszint
+2026-06-20,Skagen | dél,62,2,,,0.375,nincs alapszint
+2026-06-21,Skagen | dél,57,2,,,0.375,nincs alapszint
+2026-06-22,Skagen | dél,59,3,54.0,0.0926,0.375,normál
+2026-06-23,Skagen | dél,51,3,56.0,-0.0893,0.375,normál
+2026-06-24,Skagen | dél,55,3,52.0,0.0577,0.375,normál
+2026-06-25,Skagen | dél,54,3,61.0,-0.1148,0.375,normál
+2026-06-26,Skagen | dél,51,3,58.0,-0.1207,0.375,normál
+2026-06-27,Skagen | dél,61,3,61.0,0.0,0.375,normál
+2026-06-28,Skagen | dél,62,3,57.0,0.0877,0.375,normál
+2026-06-29,Skagen | dél,62,4,56.5,0.0973,0.375,normál
+2026-06-30,Skagen | dél,50,4,55.5,-0.0991,0.375,normál
+2026-07-01,Skagen | dél,47,4,53.5,-0.1215,0.375,normál
+2026-07-02,Skagen | dél,45,4,57.5,-0.2174,0.375,normál
+2026-07-03,Skagen | dél,38,4,55.0,-0.3091,0.375,normál
+2026-07-04,Skagen | dél,65,4,61.0,0.0656,0.375,normál
+2026-07-05,Skagen | dél,72,4,57.0,0.2632,0.375,normál
+2026-07-06,Skagen | dél,58,4,59.5,-0.0252,0.375,normál
+2026-07-07,Skagen | dél,52,4,53.5,-0.028,0.375,normál
+2026-07-08,Skagen | dél,59,4,49.5,0.1919,0.375,normál
+2026-07-09,Skagen | dél,59,4,57.5,0.0261,0.375,normál
+2026-07-10,Skagen | dél,66,4,51.5,0.2816,0.375,normál
+2026-07-11,Skagen | dél,50,4,61.5,-0.187,0.375,normál
+2026-07-12,Skagen | dél,46,4,59.5,-0.2269,0.375,normál
+2026-07-13,Skagen | dél,69,4,58.5,0.1795,0.375,normál
+2026-07-14,Skagen | dél,58,4,51.5,0.1262,0.375,normál
+2026-07-15,Skagen | dél,58,4,51.0,0.1373,0.375,normál
+2026-07-16,Skagen | dél,65,4,56.5,0.1504,0.375,normál
+2026-07-17,Skagen | dél,49,4,51.5,-0.0485,0.375,normál
+2026-07-18,Skagen | dél,47,4,61.5,-0.2358,0.375,normál
+2026-07-19,Skagen | dél,52,4,59.5,-0.1261,0.375,normál
+2026-07-20,Skagen | dél,52,4,60.5,-0.1405,0.375,normál
+2026-07-21,Skagen | dél,50,4,51.5,-0.0291,0.375,normál
+2026-07-22,Skagen | dél,39,4,56.5,-0.3097,0.375,normál
+2026-07-23,Skagen | dél,67,4,56.5,0.1858,0.375,normál
+2026-07-24,Skagen | dél,42,4,50.0,-0.16,0.375,normál
+2026-07-25,Skagen | dél,55,4,55.5,-0.009,0.375,normál
+2026-07-26,Skagen | dél,56,4,57.0,-0.0175,0.375,normál
+2026-07-27,Skagen | dél,34,4,60.0,-0.4333,0.375,szokatlanul alacsony
+2026-07-28,Skagen | dél,50,4,51.0,-0.0196,0.375,normál
+2026-07-29,Skagen | dél,58,4,52.5,0.1048,0.375,normál
+2026-07-30,Skagen | dél,64,4,62.0,0.0323,0.375,normál
+2026-07-31,Skagen | dél,46,4,45.5,0.011,0.375,normál
+2026-08-01,Skagen | dél,67,4,52.5,0.2762,0.375,normál
+2026-08-02,Skagen | dél,49,4,54.0,-0.0926,0.375,normál
+2026-08-03,Skagen | dél,50,4,55.0,-0.0909,0.375,normál
+2026-08-04,Skagen | dél,55,4,51.0,0.0784,0.375,normál
+2026-08-05,Skagen | dél,32,4,58.0,-0.4483,0.375,szokatlanul alacsony
+2026-08-06,Skagen | dél,54,4,64.5,-0.1628,0.375,normál
+2026-08-07,Skagen | dél,50,4,47.5,0.0526,0.375,normál
+2026-08-08,Skagen | dél,71,4,52.5,0.3524,0.375,normál
+2026-08-09,Skagen | dél,72,4,50.5,0.4257,0.375,szokatlanul magas
+2026-08-10,Skagen | dél,53,4,51.0,0.0392,0.375,normál
+2026-08-11,Skagen | dél,47,4,52.5,-0.1048,0.375,normál
+2026-08-12,Skagen | dél,57,4,48.5,0.1753,0.375,normál
+2026-08-13,Skagen | dél,48,4,64.5,-0.2558,0.375,normál
+2026-08-14,Skagen | dél,56,4,47.5,0.1789,0.375,normál
+2026-08-15,Skagen | dél,71,4,61.0,0.1639,0.375,normál
+2026-08-16,Skagen | dél,68,4,54.0,0.2593,0.375,normál
+2026-08-17,Skagen | dél,62,4,51.0,0.2157,0.375,normál
+2026-08-18,Skagen | dél,62,4,50.0,0.24,0.375,normál
+2026-08-19,Skagen | dél,47,4,48.0,-0.0208,0.375,normál
+2026-08-20,Skagen | dél,68,4,59.0,0.1525,0.375,normál
+2026-08-21,Skagen | dél,57,4,48.0,0.1875,0.375,normál
+2026-08-22,Skagen | dél,62,4,69.0,-0.1014,0.375,normál
+2026-08-23,Skagen | dél,56,4,62.0,-0.0968,0.375,normál
+2026-08-24,Skagen | dél,64,4,51.5,0.2427,0.375,normál
+2026-08-25,Skagen | dél,55,4,52.5,0.0476,0.375,normál
+2026-08-26,Skagen | dél,66,4,52.0,0.2692,0.375,normál
+2026-08-27,Skagen | dél,58,4,59.0,-0.0169,0.375,normál
+2026-08-28,Skagen | dél,61,4,53.0,0.1509,0.375,normál
+2026-08-29,Skagen | dél,66,4,69.0,-0.0435,0.375,normál
+2026-08-30,Skagen | dél,65,4,62.0,0.0484,0.375,normál
+2026-08-31,Skagen | dél,62,4,57.5,0.0783,0.375,normál
+2026-09-01,Skagen | dél,54,4,55.0,-0.0182,0.375,normál
+2026-09-02,Skagen | dél,69,4,52.0,0.3269,0.375,normál
+2026-09-03,Skagen | dél,74,4,56.0,0.3214,0.375,normál
+2026-09-04,Skagen | dél,65,4,56.5,0.1504,0.375,normál
+2026-09-05,Skagen | dél,54,4,68.5,-0.2117,0.375,normál
+2026-09-06,Skagen | dél,57,4,66.5,-0.1429,0.375,normál
+2026-09-07,Skagen | dél,64,4,62.0,0.0323,0.375,normál
+2026-09-08,Skagen | dél,59,4,54.5,0.0826,0.375,normál
+2026-09-09,Skagen | dél,58,4,61.5,-0.0569,0.375,normál
+2026-09-10,Skagen | dél,54,4,63.0,-0.1429,0.375,normál
+2026-09-11,Skagen | dél,66,4,59.0,0.1186,0.375,normál
+2026-09-12,Skagen | dél,66,4,64.0,0.0312,0.375,normál
+2026-09-13,Skagen | dél,72,4,61.0,0.1803,0.375,normál
+2026-09-14,Skagen | dél,65,4,63.0,0.0317,0.375,normál
+2026-09-15,Skagen | dél,63,4,57.0,0.1053,0.375,normál
+2026-09-16,Skagen | dél,65,4,62.0,0.0484,0.375,normál
+2026-09-17,Skagen | dél,65,4,63.0,0.0317,0.375,normál
+2026-09-18,Skagen | dél,56,4,63.0,-0.1111,0.375,normál
+2026-09-19,Skagen | dél,64,4,64.0,0.0,0.375,normál
+2026-09-20,Skagen | dél,52,4,61.0,-0.1475,0.375,normál
+2026-09-21,Skagen | dél,40,4,64.0,-0.375,0.375,szokatlanul alacsony
+2026-09-22,Skagen | dél,51,4,57.0,-0.1053,0.375,normál
+2026-09-23,Skagen | dél,80,4,65.5,0.2214,0.375,normál
+2026-09-24,Skagen | dél,53,4,61.5,-0.1382,0.375,normál
+2026-09-25,Skagen | dél,69,4,63.0,0.0952,0.375,normál
+2026-09-26,Skagen | dél,71,4,65.0,0.0923,0.375,normál
+2026-09-27,Skagen | dél,69,4,61.0,0.1311,0.375,normál
+2026-09-28,Skagen | dél,43,4,63.0,-0.3175,0.375,normál
+2026-09-29,Skagen | dél,52,4,56.5,-0.0796,0.375,normál
+2026-09-30,Skagen | dél,52,4,67.0,-0.2239,0.375,normál
+2026-10-01,Skagen | dél,57,4,59.5,-0.042,0.375,normál
+2026-10-02,Skagen | dél,53,4,65.5,-0.1908,0.375,normál
+2026-10-03,Skagen | dél,77,4,65.0,0.1846,0.375,normál
+2026-10-04,Skagen | dél,54,4,63.0,-0.1429,0.375,normál
+2026-10-05,Skagen | dél,64,4,53.5,0.1963,0.375,normál
+2026-10-06,Skagen | dél,50,4,55.5,-0.0991,0.375,normál

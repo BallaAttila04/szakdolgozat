@@ -1,0 +1,68 @@
+{
+ "leiras": "Kapuvonalak a kapuvonal.py-hoz. Ket megadasi mod: (1) szelessegi kor: \"szelesseg\" + \"hosszusag\": [nyugati veg, keleti veg]; (2) altalanos szakasz: \"a\": [lat, lon], \"b\": [lat, lon]. Az \"iranyok\" elso eleme az atkeles neve, amikor a hajo az a->b iranyhoz kepest BAL oldalra lep at, a masodik, amikor jobbra (szelessegi kornel a->b = nyugat->kelet, igy bal = eszak). A \"kifele\" azt az iranynevet adja, amelyik a Balti-tengerbol kifele vezet. \"monitor\": true kapuk kerulnek a kapuvonal.KAPUK-ba (a napi monitor ezeket figyeli, a fajlbeli sorrendben); a tobbi kiserleti. A vegpontok szarazfoldon vannak: a vonal menti pozicio-eloszlas (2026-07-20 - 07-26, +/-0,01 fok sav) a vegpontok kornyeken nulla, ld. naplo 2026-10-12.",
+ "kapuk": [
+  {
+   "nev": "Nagy-Balti-öv",
+   "szelesseg": 55.40,
+   "hosszusag": [10.60, 11.35],
+   "iranyok": ["észak", "dél"],
+   "kifele": "észak",
+   "monitor": true,
+   "indoklas": "A savban minden pozicio a vonalon belul esik (10,75-11,14 K), ld. naplo 2026-09-24."
+  },
+  {
+   "nev": "Øresund",
+   "szelesseg": 56.07,
+   "hosszusag": [12.40, 12.85],
+   "iranyok": ["észak", "dél"],
+   "kifele": "észak",
+   "monitor": true,
+   "indoklas": "56,07 E: a Helsingor-Helsingborg komp utvonala (56,04 E) folott, igy a kompok nem keresztezik oda-vissza a vonalat; a savban minden pozicio 12,56-12,67 K kozott."
+  },
+  {
+   "nev": "Øresund – Drogden",
+   "a": [55.575, 12.60],
+   "b": [55.53, 12.97],
+   "iranyok": ["észak", "dél"],
+   "kifele": "észak",
+   "monitor": false,
+   "indoklas": "Amager deli csucsatol (a koppenhagai kikotok alatt) a svéd partig. Ket savot metsz: Drogden (12,70 K) es a Flinterenden/Malmo fele vezeto ut (12,78-12,80 K). A Koge-obol kikotoi forgalma (12,48 K) a nyugati vegponton kivul marad. Pozicio a savban: 12,62-12,89 K."
+  },
+  {
+   "nev": "Fehmarn-öv",
+   "a": [54.50, 11.15],
+   "b": [54.76, 11.15],
+   "iranyok": ["nyugat", "kelet"],
+   "kifele": "nyugat",
+   "monitor": false,
+   "indoklas": "Delibab (11,15 K) Fehmarn eszaki partjatol Lolland deli partjaig, a Rodby-Puttgarden komp (11,22-11,35 K) nyugati oldalan. Pozicio a savban: 54,527-54,715 E."
+  },
+  {
+   "nev": "Kadet-rende",
+   "a": [54.62, 11.93],
+   "b": [54.44, 12.53],
+   "iranyok": ["északkelet", "délnyugat"],
+   "kifele": "délnyugat",
+   "monitor": false,
+   "indoklas": "Falster (Gedsertol eszakra) - Darss. A Gedser-Rostock komp a nyugati vegponton kivul, delre indul. Pozicio a savban: 11,96-12,48 K."
+  },
+  {
+   "nev": "Kis-Balti-öv",
+   "szelesseg": 55.535,
+   "hosszusag": [9.72, 9.79],
+   "iranyok": ["észak", "dél"],
+   "kifele": "észak",
+   "monitor": false,
+   "indoklas": "A Middelfart-Snoghoj szukulet eszak-deli szakasza. Pozicio a savban: 9,735-9,767 K. A fredericiai kikotobe delrol erkezo forgalmat is szamolja."
+  },
+  {
+   "nev": "Skagen",
+   "a": [57.73, 10.62],
+   "b": [57.94, 11.78],
+   "iranyok": ["észak", "dél"],
+   "kifele": "észak",
+   "monitor": false,
+   "indoklas": "Skagerrak-Kattegat hatar: Skagen (Grenen toven) - svéd part (Marstrandtol eszakra). A Goteborg es a svéd nyugati part kikotoibe eszaknyugatrol erkezo forgalmat is szamolja. Pozicio a savban: 10,63-11,75 K."
+  }
+ ]
+}

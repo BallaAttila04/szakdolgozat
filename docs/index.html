@@ -163,6 +163,17 @@
 össze. A mérésekhez tartozó forráskód a kapcsolódó repozitóriumban érhető el.
 A dolgozat szövegét az oldal nem tartalmazza.</p>
 
+<h2>Napi monitor: dashboard és adat-feed</h2>
+
+<a class="cta" href="dashboard.html">
+  <b>Dán szorosok – napi forgalmi monitor</b>
+  <span>Naponta frissülő dashboard: a Nagy-Balti-öv és az Øresund kereskedelmi
+  forgalma és megrakottsága az alapszinthez mérve, aktív jelzésekkel, a jelzési
+  szabály backtestjével és a kísérleti kapukkal. Az adatok gépi feldolgozásra
+  is letölthetők (<code>adat/</code>).</span>
+</a>
+<p class="meta">Önálló, statikus oldal; külső függősége nincs, mobilon is használható.</p>
+
 <h2>Interaktív térkép</h2>
 
 <a class="cta" href="terkep.html">
@@ -573,6 +584,9 @@ validálja és Parquet-formátumba alakítja, majd kiszámolja a kereskedelmi
 48 órával a nap vége után teszi közzé, ezért a legfrissebb adat 2–3 napos. Minden
 napot az előző négy hét azonos napjainak mediánjához mérünk; a jelzési küszöb a
 teljes eddigi idősor ingadozásából számolódik (2 × robusztus szórás): Mindkét kapu: ±20,9%, Nagy-Balti-öv: ±34,0%, Øresund: ±25,8%.</p>
+
+<p><a href="dashboard.html"><b>A teljes dashboard</b></a>: sorozatválasztó, időszak, jelzési sáv,
+backtest és kísérleti kapuk · gépi adat-feed: <a href="adat/legutobbi.json">adat/legutobbi.json</a></p>
 
 <div class="racs"><div class="kartya"><span class="szam">59</span><span class="cimke"><b>Nagy-Balti-öv</b><br>4 hét azonos napja: 58,0 · +1,7% · normál</span></div><div class="kartya"><span class="szam">41</span><span class="cimke"><b>Øresund</b><br>4 hét azonos napja: 51,0 · −19,6% · normál</span></div><div class="kartya"><span class="szam">100</span><span class="cimke"><b>Mindkét kapu</b><br>4 hét azonos napja: 105,5 · −5,2% · normál</span></div></div>
 

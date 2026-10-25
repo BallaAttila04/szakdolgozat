@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dán szorosok monitor</title>
+<meta name="description" content="Napi forgalmi és megrakottsági jelzés a dán szorosokról (Nagy-Balti-öv, Øresund), AIS-adatból.">
+<style>
+  /* Szinek szerep szerint. A sorozatszinek (--sor-1..3) szinlatas-zavarra es a
+     panel hatterere ellenorizve (validate_palette.js, minden par, vilagos es
+     sotet mod); a --sor-3 vilagos modban 3:1 alatti kontrasztu, ezert minden
+     abranak jelmagyarazata es tablazatos nezete van. A --jel a jelzett napok
+     jeloloje: alakkal (felfele / lefele haromszog) es felirattal egyutt jelenik
+     meg, sosem csak szinkent. */
+  :root {
+    color-scheme: light;
+    --lap: #f2f0ea; --panel: #fbfaf6; --panel-2: #f4f2ec;
+    --ink: #16232d; --ink-2: #55646f; --ink-3: #63707a;
+    --vonal: #d3dbe1; --racs: rgba(22,35,45,0.09); --tengely: #b8c2c9;
+    --accent: #0f6f8c;
+    --sor-1: #2a78d6; --sor-2: #eb6834; --sor-3: #1baf7a;
+    --sav: rgba(42,120,214,0.13); --alap: #55646f;
+    --kiel: rgba(22,35,45,0.07);
+    --jel: #c23a3a; --jel-hatter: rgba(194,58,58,0.09);
+    --ok: #1d7a32; --figy: #8a5a10; --figy-hatter: rgba(138,90,16,0.10);
+    --kiserleti: #8a5a10;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --lap: #070d13; --panel: #0d151d; --panel-2: #111b25;
+      --ink: #d8e6ef; --ink-2: #8fa1ae; --ink-3: #7d8e9b;
+      --vonal: #1f2c38; --racs: rgba(216,230,239,0.09); --tengely: #34434f;
+      --accent: #3fb9dc;
+      --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+      --sav: rgba(57,135,229,0.20); --alap: #a3b3bf;
+      --kiel: rgba(216,230,239,0.08);
+      --jel: #f07070; --jel-hatter: rgba(240,112,112,0.12);
+      --ok: #4cc46a; --figy: #d9a441; --figy-hatter: rgba(217,164,65,0.12);
+      --kiserleti: #d9a441;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --lap: #070d13; --panel: #0d151d; --panel-2: #111b25;
+    --ink: #d8e6ef; --ink-2: #8fa1ae; --ink-3: #7d8e9b;
+    --vonal: #1f2c38; --racs: rgba(216,230,239,0.09); --tengely: #34434f;
+    --accent: #3fb9dc;
+    --sor-1: #3987e5; --sor-2: #d95926; --sor-3: #199e70;
+    --sav: rgba(57,135,229,0.20); --alap: #a3b3bf;
+    --kiel: rgba(216,230,239,0.08);
+    --jel: #f07070; --jel-hatter: rgba(240,112,112,0.12);
+    --ok: #4cc46a; --figy: #d9a441; --figy-hatter: rgba(217,164,65,0.12);
+    --kiserleti: #d9a441;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--lap); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px; line-height: 1.5;
+  }
+  a { color: var(--accent); }
+  .mono, .adat-tabla td, .tengely-felirat {
+    font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+  }
+  .ugro { position: absolute; left: -9999px; }
+  .ugro:focus { left: 16px; top: 8px; background: var(--panel); padding: 6px 10px; z-index: 10; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .keret { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  header.fej { background: var(--panel); border-bottom: 1px solid var(--vonal); }
+  .fej .keret { padding-top: 18px; }
+  .vissza { font-size: 13px; margin: 0 0 6px; }
+  h1 { font-size: clamp(20px, 3.6vw, 26px); font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .alcim { color: var(--ink-2); margin: 0 0 10px; max-width: 760px; }
+  .allapotsor { font-size: 13px; color: var(--ink-2); margin: 0 0 12px;
+                display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .allapotsor b { color: var(--ink); font-weight: 600; }
+
+  .fulek { display: flex; flex-wrap: wrap; gap: 2px 4px; margin: 0; padding: 0; }
+  .ful { appearance: none; border: 0; background: none; color: var(--ink-2);
+         font: inherit; font-size: 14px; padding: 9px 10px 8px; cursor: pointer;
+         border-bottom: 2px solid transparent; }
+  .ful:hover { color: var(--ink); }
+  .ful[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+
+  main { padding: 20px 0 48px; }
+  h2 { font-size: 18px; font-weight: 600; margin: 4px 0 6px; }
+  h3 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+  p { margin: 0 0 12px; }
+  .bevezeto { color: var(--ink-2); max-width: 780px; }
+  .halk { color: var(--ink-3); font-size: 13px; }
+
+  .doboz { background: var(--panel); border: 1px solid var(--vonal); border-radius: 6px;
+           padding: 14px 16px; margin: 0 0 16px; min-width: 0; }
+  .doboz-alcim { color: var(--ink-2); font-size: 13px; margin: 0 0 10px; }
+  .racs-2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .racs-2 > .doboz { margin: 0; }
+
+  .szurosor { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end;
+              margin: 0 0 14px; }
+  .szuro { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--ink-2); min-width: 0; }
+  .szuro select, .szuro input {
+    font: inherit; font-size: 14px; color: var(--ink); background: var(--panel);
+    border: 1px solid var(--vonal); border-radius: 4px; padding: 5px 8px; max-width: 100%;
+  }
+  .gombsor { display: flex; flex-wrap: wrap; gap: 4px; }
+  .gomb { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--panel);
+          border: 1px solid var(--vonal); border-radius: 4px; padding: 5px 9px; cursor: pointer; }
+  .gomb[aria-pressed="true"] { color: var(--ink); border-color: var(--accent); font-weight: 600; }
+
+  /* KPI-csempek */
+  .csempek { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); margin: 0 0 16px; }
+  .csempe { background: var(--panel); border: 1px solid var(--vonal); border-radius: 6px; padding: 12px 14px; }
+  .csempe.jelez { border-color: var(--jel); box-shadow: inset 3px 0 0 var(--jel); }
+  .csempe-cimke { font-size: 13px; color: var(--ink-2); margin: 0 0 2px; }
+  .csempe-ertek { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+  .csempe-egyseg { font-size: 12.5px; color: var(--ink-3); font-weight: 400; margin-left: 4px; }
+  .csempe-reszlet { font-size: 12.5px; color: var(--ink-2); margin: 4px 0 6px; }
+  .csempe svg { display: block; width: 100%; height: 34px; }
+
+  .cimke-jel { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; display: inline-flex; align-items: center; gap: 4px; font-size: 12.5px;
+               padding: 1px 7px; border-radius: 10px; border: 1px solid var(--vonal); color: var(--ink-2);
+               white-space: nowrap; }
+  .cimke-jel.magas, .cimke-jel.alacsony { color: var(--jel); border-color: var(--jel); background: var(--jel-hatter); }
+  .cimke-jel.ok { color: var(--ok); border-color: var(--ok); }
+  .cimke-jel.figy { color: var(--figy); border-color: var(--figy); background: var(--figy-hatter); }
+  .cimke-jel.kiserleti { color: var(--kiserleti); border-color: var(--kiserleti); }
+
+  .figyelmeztetes { border: 1px solid var(--figy); background: var(--figy-hatter); color: var(--ink);
+                    border-radius: 6px; padding: 10px 14px; margin: 0 0 16px; font-size: 14px; }
+  .kiserleti-szalag { border: 1px dashed var(--kiserleti); border-radius: 6px; padding: 10px 14px;
+                      margin: 0 0 16px; font-size: 14px; background: var(--figy-hatter); }
+
+  /* Diagramok */
+  .abra { position: relative; outline: none; }
+  .abra:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .abra svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .abra text { font-size: 11px; fill: var(--ink-3); }
+  .jelmagyarazat { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--ink-2);
+                   margin: 0 0 8px; padding: 0; list-style: none; }
+  .jelmagyarazat li { display: inline-flex; align-items: center; gap: 6px; }
+  .jm-vonal { width: 16px; height: 0; border-top: 2px solid; display: inline-block; }
+  .jm-sav { width: 16px; height: 10px; background: var(--sav); display: inline-block; border-radius: 2px; }
+  .jm-kiel { width: 12px; height: 12px; background: var(--kiel); display: inline-block; border: 1px solid var(--vonal); }
+  .jm-jel { color: var(--jel); font-size: 12px; }
+
+  .tooltip { position: fixed; z-index: 20; pointer-events: none; background: var(--panel);
+             color: var(--ink); border: 1px solid var(--vonal); border-radius: 6px;
+             box-shadow: 0 4px 16px rgba(0,0,0,0.16); padding: 8px 10px; font-size: 12.5px;
+             max-width: min(280px, calc(100vw - 32px)); }
+  .tooltip .tt-cim { color: var(--ink-2); margin-bottom: 4px; }
+  .tooltip .tt-sor { display: flex; align-items: baseline; gap: 6px; }
+  .tooltip .tt-sor b { font-size: 14px; font-weight: 600; }
+  .tooltip .tt-kulcs { width: 12px; height: 0; border-top: 2px solid; display: inline-block; transform: translateY(-3px); }
+  .tooltip .tt-reszlet { color: var(--ink-2); }
+
+  details.tablanezet { margin-top: 8px; font-size: 13px; }
+  details.tablanezet summary { cursor: pointer; color: var(--accent); }
+  .tabla-gorgeto { overflow-x: auto; max-width: 100%; }
+  .tabla-gorgeto.magas { max-height: 360px; overflow-y: auto; }
+  .adat-tabla { width: 100%; border-collapse: collapse; font-size: 13px; margin: 6px 0; }
+  .adat-tabla th { text-align: right; font-weight: 500; color: var(--ink-3); border-bottom: 1px solid var(--vonal);
+                   padding: 5px 8px 5px 0; white-space: nowrap; position: sticky; top: 0; background: var(--panel); }
+  .adat-tabla td { text-align: right; padding: 4px 8px 4px 0; border-bottom: 1px solid var(--racs);
+                   font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .adat-tabla th:first-child, .adat-tabla td:first-child { text-align: left; font-family: inherit; color: var(--ink-2); }
+  .adat-tabla td.szoveg, .adat-tabla th.szoveg { text-align: left; font-family: inherit; white-space: normal; }
+  .adat-tabla tr.kiemelt td { background: var(--jel-hatter); }
+
+  .lista-jelzes { list-style: none; margin: 0; padding: 0; }
+  .lista-jelzes li { padding: 8px 0; border-bottom: 1px solid var(--racs); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .lista-jelzes li:last-child { border-bottom: 0; }
+
+  .modszer h3 { margin-top: 18px; }
+  .modszer ul { padding-left: 20px; margin: 0 0 12px; }
+  .modszer li { margin-bottom: 4px; }
+  code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 0.92em;
+         background: var(--panel-2); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
+
+  footer { border-top: 1px solid var(--vonal); padding: 16px 0 32px; color: var(--ink-3); font-size: 13px; }
+  .lathatatlan { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 520px) {
+    body { font-size: 14.5px; }
+    .doboz { padding: 12px; }
+    .csempe-ertek { font-size: 23px; }
+  }
+  @media (forced-colors: active) {
+    .cimke-jel, .csempe.jelez { border: 1px solid CanvasText; }
+  }
+</style>
+</head>
+<body>
+<a class="ugro" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="fej">
+  <div class="keret">
+    <p class="vissza"><a href="index.html">← A projekt nyitólapja</a></p>
+    <h1>Dán szorosok – napi forgalmi monitor</h1>
+    <p class="alcim">Kereskedelmi hajóforgalom és megrakottság a Nagy-Balti-övön és az Øresundon,
+      a dán AIS-adatból naponta számolva. Az alapszinttől való szokatlan eltérést jelzi.</p>
+    <p class="allapotsor" id="allapotsor"></p>
+    <div class="fulek" role="tablist" aria-label="Nézetek" id="fulek">
+      <button class="ful" role="tab" id="ful-attekintes" aria-controls="nezet-attekintes" data-nezet="attekintes">Áttekintés</button>
+      <button class="ful" role="tab" id="ful-forgalom" aria-controls="nezet-forgalom" data-nezet="forgalom">Forgalom</button>
+      <button class="ful" role="tab" id="ful-megrakottsag" aria-controls="nezet-megrakottsag" data-nezet="megrakottsag">Megrakottság</button>
+      <button class="ful" role="tab" id="ful-backtest" aria-controls="nezet-backtest" data-nezet="backtest">Backtest</button>
+      <button class="ful" role="tab" id="ful-kapuk" aria-controls="nezet-kapuk" data-nezet="kapuk">Kapuk</button>
+      <button class="ful" role="tab" id="ful-modszer" aria-controls="nezet-modszer" data-nezet="modszer">Adat és módszer</button>
+    </div>
+  </div>
+</header>
+
+<main id="tartalom" class="keret">
+
+<section id="nezet-attekintes" role="tabpanel" aria-labelledby="ful-attekintes">
+  <div id="futas-figyelmeztetes"></div>
+  <h2>Az utolsó feldolgozott nap</h2>
+  <p class="bevezeto" id="attekintes-bevezeto"></p>
+  <div class="csempek" id="kpi"></div>
+  <div class="racs-2">
+    <div class="doboz">
+      <h3>Aktív jelzések</h3>
+      <p class="doboz-alcim" id="aktiv-alcim"></p>
+      <div id="aktiv"></div>
+    </div>
+    <div class="doboz">
+      <h3 id="jelzes30-cim">Jelzések az utolsó napokban</h3>
+      <p class="doboz-alcim">Minden sorozat, a monitor hivatalos szabályával.</p>
+      <div class="tabla-gorgeto magas" id="jelzes30"></div>
+    </div>
+  </div>
+</section>
+
+<section id="nezet-forgalom" role="tabpanel" aria-labelledby="ful-forgalom" hidden>
+  <h2>Napi kapuvonal-átkelések</h2>
+  <p class="bevezeto">A kiválasztott sorozat napi átkelésszáma, az előző négy hét azonos napjainak
+    mediánja (alapszint) és a jelzési sáv. A sáv a sorozat saját ingadozásából számolódik; a sávon
+    kívüli napok jelzettek.</p>
+  <div class="szurosor" id="forgalom-szurok">
+    <label class="szuro">Kapu<select id="forgalom-kapu"></select></label>
+    <label class="szuro">Irány<select id="forgalom-irany"></select></label>
+    <label class="szuro">Hajócsoport<select id="forgalom-csoport"></select></label>
+    <div class="szuro"><span>Időszak</span><div class="gombsor" id="forgalom-idoszak"></div></div>
+    <label class="szuro">Ettől<input type="date" id="forgalom-tol"></label>
+    <label class="szuro">Eddig<input type="date" id="forgalom-ig"></label>
+  </div>
+  <div class="doboz">
+    <h3 id="forgalom-cim"></h3>
+    <p class="doboz-alcim" id="forgalom-alcim"></p>
+    <ul class="jelmagyarazat" id="forgalom-jm"></ul>
+    <div class="abra" id="forgalom-abra" tabindex="0" role="img"></div>
+    <details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto magas" id="forgalom-tabla"></div></details>
+  </div>
+</section>
+
+<section id="nezet-megrakottsag" role="tabpanel" aria-labelledby="ful-megrakottsag" hidden>
+  <h2>Megrakottság, 7 napos gördülő összeg</h2>
+  <p class="bevezeto" id="megrakottsag-bevezeto"></p>
+  <div class="szurosor">
+    <label class="szuro">Mutató<select id="megr-mutato"></select></label>
+    <label class="szuro">Hajócsoport<select id="megr-csoport"></select></label>
+    <label class="szuro">Kapu<select id="megr-kapu"></select></label>
+    <label class="szuro">Irány<select id="megr-irany"></select></label>
+    <div class="szuro"><span>Időszak</span><div class="gombsor" id="megr-idoszak"></div></div>
+    <label class="szuro">Ettől<input type="date" id="megr-tol"></label>
+    <label class="szuro">Eddig<input type="date" id="megr-ig"></label>
+  </div>
+  <div class="doboz">
+    <h3 id="megr-cim"></h3>
+    <p class="doboz-alcim" id="megr-alcim"></p>
+    <ul class="jelmagyarazat" id="megr-jm"></ul>
+    <div class="abra" id="megr-abra" tabindex="0" role="img"></div>
+    <details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto magas" id="megr-tabla"></div></details>
+  </div>
+</section>
+
+<section id="nezet-backtest" role="tabpanel" aria-labelledby="ful-backtest" hidden>
+  <h2>Mennyire megbízható a jelzés? – backtest</h2>
+  <p class="bevezeto" id="bt-bevezeto"></p>
+  <div id="bt-tartalom"></div>
+</section>
+
+<section id="nezet-kapuk" role="tabpanel" aria-labelledby="ful-kapuk" hidden>
+  <h2>Kísérleti kapuk</h2>
+  <div class="kiserleti-szalag"><span class="cimke-jel kiserleti">◇ kísérleti</span>
+    Ezek a kapuk nem részei a napi monitornak és nem frissülnek naponta. A sorozatok egy
+    pillanatképből származnak; jelzésük tájékoztató, a monitor szabályával számolva.</div>
+  <div id="kapuk-tartalom"></div>
+</section>
+
+<section id="nezet-modszer" role="tabpanel" aria-labelledby="ful-modszer" hidden>
+  <div class="modszer" id="modszer"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="keret" id="labresz"></div>
+</footer>
+
+<div id="tooltip" class="tooltip" hidden></div>
+<div id="elo" class="lathatatlan" aria-live="polite"></div>
+
+<script>
+"use strict";
+const ADAT = /*DASHBOARD_ADAT*/;
+
+// ---------------------------------------------------------------------------
+// Formazas (magyar: ezres tagolas nem tordelo szokozzel, tizedesvesszo)
+// ---------------------------------------------------------------------------
+const NBSP = " ", MINUSZ = "−";
+const HONAP = ["jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec."];
+const HETNAP = ["vasárnap", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat"];
+
+function szamE(x) { return typeof x === "number" && isFinite(x); }
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function szam(x, tizedes = 0) {
+  if (!szamE(x)) return "–";
+  const s = Math.abs(x).toFixed(tizedes);
+  const [e, t] = s.split(".");
+  const ki = e.replace(/\B(?=(\d{3})+(?!\d))/g, NBSP) + (t ? "," + t : "");
+  return x < 0 && Number(s) !== 0 ? MINUSZ + ki : ki;
+}
+function szazalek(x, tizedes = 1, elojel = false) {
+  if (!szamE(x)) return "–";
+  const v = x * 100, kerek = Number(Math.abs(v).toFixed(tizedes));
+  const jel = kerek === 0 ? "" : v < 0 ? MINUSZ : elojel ? "+" : "";
+  return jel + szam(Math.abs(v), tizedes) + "%";
+}
+function datumObj(s) { const [y, m, d] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); }
+function napSorszam(s) { return Math.round(datumObj(s).getTime() / 86400000); }
+function napHozzaad(s, n) { return new Date(datumObj(s).getTime() + n * 86400000).toISOString().slice(0, 10); }
+function datumRovid(s) { const d = datumObj(s); return `${HONAP[d.getUTCMonth()]} ${d.getUTCDate()}.`; }
+function datumHosszu(s) {
+  const d = datumObj(s);
+  return `${d.getUTCFullYear()}. ${HONAP[d.getUTCMonth()]} ${d.getUTCDate()}., ${HETNAP[d.getUTCDay()]}`;
+}
+function idopont(iso) {
+  if (!iso) return "–";
+  return iso.replace("T", " ").replace(/:\d\d(\+00:00|Z)$/, "") + " UTC";
+}
+
+// ---------------------------------------------------------------------------
+// A monitor szabalya (monitor.jelzesek): alapszint = az elozo 4 het azonos
+// hetnapjanak mediánja (legalabb 3 nap), elteres = ertek / alapszint - 1,
+// kuszob = szorzo x 1,4826 x MAD a teljes sorozat elteresebol. A parametereket
+// a dashboard_epit.py a monitor.py konstansaibol adja at.
+// ---------------------------------------------------------------------------
+const SZABALY = ADAT.szabaly;
+
+function median(t) {
+  const a = t.filter(szamE).sort((x, y) => x - y);
+  if (!a.length) return null;
+  const k = a.length >> 1;
+  return a.length % 2 ? a[k] : (a[k - 1] + a[k]) / 2;
+}
+
+function jelzesSzamol(napok, ertekek, sz = SZABALY) {
+  const idx = new Map(napok.map((d, i) => [d, i]));
+  const n = napok.length;
+  const alap = new Array(n).fill(null), elt = new Array(n).fill(null), alapnapok = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    const t = [];
+    for (let w = 1; w <= sz.alap_hetek; w++) {
+      const j = idx.get(napHozzaad(napok[i], -7 * w));
+      if (j !== undefined && szamE(ertekek[j])) t.push(ertekek[j]);
+    }
+    alapnapok[i] = t.length;
+    if (t.length >= sz.min_alapnap && szamE(ertekek[i])) {
+      const m = median(t);
+      if (m > 0) { alap[i] = m; elt[i] = ertekek[i] / m - 1; }
+    }
+  }
+  const e = elt.filter(v => v !== null);
+  let kuszob = null;
+  if (e.length) {
+    const me = median(e);
+    kuszob = sz.kuszob_szorzo * sz.mad_skala * median(e.map(v => Math.abs(v - me)));
+  }
+  const jelzes = elt.map(v => (v === null || kuszob === null) ? null : v > kuszob ? 1 : v < -kuszob ? -1 : 0);
+  return { napok, ertek: ertekek, alapszint: alap, elteres: elt, alapnapok, kuszob, jelzes };
+}
+
+function jelzesSzoveg(j) {
+  return j === 1 ? "szokatlanul magas" : j === -1 ? "szokatlanul alacsony" : j === 0 ? "normál" : "nincs alapszint";
+}
+function jelzesKod(s) {
+  return s === "szokatlanul magas" ? 1 : s === "szokatlanul alacsony" ? -1 : s === "normál" ? 0 : null;
+}
+
+// A jelzesi sav: alapszint x (1 +/- kuszob). Darabszamnal az also szel nem
+// mehet nulla ala.
+function savSzamol(alapszint, kuszob, nemNegativ = true) {
+  return alapszint.map(a => {
+    if (a === null || !szamE(kuszob)) return null;
+    const also = a * (1 - kuszob);
+    return [nemNegativ ? Math.max(0, also) : also, a * (1 + kuszob)];
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Sorozatkepzes a tomoritett hosszu tablabol (dim-szotar + indexelt sorok)
+// ---------------------------------------------------------------------------
+function sorozatKepzes(tabla, napokSzama, szuro, oszlop) {
+  const ki = new Array(napokSzama).fill(0);
+  if (!tabla) return ki;
+  const dimek = tabla.dim;
+  const engedett = dimek.map(d => (szuro[d] && szuro[d].length)
+    ? new Set(szuro[d].map(v => tabla[d].indexOf(v))) : null);
+  const oi = 1 + dimek.length + tabla.ertekek.indexOf(oszlop);
+  for (const r of tabla.sorok) {
+    let jo = true;
+    for (let k = 0; k < dimek.length; k++) {
+      if (engedett[k] && !engedett[k].has(r[1 + k])) { jo = false; break; }
+    }
+    if (jo && szamE(r[oi])) ki[r[0]] += r[oi];
+  }
+  return ki;
+}
+
+// 7 napos gordulo osszeg naptari napokon: ha az ablakban adat nelkuli nap van,
+// arra a napra nincs ertek (megrakottsag.gordulo_sorozatok).
+function gordulo(napok, ertekek, n) {
+  const m = new Map(napok.map((d, i) => [d, ertekek[i]]));
+  const kiNap = [], kiErt = [];
+  if (!napok.length) return { napok: kiNap, ertek: kiErt };
+  const naptar = [];
+  for (let d = napok[0]; d <= napok[napok.length - 1]; d = napHozzaad(d, 1)) naptar.push(d);
+  for (let i = n - 1; i < naptar.length; i++) {
+    let s = 0, jo = true;
+    for (let k = i - n + 1; k <= i; k++) {
+      const v = m.get(naptar[k]);
+      if (!szamE(v)) { jo = false; break; }
+      s += v;
+    }
+    if (jo) { kiNap.push(naptar[i]); kiErt.push(s); }
+  }
+  return { napok: kiNap, ertek: kiErt };
+}
+// pandas .round(0): fel-egesznel a paros szomszed
+function kerekitParos(x) {
+  const f = Math.floor(x), d = x - f;
+  if (Math.abs(d - 0.5) < 1e-9) return f % 2 === 0 ? f : f + 1;
+  return Math.round(x);
+}
+
+function idoszakSzures(napok, tol, ig) {
+  const ki = [];
+  napok.forEach((d, i) => { if ((!tol || d >= tol) && (!ig || d <= ig)) ki.push(i); });
+  return ki;
+}
+
+// ---------------------------------------------------------------------------
+// Forgalmi es megrakottsagi sorozatok
+// ---------------------------------------------------------------------------
+const MIND = "__mind__";
+const KERESKEDELMI = ["Teherhajó", "Tanker"];
+const OSSZES_KAPU = "Mindkét kapu";
+
+function forgalomSzuro(allapot) {
+  return {
+    kapu: allapot.kapu === OSSZES_KAPU ? null : [allapot.kapu],
+    irany: allapot.irany === MIND ? null : [allapot.irany],
+    csoport: allapot.csoport === "kereskedelmi" ? KERESKEDELMI : allapot.csoport === MIND ? null : [allapot.csoport],
+  };
+}
+function forgalomSorozat(allapot, adat = ADAT) {
+  const ertek = sorozatKepzes(adat.forgalom, adat.napok.length, forgalomSzuro(allapot), "atkeles");
+  return jelzesSzamol(adat.napok, ertek);
+}
+function hivatalosForgalom(allapot) {
+  return allapot.irany === MIND && allapot.csoport === "kereskedelmi" ? allapot.kapu : null;
+}
+
+const MEGR_MUTATOK = {
+  megrakott: { nev: "Megrakott átkelés", egyseg: "átkelés / 7 nap", tizedes: 0 },
+  arany: { nev: "Megrakott arány", egyseg: "a merüléssel értékelhető átkelések %-a", tizedes: 1, szazalek: true },
+  volumen: { nev: "Volumenindex", egyseg: "ezer m³ / 7 nap", tizedes: 0 },
+};
+function megrSorozat(allapot, adat = ADAT) {
+  const t = adat.megrakottsag, n = adat.napok.length;
+  const szuro = {
+    kapu: allapot.kapu === OSSZES_KAPU ? null : [allapot.kapu],
+    irany: allapot.irany === MIND ? null : [allapot.irany],
+    csoport: allapot.csoport === MIND ? KERESKEDELMI : [allapot.csoport],
+  };
+  const gn = adat.szabaly.gordulo_nap;
+  let napok, ertek;
+  if (allapot.mutato === "arany") {
+    const m = gordulo(adat.napok, sorozatKepzes(t, n, szuro, "megrakott"), gn);
+    const e = gordulo(adat.napok, sorozatKepzes(t, n, szuro, "ertekelheto"), gn);
+    napok = m.napok;
+    ertek = m.ertek.map((v, i) => e.ertek[i] > 0 ? v / e.ertek[i] : null);
+  } else if (allapot.mutato === "volumen") {
+    const g = gordulo(adat.napok, sorozatKepzes(t, n, szuro, "volumenindex").map(v => v / 1000), gn);
+    napok = g.napok; ertek = g.ertek.map(kerekitParos);
+  } else {
+    const g = gordulo(adat.napok, sorozatKepzes(t, n, szuro, "megrakott"), gn);
+    napok = g.napok; ertek = g.ertek.map(kerekitParos);
+  }
+  // az arany-sorozatban a 0 ertekelheto atkelesu ablak kimarad
+  const jo = ertek.map((v, i) => szamE(v) ? i : -1).filter(i => i >= 0);
+  return jelzesSzamol(jo.map(i => napok[i]), jo.map(i => ertek[i]));
+}
+function hivatalosMegr(allapot) {
+  if (allapot.kapu !== OSSZES_KAPU || allapot.irany !== MIND) return null;
+  if (allapot.mutato === "megrakott" && allapot.csoport === "Tanker") return "Megrakott tanker (7 nap)";
+  if (allapot.mutato === "megrakott" && allapot.csoport === "Teherhajó") return "Megrakott teherhajó (7 nap)";
+  if (allapot.mutato === "volumen" && allapot.csoport === "Tanker") return "Tanker-volumen (7 nap, 1000 m³)";
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Diagram-segedek
+// ---------------------------------------------------------------------------
+function szepSkala(min, max, db = 5) {
+  if (!szamE(min) || !szamE(max)) return { min: 0, max: 1, ticks: [0, 0.5, 1] };
+  if (min === max) { const d = Math.abs(min) || 1; min -= d * 0.5; max += d * 0.5; }
+  const nyers = (max - min) / db;
+  const hatv = Math.pow(10, Math.floor(Math.log10(nyers)));
+  const r = nyers / hatv;
+  const lepes = (r <= 1 ? 1 : r <= 2 ? 2 : r <= 2.5 ? 2.5 : r <= 5 ? 5 : 10) * hatv;
+  const a = Math.floor(min / lepes + 1e-9) * lepes, f = Math.ceil(max / lepes - 1e-9) * lepes;
+  const ticks = [];
+  for (let v = a; v <= f + lepes * 1e-6; v += lepes) ticks.push(Number(v.toFixed(10)));
+  return { min: a, max: f, lepes, ticks };
+}
+
+function datumTickek(elso, utolso, szelesseg) {
+  const span = napSorszam(utolso) - napSorszam(elso);
+  const ki = [];
+  if (span > 75) {
+    let d = datumObj(elso);
+    d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + (d.getUTCDate() > 1 ? 1 : 0), 1));
+    const lepes = szelesseg < 420 && span > 120 ? 2 : 1;
+    while (d.toISOString().slice(0, 10) <= utolso) {
+      ki.push({ nap: d.toISOString().slice(0, 10), cimke: HONAP[d.getUTCMonth()] });
+      d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + lepes, 1));
+    }
+  } else {
+    const max = Math.max(2, Math.floor(szelesseg / 74));
+    const het = Math.max(1, Math.ceil(span / 7 / max));
+    let d = elso;
+    while (datumObj(d).getUTCDay() !== 1) d = napHozzaad(d, 1);
+    for (; d <= utolso; d = napHozzaad(d, 7 * het)) ki.push({ nap: d, cimke: datumRovid(d) });
+  }
+  return ki;
+}
+
+const ABRAK = {};       // id -> geometria a hoverhez es a billentyuzethez
+const KOTVE = new Set();
+
+function abraMeret(id, alapMagassag = 280) {
+  const el = document.getElementById(id);
+  const w = Math.max(280, Math.min(1080, (el && el.clientWidth) || 720));
+  return { w, h: w < 480 ? Math.round(alapMagassag * 0.82) : alapMagassag };
+}
+
+// Idosoros vonaldiagram: ertek-vonal(ak), alapszint, jelzesi sav, jelzett
+// napok, Kiel-idoszak. Egy y-tengely; az x a naptari napokon egyenletes.
+function idosorAbra(id, o) {
+  const { w, h } = abraMeret(id, o.magassag || 280);
+  const bal = 48, jobb = 14, fel = 18, le = 28;
+  const pw = w - bal - jobb, ph = h - fel - le;
+  const napok = o.napok;
+  if (!napok.length) return { svg: `<p class="halk">Ebben az időszakban nincs adat.</p>`, geo: null };
+  const n0 = napSorszam(napok[0]), n1 = napSorszam(napok[napok.length - 1]);
+  const xs = d => bal + (n1 === n0 ? pw / 2 : (napSorszam(d) - n0) / (n1 - n0) * pw);
+  const ertekek = [];
+  o.sorozatok.forEach(s => s.ertekek.forEach(v => szamE(v) && ertekek.push(v)));
+  (o.sav || []).forEach(v => v && ertekek.push(v[0], v[1]));
+  (o.alap || []).forEach(v => szamE(v) && ertekek.push(v));
+  let ymin = Math.min(...ertekek), ymax = Math.max(...ertekek);
+  if (o.nullatol) ymin = Math.min(0, ymin);
+  const sk = szepSkala(ymin, ymax, ph < 200 ? 4 : 5);
+  const ys = v => fel + ph - (v - sk.min) / (sk.max - sk.min || 1) * ph;
+  const t = [];
+  t.push(`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true" focusable="false">`);
+  // racs es y-tengely
+  for (const v of sk.ticks) {
+    const y = ys(v).toFixed(1);
+    t.push(`<line x1="${bal}" x2="${w - jobb}" y1="${y}" y2="${y}" stroke="var(--racs)" stroke-width="1"/>`);
+    t.push(`<text x="${bal - 6}" y="${y}" dy="0.32em" text-anchor="end" class="tengely-felirat">${esc((o.tengelyFmt || o.fmt)(v))}</text>`);
+  }
+  // Kiel-idoszak
+  const kiel = (o.kiel || []).filter(d => d >= napok[0] && d <= napok[napok.length - 1]);
+  if (kiel.length) {
+    const egyNap = n1 === n0 ? pw : pw / (n1 - n0);
+    const x0 = Math.max(bal, xs(kiel[0]) - egyNap / 2), x1 = Math.min(w - jobb, xs(kiel[kiel.length - 1]) + egyNap / 2);
+    t.push(`<rect x="${x0.toFixed(1)}" y="${fel}" width="${Math.max(2, x1 - x0).toFixed(1)}" height="${ph}" fill="var(--kiel)"/>`);
+    t.push(`<text x="${((x0 + x1) / 2).toFixed(1)}" y="${fel - 5}" text-anchor="middle">Kiel</text>`);
+  }
+  // x-tengely
+  t.push(`<line x1="${bal}" x2="${w - jobb}" y1="${fel + ph}" y2="${fel + ph}" stroke="var(--tengely)" stroke-width="1"/>`);
+  for (const tk of datumTickek(napok[0], napok[napok.length - 1], pw)) {
+    const x = xs(tk.nap);
+    if (x < bal - 1 || x > w - jobb + 1) continue;
+    t.push(`<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${fel + ph}" y2="${fel + ph + 4}" stroke="var(--tengely)"/>`);
+    t.push(`<text x="${x.toFixed(1)}" y="${fel + ph + 17}" text-anchor="middle">${esc(tk.cimke)}</text>`);
+  }
+  // jelzesi sav (szakaszonkent, ahol van alapszint)
+  if (o.sav) {
+    let szakasz = [];
+    const zar = () => {
+      if (szakasz.length) {
+        const felso = szakasz.map(i => `${xs(napok[i]).toFixed(1)},${ys(o.sav[i][1]).toFixed(1)}`);
+        const also = szakasz.slice().reverse().map(i => `${xs(napok[i]).toFixed(1)},${ys(o.sav[i][0]).toFixed(1)}`);
+        const pont = szakasz.length === 1 ? 3 : 0;
+        if (pont) {
+          const i = szakasz[0], x = xs(napok[i]);
+          t.push(`<rect x="${(x - pont).toFixed(1)}" y="${ys(o.sav[i][1]).toFixed(1)}" width="${2 * pont}" height="${(ys(o.sav[i][0]) - ys(o.sav[i][1])).toFixed(1)}" fill="var(--sav)"/>`);
+        } else {
+          t.push(`<polygon points="${felso.concat(also).join(" ")}" fill="var(--sav)"/>`);
+        }
+      }
+      szakasz = [];
+    };
+    o.sav.forEach((v, i) => { if (v) szakasz.push(i); else zar(); });
+    zar();
+  }
+  const vonal = (ert, szin, vastag, extra = "") => {
+    let d = "", be = false;
+    ert.forEach((v, i) => {
+      if (!szamE(v)) { be = false; return; }
+      d += `${be ? "L" : "M"}${xs(napok[i]).toFixed(1)},${ys(v).toFixed(1)}`;
+      be = true;
+    });
+    return d ? `<path d="${d}" fill="none" stroke="${szin}" stroke-width="${vastag}" stroke-linejoin="round" stroke-linecap="round"${extra}/>` : "";
+  };
+  if (o.alap) t.push(vonal(o.alap, "var(--alap)", 1.25, ' stroke-opacity="0.9"'));
+  o.sorozatok.forEach(s => t.push(vonal(s.ertekek, s.szin, s.vastag || 2)));
+  // jelzett napok: haromszog felfele (magas) / lefele (alacsony), feluleti gyuruvel
+  if (o.jelzes) {
+    o.jelzes.forEach((j, i) => {
+      if (j !== 1 && j !== -1) return;
+      const v = o.sorozatok[0].ertekek[i];
+      if (!szamE(v)) return;
+      const x = xs(napok[i]), y = ys(v), r = 5.5;
+      const p = j === 1
+        ? `M${x},${y - r} L${x + r},${y + r * 0.8} L${x - r},${y + r * 0.8} Z`
+        : `M${x},${y + r} L${x + r},${y - r * 0.8} L${x - r},${y - r * 0.8} Z`;
+      t.push(`<path d="${p}" fill="var(--jel)" stroke="var(--panel)" stroke-width="2" stroke-linejoin="round"/>`);
+    });
+  }
+  t.push(`<g id="${id}-f"></g></svg>`);
+  const geo = {
+    w, h, bal, jobb, fel, ph,
+    x: napok.map(xs),
+    y: o.sorozatok.map(s => s.ertekek.map(v => szamE(v) ? ys(v) : null)),
+    szinek: o.sorozatok.map(s => s.szin),
+    n: napok.length,
+  };
+  return { svg: t.join(""), geo };
+}
+
+// XY-diagram (ROC, eszleles az esemeny meretenek fuggvenyeben): vonalak
+// pontjelolokkel, a legkozelebbi pont a hover-cel.
+function xyAbra(id, o) {
+  const { w, h } = abraMeret(id, o.magassag || 280);
+  const bal = 48, jobb = 14, fel = 14, le = 40;
+  const pw = w - bal - jobb, ph = h - fel - le;
+  const pontok = [];
+  o.sorozatok.forEach((s, si) => s.pontok.forEach((p, pi) => szamE(p.x) && szamE(p.y) && pontok.push({ ...p, si, pi })));
+  if (!pontok.length) return { svg: `<p class="halk">Nincs adat.</p>`, geo: null };
+  const xsk = szepSkala(o.xmin ?? Math.min(...pontok.map(p => p.x)), o.xmax ?? Math.max(...pontok.map(p => p.x)), 5);
+  const ysk = szepSkala(o.ymin ?? Math.min(...pontok.map(p => p.y)), o.ymax ?? Math.max(...pontok.map(p => p.y)), 5);
+  const xs = v => bal + (v - xsk.min) / (xsk.max - xsk.min || 1) * pw;
+  const ys = v => fel + ph - (v - ysk.min) / (ysk.max - ysk.min || 1) * ph;
+  const t = [`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true" focusable="false">`];
+  for (const v of ysk.ticks) {
+    const y = ys(v).toFixed(1);
+    t.push(`<line x1="${bal}" x2="${w - jobb}" y1="${y}" y2="${y}" stroke="var(--racs)"/>`);
+    t.push(`<text x="${bal - 6}" y="${y}" dy="0.32em" text-anchor="end" class="tengely-felirat">${esc(o.yFmt(v))}</text>`);
+  }
+  t.push(`<line x1="${bal}" x2="${w - jobb}" y1="${fel + ph}" y2="${fel + ph}" stroke="var(--tengely)"/>`);
+  for (const v of xsk.ticks) {
+    const x = xs(v).toFixed(1);
+    t.push(`<line x1="${x}" x2="${x}" y1="${fel + ph}" y2="${fel + ph + 4}" stroke="var(--tengely)"/>`);
+    t.push(`<text x="${x}" y="${fel + ph + 16}" text-anchor="middle" class="tengely-felirat">${esc(o.xFmt(v))}</text>`);
+  }
+  t.push(`<text x="${bal + pw / 2}" y="${h - 4}" text-anchor="middle">${esc(o.xCimke)}</text>`);
+  o.sorozatok.forEach(s => {
+    const p = s.pontok.filter(q => szamE(q.x) && szamE(q.y));
+    if (p.length > 1) t.push(`<path d="${p.map((q, i) => `${i ? "L" : "M"}${xs(q.x).toFixed(1)},${ys(q.y).toFixed(1)}`).join("")}" fill="none" stroke="${s.szin}" stroke-width="2" stroke-linejoin="round"/>`);
+    p.forEach(q => t.push(`<circle cx="${xs(q.x).toFixed(1)}" cy="${ys(q.y).toFixed(1)}" r="${q.kiemelt ? 6 : 4}" fill="${q.kiemelt ? "var(--panel)" : s.szin}" stroke="${q.kiemelt ? s.szin : "var(--panel)"}" stroke-width="2"/>`));
+  });
+  t.push(`<g id="${id}-f"></g></svg>`);
+  const geo = { w, h, xy: true, pontok: pontok.map(p => ({ ...p, px: xs(p.x), py: ys(p.y), szin: o.sorozatok[p.si].szin })) };
+  return { svg: t.join(""), geo };
+}
+
+// ---------------------------------------------------------------------------
+// Hover, fokusz, billentyuzet (egy tooltip, a legkozelebbi napra/pontra ugrik)
+// ---------------------------------------------------------------------------
+function tooltipMutat(html, x, y) {
+  const tt = document.getElementById("tooltip");
+  tt.innerHTML = html;
+  tt.hidden = false;
+  const vw = (typeof window !== "undefined" && window.innerWidth) || 1024;
+  const tw = Math.min(280, vw - 32);
+  let left = x + 14;
+  if (left + tw > vw - 8) left = Math.max(8, x - tw - 14);
+  tt.style.left = left + "px";
+  tt.style.top = Math.max(8, y - 12) + "px";
+}
+function tooltipRejt() { document.getElementById("tooltip").hidden = true; }
+
+function fokuszRajzol(id, i) {
+  const a = ABRAK[id];
+  if (!a || !a.geo) return;
+  const g = document.getElementById(id + "-f");
+  const geo = a.geo;
+  let svg = "";
+  if (geo.xy) {
+    const p = geo.pontok[i];
+    svg = `<circle cx="${p.px}" cy="${p.py}" r="8" fill="none" stroke="var(--ink)" stroke-width="1.5"/>`;
+  } else {
+    const x = geo.x[i];
+    svg = `<line x1="${x}" x2="${x}" y1="${geo.fel}" y2="${geo.fel + geo.ph}" stroke="var(--ink-3)" stroke-width="1"/>`;
+    geo.y.forEach((ys, si) => {
+      if (ys[i] !== null) svg += `<circle cx="${x}" cy="${ys[i]}" r="4.5" fill="${geo.szinek[si]}" stroke="var(--panel)" stroke-width="2"/>`;
+    });
+  }
+  if (g) g.innerHTML = svg;
+  const el = document.getElementById(id);
+  const r = el.getBoundingClientRect();
+  const skala = r.width && geo.w ? r.width / geo.w : 1;
+  const px = geo.xy ? geo.pontok[i].px : geo.x[i];
+  const py = geo.xy ? geo.pontok[i].py : (geo.y[0][i] ?? geo.fel + geo.ph / 2);
+  tooltipMutat(a.tipp(i), r.left + px * skala, r.top + py * skala);
+  const elo = document.getElementById("elo");
+  if (elo) elo.textContent = a.szoveg ? a.szoveg(i) : "";
+  a.aktiv = i;
+}
+
+function abraBekot(id) {
+  if (KOTVE.has(id)) return;
+  KOTVE.add(id);
+  const el = document.getElementById(id);
+  const legkozelebbi = e => {
+    const a = ABRAK[id];
+    if (!a || !a.geo) return -1;
+    const r = el.getBoundingClientRect();
+    const skala = r.width && a.geo.w ? a.geo.w / r.width : 1;
+    const px = (e.clientX - r.left) * skala, py = (e.clientY - r.top) * skala;
+    let best = -1, bd = Infinity;
+    if (a.geo.xy) {
+      a.geo.pontok.forEach((p, i) => { const d = (p.px - px) ** 2 + (p.py - py) ** 2; if (d < bd) { bd = d; best = i; } });
+    } else {
+      a.geo.x.forEach((x, i) => { const d = Math.abs(x - px); if (d < bd) { bd = d; best = i; } });
+    }
+    return best;
+  };
+  el.addEventListener("pointermove", e => { const i = legkozelebbi(e); if (i >= 0) fokuszRajzol(id, i); });
+  el.addEventListener("pointerleave", () => { tooltipRejt(); const g = document.getElementById(id + "-f"); if (g) g.innerHTML = ""; });
+  el.addEventListener("focus", () => { const a = ABRAK[id]; if (a && a.geo) fokuszRajzol(id, a.aktiv ?? (a.geo.xy ? 0 : a.geo.n - 1)); });
+  el.addEventListener("blur", () => tooltipRejt());
+  el.addEventListener("keydown", e => {
+    const a = ABRAK[id];
+    if (!a || !a.geo) return;
+    const n = a.geo.xy ? a.geo.pontok.length : a.geo.n;
+    let i = a.aktiv ?? n - 1;
+    const lep = { ArrowLeft: -1, ArrowRight: 1, ArrowDown: -1, ArrowUp: 1, PageUp: -7, PageDown: 7 }[e.key];
+    if (lep !== undefined) i = Math.max(0, Math.min(n - 1, i + lep));
+    else if (e.key === "Home") i = 0;
+    else if (e.key === "End") i = n - 1;
+    else if (e.key === "Escape") { tooltipRejt(); return; }
+    else return;
+    if (e.preventDefault) e.preventDefault();
+    fokuszRajzol(id, i);
+  });
+}
+
+function abraRajzol(id, eredmeny, tipp, szoveg, leiras) {
+  const el = document.getElementById(id);
+  el.innerHTML = eredmeny.svg;
+  if (leiras) el.setAttribute("aria-label", leiras + " A pontok a nyilakkal léptethetők.");
+  ABRAK[id] = { geo: eredmeny.geo, tipp, szoveg, aktiv: null };
+  abraBekot(id);
+}
+
+// ---------------------------------------------------------------------------
+// Tablazat, jelmagyarazat, cimkek
+// ---------------------------------------------------------------------------
+function tabla(fejlec, sorok, o = {}) {
+  const sz = new Set(o.szoveg || []);
+  const th = fejlec.map((f, i) => `<th scope="col"${sz.has(i) ? ' class="szoveg"' : ""}>${esc(f)}</th>`).join("");
+  const tb = sorok.map((s, ri) => `<tr${o.kiemelt && o.kiemelt(ri) ? ' class="kiemelt"' : ""}>`
+    + s.map((c, i) => `<td${sz.has(i) ? ' class="szoveg"' : ""}>${c && c.html !== undefined ? c.html : esc(c)}</td>`).join("") + "</tr>").join("");
+  return `<table class="adat-tabla"><thead><tr>${th}</tr></thead><tbody>${tb}</tbody></table>`;
+}
+function jelzesCimke(j) {
+  const k = typeof j === "string" ? jelzesKod(j) : j;
+  if (k === 1) return `<span class="cimke-jel magas"><span aria-hidden="true">▲</span> szokatlanul magas</span>`;
+  if (k === -1) return `<span class="cimke-jel alacsony"><span aria-hidden="true">▼</span> szokatlanul alacsony</span>`;
+  if (k === 0) return `<span class="cimke-jel"><span aria-hidden="true">○</span> normál</span>`;
+  return `<span class="cimke-jel"><span aria-hidden="true">·</span> nincs alapszint</span>`;
+}
+function jelmagyarazat(elemek) {
+  return elemek.map(e => {
+    const jel = e.tipus === "sav" ? `<span class="jm-sav"></span>`
+      : e.tipus === "kiel" ? `<span class="jm-kiel"></span>`
+      : e.tipus === "jel" ? `<span class="jm-jel" aria-hidden="true">▲▼</span>`
+      : `<span class="jm-vonal" style="border-color:${e.szin}${e.vekony ? ";border-top-width:1.25px" : ""}"></span>`;
+    return `<li>${jel}${esc(e.nev)}</li>`;
+  }).join("");
+}
+function opciok(el, lista, ertek) {
+  el.innerHTML = lista.map(([v, c]) => `<option value="${esc(v)}">${esc(c)}</option>`).join("");
+  el.value = ertek;
+}
+
+// Idosor-tooltip: ertek elol (kiemelve), utana alapszint, sav, elteres, jelzes
+function idosorTipp(d, s, fmt, egyseg) {
+  const sav = s.alapszint !== null && szamE(s.kuszob)
+    ? `${fmt(Math.max(0, s.alapszint * (1 - s.kuszob)))} – ${fmt(s.alapszint * (1 + s.kuszob))}` : "–";
+  return `<div class="tt-cim">${esc(datumHosszu(d))}${ADAT.kiel.includes(d) ? " · Kiel-lezárás" : ""}</div>`
+    + `<div class="tt-sor"><span class="tt-kulcs" style="border-color:var(--sor-1)"></span><b>${esc(fmt(s.ertek))}</b> <span class="tt-reszlet">${esc(egyseg)}</span></div>`
+    + `<div class="tt-reszlet">alapszint: ${esc(s.alapszint === null ? "–" : fmt(s.alapszint))} · sáv: ${esc(sav)}</div>`
+    + `<div class="tt-reszlet">eltérés: ${esc(szazalek(s.elteres, 1, true))}</div>`
+    + `<div style="margin-top:4px">${jelzesCimke(s.jelzes)}</div>`;
+}
+
+// Egy jelzett idosor teljes megjelenitese (forgalom, megrakottsag, kapuk)
+function idosorNezet(pre, sor, o) {
+  const idx = idoszakSzures(sor.napok, o.tol, o.ig);
+  const napok = idx.map(i => sor.napok[i]);
+  const ert = idx.map(i => sor.ertek[i]);
+  const alap = idx.map(i => sor.alapszint[i]);
+  const sav = savSzamol(alap, sor.kuszob, !o.negativ);
+  const jel = idx.map(i => sor.jelzes[i]);
+  const res = idosorAbra(pre + "-abra", {
+    napok, sorozatok: [{ nev: o.nev, ertekek: ert, szin: "var(--sor-1)" }],
+    alap, sav, jelzes: jel, kiel: ADAT.kiel, fmt: o.fmt, tengelyFmt: o.tengelyFmt, nullatol: o.nullatol,
+  });
+  const pont = k => ({ ertek: ert[k], alapszint: alap[k], elteres: idx.length ? sor.elteres[idx[k]] : null, kuszob: sor.kuszob, jelzes: jel[k] });
+  const jelzettDb = jel.filter(j => j === 1 || j === -1).length;
+  abraRajzol(pre + "-abra", res,
+    k => idosorTipp(napok[k], pont(k), o.fmt, o.egyseg),
+    k => `${datumHosszu(napok[k])}: ${o.fmt(ert[k])} ${o.egyseg}, ${jelzesSzoveg(jel[k])}`,
+    `${o.nev}, ${napok.length} nap; jelzett nap: ${jelzettDb}.`);
+  document.getElementById(pre + "-jm").innerHTML = jelmagyarazat([
+    { nev: o.nev, szin: "var(--sor-1)" },
+    { nev: "alapszint (4 hét azonos napja, medián)", szin: "var(--alap)", vekony: true },
+    { nev: `jelzési sáv (±${szazalek(sor.kuszob)})`, tipus: "sav" },
+    { nev: "jelzett nap", tipus: "jel" },
+    { nev: "Kiel-csatorna tervezett lezárása", tipus: "kiel" },
+  ]);
+  document.getElementById(pre + "-tabla").innerHTML = tabla(
+    ["Nap", "Érték", "Alapszint", "Sáv alja", "Sáv teteje", "Eltérés", "Jelzés"],
+    idx.slice().reverse().map((i, r) => {
+      const k = idx.length - 1 - r;
+      return [sor.napok[i], o.fmt(sor.ertek[i]), alap[k] === null ? "–" : o.fmt(alap[k]),
+        sav[k] ? o.fmt(sav[k][0]) : "–", sav[k] ? o.fmt(sav[k][1]) : "–",
+        szazalek(sor.elteres[i], 1, true), { html: jelzesCimke(sor.jelzes[i]) }];
+    }), { kiemelt: r => { const i = idx[idx.length - 1 - r]; return sor.jelzes[i] === 1 || sor.jelzes[i] === -1; } });
+  return { napok, jelzettDb };
+}
+
+// Idoszak-valaszto (elore beallitott hosszak + egyedi tol/ig)
+const IDOSZAKOK = [["30", "30 nap"], ["90", "90 nap"], ["0", "Teljes"]];
+function idoszakBekot(pre, allapot, napok, rajzol) {
+  const gombok = document.getElementById(pre + "-idoszak");
+  const tol = document.getElementById(pre + "-tol"), ig = document.getElementById(pre + "-ig");
+  const frissit = () => {
+    gombok.innerHTML = IDOSZAKOK.map(([n, c]) => `<button type="button" class="gomb" data-napok="${n}" aria-pressed="${allapot.idoszak === n}">${c}</button>`).join("");
+    tol.value = allapot.tol || ""; ig.value = allapot.ig || "";
+    tol.min = ig.min = napok[0]; tol.max = ig.max = napok[napok.length - 1];
+  };
+  const beallit = n => {
+    allapot.idoszak = n;
+    const utolso = napok[napok.length - 1];
+    allapot.ig = utolso;
+    allapot.tol = n === "0" ? napok[0] : napHozzaad(utolso, -(Number(n) - 1));
+    if (allapot.tol < napok[0]) allapot.tol = napok[0];
+  };
+  beallit(allapot.idoszak || "0");
+  frissit();
+  gombok.addEventListener("click", e => {
+    const b = e.target && e.target.closest ? e.target.closest("[data-napok]") : null;
+    if (!b) return;
+    beallit(b.dataset.napok); frissit(); rajzol();
+  });
+  const egyedi = () => {
+    allapot.idoszak = "egyedi";
+    allapot.tol = tol.value || napok[0]; allapot.ig = ig.value || napok[napok.length - 1];
+    if (allapot.tol > allapot.ig) [allapot.tol, allapot.ig] = [allapot.ig, allapot.tol];
+    frissit(); rajzol();
+  };
+  tol.addEventListener("change", egyedi);
+  ig.addEventListener("change", egyedi);
+}
+
+// ---------------------------------------------------------------------------
+// Fejlec: allapotsor
+// ---------------------------------------------------------------------------
+function allapotsor() {
+  const a = ADAT.allapot, f = a.utolso_futas || {};
+  const st = f.statusz === "ok" ? `<span class="cimke-jel ok"><span aria-hidden="true">✓</span> rendben</span>`
+    : f.statusz ? `<span class="cimke-jel figy"><span aria-hidden="true">!</span> ${esc(f.statusz)}</span>` : "–";
+  document.getElementById("allapotsor").innerHTML =
+    `<span>Utolsó nap: <b>${esc(a.utolso_nap)}</b></span>`
+    + `<span>Frissítve: <b>${esc(idopont(a.frissitve_utc))}</b></span>`
+    + `<span>Utolsó futás: ${esc(idopont(f.ido_utc))} ${st}${f.uzenet ? " · " + esc(f.uzenet) : ""}</span>`;
+  const fig = document.getElementById("futas-figyelmeztetes");
+  fig.innerHTML = f.statusz && f.statusz !== "ok"
+    ? `<div class="figyelmeztetes" role="alert"><b>A legutóbbi futás nem frissítette teljesen az adatot</b> (${esc(f.statusz)}): ${esc(f.uzenet || "")}. Az alábbi számok a(z) ${esc(a.utolso_nap)} napra vonatkoznak.</div>`
+    : "";
+}
+
+// ---------------------------------------------------------------------------
+// a) Attekintes
+// ---------------------------------------------------------------------------
+function egysegOf(nev, tipus) {
+  if (tipus === "forgalom") return "átkelés";
+  if (/volumen/i.test(nev)) return "ezer m³ / 7 nap";
+  return "átkelés / 7 nap";
+}
+function minisor(ertekek) {
+  const v = ertekek.filter(szamE);
+  if (v.length < 2) return "";
+  const mn = Math.min(...v), mx = Math.max(...v), w = 200, h = 34;
+  const p = ertekek.map((e, i) => szamE(e) ? `${(i / (ertekek.length - 1) * (w - 6) + 3).toFixed(1)},${(h - 4 - (e - mn) / (mx - mn || 1) * (h - 8)).toFixed(1)}` : null).filter(Boolean);
+  const [lx, ly] = p[p.length - 1].split(",");
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true" focusable="false"><polyline points="${p.join(" ")}" fill="none" stroke="var(--sor-1)" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linejoin="round"/><circle cx="${lx}" cy="${ly}" r="2.5" fill="var(--sor-1)"/></svg>`;
+}
+function kpiCsempe(h, utolsoNap) {
+  const i = h.datum.lastIndexOf(utolsoNap) >= 0 ? h.datum.lastIndexOf(utolsoNap) : h.datum.length - 1;
+  const jel = jelzesKod(h.jelzes[i]);
+  const elso = Math.max(0, i - ADAT.utolso_napok + 1);
+  const r = h.alapszint[i];
+  const reszlet = r === null
+    ? "alapszint még nincs (kevés korábbi nap)"
+    : `alapszint ${szam(r, 1)} · eltérés ${szazalek(h.elteres[i], 1, true)} · küszöb ±${szazalek(h.kuszob)}`;
+  return `<div class="csempe${jel === 1 || jel === -1 ? " jelez" : ""}">`
+    + `<p class="csempe-cimke">${esc(h.nev)}</p>`
+    + `<div class="csempe-ertek">${esc(szam(h.ertek[i]))}<span class="csempe-egyseg">${esc(egysegOf(h.nev, h.tipus))}</span></div>`
+    + `<p class="csempe-reszlet">${esc(reszlet)}</p>`
+    + jelzesCimke(h.jelzes[i])
+    + minisor(h.ertek.slice(elso, i + 1))
+    + `<p class="halk" style="margin:2px 0 0">utolsó ${i - elso + 1} nap</p></div>`;
+}
+function attekintes() {
+  const a = ADAT.allapot, nap = a.utolso_nap;
+  const kesz = napSorszam(ADAT.epitve_utc.slice(0, 10)) - napSorszam(nap);
+  document.getElementById("attekintes-bevezeto").innerHTML =
+    `${esc(datumHosszu(nap))}. Az idősor ${esc(a.elso_nap)} óta ${esc(szam(a.napok_szama))} napot fed le. `
+    + `A dán szolgáltató a napi AIS-fájlt kb. 48 órával a nap vége után teszi közzé, ezért a legfrissebb nap `
+    + `a dashboard építésekor ${esc(szam(kesz))} napos. Minden csempe az adott sorozat utolsó napját veti össze `
+    + `az előző négy hét azonos napjainak mediánjával.`;
+  document.getElementById("kpi").innerHTML = ADAT.hivatalos.map(h => kpiCsempe(h, nap)).join("");
+  const aktiv = ADAT.hivatalos.map(h => ({ h, i: h.datum.indexOf(nap) }))
+    .filter(({ h, i }) => i >= 0 && Math.abs(jelzesKod(h.jelzes[i]) || 0) === 1);
+  document.getElementById("aktiv-alcim").textContent = `${nap}: ${aktiv.length} aktív jelzés ${ADAT.hivatalos.length} sorozatból.`;
+  document.getElementById("aktiv").innerHTML = aktiv.length
+    ? `<ul class="lista-jelzes">${aktiv.map(({ h, i }) => `<li>${jelzesCimke(h.jelzes[i])}<b>${esc(h.nev)}</b><span>${esc(szam(h.ertek[i]))} vs. alapszint ${esc(szam(h.alapszint[i], 1))} (${esc(szazalek(h.elteres[i], 1, true))}, küszöb ±${esc(szazalek(h.kuszob))})</span></li>`).join("")}</ul>`
+    : `<p>Az utolsó napon egyik sorozat sem lépte túl a jelzési sávot.</p>`;
+  const napok = ADAT.napok.slice(-ADAT.utolso_napok);
+  const kezdo = napok[0];
+  document.getElementById("jelzes30-cim").textContent = `Jelzések az utolsó ${napok.length} napban (${kezdo} – ${nap})`;
+  const sorok = [];
+  ADAT.hivatalos.forEach(h => h.datum.forEach((d, i) => {
+    const k = jelzesKod(h.jelzes[i]);
+    if (d >= kezdo && (k === 1 || k === -1)) sorok.push([d, h.nev, szam(h.ertek[i]), szam(h.alapszint[i], 1), szazalek(h.elteres[i], 1, true), { html: jelzesCimke(k) }]);
+  }));
+  sorok.sort((x, y) => (x[0] < y[0] ? 1 : x[0] > y[0] ? -1 : 0));
+  document.getElementById("jelzes30").innerHTML = sorok.length
+    ? tabla(["Nap", "Sorozat", "Érték", "Alapszint", "Eltérés", "Jelzés"], sorok, { szoveg: [1] })
+    : `<p>Ebben az időszakban nem volt jelzés.</p>`;
+}
+
+// ---------------------------------------------------------------------------
+// b) Forgalom
+// ---------------------------------------------------------------------------
+const FORG = { kapu: OSSZES_KAPU, irany: MIND, csoport: "kereskedelmi", idoszak: "0" };
+function forgalomInit() {
+  const t = ADAT.forgalom;
+  opciok(document.getElementById("forgalom-kapu"), [[OSSZES_KAPU, "Mindkét kapu"], ...t.kapu.map(k => [k, k])], FORG.kapu);
+  opciok(document.getElementById("forgalom-irany"), [[MIND, "Mindkét irány"], ...t.irany.map(k => [k, k])], FORG.irany);
+  opciok(document.getElementById("forgalom-csoport"), [["kereskedelmi", "Kereskedelmi (teherhajó + tanker)"], [MIND, "Minden hajó"], ...t.csoport.map(k => [k, k])], FORG.csoport);
+  for (const k of ["kapu", "irany", "csoport"]) {
+    const el = document.getElementById("forgalom-" + k);
+    el.addEventListener("change", () => { FORG[k] = el.value; forgalomRajzol(); });
+  }
+  idoszakBekot("forgalom", FORG, ADAT.napok, forgalomRajzol);
+}
+function forgalomRajzol() {
+  const sor = forgalomSorozat(FORG);
+  const hiv = hivatalosForgalom(FORG);
+  const csop = FORG.csoport === "kereskedelmi" ? "kereskedelmi átkelés" : FORG.csoport === MIND ? "minden átkelés" : FORG.csoport;
+  const nev = `${FORG.kapu}${FORG.irany === MIND ? "" : ", " + FORG.irany + " felé"} – ${csop}`;
+  const r = idosorNezet("forgalom", sor, {
+    nev, fmt: v => szam(v), egyseg: "átkelés", tol: FORG.tol, ig: FORG.ig, nullatol: true,
+  });
+  document.getElementById("forgalom-cim").textContent = nev;
+  document.getElementById("forgalom-alcim").innerHTML =
+    (hiv ? `<span class="cimke-jel ok">hivatalos monitor-sorozat</span> ` : `<span class="cimke-jel">tájékoztató sáv</span> `)
+    + `${esc(FORG.tol)} – ${esc(FORG.ig)} · ${esc(szam(r.napok.length))} nap · jelzett nap: ${esc(szam(r.jelzettDb))} · küszöb ±${esc(szazalek(sor.kuszob))}`
+    + (hiv ? "" : ". A monitor csak a kereskedelmi sorozatokra ad jelzést; itt a sáv ugyanazzal a szabállyal, erre a sorozatra számolódik.");
+}
+
+// ---------------------------------------------------------------------------
+// c) Megrakottsag
+// ---------------------------------------------------------------------------
+const MEGR = { mutato: "megrakott", csoport: "Tanker", kapu: OSSZES_KAPU, irany: MIND, idoszak: "0" };
+function megrakottsagInit() {
+  const t = ADAT.megrakottsag;
+  const a = ADAT.allapot, rk = a.megrakott_kuszob_relativ_merules || {};
+  document.getElementById("megrakottsag-bevezeto").textContent =
+    `Megrakottnak számít egy tanker- vagy teherhajó-átkelés, ha a hajó jelentett merülése eléri a saját megfigyelt `
+    + `(95. percentilis) merülésének ${szazalek(rk.Tanker, 1)}-át (tanker), illetve ${szazalek(rk["Teherhajó"], 1)}-át (teherhajó). `
+    + `A napi zaj csökkentésére minden sorozat 7 napos gördülő összeg; ha az ablakban adat nélküli nap van, arra a napra nincs érték.`;
+  if (!t) return;
+  opciok(document.getElementById("megr-mutato"), Object.entries(MEGR_MUTATOK).map(([k, m]) => [k, m.nev]), MEGR.mutato);
+  opciok(document.getElementById("megr-csoport"), [["Tanker", "Tanker"], ["Teherhajó", "Teherhajó"], [MIND, "Tanker + teherhajó"]], MEGR.csoport);
+  opciok(document.getElementById("megr-kapu"), [[OSSZES_KAPU, "Mindkét kapu"], ...t.kapu.map(k => [k, k])], MEGR.kapu);
+  opciok(document.getElementById("megr-irany"), [[MIND, "Mindkét irány"], ...t.irany.map(k => [k, k])], MEGR.irany);
+  for (const k of ["mutato", "csoport", "kapu", "irany"]) {
+    const el = document.getElementById("megr-" + k);
+    el.addEventListener("change", () => { MEGR[k] = el.value; megrakottsagRajzol(); });
+  }
+  idoszakBekot("megr", MEGR, ADAT.napok, megrakottsagRajzol);
+}
+function megrakottsagRajzol() {
+  if (!ADAT.megrakottsag) return;
+  const m = MEGR_MUTATOK[MEGR.mutato];
+  const sor = megrSorozat(MEGR);
+  const hiv = hivatalosMegr(MEGR);
+  const fmt = m.szazalek ? (v => szazalek(v, 1)) : (v => szam(v, m.tizedes));
+  const nev = `${m.nev} – ${MEGR.csoport === MIND ? "tanker + teherhajó" : MEGR.csoport.toLowerCase()}, ${MEGR.kapu === OSSZES_KAPU ? "mindkét kapu" : MEGR.kapu}${MEGR.irany === MIND ? "" : ", " + MEGR.irany + " felé"}`;
+  const r = idosorNezet("megr", sor, {
+    nev, fmt, tengelyFmt: m.szazalek ? (v => szazalek(v, 0)) : fmt, egyseg: m.szazalek ? "" : m.egyseg,
+    tol: MEGR.tol, ig: MEGR.ig, nullatol: !m.szazalek, negativ: false,
+  });
+  document.getElementById("megr-cim").textContent = nev;
+  document.getElementById("megr-alcim").innerHTML =
+    (hiv ? `<span class="cimke-jel ok">hivatalos monitor-sorozat</span> ` : `<span class="cimke-jel">tájékoztató sáv</span> `)
+    + `${esc(m.egyseg)} · ${esc(szam(r.napok.length))} nap · jelzett nap: ${esc(szam(r.jelzettDb))} · küszöb ±${esc(szazalek(sor.kuszob))}`;
+}
+
+// ---------------------------------------------------------------------------
+// d) Backtest
+// ---------------------------------------------------------------------------
+const BT = { sorozat: "Mindkét kapu", metrika: "eszl_kiel", szabaly: "R0 (k=2)", irany: "-1" };
+const BT_METRIKA = {
+  eszl_kiel: "Kiel-méretű esemény (2 nap, ±30%) észlelése",
+  eszl_m30: "30%-os esemény észlelése (minden hossz)",
+  eszl_gyenge: "gyenge esemény észlelése",
+  eszl_osszes: "minden injektált esemény észlelése",
+};
+const CSALAD = {
+  R1: { nev: "R1: küszöbszorzó k (1–4)", szin: "var(--sor-1)", param: p => `k = ${szam(p, 2)}` },
+  R3: { nev: "R3: 7 napos összeg, k (1–4)", szin: "var(--sor-2)", param: p => `k = ${szam(p, 2)}` },
+  R4: { nev: "R4: CUSUM, h (1–10)", szin: "var(--sor-3)", param: p => `h = ${szam(p, 0)}` },
+};
+function backtestInit() {
+  const b = ADAT.backtest;
+  const bev = document.getElementById("bt-bevezeto");
+  if (!b) {
+    bev.textContent = "A backtest eredményei ebben a kiadásban nem érhetők el.";
+    return;
+  }
+  const mk = (b.bootstrap || []).find(r => r.sorozat === "Mindkét kapu" && /Kiel/.test(r.mutato));
+  const mf = (b.bootstrap || []).find(r => r.sorozat === "Mindkét kapu" && /teves/.test(r.mutato));
+  const repro = b.reprodukcio || [];
+  const hibas = repro.filter(r => r.barmely_mezo_elteres !== 0).length;
+  bev.innerHTML = `A jelzési szabályt múltbeli adaton, szintetikus események beinjektálásával értékeltük: `
+    + `mennyi a téves riasztás, mekkora eseményt és milyen késéssel vesz észre. `
+    + (mk && mf ? `A „Mindkét kapu” sorozaton egy Kiel-méretű (2 napos, ±30%-os) eseményt `
+      + `<b>${esc(szazalek(mk.ertek))}</b>-ban észlel [${esc(szazalek(mk.ci_also))}; ${esc(szazalek(mk.ci_felso))}], `
+      + `30 naponként <b>${esc(szam(mf.ertek, 2))}</b> téves riasztás mellett [${esc(szam(mf.ci_also, 2))}; ${esc(szam(mf.ci_felso, 2))}] (heti blokk-bootstrap, 95%). ` : "")
+    + `A backtest a monitor jelzéseit ${esc(szam(repro.length))} ellenőrzésben reprodukálta, ebből ${esc(szam(hibas))} mutatott eltérést. `
+    + `<span class="halk">Pillanatkép: ${esc(b.keszult)} · forrás: <code>${esc(b.forras)}</code></span>`;
+  const sorozatok = [...new Set(b.bootstrap.map(r => r.sorozat))];
+  const t = [];
+  t.push(`<div class="racs-2">`
+    + `<div class="doboz"><h3>Téves riasztás 30 naponként</h3><p class="doboz-alcim">Hivatalos szabály (k = 2), bővülő ablakos küszöb, 95%-os intervallum.</p><div class="abra" id="bt-fa-abra" tabindex="0" role="img"></div><details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto" id="bt-fa-tabla"></div></details></div>`
+    + `<div class="doboz"><h3>Kiel-méretű esemény észlelése</h3><p class="doboz-alcim">2 napos, ±30%-os injektált esemény, minden lehetséges kezdőnapon.</p><div class="abra" id="bt-kiel-abra" tabindex="0" role="img"></div><details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto" id="bt-kiel-tabla"></div></details></div>`
+    + `</div>`);
+  t.push(`<div class="szurosor" style="margin-top:18px"><label class="szuro">Sorozat (az alábbi ábrákra)<select id="bt-sorozat"></select></label></div>`);
+  t.push(`<div class="doboz"><h3>Szabályváltozatok: téves riasztás és észlelés</h3>`
+    + `<p class="doboz-alcim">ROC-szerű görbe: a küszöb lazításával nő az észlelés és a téves riasztás. Az üres kör a jelenlegi szabály (R1, k = 2).</p>`
+    + `<div class="szurosor"><label class="szuro">Észlelési mérték<select id="bt-metrika"></select></label></div>`
+    + `<ul class="jelmagyarazat" id="bt-roc-jm"></ul><div class="abra" id="bt-roc-abra" tabindex="0" role="img"></div>`
+    + `<details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto magas" id="bt-roc-tabla"></div></details></div>`);
+  t.push(`<div class="doboz"><h3>Észlelés az esemény méretének függvényében, és a késés</h3>`
+    + `<p class="doboz-alcim">Szorzós injektált esemény (m = 10–50%), hossza L nap. Késés: az esemény kezdetétől az első jelzésig eltelt napok.</p>`
+    + `<div class="szurosor"><label class="szuro">Szabály<select id="bt-szabaly"></select></label><label class="szuro">Irány<select id="bt-irany"></select></label></div>`
+    + `<ul class="jelmagyarazat" id="bt-inj-jm"></ul><div class="abra" id="bt-inj-abra" tabindex="0" role="img"></div>`
+    + `<details class="tablanezet" open><summary>Késés és észlelés táblázatban</summary><div class="tabla-gorgeto" id="bt-inj-tabla"></div></details></div>`);
+  t.push(`<div class="doboz"><h3>Walk-forward vs. retrospektív küszöb</h3>`
+    + `<p class="doboz-alcim">Az élő szabály a teljes idősorból számol (retrospektív). A bővülő ablak minden napon csak a korábbi napokat használja; a rögzített a június–júliusi tanulóidőszak után befagy.</p>`
+    + `<ul class="jelmagyarazat" id="bt-wf-jm"></ul><div class="abra" id="bt-wf-abra" tabindex="0" role="img"></div>`
+    + `<div class="tabla-gorgeto" id="bt-wf-tabla"></div></div>`);
+  t.push(`<div class="doboz"><h3>Szabályok összevetése (közös ablak)</h3><p class="doboz-alcim">Minden szabály ugyanazon a napokon értékelve.</p><div class="tabla-gorgeto" id="bt-szab-tabla"></div></div>`);
+  t.push(`<div class="racs-2"><div class="doboz"><h3>Placebo-teszt a Kiel-ablakra</h3><p class="doboz-alcim">A Kiel-napok (07-15–16) átlagos eltérése hányadik a sorozat összes 2 napos ablaka között (p: egyoldali, felfelé).</p><div class="tabla-gorgeto" id="bt-placebo"></div></div>`
+    + `<div class="doboz"><h3>Egyezés a PortWatch Øresund-sorozattal</h3><p class="doboz-alcim">Ugyanaz a szabály a külső referencián; egyezés és Cohen-κ a jelzés/nem jelzés osztályokon.</p><div class="tabla-gorgeto" id="bt-pw"></div></div></div>`);
+  t.push(`<div class="doboz"><h3>Reprodukció</h3><p class="doboz-alcim">A backtest motorja és a monitor jelzései napra pontosan.</p><div class="tabla-gorgeto" id="bt-repro"></div></div>`);
+  document.getElementById("bt-tartalom").innerHTML = t.join("");
+  opciok(document.getElementById("bt-sorozat"), sorozatok.map(s => [s, s]), BT.sorozat);
+  opciok(document.getElementById("bt-metrika"), Object.entries(BT_METRIKA), BT.metrika);
+  opciok(document.getElementById("bt-szabaly"), [...new Set(b.injektalas.map(r => r.szabaly))].map(s => [s, s]), BT.szabaly);
+  opciok(document.getElementById("bt-irany"), [["-1", "csökkenés"], ["1", "növekedés"]], BT.irany);
+  for (const k of ["sorozat", "metrika", "szabaly", "irany"]) {
+    const el = document.getElementById("bt-" + k);
+    el.addEventListener("change", () => { BT[k] = el.value; backtestRajzol(); });
+  }
+  document.getElementById("bt-placebo").innerHTML = tabla(
+    ["Sorozat", "Kiel-eltérés", "Rang", "Ablakok", "p", "Szerda–csüt. rang", "p"],
+    b.placebo.map(r => [r.sorozat, szazalek(r.kiel_elteres2, 1, true), szam(r.minden_2napos_rang), szam(r.minden_2napos_N),
+      szam(r.minden_2napos_p_felso, 3), `${szam(r.szerda_csutortok_rang)} / ${szam(r.szerda_csutortok_N)}`, szam(r.szerda_csutortok_p_felso, 3)]));
+  document.getElementById("bt-pw").innerHTML = tabla(
+    ["Pár", "Mód", "Napok", "Jelzés: saját / PW / mindkettő", "Egyezés", "κ", "r (eltérés)"],
+    b.portwatch_egyezes.map(r => [r.par, r.mod, szam(r.napok), `${r.jelzes_sajat} / ${r.jelzes_pw} / ${r.mindketto}`,
+      szazalek(r.egyezes_jelez), szam(r.kappa_jelez, 3), szam(r.r_elteres, 3)]), { szoveg: [0, 1] });
+  document.getElementById("bt-repro").innerHTML = tabla(
+    ["Ellenőrzés", "Sorok / cellák", "Eltérő jelzés", "Eltérő mező"],
+    b.reprodukcio.map(r => [r.ellenorzes, szam(r.sorok), r.jelzes_elteres === null ? "–" : szam(r.jelzes_elteres), szam(r.barmely_mezo_elteres)]), { szoveg: [0] });
+  intervallumok("bt-fa", b.bootstrap.filter(r => /teves/.test(r.mutato)), v => szam(v, 2), "téves riasztás / 30 nap");
+  intervallumok("bt-kiel", b.bootstrap.filter(r => /Kiel/.test(r.mutato)), v => szazalek(v, 0), "észlelési arány", 1);
+}
+
+// Pont + intervallum soronkent (bootstrap)
+function intervallumok(pre, sorok, fmt, mit, xmax) {
+  const id = pre + "-abra";
+  const { w } = abraMeret(id, 200);
+  const bal = Math.min(210, Math.round(w * 0.42)), jobb = 16, sorM = 30, fel = 6;
+  const h = fel + sorok.length * sorM + 26;
+  const max = xmax ?? Math.max(...sorok.map(r => r.ci_felso));
+  const sk = szepSkala(0, max, 4);
+  const xs = v => bal + v / sk.max * (w - bal - jobb);
+  const t = [`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true" focusable="false">`];
+  sk.ticks.forEach(v => {
+    t.push(`<line x1="${xs(v)}" x2="${xs(v)}" y1="${fel}" y2="${h - 22}" stroke="var(--racs)"/>`);
+    t.push(`<text x="${xs(v)}" y="${h - 8}" text-anchor="middle" class="tengely-felirat">${esc(fmt(v))}</text>`);
+  });
+  const pontok = [];
+  sorok.forEach((r, i) => {
+    const y = fel + i * sorM + sorM / 2;
+    const cim = r.sorozat.length > 30 && bal < 200 ? r.sorozat.slice(0, 28) + "…" : r.sorozat;
+    t.push(`<text x="${bal - 8}" y="${y}" dy="0.32em" text-anchor="end" style="fill:var(--ink-2)">${esc(cim)}</text>`);
+    t.push(`<line x1="${xs(r.ci_also)}" x2="${xs(r.ci_felso)}" y1="${y}" y2="${y}" stroke="var(--sor-1)" stroke-width="2" stroke-linecap="round"/>`);
+    t.push(`<circle cx="${xs(r.ertek)}" cy="${y}" r="5" fill="var(--sor-1)" stroke="var(--panel)" stroke-width="2"/>`);
+    pontok.push({ px: xs(r.ertek), py: y, x: r.ertek, y: i, si: 0, pi: i, szin: "var(--sor-1)" });
+  });
+  t.push(`<g id="${id}-f"></g></svg>`);
+  abraRajzol(id, { svg: t.join(""), geo: { w, h, xy: true, pontok } },
+    i => `<div class="tt-cim">${esc(sorok[i].sorozat)}</div><div class="tt-sor"><b>${esc(fmt(sorok[i].ertek))}</b><span class="tt-reszlet">${esc(mit)}</span></div><div class="tt-reszlet">95%: ${esc(fmt(sorok[i].ci_also))} – ${esc(fmt(sorok[i].ci_felso))} · n = ${esc(szam(sorok[i].n))}</div>`,
+    i => `${sorok[i].sorozat}: ${fmt(sorok[i].ertek)}, 95% ${fmt(sorok[i].ci_also)}–${fmt(sorok[i].ci_felso)}`,
+    `${mit} sorozatonként, 95%-os bootstrap-intervallummal.`);
+  document.getElementById(pre + "-tabla").innerHTML = tabla(["Sorozat", "Érték", "95% alsó", "95% felső", "n"],
+    sorok.map(r => [r.sorozat, fmt(r.ertek), fmt(r.ci_also), fmt(r.ci_felso), szam(r.n)]));
+}
+
+function backtestRajzol() {
+  const b = ADAT.backtest;
+  if (!b) return;
+  intervallumok("bt-fa", b.bootstrap.filter(r => /teves/.test(r.mutato)), v => szam(v, 2), "téves riasztás / 30 nap");
+  intervallumok("bt-kiel", b.bootstrap.filter(r => /Kiel/.test(r.mutato)), v => szazalek(v, 0), "észlelési arány", 1);
+  // ROC
+  const roc = b.roc.filter(r => r.sorozat === BT.sorozat);
+  const csaladok = Object.keys(CSALAD).filter(c => roc.some(r => r.csalad === c));
+  const sorok = csaladok.map(c => ({
+    nev: CSALAD[c].nev, szin: CSALAD[c].szin,
+    pontok: roc.filter(r => r.csalad === c).sort((x, y) => x.fa30 - y.fa30)
+      .map(r => ({ x: r.fa30, y: r[BT.metrika], r, kiemelt: c === "R1" && r.param === 2 })),
+  }));
+  const res = xyAbra("bt-roc-abra", { sorozatok: sorok, xFmt: v => szam(v, 1), yFmt: v => szazalek(v, 0), xCimke: "téves riasztás / 30 nap", ymin: 0, ymax: 1, xmin: 0 });
+  const pl = res.geo ? res.geo.pontok : [];
+  abraRajzol("bt-roc-abra", res,
+    i => { const p = pl[i], r = p.r; return `<div class="tt-cim">${esc(CSALAD[r.csalad].nev.split(":")[0])}, ${esc(CSALAD[r.csalad].param(r.param))}${p.kiemelt ? " · jelenlegi szabály" : ""}</div><div class="tt-sor"><span class="tt-kulcs" style="border-color:${p.szin}"></span><b>${esc(szazalek(r[BT.metrika]))}</b><span class="tt-reszlet">észlelés</span></div><div class="tt-reszlet">téves riasztás: ${esc(szam(r.fa30, 2))} / 30 nap</div>`; },
+    i => { const r = pl[i].r; return `${r.csalad} ${CSALAD[r.csalad].param(r.param)}: észlelés ${szazalek(r[BT.metrika])}, téves riasztás ${szam(r.fa30, 2)} / 30 nap`; },
+    `${BT_METRIKA[BT.metrika]} a téves riasztás függvényében, ${BT.sorozat}.`);
+  document.getElementById("bt-roc-jm").innerHTML = jelmagyarazat(sorok.map(s => ({ nev: s.nev, szin: s.szin })));
+  const mp = (b.munkapont || []).find(r => r.sorozat === BT.sorozat);
+  document.getElementById("bt-roc-tabla").innerHTML =
+    (mp ? `<p class="halk">Ajánlott munkapont (a legnagyobb k, amelynél a Kiel-eset észlelése legalább 90%): ${mp.ajanlott_k === null ? "nincs ilyen k" : esc("k = " + szam(mp.ajanlott_k, 2) + ", észlelés " + szazalek(mp.kiel_eset_eszl) + ", " + szam(mp.fa30, 2) + " téves riasztás / 30 nap")}; a jelenlegi k = 2: ${esc(szazalek(mp.k2_kiel_eset_eszl))}, ${esc(szam(mp.k2_fa30, 2))} / 30 nap.</p>` : "")
+    + tabla(["Család", "Paraméter", "Téves riasztás / 30 nap", "Kiel-eset", "30%-os", "Gyenge", "Összes"],
+      roc.map(r => [r.csalad, CSALAD[r.csalad] ? CSALAD[r.csalad].param(r.param) : r.param, szam(r.fa30, 2), szazalek(r.eszl_kiel), szazalek(r.eszl_m30), szazalek(r.eszl_gyenge), szazalek(r.eszl_osszes)]));
+  // injektalas
+  const inj = b.injektalas.filter(r => r.sorozat === BT.sorozat && r.szabaly === BT.szabaly && String(r.irany) === BT.irany);
+  const Lk = [...new Set(inj.map(r => r.L))].sort((x, y) => x - y);
+  const szinek = ["var(--sor-1)", "var(--sor-2)", "var(--sor-3)"];
+  const isor = Lk.map((L, k) => ({ nev: `L = ${L} nap`, szin: szinek[k % 3], pontok: inj.filter(r => r.L === L).sort((x, y) => x.m - y.m).map(r => ({ x: r.m, y: r.arany, r })) }));
+  const ires = xyAbra("bt-inj-abra", { sorozatok: isor, xFmt: v => szazalek(v, 0), yFmt: v => szazalek(v, 0), xCimke: "az esemény mérete (m)", ymin: 0, ymax: 1, xmin: 0, xmax: 0.5 });
+  const ip = ires.geo ? ires.geo.pontok : [];
+  abraRajzol("bt-inj-abra", ires,
+    i => { const r = ip[i].r; return `<div class="tt-cim">m = ${esc(szazalek(r.m, 0))}, L = ${esc(r.L)} nap</div><div class="tt-sor"><span class="tt-kulcs" style="border-color:${ip[i].szin}"></span><b>${esc(szazalek(r.arany))}</b><span class="tt-reszlet">észlelés (${esc(szam(r.eszlelt))} / ${esc(szam(r.n))})</span></div><div class="tt-reszlet">késés: medián ${esc(szam(r.keses_median, 1))}, max. ${esc(szam(r.keses_max))} nap</div>`; },
+    i => { const r = ip[i].r; return `m ${szazalek(r.m, 0)}, L ${r.L} nap: észlelés ${szazalek(r.arany)}, késés medián ${szam(r.keses_median, 1)} nap`; },
+    `Észlelési arány az esemény mérete szerint, ${BT.sorozat}, ${BT.szabaly}.`);
+  document.getElementById("bt-inj-jm").innerHTML = jelmagyarazat(isor.map(s => ({ nev: s.nev, szin: s.szin })));
+  document.getElementById("bt-inj-tabla").innerHTML = tabla(["m", "L (nap)", "Esemény", "Észlelve", "Arány", "Késés min.", "medián", "max."],
+    inj.slice().sort((x, y) => x.m - y.m || x.L - y.L).map(r => [szazalek(r.m, 0), szam(r.L), szam(r.n), szam(r.eszlelt), szazalek(r.arany), szam(r.keses_min), szam(r.keses_median, 1), szam(r.keses_max)]));
+  // walk-forward kuszobpalya
+  const p = b.kuszob_palya[BT.sorozat];
+  if (p) {
+    const wfs = [["kuszob_retro", "retrospektív (élő szabály)"], ["kuszob_bovulo", "bővülő ablak (legalább 21 nap)"], ["kuszob_rogzitett", "rögzített (jún–júl)"]]
+      .map(([k, nev], i) => ({ nev, szin: szinek[i], ertekek: p[k] }));
+    const wres = idosorAbra("bt-wf-abra", { napok: p.datum, sorozatok: wfs, fmt: v => szazalek(v, 1), tengelyFmt: v => szazalek(v, 0), kiel: ADAT.kiel, nullatol: true, magassag: 240 });
+    abraRajzol("bt-wf-abra", wres,
+      i => `<div class="tt-cim">${esc(datumHosszu(p.datum[i]))}</div>` + wfs.map(s => `<div class="tt-sor"><span class="tt-kulcs" style="border-color:${s.szin}"></span><b>${esc(szs(s.ertekek[i]))}</b><span class="tt-reszlet">${esc(s.nev)}</span></div>`).join(""),
+      i => `${p.datum[i]}: ` + wfs.map(s => `${s.nev} ${szs(s.ertekek[i])}`).join(", "),
+      `A jelzési küszöb alakulása, ${BT.sorozat}.`);
+    document.getElementById("bt-wf-jm").innerHTML = jelmagyarazat(wfs.map(s => ({ nev: s.nev, szin: s.szin })));
+  }
+  document.getElementById("bt-wf-tabla").innerHTML = tabla(["Változat", "Napok", "Jelzés: retro / változat", "Eltérő nap", "Téves riasztás / 30 nap: retro / változat", "Küszöb (min–max)"],
+    b.walkforward.filter(r => r.sorozat === BT.sorozat).map(r => [r.valtozat, szam(r.napok), `${r.jelzes_retro} / ${r.jelzes_wf}`, szam(r.elter_nap),
+      `${szam(r.fa30_retro, 2)} / ${szam(r.fa30_wf, 2)}`, `${szazalek(r.kuszob_wf_min)} – ${szazalek(r.kuszob_wf_max)}`]), { szoveg: [0] });
+  document.getElementById("bt-szab-tabla").innerHTML = tabla(["Szabály", "Napok", "Téves riasztás / 30 nap", "Kiel-eset", "30%-os", "Gyenge", "Késés medián (Kiel-eset)"],
+    b.szabalyok.filter(r => r.sorozat === BT.sorozat && r.ablak === "kozos").map(r => [r.szabaly, szam(r.napok), szam(r.fa30, 2), szazalek(r.kiel_eset_eszl), szazalek(r.m30_eszl), szazalek(r.gyenge_eszl), szam(r.kiel_eset_keses_median, 1)]), { szoveg: [0] });
+}
+function szs(v) { return szazalek(v, 1); }
+
+// ---------------------------------------------------------------------------
+// e) Kiserleti kapuk
+// ---------------------------------------------------------------------------
+const KAPU = { kapu: null, irany: MIND, idoszak: "0" };
+function kapuSorozat(allapot, kp = ADAT.kapuk) {
+  const ertek = sorozatKepzes(kp.kereskedelmi, kp.napok.length,
+    { kapu: [allapot.kapu], irany: allapot.irany === MIND ? null : [allapot.irany] }, "atkeles");
+  return jelzesSzamol(kp.napok, ertek);
+}
+function kapukInit() {
+  const kp = ADAT.kapuk, cel = document.getElementById("kapuk-tartalom");
+  if (!kp) { cel.innerHTML = `<p>A kísérleti kapuk adatai ebben a kiadásban nem érhetők el.</p>`; return; }
+  KAPU.kapu = (kp.kapuk.find(k => k.kiserleti) || kp.kapuk[0]).nev;
+  cel.innerHTML = `<p class="bevezeto">${esc(szam(kp.kapuk.length))} kapu, ${esc(kp.napok[0])} – ${esc(kp.napok[kp.napok.length - 1])} (${esc(szam(kp.napok.length))} nap). `
+    + `A kapuk geometriája a <code>scripts/kapuk.json</code>-ból jön; új kapuhoz nem kell kódot módosítani. Pillanatkép: ${esc(kp.keszult)}.</p>`
+    + `<div class="szurosor"><label class="szuro">Kapu<select id="kapu-kapu"></select></label><label class="szuro">Irány<select id="kapu-irany"></select></label>`
+    + `<div class="szuro"><span>Időszak</span><div class="gombsor" id="kapu-idoszak"></div></div><label class="szuro">Ettől<input type="date" id="kapu-tol"></label><label class="szuro">Eddig<input type="date" id="kapu-ig"></label></div>`
+    + `<div class="doboz"><h3 id="kapu-cim"></h3><p class="doboz-alcim" id="kapu-alcim"></p><ul class="jelmagyarazat" id="kapu-jm"></ul><div class="abra" id="kapu-abra" tabindex="0" role="img"></div>`
+    + `<details class="tablanezet"><summary>Táblázatos nézet</summary><div class="tabla-gorgeto magas" id="kapu-tabla"></div></details></div>`
+    + `<div class="doboz"><h3>A kapuk összevetése</h3><p class="doboz-alcim">Kereskedelmi (teherhajó + tanker) átkelések; a relatív robusztus szórás a napi ingadozás, a küszöb a monitor szabályával számolt jelzési határ.</p><div class="tabla-gorgeto" id="kapu-stat"></div></div>`
+    + `<div class="racs-2"><div class="doboz"><h3>PortWatch-összevetés (Øresund)</h3><p class="doboz-alcim">Az IMF PortWatch napi chokepoint-forgalma a Øresundra; Pearson-korreláció napi és heti szinten, és a saját/PortWatch arány.</p><div class="tabla-gorgeto" id="kapu-pw"></div></div>`
+    + `<div class="doboz"><h3>A Kiel-ablak a kapukon</h3><p class="doboz-alcim">Eltérés az alapszinttől 07-15 és 07-17 között; a rang a sorozat alapszinttel rendelkező napjai között.</p><div class="tabla-gorgeto magas" id="kapu-kiel"></div></div></div>`;
+  const kapuSel = document.getElementById("kapu-kapu");
+  opciok(kapuSel, kp.kapuk.map(k => [k.nev, k.nev + (k.kiserleti ? " (kísérleti)" : " (monitor)")]), KAPU.kapu);
+  const iranyFrissit = () => {
+    const k = kp.kapuk.find(x => x.nev === KAPU.kapu);
+    const ir = k && k.iranyok.length ? k.iranyok : kp.kereskedelmi.irany;
+    if (KAPU.irany !== MIND && !ir.includes(KAPU.irany)) KAPU.irany = MIND;
+    opciok(document.getElementById("kapu-irany"), [[MIND, "Mindkét irány"], ...ir.map(i => [i, i])], KAPU.irany);
+  };
+  iranyFrissit();
+  kapuSel.addEventListener("change", () => { KAPU.kapu = kapuSel.value; iranyFrissit(); kapuRajzol(); });
+  const irSel = document.getElementById("kapu-irany");
+  irSel.addEventListener("change", () => { KAPU.irany = irSel.value; kapuRajzol(); });
+  idoszakBekot("kapu", KAPU, kp.napok, kapuRajzol);
+  const stat = new Map(kp.napi_statisztika.map(r => [r.sorozat, r]));
+  const konc = new Map(kp.koncentracio.map(r => [r.kapu, r]));
+  document.getElementById("kapu-stat").innerHTML = tabla(
+    ["Kapu", "Státusz", "Napi átlag", "Medián", "Rel. robusztus szórás", "Küszöb (±)", "Hétvége / hétköznap", "Top 5 hajó aránya"],
+    kp.kapuk.map(k => {
+      const s = stat.get(k.nev) || {}, c = konc.get(k.nev) || {};
+      return [k.nev, { html: k.kiserleti ? `<span class="cimke-jel kiserleti">◇ kísérleti</span>` : `<span class="cimke-jel ok">monitor</span>` },
+        szam(s.atlag, 1), szam(s.median, 1), szazalek(s.rel_robusztus_szoras), szazalek(kapuSorozat({ kapu: k.nev, irany: MIND }).kuszob),
+        szam(s.hetvege_per_hetkoznap, 2), szazalek(c.ker_top5_arany)];
+    }));
+  document.getElementById("kapu-pw").innerHTML = tabla(["AIS-sorozat", "PortWatch", "Napok", "r (napi)", "r (heti)", "Arány (átlag)", "Arány min–max"],
+    kp.portwatch.map(r => [r.ais_sorozat, r.portwatch, szam(r.napok), szam(r.r_napi, 3), szam(r.r_heti, 3), szam(r.arany_atlag, 2), `${szam(r.arany_min, 2)} – ${szam(r.arany_max, 2)}`]), { szoveg: [0] });
+  document.getElementById("kapu-kiel").innerHTML = tabla(["Nap", "Sorozat", "Érték", "Alapszint", "Eltérés", "Jelzés", "Rang"],
+    kp.kiel_ablak.filter(r => !String(r.sorozat).includes("|")).map(r => [r.datum, r.sorozat, szam(r.ertek), szam(r.alapszint, 1), szazalek(r.elteres, 1, true), { html: jelzesCimke(r.jelzes) }, `${szam(r.rang)} / ${szam(r.napok_alapszinttel)}`]),
+    { szoveg: [1] });
+}
+function kapuRajzol() {
+  const kp = ADAT.kapuk;
+  if (!kp) return;
+  const k = kp.kapuk.find(x => x.nev === KAPU.kapu);
+  const sor = kapuSorozat(KAPU);
+  const nev = `${KAPU.kapu}${KAPU.irany === MIND ? "" : ", " + KAPU.irany + " felé"} – kereskedelmi átkelés`;
+  const r = idosorNezet("kapu", sor, { nev, fmt: v => szam(v), egyseg: "átkelés", tol: KAPU.tol, ig: KAPU.ig, nullatol: true });
+  document.getElementById("kapu-cim").textContent = nev;
+  document.getElementById("kapu-alcim").innerHTML = (k && k.kiserleti ? `<span class="cimke-jel kiserleti">◇ kísérleti</span> ` : `<span class="cimke-jel ok">monitor-kapu</span> `)
+    + `${esc(szam(r.napok.length))} nap · jelzett nap: ${esc(szam(r.jelzettDb))} · küszöb ±${esc(szazalek(sor.kuszob))}`
+    + (k && k.indoklas ? `<br><span class="halk">${esc(k.indoklas)}</span>` : "");
+}
+
+// ---------------------------------------------------------------------------
+// f) Adat es modszer
+// ---------------------------------------------------------------------------
+function meret(b) { return b >= 1048576 ? szam(b / 1048576, 1) + " MB" : szam(b / 1024, 1) + " KB"; }
+function modszerInit() {
+  const a = ADAT.allapot, sz = ADAT.szabaly, rk = a.megrakott_kuszob_relativ_merules || {};
+  const kusz = Object.entries({ ...(a.kuszob || {}), ...(a.kuszob_megrakottsag || {}) }).map(([n, v]) => `${esc(n)}: ±${esc(szazalek(v))}`).join("; ");
+  const fajlok = ADAT.fajlok || [];
+  const wf = ((ADAT.backtest || {}).walkforward || []).filter(r => /^bovulo \(min\. 21/.test(r.valtozat));
+  const wfMondat = wf.length
+    ? ` A backtest szerint a bővülő ablakos (csak a múltat használó) küszöb ettől sorozatonként ${esc(szam(Math.min(...wf.map(r => r.elter_nap))))}–${esc(szam(Math.max(...wf.map(r => r.elter_nap))))} napon tér el (${esc(szam(Math.min(...wf.map(r => r.napok))))}–${esc(szam(Math.max(...wf.map(r => r.napok))))} értékelt napból).`
+    : "";
+  const sema = fajlok.filter(f => f.oszlopok).map(f => `<h3><code>adat/${esc(f.fajl)}</code></h3>`
+    + tabla(["Oszlop", "Jelentés"], f.oszlopok.map(o => [o.nev, o.leiras || "–"]), { szoveg: [1] })).join("");
+  document.getElementById("modszer").innerHTML = `
+<h2>Adat és módszer</h2>
+<h3>Mit mér a mutató?</h3>
+<p>Két kapuvonalon (Nagy-Balti-öv, É 55,40°; Øresund, É 56,07°) megszámoljuk, hány hajó lépi át naponta
+a vonalat. Egy átkelés két egymást követő AIS-pozíció a vonal két oldalán. A hajócsoport az AIS
+<code>Ship type</code> mezőjéből jön; kereskedelmi a teherhajó és a tanker. A szabadidős hajózást a monitor
+nem figyeli, mert a csatornalezárásra érzéketlen.</p>
+<p>A megrakottsági mutató a jelentett merülést a hajó saját, megfigyelt 95. percentilisű merüléséhez
+viszonyítja. Megrakott az átkelés, ha ez az arány legalább ${esc(szazalek(rk.Tanker, 1))} (tanker), illetve
+${esc(szazalek(rk["Teherhajó"], 1))} (teherhajó); a határt az eloszlásból számoljuk (Otsu-módszer). A volumenindex
+a hossz × szélesség × merülés összege. Mindhárom megrakottsági sorozat ${esc(szam(sz.gordulo_nap))} napos gördülő összeg.</p>
+<h3>A jelzési szabály</h3>
+<ul>
+<li><b>Alapszint:</b> az előző ${esc(szam(sz.alap_hetek))} hét azonos hétnapjának mediánja; legalább ${esc(szam(sz.min_alapnap))} ilyen nap kell, különben nincs jelzés.</li>
+<li><b>Eltérés:</b> érték / alapszint − 1.</li>
+<li><b>Küszöb:</b> ${esc(szam(sz.kuszob_szorzo, 1))} × 1,4826 × MAD, azaz a sorozat relatív eltéréseinek robusztus szórásának ${esc(szam(sz.kuszob_szorzo, 1))}-szerese, sorozatonként külön. Jelenleg: ${kusz}.</li>
+<li><b>Jelzés:</b> „szokatlanul magas”, ha az eltérés a küszöb fölött, „szokatlanul alacsony”, ha a −küszöb alatt van. Az utolsó napi jelzésekről a projekt GitHub-tárolójában automatikus értesítés (issue) nyílik.</li>
+</ul>
+<p>A Forgalom és a Megrakottság nézetben bármely kapu–irány–csoport kombinációra ugyanez a szabály
+számolódik a böngészőben; hivatalos jelzés azonban csak a hat monitor-sorozatra van. A dashboard a
+hivatalos sorozatokon napra pontosan ugyanazt adja, mint a monitor (ezt az építéskor automatikus teszt ellenőrzi).</p>
+<h3>Korlátok</h3>
+<ul>
+<li><b>Késés:</b> a napi AIS-fájl kb. 48 órával a nap vége után jelenik meg, a monitor ezért 2–3 napos adatot mutat. Valós idejű riasztásra nem alkalmas.</li>
+<li><b>A küszöb visszamenőleg változhat:</b> a teljes eddigi idősorból számolódik, így egy új nap a korábbi napok minősítését is módosíthatja.${wfMondat}</li>
+<li><b>A jelzés nem oksági állítás:</b> azt mondja meg, hogy a nap szokatlan, azt nem, hogy miért. A Kiel-ablakban mért többlet sem bizonyítja a lezárás hatását.</li>
+<li><b>Lefedettség:</b> a dán AIS-vevők hatótávja és a hajók által kézzel beállított mezők (típus, merülés) hibái a számokat torzíthatják. A merülést sok hajó nem frissíti.</li>
+<li><b>Rövid idősor:</b> az alapszint és a küszöb néhány hónapnyi adatra épül; szezonális hatást még nem lehet elkülöníteni.</li>
+<li><b>Kísérleti kapuk:</b> pillanatképek, naponta nem frissülnek, és a jelzésük nem validált.</li>
+</ul>
+<h3>Letölthető adatok (adat-feed)</h3>
+<p>A feed a dashboarddal együtt, naponta frissül. A fájlok UTF-8 kódolásúak; a CSV-k vesszővel tagoltak,
+a tizedesjel pont, a dátum ÉÉÉÉ-HH-NN (UTC). A <code>katalogus.json</code> minden fájl méretét, sorszámát és SHA-256
+ujjlenyomatát tartalmazza, így a letöltés ellenőrizhető. A szerkezet verziója: ${esc(String(ADAT.sema_verzio))}.</p>
+<div class="tabla-gorgeto">${tabla(["Fájl", "Leírás", "Méret", "Sorok"],
+    fajlok.map(f => [{ html: `<a href="adat/${esc(f.fajl)}">${esc(f.fajl)}</a>` }, f.leiras, meret(f.bajt), f.sorok === undefined ? "–" : szam(f.sorok)]), { szoveg: [1] })}</div>
+<h3>A CSV-fájlok oszlopai</h3>
+${sema}
+<h3>Forrás</h3>
+<p>Nyers adat: a dán AIS-szolgáltatás napi fájljai (<code>aisdata.ais.dk</code>). A feldolgozó lánc
+(letöltés, validálás, Parquet-tárolás, kapuvonal-átkelések, jelzés) a projekt tárolójában található szkriptekkel,
+ütemezett GitHub Actions futásban készül; a dashboard statikus fájl, szerver és bejelentkezés nélkül.</p>`;
+}
+
+function labresz() {
+  document.getElementById("labresz").innerHTML =
+    `Az oldal ${esc(idopont(ADAT.epitve_utc))}-kor készült a <code>scripts/dashboard_epit.py</code> szkripttel. `
+    + `Adat: dán AIS (napi fájlok). <a href="index.html">A projekt nyitólapja</a> · <a href="adat/legutobbi.json">legutobbi.json</a>`;
+}
+
+// ---------------------------------------------------------------------------
+// Fulek es inditas
+// ---------------------------------------------------------------------------
+const NEZETEK = ["attekintes", "forgalom", "megrakottsag", "backtest", "kapuk", "modszer"];
+const RAJZOLOK = { forgalom: forgalomRajzol, megrakottsag: megrakottsagRajzol, backtest: backtestRajzol, kapuk: kapuRajzol };
+let aktivNezet = null;
+
+function nezetValt(nev, fokusz = false) {
+  if (!NEZETEK.includes(nev)) nev = "attekintes";
+  aktivNezet = nev;
+  for (const n of NEZETEK) {
+    const ful = document.getElementById("ful-" + n);
+    const panel = document.getElementById("nezet-" + n);
+    const aktiv = n === nev;
+    ful.setAttribute("aria-selected", aktiv ? "true" : "false");
+    ful.setAttribute("tabindex", aktiv ? "0" : "-1");
+    panel.hidden = !aktiv;
+  }
+  tooltipRejt();
+  if (RAJZOLOK[nev]) RAJZOLOK[nev]();
+  if (fokusz) { const f = document.getElementById("ful-" + nev); if (f.focus) f.focus(); }
+}
+
+function fulekBekot() {
+  for (const n of NEZETEK) {
+    const ful = document.getElementById("ful-" + n);
+    ful.addEventListener("click", () => {
+      nezetValt(n);
+      try { history.replaceState(null, "", "#" + n); } catch (e) { /* file:// vagy csonk */ }
+    });
+    ful.addEventListener("keydown", e => {
+      const i = NEZETEK.indexOf(n);
+      const uj = e.key === "ArrowRight" ? NEZETEK[(i + 1) % NEZETEK.length]
+        : e.key === "ArrowLeft" ? NEZETEK[(i - 1 + NEZETEK.length) % NEZETEK.length]
+        : e.key === "Home" ? NEZETEK[0] : e.key === "End" ? NEZETEK[NEZETEK.length - 1] : null;
+      if (uj) { if (e.preventDefault) e.preventDefault(); nezetValt(uj, true); try { history.replaceState(null, "", "#" + uj); } catch (x) { /* */ } }
+    });
+  }
+}
+
+function indit() {
+  allapotsor();
+  attekintes();
+  forgalomInit();
+  megrakottsagInit();
+  backtestInit();
+  kapukInit();
+  modszerInit();
+  labresz();
+  fulekBekot();
+  const hash = (typeof location !== "undefined" && location.hash || "").replace("#", "");
+  nezetValt(NEZETEK.includes(hash) ? hash : "attekintes");
+  let idozito = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(idozito);
+    idozito = setTimeout(() => { if (RAJZOLOK[aktivNezet]) RAJZOLOK[aktivNezet](); }, 150);
+  });
+  window.addEventListener("hashchange", () => nezetValt(location.hash.replace("#", "")));
+}
+
+// A tesztek (scripts/teszt_dashboard.mjs) ezeken a fuggvenyeken at ellenoriznek
+window.AISDASH = {
+  szam, szazalek, esc, datumHosszu, datumRovid, napHozzaad, median, jelzesSzamol, savSzamol,
+  sorozatKepzes, gordulo, kerekitParos, idoszakSzures, forgalomSorozat, megrSorozat, kapuSorozat,
+  hivatalosForgalom, hivatalosMegr, szepSkala, idosorAbra, idosorTipp, jelzesCimke, tabla,
+  nezetValt, FORG, MEGR, KAPU, BT, MIND, OSSZES_KAPU,
+};
+indit();
+</script>
+</body>
+</html>

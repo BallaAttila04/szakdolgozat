@@ -1,0 +1,5 @@
+par,mod,napok,elso,utolso,kuszob_sajat,kuszob_pw,jelzes_sajat,jelzes_pw,mindketto,egyezes_3oszt,kappa_3oszt,egyezes_jelez,kappa_jelez,r_elteres,kiel_sajat,kiel_pw
+kereskedelmi vs n_total,retrospektiv,84,2026-06-22,2026-09-13,0.2428,0.3666,10,3,2,0.8929,0.2779,0.8929,0.2674,0.6929,+0.471 -0.045,+0.250 +0.304
+kereskedelmi vs n_total,walk-forward,63,2026-07-13,2026-09-13,0.2575,0.3472,7,3,2,0.9048,0.3689,0.9048,0.3571,0.7177,+0.471 -0.045,+0.250 +0.304
+tanker vs n_tanker,retrospektiv,84,2026-06-22,2026-09-13,0.6446,0.6711,2,4,0,0.9286,-0.0286,0.9286,-0.0328,0.6624,+0.417 +0.043,+0.250 -0.111
+tanker vs n_tanker,walk-forward,63,2026-07-13,2026-09-13,0.5817,0.6373,4,6,0,0.8413,-0.0606,0.8413,-0.0825,0.6784,+0.417 +0.043,+0.250 -0.111
