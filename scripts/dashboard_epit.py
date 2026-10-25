@@ -393,6 +393,20 @@ def readme_md(katalogus: list) -> str:
     return "\n".join(t)
 
 
+def keszult_megtart(uj: dict, cel: Path, nev: str) -> dict:
+    """A pillanatkep 'keszult' datuma a forrasfajl mtime-jabol jon, ami a
+    futtaton a git checkout ideje - igy minden nap a futas napjat mutatna.
+    Ha a blokk tartalma a legutobb publikalttal azonos, a publikalt datum marad:
+    a 'keszult' azt jelenti, mikor valtozott utoljara a pillanatkep."""
+    regi = regi_blokk(cel, nev)
+    if regi and "keszult" in regi:
+        normal = json.loads(json.dumps(uj, ensure_ascii=False))
+        if {k: v for k, v in normal.items() if k != "keszult"} == \
+                {k: v for k, v in regi.items() if k != "keszult"}:
+            uj["keszult"] = regi["keszult"]
+    return uj
+
+
 def regi_blokk(cel: Path, nev: str):
     f = cel / nev
     if f.exists():
@@ -433,6 +447,7 @@ def main():
         print(f"Backtest: a forras hianyos ({', '.join(hiany)}) - "
               + ("a korabban publikalt backtest.json marad" if bt else "a blokk ures lesz"))
     else:
+        bt = keszult_megtart(bt, feed_cel, "backtest.json")
         print(f"Backtest: {args.backtest} ({bt['keszult']}), {len(bt['roc'])} ROC-pont, "
               f"{len(bt['injektalas'])} injektalasi sor")
 
@@ -442,6 +457,7 @@ def main():
         print(f"Kiserleti kapuk: a forras hianyos ({', '.join(hiany)}) - "
               + ("a korabban publikalt kiserleti_kapuk.json marad" if kp else "a blokk ures lesz"))
     else:
+        kp = keszult_megtart(kp, feed_cel, "kiserleti_kapuk.json")
         print(f"Kiserleti kapuk: {len(kp['kapuk'])} kapu, {len(kp['napok'])} nap, "
               f"{len(kp['kereskedelmi']['sorok']):,} sor")
 
