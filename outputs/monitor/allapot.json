@@ -1,59 +1,59 @@
 {
- "utolso_nap": "2026-10-22",
- "napok_szama": 144,
+ "utolso_nap": "2026-10-23",
+ "napok_szama": 145,
  "elso_nap": "2026-06-01",
- "frissitve_utc": "2026-10-25T08:41:45+00:00",
+ "frissitve_utc": "2026-10-26T09:18:19+00:00",
  "kuszob": {
-  "Mindkét kapu": 0.2115,
-  "Nagy-Balti-öv": 0.3394,
-  "Øresund": 0.2578
+  "Mindkét kapu": 0.2127,
+  "Nagy-Balti-öv": 0.336,
+  "Øresund": 0.2497
  },
  "zajszint": {
   "Mindkét kapu": {
-   "napok": 123,
-   "median_abs_elteres": 0.0714,
-   "robusztus_szoras": 0.1057,
-   "p90_abs_elteres": 0.2067
+   "napok": 124,
+   "median_abs_elteres": 0.0716,
+   "robusztus_szoras": 0.1063,
+   "p90_abs_elteres": 0.2061
   },
   "Nagy-Balti-öv": {
-   "napok": 123,
+   "napok": 124,
    "median_abs_elteres": 0.1111,
-   "robusztus_szoras": 0.1697,
-   "p90_abs_elteres": 0.2253
+   "robusztus_szoras": 0.168,
+   "p90_abs_elteres": 0.2248
   },
   "Øresund": {
-   "napok": 123,
-   "median_abs_elteres": 0.087,
-   "robusztus_szoras": 0.1289,
-   "p90_abs_elteres": 0.2601
+   "napok": 124,
+   "median_abs_elteres": 0.0872,
+   "robusztus_szoras": 0.1248,
+   "p90_abs_elteres": 0.2815
   }
  },
  "alap_hetek": 4,
  "min_alapnap": 3,
  "kuszob_szorzo": 2.0,
  "kuszob_megrakottsag": {
-  "Megrakott tanker (7 nap)": 0.1197,
-  "Megrakott teherhajó (7 nap)": 0.1608,
-  "Tanker-volumen (7 nap, 1000 m³)": 0.2078
+  "Megrakott tanker (7 nap)": 0.1218,
+  "Megrakott teherhajó (7 nap)": 0.156,
+  "Tanker-volumen (7 nap, 1000 m³)": 0.2046
  },
  "zajszint_megrakottsag": {
   "Megrakott tanker (7 nap)": {
-   "napok": 117,
-   "median_abs_elteres": 0.0404,
-   "robusztus_szoras": 0.0598,
+   "napok": 118,
+   "median_abs_elteres": 0.041,
+   "robusztus_szoras": 0.0609,
    "p90_abs_elteres": 0.12
   },
   "Megrakott teherhajó (7 nap)": {
-   "napok": 117,
-   "median_abs_elteres": 0.0588,
-   "robusztus_szoras": 0.0804,
-   "p90_abs_elteres": 0.1257
+   "napok": 118,
+   "median_abs_elteres": 0.0576,
+   "robusztus_szoras": 0.078,
+   "p90_abs_elteres": 0.1231
   },
   "Tanker-volumen (7 nap, 1000 m³)": {
-   "napok": 117,
+   "napok": 118,
    "median_abs_elteres": 0.0678,
-   "robusztus_szoras": 0.1039,
-   "p90_abs_elteres": 0.1315
+   "robusztus_szoras": 0.1023,
+   "p90_abs_elteres": 0.1375
   }
  },
  "megrakott_kuszob_relativ_merules": {
@@ -62,7 +62,7 @@
  },
  "gordulo_nap": 7,
  "utolso_futas": {
-  "ido_utc": "2026-10-25T08:40:04+00:00",
+  "ido_utc": "2026-10-26T09:17:06+00:00",
   "statusz": "ok",
   "uzenet": "1 uj nap"
  }
