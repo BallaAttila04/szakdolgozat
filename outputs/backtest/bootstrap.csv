@@ -1,19 +1,19 @@
 sorozat,mutato,ertek,ci_also,ci_felso,blokkok,n
-Nagy-Balti-öv,teves riasztas / 30 nap,2.3596,1.0112,3.956,13,89
-Nagy-Balti-öv,"eszleles, m = 30% (minden L, mindket irany)",0.6967,0.6395,0.75,12,478
-Nagy-Balti-öv,"eszleles, Kiel-eset (2 nap, ±30%)",0.6914,0.6111,0.7692,12,162
-Øresund,teves riasztas / 30 nap,3.7079,2.0225,5.5172,13,89
-Øresund,"eszleles, m = 30% (minden L, mindket irany)",0.8096,0.7697,0.8413,12,478
-Øresund,"eszleles, Kiel-eset (2 nap, ±30%)",0.8642,0.8148,0.9074,12,162
-Mindkét kapu,teves riasztas / 30 nap,3.3708,1.6484,5.2747,13,89
-Mindkét kapu,"eszleles, m = 30% (minden L, mindket irany)",0.8787,0.8349,0.9143,12,478
-Mindkét kapu,"eszleles, Kiel-eset (2 nap, ±30%)",0.9074,0.86,0.9464,12,162
-Megrakott tanker (7 nap),teves riasztas / 30 nap,2.8916,0.6593,5.8637,13,83
-Megrakott tanker (7 nap),"eszleles, m = 30% (minden L, mindket irany)",0.6018,0.5116,0.6953,12,442
-Megrakott tanker (7 nap),"eszleles, Kiel-eset (2 nap, ±30%)",0.56,0.3819,0.7244,12,150
-Megrakott teherhajó (7 nap),teves riasztas / 30 nap,0.7229,0.0,2.1687,13,83
-Megrakott teherhajó (7 nap),"eszleles, m = 30% (minden L, mindket irany)",0.5792,0.5102,0.6459,12,442
-Megrakott teherhajó (7 nap),"eszleles, Kiel-eset (2 nap, ±30%)",0.4733,0.369,0.5625,12,150
-"Tanker-volumen (7 nap, 1000 m³)",teves riasztas / 30 nap,1.0843,0.0,2.2785,13,83
-"Tanker-volumen (7 nap, 1000 m³)","eszleles, m = 30% (minden L, mindket irany)",0.5294,0.4534,0.5938,12,442
-"Tanker-volumen (7 nap, 1000 m³)","eszleles, Kiel-eset (2 nap, ±30%)",0.4267,0.3194,0.5133,12,150
+Nagy-Balti-öv,teves riasztas / 30 nap,2.0588,0.8571,3.4375,15,102
+Nagy-Balti-öv,"eszleles, m = 30% (minden L, mindket irany)",0.696,0.6431,0.7466,14,556
+Nagy-Balti-öv,"eszleles, Kiel-eset (2 nap, ±30%)",0.6862,0.6105,0.7602,14,188
+Øresund,teves riasztas / 30 nap,3.2353,1.7118,4.8571,15,102
+Øresund,"eszleles, m = 30% (minden L, mindket irany)",0.8129,0.7824,0.839,14,556
+Øresund,"eszleles, Kiel-eset (2 nap, ±30%)",0.867,0.8278,0.9031,14,188
+Mindkét kapu,teves riasztas / 30 nap,2.9412,1.25,4.7059,15,102
+Mindkét kapu,"eszleles, m = 30% (minden L, mindket irany)",0.8903,0.8605,0.9212,14,556
+Mindkét kapu,"eszleles, Kiel-eset (2 nap, ±30%)",0.9202,0.883,0.9574,14,188
+Megrakott tanker (7 nap),teves riasztas / 30 nap,4.0625,1.7647,6.8576,15,96
+Megrakott tanker (7 nap),"eszleles, m = 30% (minden L, mindket irany)",0.6558,0.5714,0.7319,14,520
+Megrakott tanker (7 nap),"eszleles, Kiel-eset (2 nap, ±30%)",0.6534,0.5232,0.7663,14,176
+Megrakott teherhajó (7 nap),teves riasztas / 30 nap,0.9375,0.0,2.4242,15,96
+Megrakott teherhajó (7 nap),"eszleles, m = 30% (minden L, mindket irany)",0.5635,0.4963,0.626,14,520
+Megrakott teherhajó (7 nap),"eszleles, Kiel-eset (2 nap, ±30%)",0.4716,0.3833,0.5489,14,176
+"Tanker-volumen (7 nap, 1000 m³)",teves riasztas / 30 nap,0.9375,0.0,2.0,15,96
+"Tanker-volumen (7 nap, 1000 m³)","eszleles, m = 30% (minden L, mindket irany)",0.5058,0.4315,0.5763,14,520
+"Tanker-volumen (7 nap, 1000 m³)","eszleles, Kiel-eset (2 nap, ±30%)",0.3977,0.3026,0.4878,14,176

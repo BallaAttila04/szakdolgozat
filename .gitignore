@@ -49,3 +49,6 @@ outputs/geoparquet/
 # A kapu_kiterjesztes.py napi koztes fajljai (ujrainditashoz); az osszesitett
 # atkelesek.csv es kapuvonal_napi.csv verziozott
 outputs/kapuk_kiterjesztes/napok/
+
+# Fagyasztott monitorallapot (git show f8603b3:outputs/monitor/*), ujraeloallithato
+outputs/fagyasztas_*/

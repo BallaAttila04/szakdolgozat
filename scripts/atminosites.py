@@ -18,6 +18,11 @@ Csak olvas (git show); a munkakonyvtarat nem modositja.
 Hasznalat:
     python atminosites.py dae2366 8954e7f
     python atminosites.py 8954e7f HEAD --fajl jelzesek_megrakottsag.csv
+    python atminosites.py dae2366 f8603b3 --lanc --ki outputs/eles_uzem/atminosites_lanc.csv
+
+--lanc: a ket commit kozotti osszes olyan commit, amely a jelzes-fajlokat
+modositotta, egymast koveto paronkent (ez az eles uzem napi lepese); mindket
+jelzes-fajlra, sorozatonkent egy CSV-sor.
 """
 
 import argparse
@@ -43,6 +48,48 @@ def tabla(ref: str, fajl: str) -> pd.DataFrame:
     return pd.read_csv(io.BytesIO(ki.stdout), encoding="utf-8")
 
 
+def osszevet(r, u):
+    """Sorozatonkent: kuszob, jelzett napok, atminositett napok, valtozott ertekek."""
+    m = r.merge(u, on=["datum", "sorozat"], suffixes=("_regi", "_uj"))
+    ki = []
+    for s, g in m.groupby("sorozat", sort=False):
+        jel = lambda c: int(g[c].str.startswith(JELZES_ELOTAG).sum())
+        valt = g[g.jelzes_regi != g.jelzes_uj]
+        ert = int(((g.ertek_regi != g.ertek_uj)
+                   | (g.alapszint_regi.fillna(-1) != g.alapszint_uj.fillna(-1))
+                   | (g.elteres_regi.fillna(-9).round(TIZEDES)
+                      != g.elteres_uj.fillna(-9).round(TIZEDES))).sum())
+        ki.append({"sorozat": s, "kozos_nap": len(g),
+                   "kuszob_regi": g.kuszob_regi.iloc[0], "kuszob_uj": g.kuszob_uj.iloc[0],
+                   "jelzett_regi": jel("jelzes_regi"), "jelzett_uj": jel("jelzes_uj"),
+                   "atminositett": len(valt), "valtozott_ertek": ert,
+                   "atminositett_napok": " ".join(valt.datum)})
+    return m, ki
+
+
+def lanc(regi, uj, ki_ut):
+    fajlok = ["outputs/monitor/jelzesek.csv", "outputs/monitor/jelzesek_megrakottsag.csv"]
+    log = subprocess.run(["git", "-C", str(GYOKER), "log", "--format=%h %cs", "--reverse",
+                          f"{regi}..{uj}", "--", *fajlok], capture_output=True, text=True)
+    commitok = [(regi, "")] + [tuple(x.split()) for x in log.stdout.splitlines() if x.strip()]
+    sorok = []
+    for (a, _), (b, datum) in zip(commitok, commitok[1:]):
+        for fajl in ("jelzesek.csv", "jelzesek_megrakottsag.csv"):
+            r, u = tabla(a, fajl), tabla(b, fajl)
+            _, ki = osszevet(r, u)
+            for x in ki:
+                sorok.append({"regi": a, "uj": b, "commit_datum": datum, "utolso_nap": u.datum.max(),
+                              "fajl": fajl, **x})
+    df = pd.DataFrame(sorok)
+    df.to_csv(ki_ut, index=False, encoding="utf-8")
+    print(f"{len(commitok) - 1} commitpar ({regi} -> {uj}), {len(df)} sor -> {ki_ut}")
+    print(df.groupby("sorozat", sort=False)
+            .agg(lepes=("atminositett", "size"), atminositett=("atminositett", "sum"),
+                 lepes_atminositessel=("atminositett", lambda v: int((v > 0).sum())),
+                 valtozott_ertek=("valtozott_ertek", "sum"))
+            .to_string())
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -50,7 +97,13 @@ def main():
     ap.add_argument("uj", help="a kesobbi allapot commitja (pl. HEAD)")
     ap.add_argument("--fajl", default="jelzesek.csv",
                     help="jelzesek.csv (forgalom) vagy jelzesek_megrakottsag.csv")
+    ap.add_argument("--lanc", action="store_true",
+                    help="az osszes koztes commit, egymast koveto paronkent (CSV-be)")
+    ap.add_argument("--ki", default=str(GYOKER / "outputs" / "eles_uzem" / "atminosites_lanc.csv"))
     args = ap.parse_args()
+    if args.lanc:
+        lanc(args.regi, args.uj, args.ki)
+        return
 
     r, u = tabla(args.regi, args.fajl), tabla(args.uj, args.fajl)
     m = r.merge(u, on=["datum", "sorozat"], suffixes=("_regi", "_uj"))

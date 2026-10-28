@@ -978,3 +978,283 @@ forgalmat is számolja.
 (ld. napló); pótlás után (128 nap) a kapuvonal-jelzés küszöbe ~~±23,5%~~ →
 **±23,0%** (mindkét kapu), ~~±35,6%~~ → ±34,4% (Nagy-Balti-öv), ~~±25,4%~~ →
 ±25,8% (Øresund).
+
+## A dolgozat számai a fagyasztott állapotban (2026-10-22, `f8603b3`)
+
+Forrás: a `szamok-ujraszamolasa` ellenőrzési lánc (kereső → független adatellenőrzés → szövegellenőrzés), 2026-10-25/26. A fagyasztás leírása: `dolgozat/munka/fagyasztas.md`; a dolgozatba beírt 250 csere: `dolgozat/munka/valtozasok.json`. Ha egy szám megváltozott, a korábbi érték a „korábban:” után szerepel (a 2026-10-12-i, 131 napos állapot vagy a régi PortWatch-fájl). A teljességi kritika és a szamok.md-összevetés ügynöke a munkamenet-limit miatt nem futott le; a meglévő, felülírt sorok áthúzása ezért még hátravan.
+
+### Backtest
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 92,0% | Kiel-méretű (2 nap, ±30%) szintetikus esemény észlelési aránya a „Mindkét kapu” sorozaton, k = 2, saját ablak (173/188), 95% CI 88,3–95,7% (korábban: ~~90,7%~~) | outputs/backtest/bootstrap.csv (Mindkét kapu, 'eszleles, Kiel-eset (2 nap, ±30%)'); injektalas.csv R1 param 2.0, ablak sajat, m 0.3, L 2: 89/94 + 84/94; fagyasztott állapot 2026-10-22, futtatva 2026-10-25 | 2026-10-25 |
+| 432 + 414 jelzés-sor, 0 eltérés | a backtest reprodukciója a fagyasztott monitorállapoton (korábban: ~~393 + 375 (a 131 napos állapoton, 4.2 [672]; ez nem a 2.1 része)~~) | outputs/backtest/reprodukcio.csv | 2026-10-25 |
+| 432 + 414 sor, 0 eltérés | a backtest-motor a fagyasztott monitor jelzés-tábláit eltérés nélkül reprodukálja (korábban: ~~393 + 375 (a 4.2 K7-cellájában, nem a 2.1-ben)~~) | outputs/backtest/reprodukcio.csv | 2026-10-25 |
+| ≥ 90% | a backtest munkapont-kritériuma (a [350] marad) | outputs/logs/backtest_fagyasztas_2026-10-22.log 185. sor; outputs/backtest/munkapont.csv | 2026-10-25 |
+| 92,0% (173/188) [88,3; 95,7] | Kiel-méretű (2 nap, ±30%) esemény észlelése, Mindkét kapu, R0 walk-forward k = 2, saját ablak (korábban: ~~90,7% (147/162, 125f554)~~) | outputs/backtest/injektalas.csv (−1: 89/94, +1: 84/94); szabalyok.csv 0,9202; bootstrap.csv CI 0,883–0,9574 | 2026-10-25 |
+| 92,0% | Kiel-méretű esemény észlelése, Mindkét kapu, bővülő walk-forward (173/188) (korábban: ~~90,7%~~) | outputs/backtest/bootstrap.csv; injektalas.csv | 2026-10-25 |
+| 15 naptári hét (n = 102 nap) | Walk-forward téves riasztási értékelés heti blokkjai (korábban: ~~13 (n = 89)~~) | outputs/backtest/bootstrap.csv blokkok | 2026-10-25 |
+| 2,06 / 3,24 / 2,94 | Téves riasztás / 30 nap a három kapusorozaton (a [860] '2–4' tartományán belül) (korábban: ~~2,36 / 3,71 / 3,37~~) | outputs/backtest/bootstrap.csv | 2026-10-25 |
+| 2,06 / 3,24 / 2,94 | Téves riasztás / 30 nap a három kapusorozaton (a [860] „2–4” tartományán belül) (korábban: ~~2,36 / 3,71 / 3,37~~) | outputs/backtest/bootstrap.csv | 2026-10-25 |
+| 432 + 414; 1 151; 264 915; 281 799 | reprodukció: jelzéssorok; megrakottsági napi tábla; nulla-injektálás; előretekintés-teszt (mind 0 eltérés) (korábban: ~~393 + 375; 1 047; 230 517; 229 824~~) | outputs/backtest/reprodukcio.csv | 2026-10-25 |
+| 102 / 96 nap | walk-forward értékelt napok, kapu- / megrakottsági sorozatok (korábban: ~~89 / 83~~) | outputs/backtest/walkforward.csv napok (bovulo, min. 21 nap) | 2026-10-25 |
+| 2,06 / 3,24 / 2,94; 4,06 / 0,94 / 0,94 | téves riasztás / 30 nap, R0, bővülő walk-forward (korábban: ~~2,36 / 3,71 / 3,37; 2,89 / 0,72 / 1,08~~) | outputs/backtest/walkforward.csv fa30_wf; bootstrap.csv | 2026-10-25 |
+| 68,6% / 86,7% / 92,0% / 65,3% / 47,2% / 39,8% | Kiel-méretű esemény észlelése sorozatonként (korábban: ~~69,1% / 86,4% / 90,7% / 56,0% / 47,3% / 42,7%~~) | outputs/backtest/injektalas.csv L=2, m=0,3, R0 sajat (n = 188 / 176) | 2026-10-25 |
+| 17 400 / 504 900 | injektált esemény / szabálykimenet (korábban: ~~15 060 / 431 190~~) | outputs/logs/backtest_fagyasztas_2026-10-22.log (újrafuttatás log 83. sora) | 2026-10-25 |
+| R4 48,7% vs. R0 50,0%; 0,3 vs. 2,7 | CUSUM és R0 a tartós, gyenge eseményen és téves riasztásban (Mindkét kapu, közös ablak); a „legalább olyan jól” már nem igaz (korábban: ~~56,5% vs. 53,2%; 0,4 vs. 3,2~~) | outputs/backtest/szabalyok.csv kozos (teljes pontosság: 0,486667 / 0,500000; 0,340909 / 2,727273) | 2026-10-25 |
+| 88 nap | a szabályváltozatok közös értékelési ablaka (július 27-től) (korábban: ~~75 nap~~) | outputs/backtest/szabalyok.csv ablak=kozos | 2026-10-25 |
+| k = 2,25: 91,0%, 2,06; k = 2: 92,0%, 2,94; Øresund k = 1,5: 6,47; Nagy-Balti-öv legjobb 89,4% | munkapont (korábban: ~~90,1%, 2,36; 90,7%, 3,37; 6,40; 88,8%~~) | outputs/backtest/munkapont.csv; roc.csv; injektalas.csv | 2026-10-25 |
+
+### Egyéb
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 0,736 | napi Pearson-r: a monitor Øresund-kapuja (kereskedelmi) és a PortWatch, 128 napon (nem a 2.1-ben szerepel, hanem a 4.5-ben és az 1.1.5-ben) (korábban: ~~0,720 (105 nap, r = 0,7204)~~) | ugyanaz a saját számítás, Øresund oszlop: r = 0,7363 | 2026-10-25 |
+| 4 CPU, 16 GB, 14 GB SSD; 6 óra/feladat; díjmentes | a GitHub standard Linux-futtató korlátai ([327], K10), változatlan | WebFetch 2026-10-25: docs.github.com/en/actions/reference/runners/github-hosted-runners („4”, „16 GB”, „14 GB”, „free and unlimited on public repositories”); docs.github.com/en/actions/reference/limits („up to 6 hours of execution time”) | 2026-10-25 |
+| 4,55% | normális eloszlásnál a \|z\| > 2 napok várt aránya (korábban: ~~5% (kerekítve)~~) | 2 · (1 − scipy.stats.norm.cdf(2)) = 0,045500 | 2026-10-25 |
+| 92,0% (173/188) | Kiel-méretű (2 nap, ±30%) esemény észlelése, Mindkét kapu, R0 walk-forward k = 2, saját ablak (korábban: ~~90,7% (147/162, 125f554)~~) | injektalas.csv (R0 (k=2), m 0.3, L 2, sajat: 89/94 + 84/94); log: 0.920 [0.883; 0.957] | 2026-10-25 |
+| 1,29 (0,98–1,66) | saját/PortWatch napi arány átlaga (min–max), Øresund kereskedelmi (korábban: ~~1,29 (0,98–1,65) (105 nap); 1,33 (5 nap)~~) | újraszámolás: 1.2922, 0.98, 1.6552 | 2026-10-25 |
+| 127 / 128 nap | napok, amelyeken az arány ≥ 1 (a „szisztematikusan” alátámasztása) | saját újraszámolás: (arany<1).sum()=1 | 2026-10-25 |
+| heti r 0,971 (19 hét) – nem használható; 0,755 (18 teljes hét) | heti r, Øresund kereskedelmi; a 19. hét (10-05 – 10-06) csak 2 napos, ez torzít (korábban: ~~0,760 (15 hét)~~) | saját: resample('W-SUN').sum(); size()==7 szűréssel 0.7548; utolsó hét 2 nap | 2026-10-25 |
+| 0,720 / 1,286 a 105 napon az új fájllal | az új PortWatch-fájl a régi ablakon a régi értékeket adja, tehát a változás oka a 23 új nap | saját: index<=2026-09-13 → r 0.72036, arány 1.28595 (a régi 125f554-es fájllal egyezik) | 2026-10-25 |
+| 0,737 km²; 122; 12; hatszög max/min 1,99; ötszöggel 2,39 | H3 res-8 átlagos terület, alapcellák, ötszögek, területarány | h3 4.5.0: average_hexagon_area(8)=0.73733; get_res0_cells 122; get_pentagons(8) 12, 0.37205 km²; mintavételes hatszög min 0.4465, max 0.8896 | 2026-10-25 |
+| 127 / 128 nap | napok, amelyeken az Øresund/PortWatch arány ≥ 1 | (arany<1).sum()=1 | 2026-10-25 |
+| r = 0,892; arány 1,17 | Drogden alatti kapu kereskedelmi vs. PortWatch n_total, 128 nap (korábban: ~~0,905; 1,15 (105 nap)~~) | újraszámolás: r 0.8916, arány 1.1661 (0.975–1.4667) | 2026-10-25 |
+| heti r = 0,755 (18 teljes hét); fájlban 0,971 (19 hét) | heti r Øresund; a 19. hét csak két nap (10-05 – 10-06; AIS 108, PW 87), ezért a fájlbeli érték nem használható (korábban: ~~0,760 (15 hét)~~) | resample('W-SUN').sum(), szűrés size()==7 | 2026-10-25 |
+| heti r = 0,827 (18 teljes hét); fájlban 0,979 | heti r, Drogden-kapu | ugyanaz a számítás a 'Øresund – Drogden' oszlopra | 2026-10-25 |
+| 0,720 / 1,286 a régi 105 napon | ellenőrzés: az új PortWatch-fájl a régi ablakon a régi értékeket adja, a változást az új napok okozzák | index<=2026-09-13: r 0.7204, arány 1.2860 (0.98–1.6452); Drogden r 0.9048, arány 1.1511 | 2026-10-25 |
+| 0,4465 / 0,8896 km²; 1,992×; ötszög 0,372 km²; 2,39× | H3 res-8 hatszög min/max területe és aránya; az ötszög területe; max hatszög/ötszög | h3 4.5.0; h3geo.org restable res 8: 0.446526174 / 0.889635157 / 1.992347 / 0.372048038 | 2026-10-25 |
+| 0,737 km²; 122; 12 | H3 res-8 átlagos hatszögterület; res-0 cellák száma; ötszögek | h3 4.5.0: average_hexagon_area(8)=0.73733; len(get_res0_cells())=122; len(get_pentagons(8))=12 | 2026-10-25 |
+| 28 | a PortWatch chokepoint-fájlban szereplő szorosok száma | portname.nunique() a régi és az új fájlban is 28 | 2026-10-25 |
+| 00:18–00:44 UTC (00:17:52 – 00:43:54), D+3 | a napi fájl megjelenési ideje (Last-Modified), 104 elérhető nap (korábban: ~~00:18–00:42~~) | outputs/szerver_keses.csv (12 elérhető a 14-ből) + outputs/szerver_napok_jun_aug.csv (92), last_modified_utc | 2026-10-25 |
+| 48,30 – 48,73 óra (medián 48,34) | a fájl késése a nap végéhez képest | ugyanaz, keses_ora | 2026-10-25 |
+| 4,55% | a téves jelzések aránya normális eloszlásnál ±2 szórásos küszöbbel (korábban: ~~mintegy 5%~~) | scipy.stats.norm: 2*norm.sf(2) = 0,0455003 | 2026-10-25 |
+| 0,7373 km² | átlagos H3-cellaterület 8-as felbontáson | h3.average_hexagon_area(8, 'km^2') | 2026-10-25 |
+| 203,6 mp / 10 871 MiB / 2 596 MiB; 8 909 MiB kicsomagolással | 07-15, helyben: idő / csúcsmemória / munkakönyvtár-csúcs közvetlen ZIP-olvasással; a különbség 6,17 GiB | outputs/logs/lemezmeres_0715.log zip_6GB és kicsomag_6GB sor | 2026-10-25 |
+| 127 / 128 nap | napok, amelyeken az Øresund/PortWatch arány legalább 1 | (arany<1).sum()=1 | 2026-10-25 |
+| heti r = 0,755 (18 teljes hét); fájlban 0,971 (19 hét) | heti r, Øresund; a 19. hét csak két nap (10-05 – 10-06), ezért a fájlbeli érték nem használható (korábban: ~~0,760 (15 hét)~~) | resample('W-SUN').sum(), szűrés size()==7 | 2026-10-25 |
+| 92–143 mp; 07:59–11:14 UTC | a 16 ütemezett futás ideje és indulási sávja (a 3. fejezetben nem szerepel; a 4.6-hoz) (korábban: ~~105–143 mp; 10:04–11:14 (3 futás)~~) | futasok.csv futasido_mp min 92, max 143; inditas_utc 07:59 (10-17) – 11:14 (10-12) | 2026-10-25 |
+| 48,30–48,73 óra (medián 48,34) | a fájl késése a nap végéhez képest | ugyanaz, keses_ora | 2026-10-25 |
+| 4,55% | téves jelzések aránya normális eloszlásnál, ±2 szórásos küszöbbel (korábban: ~~mintegy 5%~~) | scipy.stats.norm: 2*norm.sf(2) = 0,0455003 | 2026-10-25 |
+| 203,6 mp / 10 871 MiB / 2 596 MiB; kicsomagolással 8 909 MiB | 07-15, helyi gépen: idő / csúcsmemória / munkakönyvtár-csúcs közvetlen ZIP-olvasással; a különbség 6,17 GiB | outputs/logs/lemezmeres_0715.log, zip_6GB és kicsomag_6GB sor | 2026-10-25 |
+| 68,6–92,0% | Kiel-méretű esemény észlelése a három kapusorozaton (korábban: ~~69,1–90,7%~~) | bootstrap.csv Kiel-eset sorai | 2026-10-25 |
+| 2,94 / 30 nap | téves riasztás, Mindkét kapu, bővülő walk-forward (102 nap) (korábban: ~~3,37 / 30 nap~~) | walkforward.csv fa30_wf | 2026-10-25 |
+| 1,25–4,71 / 30 nap | a téves riasztás 95%-os bootstrap-intervalluma, Mindkét kapu (korábban: ~~1,65–5,27 / 30 nap~~) | bootstrap.csv ci_also / ci_felso | 2026-10-25 |
+| 15 hét | a backtest által lefedett naptári hetek (07-13 – 10-22) (korábban: ~~13 hét~~) | bootstrap.csv blokkok 15, n 102 | 2026-10-25 |
+| 1–2 / 1–7 nap 102-ből | bővülő / rögzített walk-forward eltérő napjai a kapusorozatokon (korábban: ~~1–2 / 1–7 nap 89-ből~~) | walkforward.csv elter_nap | 2026-10-25 |
+| 2–3 / 4–19 nap 96-ból | bővülő / rögzített walk-forward eltérő napjai a megrakottsági sorozatokon (korábban: ~~2–4 / 12–17 nap 83-ból~~) | walkforward.csv elter_nap | 2026-10-25 |
+| 5,5 → 1,0 / 30 nap; 95,6% → 66,9% | k = 1,5 … 3: téves riasztás és Kiel-eset észlelése, Mindkét kapu, közös ablak (88 nap) (korábban: ~~6,4 → 1,2 / 30 nap; 94,8% → 68,7%~~) | szabalyok.csv kozos, R1 k=1.5 és k=3 | 2026-10-25 |
+| 2,7 / 91,9% / 50,0% | napi szabály (R0): téves riasztás / Kiel-eset / gyenge, tartós esemény, közös ablak (korábban: ~~3,2 / 90,3% / 53,2%~~) | szabalyok.csv kozos R0 (k=2) | 2026-10-25 |
+| 0,3 / 79,4% / 48,7% | CUSUM h = 4: téves riasztás / Kiel-eset / gyenge, tartós esemény, közös ablak (korábban: ~~0,4 / 79,9% / 56,5%~~) | szabalyok.csv kozos R4 CUSUM h=4 | 2026-10-25 |
+| 89,4% | a Nagy-Balti-öv legjobb Kiel-eset észlelése a k = 1–4 rácson (90% alatt) | roc.csv Nagy-Balti-öv R1 eszl_kiel max | 2026-10-25 |
+| 1 perc 32 mp – 2 perc 23 mp | éles futásidő, 16 ütemezett futás (átlag 116,6 mp) (korábban: ~~1 perc 45 mp – 2 perc 23 mp~~) | futasok.csv futasido_mp 92–143 | 2026-10-25 |
+| 4,5–7,7 óra | az ütemezett indulás késése a 03:30-as (UTC) cronhoz képest (korábban: ~~6,5–7,7 óra~~) | futasok.csv inditas_utc 07:59–11:14 | 2026-10-25 |
+| 16 / 16 | ütemezett éles futások 2026-10-10 – 10-25, mind sikeres (korábban: ~~3 / 3~~) | futasok.csv event = schedule | 2026-10-25 |
+| 3 534 | a dashboard által 0 eltéréssel reprodukált jelzéssorok (432 + 414 + 2 688) (korábban: ~~3 456~~) | node scripts/teszt_dashboard.mjs B) rész | 2026-10-25 |
+| 2,15× | mért / normális eloszlásból várt téves riasztás (2,94 / 1,365) | walkforward.csv; 2·(1−Φ(2))·30 | 2026-10-25 |
+| 1–2 / 1–7 nap 102-ből | a bővülő / rögzített walk-forward eltérő napjai a kapusorozatokon (korábban: ~~1–2 / 1–7 nap 89-ből~~) | walkforward.csv elter_nap | 2026-10-25 |
+| 2–3 / 4–19 nap 96-ból | a bővülő / rögzített walk-forward eltérő napjai a megrakottsági sorozatokon (korábban: ~~2–4 / 12–17 nap 83-ból~~) | walkforward.csv elter_nap | 2026-10-25 |
+| 16 / 16 | ütemezett éles futások 2026. október 10. – 25., mind sikeres (korábban: ~~3 / 3~~) | futasok.csv event = schedule | 2026-10-25 |
+| 88,5% (5 248 / 5 930) | Átmenő kereskedelmi Drogden-átkelések (változatlan) | saját újraszámolás az atkelesek.csv-ből (±12 óra, azonos MMSI + irány) | 2026-10-25 |
+| 92–143 s | Ütemezett futás teljes ideje (korábban: ~~105–143 s~~) | futasok.csv futasido_mp | 2026-10-25 |
+| #2: nyitva 10-11, lezárva 10-13, 2 megjegyzés | Az éles üzem egyetlen jelzés-issue-ja | gh issue view 2 --comments; gh issue list --state all; issuek.csv | 2026-10-25 |
+| #2: 2 megjegyzés, lezárva 2026-10-13; új issue nem nyílt | az éles issue-k története 10-25-ig (korábban: ~~1 megjegyzés~~) | issuek.csv; gh issue view 2 --json comments; gh issue list --state all | 2026-10-25 |
+| 55/56 | dashboard-tesztállítás a fagyasztott backtest mellett, a dashboard újraépítése előtt (korábban: ~~56/56~~) | node scripts/teszt_dashboard.mjs (2026-10-25) | 2026-10-25 |
+| 88 nap | a szabályváltozatok közös értékelési ablaka (07-27-től) (korábban: ~~75 nap~~) | szabalyok.csv ablak=kozos | 2026-10-25 |
+| k = 2,25: 91,0%, 2,06; k = 2: 92,0%, 2,94; Øresund k = 1,5: 6,47; NBÖ legjobb 89,4% | munkapont (korábban: ~~90,1%, 2,36; 90,7%, 3,37; 6,40; 88,8%~~) | munkapont.csv; roc.csv; injektalas.csv | 2026-10-25 |
+
+### Hivatkozások (DOI)
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| https://doi.org/10.2307/25148625 | Hevner, March, Park & Ram (2004) DOI-ja (MIS Quarterly 28(1)); Crossref-oldaltartomány 75-106, a szövegben a megszokott 75–105 maradt | curl -s https://api.crossref.org/works/10.2307/25148625 (lekérve 2026-10-25) | 2026-10-25 |
+| https://doi.org/10.2753/MIS0742-1222240302 | Peffers, Tuunanen, Rothenberger & Chatterjee (2007) DOI-ja (JMIS 24(3), 45–77) | curl -s https://api.crossref.org/works/10.2753/MIS0742-1222240302 (lekérve 2026-10-25) | 2026-10-25 |
+| https://doi.org/10.25300/MISQ/2013/37.2.01 | Gregor & Hevner (2013) DOI-ja (MIS Quarterly 37(2), 337–355) | curl -s https://api.crossref.org/works/10.25300/MISQ/2013/37.2.01 (lekérve 2026-10-25) | 2026-10-25 |
+| 10.2307/25148625 | Hevner et al. (2004) DOI-ja; a cím, a szerzők, az év és a folyóirat (MIS Quarterly 28(1)) a Crossref szerint egyezik. Az oldaltartomány a Crossrefben 75–106, a tételben 75–105 [NEM ELLENŐRIZVE]. | curl -s https://api.crossref.org/works/10.2307/25148625 (2026-10-25) | 2026-10-25 |
+| 10.2753/MIS0742-1222240302 | Peffers et al. (2007) DOI-ja; JMIS 24(3), 45–77, a Crossref szerint egyezik | curl -s https://api.crossref.org/works/10.2753/MIS0742-1222240302 (2026-10-25) | 2026-10-25 |
+| 10.25300/MISQ/2013/37.2.01 | Gregor & Hevner (2013) DOI-ja; MIS Quarterly 37(2), 337–355, a Crossref szerint egyezik | curl -s https://api.crossref.org/works/10.25300/MISQ/2013/37.2.01 (2026-10-25) | 2026-10-25 |
+| 19 | a Hivatkozások szakaszban ([1170]–[1231]) már szereplő DOI-k száma; mind a 19-re HTTP 200 a válasz a Crossref API-tól | python -X utf8: re.findall(r'https://doi.org/\S+') a bekezdesek.txt [1169]–[1231] soraira -> 19 (újrafuttatva 2026-10-25); Crossref HTTP-kódok: az adatellenőrző futása (2026-10-25), 19× 200 | 2026-10-25 |
+
+### Kísérleti kapuk (128 nap)
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 0,58 | Kis-Balti-öv hétvége/hétköznap arány (a többi új kapu 1,03–1,14) | outputs/kapuk_kiterjesztes/napi_statisztika.csv hetvege_per_hetkoznap 0,577 | 2026-10-25 |
+
+### Monitor: zajszint, küszöb, napok
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 144 nap; kuszob_szorzo 2,0 | a fagyasztott monitorállapot (2026-06-01 – 10-22) még a teljes idősoros küszöbbel fut, a bővülő ablakot nem vezették be | outputs/fagyasztas_2026-10-22/monitor/allapot.json | 2026-10-25 |
+| 5 | új kísérleti kapu a konfigurációs fájlban (Øresund – Drogden, Fehmarn-öv, Kadet-rende, Kis-Balti-öv, Skagen) | scripts/kapuk.json, 'kapuk' kulcs, monitor=False bejegyzések száma | 2026-10-25 |
+| 97,2% / 97,6% | hihető és változó merülésű átkelések aránya, tanker / teher, mindkét kapu, 144 napon (4 195 / 10 434 átkelés) (korábban: ~~96,5% / 97,3% (dae2366, 128 nap, 3 737 / 9 232 átkelés; pontosan reprodukálva, a [262] történeti sora ezt rögzíti, változatlan)~~) | $TEMP/ell21/lef.py: megrakottsag.lefedettseg(outputs/fagyasztas_2026-10-22/monitor) | 2026-10-25 |
+| 144 | a monitor fagyasztott állapotának napjai (2026-06-01 – 2026-10-22) (korábban: ~~72 (3.5; 06-01 – 09-05 idősor)~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; jelzesek.csv Mindkét kapu 144 sor | 2026-10-25 |
+| 123 | alapszintes napok sorozatonként a 144 napos állapotban (korábban: ~~72~~) | allapot.json zajszint[*].napok; jelzesek.csv, alapszint notna | 2026-10-25 |
+| 10,6% (0,105726) | Mindkét kapu: a relatív eltérés robusztus szórása (1,4826·MAD) (korábban: ~~11,8%~~) | jelzesek.csv, Mindkét kapu, alapszint notna, e = ertek/alapszint − 1; allapot.json 0.1057 | 2026-10-25 |
+| 7,1% (0,071429) | Mindkét kapu: medián abszolút eltérés (korábban: ~~7,8%~~) | jelzesek.csv median\|e\|; allapot.json 0,0714 | 2026-10-25 |
+| 20,7% (0,206731) | Mindkét kapu: az abszolút eltérés 90. percentilise (korábban: ~~22,0%~~) | np.quantile(\|e\|, 0.9); allapot.json 0,2067 | 2026-10-25 |
+| 17,0% (0,169719) | Nagy-Balti-öv robusztus szórás (korábban: ~~17,8%~~) | jelzesek.csv; allapot.json 0,1697 | 2026-10-25 |
+| 12,9% (0,128922) | Øresund robusztus szórás (korábban: ~~12,8%~~) | jelzesek.csv; allapot.json 0,1289 | 2026-10-25 |
+| ±21,1% (0,211452) | Mindkét kapu jelzési küszöbe (2 × 1,4826 × MAD), 144 napos állapot (korábban: ~~±23,5% (72 nap); ±20,93% (131 nap)~~) | jelzesek.csv-ből számolva; allapot.json kuszob 0,2115 | 2026-10-25 |
+| 12/123 (9,8%) | Mindkét kapu jelzett napjai (9 magas, 3 alacsony) (korábban: ~~8,3% (≈ 6/72); 12/110 = 10,9% (131 nap)~~) | jelzesek.csv, Mindkét kapu, alapszint notna, jelzes ≠ normál | 2026-10-25 |
+| 5/123 (4,1%) | Nagy-Balti-öv jelzett napjai (korábban: ~~5,6% (72 nap); 5/110 = 4,5% (131 nap)~~) | jelzesek.csv, Nagy-Balti-öv | 2026-10-25 |
+| 13/123 (10,6%) | Øresund jelzett napjai (korábban: ~~12,5% (72 nap); 13/110 = 11,8% (131 nap)~~) | jelzesek.csv, Øresund | 2026-10-25 |
+| 2. (a 123-ból) | a július 15-i +33,0% rangja az abszolút eltérések között (1. augusztus 18., +39,8%) (korábban: ~~2. a 72-ből~~) | jelzesek.csv, Mindkét kapu, \|elteres\| szerint rendezve | 2026-10-25 |
+| 83,7% | a 17,6% percentilis-helye a 123 abszolút eltérés között, a „felső rész, nem kiugró” minősítés alapja | jelzesek.csv, mean(\|e\| < 0,176) = 0.8374 | 2026-10-25 |
+| 101,6 (medián 101,5; 77–129) | Mindkét kapu napi kereskedelmi átkelése a 144 napon, a „napi mintegy száz” alapja | jelzesek.csv, Mindkét kapu, ertek describe() | 2026-10-25 |
+| 5 | új kísérleti kapu a konfigurációs fájlban | scripts/kapuk.json: 7 kapu, ebből 5-nél "monitor": false | 2026-10-25 |
+| 144 nap (2026. június 1. – október 22.) | a monitor fagyasztott idősorának hossza (korábban: ~~131 nap (2026. június 1. – október 9.)~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama = 144; jelzesek.csv datum.nunique() = 144 | 2026-10-25 |
+| 144 nap (2026-06-01 – 2026-10-22) | a monitor fagyasztott állapota, hézag nélkül (korábban: ~~124 nap (2026-06-01 – 10-06)~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; kapuvonal_napi.csv datum: 144 egyedi nap = naptári tartomány | 2026-10-25 |
+| 2 óra 46 perc | a 03:30-as ütemezés tartaléka a legkésőbbi mért megjelenéshez (00:43:54) képest (korábban: ~~legalább 3 óra~~) | 03:30 − 00:43:54; napi_monitor.yml cron "30 3 * * *" | 2026-10-25 |
+| 8 fájl, 4 256 119 bájt (4,06 MiB) | a napi futás által a repóba visszaírt monitortáblák a fagyasztott commitban | git ls-tree -r -l f8603b3 outputs/monitor | 2026-10-25 |
+| 314 / 194 cella | H3-folyosó: Nagy-Balti-öv / Øresund | python (scripts/): kapuvonal.folyoso(k) a két monitorkapura; MAX_RES_MP = 600 | 2026-10-25 |
+| ±33,9% / ±25,8% | Nagy-Balti-öv / Øresund jelzési küszöb, 144 napos állapot (a 3.5 szövegében nem szerepel) | jelzesek.csv-ből 0,339437, 0,257843; allapot.json 0,3394, 0,2578 | 2026-10-25 |
+| 2. (a 123-ból) | a július 15-i +33,0% rangja az abszolút eltérések között (Mindkét kapu); az 1. augusztus 18. (+39,8%) (korábban: ~~2. a 72-ből~~) | jelzesek.csv, \|elteres\| szerint rendezve | 2026-10-25 |
+| 83,7% | az egy napból számolt 17,6% percentilis-helye a 123 abszolút eltérés között (Mindkét kapu); a „felső rész, nem kiugró” minősítés alapja | jelzesek.csv, mean(\|e\| < 0,176) = 0,83740 | 2026-10-25 |
+| 101,6 (medián 101,5; 77–129) | Mindkét kapu napi kereskedelmi átkelése, 144 nap; a „napi mintegy száz” alapja | jelzesek.csv, Mindkét kapu, ertek | 2026-10-25 |
+| 144 nap (2026. június 1. – október 22.) | a monitor fagyasztott állapota, hézag nélkül (korábban: ~~124 nap (2026. június 1. – október 6.)~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; kapuvonal_napi.csv datum: 144 egyedi nap = naptári tartomány | 2026-10-25 |
+| 144 | a monitor fagyasztott állapotának napjai (2026. június 1. – október 22.) (korábban: ~~72 (3.5; június 1. – szeptember 5. idősor)~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; jelzesek.csv Mindkét kapu 144 sor | 2026-10-25 |
+| 10,6% (0,105726) | Mindkét kapu: a relatív eltérés robusztus szórása (1,4826 · MAD) (korábban: ~~11,8%~~) | jelzesek.csv, Mindkét kapu, alapszint notna, e = ertek/alapszint − 1; allapot.json 0,1057 | 2026-10-25 |
+| 144 nap | a monitor fagyasztott állapotának hossza (2026-06-01 – 10-22), hiány nélkül (korábban: ~~131 nap~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; jelzesek.csv 144 különböző dátum | 2026-10-25 |
+| 10,6% | „Mindkét kapu” robusztus szórása (123 alapszintes nap) (korábban: ~~10,5%~~) | allapot.json zajszint.Mindkét kapu.robusztus_szoras 0,1057 | 2026-10-25 |
+| 144 nap | a monitor fagyasztott állapotának hossza (2026. június 1. – október 22.), hiány nélkül (korábban: ~~131 nap~~) | outputs/fagyasztas_2026-10-22/monitor/allapot.json napok_szama; jelzesek.csv 144 különböző dátum | 2026-10-25 |
+| 10,6% | a „Mindkét kapu” robusztus szórása (123 alapszintes nap) (korábban: ~~10,5%~~) | allapot.json zajszint.Mindkét kapu.robusztus_szoras 0,1057 | 2026-10-25 |
+| ±33,9% / ±25,8% | Nagy-Balti-öv / Øresund küszöb a 144 napos állapotban (a 128 napos kapuablakon ±34,4% / ±25,8%) | outputs/fagyasztas_2026-10-22/monitor/allapot.json kuszob 0,3394 / 0,2578; kiel_ablak.csv 0,3437 / 0,2578 | 2026-10-25 |
+| 2 978; 0 eltérés | A kapukód napi aggregátuma vs. a fagyasztott monitortábla (≤ 10-06) | saját merge: kapuvonal_napi.csv (kapuk) vs. fagyasztas_2026-10-22/monitor/kapuvonal_napi.csv, datum ≤ 2026-10-06: 2 978 both, 0 eltérés | 2026-10-25 |
+| 144 nap | A monitor idősora a fagyasztott állapotban (korábban: ~~131 nap~~) | f8603b3 allapot.json napok_szama | 2026-10-25 |
+| 133; 110,0; +20,9%; ±12,0% | Megrakott tanker 2026-10-08 a fagyasztott állapotban (korábban: ~~112,5; +17,3%~~) | fagyasztott jelzesek_megrakottsag.csv | 2026-10-25 |
+| ±13,05% → ±11,97% (közben ±11,86–14,90%) | Megrakott tanker küszöbe az éles üzemben (korábban: ~~±13,05% → ±14,85%~~) | allapot.json kuszob_megrakottsag, 17 commit | 2026-10-25 |
+| 0,8148; 0,7871 → 0,7911 | Otsu megrakott-küszöb: tanker változatlan, teherhajó a 10-21-i futástól (korábban: ~~0,8148 / 0,7871 változatlan~~) | allapot.json megrakott_kuszob_relativ_merules, 17 commit | 2026-10-25 |
+| 444 215 bájt; 9 fájl, 0,57 MB | Dashboard és adat-feed a fagyasztott állapotból (korábban: ~~429 421 bájt; 0,54 MB~~) | python scripts/dashboard_epit.py --monitor outputs/fagyasztas_2026-10-22/monitor --oldal <scratch>/oldal2; wc -c; du -cb = 596 897 | 2026-10-25 |
+| 432 / 414 / 2 688; 56/56 | A dashboard JS újraszámolása (0 eltérés) és a tesztállítások (korábban: ~~393 / 375 / 2 688; 56/56~~) | node <scratch>/td.mjs (teszt_dashboard.mjs másolata a scratch-dashboardra és a fagyasztott monitorra) | 2026-10-25 |
+| 2 978; 0 eltérés | A kapukód napi aggregátuma vs. a fagyasztott monitortábla (≤ október 6.) | saját merge: kapuvonal_napi.csv (kapuk) vs. fagyasztas_2026-10-22/monitor/kapuvonal_napi.csv, datum ≤ 2026-10-06: 2 978 közös, 0 eltérés | 2026-10-25 |
+| 133; 110,0; +20,9%; ±12,0% | Megrakott tanker 2026. október 8. a fagyasztott állapotban (korábban: ~~112,5; +17,3%~~) | outputs/fagyasztas_2026-10-22/monitor/jelzesek_megrakottsag.csv | 2026-10-25 |
+| 0,8148; 0,7871 → 0,7911 | Otsu megrakott-küszöb: a tankeré változatlan, a teherhajóé az október 21-i futástól változott (korábban: ~~0,8148 / 0,7871 változatlan~~) | allapot.json megrakott_kuszob_relativ_merules, 17 commit | 2026-10-25 |
+| 432 / 414 / 2 688; 56 / 56 | A dashboard JS újraszámolása (0 eltérés) és a tesztállítások (korábban: ~~393 / 375 / 2 688; 56 / 56~~) | node <scratch>/td.mjs (teszt_dashboard.mjs másolata a scratch-dashboardra és a fagyasztott monitorra) | 2026-10-25 |
+| 97,2% / 97,6% (4 195 / 10 434 átkelés) | K3: hihető és változó merülésű átkelés, tanker / teherhajó, mindkét kapu, 144 nap (korábban: ~~96,5% / 97,3% (3 737 / 9 232)~~) | megrakottsag.lefedettseg(Path('outputs/fagyasztas_2026-10-22/monitor')), írás nélkül | 2026-10-25 |
+
+### Placebo-teszt (Kiel-ablak)
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| p = 0,017 | Øresund placebo-teszt: a Kiel-ablak rangja 2/119 kétnapos ablak között (egyoldali p); PortWatch Øresund p = 0,033; a többi AIS-sorozat p ≥ 0,117; Bonferroni-küszöb 0,05/7 ≈ 0,0071 (korábban: ~~0,019 (2/107)~~) | outputs/backtest/placebo.csv minden_2napos_p_felso | 2026-10-25 |
+| p = 0,017 | Øresund placebo-teszt, Kiel-ablak rangja 2/119 kétnapos ablak között (egyoldali empirikus p); PortWatch Øresund p = 0,033; a többi AIS-sorozat p ≥ 0,117; Bonferroni 0,05/7 ≈ 0,0071 alatt nincs sorozat (korábban: ~~0,019 (2/106)~~) | outputs/backtest/placebo.csv minden_2napos_p_felso; régi: git show 125f554:outputs/backtest/placebo.csv → Øresund 0,0187 (2/106), PortWatch 0,0333 | 2026-10-25 |
+| p = 0,017 / 0,242 / 0,117 | Kiel-ablak placebo p-értéke: Øresund / Nagy-Balti-öv / Mindkét kapu (119 kétnapos ablak) (korábban: ~~0,019 / 0,243 / 0,131~~) | placebo.csv minden_2napos_p_felso | 2026-10-25 |
+| p = 0,017 / 0,242 / 0,117 | a Kiel-ablak placebo p-értéke: Øresund / Nagy-Balti-öv / Mindkét kapu (119 kétnapos ablak) (korábban: ~~0,019 / 0,243 / 0,131~~) | placebo.csv minden_2napos_p_felso | 2026-10-25 |
+| 2 / 120; 0,017; 1 / 18; 0,056 | Placebo, Øresund (rang/ablakszám, p; szerda–csütörtök rang/párszám, p) (korábban: ~~2 / 107; 0,019; 1 / 16; 0,0625~~) | outputs/backtest/placebo.csv; saját újraszámolás a fagyasztott jelzesek.csv-ből; backtest.py --ki <scratch>/bt -> placebo.csv bájtra azonos | 2026-10-25 |
+| +11,1%; 14 / 120; 0,117; 3 / 18; 0,167 | Placebo, Mindkét kapu (korábban: ~~14 / 107; 0,131; 3 / 16; 0,188~~) | outputs/backtest/placebo.csv; saját újraszámolás | 2026-10-25 |
+| +6,5%; 29 / 120; 0,242; 7 / 18; 0,389 | Placebo, Nagy-Balti-öv (korábban: ~~26 / 107; 0,243; 6 / 16; 0,375~~) | outputs/backtest/placebo.csv; saját újraszámolás | 2026-10-25 |
+| +4,2%; 30 / 114; 0,263; 5 / 17; 0,294 | Placebo, Megrakott tanker (7 nap) (korábban: ~~+5,3%; 27 / 101; 0,267; 4 / 15; 0,267~~) | outputs/backtest/placebo.csv; saját újraszámolás a fagyasztott jelzesek_megrakottsag.csv-ből | 2026-10-25 |
+| +5,7%; 37 / 114; 0,325; 6 / 17; 0,353 | Placebo, Megrakott teherhajó (7 nap) (korábban: ~~+4,9%; 34 / 101; 0,337; 5 / 15; 0,333~~) | outputs/backtest/placebo.csv; saját újraszámolás | 2026-10-25 |
+| −0,2%; 54 / 114; 0,474; 9 / 17; 0,529 | Placebo, Tanker-volumen (7 nap) (korábban: ~~−0,2%; 49 / 101; 0,485; 8 / 15; 0,533~~) | outputs/backtest/placebo.csv; saját újraszámolás | 2026-10-25 |
+| +27,7%; 94 / 2 824; 0,033; 16 / 404; 0,040 | Placebo, PortWatch Øresund 2019-01-01 – 2026-10-18 (2 848 nap) (korábban: ~~93 / 2 789; 15 / 399; 0,038~~) | placebo.csv; saját újraszámolás data/portwatch_chokepoints_2026-10-25.csv n_total-ból | 2026-10-25 |
+| 2 / 120; 0,017; 1 / 18; 0,056 | Placebo, Øresund (rang/ablakszám, p; szerda–csütörtök rang/párszám, p); Kiel-ablak eltérése +18,2% változatlan (korábban: ~~2 / 107; 0,019; 1 / 16; 0,0625~~) | outputs/backtest/placebo.csv; saját újraszámolás a fagyasztott jelzesek.csv-ből; backtest.py --ki <scratch>/bt -> placebo.csv bájtra azonos | 2026-10-25 |
+| +27,7%; 94 / 2 824; 0,033; 16 / 404; 0,040 | Placebo, PortWatch Øresund 2019. január 1. – 2026. október 18. (2 848 nap) (korábban: ~~93 / 2 789; 0,033; 15 / 399; 0,038~~) | outputs/backtest/placebo.csv; saját újraszámolás data/portwatch_chokepoints_2026-10-25.csv n_total-ból | 2026-10-25 |
+
+### PortWatch-összevetés
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 0,892 | az Øresund – Drogden kapu kereskedelmi átkelései és a PortWatch Oresund n_total napi Pearson-r-je, 128 közös napon (2026-06-01 – 10-06); Spearman 0,886 (korábban: ~~0,905~~) | kereskedelmi_napi.csv × portwatch_chokepoints_2026-10-25.csv saját merge + corr; outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv r_napi | 2026-10-25 |
+| 28 / 1 | PortWatch chokepointok száma; ebből egyetlen dán szoros szerepel, az Oresund Strait | data/portwatch_chokepoints_2026-10-25.csv: portname.nunique() = 28; a 'resund'/'Belt'/'Dan' mintára csak az 'Oresund Strait' illeszkedik | 2026-10-25 |
+| 0,892 | napi Pearson-r: a Drogden alatti kapu kereskedelmi átkelései és a PortWatch n_total, 128 közös napon (2026. június 1. – október 6.) (korábban: ~~0,905 (105 nap, régi PortWatch-fájl, r = 0,9048)~~) | saját pandas-számítás: outputs/kapuk_kiterjesztes/kereskedelmi_napi.csv × data/portwatch_chokepoints_2026-10-25.csv (Oresund), r = 0,8916; egyezik a portwatch_osszevetes.csv r_napi értékével (0.89155) | 2026-10-25 |
+| 0,736 | Øresund-kapu kereskedelmi vs. PortWatch n_total, Pearson r, 128 nap (06-01 – 10-06) (korábban: ~~0,82 (5 nap); 0,720 (105 nap)~~) | kereskedelmi_napi.csv ⋈ portwatch_chokepoints_2026-10-25.csv saját számítás: 0.73626 | 2026-10-25 |
+| 0,666 | ugyanez tankerre (n_tanker), 128 nap (korábban: ~~0,98 (5 nap); 0,678 (105 nap)~~) | monitor kapuvonal_napi.csv (Øresund, Tanker) vs. n_tanker, ≤ 10-06: 0,66564; portwatch_osszevetes.csv 0,665639 | 2026-10-25 |
+| 1,29 (0,98–1,66) | saját / PortWatch napi arány átlaga (min–max), Øresund kereskedelmi, 128 nap (korábban: ~~1,33 (5 nap); 1,29 (0,98–1,65; 105 nap)~~) | újraszámolva 1,29220, 0,98, 1,65517; portwatch_osszevetes.csv | 2026-10-25 |
+| 0,892; 1,17 | Drogden alatti kapu vs. PortWatch: r és arány, 128 nap (korábban: ~~0,905; 1,15 (105 nap)~~) | újraszámolva 0,89155, 1,16608; portwatch_osszevetes.csv 'Øresund – Drogden: kereskedelmi' | 2026-10-25 |
+| 1,03 | Drogden-kapu, csak átmenő átkelések / PortWatch arány, 128 nap (korábban: ~~1,02 (105 nap, 4.5)~~) | portwatch_osszevetes.csv 'Øresund – Drogden + Øresund (atmeno): kereskedelmi' arany_atlag 1.0314 | 2026-10-25 |
+| 128 nap (2026-06-01 – 2026-10-06) | a kapu-PortWatch-összevetés közös napjai az új PortWatch-fájllal (korábban: ~~105 nap (2026-06-01 – 2026-09-13); 5 nap~~) | kereskedelmi_napi.csv × data/portwatch_chokepoints_2026-10-25.csv (Oresund Strait), inner join; portwatch_osszevetes.csv napok/elso/utolso | 2026-10-25 |
+| r = 0,736 | napi Pearson-r, Øresund-kapu kereskedelmi átkelései vs PortWatch n_total (korábban: ~~0,720 (105 nap); 0,82 (5 nap)~~) | portwatch_osszevetes.csv r_napi=0.73626; saját újraszámolás 0.73626 | 2026-10-25 |
+| r = 0,892; arány 1,17 | Drogden alatti kapu kereskedelmi vs PortWatch n_total (korábban: ~~0,905; 1,15 (105 nap)~~) | portwatch_osszevetes.csv 'Øresund – Drogden: kereskedelmi' r_napi=0.89155, arany_atlag=1.16608; saját újraszámolás egyezik | 2026-10-25 |
+| 0,892 | Øresund – Drogden kapu kereskedelmi átkelései és a PortWatch Oresund n_total napi Pearson-r-je, 128 közös nap (2026-06-01 – 10-06) (korábban: ~~0,905~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv r_napi 0.89155 | 2026-10-25 |
+| 28 / 1 | PortWatch chokepointok száma, ebből egyetlen dán szoros (Oresund Strait); Nagy-Balti-öv nincs | data/portwatch_chokepoints_2026-10-25.csv: portname nunique = 28; Oresund/Belt/Kattegat/Skag szűrés → ['Oresund Strait'] | 2026-10-25 |
+| r = 0,736 | napi Pearson-r, régi Øresund-kapu kereskedelmi átkelései vs. PortWatch n_total (korábban: ~~0,720 (105 nap); 0,82 (5 nap)~~) | újraszámolás: 0.7363; portwatch_osszevetes.csv r_napi=0.73626 | 2026-10-25 |
+| 128 nap (2026. június 1. – október 6.) | a kapu-PortWatch-összevetés közös napjai az új PortWatch-fájllal (korábban: ~~105 nap (2026. június 1. – szeptember 13.); 5 nap~~) | kereskedelmi_napi.csv × data/portwatch_chokepoints_2026-10-25.csv (Oresund Strait), inner join; portwatch_osszevetes.csv napok/elso/utolso | 2026-10-25 |
+| 0,736 | Øresund-kapu kereskedelmi napi átkelése vs. PortWatch n_total, Pearson r, 128 nap (június 1. – október 6.) (korábban: ~~0,82 (5 nap); 0,720 (105 nap)~~) | kereskedelmi_napi.csv ⋈ data/portwatch_chokepoints_2026-10-25.csv (Oresund Strait): 0,73626; portwatch_osszevetes.csv r_napi 0,736261 | 2026-10-25 |
+| 11,7% | az Øresund saját / PortWatch napi arányának relatív szórása, 128 nap (a „közel állandó” jelző elhagyásának indoka) | std/mean = 0,11659; portwatch_osszevetes.csv arany_rel_szoras | 2026-10-25 |
+| 0,731 / 0,651 / 1,29 | kontroll: a monitor 144 napos Øresund-sorozata vs. új PortWatch, 140 közös nap (június 1. – október 18.); a szövegben nem szerepel | monitor kapuvonal_napi.csv (Øresund, Teherhajó+Tanker / Tanker) ⋈ új PortWatch: r 0,73098, tanker-r 0,65105, arány 1,29127 | 2026-10-25 |
+| r = 0,736 | Øresund kereskedelmi átkelés és a PortWatch n_total napi korrelációja, 128 közös nap (korábban: ~~0,720 (105 nap)~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv r_napi | 2026-10-25 |
+| r = 0,892 | Drogden-kapu és a PortWatch napi korrelációja, 128 közös nap (korábban: ~~0,905~~) | portwatch_osszevetes.csv r_napi | 2026-10-25 |
+| 1,17 | Drogden / PortWatch átlagos arány (128 nap); az Øresund-arány 1,29 marad (1,2922) (korábban: ~~1,15~~) | portwatch_osszevetes.csv arany_atlag 1,1661 | 2026-10-25 |
+| r = 0,736 | az Øresund kereskedelmi átkelés és a PortWatch n_total napi korrelációja, 128 közös nap (korábban: ~~0,720 (105 nap)~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv r_napi | 2026-10-25 |
+| r = 0,892 | a Drogden-kapu és a PortWatch napi korrelációja, 128 közös nap (korábban: ~~0,905~~) | portwatch_osszevetes.csv r_napi | 2026-10-25 |
+| +25,0% / +30,4% | PortWatch Øresund eltérése július 15-én / 16-án (változatlan) | saját újraszámolás a PortWatch-fájlból: 0,250 / 0,304 | 2026-10-25 |
+| 0,736 / 0,892; 1,29 / 1,17; 0,666 / 0,878; 1,03 és r = 0,882; 128 nap | PortWatch-összevetés: r (kereskedelmi), arány, r (tanker) a régi Øresund / Drogden kapun; átmenő Drogden; közös napok (korábban: ~~0,720 / 0,905; 1,29 / 1,15; 0,678 / 0,872; 1,02 és 0,885; 105 nap~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv; saját újraszámolás az atkelesek.csv-ből | 2026-10-25 |
+| 144 nap (2026-06-01 – 10-22) | a backtest és a placebo bemenete (fagyasztott monitorállapot) (korábban: ~~131 nap (06-01 – 10-09)~~) | python scripts/backtest.py --monitor outputs/fagyasztas_2026-10-22/monitor --portwatch data/portwatch_chokepoints_2026-10-25.csv --ki %TEMP%/bt_ell (15/15 fájl bájtra azonos az outputs/backtest/-tel; az aismonitor.py backtest burkon át is 15/15) | 2026-10-25 |
+| r = 0,736; heti 0,755 (18 teljes hét); arány 1,29 (0,98–1,66); Drogden r = 0,892 | saját kereskedelmi Øresund-sorozat és a PortWatch n_total, 128 közös nap (korábban: ~~105 nap; 0,720; heti 0,760 (15 hét); 1,29 (0,98–1,65); 0,905~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv; resample('W-SUN'), csak 7 napos hetek (a CSV r_heti 0,971 a 2 napos utolsó hét műterméke) | 2026-10-25 |
+| 98 nap; r = 0,714; 89,8%; κ = 0,328; retro 119 nap, 89,9%, κ = 0,218; 11/5/3; 36,2% / 25,5%; tanker κ −0,06 / −0,03 | PortWatch-jelzésegyezés (korábban: ~~63 nap; 0,718; 90,5%; 0,357; 84 nap, 89,3%, 0,267; 7/3/2; 34,7% / 25,8%; −0,08 / −0,03~~) | portwatch_egyezes.csv (teljes pontosságú futással ellenőrizve) | 2026-10-25 |
+| 144 nap (2026. június 1. – október 22.) | a backtest és a placebo bemenete (fagyasztott monitorállapot) (korábban: ~~131 nap (június 1. – október 9.)~~) | python scripts/backtest.py --monitor outputs/fagyasztas_2026-10-22/monitor --portwatch data/portwatch_chokepoints_2026-10-25.csv --ki %TEMP%/bt_ell (15/15 fájl bájtra azonos az outputs/backtest/-tel; az aismonitor.py backtest burkon át is 15/15) | 2026-10-25 |
+| 98 nap; r = 0,714; 89,8%; κ = 0,328; retrospektív 119 nap, 89,9%, κ = 0,218; 11 / 5 / 3; 36,2% / 25,5%; tanker κ −0,06 / −0,03 | PortWatch-jelzésegyezés (korábban: ~~63 nap; 0,718; 90,5%; 0,357; 84 nap, 89,3%, 0,267; 7 / 3 / 2; 34,7% / 25,8%; −0,08 / −0,03~~) | outputs/backtest/portwatch_egyezes.csv (teljes pontosságú futással ellenőrizve) | 2026-10-25 |
+
+### Tároló és lánc
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 36,7 millió sor; 6,1 GiB | a 2026-07-15-i teljes napi fájl: 36 650 571 sor, kicsomagolva 6 248,0 MiB = 6,10 GiB | outputs/pipeline_napok.csv, nap=2026-07-15: nyers_sor, csv_mib/1024 | 2026-10-25 |
+| 54,6% | a 2026-07-15-i teljes napi fájlban a bitre azonos ismétlések aránya | outputs/pipeline_napok.csv, 2026-07-15, dup_arany 0.54601 | 2026-10-25 |
+| 23,7% (negyedére) | a Parquet-tároló mérete a letöltött ZIP-hez képest (226,8 / 955,7 MiB) | outputs/pipeline_napok.csv, 2026-07-15: parquet_mib / zip_mib = 0,2373 | 2026-10-25 |
+| 2,8–6,2 GiB (jún–aug); 2,7–6,2 GiB (128 nap) | napi kicsomagolt CSV-méret | pipeline_napok.csv csv_mib/1024: 2.820–6.165; 128 nap min 2.746 (09-05) | 2026-10-25 |
+| 133–236 MiB (jún–aug); 124–236 MiB (128 nap) | napi Parquet-tároló mérete | pipeline_napok.csv parquet_mib: 132.9–236.4; 128 nap min 124.4 (09-05) | 2026-10-25 |
+| 4,7 / 5,3 / 5,0 GiB; szept. 4,2 GiB; 15,1 GiB; 23,6% | Parquet-tároló havonta (jún, júl, aug, szept), jún–aug összesen, a ZIP-hez viszonyítva | pipeline_napok.csv havi parquet_mib-összeg/1024: 4.735/5.319/5.007/4.235; jún–aug 15.06; parquet/zip 0.2358 | 2026-10-25 |
+| 6,1 GiB; 36,7 millió sor; 956 MiB | a 2026-07-15-i nap kicsomagolva, sorszám, ZIP | pipeline_napok.csv 07-15: csv_mib 6248.0, nyers_sor 36 650 571, zip_mib 955.7 | 2026-10-25 |
+| 54,6% / 56,0% | bitre azonos duplikátum, 07-15, teljes fájl / vizsgált terület | pipeline_napok.csv 07-15: dup_arany 0.54601, bbox_dup_arany 0.56027 | 2026-10-25 |
+| 36,7 millió sor | a 2026-07-15-i teljes napi fájl sorszáma (36 650 571) | outputs/pipeline_napok.csv, nap=2026-07-15, nyers_sor 36650571 | 2026-10-25 |
+| 6,1 GiB | a 2026-07-15-i napi fájl kicsomagolva (6 248,0 MiB = 6,10 GiB) | outputs/pipeline_napok.csv, nap=2026-07-15, csv_mib 6248.0 / 1024 | 2026-10-25 |
+| 54,6% | bitre azonos ismétlés a 2026-07-15-i teljes napi fájlban | outputs/pipeline_napok.csv, nap=2026-07-15, dup_arany 0.54601 | 2026-10-25 |
+| 23,7% (negyedére) | a Parquet-tároló mérete a letöltött ZIP-hez képest, 2026-07-15 | outputs/pipeline_napok.csv, 2026-07-15: parquet_mib 226.8 / zip_mib 955.7 = 0,2373 | 2026-10-25 |
+| 2,82–6,17 GiB (jún–aug); 2,75–6,17 GiB (128 nap) | napi kicsomagolt CSV-méret | pipeline_napok.csv csv_mib/1024, statusz=='validalt'; min 2026-08-07 ill. 2026-09-05, max 2026-08-14 | 2026-10-25 |
+| 132,9–236,4 MiB (jún–aug); 124,4–236,4 MiB (128 nap) | napi Parquet-tároló mérete | pipeline_napok.csv parquet_mib; min 07-03 ill. 09-05, max 07-16 | 2026-10-25 |
+| 4,73 / 5,32 / 5,01 GiB; 15,06 GiB; 23,58% | Parquet-tároló havonta (jún, júl, aug), három hónapra; a ZIP-hez viszonyítva | pipeline_napok.csv havi parquet_mib-összeg /1024; sum(parquet)/sum(zip) | 2026-10-25 |
+| 6 248 MiB; 36 650 571 sor; 955,7 MiB; 54,6% / 56,0% | a 2026-07-15-i nap: kicsomagolt méret, sorszám, ZIP-méret, duplikátumarány (teljes / vizsgált terület) | pipeline_napok.csv, nap=='2026-07-15': csv_mib, nyers_sor, zip_mib, dup_arany=0.54601, bbox_dup_arany=0.56027 | 2026-10-25 |
+| 128 nap (2026-06-01 – 2026-10-06) | a Parquet-tároló validált napjai, a 4.5 kísérleti kapuk ablaka | outputs/pipeline_napok.csv statusz == validalt (128; 2 nincs_adat) | 2026-10-25 |
+| 1 979 – 1 999 sor (medián 1 994) | a napi H3-ellenőrző minta tényleges mérete (beállítás: 2000), mind egyezett | outputs/pipeline_napok.csv h3_minta_egyezik, 128 nap; scripts/pipeline.py H3_MINTA, USING SAMPLE a WHERE előtt | 2026-10-25 |
+| 36 650 571 vs 36 752 804 sor | a mért nap (07-15) és a legnagyobb nap (08-14) nyers sorszáma a 128 napon | outputs/pipeline_napok.csv nyers_sor, nlargest | 2026-10-25 |
+| 92 nap; 2 085 308 912 sor; 63,86 GiB | a skálázási minta (jún–aug.) validált napjai, nyers sorai és ZIP-mérete | outputs/pipeline_napok.csv 06-01 – 08-31: sum(nyers_sor), sum(zip_mib)/1024 | 2026-10-25 |
+| 2,82–6,17 GiB (jún–aug.); 2,75–6,17 GiB (128 nap) | napi kicsomagolt CSV-méret | pipeline_napok.csv csv_mib/1024, statusz=='validalt'; min 2026-08-07 ill. 2026-09-05, max 2026-08-14 | 2026-10-25 |
+| 132,9–236,4 MiB (jún–aug.); 124,4–236,4 MiB (128 nap) | napi Parquet-tároló mérete | pipeline_napok.csv parquet_mib; min 07-03 ill. 09-05, max 07-16 | 2026-10-25 |
+| 4,73 / 5,32 / 5,01 GiB; 15,06 GiB; 23,58% | Parquet-tároló havonta (jún., júl., aug.), három hónapra; a ZIP-hez viszonyítva | pipeline_napok.csv havi parquet_mib-összeg /1024; sum(parquet)/sum(zip) | 2026-10-25 |
+| 128 nap (2026. június 1. – október 6.) | a Parquet-tároló validált napjai, a 4.5 kísérleti kapuinak ablaka | outputs/pipeline_napok.csv, statusz == validalt (128; 2 nincs_adat) | 2026-10-25 |
+| 1 979–1 999 sor (medián 1 994) | a napi H3-ellenőrző minta tényleges mérete (beállítás: 2000), mind egyezett | outputs/pipeline_napok.csv h3_minta_egyezik, 128 nap; scripts/pipeline.py H3_MINTA, USING SAMPLE a WHERE előtt | 2026-10-25 |
+| 36 650 571, ill. 36 752 804 sor | a mért nap (07-15) és a legnagyobb nap (08-14) nyers sorszáma a 128 napon | outputs/pipeline_napok.csv nyers_sor, nlargest | 2026-10-25 |
+| 92 nap; 2 085 308 912 sor; 63,86 GiB | a skálázási minta (jún.–aug.) validált napjai, nyers sorai és ZIP-mérete | outputs/pipeline_napok.csv 06-01 – 08-31: sum(nyers_sor), sum(zip_mib)/1024 | 2026-10-25 |
+
+### Éles üzem és stabilitás (K1, K6, K10, K11, K13)
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 16/16 | ütemezett éles futás 2026-10-10 – 10-25, mind sikeres, futásidő 92–143 mp | outputs/eles_uzem/futasok.csv, event=schedule | 2026-10-25 |
+| 3/128 | a „Mindkét kapu” sorozat múltbeli napjai közül ennyi minősült át három új nap alatt (dae2366 → 8954e7f; küszöb 0,2303 → 0,2093; 07-05, 08-29, 09-06) | python -X utf8 scripts/atminosites.py dae2366 8954e7f --ki $TEMP/ell21/x.csv | 2026-10-25 |
+| 16 / 16 | ütemezett éles futás 2026-10-10 és 10-25 között, mind sikeres; futásidő 92–143 mp (medián 124), indulás 07:59–11:14 UTC | $TEMP/ell21/eles.py: outputs/eles_uzem/futasok.csv, event=='schedule' | 2026-10-25 |
+| D+3 | mind a 16 éles lépés a futás napja előtti 3. napot dolgozta fel | $TEMP/ell21/eles.py: atminosites_lanc.csv, commit_datum − utolso_nap egyedi értékei = [3] | 2026-10-25 |
+| 29 (14/16 lépés); 26 (9/16 lépés) | átminősítés az éles üzemben: forgalmi sorozatok összesen (Mindkét kapu 13/10, Øresund 14/10, Nagy-Balti-öv 2/2), illetve a megrakott tanker; a K13 tehát továbbra sem teljesül ([350]) | $TEMP/ell21/eles.py: atminosites_lanc.csv groupby fajl/uj/sorozat | 2026-10-25 |
+| 16 / 16 | ütemezett éles futás 2026-10-10 – 10-25, mind sikeres (korábban: ~~3 / 3 (10-10 – 10-12)~~) | outputs/eles_uzem/futasok.csv, event == schedule, conclusion == success | 2026-10-25 |
+| 16/16 | ütemezett éles futás 2026-10-10 – 10-25, mind sikeres | outputs/eles_uzem/futasok.csv, event=schedule, conclusion=success | 2026-10-25 |
+| 3/128 | a „Mindkét kapu” sorozat átminősített múltbeli napjai három új nap alatt (dae2366 → 8954e7f; július 5., augusztus 29., szeptember 6.) | python -X utf8 scripts/atminosites.py dae2366 8954e7f (csak olvas) | 2026-10-25 |
+| 29 átminősítés, a 16 napi lépésből 14-ben; megrakott tanker: 26, 9 lépésben | éles üzem, napi átminősítés-lánc (K13 nem teljesül, a [350] minősítése marad) | outputs/eles_uzem/atminosites_lanc.csv, groupby fajl/uj: jelzesek.csv sum 29, >0 lépés 14/16; jelzesek_megrakottsag.csv sum 26, 9/16 | 2026-10-25 |
+| D+3 | mind a 16 éles lépés a futás előtti 3. napot dolgozta fel (a [332] marad) | outputs/eles_uzem/atminosites_lanc.csv: (commit_datum − utolso_nap).days = 3 mind a 96 sorban | 2026-10-25 |
+| 16 / 16; 92–143 mp (medián 124) | ütemezett éles futások 2026. október 10. és 25. között, mind sikeres; futásidő | outputs/eles_uzem/futasok.csv, event = schedule: 16 sor, conclusion success 16; futasido_mp min 92, max 143, medián 124 | 2026-10-25 |
+| 16 / 16 | ütemezett futás 2026-10-10 – 10-25, mind sikeres | outputs/eles_uzem/futasok.csv event == schedule, conclusion | 2026-10-25 |
+| 07:59 – 11:14 UTC | a 16 ütemezett futás tényleges indulási sávja (korábban: ~~10:04–11:14 (javitando.md 9.)~~) | outputs/eles_uzem/futasok.csv inditas_utc (schedule): min 10-17 07:59, max 10-12 11:14 | 2026-10-25 |
+| 29 átminősítés, a 16 napi lépésből 14-ben; megrakott tanker: 26, 9 lépésben | éles üzem, napi átminősítés-lánc (a K13 nem teljesül, a [350] minősítése marad) | outputs/eles_uzem/atminosites_lanc.csv, groupby fajl/uj: jelzesek.csv sum 29, >0 lépés 14/16; jelzesek_megrakottsag.csv sum 26, 9/16 | 2026-10-25 |
+| 16 / 16 | ütemezett futás 2026. október 10. – 25., mind sikeres | outputs/eles_uzem/futasok.csv, event == schedule, conclusion | 2026-10-25 |
+| 07:59–11:14 UTC | a 16 ütemezett futás tényleges indulási sávja (korábban: ~~10:04–11:14 (javitando.md 9.)~~) | outputs/eles_uzem/futasok.csv inditas_utc (schedule): min 10-17 07:59, max 10-12 11:14 | 2026-10-25 |
+| 16 / 16 | ütemezett éles futás 2026. október 10. – 25., mind sikeres (korábban: ~~3 / 3 (október 10. – 12.)~~) | outputs/eles_uzem/futasok.csv, event == schedule, conclusion == success | 2026-10-25 |
+| 3/128 nap (16 új nap alatt) | K13: a „Mindkét kapu” nettó átminősített múltbeli napjai, dae2366 → f8603b3 (07-05, 08-29, 09-06) (korábban: ~~3/128 nap három új nap alatt~~) | python scripts/atminosites.py dae2366 f8603b3 | 2026-10-25 |
+| 16 / 16 | Sikeres ütemezett futás, 2026-10-10 – 10-25 (korábban: ~~3 / 3~~) | outputs/eles_uzem/futasok.csv event=schedule | 2026-10-25 |
+| 07:59–11:14 UTC; 4,5–7,7 óra | Ütemezett futások indulása és késése 03:30-hoz képest (korábban: ~~10:04–11:14; 6,5–7,7 óra~~) | outputs/eles_uzem/futasok.csv inditas_utc | 2026-10-25 |
+| 384 \| 0 \| 0 \| 256 \| 3 \| Mindkét kapu 9 → 12 | 21. táblázat forgalmi sor (dae2366 → f8603b3), változatlan | python scripts/atminosites.py dae2366 f8603b3; saját pandas-összevetés | 2026-10-25 |
+| 366 \| 187 \| 158 \| 366 \| 3 \| Megrakott tanker 7 → 10 | 21. táblázat megrakottsági sor (dae2366 → f8603b3) (korábban: ~~366 \| 64 \| 64 \| 366 \| 5 \| 7 → 2~~) | python scripts/atminosites.py dae2366 f8603b3 --fajl jelzesek_megrakottsag.csv; saját összevetés (érték 187, alapszint 158; a módszer c091806 → 8954e7f-en 64 / 64-et ad) | 2026-10-25 |
+| 29 átminősítés, 14/16 lépés, 7 pár | Forgalmi átminősítések a napi lépésekben | outputs/eles_uzem/atminosites_lanc.csv (jelzesek.csv) | 2026-10-25 |
+| 26 átminősítés, 9/16 lépés, 10 nap; jelzett napok 2–10 | Megrakott tanker átminősítései a napi lépésekben | atminosites_lanc.csv; saját git show-lánc a 17 állapoton | 2026-10-25 |
+| 16 / 16 | Sikeres ütemezett futás, 2026. október 10–25. (korábban: ~~3 / 3~~) | outputs/eles_uzem/futasok.csv event=schedule | 2026-10-25 |
+| 92–143 s (1 perc 32 mp – 2 perc 23 mp) | Ütemezett futás teljes ideje (korábban: ~~105–143 s~~) | outputs/eles_uzem/futasok.csv futasido_mp | 2026-10-25 |
+| #2: nyitva október 11., lezárva október 13., 2 megjegyzés | Az éles üzem egyetlen jelzés-issue-ja | gh issue view 2 --comments; gh issue list --state all; outputs/eles_uzem/issuek.csv | 2026-10-25 |
+| 29 átminősítés, 14 / 16 lépés, 7 (nap, sorozat) pár | Forgalmi átminősítések a napi lépésekben | outputs/eles_uzem/atminosites_lanc.csv (jelzesek.csv) | 2026-10-25 |
+| 26 átminősítés, 9 / 16 lépés, 10 nap; jelzett napok 2–10 | Megrakott tanker átminősítései a napi lépésekben | outputs/eles_uzem/atminosites_lanc.csv; saját git show-lánc a 17 állapoton | 2026-10-25 |
+| 16/16 | sikeres ütemezett éles futás 2026-10-10 – 10-25, mindegyik egy új adatnappal (10-07 – 10-22) (korábban: ~~3/3~~) | outputs/eles_uzem/futasok.csv event=schedule; atminosites_lanc.csv utolso_nap | 2026-10-25 |
+| 92–143 mp (1 perc 32 mp – 2 perc 23 mp) | éles futás teljes ideje, 16 ütemezett futás (korábban: ~~105–143 mp~~) | outputs/eles_uzem/futasok.csv futasido_mp | 2026-10-25 |
+| 07:59–11:14 UTC | az ütemezett futások indulása (korábban: ~~10:04–11:14 UTC~~) | outputs/eles_uzem/futasok.csv inditas_utc | 2026-10-25 |
+| 29 / 26 | K13: múltbeli napi átminősítés az éles üzem 16 lépésében, forgalmi sorozatok / megrakott tanker (korábban: ~~5 eltűnt jelzés (megrakott tanker, c091806 → 8954e7f)~~) | outputs/eles_uzem/atminosites_lanc.csv, atminositett összeg sorozatonként | 2026-10-25 |
+| 16/16 | sikeres ütemezett éles futás 2026. október 10. – 25., mindegyik egy új adatnappal (10-07 – 10-22) (korábban: ~~3/3~~) | outputs/eles_uzem/futasok.csv event=schedule; outputs/eles_uzem/atminosites_lanc.csv utolso_nap | 2026-10-25 |
+| #2: 2 megjegyzés, lezárva 2026. október 13.; új issue nem nyílt | az éles issue-k története október 25-ig (korábban: ~~1 megjegyzés~~) | outputs/eles_uzem/issuek.csv; gh issue view 2 --json comments; gh issue list --state all | 2026-10-25 |
+
