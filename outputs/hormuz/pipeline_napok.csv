@@ -1,0 +1,3 @@
+nap,statusz,sema,hiba,zip_mib,csv_mib,zip_sor,nyers_sor,dedup_sor,dup_arany,bbox_nyers_sor,bbox_dedup_sor,bbox_dup_arany,ts_hibas_sor,h3_nelkuli_sor,egyedi_mmsi,h3_minta_egyezik,parquet_mib,dr_bemenet_sor,dr_megtartott_sor,dr_atlag_hiba_m,dr_max_hiba_m,dr_mib,letoltes_mp,kicsomagolas_mp,parquet_mp,validalas_mp,dr_mp,osszes_mp,csucs_memoria_mib,csucs_lemez_mib,csucs_munka_mib,zip_torolve,feldolgozva
+2026-01-13,validalt,2,,517.6,2594.5,15092869,15092869,9289920,0.38448,5488021,2850631,0.48057,0,30280,2779,1993,113.2,,,,,,18.9,14.8,52.9,0.4,,69.1,5312,9049,2601,igen,2026-10-28T11:50:04
+2026-01-15,validalt,2,,553.9,2898.0,16773395,16773395,9791687,0.41624,6513766,3027493,0.53522,0,30207,3258,1995,120.5,,,,,,20.2,24.5,74.0,0.6,,105.4,5572,6666,3066,igen,2026-10-28T11:51:46

@@ -114,10 +114,12 @@ def napi_hajoadat(pq: Path) -> pd.DataFrame:
     return df
 
 
-def napi_frissites(nap: str, pq: Path, atk: pd.DataFrame, ki: Path = MONITOR):
+def napi_frissites(nap: str, pq: Path, atk: pd.DataFrame, ki: Path = MONITOR,
+                   h: pd.DataFrame = None):
     """Egy nap hozzaadasa a tortenethez es a reszletes atkeles-tablahoz
-    (idempotens: a nap korabbi sorait lecsereli)."""
-    h = napi_hajoadat(pq)
+    (idempotens: a nap korabbi sorait lecsereli). `h`: a napi_hajoadat(pq)
+    mar kiszamolt eredmenye, ha ugyanarra a napra tobbszor hivjuk."""
+    h = napi_hajoadat(pq) if h is None else h
     tort = h.dropna(subset=["merules"])[["MMSI", "merules"]].assign(nap=nap)
     _hozzafuz(ki / TORTENET.name, tort[["nap", "MMSI", "merules"]], "nap", nap)
 

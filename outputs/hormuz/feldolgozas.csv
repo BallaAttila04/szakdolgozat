@@ -1,0 +1,3 @@
+nap,ablak,statusz,kiserlet,hiba,feldolgozva,zip_mib,zip_sor,nyers_sor,dedup_sor,parquet_mib,letoltes_mp,pipeline_mp,pipeline_csucs_lemez_mib,validalas,nyers_sor_kapuvonal,atkeles_monitor,tanker_monitor,atkeles_drogden,tanker_drogden,atkeles_nyers,atkeles_sulyozatlan,uticel_elotte_van,uticel_atkeles,szurt_sor,szurt_mib,utofeldolgozas_mp,nap_mp,csucs_lemez_gb,szabad_gb_utana
+2026-01-13,A26,kesz,1,,2026-10-28T11:49:41,517.6,15092869,15092869,9289920,113.2,18.9,94.7,9049,SUM(dup_db)=15092869 = ZIP-sor,15092869,102,25,102,11,102,102,130,130,2273898,33.0,5.7,100.5,9.34,17.99
+2026-01-15,A26,kesz,1,,2026-10-28T11:51:21,553.9,16773395,16773395,9791687,120.5,20.2,132.3,6666,SUM(dup_db)=16773395 = ZIP-sor,16773395,127,31,96,15,127,127,170,170,2643528,38.2,6.6,139.0,7.05,17.81
