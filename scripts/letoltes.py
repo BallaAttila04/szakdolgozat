@@ -87,7 +87,10 @@ def letolt_egy_napot(nap: date, celkonyvtar: Path, felulir: bool) -> str:
     Letolti egy nap AIS ZIP-jet. Visszateres: 'kesz', 'mar_megvan' vagy 'hiba'.
     """
     fajlnev = FILENAME_FORMAT.format(date=nap.isoformat())
-    url = f"{BASE_URL}/{fajlnev}"
+    # A regebbi napok a szerveren ev szerinti alkonyvtarban vannak (2025-ben a
+    # 01-01 - 02-26 kozti napok: /2025/aisdk-...; az S3-listazas szerint, ld.
+    # naplo 2026-10-28). A gyokerbeli 404 utan ezt is megprobaljuk.
+    urlek = [f"{BASE_URL}/{fajlnev}", f"{BASE_URL}/{nap.year}/{fajlnev}"]
     cel_path = celkonyvtar / fajlnev
 
     if cel_path.exists() and not felulir:
@@ -98,7 +101,12 @@ def letolt_egy_napot(nap: date, celkonyvtar: Path, felulir: bool) -> str:
 
     for kiserlet in range(1, MAX_KISERLET + 1):
         try:
-            with requests.get(url, stream=True, timeout=TIMEOUT_MP) as resp:
+            for url in urlek:
+                resp = requests.get(url, stream=True, timeout=TIMEOUT_MP)
+                if resp.status_code != 404:
+                    break
+                resp.close()
+            with resp:
                 if resp.status_code == 404:
                     print(f"  {fajlnev}: 404 - ehhez a naphoz nincs adat a szerveren")
                     return "hiba"

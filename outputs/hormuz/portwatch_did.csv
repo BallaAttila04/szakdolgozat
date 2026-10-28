@@ -1,0 +1,13 @@
+osszevetes,kontroll,skala,becsles,ci_also,ci_felso,p_bootstrap,nulla_az_intervallumban,bootstrap_n
+Øresund,–,szint (tanker/nap),-0.615,-2.664,1.311,0.541,True,2000
+Dover,–,szint (tanker/nap),1.502,-3.996,6.892,0.628,True,2000
+Gibraltár,–,szint (tanker/nap),-1.812,-6.254,2.184,0.387,True,2000
+Øresund − kontroll,Dover,szint (tanker/nap),-2.117,-7.807,3.462,0.494,True,2000
+Øresund − kontroll,Gibraltár,szint (tanker/nap),1.197,-2.996,5.565,0.552,True,2000
+Øresund − kontroll,Dover és Gibraltár átlaga,szint (tanker/nap),-0.46,-4.275,3.759,0.866,True,2000
+Øresund,–,"relatív (log, %)",-5.693,-21.192,10.716,0.496,True,2000
+Dover,–,"relatív (log, %)",2.471,-6.34,11.668,0.628,True,2000
+Gibraltár,–,"relatív (log, %)",-3.828,-12.318,4.854,0.385,True,2000
+Øresund − kontroll,Dover,"relatív (log, %)",-7.967,-24.285,11.12,0.397,True,2000
+Øresund − kontroll,Gibraltár,"relatív (log, %)",-1.939,-18.093,15.225,0.857,True,2000
+Øresund − kontroll,Dover és Gibraltár átlaga,"relatív (log, %)",-5.001,-20.423,11.912,0.576,True,2000
