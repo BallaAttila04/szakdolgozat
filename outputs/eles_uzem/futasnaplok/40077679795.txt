@@ -1,0 +1,366 @@
+monitor	UNKNOWN STEP	﻿2026-10-24T08:20:58.1470388Z Current runner version: '2.338.0'
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1494419Z ##[group]Runner Image Provisioner
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1495294Z Hosted Compute Agent
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1496148Z Version: 20261012.601
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1496856Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1497587Z Build Date: 2026-10-12T17:48:21Z
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1498238Z Worker ID: {28c65f82-d09c-4243-84ee-c11dc9645a5a}
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1498896Z Region: westcentralus
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1499489Z Cloud: Azure
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1500001Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1501272Z ##[group]Operating System
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1501860Z Ubuntu
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1502355Z 24.04.5
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1502886Z LTS
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1503445Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1503984Z ##[group]Runner Image
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1504557Z Image: ubuntu-24.04
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1505093Z Version: 20261012.334.1
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1506494Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1508006Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1508924Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1510035Z ##[group]GITHUB_TOKEN Permissions
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1512018Z Contents: write
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1512569Z Issues: write
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1513486Z Metadata: read
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1514024Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1516587Z Secret source: Actions
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1517547Z Cache mode: write
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1518186Z Prepare workflow directory
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1839353Z Prepare all required actions
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.1887324Z Getting action download info
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.5213078Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+monitor	UNKNOWN STEP	2026-10-24T08:20:58.6061791Z Download action repository 'actions/setup-python@v7' (SHA:6d4fd22b20465ccc0f7354476588e8df7c9ca0e0)
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.3712843Z Complete job name: monitor
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4520362Z ##[group]Run actions/checkout@v7
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4521642Z with:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4522516Z   repository: BallaAttila04/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4526959Z   token: ***
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4527613Z   ssh-strict: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4528227Z   ssh-user: git
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4528815Z   persist-credentials: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4529434Z   clean: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4530002Z   sparse-checkout-cone-mode: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4530688Z   fetch-depth: 1
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4531231Z   fetch-tags: false
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4531783Z   show-progress: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4532374Z   lfs: false
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4532915Z   submodules: false
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4533531Z   set-safe-directory: true
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4534208Z   allow-unsafe-pr-checkout: false
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.4535177Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5563981Z Syncing repository: BallaAttila04/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5567509Z ##[group]Getting Git version info
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5569245Z Working directory is '/home/runner/work/szakdolgozat/szakdolgozat'
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5571311Z [command]/usr/bin/git version
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5586730Z git version 2.55.0
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5605237Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5613643Z Temporarily overriding HOME='/home/runner/work/_temp/226cd1ba-81cd-44da-9be9-433924e0deb7' before making global git config changes
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5616443Z Adding repository directory to the temporary git global config as a safe directory
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5620039Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/szakdolgozat/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5670115Z Deleting the contents of '/home/runner/work/szakdolgozat/szakdolgozat'
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5693959Z ##[group]Determining repository object format
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5696514Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5698981Z ##[group]Initializing the repository
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5700273Z [command]/usr/bin/git init /home/runner/work/szakdolgozat/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5797072Z hint: Using 'master' as the name for the initial branch. This default branch name
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5798326Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5799731Z hint: to use in all of your new repositories, which will suppress this warning,
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5800615Z hint: call:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5801137Z hint:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5801856Z hint: 	git config --global init.defaultBranch <name>
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5802583Z hint:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5803293Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5804394Z hint: 'development'. The just-created branch can be renamed via this command:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5805261Z hint:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5806011Z hint: 	git branch -m <name>
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5806949Z hint:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5807946Z hint: Disable this message with "git config set advice.defaultBranchName false"
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5826982Z Initialized empty Git repository in /home/runner/work/szakdolgozat/szakdolgozat/.git/
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5830301Z [command]/usr/bin/git remote add origin https://github.com/BallaAttila04/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5870220Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5871840Z ##[group]Disabling automatic garbage collection
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5874808Z [command]/usr/bin/git config --local gc.auto 0
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5910357Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5911723Z ##[group]Setting up auth
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5912809Z Removing SSH command configuration
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5913991Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.5945243Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6289354Z Removing HTTP extra header
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6296453Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6336490Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6528397Z Removing includeIf entries pointing to credentials config files
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6530206Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6560088Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6750151Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6784691Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path /home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6854346Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6889121Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6919211Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6946719Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6947741Z ##[group]Fetching the repository
+monitor	UNKNOWN STEP	2026-10-24T08:20:59.6953091Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5a00ba8f72b293a14451f4114faeda898175d178:refs/remotes/origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6606864Z From https://github.com/BallaAttila04/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6610111Z  * [new ref]         5a00ba8f72b293a14451f4114faeda898175d178 -> origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6617013Z [command]/usr/bin/git branch --list --remote origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6641247Z   origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6648183Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6670851Z 5a00ba8f72b293a14451f4114faeda898175d178
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6675894Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6678049Z ##[group]Determining the checkout info
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6680304Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6681476Z [command]/usr/bin/git sparse-checkout disable
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6729663Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6763027Z ##[group]Checking out the ref
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.6765931Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7240221Z Switched to a new branch 'main'
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7244662Z branch 'main' set up to track 'origin/main'.
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7253552Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7294126Z [command]/usr/bin/git log -1 --format=%H
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7317944Z 5a00ba8f72b293a14451f4114faeda898175d178
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7714672Z ##[group]Run actions/setup-python@v7
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7716447Z with:
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7717437Z   python-version: 3.13
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7718493Z   cache: pip
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7719678Z   cache-dependency-path: requirements-monitor.txt
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7721124Z   check-latest: false
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7730586Z   token: ***
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7732041Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7733786Z   update-environment: true
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7735008Z   allow-prereleases: false
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7736278Z   freethreaded: false
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.7737332Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.8824154Z ##[group]Installed versions
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.8911094Z Successfully set up CPython (3.13.16)
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.8913568Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:00.9220002Z [command]/opt/hostedtoolcache/Python/3.13.16/x64/bin/pip cache dir
+monitor	UNKNOWN STEP	2026-10-24T08:21:01.2350567Z /home/runner/.cache/pip
+monitor	UNKNOWN STEP	2026-10-24T08:21:01.4503878Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.6551201Z Received 29408101 of 54573925 (53.9%), 28.0 MBs/sec
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.7845003Z Received 54573925 of 54573925 (100.0%), 46.1 MBs/sec
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.7845916Z Cache Size: ~52 MB (54573925 B)
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.7958838Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6a6ac9ad-2dfe-420d-b0af-863a1f2e452c/cache.tzst -P -C /home/runner/work/szakdolgozat/szakdolgozat --use-compress-program unzstd
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8544409Z Cache restored successfully
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8572816Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8712701Z ##[group]Run pip install -r requirements-monitor.txt
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8713385Z ^[[36;1mpip install -r requirements-monitor.txt^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8916812Z shell: /usr/bin/bash -e {0}
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8917385Z env:
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8917787Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8918315Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8918894Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8919399Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8919855Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8920348Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	UNKNOWN STEP	2026-10-24T08:21:02.8920743Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.0384978Z Collecting duckdb==1.5.5 (from -r requirements-monitor.txt (line 3))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.0400186Z   Using cached duckdb-1.5.5-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (4.2 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.1100657Z Collecting h3==4.5.0 (from -r requirements-monitor.txt (line 4))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.1113414Z   Using cached h3-4.5.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.2985521Z Collecting numpy==2.1.3 (from -r requirements-monitor.txt (line 5))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.2999064Z   Using cached numpy-2.1.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.4179114Z Collecting pandas==2.2.3 (from -r requirements-monitor.txt (line 6))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.4190934Z   Using cached pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.5125568Z Collecting psutil==7.2.2 (from -r requirements-monitor.txt (line 7))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.5139048Z   Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.5536313Z Collecting requests==2.32.3 (from -r requirements-monitor.txt (line 8))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.5557379Z   Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.5894956Z Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.7176328Z   Downloading python_dateutil-3.0.0-py2.py3-none-any.whl.metadata (8.2 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.7682675Z Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.7692408Z   Using cached pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.8024729Z Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.8039526Z   Using cached tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9189110Z Collecting charset-normalizer<4,>=2 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9200473Z   Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9546632Z Collecting idna<4,>=2.5 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9557478Z   Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9943063Z Collecting urllib3<3,>=1.21.1 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	UNKNOWN STEP	2026-10-24T08:21:04.9954027Z   Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.0335516Z Collecting certifi>=2017.4.17 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.0587401Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.0947707Z Collecting six>=1.6 (from python-dateutil>=2.8.2->pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.0958393Z   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.0989259Z Using cached duckdb-1.5.5-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (21.5 MB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1075921Z Using cached h3-4.5.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.1 MB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1090780Z Using cached numpy-2.1.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.0 MB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1156645Z Using cached pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1212021Z Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1222201Z Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1237098Z Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1250949Z Using cached idna-3.20-py3-none-any.whl (69 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1261288Z Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.1517066Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.2260528Z Downloading python_dateutil-3.0.0-py2.py3-none-any.whl (94 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.2342037Z Using cached pytz-2026.5-py2.py3-none-any.whl (506 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.2356052Z Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.2365604Z Using cached tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:05.4274165Z Installing collected packages: pytz, urllib3, tzdata, six, psutil, numpy, idna, h3, duckdb, charset-normalizer, certifi, requests, python-dateutil, pandas
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.1071836Z 
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.1092328Z Successfully installed certifi-2026.10.23 charset-normalizer-3.5.2 duckdb-1.5.5 h3-4.5.0 idna-3.20 numpy-2.1.3 pandas-2.2.3 psutil-7.2.2 python-dateutil-3.0.0 pytz-2026.5 requests-2.32.3 six-1.17.0 tzdata-2026.5 urllib3-2.8.0
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.1102880Z 
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.1103327Z [notice] A new release of pip is available: 26.2.1 -> 26.2.2
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2045915Z [notice] To update, run: pip install --upgrade pip
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2097794Z ##[group]Run python scripts/napi_futas.py --parquet-torol --kozvetlen-zip
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2098426Z ^[[36;1mpython scripts/napi_futas.py --parquet-torol --kozvetlen-zip^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2139032Z shell: /usr/bin/bash -e {0}
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2139417Z env:
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2139781Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2140389Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2140877Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2141334Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2141793Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2142280Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2142741Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2537259Z Futas: 2026-10-24; a monitor utolso napja: 2026-10-20; feldolgozando: 2026-10-21 - 2026-10-21
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2537885Z 
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.2538310Z $ /home/runner/work/szakdolgozat/szakdolgozat/scripts/pipeline.py 2026-10-21 2026-10-21 --torol-zip --dr-kihagy --kozvetlen-zip
+monitor	UNKNOWN STEP	2026-10-24T08:21:12.9993386Z Napok: 1 (2026-10-21 - 2026-10-21), ebbol kesz: 0, feldolgozando: 1
+monitor	UNKNOWN STEP	2026-10-24T08:21:13.0391773Z 
+monitor	UNKNOWN STEP	2026-10-24T08:21:13.0392840Z === 2026-10-21 (1/1) ===
+monitor	UNKNOWN STEP	2026-10-24T08:21:44.7141542Z   aisdk-2026-10-21.zip: kesz (581.6 MB)
+monitor	UNKNOWN STEP	2026-10-24T08:21:56.3895105Z   sorszamlalas (kozvetlen ZIP): 0 MiB, 16,515,558 sor (11.2 mp)
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.6231944Z   Parquet: 129.4 MiB (56.9 mp) | nyers 16,515,558 -> dedup. 10,348,597 (duplikatum 37.3%; bboxban 48.0%) | VALIDALT
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.7573446Z   ZIP torolve: aisdk-2026-10-21.zip
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.7589248Z   -> validalt, 69.6 mp, csucs memoria 9,030 MiB, csucs lemez 418 MiB
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8212728Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8213585Z === Osszefoglalo (102 mp ebben a futasban) ===
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8214424Z Ebben a futasban: 1 validalt, 0 hiba, 0 nincs adat
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8215120Z Validalt napok osszesen: 1/1
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8215900Z   nyers sor:        16,515,558
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8216454Z   dedup. sor:       10,348,597  (duplikatum 37.3%)
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8216946Z   ZIP:                  582 MiB
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8217518Z   Parquet:              129 MiB (22.2% a ZIP-hez)
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8218007Z   DR 50 m:                0 MiB
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8227423Z   futasi ido/nap: median 70 mp, max 70 mp
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.8228346Z   csucs memoria: max 9,030 MiB
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.9039175Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:54.9040524Z $ /home/runner/work/szakdolgozat/szakdolgozat/scripts/monitor.py --napok 2026-10-21
+monitor	UNKNOWN STEP	2026-10-24T08:22:55.3368241Z Monitor: 142 nap mar a tablaban, 1 uj/ujraszamolando
+monitor	UNKNOWN STEP	2026-10-24T08:22:55.3382250Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:55.3382758Z 2026-10-21:
+monitor	UNKNOWN STEP	2026-10-24T08:22:55.4713565Z     16,515,558 nyers sor a Parquetben
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7104233Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7105326Z Idosor: 2026-06-01 - 2026-10-21 (143 nap), 3,276 sor a tablaban
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7107200Z   Nagy-Balti-öv  kuszob ±34.0%  (robusztus szoras 17.0%, median |elteres| 11.1%, 122 nap alapszinttel)
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7108904Z   Øresund        kuszob ±24.4%  (robusztus szoras 12.2%, median |elteres| 8.7%, 122 nap alapszinttel)
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7110098Z   Mindkét kapu   kuszob ±21.3%  (robusztus szoras 10.6%, median |elteres| 7.2%, 122 nap alapszinttel)
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7110785Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7111068Z Jelzett nap-sorozat parok: 32
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7116779Z   2026-07-17 Nagy-Balti-öv    73 vs   50.5  (+44.5%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7117866Z   2026-08-12 Nagy-Balti-öv    61 vs   43.5  (+40.2%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7118769Z   2026-08-15 Nagy-Balti-öv    31 vs   49.5  (-37.4%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7119572Z   2026-08-18 Nagy-Balti-öv    65 vs   43.5  (+49.4%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7120270Z   2026-09-27 Nagy-Balti-öv    66 vs   47.5  (+39.0%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7121211Z   2026-07-02 Øresund          39 vs   57.5  (-32.2%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7121878Z   2026-07-05 Øresund          67 vs   50.5  (+32.7%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7122445Z   2026-07-11 Øresund          66 vs   51.0  (+29.4%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7123076Z   2026-07-15 Øresund          64 vs   43.5  (+47.1%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7123708Z   2026-07-19 Øresund          39 vs   52.5  (-25.7%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7124331Z   2026-08-07 Øresund          37 vs   53.5  (-30.8%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7124923Z   2026-08-16 Øresund          70 vs   54.0  (+29.6%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7125455Z   2026-08-18 Øresund          58 vs   46.0  (+26.1%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7126287Z   2026-09-05 Øresund          35 vs   55.0  (-36.4%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7126846Z   2026-09-06 Øresund          41 vs   60.5  (-32.2%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7127454Z   2026-09-20 Øresund          39 vs   56.0  (-30.4%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7128043Z   2026-09-25 Øresund          34 vs   51.0  (-33.3%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7128589Z   2026-09-29 Øresund          33 vs   46.5  (-29.0%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7129180Z   2026-10-01 Øresund          68 vs   50.0  (+36.0%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7129754Z   2026-10-16 Øresund          57 vs   45.5  (+25.3%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7130315Z   2026-07-02 Mindkét kapu     80 vs  111.0  (-27.9%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7130925Z   2026-07-05 Mindkét kapu    121 vs   99.5  (+21.6%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7131513Z   2026-07-15 Mindkét kapu    117 vs   88.0  (+33.0%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7132078Z   2026-07-17 Mindkét kapu    129 vs   99.0  (+30.3%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7132665Z   2026-08-07 Mindkét kapu     77 vs  102.0  (-24.5%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7133272Z   2026-08-12 Mindkét kapu    116 vs   89.5  (+29.6%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7133844Z   2026-08-16 Mindkét kapu    122 vs   99.0  (+23.2%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7134442Z   2026-08-18 Mindkét kapu    123 vs   88.0  (+39.8%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7135018Z   2026-08-29 Mindkét kapu    122 vs  100.0  (+22.0%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7135639Z   2026-09-06 Mindkét kapu     86 vs  111.0  (-22.5%)  szokatlanul alacsony
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7136442Z   2026-09-12 Mindkét kapu    113 vs   91.0  (+24.2%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7137005Z   2026-10-01 Mindkét kapu    129 vs  103.0  (+25.2%)  szokatlanul magas
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7137318Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7137611Z -> /home/runner/work/szakdolgozat/szakdolgozat/outputs/monitor/kapuvonal_napi.csv
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7138282Z -> /home/runner/work/szakdolgozat/szakdolgozat/outputs/monitor/jelzesek.csv
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.7138865Z -> /home/runner/work/szakdolgozat/szakdolgozat/outputs/monitor/allapot.json
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.8079418Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.8079901Z Futas allapota: ok - 1 uj nap
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.8080300Z 
+monitor	UNKNOWN STEP	2026-10-24T08:22:56.8081241Z $ /home/runner/work/szakdolgozat/szakdolgozat/scripts/oldal_epit.py --csak-monitor --oldal /home/runner/work/szakdolgozat/szakdolgozat/docs
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1160431Z   /home/runner/work/szakdolgozat/szakdolgozat/docs/index.html: a monitor-szakasz frissitve
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1832262Z ##[group]Run git config user.name "github-actions[bot]"
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1832784Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1833360Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1833915Z ^[[36;1mgit add outputs/monitor docs/index.html^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1834357Z ^[[36;1mif git diff --cached --quiet; then^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1834738Z ^[[36;1m  echo "Nincs valtozas."^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1835131Z ^[[36;1melse^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1835517Z ^[[36;1m  git commit -m "Napi monitor: $(date -u +%Y-%m-%d)"^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1836251Z ^[[36;1m  git push^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1836594Z ^[[36;1mfi^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1877656Z shell: /usr/bin/bash -e {0}
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1878039Z env:
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1878429Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1879006Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1879686Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1880153Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1880603Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1881098Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.1881562Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.3815038Z [main adbb16e] Napi monitor: 2026-10-24
+monitor	UNKNOWN STEP	2026-10-24T08:22:57.3815997Z  9 files changed, 1795 insertions(+), 915 deletions(-)
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2256130Z To https://github.com/BallaAttila04/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2257103Z    5a00ba8..adbb16e  main -> main
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2343574Z ##[group]Run if [ "$TESZT" = "true" ]; then
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2344118Z ^[[36;1mif [ "$TESZT" = "true" ]; then^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2344626Z ^[[36;1m  python scripts/ertesites.py --teszt^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2345071Z ^[[36;1melse^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2345433Z ^[[36;1m  python scripts/ertesites.py^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2346174Z ^[[36;1mfi^[[0m
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2387542Z shell: /usr/bin/bash -e {0}
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2387897Z env:
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2388371Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2388964Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2389476Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2389928Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2390413Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2390869Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2393628Z   GH_TOKEN: ***
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2393929Z   TESZT: 
+monitor	UNKNOWN STEP	2026-10-24T08:22:59.2394208Z ##[endgroup]
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.2461556Z Utolso nap: 2026-10-21; aktiv jelzes: 0
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.3450652Z Post job cleanup.
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.4554041Z Cache hit occurred on the primary key setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f, not saving cache.
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.4691100Z Post job cleanup.
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5539556Z [command]/usr/bin/git version
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5582663Z git version 2.55.0
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5624228Z Temporarily overriding HOME='/home/runner/work/_temp/683ca8ed-5df0-45c0-9467-4e0de6e8bb74' before making global git config changes
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5626090Z Adding repository directory to the temporary git global config as a safe directory
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5630133Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/szakdolgozat/szakdolgozat
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5736591Z Removing SSH command configuration
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5738469Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5798339Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5951995Z Removing HTTP extra header
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5953225Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.5980600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6206405Z Removing includeIf entries pointing to credentials config files
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6207767Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6227773Z includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6229174Z includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6230246Z includeif.gitdir:/github/workspace/.git.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6231042Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6238770Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6267005Z /home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6286511Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-a66197b7\-f640\-46cd\-8d65\-5c7e8c191f61\.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6322526Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6337464Z /home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6358725Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-a66197b7\-f640\-46cd\-8d65\-5c7e8c191f61\.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6402588Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6422070Z /github/runner_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6431091Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-a66197b7\-f640\-46cd\-8d65\-5c7e8c191f61\.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6464124Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6484649Z /github/runner_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6493816Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-a66197b7\-f640\-46cd\-8d65\-5c7e8c191f61\.config
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6529584Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6783171Z Removing credentials config '/home/runner/work/_temp/git-credentials-a66197b7-f640-46cd-8d65-5c7e8c191f61.config'
+monitor	UNKNOWN STEP	2026-10-24T08:23:01.6962499Z Cleaning up orphan processes

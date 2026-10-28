@@ -1258,3 +1258,17 @@ Forrás: a `szamok-ujraszamolasa` ellenőrzési lánc (kereső → független ad
 | 16/16 | sikeres ütemezett éles futás 2026. október 10. – 25., mindegyik egy új adatnappal (10-07 – 10-22) (korábban: ~~3/3~~) | outputs/eles_uzem/futasok.csv event=schedule; outputs/eles_uzem/atminosites_lanc.csv utolso_nap | 2026-10-25 |
 | #2: 2 megjegyzés, lezárva 2026. október 13.; új issue nem nyílt | az éles issue-k története október 25-ig (korábban: ~~1 megjegyzés~~) | outputs/eles_uzem/issuek.csv; gh issue view 2 --json comments; gh issue list --state all | 2026-10-25 |
 
+
+### Éles üzem: napi sorszámok a futásnaplókból (2026-10-07 – 10-22)
+
+A 16 nap Parquet-fájlja a futtatón törlődött, a számok csak a GitHub futásnaplóiban voltak meg (90 napos megőrzés). A naplók lementve: `outputs/eles_uzem/futasnaplok/<run_id>.txt` (`gh run view <id> --log`, 2026-10-28). Napi bontás: `outputs/eles_uzem/napi_sorok.csv`. A 16 napot független forrással nem lehetett összevetni, mert a helyi tárolóban nincsenek meg (az csak 06-01 – 10-06-ig tart). Az egyetlen ellenőrzés a futtató saját validálása: ZIP-sorszám = SUM(dup_db), a naplóban „VALIDALT”, és a közvetlen ZIP-sorszámlálás minden napon egyezik a nyers sorszámmal.
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 16 / 16 | validált nap a 10-10 – 10-25-i ütemezett futásokban, futásonként egy nap (10-07 – 10-22) | scripts/napi_sorok.py → outputs/eles_uzem/napi_sorok.csv | 2026-10-28 |
+| 266 411 000 | nyers sor összesen, 10-07 – 10-22 (16 nap) | napi_sorok.csv, nyers_sor összege | 2026-10-28 |
+| 165 812 066 | deduplikált sor összesen, 10-07 – 10-22 | napi_sorok.csv, dedup_sor összege | 2026-10-28 |
+| 15 714 117 – 18 169 048; medián 16 545 703,5 | napi nyers sorszám, min. (10-09) – max. (10-07) és medián, 16 nap | napi_sorok.csv | 2026-10-28 |
+| 2 058,9 MiB / 9 275,8 MiB | Parquet / ZIP összesen, 16 nap (a napló egy tizedesre kerekít; a ZIP-sor „MB” felirata valójában MiB, letoltes.py: / 1 048 576) | napi_sorok.csv | 2026-10-28 |
+| 36 650 571 / 16 638 836 | 2026-07-15, a két erőforrás-mérési futás (37910491337, 37914275224) nyers / dedup. sora; DuckDB a helyi Parquet-fájlon (SUM(dup_db), count(*)): mindkettő egyezik | napi_sorok.py → outputs/eles_uzem/napi_sorok_ellenorzes.csv | 2026-10-28 |
+| 227,0 vs. 226,8 MiB | 2026-07-15 Parquet-mérete: 1. futás 227,0 (−0,15 MiB eltérés a helyi 226,847 MiB-os fájltól, a kerekítési határon túl); 2. futás 226,8 (egyezik). Az eltérés megmarad, nincs kiigazítva. | napi_sorok_ellenorzes.csv | 2026-10-28 |

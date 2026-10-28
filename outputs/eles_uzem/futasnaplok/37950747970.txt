@@ -1,0 +1,292 @@
+monitor	Set up job	﻿2026-10-09T15:18:35.3025506Z Current runner version: '2.337.0'
+monitor	Set up job	2026-10-09T15:18:35.3047907Z ##[group]Runner Image Provisioner
+monitor	Set up job	2026-10-09T15:18:35.3048727Z Hosted Compute Agent
+monitor	Set up job	2026-10-09T15:18:35.3049211Z Version: 20261002.596
+monitor	Set up job	2026-10-09T15:18:35.3049758Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+monitor	Set up job	2026-10-09T15:18:35.3050359Z Build Date: 2026-10-02T22:28:27Z
+monitor	Set up job	2026-10-09T15:18:35.3050914Z Worker ID: {d9bac12a-d18a-4660-afeb-bc3e8d47a6f4}
+monitor	Set up job	2026-10-09T15:18:35.3051522Z Region: eastus
+monitor	Set up job	2026-10-09T15:18:35.3052225Z Cloud: Azure
+monitor	Set up job	2026-10-09T15:18:35.3052735Z ##[endgroup]
+monitor	Set up job	2026-10-09T15:18:35.3054212Z ##[group]Operating System
+monitor	Set up job	2026-10-09T15:18:35.3054738Z Ubuntu
+monitor	Set up job	2026-10-09T15:18:35.3055251Z 24.04.5
+monitor	Set up job	2026-10-09T15:18:35.3055682Z LTS
+monitor	Set up job	2026-10-09T15:18:35.3056114Z ##[endgroup]
+monitor	Set up job	2026-10-09T15:18:35.3056624Z ##[group]Runner Image
+monitor	Set up job	2026-10-09T15:18:35.3057132Z Image: ubuntu-24.04
+monitor	Set up job	2026-10-09T15:18:35.3057651Z Version: 20261004.327.1
+monitor	Set up job	2026-10-09T15:18:35.3058558Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+monitor	Set up job	2026-10-09T15:18:35.3060002Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+monitor	Set up job	2026-10-09T15:18:35.3060760Z ##[endgroup]
+monitor	Set up job	2026-10-09T15:18:35.3062003Z ##[group]GITHUB_TOKEN Permissions
+monitor	Set up job	2026-10-09T15:18:35.3063754Z Contents: write
+monitor	Set up job	2026-10-09T15:18:35.3064496Z Issues: write
+monitor	Set up job	2026-10-09T15:18:35.3064957Z Metadata: read
+monitor	Set up job	2026-10-09T15:18:35.3065756Z ##[endgroup]
+monitor	Set up job	2026-10-09T15:18:35.3067833Z Secret source: Actions
+monitor	Set up job	2026-10-09T15:18:35.3068645Z Cache mode: write
+monitor	Set up job	2026-10-09T15:18:35.3069423Z Prepare workflow directory
+monitor	Set up job	2026-10-09T15:18:35.3323034Z Prepare all required actions
+monitor	Set up job	2026-10-09T15:18:35.3360950Z Getting action download info
+monitor	Set up job	2026-10-09T15:18:35.5250810Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+monitor	Set up job	2026-10-09T15:18:35.6221069Z Download action repository 'actions/setup-python@v7' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+monitor	Set up job	2026-10-09T15:18:35.7992237Z Complete job name: monitor
+monitor	Run actions/checkout@v7	﻿2026-10-09T15:18:35.8599652Z ##[group]Run actions/checkout@v7
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8600334Z with:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8600707Z   repository: BallaAttila04/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8603819Z   token: ***
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8604176Z   ssh-strict: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8604527Z   ssh-user: git
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8604883Z   persist-credentials: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8605273Z   clean: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8605634Z   sparse-checkout-cone-mode: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8606050Z   fetch-depth: 1
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8606392Z   fetch-tags: false
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8606740Z   show-progress: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8607093Z   lfs: false
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8607420Z   submodules: false
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8607773Z   set-safe-directory: true
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8608170Z   allow-unsafe-pr-checkout: false
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.8608803Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9425225Z Syncing repository: BallaAttila04/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9427260Z ##[group]Getting Git version info
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9428190Z Working directory is '/home/runner/work/szakdolgozat/szakdolgozat'
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9429623Z [command]/usr/bin/git version
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9446054Z git version 2.55.0
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9461977Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9470152Z Temporarily overriding HOME='/home/runner/work/_temp/1b3384b2-0ec5-4a2a-9d98-49a2f568d490' before making global git config changes
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9472169Z Adding repository directory to the temporary git global config as a safe directory
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9475123Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/szakdolgozat/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9516843Z Deleting the contents of '/home/runner/work/szakdolgozat/szakdolgozat'
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9518363Z ##[group]Determining repository object format
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9519374Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9520164Z ##[group]Initializing the repository
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9523251Z [command]/usr/bin/git init /home/runner/work/szakdolgozat/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9610057Z hint: Using 'master' as the name for the initial branch. This default branch name
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9612275Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9613715Z hint: to use in all of your new repositories, which will suppress this warning,
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9615993Z hint: call:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9616809Z hint:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9617522Z hint: 	git config --global init.defaultBranch <name>
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9618267Z hint:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9618973Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9620125Z hint: 'development'. The just-created branch can be renamed via this command:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9621112Z hint:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9621805Z hint: 	git branch -m <name>
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9622395Z hint:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9623180Z hint: Disable this message with "git config set advice.defaultBranchName false"
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9624436Z Initialized empty Git repository in /home/runner/work/szakdolgozat/szakdolgozat/.git/
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9626710Z [command]/usr/bin/git remote add origin https://github.com/BallaAttila04/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9665178Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9666202Z ##[group]Disabling automatic garbage collection
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9667582Z [command]/usr/bin/git config --local gc.auto 0
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9696344Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9697455Z ##[group]Setting up auth
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9698154Z Removing SSH command configuration
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9702219Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+monitor	Run actions/checkout@v7	2026-10-09T15:18:35.9730703Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0016154Z Removing HTTP extra header
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0021732Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0056173Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0250786Z Removing includeIf entries pointing to credentials config files
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0255126Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0284436Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0480312Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0513661Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path /home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0542746Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0575179Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0605178Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0632132Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0632755Z ##[group]Fetching the repository
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.0637032Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3871ac6ff14292271d53ddf8b6bedddcd5821b6c:refs/remotes/origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6399241Z From https://github.com/BallaAttila04/szakdolgozat
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6400955Z  * [new ref]         3871ac6ff14292271d53ddf8b6bedddcd5821b6c -> origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6408598Z [command]/usr/bin/git branch --list --remote origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6435654Z   origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6441537Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6464613Z 3871ac6ff14292271d53ddf8b6bedddcd5821b6c
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6468429Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6469345Z ##[group]Determining the checkout info
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6470602Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6472785Z [command]/usr/bin/git sparse-checkout disable
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6518984Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6549110Z ##[group]Checking out the ref
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6551225Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6892413Z Switched to a new branch 'main'
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6895827Z branch 'main' set up to track 'origin/main'.
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6905530Z ##[endgroup]
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6945843Z [command]/usr/bin/git log -1 --format=%H
+monitor	Run actions/checkout@v7	2026-10-09T15:18:36.6971302Z 3871ac6ff14292271d53ddf8b6bedddcd5821b6c
+monitor	Run actions/setup-python@v7	﻿2026-10-09T15:18:36.7288856Z ##[group]Run actions/setup-python@v7
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7289853Z with:
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7290572Z   python-version: 3.13
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7291374Z   cache: pip
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7292376Z   cache-dependency-path: requirements-monitor.txt
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7293459Z   check-latest: false
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7300288Z   token: ***
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7301037Z   update-environment: true
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7301986Z   allow-prereleases: false
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7302855Z   freethreaded: false
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.7303623Z ##[endgroup]
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.8262117Z ##[group]Installed versions
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.8352160Z Successfully set up CPython (3.13.16)
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.8354522Z ##[endgroup]
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:36.8593054Z [command]/opt/hostedtoolcache/Python/3.13.16/x64/bin/pip cache dir
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:37.9564880Z /home/runner/.cache/pip
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.0651193Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.3689881Z Received 54573925 of 54573925 (100.0%), 200.2 MBs/sec
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.3690683Z Cache Size: ~52 MB (54573925 B)
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.3718779Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a2b69276-9d88-4795-94e5-c0024c754941/cache.tzst -P -C /home/runner/work/szakdolgozat/szakdolgozat --use-compress-program unzstd
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.4461271Z Cache restored successfully
+monitor	Run actions/setup-python@v7	2026-10-09T15:18:38.4490121Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f
+monitor	Fuggosegek	﻿2026-10-09T15:18:38.4648544Z ##[group]Run pip install -r requirements-monitor.txt
+monitor	Fuggosegek	2026-10-09T15:18:38.4648961Z ^[[36;1mpip install -r requirements-monitor.txt^[[0m
+monitor	Fuggosegek	2026-10-09T15:18:38.4848743Z shell: /usr/bin/bash -e {0}
+monitor	Fuggosegek	2026-10-09T15:18:38.4849031Z env:
+monitor	Fuggosegek	2026-10-09T15:18:38.4849290Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Fuggosegek	2026-10-09T15:18:38.4849682Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	Fuggosegek	2026-10-09T15:18:38.4850034Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Fuggosegek	2026-10-09T15:18:38.4850347Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Fuggosegek	2026-10-09T15:18:38.4850699Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Fuggosegek	2026-10-09T15:18:38.4851010Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	Fuggosegek	2026-10-09T15:18:38.4851280Z ##[endgroup]
+monitor	Fuggosegek	2026-10-09T15:18:39.5705627Z Collecting duckdb==1.5.5 (from -r requirements-monitor.txt (line 3))
+monitor	Fuggosegek	2026-10-09T15:18:39.5718603Z   Using cached duckdb-1.5.5-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (4.2 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.6139894Z Collecting h3==4.5.0 (from -r requirements-monitor.txt (line 4))
+monitor	Fuggosegek	2026-10-09T15:18:39.6150396Z   Using cached h3-4.5.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.7551457Z Collecting numpy==2.1.3 (from -r requirements-monitor.txt (line 5))
+monitor	Fuggosegek	2026-10-09T15:18:39.7562869Z   Using cached numpy-2.1.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.8418550Z Collecting pandas==2.2.3 (from -r requirements-monitor.txt (line 6))
+monitor	Fuggosegek	2026-10-09T15:18:39.8430691Z   Using cached pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.9056465Z Collecting psutil==7.2.2 (from -r requirements-monitor.txt (line 7))
+monitor	Fuggosegek	2026-10-09T15:18:39.9067591Z   Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.9258270Z Collecting requests==2.32.3 (from -r requirements-monitor.txt (line 8))
+monitor	Fuggosegek	2026-10-09T15:18:39.9268168Z   Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.9367660Z Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	Fuggosegek	2026-10-09T15:18:39.9376607Z   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.9612329Z Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	Fuggosegek	2026-10-09T15:18:39.9621731Z   Using cached pytz-2026.5-py2.py3-none-any.whl.metadata (22 kB)
+monitor	Fuggosegek	2026-10-09T15:18:39.9763521Z Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	Fuggosegek	2026-10-09T15:18:39.9772675Z   Using cached tzdata-2026.5-py2.py3-none-any.whl.metadata (1.4 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.0620131Z Collecting charset-normalizer<4,>=2 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	Fuggosegek	2026-10-09T15:18:40.0632098Z   Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.0788074Z Collecting idna<4,>=2.5 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	Fuggosegek	2026-10-09T15:18:40.0797026Z   Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.0943181Z Collecting urllib3<3,>=1.21.1 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	Fuggosegek	2026-10-09T15:18:40.0952528Z   Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1079756Z Collecting certifi>=2017.4.17 (from requests==2.32.3->-r requirements-monitor.txt (line 8))
+monitor	Fuggosegek	2026-10-09T15:18:40.1089178Z   Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1183735Z Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3->-r requirements-monitor.txt (line 6))
+monitor	Fuggosegek	2026-10-09T15:18:40.1192706Z   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1216634Z Using cached duckdb-1.5.5-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (21.5 MB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1286198Z Using cached h3-4.5.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.1 MB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1297653Z Using cached numpy-2.1.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.0 MB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1349540Z Using cached pandas-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1392418Z Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1401232Z Using cached requests-2.32.3-py3-none-any.whl (64 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1410652Z Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1420136Z Using cached idna-3.20-py3-none-any.whl (69 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1428862Z Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1437673Z Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1446557Z Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1455583Z Using cached pytz-2026.5-py2.py3-none-any.whl (506 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1465352Z Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.1473818Z Using cached tzdata-2026.5-py2.py3-none-any.whl (347 kB)
+monitor	Fuggosegek	2026-10-09T15:18:40.3708699Z Installing collected packages: pytz, urllib3, tzdata, six, psutil, numpy, idna, h3, duckdb, charset-normalizer, certifi, requests, python-dateutil, pandas
+monitor	Fuggosegek	2026-10-09T15:18:46.3529942Z 
+monitor	Fuggosegek	2026-10-09T15:18:46.3548016Z Successfully installed certifi-2026.7.22 charset-normalizer-3.5.2 duckdb-1.5.5 h3-4.5.0 idna-3.20 numpy-2.1.3 pandas-2.2.3 psutil-7.2.2 python-dateutil-2.9.0.post0 pytz-2026.5 requests-2.32.3 six-1.17.0 tzdata-2026.5 urllib3-2.8.0
+monitor	Napi futas (pipeline -> monitor -> oldal)	﻿2026-10-09T15:18:46.4411601Z ##[group]Run python scripts/napi_futas.py --parquet-torol --kozvetlen-zip
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4412278Z ^[[36;1mpython scripts/napi_futas.py --parquet-torol --kozvetlen-zip^[[0m
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4470233Z shell: /usr/bin/bash -e {0}
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4470460Z env:
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4470682Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4471068Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4471415Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4471863Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4472171Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4472485Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4472767Z ##[endgroup]
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4853473Z Futas: 2026-10-09; a monitor utolso napja: 2026-10-06; feldolgozando: 2026-10-07 - 2026-10-06
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4855108Z 
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4855341Z Futas allapota: ok - nincs uj nap
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4855580Z 
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.4857244Z $ /home/runner/work/szakdolgozat/szakdolgozat/scripts/oldal_epit.py --csak-monitor --oldal /home/runner/work/szakdolgozat/szakdolgozat/docs
+monitor	Napi futas (pipeline -> monitor -> oldal)	2026-10-09T15:18:46.8486048Z   /home/runner/work/szakdolgozat/szakdolgozat/docs/index.html: a monitor-szakasz frissitve
+monitor	Eredmeny visszairasa	﻿2026-10-09T15:18:46.8979628Z ##[group]Run git config user.name "github-actions[bot]"
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8979984Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8980355Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8980735Z ^[[36;1mgit add outputs/monitor docs/index.html^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8981002Z ^[[36;1mif git diff --cached --quiet; then^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8981250Z ^[[36;1m  echo "Nincs valtozas."^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8981465Z ^[[36;1melse^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8981938Z ^[[36;1m  git commit -m "Napi monitor: $(date -u +%Y-%m-%d)"^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8982207Z ^[[36;1m  git push^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.8982382Z ^[[36;1mfi^[[0m
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9038365Z shell: /usr/bin/bash -e {0}
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9038600Z env:
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9038838Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9039203Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9039567Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9039923Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9040227Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9040531Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9040800Z ##[endgroup]
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9713393Z [main c091806] Napi monitor: 2026-10-09
+monitor	Eredmeny visszairasa	2026-10-09T15:18:46.9713902Z  1 file changed, 1 insertion(+), 1 deletion(-)
+monitor	Eredmeny visszairasa	2026-10-09T15:18:48.0844342Z To https://github.com/BallaAttila04/szakdolgozat
+monitor	Eredmeny visszairasa	2026-10-09T15:18:48.0844823Z    3871ac6..c091806  main -> main
+monitor	Ertesites (GitHub Issue)	﻿2026-10-09T15:18:48.0917986Z ##[group]Run if [ "$TESZT" = "true" ]; then
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0918280Z ^[[36;1mif [ "$TESZT" = "true" ]; then^[[0m
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0918540Z ^[[36;1m  python scripts/ertesites.py --teszt^[[0m
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0918779Z ^[[36;1melse^[[0m
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0918976Z ^[[36;1m  python scripts/ertesites.py^[[0m
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0919349Z ^[[36;1mfi^[[0m
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0975255Z shell: /usr/bin/bash -e {0}
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0975477Z env:
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0975699Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0976050Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib/pkgconfig
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0976393Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0976696Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0976988Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.16/x64
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0977291Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.16/x64/lib
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0979286Z   GH_TOKEN: ***
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0979508Z   TESZT: true
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:48.0979677Z ##[endgroup]
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:49.8330810Z Utolso nap: 2026-10-09; aktiv jelzes: 1
+monitor	Ertesites (GitHub Issue)	2026-10-09T15:18:49.8331323Z   #1 mar tartalmazza a(z) 2026-10-09 napot - nincs teendo
+monitor	Post Run actions/setup-python@v7	﻿2026-10-09T15:18:49.8892514Z Post job cleanup.
+monitor	Post Run actions/setup-python@v7	2026-10-09T15:18:49.9836633Z Cache hit occurred on the primary key setup-python-Linux-x64-24.04-Ubuntu-python-3.13.16-pip-112ed20d521f5a9ec5a9f78593d5c2d5273e79987a7622a2f39eb0153b38962f, not saving cache.
+monitor	Post Run actions/checkout@v7	﻿2026-10-09T15:18:49.9973004Z Post job cleanup.
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0637038Z [command]/usr/bin/git version
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0673221Z git version 2.55.0
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0707031Z Temporarily overriding HOME='/home/runner/work/_temp/11168185-8d44-4965-a3ec-80769073cb2c' before making global git config changes
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0708167Z Adding repository directory to the temporary git global config as a safe directory
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0719689Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/szakdolgozat/szakdolgozat
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0742192Z Removing SSH command configuration
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0746918Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0778814Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0990962Z Removing HTTP extra header
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.0996930Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1029822Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1238231Z Removing includeIf entries pointing to credentials config files
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1246062Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1279483Z includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1280512Z includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1281340Z includeif.gitdir:/github/workspace/.git.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1282000Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1283226Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1305970Z /home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1314094Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-0a74533e\-46fc\-4f8e\-bc3e\-5d24a7dcc394\.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1352007Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1377017Z /home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1384648Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/szakdolgozat/szakdolgozat/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-0a74533e\-46fc\-4f8e\-bc3e\-5d24a7dcc394\.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1423649Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1447447Z /github/runner_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1461507Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-0a74533e\-46fc\-4f8e\-bc3e\-5d24a7dcc394\.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1485788Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1509393Z /github/runner_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1514665Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-0a74533e\-46fc\-4f8e\-bc3e\-5d24a7dcc394\.config
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1547745Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+monitor	Post Run actions/checkout@v7	2026-10-09T15:18:50.1735992Z Removing credentials config '/home/runner/work/_temp/git-credentials-0a74533e-46fc-4f8e-bc3e-5d24a7dcc394.config'
+monitor	Complete job	﻿2026-10-09T15:18:50.1866222Z Cleaning up orphan processes

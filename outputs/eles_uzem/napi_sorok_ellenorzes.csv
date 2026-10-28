@@ -1,0 +1,3 @@
+nap,run_id,naplo_nyers,helyi_nyers,naplo_dedup,helyi_dedup,naplo_parquet_mib,helyi_parquet_mib,naplo_zip_mib,helyi_zip_mib,elteres
+2026-07-15,37910491337,36650571,36650571,16638836,16638836,227.0,226.847,955.7,955.7,parquet -0.15 MiB
+2026-07-15,37914275224,36650571,36650571,16638836,16638836,226.8,226.847,955.7,955.7,nincs
