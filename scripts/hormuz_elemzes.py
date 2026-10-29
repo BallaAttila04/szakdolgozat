@@ -1,8 +1,8 @@
 """
 Hormuz-elemzes, 4. fazis: mutatok, kulonbsegek kulonbsege, erzekenyseg.
 
-A dolgozat/hormuz_elozetes_merce.md (es a hormuz_merce_kiegeszites_2026-10-28.md)
-szerint, a hormuz_napi.py kimeneteibol:
+A dolgozat/hormuz_elozetes_merce.md (es a hormuz_merce_kiegeszites_2026-10-28.md,
+hormuz_merce_kiegeszites_2026-10-29.md) szerint, a hormuz_napi.py kimeneteibol:
 
   H1  napi megrakott, kifele ("észak") halado tanker-atkelesek szama, a ket
       monitorkapu osszege
@@ -20,8 +20,9 @@ nem tartalmazza a nullat.
 
 Kimenet (outputs/hormuz/):
   eredmeny.csv                 H1-H3 fo eredmenye
-  erzekenyseg.csv              a kiegeszites valtozatai (H1, H2)
-  uticel_ertelmezhetoseg.csv   az uticel ertelmezhetosege ablakonkent
+  erzekenyseg.csv              a ket kiegeszites valtozatai (H1, H2)
+  uticel_ertelmezhetoseg.csv   az uticel ertelmezhetosege ablakonkent, a szigoru
+                               (fo) es az engedekeny olvasattal (2. kiegeszites)
   uticel_osszetetel.csv        az uticel-kategoriak ablakonkent
   uticel_nem_ertelmezheto.csv  a leggyakoribb nem ertelmezheto szovegek
   mintanap_mutatok.csv         mintanaponkent H1, H2 szamlalo/nevezo, H3
@@ -81,6 +82,9 @@ SZUEZ = "Szuez/Ázsia/Közel-Kelet"
 # UN/LOCODE: 2 betus orszagkod + 3 karakteres helykod (betu vagy 2-9); a
 # merce szerint a ket resz kozott egy szokoz megengedett
 LOCODE_MINTA = re.compile(r"^([A-Z]{2}) ?([A-Z2-9]{3})$")
+# Engedekeny olvasat (2. kiegeszites, 6. valtozat): a mezo elso LOCODE-szeru
+# resze, elotte-utana nem betu/szamjegy ("BEANR VIA DENOK" -> BEANR)
+LOCODE_JELOLT = re.compile(r"(?<![A-Z0-9])([A-Z]{2}) ?([A-Z2-9]{3})(?![A-Z0-9])")
 
 # Masodlagos, leiro ellenorzes (merce): 0-30 napos kesleltetes
 KESLELTETESEK = (0, 10, 20, 30)
@@ -109,6 +113,17 @@ def kategoria(nyers, kodok) -> str:
     if "ORDER" in s:
         return "FOR ORDER"
     return "Nem értelmezhető"
+
+
+def kategoria_engedekeny(nyers, kodok) -> str:
+    """2. kiegeszites, 6. valtozat: az elso LOCODE-szeru resz szamit, ha ervenyes
+    kod; kulonben (nincs ilyen resz, vagy az elso nem ervenyes) a fo szabaly a
+    teljes mezore. Kesobbi ervenyes kodot nem keresunk."""
+    if isinstance(nyers, str):
+        m = LOCODE_JELOLT.search(re.sub(r"\s+", " ", nyers.upper().strip()))
+        if m and (m.group(1) + m.group(2)) in kodok:
+            return kategoria(m.group(1) + m.group(2), kodok)
+    return kategoria(nyers, kodok)
 
 
 # --- Beolvasas ------------------------------------------------------------------------
@@ -322,16 +337,18 @@ def main():
           f"ertekelheto {int(ki.ertekelheto.sum()):,}")
 
     # 2. uticel: ertelmezhetoseg es osszetetel
-    ki = ki.assign(megrakott=ki.ertekelheto & (ki.rel >= TANKER_KUSZOB))
+    ki = ki.assign(megrakott=ki.ertekelheto & (ki.rel >= TANKER_KUSZOB),
+                   kategoria_eng=[kategoria_engedekeny(x, kodok) for x in ki["uticel"]])
     ert = []
-    for a in ABLAKOK:
-        for kor, g in [("kifelé haladó tanker", ki[ki.ablak == a]),
-                       ("megrakott, kifelé haladó tanker (H2 nevezője)", ki[(ki.ablak == a) & ki.megrakott])]:
-            ert.append({"ablak": a, "kor": kor, "atkeles": len(g),
-                        "van_uticel_az_atkeles_elott": int(g.uticel.notna().sum()),
-                        "ertelmezheto": int((g.kategoria != "Nem értelmezhető").sum()),
-                        "ertelmezheto_arany": round((g.kategoria != "Nem értelmezhető").mean(), 4) if len(g) else np.nan,
-                        "csak_utana_van_uticel": int((g.uticel.isna() & g.uticel_utana.notna()).sum())})
+    for olvasat, oszl in (("szigorú (fő)", "kategoria"), ("engedékeny (6. változat)", "kategoria_eng")):
+        for a in ABLAKOK:
+            for kor, g in [("kifelé haladó tanker", ki[ki.ablak == a]),
+                           ("megrakott, kifelé haladó tanker (H2 nevezője)", ki[(ki.ablak == a) & ki.megrakott])]:
+                ert.append({"olvasat": olvasat, "ablak": a, "kor": kor, "atkeles": len(g),
+                            "van_uticel_az_atkeles_elott": int(g.uticel.notna().sum()),
+                            "ertelmezheto": int((g[oszl] != "Nem értelmezhető").sum()),
+                            "ertelmezheto_arany": round((g[oszl] != "Nem értelmezhető").mean(), 4) if len(g) else np.nan,
+                            "csak_utana_van_uticel": int((g.uticel.isna() & g.uticel_utana.notna()).sum())})
     ert = pd.DataFrame(ert)
     ert.to_csv(h / "uticel_ertelmezhetoseg.csv", index=False, encoding="utf-8")
     print("\nUticel ertelmezhetosege ablakonkent:")
@@ -389,10 +406,14 @@ def main():
         valtozatok.append((f"3. megrakottsági küszöb {k}", napi_mutatok(t, napok, kuszob=k)))
     valtozatok.append(("4. FOR ORDER kimarad a H2 nevezőjéből",
                        napi_mutatok(t, napok, for_order_nelkul=True)))
+    # 2. kiegeszites; H1 es H3 nem fugg az uticeltol, ezert csak H2
+    te = t.assign(kategoria=[kategoria_engedekeny(x, kodok) for x in t["uticel"]])
+    valtozatok.append(("6. úticél: engedékeny olvasat (az első UN/LOCODE-szerű rész)",
+                       napi_mutatok(te, napok)))
     for cim, dv in valtozatok:
         bv = becsul(dv)
         ev = eredmeny_tabla(bv, cimke=cim)
-        for m in (("H2",) if cim.startswith("4.") else ("H1", "H2")):
+        for m in (("H2",) if cim.startswith(("4.", "6.")) else ("H1", "H2")):
             sor(cim, m, bv, ev)
         # a 2a valtozat atkelesszama a fo valtozattal (konstrukcio szerint egyezik)
         if cim.startswith("2a"):
