@@ -4,15 +4,15 @@
   {
    "fajl": "legutobbi.json",
    "leiras": "Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota.",
-   "bajt": 4200,
-   "sha256": "0e12fd386fbde1a16972bca9d36dd6b28d31a084794948b0096c39e032e04e2f"
+   "bajt": 4438,
+   "sha256": "3555a459af8a6ef12fef73d4b7794a30c1a31e79ad5bfe985248cb586405fd21"
   },
   {
    "fajl": "jelzesek.csv",
    "leiras": "A monitor összes jelzés-sora (forgalom és megrakottság).",
-   "bajt": 66589,
-   "sha256": "6243eb155c34ad6d5e8c624f3219a12ec329818e199a7f6d6601754d73515b7c",
-   "sorok": 864,
+   "bajt": 67023,
+   "sha256": "e459b10a48a18fe050b2117861ff14bc7a698966d139c9433f999d7ffc705824",
+   "sorok": 870,
    "oszlopok": [
     {
      "nev": "datum",
@@ -55,9 +55,9 @@
   {
    "fajl": "idosor_forgalom.csv",
    "leiras": "Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint.",
-   "bajt": 149632,
-   "sha256": "4d08a300f45baa04164801861b84704967c183cd97073b7c1183f7a5ca957a38",
-   "sorok": 3353,
+   "bajt": 150535,
+   "sha256": "83502baf6bdf801280449a6855f22d7152f66324890065f0d92db55eb291f1f5",
+   "sorok": 3373,
    "oszlopok": [
     {
      "nev": "datum",
@@ -84,9 +84,9 @@
   {
    "fajl": "idosor_megrakottsag.csv",
    "leiras": "Napi megrakottsági tábla (tanker, teherhajó).",
-   "bajt": 71256,
-   "sha256": "bc2b4a07f4ea8cdb9db06febe997c4df94f74dd7febba5e9c6c92c88c8fe785b",
-   "sorok": 1175,
+   "bajt": 71748,
+   "sha256": "b1b6f0187d479c589fe45a5d099ba1292b885ba1299b360c955d7e83856ac563",
+   "sorok": 1183,
    "oszlopok": [
     {
      "nev": "datum",
@@ -158,14 +158,14 @@
   {
    "fajl": "backtest.json",
    "leiras": "A jelzési szabály backtestjének összefoglalója (pillanatkép).",
-   "bajt": 191185,
-   "sha256": "15486133f667516d4c6633999b2e0ded8f5a6ee1d017d91f00bd87f71065d9bc"
+   "bajt": 196163,
+   "sha256": "08ab1709a801bf6d6ca9d447a11de37bc6e380b3d815a74f9df352ec913b3a56"
   },
   {
    "fajl": "kiserleti_kapuk.json",
    "leiras": "A kísérleti kapuk blokkja: sorozatok, statisztika, PortWatch-összevetés (pillanatkép).",
-   "bajt": 44463,
-   "sha256": "32e662536e1d2921eab442f8fa823431be7d67c50808daffa427e0bb7d35be71"
+   "bajt": 44475,
+   "sha256": "43849e40466fb52e846543c61fb08e143c628bb73cfc1bd7052d64ae0d1c6d0c"
   }
  ]
 }
