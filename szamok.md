@@ -1272,3 +1272,38 @@ A 16 nap Parquet-fájlja a futtatón törlődött, a számok csak a GitHub futá
 | 2 058,9 MiB / 9 275,8 MiB | Parquet / ZIP összesen, 16 nap (a napló egy tizedesre kerekít; a ZIP-sor „MB” felirata valójában MiB, letoltes.py: / 1 048 576) | napi_sorok.csv | 2026-10-28 |
 | 36 650 571 / 16 638 836 | 2026-07-15, a két erőforrás-mérési futás (37910491337, 37914275224) nyers / dedup. sora; DuckDB a helyi Parquet-fájlon (SUM(dup_db), count(*)): mindkettő egyezik | napi_sorok.py → outputs/eles_uzem/napi_sorok_ellenorzes.csv | 2026-10-28 |
 | 227,0 vs. 226,8 MiB | 2026-07-15 Parquet-mérete: 1. futás 227,0 (−0,15 MiB eltérés a helyi 226,847 MiB-os fájltól, a kerekítési határon túl); 2. futás 226,8 (egyezik). Az eltérés megmarad, nincs kiigazítva. | napi_sorok_ellenorzes.csv | 2026-10-28 |
+
+
+### Hormuz-elemzés: 3. fázis (a minta feldolgozása) és 4. fázis (becslés, érzékenység)
+
+Előzetes mérce: `dolgozat/hormuz_elozetes_merce.md` és két kiegészítése (2026-10-28, 2026-10-29), commitok: 0807fd3, 0e07d4e. A becslés a különbségek különbsége, (B26 − A26) − (B25 − A25), 95%-os heti blokkos bootstrap-intervallummal (2 000 ismétlés, seed 20261028) és Holm-korrekcióval (H1–H3). Hatásról akkor beszélünk, ha a H1 vagy a H2 Holm-korrigált intervalluma nem tartalmazza a nullát. A 4. fázist kétszer futtattam: az első futás az ábránál elszállt, a második az ábrajavítás után ment végig. A számok a két futásban azonosak.
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 76 / 76 | feldolgozott és validált mintanap (A26 14, B26 24, A25 14, B25 24); minden napon SUM(dup_db) = ZIP-sorszám; a 2026-05-14 a 2. kísérletre (1.: DuckDB OutOfMemory) | scripts/hormuz_napi.py --kozvetlen-zip → outputs/hormuz/feldolgozas.csv | 2026-10-30 |
+| 1 465 611 774 / 812 936 600 | nyers / deduplikált AIS-sor, 76 nap | feldolgozas.csv (zip_sor, dedup_sor összege) | 2026-10-30 |
+| 213 919 160 sor, 3 122,6 MiB | a szűrt (bbox) tároló, 76 nap | feldolgozas.csv; hormuz_napi.py --osszesito | 2026-10-30 |
+| 10 279 / 2 398 | átkelés / ebből tanker a két monitorkapun (Nagy-Balti-öv, Øresund), 76 nap | feldolgozas.csv (atkeles_monitor, tanker_monitor) | 2026-10-30 |
+| 7 383 / 986 | átkelés / ebből tanker az Øresund – Drogden kapun | feldolgozas.csv | 2026-10-30 |
+| 76 / 76 | nap, amelyen a nyers és a súlyozatlan duplikátum-változat átkelésszáma egyezik a fő változatéval | feldolgozas.csv (atkeles_nyers, atkeles_sulyozatlan) | 2026-10-30 |
+| 1 182 / 1 119 / 663 | kifelé haladó tanker-átkelés / ebből megrakottság szerint értékelhető / ebből megrakott (H1 összege) | scripts/hormuz_elemzes.py (b3606ac + ábrajavítás) → mintanap_mutatok.csv | 2026-10-30 |
+| 11 666 | hajó, amelynek a max. merülése (P95) a régi (144 nap) és az új (76 nap) merülés-történetből számolva van | hormuz_elemzes.py, kimenet | 2026-10-30 |
+| 7,93 / 8,54 / 9,21 / 9,08 | H1 ablakátlag, A26 / B26 / A25 / B25 (megrakott kifelé haladó tanker-átkelés / nap) | outputs/hormuz/eredmeny.csv | 2026-10-30 |
+| +0,744 [−1,631; 3,113] | H1 DiD, 95% CI; Holm: [−2,224; 3,601], p_bootstrap 0,577, nem elvetett | eredmeny.csv | 2026-10-30 |
+| 0,171 / 0,210 / 0,147 / 0,211 | H2 ablakarány, A26 / B26 / A25 / B25 (Szuez/Ázsia/Közel-Kelet a megrakott kifelé haladók között) | eredmeny.csv | 2026-10-30 |
+| −0,025 [−0,132; 0,090] | H2 DiD, 95% CI; Holm: [−0,147; 0,107], p_bootstrap 0,698, nem elvetett | eredmeny.csv | 2026-10-30 |
+| −33 467 [−301 471; 215 167] m³/nap | H3 DiD (volumenindex), 95% CI; p_bootstrap 0,786, nem elvetett | eredmeny.csv | 2026-10-30 |
+| nem mutatható ki | a mérce szerinti fő következtetés (sem H1, sem H2 nem elvetett Holm után) | eredmeny.csv; hormuz_elemzes.py kimenet | 2026-10-30 |
+| 0 / 16 sor | érzékenységi sor (a fő és az 1–6. változat), amelyben a fő következtetés megváltozik; egyikben sem kimutatható a hatás sem 95%-os CI-vel, sem Holm után | outputs/hormuz/erzekenyseg.csv | 2026-10-30 |
+| +0,613 / −0,021 | 1. Drogden: H1 / H2 DiD (CI: [−1,982; 3,191] / [−0,132; 0,097]) | erzekenyseg.csv | 2026-10-30 |
+| +0,744 / −0,025 | 2a. nyers duplikátumok: H1 / H2 DiD, a fő változattal azonos (H1 összeg 663 / 663) | erzekenyseg.csv; hormuz_elemzes.py kimenet | 2026-10-30 |
+| +0,827 / −0,027 | 2b. súlyozatlan: H1 / H2 DiD (CI: [−1,554; 3,156] / [−0,135; 0,088]) | erzekenyseg.csv | 2026-10-30 |
+| +0,530 / −0,015 | 3. küszöb 0,7648: H1 / H2 DiD (CI: [−2,067; 3,042] / [−0,112; 0,090]) | erzekenyseg.csv | 2026-10-30 |
+| +0,863 / −0,026 | 3. küszöb 0,8648: H1 / H2 DiD (CI: [−1,620; 3,232] / [−0,137; 0,095]) | erzekenyseg.csv | 2026-10-30 |
+| −0,030 [−0,150; 0,108] | 4. FOR ORDER nélküli nevező: H2 DiD | erzekenyseg.csv | 2026-10-30 |
+| −0,021 [−0,138; 0,110] | 6. engedékeny úticél-olvasat: H2 DiD | erzekenyseg.csv | 2026-10-30 |
+| 72,4 / 72,0 / 66,5 / 67,5% | úticél értelmezhető, szigorú (fő) olvasat, kifelé haladó tanker, A26 / B26 / A25 / B25 (144/199, 254/353, 147/221, 276/409) | outputs/hormuz/uticel_ertelmezhetoseg.csv | 2026-10-30 |
+| 73,0 / 75,1 / 72,1 / 71,6% | ugyanez a H2 nevezőjében (megrakott, kifelé haladó): 81/111, 154/205, 93/129, 156/218 | uticel_ertelmezhetoseg.csv | 2026-10-30 |
+| 85,4 / 85,8 / 81,5 / 84,4% | úticél értelmezhető, engedékeny olvasat, kifelé haladó tanker, A26 / B26 / A25 / B25 (170/199, 303/353, 180/221, 345/409) | uticel_ertelmezhetoseg.csv | 2026-10-30 |
+| 82,9 / 84,9 / 81,4 / 84,4% | ugyanez a H2 nevezőjében: 92/111, 174/205, 105/129, 184/218 | uticel_ertelmezhetoseg.csv | 2026-10-30 |
+| 0 | RU úticélú megrakott, kifelé haladó tanker-átkelés, mind a négy ablakban (szigorú olvasat) | outputs/hormuz/uticel_osszetetel.csv | 2026-10-30 |

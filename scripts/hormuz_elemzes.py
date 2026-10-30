@@ -260,7 +260,9 @@ def abra_uticel(oss, ut):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     rend = ["A25", "B25", "A26", "B26"]
-    p = oss.pivot(index="ablak", columns="kategoria", values="arany").reindex(rend)[KATEGORIAK].fillna(0)
+    # egy ures kategoria (pl. RU: 0 atkeles) a pivotbol kimarad; 0-val potoljuk
+    p = (oss.pivot(index="ablak", columns="kategoria", values="arany")
+         .reindex(index=rend, columns=KATEGORIAK).fillna(0))
     szin = ["#E45756", "#4C78A8", "#F58518", "#B279A2", "#72B7B2", "#BAB0AC"]
     fig, ax = plt.subplots(figsize=(7, 4.5))
     alj = np.zeros(len(p))

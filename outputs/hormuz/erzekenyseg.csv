@@ -1,0 +1,17 @@
+valtozat,mutato,becsles,ci95_also,ci95_felso,kovetkeztetes_ci95,kovetkeztetes_holm,fo_kovetkeztetes,valtozik_a_fo_kovetkeztetes
+fő változat,H1,0.7440476190476168,-1.6313988095238108,3.1130952380952364,nem kimutatható,nem kimutatható,nem mutatható ki,False
+fő változat,H2,-0.02513742621669582,-0.1323538513304875,0.08962448298335725,nem kimutatható,nem kimutatható,nem mutatható ki,False
+1. mérési hely: Øresund helyett Øresund – Drogden,H1,0.6130952380952364,-1.9822916666666663,3.1906250000000003,nem kimutatható,nem kimutatható,nem mutatható ki,False
+1. mérési hely: Øresund helyett Øresund – Drogden,H2,-0.021256350960890874,-0.13244438115593068,0.09717063108125153,nem kimutatható,nem kimutatható,nem mutatható ki,False
+2a. duplikátumok: nyers ismétlődések (dup_db-szer ismételt pozíciók),H1,0.7440476190476168,-1.6313988095238108,3.1130952380952364,nem kimutatható,nem kimutatható,nem mutatható ki,False
+2a. duplikátumok: nyers ismétlődések (dup_db-szer ismételt pozíciók),H2,-0.02513742621669582,-0.1323538513304875,0.08962448298335725,nem kimutatható,nem kimutatható,nem mutatható ki,False
+2b. duplikátumok: tisztán deduplikált (típus és merülés dup_db-súly nélkül),H1,0.8273809523809526,-1.5535714285714288,3.155654761904758,nem kimutatható,nem kimutatható,nem mutatható ki,False
+2b. duplikátumok: tisztán deduplikált (típus és merülés dup_db-súly nélkül),H2,-0.027128052208351405,-0.134925228035376,0.08792914008203744,nem kimutatható,nem kimutatható,nem mutatható ki,False
+3. megrakottsági küszöb 0.7648,H1,0.5297619047619051,-2.066666666666664,3.041666666666666,nem kimutatható,nem kimutatható,nem mutatható ki,False
+3. megrakottsági küszöb 0.7648,H2,-0.014819534694621411,-0.11177327059747089,0.08968694442780964,nem kimutatható,nem kimutatható,nem mutatható ki,False
+3. megrakottsági küszöb 0.8648,H1,0.8630952380952381,-1.619494047619048,3.2321428571428568,nem kimutatható,nem kimutatható,nem mutatható ki,False
+3. megrakottsági küszöb 0.8648,H2,-0.026109221070172467,-0.13700288486088455,0.09493828964885716,nem kimutatható,nem kimutatható,nem mutatható ki,False
+4. FOR ORDER kimarad a H2 nevezőjéből,H2,-0.029996893864643104,-0.15009689529901882,0.10770772589547112,nem kimutatható,nem kimutatható,nem mutatható ki,False
+6. úticél: engedékeny olvasat (az első UN/LOCODE-szerű rész),H2,-0.020478467091569252,-0.1380622268721597,0.10999610387802004,nem kimutatható,nem kimutatható,nem mutatható ki,False
+5. mérőszám: H1 (darabszám) kontra H3 (volumenindex),H1,0.7440476190476168,-1.6313988095238108,3.1130952380952364,nem kimutatható,nem kimutatható,nem mutatható ki,False
+5. mérőszám: H1 (darabszám) kontra H3 (volumenindex),H3,-33467.235119047225,-301471.16340773785,215167.61751488078,nem kimutatható,nem kimutatható,nem mutatható ki,False
