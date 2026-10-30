@@ -4,15 +4,15 @@
   {
    "fajl": "legutobbi.json",
    "leiras": "Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota.",
-   "bajt": 4438,
-   "sha256": "3555a459af8a6ef12fef73d4b7794a30c1a31e79ad5bfe985248cb586405fd21"
+   "bajt": 4004,
+   "sha256": "be152fd22ee1f387d93b5618f2bc8367fd37968596e1c6af8b3e76581874fa82"
   },
   {
    "fajl": "jelzesek.csv",
    "leiras": "A monitor összes jelzés-sora (forgalom és megrakottság).",
-   "bajt": 67023,
-   "sha256": "e459b10a48a18fe050b2117861ff14bc7a698966d139c9433f999d7ffc705824",
-   "sorok": 870,
+   "bajt": 67499,
+   "sha256": "ffe26a2e5bb2cf9967bc1a57e24a0a76ea9f5c5a19b4a9ade72e5dbd3d7d93a4",
+   "sorok": 876,
    "oszlopok": [
     {
      "nev": "datum",
@@ -55,9 +55,9 @@
   {
    "fajl": "idosor_forgalom.csv",
    "leiras": "Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint.",
-   "bajt": 150535,
-   "sha256": "83502baf6bdf801280449a6855f22d7152f66324890065f0d92db55eb291f1f5",
-   "sorok": 3373,
+   "bajt": 151340,
+   "sha256": "8d4542bf61ab29b6f2a8e01be6dd35a67121670017d29e03dd4587d3a06890c7",
+   "sorok": 3391,
    "oszlopok": [
     {
      "nev": "datum",
@@ -84,9 +84,9 @@
   {
    "fajl": "idosor_megrakottsag.csv",
    "leiras": "Napi megrakottsági tábla (tanker, teherhajó).",
-   "bajt": 71748,
-   "sha256": "b1b6f0187d479c589fe45a5d099ba1292b885ba1299b360c955d7e83856ac563",
-   "sorok": 1183,
+   "bajt": 72226,
+   "sha256": "9998d9708d40258fbefea8a2abca8066ba3fa84d9429f4c71fc84ab00199ce73",
+   "sorok": 1191,
    "oszlopok": [
     {
      "nev": "datum",
