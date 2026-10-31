@@ -1325,3 +1325,18 @@ Előzetes mérce: `dolgozat/hormuz_elozetes_merce.md` és két kiegészítése (
 | 85,4 / 85,8 / 81,5 / 84,4% | úticél értelmezhető, engedékeny olvasat, kifelé haladó tanker, A26 / B26 / A25 / B25 (170/199, 303/353, 180/221, 345/409) | uticel_ertelmezhetoseg.csv | 2026-10-30 |
 | 82,9 / 84,9 / 81,4 / 84,4% | ugyanez a H2 nevezőjében: 92/111, 174/205, 105/129, 184/218 | uticel_ertelmezhetoseg.csv | 2026-10-30 |
 | 0 | RU úticélú megrakott, kifelé haladó tanker-átkelés, mind a négy ablakban (szigorú olvasat) | outputs/hormuz/uticel_osszetetel.csv | 2026-10-30 |
+
+
+### Hormuz-elemzés: az úticél-eltérés lefedettsége és a minimális kimutatható hatás
+
+Az MDE utólagos számítás, nem a mérce része; a döntési szabályt és a fő eredményt nem érinti. MDE = (z(1−α/2) + z(0,80)) × SE, az SE a különbségek különbségének bootstrap-szórása (ugyanazok a húzások, mint a fő elemzésben; a szkript ellenőrzi az egyezést az eredmeny.csv-vel). Viszonyítási szint: az A26 ablakátlag.
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 11 293 / 11 359 (99,4%) | átkelés aznapi úticél-előzménnyel / összes (a monitor- és a Drogden-kapuk, minden hajótípus); a 24 órás ablak helyett aznapi keresés, a hallgató jóváhagyásával | outputs/hormuz/feldolgozas.csv (uticel_elotte_van, uticel_atkeles) | 2026-10-31 |
+| 99,8 / 99,4 / 99,3 / 99,2% | ugyanez ablakonként, A26 / B26 / A25 / B25 (1 954/1 957, 3 492/3 512, 2 110/2 124, 3 737/3 766) | feldolgozas.csv | 2026-10-31 |
+| 3,43 átkelés/nap (43,2%) | H1 MDE, 80% erő, α = 0,05 (SE 1,2228; A26-szint 7,9286) | scripts/hormuz_mde.py → outputs/hormuz/mde.csv | 2026-10-31 |
+| 0,159 (93,1%) | H2 MDE, 80% erő, α = 0,05 (SE 0,0569; A26-szint 0,1712) | mde.csv | 2026-10-31 |
+| 374 418 m³/nap (41,0%) | H3 MDE, 80% erő, α = 0,05 (SE 133 645; A26-szint 913 934) | mde.csv | 2026-10-31 |
+| 3,96 (49,9%) / 0,184 (107,6%) / 432 422 (47,3%) | H1 / H2 / H3 MDE a Holm első lépcsőjén (α = 0,05/3), 80% erő | mde.csv (mde_holm1, mde_holm1_szint_arany) | 2026-10-31 |
+| 3,39 / 0,159 / 369 243 | H1 / H2 / H3 MDE az SE percentilis-intervallumból számolt változatával (a normális közelítés ellenőrzése) | mde.csv (mde_percentilisbol) | 2026-10-31 |
