@@ -1,0 +1,7 @@
+valtozat,leiras,napok,robusztus_szoras,kuszob,jelzett,magas,alacsony,par,median_abs_kulonbseg_szp,p90_abs_kulonbseg_szp,max_abs_kulonbseg_szp,max_nap,ellentetes_elojel,mas_minosites,mindketto_jelez
+A,"naiv (minden hajó, rögzített szint)",123.0,0.3537,0.7074,2.0,2.0,0.0,,,,,,,,
+B,"hétnap (minden hajó, monitor-alapszint)",123.0,0.2577,0.5153,5.0,5.0,0.0,,,,,,,,
+C,"monitor (kereskedelmi, monitor-alapszint)",123.0,0.1057,0.2115,12.0,9.0,3.0,,,,,,,,
+,,,,,,,,A-C,23.8,45.3,87.0,2026-08-30,54.0,14.0,0.0
+,,,,,,,,B-C,18.2,43.6,73.1,2026-07-21,57.0,17.0,0.0
+,,,,,,,,A-B,14.1,29.8,40.6,2026-08-12,22.0,5.0,1.0

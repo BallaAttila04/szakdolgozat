@@ -1,0 +1,145 @@
+datum,ertek_osszes,ertek_keresk,elteres_B,jelzes_B,elteres_C,jelzes_C,elteres_A,jelzes_A
+2026-06-01,167,94,,nincs alapszint,,nincs alapszint,,
+2026-06-02,187,117,,nincs alapszint,,nincs alapszint,,
+2026-06-03,174,98,,nincs alapszint,,nincs alapszint,,
+2026-06-04,162,115,,nincs alapszint,,nincs alapszint,,
+2026-06-05,185,98,,nincs alapszint,,nincs alapszint,,
+2026-06-06,196,105,,nincs alapszint,,nincs alapszint,,
+2026-06-07,226,106,,nincs alapszint,,nincs alapszint,,
+2026-06-08,165,95,,nincs alapszint,,nincs alapszint,,
+2026-06-09,159,96,,nincs alapszint,,nincs alapszint,,
+2026-06-10,168,88,,nincs alapszint,,nincs alapszint,,
+2026-06-11,182,113,,nincs alapszint,,nincs alapszint,,
+2026-06-12,204,103,,nincs alapszint,,nincs alapszint,,
+2026-06-13,189,105,,nincs alapszint,,nincs alapszint,,
+2026-06-14,164,113,,nincs alapszint,,nincs alapszint,,
+2026-06-15,162,98,,nincs alapszint,,nincs alapszint,,
+2026-06-16,218,108,,nincs alapszint,,nincs alapszint,,
+2026-06-17,212,108,,nincs alapszint,,nincs alapszint,,
+2026-06-18,201,109,,nincs alapszint,,nincs alapszint,,
+2026-06-19,225,103,,nincs alapszint,,nincs alapszint,,
+2026-06-20,196,105,,nincs alapszint,,nincs alapszint,,
+2026-06-21,208,92,,nincs alapszint,,nincs alapszint,,
+2026-06-22,197,108,0.1939,normál,0.1368,normál,0.0,normál
+2026-06-23,203,102,0.0856,normál,-0.0556,normál,0.0305,normál
+2026-06-24,180,83,0.0345,normál,-0.1531,normál,-0.0863,normál
+2026-06-25,208,104,0.1429,normál,-0.0796,normál,0.0558,normál
+2026-06-26,236,109,0.1569,normál,0.0583,normál,0.198,normál
+2026-06-27,217,98,0.1071,normál,-0.0667,normál,0.1015,normál
+2026-06-28,235,93,0.1298,normál,-0.1226,normál,0.1929,normál
+2026-06-29,223,108,0.3434,normál,0.1192,normál,0.132,normál
+2026-06-30,215,97,0.1026,normál,-0.0762,normál,0.0914,normál
+2026-07-01,221,84,0.2486,normál,-0.0968,normál,0.1218,normál
+2026-07-02,145,80,-0.2428,normál,-0.2793,szokatlanul alacsony,-0.264,normál
+2026-07-03,120,95,-0.4406,normál,-0.0777,normál,-0.3909,normál
+2026-07-04,217,99,0.1071,normál,-0.0571,normál,0.1015,normál
+2026-07-05,167,121,-0.2304,normál,0.2161,szokatlanul magas,-0.1523,normál
+2026-07-06,220,88,0.2155,normál,-0.1456,normál,0.1168,normál
+2026-07-07,124,86,-0.4067,normál,-0.1357,normál,-0.3706,normál
+2026-07-08,210,92,0.0714,normál,0.0698,normál,0.066,normál
+2026-07-09,328,107,0.7128,szokatlanul magas,0.0047,normál,0.665,normál
+2026-07-10,296,95,0.38,normál,-0.0777,normál,0.5025,normál
+2026-07-11,318,121,0.54,szokatlanul magas,0.1863,normál,0.6142,normál
+2026-07-12,261,98,0.392,normál,-0.0485,normál,0.3249,normál
+2026-07-13,231,95,0.1079,normál,-0.0777,normál,0.1726,normál
+2026-07-14,294,107,0.4067,normál,0.0754,normál,0.4924,normál
+2026-07-15,296,117,0.4028,normál,0.3295,szokatlanul magas,0.5025,normál
+2026-07-16,275,98,0.3447,normál,-0.0711,normál,0.3959,normál
+2026-07-17,316,129,0.3709,normál,0.303,szokatlanul magas,0.6041,normál
+2026-07-18,242,97,0.1152,normál,-0.049,normál,0.2284,normál
+2026-07-19,179,87,-0.1919,normál,-0.089,normál,-0.0914,normál
+2026-07-20,158,102,-0.2867,normál,0.0049,normál,-0.198,normál
+2026-07-21,325,82,0.555,szokatlanul magas,-0.1759,normál,0.6497,normál
+2026-07-22,165,87,-0.2343,normál,-0.0114,normál,-0.1624,normál
+2026-07-23,293,86,0.2133,normál,-0.1485,normál,0.4873,normál
+2026-07-24,261,101,-0.0188,normál,-0.0098,normál,0.3249,normál
+2026-07-25,267,91,0.1634,normál,-0.0761,normál,0.3553,normál
+2026-07-26,340,101,0.6425,szokatlanul magas,0.0576,normál,0.7259,szokatlanul magas
+2026-07-27,143,95,-0.3544,normál,-0.0355,normál,-0.2741,normál
+2026-07-28,221,86,-0.1316,normál,-0.0601,normál,0.1218,normál
+2026-07-29,323,90,0.4988,normál,0.0056,normál,0.6396,normál
+2026-07-30,232,101,-0.1831,normál,0.0978,normál,0.1777,normál
+2026-07-31,262,103,-0.0592,normál,0.051,normál,0.3299,normál
+2026-08-01,258,105,0.0138,normál,0.0714,normál,0.3096,normál
+2026-08-02,283,97,0.2864,normál,-0.0251,normál,0.4365,normál
+2026-08-03,281,88,0.4868,normál,-0.0737,normál,0.4264,normál
+2026-08-04,238,98,-0.0757,normál,0.1395,normál,0.2081,normál
+2026-08-05,245,89,-0.0316,normál,-0.022,normál,0.2437,normál
+2026-08-06,161,97,-0.4331,normál,-0.0251,normál,-0.1827,normál
+2026-08-07,169,77,-0.3943,normál,-0.2451,szokatlanul alacsony,-0.1421,normál
+2026-08-08,303,122,0.1543,normál,0.2079,normál,0.5381,normál
+2026-08-09,271,108,-0.0037,normál,0.1077,normál,0.3756,normál
+2026-08-10,200,94,0.0283,normál,-0.0105,normál,0.0152,normál
+2026-08-11,162,90,-0.391,normál,-0.0217,normál,-0.1777,normál
+2026-08-12,294,116,0.0869,normál,0.2961,szokatlanul magas,0.4924,normál
+2026-08-13,236,103,-0.069,normál,0.0564,normál,0.198,normál
+2026-08-14,232,95,-0.1128,normál,-0.0686,normál,0.1777,normál
+2026-08-15,252,83,-0.04,normál,-0.1782,normál,0.2792,normál
+2026-08-16,234,122,-0.1552,normál,0.2323,szokatlanul magas,0.1878,normál
+2026-08-17,196,102,0.095,normál,0.0794,normál,-0.0051,normál
+2026-08-18,243,123,0.0588,normál,0.3977,szokatlanul magas,0.2335,normál
+2026-08-19,185,98,-0.3135,normál,0.095,normál,-0.0609,normál
+2026-08-20,230,115,-0.0171,normál,0.1616,normál,0.1675,normál
+2026-08-21,252,110,0.0223,normál,0.1224,normál,0.2792,normál
+2026-08-22,167,95,-0.3638,normál,-0.0306,normál,-0.1523,normál
+2026-08-23,197,114,-0.2888,normál,0.0909,normál,0.0,normál
+2026-08-24,228,95,0.1515,normál,0.0053,normál,0.1574,normál
+2026-08-25,280,112,0.22,normál,0.1915,normál,0.4213,normál
+2026-08-26,240,107,-0.1095,normál,0.1383,normál,0.2183,normál
+2026-08-27,173,94,-0.2511,normál,-0.0784,normál,-0.1218,normál
+2026-08-28,164,111,-0.3223,normál,0.1212,normál,-0.1675,normál
+2026-08-29,321,122,0.2588,normál,0.22,szokatlanul magas,0.6294,normál
+2026-08-30,363,108,0.4376,normál,-0.027,normál,0.8426,szokatlanul magas
+2026-08-31,224,99,0.0467,normál,0.0476,normál,0.1371,normál
+2026-09-01,322,93,0.3389,normál,-0.1143,normál,0.6345,normál
+2026-09-02,228,107,-0.0598,normál,0.0439,normál,0.1574,normál
+2026-09-03,229,106,0.1365,normál,0.06,normál,0.1624,normál
+2026-09-04,154,103,-0.2319,normál,0.0049,normál,-0.2183,normál
+2026-09-05,149,87,-0.4631,normál,-0.1982,normál,-0.2437,normál
+2026-09-06,179,86,-0.2911,normál,-0.2252,szokatlanul alacsony,-0.0914,normál
+2026-09-07,160,100,-0.2453,normál,0.0309,normál,-0.1878,normál
+2026-09-08,155,109,-0.4073,normál,0.0634,normál,-0.2132,normál
+2026-09-09,198,102,-0.1538,normál,-0.0467,normál,0.0051,normál
+2026-09-10,139,92,-0.3943,normál,-0.1196,normál,-0.2944,normál
+2026-09-11,186,112,-0.0606,normál,0.0516,normál,-0.0558,normál
+2026-09-12,219,113,0.0453,normál,0.2418,szokatlanul magas,0.1117,normál
+2026-09-13,228,106,0.058,normál,-0.045,normál,0.1574,normál
+2026-09-14,174,104,-0.1714,normál,0.0452,normál,-0.1168,normál
+2026-09-15,206,95,-0.2122,normál,-0.1403,normál,0.0457,normál
+2026-09-16,201,107,-0.0563,normál,0.0239,normál,0.0203,normál
+2026-09-17,149,100,-0.2587,normál,0.0,normál,-0.2437,normál
+2026-09-18,307,115,0.7543,szokatlanul magas,0.0407,normál,0.5584,normál
+2026-09-19,146,104,-0.2435,normál,0.0,normál,-0.2589,normál
+2026-09-20,141,97,-0.3365,normál,-0.0935,normál,-0.2843,normál
+2026-09-21,122,89,-0.3869,normál,-0.1055,normál,-0.3807,normál
+2026-09-22,188,96,-0.2263,normál,-0.0588,normál,-0.0457,normál
+2026-09-23,150,111,-0.3007,normál,0.0374,normál,-0.2386,normál
+2026-09-24,145,107,-0.0994,normál,0.1031,normál,-0.264,normál
+2026-09-25,140,91,-0.2,normál,-0.1839,normál,-0.2893,normál
+2026-09-26,167,110,-0.0924,normál,0.0138,normál,-0.1523,normál
+2026-09-27,187,122,-0.0811,normál,0.202,normál,-0.0508,normál
+2026-09-28,156,104,-0.0659,normál,0.0452,normál,-0.2081,normál
+2026-09-29,125,78,-0.3655,normál,-0.1832,normál,-0.3655,normál
+2026-09-30,159,96,-0.203,normál,-0.1028,normál,-0.1929,normál
+2026-10-01,173,129,0.1769,normál,0.2524,szokatlanul magas,-0.1218,normál
+2026-10-02,154,99,-0.0941,normál,-0.0791,normál,-0.2183,normál
+2026-10-03,178,106,0.1266,normál,-0.0093,normál,-0.0964,normál
+2026-10-04,137,98,-0.2514,normál,-0.0345,normál,-0.3046,normál
+2026-10-05,138,108,-0.1266,normál,0.0588,normál,-0.2995,normál
+2026-10-06,133,106,-0.2245,normál,0.1099,normál,-0.3249,normál
+2026-10-07,126,97,-0.2941,normál,-0.0718,normál,-0.3604,normál
+2026-10-08,136,103,-0.0748,normál,-0.0048,normál,-0.3096,normál
+2026-10-09,132,100,-0.2235,normál,-0.0521,normál,-0.3299,normál
+2026-10-10,136,103,-0.2116,normál,-0.0463,normál,-0.3096,normál
+2026-10-11,141,110,-0.1402,normál,0.0784,normál,-0.2843,normál
+2026-10-12,136,106,-0.0748,normál,0.0192,normál,-0.3096,normál
+2026-10-13,143,109,-0.109,normál,0.1414,normál,-0.2741,normál
+2026-10-14,137,106,-0.1133,normál,0.0392,normál,-0.3046,normál
+2026-10-15,121,98,-0.1769,normál,-0.0667,normál,-0.3858,normál
+2026-10-16,136,105,-0.0748,normál,0.0553,normál,-0.3096,normál
+2026-10-17,138,110,-0.1182,normál,0.0476,normál,-0.2995,normál
+2026-10-18,131,101,-0.0709,normál,-0.0288,normál,-0.335,normál
+2026-10-19,138,112,0.0073,normál,0.0667,normál,-0.2995,normál
+2026-10-20,130,99,-0.058,normál,-0.0198,normál,-0.3401,normál
+2026-10-21,122,100,-0.1498,normál,-0.0148,normál,-0.3807,normál
+2026-10-22,124,101,-0.1174,normál,-0.0381,normál,-0.3706,normál

@@ -1274,6 +1274,24 @@ A 16 nap Parquet-fájlja a futtatón törlődött, a számok csak a GitHub futá
 | 227,0 vs. 226,8 MiB | 2026-07-15 Parquet-mérete: 1. futás 227,0 (−0,15 MiB eltérés a helyi 226,847 MiB-os fájltól, a kerekítési határon túl); 2. futás 226,8 (egyezik). Az eltérés megmarad, nincs kiigazítva. | napi_sorok_ellenorzes.csv | 2026-10-28 |
 
 
+### Mérőszám-hatás a 144 napos idősoron (a 3.4 Kiel-esetének cseréje)
+
+A 3.4 mérőszám-esete (+96 / +20 / +4%) a Kiel-napokra épült. A hallgató döntése (2026-10-28) szerint a Kiel-eset kikerül, és ugyanez az összehasonlítás a teljes fagyasztott idősoron fut, minden napra. Két kapu összesítve, 123 nap (amelyhez a hétnaphoz illesztett alapszint is van). A: minden hajó, a 123 nap mediánjához mérve; B: minden hajó, a monitor alapszintjéhez mérve; C: kereskedelmi, a monitor alapszintjéhez mérve (= a monitor „Mindkét kapu” sorozata, 144/144 napon egyezik a fagyasztott jelzesek.csv-vel). Küszöb: 2 × 1,4826 × MAD, a saját sorozatból. A régi +96/+20/+4% számok érvényesek maradnak (az ötnapos mintára), csak a dolgozat szövegéből kerülnek ki. Az óránkénti hajószám a fagyasztott állapotból nem számolható: NEM VIZSGÁLT.
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 123 / 144 | összevethető nap (B-nek és C-nek is van alapszintje) | scripts/mertekszam_hatas.py --ki outputs/kiel_csere/ (bemenet: outputs/fagyasztas_2026-10-22/monitor/kapuvonal_napi.csv) | 2026-10-28 |
+| 35,4% / 25,8% / 10,6% | robusztus szórás, A / B / C | mertekszam_osszegzes.csv (0,3537 / 0,2577 / 0,1057) | 2026-10-28 |
+| ±70,7% / ±51,5% / ±21,1% | jelzési küszöb, A / B / C | mertekszam_osszegzes.csv (0,7074 / 0,5153 / 0,2115) | 2026-10-28 |
+| 2 / 5 / 12 | jelzett nap, A / B / C (C: 9 magas, 3 alacsony) | mertekszam_osszegzes.csv | 2026-10-28 |
+| 18,2 / 23,8 / 14,1 szp | ugyanazon nap eltérésének medián abszolút különbsége, B–C / A–C / A–B | mertekszam_osszegzes.csv | 2026-10-28 |
+| 57 / 54 / 22 | ellentétes előjelű nap a 123-ból, B–C / A–C / A–B | mertekszam_osszegzes.csv | 2026-10-28 |
+| 0 / 0 / 1 | mindkét változatban jelzett nap, B–C / A–C / A–B | mertekszam_osszegzes.csv | 2026-10-28 |
+| 17 / 14 / 5 | eltérően minősített nap (jelzett vs. normál), B–C / A–C / A–B | mertekszam_osszegzes.csv | 2026-10-28 |
+| +39,8% (2026-08-18) | a C sorozat legnagyobb pozitív eltérése a 123 napon | mertekszam_napi.csv, elteres_C max = 0,3977 | 2026-10-28 |
+| 0,813 / 0,252 / 0,221 | az eltérések korrelációja, A–B / A–C / B–C | mertekszam_napi.csv, pandas corr (kézi ellenőrzés) | 2026-10-28 |
+
+
 ### Hormuz-elemzés: 3. fázis (a minta feldolgozása) és 4. fázis (becslés, érzékenység)
 
 Előzetes mérce: `dolgozat/hormuz_elozetes_merce.md` és két kiegészítése (2026-10-28, 2026-10-29), commitok: 0807fd3, 0e07d4e. A becslés a különbségek különbsége, (B26 − A26) − (B25 − A25), 95%-os heti blokkos bootstrap-intervallummal (2 000 ismétlés, seed 20261028) és Holm-korrekcióval (H1–H3). Hatásról akkor beszélünk, ha a H1 vagy a H2 Holm-korrigált intervalluma nem tartalmazza a nullát. A 4. fázist kétszer futtattam: az első futás az ábránál elszállt, a második az ábrajavítás után ment végig. A számok a két futásban azonosak.
