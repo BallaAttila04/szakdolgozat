@@ -1340,3 +1340,12 @@ Az MDE utólagos számítás, nem a mérce része; a döntési szabályt és a f
 | 374 418 m³/nap (41,0%) | H3 MDE, 80% erő, α = 0,05 (SE 133 645; A26-szint 913 934) | mde.csv | 2026-10-31 |
 | 3,96 (49,9%) / 0,184 (107,6%) / 432 422 (47,3%) | H1 / H2 / H3 MDE a Holm első lépcsőjén (α = 0,05/3), 80% erő | mde.csv (mde_holm1, mde_holm1_szint_arany) | 2026-10-31 |
 | 3,39 / 0,159 / 369 243 | H1 / H2 / H3 MDE az SE percentilis-intervallumból számolt változatával (a normális közelítés ellenőrzése) | mde.csv (mde_percentilisbol) | 2026-10-31 |
+
+
+### Hormuzi-szoros napi tankerforgalma a zár körül (a 4.1 forrása)
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 36 / 5 / 1 | Hormuz, napi tanker, 2026-02-28 / 03-01 / 03-02 | data/portwatch_chokepoints_2026-10-25.csv, `n_tanker`; a dolgozat/munka/v4_gen.py ellenőrzi | 2026-10-31 |
+| 2026-03-01 | a HORMUZ-26 esemény kezdete | PortWatch disruptions database (ArcGIS API, eventid 10000004) | 2026-10-31 |
+| 11 293 / 11 359 = 99,4% | aznapi úticél-előzmény | outputs/hormuz/feldolgozas.csv (ld. a Hormuz-szakasz) | 2026-10-31 |
