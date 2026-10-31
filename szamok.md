@@ -1349,3 +1349,25 @@ Az MDE utólagos számítás, nem a mérce része; a döntési szabályt és a f
 | 36 / 5 / 1 | Hormuz, napi tanker, 2026-02-28 / 03-01 / 03-02 | data/portwatch_chokepoints_2026-10-25.csv, `n_tanker`; a dolgozat/munka/v4_gen.py ellenőrzi | 2026-10-31 |
 | 2026-03-01 | a HORMUZ-26 esemény kezdete | PortWatch disruptions database (ArcGIS API, eventid 10000004) | 2026-10-31 |
 | 11 293 / 11 359 = 99,4% | aznapi úticél-előzmény | outputs/hormuz/feldolgozas.csv (ld. a Hormuz-szakasz) | 2026-10-31 |
+
+### Hormuz-elemzés: kiterjesztett minta, 258 nap (robusztusság, utólag hozzáadva)
+
+Kiterjesztett minta, a fő eredmény ismeretében, utólag hozzáadva (dolgozat/hormuz_merce_kiegeszites_2026-10-31_kiterjesztes.md, sha256 ce014546…, commit 002156a). A fő eredmény a 76 napos marad. Minden sor szkriptje: scripts/hormuz_kiterjesztes.py (minta, feldolgoz --kozvetlen-zip, elemez, bontas), futás: 2026-10-31.
+
+| szám | jelentés | szkript / forrás | dátum |
+|------|----------|------------------|-------|
+| 258 = 76 + 182 | a kiterjesztett minta napjai (A26 47, B26 82, A25 47, B25 82); a 182 új nap mind kész, 1. kísérletre, 0 hiányzó | outputs/hormuz/kiterjesztett/feldolgozas.csv, mintanapok.csv | 2026-10-31 |
+| 4 880 539 647 / 2 739 749 389 | nyers / deduplikált sor, 258 nap (ebből a 182 új nap: 3 414 927 873 / 1 926 812 789); SUM(dup_db) = ZIP-sor minden új napon | kiterjesztett/teljes/feldolgozas.csv (zip_sor, dedup_sor) | 2026-10-31 |
+| 8 199 / 4 117 / 4 054 | tanker-átkelés a két monitorkapun / ebből kifelé / értékelhető | outputs/logs/hormuz_kiterjesztes_elemez.log | 2026-10-31 |
+| 38 623 / 38 843 (99,4%) | aznapi úticél-előzmény / összes átkelés | kiterjesztett/teljes/feldolgozas.csv (uticel_elotte_van, uticel_atkeles) | 2026-10-31 |
+| −0,546 [−1,825; 0,732]; Holm [−2,012; 0,986] | H1, különbségek különbsége (fő: +0,744) | kiterjesztett/eredmeny.csv | 2026-10-31 |
+| −0,0165 [−0,0543; 0,0249]; Holm ugyanaz | H2 (fő: −0,025) | kiterjesztett/eredmeny.csv | 2026-10-31 |
+| −96 277 [−239 107; 30 147]; Holm [−277 591; 58 934] | H3, m³/nap (fő: −33 467) | kiterjesztett/eredmeny.csv | 2026-10-31 |
+| 0,796 / 0,796 / 0,468 | Holm-korrigált p, H1 / H2 / H3; elvetés: nincs | kiterjesztett/eredmeny.csv | 2026-10-31 |
+| nem mutatható ki | következtetés a döntési szabály szerint, azonos a fő eredménnyel; 0 / 16 érzékenységi sor változtat rajta | kiterjesztett/eredmeny.csv, erzekenyseg.csv, osszevetes.csv | 2026-10-31 |
+| 1,81 átkelés/nap (19,1%) | H1 MDE, 80% erő, α = 0,05 (SE 0,6467; A26-szint 9,4894); utólagos számítás, nem a mérce része | kiterjesztett/mde.csv | 2026-10-31 |
+| 0,0581 (29,5%) | H2 MDE (SE 0,0207; A26-szint 0,1973); utólagos számítás | kiterjesztett/mde.csv | 2026-10-31 |
+| 195 270 m³/nap (18,7%) | H3 MDE (SE 69 700; A26-szint 1 042 215); utólagos számítás | kiterjesztett/mde.csv | 2026-10-31 |
+| 2,09 (22,0%) / 0,0671 (34,0%) / 225 521 (21,6%) | H1 / H2 / H3 MDE a Holm első lépcsőjén (α = 0,05/3) | kiterjesztett/mde.csv | 2026-10-31 |
+| +0,839 / −1,136 | H1 pontbecslés a kedd–csütörtöki részmintán (258 napos P95) / a többi 182 napon; leíró bontás, nem a mérce része | kiterjesztett/hetnap_bontas.csv | 2026-10-31 |
+| 72,4 / 74,4 / 69,7 / 70,0% és 81,6 / 85,4 / 81,1 / 80,6% | úticél-értelmezhetőség a H2 nevezőjében, A26 / B26 / A25 / B25, szigorú és engedékeny olvasat | kiterjesztett/uticel_ertelmezhetoseg.csv | 2026-10-31 |
