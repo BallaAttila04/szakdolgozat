@@ -25,6 +25,15 @@ Az uj bekezdes stilusa "oldaltores" is lehet (ures bekezdes egy oldaltoressel).
 A futas vegen az elfogadott nezetet szimulalja (torles elhagyva, beszuras
 megtartva, torolt bekezdesjel es sor eltavolitva), es kiirja a bekezdesszamot.
 
+Az uj bekezdes "utan_id" helyett "elott_id"-t is kaphat, tovabbi stilusai:
+  "felirat", "forras"   tablazat- es abrafelirat, forrassor (a meglevok formazasaval)
+  "abra"                a "kep" mezoben megadott PNG, kovetett beszuraskent
+  "tabla"               a "sorok" mezoben Markdown-tablazat, minden sora kovetett
+  "kozep"               kozepre zart sor, opcionalis "meret" (pont), "felkover", "elotte", "utana"
+  "felkover"            felkover cimke, nem cimsor (nem kerul a tartalomjegyzekbe)
+  "szakasztores"        a bekezdes zarja az elozo szakaszt (lablec nelkul, igy oldalszam nelkul)
+  "mezo"                Word-mezo: "utasitas" (pl. TOC), "szoveg" a frissites elotti helyorzo
+
 Hasznalat:
     python javitas_beiras.py valtozasok.json be.docx ki.docx
     python javitas_beiras.py valtozasok.json be.docx ki.docx --szerzo "Attila Balla"
@@ -264,7 +273,24 @@ def elfogadott_nezet(doc):
 STILUS = {"torzs": fesules.TORZS, "lista": fesules.LISTA, "hivatkozas": fesules.HIV}
 
 
-def uj_bekezdes(doc, stilus, szoveg, szerzo, datum, azon):
+def mezo_futasok(utasitas, helyorzo):
+    """Word-mezo futasai; a w:dirty miatt a Word megnyitaskor frissiti."""
+    def fld(tipus, dirty=False):
+        r = etree.Element(w("r"))
+        c = etree.SubElement(r, w("fldChar"))
+        c.set(w("fldCharType"), tipus)
+        if dirty:
+            c.set(w("dirty"), "true")
+        return r
+    ur = etree.Element(w("r"))
+    it = etree.SubElement(ur, w("instrText"))
+    it.text = f" {utasitas} "
+    it.set(XML_SPACE, "preserve")
+    return [fld("begin", True), ur, fld("separate"), fesules.futas(helyorzo), fld("end")]
+
+
+def uj_bekezdes(doc, stilus, szoveg, szerzo, datum, azon, u=None):
+    u = u or {}
     if stilus == "oldaltores":
         ppr = etree.Element(w("pPr"))
         futasok = [etree.Element(w("r"))]
@@ -275,6 +301,24 @@ def uj_bekezdes(doc, stilus, szoveg, szerzo, datum, azon):
                      and p.find(f"{w('pPr')}/{w('pStyle')}").get(w("val")) == stilus)
         ppr = copy.deepcopy(minta.find(w("pPr")))
         futasok = [fesules.futas(szoveg)]
+    elif stilus == "felirat":
+        ppr = fesules.ppr(**fesules.FELIRAT)
+        futasok = fesules.futasok(szoveg, {"b": True, "sz": 22})
+    elif stilus == "forras":
+        ppr = fesules.ppr(**fesules.FORRAS)
+        futasok = fesules.futasok(szoveg, {"i": True, "sz": 20})
+    elif stilus == "kozep":
+        ppr = fesules.ppr(spacing={"before": u.get("elotte", 0), "after": u.get("utana", 240)}, jc="center")
+        futasok = fesules.futasok(szoveg, {"b": u.get("felkover", False), "sz": u.get("meret", 12) * 2})
+    elif stilus == "felkover":
+        ppr = fesules.ppr(spacing={"before": 240, "after": 120}, keep_next=True)
+        futasok = fesules.futasok(szoveg, {"b": True, "sz": 28})
+    elif stilus == "szakasztores":
+        ppr = etree.Element(w("pPr"))
+        futasok = []
+    elif stilus == "mezo":
+        ppr = fesules.ppr(**fesules.TORZS)
+        futasok = mezo_futasok(u["utasitas"], szoveg)
     else:
         ppr = fesules.ppr(**STILUS[stilus])
         futasok = fesules.futasok(szoveg)
@@ -287,13 +331,76 @@ def uj_bekezdes(doc, stilus, szoveg, szerzo, datum, azon):
     jel = etree.Element(w("ins"))
     jel.set(w("id"), str(azon)); jel.set(w("author"), szerzo); jel.set(w("date"), datum)
     rpr.insert(0, jel)
+    if stilus == "szakasztores":
+        szak = copy.deepcopy(doc.find(w("body")).find(w("sectPr")))
+        for e in szak.findall(w("footerReference")) + szak.findall(w("headerReference")):
+            szak.remove(e)
+        ppr.append(szak)
     p = etree.Element(w("p"))
     p.append(ppr)
-    ins = etree.SubElement(p, w("ins"))
-    ins.set(w("id"), str(azon + 1)); ins.set(w("author"), szerzo); ins.set(w("date"), datum)
-    for r in futasok:
-        ins.append(r)
+    if futasok:
+        ins = etree.SubElement(p, w("ins"))
+        ins.set(w("id"), str(azon + 1)); ins.set(w("author"), szerzo); ins.set(w("date"), datum)
+        for r in futasok:
+            ins.append(r)
     return p
+
+
+def uj_abra(doc, reszek, u, szerzo, datum, azon):
+    """A PNG bekerul a csomagba, es egy kovetett beszuras hivatkozik ra."""
+    utvonal = Path(u["kep"])
+    adat = utvonal.read_bytes()
+    szel, mag = fesules.png_meret(adat)
+    nev = f"uj_{utvonal.name}"
+    if f"word/media/{nev}" in reszek:
+        sys.exit(f"Mar letezik: word/media/{nev}")
+    reszek[f"word/media/{nev}"] = adat
+    rels = etree.fromstring(reszek["word/_rels/document.xml.rels"])
+    rid = f"rIdUjKep{len(rels) + 1}"
+    etree.SubElement(rels, "{http://schemas.openxmlformats.org/package/2006/relationships}Relationship",
+                     Id=rid, Type=fesules.R_NS + "/image", Target=f"media/{nev}")
+    reszek["word/_rels/document.xml.rels"] = etree.tostring(rels, xml_declaration=True, encoding="UTF-8", standalone=True)
+    minta = next(p for p in doc.iter(w("p")) if p.find(f".//{w('drawing')}") is not None
+                 and p.find(w("ins")) is None)
+    docpr = 20000 + azon % 40000
+    p = fesules.abra_bekezdes(minta, rid, nev, docpr, szel, mag)
+    for e in p.iter():                          # a minta Word-azonositoi nem duplikalodhatnak
+        for k in list(e.attrib):
+            if k.endswith(("}paraId", "}textId", "}anchorId", "}editId")):
+                del e.attrib[k]
+    ppr = p.find(w("pPr"))
+    rpr = ppr.find(w("rPr"))
+    if rpr is None:
+        rpr = etree.SubElement(ppr, w("rPr"))
+    rpr.insert(0, valtozas("ins", szerzo, datum, azon))
+    ins = valtozas("ins", szerzo, datum, azon + 1)
+    for r in p.findall(w("r")):
+        ins.append(r)
+    p.append(ins)
+    return p
+
+
+def uj_tabla(doc, sorok, szerzo, datum, azon):
+    """Markdown-tablazat, minden sora es cellabekezdese kovetett beszuras.
+    Visszaadja a tablazatot es a felhasznalt azonositok szamat."""
+    minta = next(doc.iter(w("tbl"))).find(w("tblPr"))
+    tbl = fesules.tablazat(sorok, minta)
+    db = 0
+    for tr in tbl.findall(w("tr")):
+        trpr = tr.find(w("trPr"))
+        if trpr is None:
+            trpr = etree.Element(w("trPr"))
+            tr.insert(0, trpr)
+        trpr.append(valtozas("ins", szerzo, datum, azon + db))
+        db += 1
+        for p in tr.iter(w("p")):
+            p.find(f"{w('pPr')}/{w('rPr')}").insert(0, valtozas("ins", szerzo, datum, azon + db))
+            ins = valtozas("ins", szerzo, datum, azon + db + 1)
+            db += 2
+            for r in p.findall(w("r")):
+                ins.append(r)
+            p.append(ins)
+    return tbl, db
 
 
 def main():
@@ -374,17 +481,27 @@ def main():
     beszurva, rossz_hely = 0, []
     csop = defaultdict(list)
     for u in ujak:
-        csop[u["utan_id"]].append(u)
-    for uid, us in csop.items():
+        csop[("utan", u["utan_id"]) if "utan_id" in u else ("elott", u["elott_id"])].append(u)
+    for (irany, uid), us in csop.items():
         if uid >= len(bekezdesek) or bekezdesek[uid].getparent() is not body:
             rossz_hely.append(uid)
             continue
         horgony = bekezdesek[uid]
         for u in sorted(us, key=lambda x: x["sorrend"]):
-            p = uj_bekezdes(doc, u["stilus"], u["szoveg"], args.szerzo, datum, azon)
-            azon += 2
-            horgony.addnext(p)
-            horgony = p
+            if u["stilus"] == "abra":
+                p = uj_abra(doc, reszek, u, args.szerzo, datum, azon)
+                azon += 2
+            elif u["stilus"] == "tabla":
+                p, db = uj_tabla(doc, u["sorok"], args.szerzo, datum, azon)
+                azon += db
+            else:
+                p = uj_bekezdes(doc, u["stilus"], u.get("szoveg", ""), args.szerzo, datum, azon, u)
+                azon += 2
+            if irany == "utan":
+                horgony.addnext(p)
+                horgony = p
+            else:
+                horgony.addprevious(p)
             beszurva += 1
     reszek["word/document.xml"] = etree.tostring(doc, xml_declaration=True, encoding="UTF-8", standalone=True)
     with zipfile.ZipFile(args.ki, "w", zipfile.ZIP_DEFLATED) as z:

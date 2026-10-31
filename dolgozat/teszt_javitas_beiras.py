@@ -57,11 +57,17 @@ VALTOZASOK = {
         {"utan_id": 2, "sorrend": 1, "stilus": "Heading1", "szoveg": "2. Uj fejezet"},
         {"utan_id": 2, "sorrend": 2, "stilus": "torzs", "szoveg": "[FOLYAMATBAN] Helyfoglalo."},
         {"utan_id": 2, "sorrend": 3, "stilus": "oldaltores", "szoveg": ""},
+        {"elott_id": 0, "sorrend": 1, "stilus": "kozep", "szoveg": "CIM", "meret": 20, "felkover": True},
+        {"elott_id": 0, "sorrend": 2, "stilus": "szakasztores"},
+        {"elott_id": 0, "sorrend": 3, "stilus": "mezo", "utasitas": 'TOC \\o "1-3"', "szoveg": "helyorzo"},
+        {"utan_id": 10, "sorrend": 1, "stilus": "felirat", "szoveg": "1. táblázat: Uj"},
+        {"utan_id": 10, "sorrend": 2, "stilus": "tabla", "sorok": ["| x | y |", "|---|---|", "| 1 | 2 |"]},
+        {"utan_id": 10, "sorrend": 3, "stilus": "forras", "szoveg": "Forrás: saját."},
     ],
 }
 
-VART = ["1. Fejezet", "Alfa BETA gamma.", "", "2. Uj fejezet", "[FOLYAMATBAN] Helyfoglalo.", "",
-        "2. Fejezet", "Utolso."]
+VART = ["CIM", "", "helyorzo", "1. Fejezet", "Alfa BETA gamma.", "", "2. Uj fejezet", "[FOLYAMATBAN] Helyfoglalo.", "",
+        "2. Fejezet", "Utolso.", "1. táblázat: Uj", "x", "y", "1", "2", "Forrás: saját."]
 
 
 def main():
@@ -96,6 +102,13 @@ def main():
         ok.append(("az uj oldaltores kovetett beszuras",
                    any(br.get(jb.w("type")) == "page" and any(a.tag == jb.w("ins") for a in br.iterancestors())
                        for br in doc.iter(jb.w("br")))))
+        ok.append(("az uj tablazat sorai kovetett beszurasok", len(doc.findall(f".//{jb.w('trPr')}/{jb.w('ins')}")) == 2))
+        ok.append(("szakasztores a bekezdesjelben, lablec nelkul",
+                   [len(s.findall(jb.w("footerReference"))) for s in doc.iter(jb.w("sectPr"))] == [0, 0]
+                   and doc.find(f".//{jb.w('pPr')}/{jb.w('sectPr')}") is not None))
+        ok.append(("TOC-mezo kovetett beszuraskent",
+                   any("TOC" in (i.text or "") and any(a.tag == jb.w("ins") for a in i.iterancestors())
+                       for i in doc.iter(jb.w("instrText")))))
         ids = [e.get(jb.w("id")) for e in doc.iter(jb.w("ins"), jb.w("del"))]
         ok.append(("egyedi valtozas-azonositok", len(ids) == len(set(ids))))
         for nev, v in ok:
