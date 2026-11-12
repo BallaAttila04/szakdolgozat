@@ -55,3 +55,13 @@ outputs/hormuz/kiterjesztett/teljes/
 
 # Fagyasztott monitorallapot (git show f8603b3:outputs/monitor/*), ujraeloallithato
 outputs/fagyasztas_*/
+
+# A dan idosor kitoltese (hormuz_kitoltes.py): csak a kis osszesito fajlok verziozottak,
+# a reszletes atkeles- es merulestablak (~50 MB) ujrageneralhatok
+outputs/hormuz/kitoltes/*
+!outputs/hormuz/kitoltes/napi.csv
+!outputs/hormuz/kitoltes/feldolgozas.csv
+!outputs/hormuz/kitoltes/pipeline_napok.csv
+!outputs/hormuz/kitoltes/mintanapok.csv
+outputs/tarolo_hormuz_kitoltes/
+outputs/tarolo_hormuz_tmp/
