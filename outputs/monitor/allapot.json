@@ -1,58 +1,58 @@
 {
- "utolso_nap": "2026-11-11",
- "napok_szama": 164,
+ "utolso_nap": "2026-11-12",
+ "napok_szama": 165,
  "elso_nap": "2026-06-01",
- "frissitve_utc": "2026-11-14T10:49:36+00:00",
+ "frissitve_utc": "2026-11-15T11:25:30+00:00",
  "kuszob": {
-  "Mindkét kapu": 0.2042,
-  "Nagy-Balti-öv": 0.3297,
-  "Øresund": 0.2613
+  "Mindkét kapu": 0.2018,
+  "Nagy-Balti-öv": 0.3281,
+  "Øresund": 0.2623
  },
  "zajszint": {
   "Mindkét kapu": {
-   "napok": 143,
-   "median_abs_elteres": 0.0711,
-   "robusztus_szoras": 0.1021,
-   "p90_abs_elteres": 0.2071
+   "napok": 144,
+   "median_abs_elteres": 0.0704,
+   "robusztus_szoras": 0.1009,
+   "p90_abs_elteres": 0.2067
   },
   "Nagy-Balti-öv": {
-   "napok": 143,
+   "napok": 144,
    "median_abs_elteres": 0.1111,
-   "robusztus_szoras": 0.1648,
-   "p90_abs_elteres": 0.235
+   "robusztus_szoras": 0.164,
+   "p90_abs_elteres": 0.2339
   },
   "Øresund": {
-   "napok": 143,
-   "median_abs_elteres": 0.0909,
-   "robusztus_szoras": 0.1307,
-   "p90_abs_elteres": 0.2601
+   "napok": 144,
+   "median_abs_elteres": 0.0918,
+   "robusztus_szoras": 0.1311,
+   "p90_abs_elteres": 0.2598
   }
  },
  "alap_hetek": 4,
  "min_alapnap": 3,
  "kuszob_szorzo": 2.0,
  "kuszob_megrakottsag": {
-  "Megrakott tanker (7 nap)": 0.1532,
-  "Megrakott teherhajó (7 nap)": 0.1663,
-  "Tanker-volumen (7 nap, 1000 m³)": 0.2241
+  "Megrakott tanker (7 nap)": 0.1531,
+  "Megrakott teherhajó (7 nap)": 0.1689,
+  "Tanker-volumen (7 nap, 1000 m³)": 0.221
  },
  "zajszint_megrakottsag": {
   "Megrakott tanker (7 nap)": {
-   "napok": 137,
-   "median_abs_elteres": 0.0496,
-   "robusztus_szoras": 0.0766,
-   "p90_abs_elteres": 0.1446
+   "napok": 138,
+   "median_abs_elteres": 0.0488,
+   "robusztus_szoras": 0.0765,
+   "p90_abs_elteres": 0.1405
   },
   "Megrakott teherhajó (7 nap)": {
-   "napok": 137,
-   "median_abs_elteres": 0.0578,
-   "robusztus_szoras": 0.0831,
-   "p90_abs_elteres": 0.1185
+   "napok": 138,
+   "median_abs_elteres": 0.0579,
+   "robusztus_szoras": 0.0845,
+   "p90_abs_elteres": 0.1176
   },
   "Tanker-volumen (7 nap, 1000 m³)": {
-   "napok": 137,
-   "median_abs_elteres": 0.0768,
-   "robusztus_szoras": 0.1121,
+   "napok": 138,
+   "median_abs_elteres": 0.0766,
+   "robusztus_szoras": 0.1105,
    "p90_abs_elteres": 0.1813
   }
  },
@@ -62,7 +62,7 @@
  },
  "gordulo_nap": 7,
  "utolso_futas": {
-  "ido_utc": "2026-11-14T10:48:12+00:00",
+  "ido_utc": "2026-11-15T11:23:56+00:00",
   "statusz": "ok",
   "uzenet": "1 uj nap"
  }
