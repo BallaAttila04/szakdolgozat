@@ -1,11 +1,11 @@
 {
  "sema_verzio": 1,
- "utolso_nap": "2026-11-14",
+ "utolso_nap": "2026-11-15",
  "elso_nap": "2026-06-01",
- "napok_szama": 167,
- "frissitve_utc": "2026-11-17T12:20:31+00:00",
+ "napok_szama": 168,
+ "frissitve_utc": "2026-11-18T12:07:55+00:00",
  "utolso_futas": {
-  "ido_utc": "2026-11-17T12:19:15+00:00",
+  "ido_utc": "2026-11-18T12:06:20+00:00",
   "statusz": "ok",
   "uzenet": "1 uj nap"
  },
@@ -16,78 +16,101 @@
   "gordulo_nap": 7,
   "megrakott_kuszob_relativ_merules": {
    "Tanker": 0.8069,
-   "Teherhajó": 0.7901
+   "Teherhajó": 0.786
   }
  },
  "sorozatok": [
   {
    "sorozat": "Nagy-Balti-öv",
    "tipus": "forgalom",
-   "datum": "2026-11-14",
-   "ertek": 42,
-   "alapszint": 58.5,
-   "elteres": -0.2821,
-   "kuszob": 0.3317,
+   "datum": "2026-11-15",
+   "ertek": 72,
+   "alapszint": 47,
+   "elteres": 0.5319,
+   "kuszob": 0.3325,
    "alapnapok": 4,
-   "jelzes": "normál"
+   "jelzes": "szokatlanul magas"
   },
   {
    "sorozat": "Øresund",
    "tipus": "forgalom",
-   "datum": "2026-11-14",
-   "ertek": 49,
-   "alapszint": 48,
-   "elteres": 0.0208,
-   "kuszob": 0.2623,
+   "datum": "2026-11-15",
+   "ertek": 46,
+   "alapszint": 46.5,
+   "elteres": -0.0108,
+   "kuszob": 0.2696,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Mindkét kapu",
    "tipus": "forgalom",
-   "datum": "2026-11-14",
-   "ertek": 91,
-   "alapszint": 106.5,
-   "elteres": -0.1455,
-   "kuszob": 0.2023,
+   "datum": "2026-11-15",
+   "ertek": 118,
+   "alapszint": 95.5,
+   "elteres": 0.2356,
+   "kuszob": 0.2026,
    "alapnapok": 4,
-   "jelzes": "normál"
+   "jelzes": "szokatlanul magas"
   },
   {
    "sorozat": "Megrakott tanker (7 nap)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-14",
-   "ertek": 110,
-   "alapszint": 121,
-   "elteres": -0.0909,
-   "kuszob": 0.1553,
+   "datum": "2026-11-15",
+   "ertek": 115,
+   "alapszint": 123,
+   "elteres": -0.065,
+   "kuszob": 0.1558,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Megrakott teherhajó (7 nap)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-14",
-   "ertek": 344,
-   "alapszint": 366.5,
-   "elteres": -0.0614,
-   "kuszob": 0.1747,
+   "datum": "2026-11-15",
+   "ertek": 348,
+   "alapszint": 368.5,
+   "elteres": -0.0556,
+   "kuszob": 0.1757,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Tanker-volumen (7 nap, 1000 m³)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-14",
-   "ertek": 10976,
-   "alapszint": 13460.5,
-   "elteres": -0.1846,
-   "kuszob": 0.2226,
+   "datum": "2026-11-15",
+   "ertek": 12078,
+   "alapszint": 13430.5,
+   "elteres": -0.1007,
+   "kuszob": 0.2254,
    "alapnapok": 4,
    "jelzes": "normál"
   }
  ],
- "aktiv_jelzesek": [],
+ "aktiv_jelzesek": [
+  {
+   "sorozat": "Nagy-Balti-öv",
+   "tipus": "forgalom",
+   "datum": "2026-11-15",
+   "ertek": 72,
+   "alapszint": 47,
+   "elteres": 0.5319,
+   "kuszob": 0.3325,
+   "alapnapok": 4,
+   "jelzes": "szokatlanul magas"
+  },
+  {
+   "sorozat": "Mindkét kapu",
+   "tipus": "forgalom",
+   "datum": "2026-11-15",
+   "ertek": 118,
+   "alapszint": 95.5,
+   "elteres": 0.2356,
+   "kuszob": 0.2026,
+   "alapnapok": 4,
+   "jelzes": "szokatlanul magas"
+  }
+ ],
  "jelzesek_utolso_napok": [
   {
    "datum": "2026-10-30",
@@ -96,7 +119,7 @@
    "ertek": 68,
    "alapszint": 48.5,
    "elteres": 0.4021,
-   "kuszob": 0.3317,
+   "kuszob": 0.3325,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -106,7 +129,17 @@
    "ertek": 69,
    "alapszint": 50.5,
    "elteres": 0.3663,
-   "kuszob": 0.3317,
+   "kuszob": 0.3325,
+   "jelzes": "szokatlanul magas"
+  },
+  {
+   "datum": "2026-11-15",
+   "tipus": "forgalom",
+   "sorozat": "Nagy-Balti-öv",
+   "ertek": 72,
+   "alapszint": 47,
+   "elteres": 0.5319,
+   "kuszob": 0.3325,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -116,7 +149,7 @@
    "ertek": 60,
    "alapszint": 45.5,
    "elteres": 0.3187,
-   "kuszob": 0.2623,
+   "kuszob": 0.2696,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -126,7 +159,7 @@
    "ertek": 27,
    "alapszint": 52.5,
    "elteres": -0.4857,
-   "kuszob": 0.2623,
+   "kuszob": 0.2696,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -136,7 +169,7 @@
    "ertek": 42,
    "alapszint": 59,
    "elteres": -0.2881,
-   "kuszob": 0.2623,
+   "kuszob": 0.2696,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -146,7 +179,7 @@
    "ertek": 84,
    "alapszint": 105.5,
    "elteres": -0.2038,
-   "kuszob": 0.2023,
+   "kuszob": 0.2026,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -156,7 +189,7 @@
    "ertek": 132,
    "alapszint": 102.5,
    "elteres": 0.2878,
-   "kuszob": 0.2023,
+   "kuszob": 0.2026,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -166,7 +199,17 @@
    "ertek": 133,
    "alapszint": 103,
    "elteres": 0.2913,
-   "kuszob": 0.2023,
+   "kuszob": 0.2026,
+   "jelzes": "szokatlanul magas"
+  },
+  {
+   "datum": "2026-11-15",
+   "tipus": "forgalom",
+   "sorozat": "Mindkét kapu",
+   "ertek": 118,
+   "alapszint": 95.5,
+   "elteres": 0.2356,
+   "kuszob": 0.2026,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -176,7 +219,7 @@
    "ertek": 139,
    "alapszint": 115,
    "elteres": 0.2087,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -186,7 +229,7 @@
    "ertek": 152,
    "alapszint": 116.5,
    "elteres": 0.3047,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -196,7 +239,7 @@
    "ertek": 159,
    "alapszint": 117,
    "elteres": 0.359,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -206,7 +249,7 @@
    "ertek": 145,
    "alapszint": 123,
    "elteres": 0.1789,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -216,7 +259,7 @@
    "ertek": 152,
    "alapszint": 119,
    "elteres": 0.2773,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -226,7 +269,7 @@
    "ertek": 149,
    "alapszint": 114.5,
    "elteres": 0.3013,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -236,7 +279,7 @@
    "ertek": 150,
    "alapszint": 118,
    "elteres": 0.2712,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -246,7 +289,7 @@
    "ertek": 141,
    "alapszint": 115,
    "elteres": 0.2261,
-   "kuszob": 0.1553,
+   "kuszob": 0.1558,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -256,7 +299,7 @@
    "ertek": 13895,
    "alapszint": 11141,
    "elteres": 0.2472,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -266,7 +309,7 @@
    "ertek": 15582,
    "alapszint": 11138,
    "elteres": 0.399,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -276,7 +319,7 @@
    "ertek": 15382,
    "alapszint": 11445,
    "elteres": 0.344,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -286,7 +329,7 @@
    "ertek": 15723,
    "alapszint": 12027,
    "elteres": 0.3073,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -296,7 +339,7 @@
    "ertek": 16475,
    "alapszint": 12285.5,
    "elteres": 0.341,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -306,7 +349,7 @@
    "ertek": 16555,
    "alapszint": 12484,
    "elteres": 0.3261,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -316,7 +359,7 @@
    "ertek": 15619,
    "alapszint": 12172,
    "elteres": 0.2832,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -326,7 +369,7 @@
    "ertek": 14701,
    "alapszint": 11782,
    "elteres": 0.2478,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -336,9 +379,9 @@
    "ertek": 15197,
    "alapszint": 11628.5,
    "elteres": 0.3069,
-   "kuszob": 0.2226,
+   "kuszob": 0.2254,
    "jelzes": "szokatlanul magas"
   }
  ],
- "generalva_utc": "2026-11-17T12:20:32+00:00"
+ "generalva_utc": "2026-11-18T12:07:56+00:00"
 }
