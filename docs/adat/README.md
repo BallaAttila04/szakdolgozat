@@ -13,10 +13,10 @@ A napi forgalmi monitor gépi felülete. A fájlok a napi futással együtt fris
 
 | fájl | leírás | méret | sorok |
 |---|---|---|---|
-| `legutobbi.json` | Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota. | 8,1 KB | – |
-| `jelzesek.csv` | A monitor összes jelzés-sora (forgalom és megrakottság). | 74,8 KB | 990 |
-| `idosor_forgalom.csv` | Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint. | 164,7 KB | 3777 |
-| `idosor_megrakottsag.csv` | Napi megrakottsági tábla (tanker, teherhajó). | 79,6 KB | 1343 |
+| `legutobbi.json` | Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota. | 8,0 KB | – |
+| `jelzesek.csv` | A monitor összes jelzés-sora (forgalom és megrakottság). | 75,3 KB | 996 |
+| `idosor_forgalom.csv` | Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint. | 165,6 KB | 3798 |
+| `idosor_megrakottsag.csv` | Napi megrakottsági tábla (tanker, teherhajó). | 80,0 KB | 1351 |
 | `kiserleti_kapuk_napi.csv` | A kísérleti kapuk napi kereskedelmi (teher + tanker) átkelései – kísérleti, nem a monitor része. | 60,6 KB | 1742 |
 | `backtest.json` | A jelzési szabály backtestjének összefoglalója (pillanatkép). | 191,6 KB | – |
 | `kiserleti_kapuk.json` | A kísérleti kapuk blokkja: sorozatok, statisztika, PortWatch-összevetés (pillanatkép). | 43,4 KB | – |
