@@ -1251,7 +1251,7 @@ datum,kapu,irany,csoport,atkeles,ertekelheto,megrakott,volumenindex,megrakott_ar
 2026-11-04,Nagy-Balti-öv,észak,Tanker,14,14,7,1398424.0,0.5
 2026-11-04,Nagy-Balti-öv,észak,Teherhajó,21,21,17,886498.0,0.8095
 2026-11-04,Øresund,dél,Tanker,11,11,6,391338.0,0.5455
-2026-11-04,Øresund,dél,Teherhajó,30,28,14,524177.0,0.5
+2026-11-04,Øresund,dél,Teherhajó,30,29,14,524177.0,0.4828
 2026-11-04,Øresund,észak,Tanker,7,7,3,74915.0,0.4286
 2026-11-04,Øresund,észak,Teherhajó,16,16,12,226213.0,0.75
 2026-11-05,Nagy-Balti-öv,dél,Tanker,8,7,5,610007.0,0.7143
@@ -1350,3 +1350,11 @@ datum,kapu,irany,csoport,atkeles,ertekelheto,megrakott,volumenindex,megrakott_ar
 2026-11-16,Øresund,dél,Teherhajó,19,19,12,460516.0,0.6316
 2026-11-16,Øresund,észak,Tanker,6,6,3,126802.0,0.5
 2026-11-16,Øresund,észak,Teherhajó,12,12,7,168663.0,0.5833
+2026-11-17,Nagy-Balti-öv,dél,Tanker,7,7,6,532748.0,0.8571
+2026-11-17,Nagy-Balti-öv,dél,Teherhajó,12,11,10,691211.0,0.9091
+2026-11-17,Nagy-Balti-öv,észak,Tanker,6,6,5,298066.0,0.8333
+2026-11-17,Nagy-Balti-öv,észak,Teherhajó,14,14,12,1004403.0,0.8571
+2026-11-17,Øresund,dél,Tanker,6,6,3,202090.0,0.5
+2026-11-17,Øresund,dél,Teherhajó,18,15,7,484139.0,0.4667
+2026-11-17,Øresund,észak,Tanker,4,4,0,59577.0,0.0
+2026-11-17,Øresund,észak,Teherhajó,14,14,8,177091.0,0.5714
