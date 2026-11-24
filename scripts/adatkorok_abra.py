@@ -98,19 +98,19 @@ def main():
          lambda ax, y: sav(ax, y, "2026-06-22", "2026-10-22", MONITOR, alpha=0.6)),
         ("– tárolóablak (laptop)", "128 nap", "tárolás, kapuk (3.2, 3.5, 5.3)",
          lambda ax, y: sav(ax, y, "2026-06-01", "2026-10-06", MONITOR, alpha=0.4)),
-        ("– skálázási minta", "92 nap", "skálázás, futás (3.2, 3.3, 3.7)",
+        ("– első három hónap", "92 nap", "skálázás, futás (3.2, 3.3, 3.7)",
          lambda ax, y: sav(ax, y, "2026-06-01", "2026-08-31", MONITOR, alpha=0.25)),
-        ("Alapminta", "5 tesztnap", "technikai mérések (3.2, 3.3, 3.5)", alapminta),
+        ("– öt tesztnap", "5 nap", "technikai mérések (3.2, 3.3, 3.5)", alapminta),
     ]
     fig, (a1, a2) = plt.subplots(2, 1, figsize=(16 / 2.54, 11.2 / 2.54),
                                  gridspec_kw={"height_ratios": [3, 5], "hspace": 0.62})
     fig.subplots_adjust(left=0.25, right=0.70, top=0.92, bottom=0.07)
-    panel(a1, felso, ("2025-01-01", "2026-06-01"), "Hormuz-időszak (4. fejezet): 2025 és 2026 január–május")
+    panel(a1, felso, ("2025-01-01", "2026-06-01"), "Hormuz-időszak (4. fejezet): 2025. január 1. – 2026. május 31.")
     a1.axvline(D("2026-02-28"), color=TINTA, linestyle=":", linewidth=0.9)
     a1.text(D("2026-02-28"), -0.58, " Hormuz-zár", fontsize=7.0, color=TINTA, va="bottom")
     a1.xaxis.set_major_locator(mdates.MonthLocator(bymonth=(1, 4, 7, 10)))
     a1.xaxis.set_major_formatter(mdates.DateFormatter("%Y.%m."))
-    panel(a2, also, ("2026-05-25", "2026-10-29"), "Monitor-időszak (2–3. és 5. fejezet): 2026. június 1. – október 22.")
+    panel(a2, also, ("2026-05-25", "2026-10-29"), "Monitoridőszak (2., 3. és 5. fejezet): 2026. június 1. – október 22.")
     a2.xaxis.set_major_locator(mdates.MonthLocator())
     a2.xaxis.set_major_formatter(mdates.DateFormatter("%Y.%m."))
     fig.savefig(args.ki, dpi=300)
