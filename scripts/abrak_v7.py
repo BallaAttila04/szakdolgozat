@@ -160,8 +160,7 @@ def vonal_cellak(xs, ys, res, gyuru):
     return alap, out
 
 
-def h3_racs(con, nap, kapuk, land, ki):
-    kit = (10.78, 11.30, 55.22, 55.47)
+def h3_racs(con, nap, kapuk, land, ki, kit=(10.78, 11.30, 55.22, 55.47)):
     df = con.sql(f"""
         SELECT h3, count(DISTINCT MMSI) AS hajo, sum(dup_db) AS sor FROM '{nap}'
         WHERE Latitude BETWEEN {kit[2] - 0.02} AND {kit[3] + 0.02}
@@ -185,7 +184,7 @@ def h3_racs(con, nap, kapuk, land, ki):
     ax.add_collection(PolyCollection(fpolik, facecolor="none", edgecolor="#e34948",
                                      linewidth=0.5, zorder=3))
     ax.plot(xs, ys, color="#111111", lw=1.6, zorder=4)
-    ax.text(10.79, 55.41, "Nagy-Balti-öv kapu (É 55,40°)", ha="left", va="bottom",
+    ax.text(kit[0] + 0.01, 55.41, "Nagy-Balti-öv kapu (É 55,40°)", ha="left", va="bottom",
             fontsize=7.5, color=TINTA, zorder=6, bbox=DOBOZ)
     ax.add_patch(plt.Rectangle((10.85, 55.28), 0.30, 0.12, fill=False, ls=(0, (4, 3)), lw=1.0,
                                ec=TINTA, zorder=5))
