@@ -1,11 +1,11 @@
 {
  "sema_verzio": 1,
- "utolso_nap": "2026-11-21",
+ "utolso_nap": "2026-11-22",
  "elso_nap": "2026-06-01",
- "napok_szama": 174,
- "frissitve_utc": "2026-11-24T14:10:20+00:00",
+ "napok_szama": 175,
+ "frissitve_utc": "2026-11-25T13:23:49+00:00",
  "utolso_futas": {
-  "ido_utc": "2026-11-24T14:09:03+00:00",
+  "ido_utc": "2026-11-25T13:22:23+00:00",
   "statusz": "ok",
   "uzenet": "1 uj nap"
  },
@@ -23,66 +23,66 @@
   {
    "sorozat": "Nagy-Balti-öv",
    "tipus": "forgalom",
-   "datum": "2026-11-21",
-   "ertek": 48,
-   "alapszint": 57,
-   "elteres": -0.1579,
-   "kuszob": 0.3424,
+   "datum": "2026-11-22",
+   "ertek": 55,
+   "alapszint": 47,
+   "elteres": 0.1702,
+   "kuszob": 0.344,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Øresund",
    "tipus": "forgalom",
-   "datum": "2026-11-21",
-   "ertek": 44,
-   "alapszint": 48,
-   "elteres": -0.0833,
-   "kuszob": 0.2751,
+   "datum": "2026-11-22",
+   "ertek": 54,
+   "alapszint": 45.5,
+   "elteres": 0.1868,
+   "kuszob": 0.2774,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Mindkét kapu",
    "tipus": "forgalom",
-   "datum": "2026-11-21",
-   "ertek": 92,
-   "alapszint": 105,
-   "elteres": -0.1238,
-   "kuszob": 0.2043,
+   "datum": "2026-11-22",
+   "ertek": 109,
+   "alapszint": 95.5,
+   "elteres": 0.1414,
+   "kuszob": 0.2052,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Megrakott tanker (7 nap)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-21",
-   "ertek": 128,
-   "alapszint": 120,
-   "elteres": 0.0667,
-   "kuszob": 0.1537,
+   "datum": "2026-11-22",
+   "ertek": 132,
+   "alapszint": 121.5,
+   "elteres": 0.0864,
+   "kuszob": 0.1553,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Megrakott teherhajó (7 nap)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-21",
-   "ertek": 326,
-   "alapszint": 357,
-   "elteres": -0.0868,
-   "kuszob": 0.1723,
+   "datum": "2026-11-22",
+   "ertek": 328,
+   "alapszint": 357.5,
+   "elteres": -0.0825,
+   "kuszob": 0.1724,
    "alapnapok": 4,
    "jelzes": "normál"
   },
   {
    "sorozat": "Tanker-volumen (7 nap, 1000 m³)",
    "tipus": "megrakottsag",
-   "datum": "2026-11-21",
-   "ertek": 12853,
-   "alapszint": 13460.5,
-   "elteres": -0.0451,
-   "kuszob": 0.233,
+   "datum": "2026-11-22",
+   "ertek": 12194,
+   "alapszint": 13430.5,
+   "elteres": -0.0921,
+   "kuszob": 0.2318,
    "alapnapok": 4,
    "jelzes": "normál"
   }
@@ -96,7 +96,7 @@
    "ertek": 68,
    "alapszint": 48.5,
    "elteres": 0.4021,
-   "kuszob": 0.3424,
+   "kuszob": 0.344,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -106,7 +106,7 @@
    "ertek": 69,
    "alapszint": 50.5,
    "elteres": 0.3663,
-   "kuszob": 0.3424,
+   "kuszob": 0.344,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -116,17 +116,7 @@
    "ertek": 72,
    "alapszint": 47,
    "elteres": 0.5319,
-   "kuszob": 0.3424,
-   "jelzes": "szokatlanul magas"
-  },
-  {
-   "datum": "2026-10-23",
-   "tipus": "forgalom",
-   "sorozat": "Øresund",
-   "ertek": 60,
-   "alapszint": 45.5,
-   "elteres": 0.3187,
-   "kuszob": 0.2751,
+   "kuszob": 0.344,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -136,7 +126,7 @@
    "ertek": 27,
    "alapszint": 52.5,
    "elteres": -0.4857,
-   "kuszob": 0.2751,
+   "kuszob": 0.2774,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -146,7 +136,7 @@
    "ertek": 42,
    "alapszint": 59,
    "elteres": -0.2881,
-   "kuszob": 0.2751,
+   "kuszob": 0.2774,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -156,7 +146,7 @@
    "ertek": 132,
    "alapszint": 102.5,
    "elteres": 0.2878,
-   "kuszob": 0.2043,
+   "kuszob": 0.2052,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -166,7 +156,7 @@
    "ertek": 133,
    "alapszint": 103,
    "elteres": 0.2913,
-   "kuszob": 0.2043,
+   "kuszob": 0.2052,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -176,7 +166,7 @@
    "ertek": 118,
    "alapszint": 95.5,
    "elteres": 0.2356,
-   "kuszob": 0.2043,
+   "kuszob": 0.2052,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -186,7 +176,7 @@
    "ertek": 82,
    "alapszint": 105,
    "elteres": -0.219,
-   "kuszob": 0.2043,
+   "kuszob": 0.2052,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -196,7 +186,7 @@
    "ertek": 81,
    "alapszint": 102.5,
    "elteres": -0.2098,
-   "kuszob": 0.2043,
+   "kuszob": 0.2052,
    "jelzes": "szokatlanul alacsony"
   },
   {
@@ -204,9 +194,9 @@
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
    "ertek": 137,
-   "alapszint": 114.5,
-   "elteres": 0.1965,
-   "kuszob": 0.1537,
+   "alapszint": 114,
+   "elteres": 0.2018,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -214,80 +204,70 @@
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
    "ertek": 150,
-   "alapszint": 116,
-   "elteres": 0.2931,
-   "kuszob": 0.1537,
+   "alapszint": 115.5,
+   "elteres": 0.2987,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-05",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 157,
-   "alapszint": 116.5,
-   "elteres": 0.3476,
-   "kuszob": 0.1537,
+   "ertek": 156,
+   "alapszint": 116,
+   "elteres": 0.3448,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-06",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 144,
-   "alapszint": 122,
-   "elteres": 0.1803,
-   "kuszob": 0.1537,
+   "ertek": 143,
+   "alapszint": 121.5,
+   "elteres": 0.177,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-07",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 152,
-   "alapszint": 117.5,
-   "elteres": 0.2936,
-   "kuszob": 0.1537,
+   "ertek": 151,
+   "alapszint": 116.5,
+   "elteres": 0.2961,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-08",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 148,
+   "ertek": 146,
    "alapszint": 114,
-   "elteres": 0.2982,
-   "kuszob": 0.1537,
+   "elteres": 0.2807,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-09",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 149,
-   "alapszint": 117.5,
-   "elteres": 0.2681,
-   "kuszob": 0.1537,
+   "ertek": 147,
+   "alapszint": 117,
+   "elteres": 0.2564,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
   },
   {
    "datum": "2026-11-10",
    "tipus": "megrakottsag",
    "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 141,
-   "alapszint": 114.5,
-   "elteres": 0.2314,
-   "kuszob": 0.1537,
+   "ertek": 139,
+   "alapszint": 114,
+   "elteres": 0.2193,
+   "kuszob": 0.1553,
    "jelzes": "szokatlanul magas"
-  },
-  {
-   "datum": "2026-11-17",
-   "tipus": "megrakottsag",
-   "sorozat": "Megrakott tanker (7 nap)",
-   "ertek": 107,
-   "alapszint": 126.5,
-   "elteres": -0.1542,
-   "kuszob": 0.1537,
-   "jelzes": "szokatlanul alacsony"
   },
   {
    "datum": "2026-10-31",
@@ -296,7 +276,7 @@
    "ertek": 13895,
    "alapszint": 11141,
    "elteres": 0.2472,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -306,7 +286,7 @@
    "ertek": 15582,
    "alapszint": 11138,
    "elteres": 0.399,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -316,7 +296,7 @@
    "ertek": 15382,
    "alapszint": 11445,
    "elteres": 0.344,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -326,7 +306,7 @@
    "ertek": 15723,
    "alapszint": 12027,
    "elteres": 0.3073,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -336,7 +316,7 @@
    "ertek": 16475,
    "alapszint": 12285.5,
    "elteres": 0.341,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -346,7 +326,7 @@
    "ertek": 16555,
    "alapszint": 12484,
    "elteres": 0.3261,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -356,7 +336,7 @@
    "ertek": 15619,
    "alapszint": 12172,
    "elteres": 0.2832,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -366,7 +346,7 @@
    "ertek": 14701,
    "alapszint": 11782,
    "elteres": 0.2478,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   },
   {
@@ -376,9 +356,9 @@
    "ertek": 15197,
    "alapszint": 11628.5,
    "elteres": 0.3069,
-   "kuszob": 0.233,
+   "kuszob": 0.2318,
    "jelzes": "szokatlanul magas"
   }
  ],
- "generalva_utc": "2026-11-24T14:10:21+00:00"
+ "generalva_utc": "2026-11-25T13:23:50+00:00"
 }
