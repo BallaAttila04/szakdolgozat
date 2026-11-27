@@ -1,0 +1,22 @@
+Tanker hajo-nap-kapu, napi 2-nel tobb atkelessel (516 nap):
+        nap          kapu      MMSI csoport  n
+2026-03-02 Nagy-Balti-öv 219034365  Tanker 21
+2026-03-02 Nagy-Balti-öv 613003614  Tanker 19
+2026-02-28       Øresund 229084000  Tanker  5
+2026-01-11       Øresund 257601000  Tanker  4
+2025-06-09       Øresund 636019884  Tanker  3
+2025-11-25       Øresund 215211000  Tanker  3
+2025-11-20 Nagy-Balti-öv 219011922  Tanker  3
+2025-09-16 Nagy-Balti-öv 636018743  Tanker  3
+2025-06-25 Nagy-Balti-öv 538009380  Tanker  3
+2026-03-02 tanker-atkeles: 71 ; a ket hajo nelkul: 31
+76 mintanap: egy tanker legtobb atkelese egy kapun egy nap alatt: 2
+Øresund: r = 0.731, a het napja nelkul r = 0.744 (140 nap)
+Øresund – Drogden: r = 0.886, a het napja nelkul r = 0.882 (140 nap)
+kifele 1182, ertekelheto 1119, megrakott 663 (a dolgozatban 1 182 / 1 119 / 663)
+gyanus ballaszt (T/L < 0.045): 46 (6.9%)
+fo (reprodukcio)                              n= 663  DiD=+0.74  95% CI=(-1.63; +3.11)
+gyanus ballaszt nelkul                        n= 617  DiD=+1.08  95% CI=(-1.10; +3.30)
+legalabb 100 m                                n= 586  DiD=+0.54  95% CI=(-1.85; +2.92)
+legalabb 150 m                                n= 439  DiD=+0.32  95% CI=(-1.86; +2.45)
+legalabb 200 m                                n= 234  DiD=-0.02  95% CI=(-1.54; +1.29)

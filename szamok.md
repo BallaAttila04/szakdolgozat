@@ -1371,3 +1371,37 @@ Kiterjesztett minta, a fő eredmény ismeretében, utólag hozzáadva (dolgozat/
 | 2,09 (22,0%) / 0,0671 (34,0%) / 225 521 (21,6%) | H1 / H2 / H3 MDE a Holm első lépcsőjén (α = 0,05/3) | kiterjesztett/mde.csv | 2026-10-31 |
 | +0,839 / −1,136 | H1 pontbecslés a kedd–csütörtöki részmintán (258 napos P95) / a többi 182 napon; leíró bontás, nem a mérce része | kiterjesztett/hetnap_bontas.csv | 2026-10-31 |
 | 72,4 / 74,4 / 69,7 / 70,0% és 81,6 / 85,4 / 81,1 / 80,6% | úticél-értelmezhetőség a H2 nevezőjében, A26 / B26 / A25 / B25, szigorú és engedékeny olvasat | kiterjesztett/uticel_ertelmezhetoseg.csv | 2026-10-31 |
+
+## 2026-11-25 – a v18–v19 számai (tároló 144 napra kiegészítve, javítási lista)
+
+A tároló kiegészítése: scripts/tarolo_kitoltes_inditas.py (2026-10-07 – 10-22, pipeline.py --kozvetlen-zip --torol-zip, naponként friss programpéldány). A 16 nap nyers és deduplikált sorszáma mindegyik napon egyezik az outputs/eles_uzem/napi_sorok.csv felhőbeli értékeivel.
+
+| szám | mit jelent | forrás | dátum |
+|---|---|---|---|
+| 144/144 | validált nap a helyi tárolóban (06-01 – 10-22), 0 sorszám-eltérés (korábban: ~~128/128~~) | outputs/pipeline_napok.csv statusz=validalt | 2026-11-25 |
+| 22,2 GiB | a teljes, 144 napos Parquet-tároló (az első 128 nap 20,1 GiB) | pipeline_napok.csv parquet_mib összege | 2026-11-25 |
+| 462,8 GiB | az első 128 nap kicsomagolt CSV-mérete (a 16 új nap ZIP-ből közvetlenül, CSV-méret nélkül) | pipeline_napok.csv csv_mib | 2026-11-25 |
+| 0,33% | érvényes pozíció nélküli deduplikált sorok, 144 nap (korábban: ~~0,34%, 128 nap~~) | pipeline_napok.csv h3_nelkuli_sor / dedup_sor | 2026-11-25 |
+| r = 0,731; arány 1,29 | Øresund-kapu kereskedelmi vs PortWatch n_total, 140 közös nap (06-01 – 10-18) (korábban: ~~0,736, 128 nap~~) | outputs/kapuk_kiterjesztes/portwatch_osszevetes.csv (kapu_elemzes.py --portwatch data/portwatch_chokepoints_2026-10-25.csv) | 2026-11-25 |
+| r = 0,886; arány 1,17 | Drogden-kapu kereskedelmi vs PortWatch, 140 nap (korábban: ~~0,892~~) | ugyanaz | 2026-11-25 |
+| 88,3% / 11,7% | átmenő / nem átmenő kereskedelmi Drogden-átkelés (5 916 / 6 703) (korábban: ~~88,5% / 11,5%~~) | kapu_elemzes.py kimenete | 2026-11-25 |
+| 0,23% (46 / 19 878) | több kapun átkelő hajó–napok, eltérő csoporttal (korábban: ~~0,22% (39 / 17 692)~~) | atkelesek.csv: (datum, MMSI) ≥ 2 kapu, csoport nunique > 1 | 2026-11-25 |
+| 9. táblázat | napi átlag / küszöb / top5: NBÖ 50,7 / ±33,9% / 2,5%; Øresund 50,9 / ±25,8% / 2,4%; Drogden 46,5 / ±38,4% / 2,1%; Fehmarn 83,5 / ±24,4% / 1,5%; Kadet 86,5 / ±29,7% / 4,0%; Kis-Balti 3,3 / ±133,4% / 22,7%; Skagen 114,9 / ±26,5% / 2,4% | napi_statisztika.csv, jelzesek.csv (kuszob), koncentracio.csv (ker_top5_arany) | 2026-11-25 |
+| 0 eltérés | a két monitorkapu kapu_kiterjesztes-eredménye vs a fagyasztott monitor kapuvonal_napi.csv, 144 nap | összevetés | 2026-11-25 |
+| 84,3 → 56,1 → 10,8 MiB | eredeti / deduplikált / holtszámítás 50 m (1,50 × 5,19 = 7,79×) | outputs/tomorites_hatas.csv, fenti 542–551. sor | 2026-11-25 |
+| 12,2–12,3 GiB | felhőbeli csúcsmemória (12 539 és 12 565 MiB) | futasnaplok 37910491337, 37914275224 | 2026-11-25 |
+| +0,83 (2b) | súlyozatlan merülésmedián: 2 kifelé haladó tankerátkelés megrakottsága megfordul (B25 −1, B26 +1), átkelésszám azonos (10 279) | hormuz_elemzes.atkeles_tabla '' vs 'sulyozatlan' | 2026-11-25 |
+| 4 138 / 13 387 | azonosító a vizsgálati területen / a teljes napi fájlban (07-15); 3 389 (81,9%) „B” osztály a területen | ais nap.parquet, hajo_statisztika.json | 2026-11-25 |
+| 102 nap | walk-forward értékelés: 123 alapszintes napból 21 tanulónap (07-13 – 10-22) | backtest.py MIN_TANULO = 21; walkforward.csv | 2026-11-25 |
+| 0,3 vs 2,7 | CUSUM h=4 vs napi szabály, Mindkét kapu, közös 88 napos ablak (07-27 –) | outputs/backtest/szabalyok.csv ablak=kozos | 2026-11-25 |
+| 29,1 / 32,4 | tanker-átkelés/nap 2026-06-01 – 10-18 / egy évvel korábban; a két kódút 07-15-én és 08-12-én azonos; PortWatch Øresund tanker −26,7% | kapuvonal.feldolgoz_parquet a tárolón vs fagyasztott monitor | 2026-11-25 |
+| 0,7% | a H1/M1 2025–2026 zár előtti szintkülönbsége a 258 napon (9,489 vs 9,553) | kiterjesztett/eredmeny.csv | 2026-11-25 |
+| 31,7 / 31,6 / 31,3 / 32,3; 101,6 | tanker-átkelés/nap ablakonként (516 nap), kereskedelmi napi átlag | hormuz napi.csv-k | 2026-11-25 |
+| 43,7 → 1,9; 12,0; 1,4 | Hormuz PortWatch tanker/nap (02-01–27; 03-09–05-29; 06-18–07-08; utána) | data/portwatch_chokepoints_2026-10-25.csv | 2026-11-25 |
+| r = 0,763 (516 nap); 12,1% (495 nap) | Øresund vs PortWatch; Mindkét kapu robusztus szórás (2025: 11,6%, 2026: 12,2%) | hormuz napi.csv-k + PortWatch | 2026-11-25 |
+| 15 423 / 16 140 / 15 697 / 15 605 | tanker-hajóóra/nap ablakonként (76 nap) | tarolo_hormuz, abrak_v7.tanker_suruseg logikája | 2026-11-25 |
+| 71 → 31; 21 és 19 | 2026-03-02 tanker-átkelés (Mindkét kapu), a két hajó (219034365, 613003614) nélkül; a két hajó átkelései a Nagy-Balti-öv vonalán, két percen belül; a 76 mintanapon egy tanker legfeljebb 2-szer kel át egy kapun naponta | scripts/biralat_ellenorzes.py kiugras(); outputs/biralat_ellenorzes.txt | 2026-11-27 |
+| r = 0,744 / 0,882 | Øresund / Drogden vs PortWatch a 140 közös napon, a hét napja szerinti átlagok kivonása után (nyers: 0,731 / 0,886) | scripts/biralat_ellenorzes.py portwatch() | 2026-11-27 |
+| 46 (6,9%); +1,08 (−1,10; 3,30) | gyanús ballasztos „megrakott” kifelé tanker-átkelés (merülés/hossz < 0,045) a 663-ból; DiD M1 nélkülük, 95% CI | scripts/biralat_ellenorzes.py hormuz() | 2026-11-27 |
+| +0,32 (−1,86; 2,45); −0,02 (−1,54; 1,29) | DiD M1 csak ≥ 150 m, illetve ≥ 200 m tankerekkel (+0,54 ≥ 100 m-rel) | scripts/biralat_ellenorzes.py hormuz() | 2026-11-27 |
+| 15 / 15 | a visszamenőleges teszt kimeneti fájljai újrafuttatva bájtra azonosak (K8) | outputs/backtest/ | 2026-11-27 |

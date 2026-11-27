@@ -9990,3 +9990,1162 @@ datum,kapu,irany,csoport,atkeles
 2026-10-06,Øresund – Drogden,észak,Szolgálati,4
 2026-10-06,Øresund – Drogden,észak,Tanker,5
 2026-10-06,Øresund – Drogden,észak,Teherhajó,17
+2026-10-07,Fehmarn-öv,kelet,Egyéb / ismeretlen,3
+2026-10-07,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-07,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-07,Fehmarn-öv,kelet,Szolgálati,2
+2026-10-07,Fehmarn-öv,kelet,Tanker,11
+2026-10-07,Fehmarn-öv,kelet,Teherhajó,27
+2026-10-07,Fehmarn-öv,nyugat,Egyéb / ismeretlen,5
+2026-10-07,Fehmarn-öv,nyugat,Halászhajó,1
+2026-10-07,Fehmarn-öv,nyugat,Kedvtelési,6
+2026-10-07,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-07,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-07,Fehmarn-öv,nyugat,Tanker,11
+2026-10-07,Fehmarn-öv,nyugat,Teherhajó,26
+2026-10-07,Kadet-rende,délnyugat,Egyéb / ismeretlen,10
+2026-10-07,Kadet-rende,délnyugat,Halászhajó,1
+2026-10-07,Kadet-rende,délnyugat,Kedvtelési,4
+2026-10-07,Kadet-rende,délnyugat,Személyszállító,17
+2026-10-07,Kadet-rende,délnyugat,Szolgálati,18
+2026-10-07,Kadet-rende,délnyugat,Tanker,7
+2026-10-07,Kadet-rende,délnyugat,Teherhajó,30
+2026-10-07,Kadet-rende,északkelet,Egyéb / ismeretlen,7
+2026-10-07,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-07,Kadet-rende,északkelet,Személyszállító,15
+2026-10-07,Kadet-rende,északkelet,Szolgálati,17
+2026-10-07,Kadet-rende,északkelet,Tanker,8
+2026-10-07,Kadet-rende,északkelet,Teherhajó,32
+2026-10-07,Kis-Balti-öv,dél,Kedvtelési,6
+2026-10-07,Kis-Balti-öv,dél,Szolgálati,2
+2026-10-07,Kis-Balti-öv,dél,Teherhajó,1
+2026-10-07,Kis-Balti-öv,észak,Halászhajó,1
+2026-10-07,Kis-Balti-öv,észak,Kedvtelési,4
+2026-10-07,Kis-Balti-öv,észak,Szolgálati,2
+2026-10-07,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-07,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-10-07,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-07,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-07,Nagy-Balti-öv,dél,Tanker,7
+2026-10-07,Nagy-Balti-öv,dél,Teherhajó,14
+2026-10-07,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-07,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-07,Nagy-Balti-öv,észak,Tanker,10
+2026-10-07,Nagy-Balti-öv,észak,Teherhajó,19
+2026-10-07,Skagen,dél,Halászhajó,22
+2026-10-07,Skagen,dél,Személyszállító,2
+2026-10-07,Skagen,dél,Szolgálati,19
+2026-10-07,Skagen,dél,Tanker,27
+2026-10-07,Skagen,dél,Teherhajó,33
+2026-10-07,Skagen,észak,Egyéb / ismeretlen,4
+2026-10-07,Skagen,észak,Halászhajó,17
+2026-10-07,Skagen,észak,Személyszállító,2
+2026-10-07,Skagen,észak,Szolgálati,13
+2026-10-07,Skagen,észak,Tanker,32
+2026-10-07,Skagen,észak,Teherhajó,51
+2026-10-07,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-07,Øresund,dél,Személyszállító,3
+2026-10-07,Øresund,dél,Szolgálati,9
+2026-10-07,Øresund,dél,Tanker,5
+2026-10-07,Øresund,dél,Teherhajó,18
+2026-10-07,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-07,Øresund,észak,Személyszállító,3
+2026-10-07,Øresund,észak,Szolgálati,1
+2026-10-07,Øresund,észak,Tanker,3
+2026-10-07,Øresund,észak,Teherhajó,21
+2026-10-07,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-07,Øresund – Drogden,dél,Kedvtelési,3
+2026-10-07,Øresund – Drogden,dél,Személyszállító,7
+2026-10-07,Øresund – Drogden,dél,Szolgálati,14
+2026-10-07,Øresund – Drogden,dél,Tanker,8
+2026-10-07,Øresund – Drogden,dél,Teherhajó,16
+2026-10-07,Øresund – Drogden,észak,Egyéb / ismeretlen,1
+2026-10-07,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-07,Øresund – Drogden,észak,Személyszállító,5
+2026-10-07,Øresund – Drogden,észak,Szolgálati,10
+2026-10-07,Øresund – Drogden,észak,Tanker,3
+2026-10-07,Øresund – Drogden,észak,Teherhajó,22
+2026-10-08,Fehmarn-öv,kelet,Egyéb / ismeretlen,5
+2026-10-08,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-08,Fehmarn-öv,kelet,Szolgálati,3
+2026-10-08,Fehmarn-öv,kelet,Tanker,10
+2026-10-08,Fehmarn-öv,kelet,Teherhajó,25
+2026-10-08,Fehmarn-öv,nyugat,Egyéb / ismeretlen,3
+2026-10-08,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-08,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-08,Fehmarn-öv,nyugat,Tanker,14
+2026-10-08,Fehmarn-öv,nyugat,Teherhajó,30
+2026-10-08,Kadet-rende,délnyugat,Egyéb / ismeretlen,7
+2026-10-08,Kadet-rende,délnyugat,Kedvtelési,2
+2026-10-08,Kadet-rende,délnyugat,Személyszállító,13
+2026-10-08,Kadet-rende,délnyugat,Szolgálati,16
+2026-10-08,Kadet-rende,délnyugat,Tanker,11
+2026-10-08,Kadet-rende,délnyugat,Teherhajó,32
+2026-10-08,Kadet-rende,északkelet,Egyéb / ismeretlen,7
+2026-10-08,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-08,Kadet-rende,északkelet,Személyszállító,13
+2026-10-08,Kadet-rende,északkelet,Szolgálati,17
+2026-10-08,Kadet-rende,északkelet,Tanker,12
+2026-10-08,Kadet-rende,északkelet,Teherhajó,31
+2026-10-08,Kis-Balti-öv,dél,Kedvtelési,6
+2026-10-08,Kis-Balti-öv,dél,Szolgálati,1
+2026-10-08,Kis-Balti-öv,dél,Teherhajó,2
+2026-10-08,Kis-Balti-öv,észak,Kedvtelési,1
+2026-10-08,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-08,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-08,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-08,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-08,Nagy-Balti-öv,dél,Szolgálati,4
+2026-10-08,Nagy-Balti-öv,dél,Tanker,10
+2026-10-08,Nagy-Balti-öv,dél,Teherhajó,14
+2026-10-08,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-08,Nagy-Balti-öv,észak,Szolgálati,4
+2026-10-08,Nagy-Balti-öv,észak,Tanker,8
+2026-10-08,Nagy-Balti-öv,észak,Teherhajó,19
+2026-10-08,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-08,Skagen,dél,Halászhajó,9
+2026-10-08,Skagen,dél,Személyszállító,2
+2026-10-08,Skagen,dél,Szolgálati,9
+2026-10-08,Skagen,dél,Tanker,21
+2026-10-08,Skagen,dél,Teherhajó,45
+2026-10-08,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-08,Skagen,észak,Halászhajó,2
+2026-10-08,Skagen,észak,Személyszállító,2
+2026-10-08,Skagen,észak,Szolgálati,6
+2026-10-08,Skagen,észak,Tanker,19
+2026-10-08,Skagen,észak,Teherhajó,26
+2026-10-08,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-08,Øresund,dél,Kedvtelési,1
+2026-10-08,Øresund,dél,Személyszállító,2
+2026-10-08,Øresund,dél,Szolgálati,8
+2026-10-08,Øresund,dél,Tanker,5
+2026-10-08,Øresund,dél,Teherhajó,24
+2026-10-08,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-08,Øresund,észak,Személyszállító,1
+2026-10-08,Øresund,észak,Szolgálati,5
+2026-10-08,Øresund,észak,Tanker,7
+2026-10-08,Øresund,észak,Teherhajó,16
+2026-10-08,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-08,Øresund – Drogden,dél,Személyszállító,4
+2026-10-08,Øresund – Drogden,dél,Szolgálati,10
+2026-10-08,Øresund – Drogden,dél,Tanker,4
+2026-10-08,Øresund – Drogden,dél,Teherhajó,22
+2026-10-08,Øresund – Drogden,észak,Egyéb / ismeretlen,2
+2026-10-08,Øresund – Drogden,észak,Személyszállító,4
+2026-10-08,Øresund – Drogden,észak,Szolgálati,11
+2026-10-08,Øresund – Drogden,észak,Tanker,6
+2026-10-08,Øresund – Drogden,észak,Teherhajó,14
+2026-10-09,Fehmarn-öv,kelet,Egyéb / ismeretlen,1
+2026-10-09,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-09,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-09,Fehmarn-öv,kelet,Szolgálati,1
+2026-10-09,Fehmarn-öv,kelet,Tanker,12
+2026-10-09,Fehmarn-öv,kelet,Teherhajó,21
+2026-10-09,Fehmarn-öv,nyugat,Halászhajó,1
+2026-10-09,Fehmarn-öv,nyugat,Kedvtelési,3
+2026-10-09,Fehmarn-öv,nyugat,Személyszállító,3
+2026-10-09,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-09,Fehmarn-öv,nyugat,Tanker,5
+2026-10-09,Fehmarn-öv,nyugat,Teherhajó,28
+2026-10-09,Kadet-rende,délnyugat,Személyszállító,15
+2026-10-09,Kadet-rende,délnyugat,Szolgálati,13
+2026-10-09,Kadet-rende,délnyugat,Tanker,7
+2026-10-09,Kadet-rende,délnyugat,Teherhajó,32
+2026-10-09,Kadet-rende,északkelet,Személyszállító,10
+2026-10-09,Kadet-rende,északkelet,Szolgálati,14
+2026-10-09,Kadet-rende,északkelet,Tanker,7
+2026-10-09,Kadet-rende,északkelet,Teherhajó,22
+2026-10-09,Kis-Balti-öv,dél,Kedvtelési,1
+2026-10-09,Kis-Balti-öv,dél,Szolgálati,1
+2026-10-09,Kis-Balti-öv,észak,Kedvtelési,4
+2026-10-09,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-09,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-09,Nagy-Balti-öv,dél,Személyszállító,4
+2026-10-09,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-09,Nagy-Balti-öv,dél,Tanker,8
+2026-10-09,Nagy-Balti-öv,dél,Teherhajó,20
+2026-10-09,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-10-09,Nagy-Balti-öv,észak,Személyszállító,4
+2026-10-09,Nagy-Balti-öv,észak,Szolgálati,4
+2026-10-09,Nagy-Balti-öv,észak,Tanker,9
+2026-10-09,Nagy-Balti-öv,észak,Teherhajó,22
+2026-10-09,Skagen,dél,Egyéb / ismeretlen,3
+2026-10-09,Skagen,dél,Kedvtelési,1
+2026-10-09,Skagen,dél,Személyszállító,5
+2026-10-09,Skagen,dél,Szolgálati,6
+2026-10-09,Skagen,dél,Tanker,17
+2026-10-09,Skagen,dél,Teherhajó,39
+2026-10-09,Skagen,észak,Egyéb / ismeretlen,4
+2026-10-09,Skagen,észak,Halászhajó,8
+2026-10-09,Skagen,észak,Személyszállító,2
+2026-10-09,Skagen,észak,Szolgálati,8
+2026-10-09,Skagen,észak,Tanker,23
+2026-10-09,Skagen,észak,Teherhajó,43
+2026-10-09,Øresund,dél,Személyszállító,1
+2026-10-09,Øresund,dél,Szolgálati,8
+2026-10-09,Øresund,dél,Tanker,3
+2026-10-09,Øresund,dél,Teherhajó,19
+2026-10-09,Øresund,észak,Egyéb / ismeretlen,1
+2026-10-09,Øresund,észak,Személyszállító,1
+2026-10-09,Øresund,észak,Szolgálati,5
+2026-10-09,Øresund,észak,Tanker,7
+2026-10-09,Øresund,észak,Teherhajó,12
+2026-10-09,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-09,Øresund – Drogden,dél,Személyszállító,4
+2026-10-09,Øresund – Drogden,dél,Szolgálati,6
+2026-10-09,Øresund – Drogden,dél,Tanker,3
+2026-10-09,Øresund – Drogden,dél,Teherhajó,23
+2026-10-09,Øresund – Drogden,észak,Kedvtelési,2
+2026-10-09,Øresund – Drogden,észak,Személyszállító,4
+2026-10-09,Øresund – Drogden,észak,Szolgálati,7
+2026-10-09,Øresund – Drogden,észak,Tanker,7
+2026-10-09,Øresund – Drogden,észak,Teherhajó,7
+2026-10-10,Fehmarn-öv,kelet,Egyéb / ismeretlen,1
+2026-10-10,Fehmarn-öv,kelet,Kedvtelési,1
+2026-10-10,Fehmarn-öv,kelet,Szolgálati,3
+2026-10-10,Fehmarn-öv,kelet,Tanker,7
+2026-10-10,Fehmarn-öv,kelet,Teherhajó,29
+2026-10-10,Fehmarn-öv,nyugat,Egyéb / ismeretlen,2
+2026-10-10,Fehmarn-öv,nyugat,Személyszállító,2
+2026-10-10,Fehmarn-öv,nyugat,Szolgálati,2
+2026-10-10,Fehmarn-öv,nyugat,Tanker,15
+2026-10-10,Fehmarn-öv,nyugat,Teherhajó,44
+2026-10-10,Kadet-rende,délnyugat,Egyéb / ismeretlen,3
+2026-10-10,Kadet-rende,délnyugat,Személyszállító,13
+2026-10-10,Kadet-rende,délnyugat,Szolgálati,10
+2026-10-10,Kadet-rende,délnyugat,Tanker,13
+2026-10-10,Kadet-rende,délnyugat,Teherhajó,48
+2026-10-10,Kadet-rende,északkelet,Kedvtelési,2
+2026-10-10,Kadet-rende,északkelet,Személyszállító,13
+2026-10-10,Kadet-rende,északkelet,Szolgálati,11
+2026-10-10,Kadet-rende,északkelet,Tanker,10
+2026-10-10,Kadet-rende,északkelet,Teherhajó,33
+2026-10-10,Kis-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-10,Kis-Balti-öv,dél,Kedvtelési,2
+2026-10-10,Kis-Balti-öv,dél,Szolgálati,2
+2026-10-10,Kis-Balti-öv,dél,Teherhajó,1
+2026-10-10,Kis-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-10,Kis-Balti-öv,észak,Halászhajó,1
+2026-10-10,Kis-Balti-öv,észak,Kedvtelési,2
+2026-10-10,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-10,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-10-10,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-10,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-10,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-10,Nagy-Balti-öv,dél,Tanker,6
+2026-10-10,Nagy-Balti-öv,dél,Teherhajó,12
+2026-10-10,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-10,Nagy-Balti-öv,észak,Halászhajó,1
+2026-10-10,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-10,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-10,Nagy-Balti-öv,észak,Tanker,10
+2026-10-10,Nagy-Balti-öv,észak,Teherhajó,19
+2026-10-10,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-10,Skagen,dél,Halászhajó,4
+2026-10-10,Skagen,dél,Személyszállító,3
+2026-10-10,Skagen,dél,Szolgálati,3
+2026-10-10,Skagen,dél,Tanker,20
+2026-10-10,Skagen,dél,Teherhajó,51
+2026-10-10,Skagen,észak,Halászhajó,4
+2026-10-10,Skagen,észak,Kedvtelési,1
+2026-10-10,Skagen,észak,Személyszállító,3
+2026-10-10,Skagen,észak,Szolgálati,6
+2026-10-10,Skagen,észak,Tanker,16
+2026-10-10,Skagen,észak,Teherhajó,29
+2026-10-10,Øresund,dél,Egyéb / ismeretlen,2
+2026-10-10,Øresund,dél,Kedvtelési,1
+2026-10-10,Øresund,dél,Személyszállító,2
+2026-10-10,Øresund,dél,Szolgálati,4
+2026-10-10,Øresund,dél,Tanker,5
+2026-10-10,Øresund,dél,Teherhajó,30
+2026-10-10,Øresund,észak,Személyszállító,1
+2026-10-10,Øresund,észak,Szolgálati,8
+2026-10-10,Øresund,észak,Tanker,7
+2026-10-10,Øresund,észak,Teherhajó,14
+2026-10-10,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-10,Øresund – Drogden,dél,Kedvtelési,1
+2026-10-10,Øresund – Drogden,dél,Személyszállító,4
+2026-10-10,Øresund – Drogden,dél,Szolgálati,10
+2026-10-10,Øresund – Drogden,dél,Tanker,4
+2026-10-10,Øresund – Drogden,dél,Teherhajó,29
+2026-10-10,Øresund – Drogden,észak,Személyszállító,4
+2026-10-10,Øresund – Drogden,észak,Szolgálati,7
+2026-10-10,Øresund – Drogden,észak,Tanker,4
+2026-10-10,Øresund – Drogden,észak,Teherhajó,13
+2026-10-11,Fehmarn-öv,kelet,Kedvtelési,5
+2026-10-11,Fehmarn-öv,kelet,Személyszállító,2
+2026-10-11,Fehmarn-öv,kelet,Szolgálati,1
+2026-10-11,Fehmarn-öv,kelet,Tanker,10
+2026-10-11,Fehmarn-öv,kelet,Teherhajó,35
+2026-10-11,Fehmarn-öv,nyugat,Személyszállító,3
+2026-10-11,Fehmarn-öv,nyugat,Szolgálati,1
+2026-10-11,Fehmarn-öv,nyugat,Tanker,7
+2026-10-11,Fehmarn-öv,nyugat,Teherhajó,38
+2026-10-11,Kadet-rende,délnyugat,Egyéb / ismeretlen,3
+2026-10-11,Kadet-rende,délnyugat,Személyszállító,12
+2026-10-11,Kadet-rende,délnyugat,Szolgálati,14
+2026-10-11,Kadet-rende,délnyugat,Tanker,11
+2026-10-11,Kadet-rende,délnyugat,Teherhajó,36
+2026-10-11,Kadet-rende,északkelet,Egyéb / ismeretlen,3
+2026-10-11,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-11,Kadet-rende,északkelet,Személyszállító,14
+2026-10-11,Kadet-rende,északkelet,Szolgálati,16
+2026-10-11,Kadet-rende,északkelet,Tanker,9
+2026-10-11,Kadet-rende,északkelet,Teherhajó,26
+2026-10-11,Kis-Balti-öv,dél,Kedvtelési,4
+2026-10-11,Kis-Balti-öv,dél,Szolgálati,1
+2026-10-11,Kis-Balti-öv,dél,Teherhajó,2
+2026-10-11,Kis-Balti-öv,észak,Kedvtelési,2
+2026-10-11,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-11,Kis-Balti-öv,észak,Teherhajó,3
+2026-10-11,Nagy-Balti-öv,dél,Halászhajó,3
+2026-10-11,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-10-11,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-11,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-11,Nagy-Balti-öv,dél,Tanker,8
+2026-10-11,Nagy-Balti-öv,dél,Teherhajó,15
+2026-10-11,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-11,Nagy-Balti-öv,észak,Halászhajó,1
+2026-10-11,Nagy-Balti-öv,észak,Személyszállító,5
+2026-10-11,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-11,Nagy-Balti-öv,észak,Tanker,7
+2026-10-11,Nagy-Balti-öv,észak,Teherhajó,26
+2026-10-11,Skagen,dél,Egyéb / ismeretlen,3
+2026-10-11,Skagen,dél,Halászhajó,11
+2026-10-11,Skagen,dél,Kedvtelési,3
+2026-10-11,Skagen,dél,Személyszállító,3
+2026-10-11,Skagen,dél,Szolgálati,8
+2026-10-11,Skagen,dél,Tanker,14
+2026-10-11,Skagen,dél,Teherhajó,35
+2026-10-11,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-11,Skagen,észak,Halászhajó,14
+2026-10-11,Skagen,észak,Kedvtelési,1
+2026-10-11,Skagen,észak,Személyszállító,4
+2026-10-11,Skagen,észak,Szolgálati,9
+2026-10-11,Skagen,észak,Tanker,16
+2026-10-11,Skagen,észak,Teherhajó,33
+2026-10-11,Øresund,dél,Egyéb / ismeretlen,2
+2026-10-11,Øresund,dél,Személyszállító,3
+2026-10-11,Øresund,dél,Szolgálati,6
+2026-10-11,Øresund,dél,Tanker,8
+2026-10-11,Øresund,dél,Teherhajó,29
+2026-10-11,Øresund,észak,Személyszállító,2
+2026-10-11,Øresund,észak,Szolgálati,1
+2026-10-11,Øresund,észak,Tanker,3
+2026-10-11,Øresund,észak,Teherhajó,14
+2026-10-11,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-11,Øresund – Drogden,dél,Kedvtelési,5
+2026-10-11,Øresund – Drogden,dél,Személyszállító,3
+2026-10-11,Øresund – Drogden,dél,Szolgálati,8
+2026-10-11,Øresund – Drogden,dél,Tanker,6
+2026-10-11,Øresund – Drogden,dél,Teherhajó,26
+2026-10-11,Øresund – Drogden,észak,Kedvtelési,2
+2026-10-11,Øresund – Drogden,észak,Személyszállító,2
+2026-10-11,Øresund – Drogden,észak,Szolgálati,9
+2026-10-11,Øresund – Drogden,észak,Tanker,3
+2026-10-11,Øresund – Drogden,észak,Teherhajó,14
+2026-10-12,Fehmarn-öv,kelet,Egyéb / ismeretlen,5
+2026-10-12,Fehmarn-öv,kelet,Kedvtelési,3
+2026-10-12,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-12,Fehmarn-öv,kelet,Szolgálati,2
+2026-10-12,Fehmarn-öv,kelet,Tanker,9
+2026-10-12,Fehmarn-öv,kelet,Teherhajó,17
+2026-10-12,Fehmarn-öv,nyugat,Egyéb / ismeretlen,2
+2026-10-12,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-12,Fehmarn-öv,nyugat,Szolgálati,2
+2026-10-12,Fehmarn-öv,nyugat,Tanker,16
+2026-10-12,Fehmarn-öv,nyugat,Teherhajó,46
+2026-10-12,Kadet-rende,délnyugat,Egyéb / ismeretlen,8
+2026-10-12,Kadet-rende,délnyugat,Kedvtelési,1
+2026-10-12,Kadet-rende,délnyugat,Személyszállító,10
+2026-10-12,Kadet-rende,délnyugat,Szolgálati,18
+2026-10-12,Kadet-rende,délnyugat,Tanker,11
+2026-10-12,Kadet-rende,délnyugat,Teherhajó,44
+2026-10-12,Kadet-rende,északkelet,Egyéb / ismeretlen,13
+2026-10-12,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-12,Kadet-rende,északkelet,Személyszállító,11
+2026-10-12,Kadet-rende,északkelet,Szolgálati,15
+2026-10-12,Kadet-rende,északkelet,Tanker,9
+2026-10-12,Kadet-rende,északkelet,Teherhajó,27
+2026-10-12,Kis-Balti-öv,dél,Halászhajó,1
+2026-10-12,Kis-Balti-öv,dél,Kedvtelési,4
+2026-10-12,Kis-Balti-öv,dél,Szolgálati,2
+2026-10-12,Kis-Balti-öv,észak,Kedvtelési,2
+2026-10-12,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-12,Nagy-Balti-öv,dél,Egyéb / ismeretlen,3
+2026-10-12,Nagy-Balti-öv,dél,Kedvtelési,4
+2026-10-12,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-12,Nagy-Balti-öv,dél,Szolgálati,1
+2026-10-12,Nagy-Balti-öv,dél,Tanker,6
+2026-10-12,Nagy-Balti-öv,dél,Teherhajó,9
+2026-10-12,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-12,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-12,Nagy-Balti-öv,észak,Szolgálati,6
+2026-10-12,Nagy-Balti-öv,észak,Tanker,14
+2026-10-12,Nagy-Balti-öv,észak,Teherhajó,27
+2026-10-12,Skagen,dél,Egyéb / ismeretlen,2
+2026-10-12,Skagen,dél,Halászhajó,19
+2026-10-12,Skagen,dél,Kedvtelési,2
+2026-10-12,Skagen,dél,Személyszállító,3
+2026-10-12,Skagen,dél,Szolgálati,11
+2026-10-12,Skagen,dél,Tanker,15
+2026-10-12,Skagen,dél,Teherhajó,30
+2026-10-12,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-12,Skagen,észak,Halászhajó,22
+2026-10-12,Skagen,észak,Kedvtelési,2
+2026-10-12,Skagen,észak,Személyszállító,5
+2026-10-12,Skagen,észak,Szolgálati,10
+2026-10-12,Skagen,észak,Tanker,20
+2026-10-12,Skagen,észak,Teherhajó,41
+2026-10-12,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-12,Øresund,dél,Személyszállító,3
+2026-10-12,Øresund,dél,Tanker,10
+2026-10-12,Øresund,dél,Teherhajó,22
+2026-10-12,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-12,Øresund,észak,Kedvtelési,1
+2026-10-12,Øresund,észak,Személyszállító,3
+2026-10-12,Øresund,észak,Tanker,5
+2026-10-12,Øresund,észak,Teherhajó,13
+2026-10-12,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-12,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-12,Øresund – Drogden,dél,Személyszállító,3
+2026-10-12,Øresund – Drogden,dél,Szolgálati,5
+2026-10-12,Øresund – Drogden,dél,Tanker,9
+2026-10-12,Øresund – Drogden,dél,Teherhajó,23
+2026-10-12,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-12,Øresund – Drogden,észak,Személyszállító,4
+2026-10-12,Øresund – Drogden,észak,Szolgálati,4
+2026-10-12,Øresund – Drogden,észak,Tanker,4
+2026-10-12,Øresund – Drogden,észak,Teherhajó,14
+2026-10-13,Fehmarn-öv,kelet,Egyéb / ismeretlen,4
+2026-10-13,Fehmarn-öv,kelet,Halászhajó,1
+2026-10-13,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-13,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-13,Fehmarn-öv,kelet,Szolgálati,3
+2026-10-13,Fehmarn-öv,kelet,Tanker,10
+2026-10-13,Fehmarn-öv,kelet,Teherhajó,30
+2026-10-13,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-13,Fehmarn-öv,nyugat,Kedvtelési,3
+2026-10-13,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-13,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-13,Fehmarn-öv,nyugat,Tanker,13
+2026-10-13,Fehmarn-öv,nyugat,Teherhajó,34
+2026-10-13,Kadet-rende,délnyugat,Egyéb / ismeretlen,7
+2026-10-13,Kadet-rende,délnyugat,Kedvtelési,2
+2026-10-13,Kadet-rende,délnyugat,Személyszállító,12
+2026-10-13,Kadet-rende,délnyugat,Szolgálati,11
+2026-10-13,Kadet-rende,délnyugat,Tanker,15
+2026-10-13,Kadet-rende,délnyugat,Teherhajó,38
+2026-10-13,Kadet-rende,északkelet,Egyéb / ismeretlen,8
+2026-10-13,Kadet-rende,északkelet,Halászhajó,1
+2026-10-13,Kadet-rende,északkelet,Kedvtelési,2
+2026-10-13,Kadet-rende,északkelet,Személyszállító,11
+2026-10-13,Kadet-rende,északkelet,Szolgálati,15
+2026-10-13,Kadet-rende,északkelet,Tanker,9
+2026-10-13,Kadet-rende,északkelet,Teherhajó,23
+2026-10-13,Kis-Balti-öv,dél,Kedvtelési,3
+2026-10-13,Kis-Balti-öv,dél,Teherhajó,2
+2026-10-13,Kis-Balti-öv,észak,Teherhajó,2
+2026-10-13,Nagy-Balti-öv,dél,Személyszállító,5
+2026-10-13,Nagy-Balti-öv,dél,Szolgálati,1
+2026-10-13,Nagy-Balti-öv,dél,Tanker,7
+2026-10-13,Nagy-Balti-öv,dél,Teherhajó,16
+2026-10-13,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-10-13,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-13,Nagy-Balti-öv,észak,Tanker,7
+2026-10-13,Nagy-Balti-öv,észak,Teherhajó,25
+2026-10-13,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-13,Skagen,dél,Halászhajó,11
+2026-10-13,Skagen,dél,Személyszállító,3
+2026-10-13,Skagen,dél,Szolgálati,13
+2026-10-13,Skagen,dél,Tanker,19
+2026-10-13,Skagen,dél,Teherhajó,36
+2026-10-13,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-13,Skagen,észak,Halászhajó,5
+2026-10-13,Skagen,észak,Kedvtelési,1
+2026-10-13,Skagen,észak,Személyszállító,2
+2026-10-13,Skagen,észak,Szolgálati,12
+2026-10-13,Skagen,észak,Tanker,18
+2026-10-13,Skagen,észak,Teherhajó,38
+2026-10-13,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-13,Øresund,dél,Személyszállító,3
+2026-10-13,Øresund,dél,Szolgálati,9
+2026-10-13,Øresund,dél,Tanker,6
+2026-10-13,Øresund,dél,Teherhajó,22
+2026-10-13,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-13,Øresund,észak,Halászhajó,1
+2026-10-13,Øresund,észak,Személyszállító,3
+2026-10-13,Øresund,észak,Szolgálati,5
+2026-10-13,Øresund,észak,Tanker,10
+2026-10-13,Øresund,észak,Teherhajó,16
+2026-10-13,Øresund – Drogden,dél,Kedvtelési,1
+2026-10-13,Øresund – Drogden,dél,Személyszállító,5
+2026-10-13,Øresund – Drogden,dél,Szolgálati,11
+2026-10-13,Øresund – Drogden,dél,Tanker,7
+2026-10-13,Øresund – Drogden,dél,Teherhajó,17
+2026-10-13,Øresund – Drogden,észak,Egyéb / ismeretlen,1
+2026-10-13,Øresund – Drogden,észak,Halászhajó,1
+2026-10-13,Øresund – Drogden,észak,Kedvtelési,2
+2026-10-13,Øresund – Drogden,észak,Személyszállító,4
+2026-10-13,Øresund – Drogden,észak,Szolgálati,14
+2026-10-13,Øresund – Drogden,észak,Tanker,7
+2026-10-13,Øresund – Drogden,észak,Teherhajó,17
+2026-10-14,Fehmarn-öv,kelet,Egyéb / ismeretlen,2
+2026-10-14,Fehmarn-öv,kelet,Kedvtelési,3
+2026-10-14,Fehmarn-öv,kelet,Személyszállító,3
+2026-10-14,Fehmarn-öv,kelet,Szolgálati,3
+2026-10-14,Fehmarn-öv,kelet,Tanker,9
+2026-10-14,Fehmarn-öv,kelet,Teherhajó,33
+2026-10-14,Fehmarn-öv,nyugat,Egyéb / ismeretlen,2
+2026-10-14,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-14,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-14,Fehmarn-öv,nyugat,Szolgálati,2
+2026-10-14,Fehmarn-öv,nyugat,Tanker,11
+2026-10-14,Fehmarn-öv,nyugat,Teherhajó,30
+2026-10-14,Kadet-rende,délnyugat,Egyéb / ismeretlen,10
+2026-10-14,Kadet-rende,délnyugat,Személyszállító,15
+2026-10-14,Kadet-rende,délnyugat,Szolgálati,14
+2026-10-14,Kadet-rende,délnyugat,Tanker,6
+2026-10-14,Kadet-rende,délnyugat,Teherhajó,29
+2026-10-14,Kadet-rende,északkelet,Egyéb / ismeretlen,7
+2026-10-14,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-14,Kadet-rende,északkelet,Személyszállító,15
+2026-10-14,Kadet-rende,északkelet,Szolgálati,16
+2026-10-14,Kadet-rende,északkelet,Tanker,7
+2026-10-14,Kadet-rende,északkelet,Teherhajó,42
+2026-10-14,Kis-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-14,Kis-Balti-öv,dél,Kedvtelési,2
+2026-10-14,Kis-Balti-öv,dél,Szolgálati,1
+2026-10-14,Kis-Balti-öv,dél,Teherhajó,2
+2026-10-14,Kis-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-14,Kis-Balti-öv,észak,Kedvtelési,2
+2026-10-14,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-14,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-14,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-14,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-14,Nagy-Balti-öv,dél,Tanker,8
+2026-10-14,Nagy-Balti-öv,dél,Teherhajó,12
+2026-10-14,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-10-14,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-14,Nagy-Balti-öv,észak,Tanker,7
+2026-10-14,Nagy-Balti-öv,észak,Teherhajó,21
+2026-10-14,Skagen,dél,Halászhajó,8
+2026-10-14,Skagen,dél,Kedvtelési,1
+2026-10-14,Skagen,dél,Személyszállító,3
+2026-10-14,Skagen,dél,Szolgálati,7
+2026-10-14,Skagen,dél,Tanker,21
+2026-10-14,Skagen,dél,Teherhajó,38
+2026-10-14,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-14,Skagen,észak,Halászhajó,9
+2026-10-14,Skagen,észak,Személyszállító,3
+2026-10-14,Skagen,észak,Szolgálati,11
+2026-10-14,Skagen,észak,Tanker,23
+2026-10-14,Skagen,észak,Teherhajó,34
+2026-10-14,Øresund,dél,Halászhajó,1
+2026-10-14,Øresund,dél,Személyszállító,2
+2026-10-14,Øresund,dél,Szolgálati,9
+2026-10-14,Øresund,dél,Tanker,4
+2026-10-14,Øresund,dél,Teherhajó,27
+2026-10-14,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-14,Øresund,észak,Személyszállító,2
+2026-10-14,Øresund,észak,Szolgálati,5
+2026-10-14,Øresund,észak,Tanker,6
+2026-10-14,Øresund,észak,Teherhajó,21
+2026-10-14,Øresund – Drogden,dél,Halászhajó,1
+2026-10-14,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-14,Øresund – Drogden,dél,Személyszállító,7
+2026-10-14,Øresund – Drogden,dél,Szolgálati,16
+2026-10-14,Øresund – Drogden,dél,Tanker,3
+2026-10-14,Øresund – Drogden,dél,Teherhajó,29
+2026-10-14,Øresund – Drogden,észak,Egyéb / ismeretlen,3
+2026-10-14,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-14,Øresund – Drogden,észak,Személyszállító,6
+2026-10-14,Øresund – Drogden,észak,Szolgálati,13
+2026-10-14,Øresund – Drogden,észak,Tanker,8
+2026-10-14,Øresund – Drogden,észak,Teherhajó,17
+2026-10-15,Fehmarn-öv,kelet,Egyéb / ismeretlen,3
+2026-10-15,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-15,Fehmarn-öv,kelet,Szolgálati,6
+2026-10-15,Fehmarn-öv,kelet,Tanker,16
+2026-10-15,Fehmarn-öv,kelet,Teherhajó,25
+2026-10-15,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-15,Fehmarn-öv,nyugat,Kedvtelési,2
+2026-10-15,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-15,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-15,Fehmarn-öv,nyugat,Tanker,5
+2026-10-15,Fehmarn-öv,nyugat,Teherhajó,43
+2026-10-15,Kadet-rende,délnyugat,Egyéb / ismeretlen,10
+2026-10-15,Kadet-rende,délnyugat,Kedvtelési,4
+2026-10-15,Kadet-rende,délnyugat,Személyszállító,15
+2026-10-15,Kadet-rende,délnyugat,Szolgálati,16
+2026-10-15,Kadet-rende,délnyugat,Tanker,2
+2026-10-15,Kadet-rende,délnyugat,Teherhajó,35
+2026-10-15,Kadet-rende,északkelet,Egyéb / ismeretlen,11
+2026-10-15,Kadet-rende,északkelet,Halászhajó,1
+2026-10-15,Kadet-rende,északkelet,Kedvtelési,3
+2026-10-15,Kadet-rende,északkelet,Személyszállító,15
+2026-10-15,Kadet-rende,északkelet,Szolgálati,15
+2026-10-15,Kadet-rende,északkelet,Tanker,14
+2026-10-15,Kadet-rende,északkelet,Teherhajó,31
+2026-10-15,Kis-Balti-öv,dél,Kedvtelési,1
+2026-10-15,Kis-Balti-öv,dél,Szolgálati,2
+2026-10-15,Kis-Balti-öv,észak,Kedvtelési,1
+2026-10-15,Kis-Balti-öv,észak,Teherhajó,3
+2026-10-15,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-15,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-15,Nagy-Balti-öv,dél,Tanker,11
+2026-10-15,Nagy-Balti-öv,dél,Teherhajó,12
+2026-10-15,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-15,Nagy-Balti-öv,észak,Kedvtelési,3
+2026-10-15,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-15,Nagy-Balti-öv,észak,Tanker,5
+2026-10-15,Nagy-Balti-öv,észak,Teherhajó,16
+2026-10-15,Skagen,dél,Egyéb / ismeretlen,3
+2026-10-15,Skagen,dél,Halászhajó,6
+2026-10-15,Skagen,dél,Személyszállító,3
+2026-10-15,Skagen,dél,Szolgálati,15
+2026-10-15,Skagen,dél,Tanker,15
+2026-10-15,Skagen,dél,Teherhajó,40
+2026-10-15,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-15,Skagen,észak,Halászhajó,4
+2026-10-15,Skagen,észak,Kedvtelési,3
+2026-10-15,Skagen,észak,Személyszállító,5
+2026-10-15,Skagen,észak,Szolgálati,14
+2026-10-15,Skagen,észak,Tanker,21
+2026-10-15,Skagen,észak,Teherhajó,41
+2026-10-15,Øresund,dél,Egyéb / ismeretlen,1
+2026-10-15,Øresund,dél,Személyszállító,2
+2026-10-15,Øresund,dél,Szolgálati,3
+2026-10-15,Øresund,dél,Tanker,5
+2026-10-15,Øresund,dél,Teherhajó,26
+2026-10-15,Øresund,észak,Egyéb / ismeretlen,4
+2026-10-15,Øresund,észak,Személyszállító,2
+2026-10-15,Øresund,észak,Szolgálati,1
+2026-10-15,Øresund,észak,Tanker,6
+2026-10-15,Øresund,észak,Teherhajó,17
+2026-10-15,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-15,Øresund – Drogden,dél,Személyszállító,4
+2026-10-15,Øresund – Drogden,dél,Szolgálati,12
+2026-10-15,Øresund – Drogden,dél,Tanker,4
+2026-10-15,Øresund – Drogden,dél,Teherhajó,26
+2026-10-15,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-15,Øresund – Drogden,észak,Személyszállító,4
+2026-10-15,Øresund – Drogden,észak,Szolgálati,13
+2026-10-15,Øresund – Drogden,észak,Tanker,5
+2026-10-15,Øresund – Drogden,észak,Teherhajó,17
+2026-10-16,Fehmarn-öv,kelet,Egyéb / ismeretlen,4
+2026-10-16,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-16,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-16,Fehmarn-öv,kelet,Tanker,14
+2026-10-16,Fehmarn-öv,kelet,Teherhajó,39
+2026-10-16,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-16,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-16,Fehmarn-öv,nyugat,Személyszállító,3
+2026-10-16,Fehmarn-öv,nyugat,Szolgálati,1
+2026-10-16,Fehmarn-öv,nyugat,Tanker,10
+2026-10-16,Fehmarn-öv,nyugat,Teherhajó,33
+2026-10-16,Kadet-rende,délnyugat,Egyéb / ismeretlen,8
+2026-10-16,Kadet-rende,délnyugat,Kedvtelési,3
+2026-10-16,Kadet-rende,délnyugat,Személyszállító,14
+2026-10-16,Kadet-rende,délnyugat,Szolgálati,13
+2026-10-16,Kadet-rende,délnyugat,Tanker,13
+2026-10-16,Kadet-rende,délnyugat,Teherhajó,50
+2026-10-16,Kadet-rende,északkelet,Egyéb / ismeretlen,12
+2026-10-16,Kadet-rende,északkelet,Kedvtelési,1
+2026-10-16,Kadet-rende,északkelet,Személyszállító,11
+2026-10-16,Kadet-rende,északkelet,Szolgálati,12
+2026-10-16,Kadet-rende,északkelet,Tanker,13
+2026-10-16,Kadet-rende,északkelet,Teherhajó,39
+2026-10-16,Kis-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-16,Kis-Balti-öv,dél,Kedvtelési,3
+2026-10-16,Kis-Balti-öv,dél,Szolgálati,1
+2026-10-16,Kis-Balti-öv,dél,Tanker,1
+2026-10-16,Kis-Balti-öv,dél,Teherhajó,3
+2026-10-16,Kis-Balti-öv,észak,Kedvtelési,4
+2026-10-16,Kis-Balti-öv,észak,Szolgálati,2
+2026-10-16,Kis-Balti-öv,észak,Teherhajó,5
+2026-10-16,Nagy-Balti-öv,dél,Egyéb / ismeretlen,4
+2026-10-16,Nagy-Balti-öv,dél,Kedvtelési,3
+2026-10-16,Nagy-Balti-öv,dél,Személyszállító,4
+2026-10-16,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-16,Nagy-Balti-öv,dél,Tanker,7
+2026-10-16,Nagy-Balti-öv,dél,Teherhajó,17
+2026-10-16,Nagy-Balti-öv,észak,Kedvtelési,2
+2026-10-16,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-16,Nagy-Balti-öv,észak,Szolgálati,4
+2026-10-16,Nagy-Balti-öv,észak,Tanker,5
+2026-10-16,Nagy-Balti-öv,észak,Teherhajó,19
+2026-10-16,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-16,Skagen,dél,Halászhajó,10
+2026-10-16,Skagen,dél,Kedvtelési,1
+2026-10-16,Skagen,dél,Személyszállító,3
+2026-10-16,Skagen,dél,Szolgálati,12
+2026-10-16,Skagen,dél,Tanker,21
+2026-10-16,Skagen,dél,Teherhajó,42
+2026-10-16,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-16,Skagen,észak,Halászhajó,10
+2026-10-16,Skagen,észak,Személyszállító,2
+2026-10-16,Skagen,észak,Szolgálati,13
+2026-10-16,Skagen,észak,Tanker,20
+2026-10-16,Skagen,észak,Teherhajó,43
+2026-10-16,Øresund,dél,Egyéb / ismeretlen,2
+2026-10-16,Øresund,dél,Személyszállító,2
+2026-10-16,Øresund,dél,Szolgálati,3
+2026-10-16,Øresund,dél,Tanker,7
+2026-10-16,Øresund,dél,Teherhajó,19
+2026-10-16,Øresund,észak,Egyéb / ismeretlen,1
+2026-10-16,Øresund,észak,Személyszállító,1
+2026-10-16,Øresund,észak,Tanker,10
+2026-10-16,Øresund,észak,Teherhajó,21
+2026-10-16,Øresund – Drogden,dél,Egyéb / ismeretlen,4
+2026-10-16,Øresund – Drogden,dél,Kedvtelési,1
+2026-10-16,Øresund – Drogden,dél,Személyszállító,4
+2026-10-16,Øresund – Drogden,dél,Szolgálati,7
+2026-10-16,Øresund – Drogden,dél,Tanker,5
+2026-10-16,Øresund – Drogden,dél,Teherhajó,23
+2026-10-16,Øresund – Drogden,észak,Egyéb / ismeretlen,5
+2026-10-16,Øresund – Drogden,észak,Halászhajó,2
+2026-10-16,Øresund – Drogden,észak,Kedvtelési,3
+2026-10-16,Øresund – Drogden,észak,Személyszállító,4
+2026-10-16,Øresund – Drogden,észak,Szolgálati,8
+2026-10-16,Øresund – Drogden,észak,Tanker,6
+2026-10-16,Øresund – Drogden,észak,Teherhajó,17
+2026-10-17,Fehmarn-öv,kelet,Egyéb / ismeretlen,1
+2026-10-17,Fehmarn-öv,kelet,Kedvtelési,3
+2026-10-17,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-17,Fehmarn-öv,kelet,Szolgálati,3
+2026-10-17,Fehmarn-öv,kelet,Tanker,14
+2026-10-17,Fehmarn-öv,kelet,Teherhajó,36
+2026-10-17,Fehmarn-öv,nyugat,Egyéb / ismeretlen,2
+2026-10-17,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-17,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-17,Fehmarn-öv,nyugat,Szolgálati,6
+2026-10-17,Fehmarn-öv,nyugat,Tanker,18
+2026-10-17,Fehmarn-öv,nyugat,Teherhajó,35
+2026-10-17,Kadet-rende,délnyugat,Egyéb / ismeretlen,1
+2026-10-17,Kadet-rende,délnyugat,Kedvtelési,2
+2026-10-17,Kadet-rende,délnyugat,Személyszállító,13
+2026-10-17,Kadet-rende,délnyugat,Szolgálati,11
+2026-10-17,Kadet-rende,délnyugat,Tanker,16
+2026-10-17,Kadet-rende,délnyugat,Teherhajó,27
+2026-10-17,Kadet-rende,északkelet,Kedvtelési,2
+2026-10-17,Kadet-rende,északkelet,Személyszállító,14
+2026-10-17,Kadet-rende,északkelet,Szolgálati,8
+2026-10-17,Kadet-rende,északkelet,Tanker,11
+2026-10-17,Kadet-rende,északkelet,Teherhajó,36
+2026-10-17,Kis-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-10-17,Kis-Balti-öv,dél,Kedvtelési,6
+2026-10-17,Kis-Balti-öv,dél,Szolgálati,4
+2026-10-17,Kis-Balti-öv,észak,Kedvtelési,6
+2026-10-17,Kis-Balti-öv,észak,Szolgálati,2
+2026-10-17,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-17,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-17,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-17,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-17,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-17,Nagy-Balti-öv,dél,Tanker,9
+2026-10-17,Nagy-Balti-öv,dél,Teherhajó,19
+2026-10-17,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-17,Nagy-Balti-öv,észak,Szolgálati,4
+2026-10-17,Nagy-Balti-öv,észak,Tanker,14
+2026-10-17,Nagy-Balti-öv,észak,Teherhajó,28
+2026-10-17,Skagen,dél,Egyéb / ismeretlen,7
+2026-10-17,Skagen,dél,Halászhajó,1
+2026-10-17,Skagen,dél,Személyszállító,3
+2026-10-17,Skagen,dél,Szolgálati,9
+2026-10-17,Skagen,dél,Tanker,20
+2026-10-17,Skagen,dél,Teherhajó,46
+2026-10-17,Skagen,észak,Egyéb / ismeretlen,4
+2026-10-17,Skagen,észak,Halászhajó,7
+2026-10-17,Skagen,észak,Kedvtelési,1
+2026-10-17,Skagen,észak,Személyszállító,1
+2026-10-17,Skagen,észak,Szolgálati,12
+2026-10-17,Skagen,észak,Tanker,23
+2026-10-17,Skagen,észak,Teherhajó,50
+2026-10-17,Øresund,dél,Egyéb / ismeretlen,3
+2026-10-17,Øresund,dél,Személyszállító,2
+2026-10-17,Øresund,dél,Szolgálati,3
+2026-10-17,Øresund,dél,Tanker,2
+2026-10-17,Øresund,dél,Teherhajó,16
+2026-10-17,Øresund,észak,Egyéb / ismeretlen,1
+2026-10-17,Øresund,észak,Halászhajó,1
+2026-10-17,Øresund,észak,Személyszállító,2
+2026-10-17,Øresund,észak,Szolgálati,2
+2026-10-17,Øresund,észak,Tanker,6
+2026-10-17,Øresund,észak,Teherhajó,16
+2026-10-17,Øresund – Drogden,dél,Egyéb / ismeretlen,2
+2026-10-17,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-17,Øresund – Drogden,dél,Személyszállító,3
+2026-10-17,Øresund – Drogden,dél,Szolgálati,7
+2026-10-17,Øresund – Drogden,dél,Tanker,3
+2026-10-17,Øresund – Drogden,dél,Teherhajó,13
+2026-10-17,Øresund – Drogden,észak,Egyéb / ismeretlen,2
+2026-10-17,Øresund – Drogden,észak,Személyszállító,4
+2026-10-17,Øresund – Drogden,észak,Szolgálati,7
+2026-10-17,Øresund – Drogden,észak,Tanker,7
+2026-10-17,Øresund – Drogden,észak,Teherhajó,18
+2026-10-18,Fehmarn-öv,kelet,Egyéb / ismeretlen,2
+2026-10-18,Fehmarn-öv,kelet,Személyszállító,2
+2026-10-18,Fehmarn-öv,kelet,Szolgálati,4
+2026-10-18,Fehmarn-öv,kelet,Tanker,8
+2026-10-18,Fehmarn-öv,kelet,Teherhajó,37
+2026-10-18,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-18,Fehmarn-öv,nyugat,Kedvtelési,1
+2026-10-18,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-18,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-18,Fehmarn-öv,nyugat,Tanker,8
+2026-10-18,Fehmarn-öv,nyugat,Teherhajó,36
+2026-10-18,Kadet-rende,délnyugat,Egyéb / ismeretlen,1
+2026-10-18,Kadet-rende,délnyugat,Személyszállító,10
+2026-10-18,Kadet-rende,délnyugat,Szolgálati,5
+2026-10-18,Kadet-rende,délnyugat,Tanker,12
+2026-10-18,Kadet-rende,délnyugat,Teherhajó,46
+2026-10-18,Kadet-rende,északkelet,Egyéb / ismeretlen,2
+2026-10-18,Kadet-rende,északkelet,Személyszállító,13
+2026-10-18,Kadet-rende,északkelet,Szolgálati,9
+2026-10-18,Kadet-rende,északkelet,Tanker,14
+2026-10-18,Kadet-rende,északkelet,Teherhajó,40
+2026-10-18,Kis-Balti-öv,dél,Kedvtelési,7
+2026-10-18,Kis-Balti-öv,dél,Szolgálati,2
+2026-10-18,Kis-Balti-öv,dél,Tanker,1
+2026-10-18,Kis-Balti-öv,dél,Teherhajó,3
+2026-10-18,Kis-Balti-öv,észak,Szolgálati,3
+2026-10-18,Nagy-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-18,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-18,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-18,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-18,Nagy-Balti-öv,dél,Tanker,9
+2026-10-18,Nagy-Balti-öv,dél,Teherhajó,16
+2026-10-18,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-18,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-10-18,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-18,Nagy-Balti-öv,észak,Szolgálati,3
+2026-10-18,Nagy-Balti-öv,észak,Tanker,7
+2026-10-18,Nagy-Balti-öv,észak,Teherhajó,21
+2026-10-18,Skagen,dél,Egyéb / ismeretlen,5
+2026-10-18,Skagen,dél,Halászhajó,16
+2026-10-18,Skagen,dél,Kedvtelési,4
+2026-10-18,Skagen,dél,Személyszállító,4
+2026-10-18,Skagen,dél,Szolgálati,15
+2026-10-18,Skagen,dél,Tanker,32
+2026-10-18,Skagen,dél,Teherhajó,39
+2026-10-18,Skagen,észak,Egyéb / ismeretlen,4
+2026-10-18,Skagen,észak,Halászhajó,25
+2026-10-18,Skagen,észak,Kedvtelési,6
+2026-10-18,Skagen,észak,Személyszállító,6
+2026-10-18,Skagen,észak,Szolgálati,16
+2026-10-18,Skagen,észak,Tanker,27
+2026-10-18,Skagen,észak,Teherhajó,33
+2026-10-18,Øresund,dél,Kedvtelési,1
+2026-10-18,Øresund,dél,Személyszállító,1
+2026-10-18,Øresund,dél,Szolgálati,4
+2026-10-18,Øresund,dél,Tanker,4
+2026-10-18,Øresund,dél,Teherhajó,29
+2026-10-18,Øresund,észak,Egyéb / ismeretlen,4
+2026-10-18,Øresund,észak,Halászhajó,2
+2026-10-18,Øresund,észak,Kedvtelési,2
+2026-10-18,Øresund,észak,Személyszállító,1
+2026-10-18,Øresund,észak,Szolgálati,1
+2026-10-18,Øresund,észak,Tanker,3
+2026-10-18,Øresund,észak,Teherhajó,12
+2026-10-18,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-18,Øresund – Drogden,dél,Kedvtelési,3
+2026-10-18,Øresund – Drogden,dél,Személyszállító,3
+2026-10-18,Øresund – Drogden,dél,Szolgálati,5
+2026-10-18,Øresund – Drogden,dél,Tanker,2
+2026-10-18,Øresund – Drogden,dél,Teherhajó,23
+2026-10-18,Øresund – Drogden,észak,Egyéb / ismeretlen,2
+2026-10-18,Øresund – Drogden,észak,Halászhajó,1
+2026-10-18,Øresund – Drogden,észak,Kedvtelési,2
+2026-10-18,Øresund – Drogden,észak,Személyszállító,2
+2026-10-18,Øresund – Drogden,észak,Szolgálati,6
+2026-10-18,Øresund – Drogden,észak,Tanker,3
+2026-10-18,Øresund – Drogden,észak,Teherhajó,18
+2026-10-19,Fehmarn-öv,kelet,Egyéb / ismeretlen,2
+2026-10-19,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-19,Fehmarn-öv,kelet,Szolgálati,2
+2026-10-19,Fehmarn-öv,kelet,Tanker,13
+2026-10-19,Fehmarn-öv,kelet,Teherhajó,24
+2026-10-19,Fehmarn-öv,nyugat,Kedvtelési,3
+2026-10-19,Fehmarn-öv,nyugat,Szolgálati,2
+2026-10-19,Fehmarn-öv,nyugat,Tanker,18
+2026-10-19,Fehmarn-öv,nyugat,Teherhajó,34
+2026-10-19,Kadet-rende,délnyugat,Egyéb / ismeretlen,4
+2026-10-19,Kadet-rende,délnyugat,Kedvtelési,3
+2026-10-19,Kadet-rende,délnyugat,Személyszállító,12
+2026-10-19,Kadet-rende,délnyugat,Szolgálati,13
+2026-10-19,Kadet-rende,délnyugat,Tanker,11
+2026-10-19,Kadet-rende,délnyugat,Teherhajó,35
+2026-10-19,Kadet-rende,északkelet,Egyéb / ismeretlen,7
+2026-10-19,Kadet-rende,északkelet,Személyszállító,13
+2026-10-19,Kadet-rende,északkelet,Szolgálati,12
+2026-10-19,Kadet-rende,északkelet,Tanker,12
+2026-10-19,Kadet-rende,északkelet,Teherhajó,23
+2026-10-19,Kis-Balti-öv,dél,Egyéb / ismeretlen,1
+2026-10-19,Kis-Balti-öv,dél,Kedvtelési,1
+2026-10-19,Kis-Balti-öv,dél,Szolgálati,5
+2026-10-19,Kis-Balti-öv,dél,Teherhajó,3
+2026-10-19,Kis-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-19,Kis-Balti-öv,észak,Szolgálati,3
+2026-10-19,Kis-Balti-öv,észak,Teherhajó,3
+2026-10-19,Nagy-Balti-öv,dél,Kedvtelési,2
+2026-10-19,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-19,Nagy-Balti-öv,dél,Szolgálati,3
+2026-10-19,Nagy-Balti-öv,dél,Tanker,9
+2026-10-19,Nagy-Balti-öv,dél,Teherhajó,15
+2026-10-19,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-19,Nagy-Balti-öv,észak,Szolgálati,3
+2026-10-19,Nagy-Balti-öv,észak,Tanker,14
+2026-10-19,Nagy-Balti-öv,észak,Teherhajó,23
+2026-10-19,Skagen,dél,Egyéb / ismeretlen,2
+2026-10-19,Skagen,dél,Halászhajó,34
+2026-10-19,Skagen,dél,Kedvtelési,2
+2026-10-19,Skagen,dél,Személyszállító,3
+2026-10-19,Skagen,dél,Szolgálati,25
+2026-10-19,Skagen,dél,Tanker,18
+2026-10-19,Skagen,dél,Teherhajó,34
+2026-10-19,Skagen,észak,Egyéb / ismeretlen,4
+2026-10-19,Skagen,észak,Halászhajó,26
+2026-10-19,Skagen,észak,Kedvtelési,3
+2026-10-19,Skagen,észak,Személyszállító,2
+2026-10-19,Skagen,észak,Szolgálati,20
+2026-10-19,Skagen,észak,Tanker,14
+2026-10-19,Skagen,észak,Teherhajó,42
+2026-10-19,Øresund,dél,Személyszállító,1
+2026-10-19,Øresund,dél,Szolgálati,5
+2026-10-19,Øresund,dél,Tanker,6
+2026-10-19,Øresund,dél,Teherhajó,18
+2026-10-19,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-19,Øresund,észak,Személyszállító,4
+2026-10-19,Øresund,észak,Szolgálati,2
+2026-10-19,Øresund,észak,Tanker,6
+2026-10-19,Øresund,észak,Teherhajó,21
+2026-10-19,Øresund – Drogden,dél,Kedvtelési,3
+2026-10-19,Øresund – Drogden,dél,Személyszállító,3
+2026-10-19,Øresund – Drogden,dél,Szolgálati,5
+2026-10-19,Øresund – Drogden,dél,Tanker,6
+2026-10-19,Øresund – Drogden,dél,Teherhajó,18
+2026-10-19,Øresund – Drogden,észak,Egyéb / ismeretlen,1
+2026-10-19,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-19,Øresund – Drogden,észak,Személyszállító,7
+2026-10-19,Øresund – Drogden,észak,Szolgálati,5
+2026-10-19,Øresund – Drogden,észak,Tanker,6
+2026-10-19,Øresund – Drogden,észak,Teherhajó,15
+2026-10-20,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-20,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-20,Fehmarn-öv,kelet,Szolgálati,2
+2026-10-20,Fehmarn-öv,kelet,Tanker,15
+2026-10-20,Fehmarn-öv,kelet,Teherhajó,26
+2026-10-20,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-20,Fehmarn-öv,nyugat,Kedvtelési,4
+2026-10-20,Fehmarn-öv,nyugat,Személyszállító,2
+2026-10-20,Fehmarn-öv,nyugat,Szolgálati,2
+2026-10-20,Fehmarn-öv,nyugat,Tanker,4
+2026-10-20,Fehmarn-öv,nyugat,Teherhajó,34
+2026-10-20,Kadet-rende,délnyugat,Egyéb / ismeretlen,7
+2026-10-20,Kadet-rende,délnyugat,Kedvtelési,5
+2026-10-20,Kadet-rende,délnyugat,Személyszállító,12
+2026-10-20,Kadet-rende,délnyugat,Szolgálati,17
+2026-10-20,Kadet-rende,délnyugat,Tanker,5
+2026-10-20,Kadet-rende,délnyugat,Teherhajó,30
+2026-10-20,Kadet-rende,északkelet,Egyéb / ismeretlen,7
+2026-10-20,Kadet-rende,északkelet,Személyszállító,13
+2026-10-20,Kadet-rende,északkelet,Szolgálati,15
+2026-10-20,Kadet-rende,északkelet,Tanker,13
+2026-10-20,Kadet-rende,északkelet,Teherhajó,27
+2026-10-20,Kis-Balti-öv,dél,Kedvtelési,4
+2026-10-20,Kis-Balti-öv,dél,Tanker,1
+2026-10-20,Kis-Balti-öv,dél,Teherhajó,3
+2026-10-20,Kis-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-20,Kis-Balti-öv,észak,Kedvtelési,1
+2026-10-20,Kis-Balti-öv,észak,Személyszállító,1
+2026-10-20,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-20,Kis-Balti-öv,észak,Teherhajó,3
+2026-10-20,Nagy-Balti-öv,dél,Egyéb / ismeretlen,2
+2026-10-20,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-20,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-20,Nagy-Balti-öv,dél,Tanker,11
+2026-10-20,Nagy-Balti-öv,dél,Teherhajó,13
+2026-10-20,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-20,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-10-20,Nagy-Balti-öv,észak,Személyszállító,2
+2026-10-20,Nagy-Balti-öv,észak,Szolgálati,1
+2026-10-20,Nagy-Balti-öv,észak,Tanker,3
+2026-10-20,Nagy-Balti-öv,észak,Teherhajó,16
+2026-10-20,Skagen,dél,Egyéb / ismeretlen,3
+2026-10-20,Skagen,dél,Halászhajó,15
+2026-10-20,Skagen,dél,Kedvtelési,2
+2026-10-20,Skagen,dél,Személyszállító,5
+2026-10-20,Skagen,dél,Szolgálati,17
+2026-10-20,Skagen,dél,Tanker,23
+2026-10-20,Skagen,dél,Teherhajó,40
+2026-10-20,Skagen,észak,Egyéb / ismeretlen,3
+2026-10-20,Skagen,észak,Halászhajó,18
+2026-10-20,Skagen,észak,Kedvtelési,4
+2026-10-20,Skagen,észak,Személyszállító,6
+2026-10-20,Skagen,észak,Szolgálati,14
+2026-10-20,Skagen,észak,Tanker,15
+2026-10-20,Skagen,észak,Teherhajó,32
+2026-10-20,Øresund,dél,Halászhajó,1
+2026-10-20,Øresund,dél,Személyszállító,4
+2026-10-20,Øresund,dél,Szolgálati,6
+2026-10-20,Øresund,dél,Tanker,6
+2026-10-20,Øresund,dél,Teherhajó,29
+2026-10-20,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-20,Øresund,észak,Személyszállító,3
+2026-10-20,Øresund,észak,Szolgálati,4
+2026-10-20,Øresund,észak,Tanker,6
+2026-10-20,Øresund,észak,Teherhajó,15
+2026-10-20,Øresund – Drogden,dél,Halászhajó,1
+2026-10-20,Øresund – Drogden,dél,Kedvtelési,1
+2026-10-20,Øresund – Drogden,dél,Személyszállító,5
+2026-10-20,Øresund – Drogden,dél,Szolgálati,12
+2026-10-20,Øresund – Drogden,dél,Tanker,6
+2026-10-20,Øresund – Drogden,dél,Teherhajó,31
+2026-10-20,Øresund – Drogden,észak,Egyéb / ismeretlen,1
+2026-10-20,Øresund – Drogden,észak,Kedvtelési,1
+2026-10-20,Øresund – Drogden,észak,Személyszállító,4
+2026-10-20,Øresund – Drogden,észak,Szolgálati,12
+2026-10-20,Øresund – Drogden,észak,Tanker,6
+2026-10-20,Øresund – Drogden,észak,Teherhajó,14
+2026-10-21,Fehmarn-öv,kelet,Egyéb / ismeretlen,2
+2026-10-21,Fehmarn-öv,kelet,Kedvtelési,2
+2026-10-21,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-21,Fehmarn-öv,kelet,Szolgálati,1
+2026-10-21,Fehmarn-öv,kelet,Tanker,8
+2026-10-21,Fehmarn-öv,kelet,Teherhajó,37
+2026-10-21,Fehmarn-öv,nyugat,Egyéb / ismeretlen,2
+2026-10-21,Fehmarn-öv,nyugat,Kedvtelési,4
+2026-10-21,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-21,Fehmarn-öv,nyugat,Szolgálati,3
+2026-10-21,Fehmarn-öv,nyugat,Tanker,11
+2026-10-21,Fehmarn-öv,nyugat,Teherhajó,32
+2026-10-21,Kadet-rende,délnyugat,Egyéb / ismeretlen,6
+2026-10-21,Kadet-rende,délnyugat,Kedvtelési,2
+2026-10-21,Kadet-rende,délnyugat,Személyszállító,16
+2026-10-21,Kadet-rende,délnyugat,Szolgálati,15
+2026-10-21,Kadet-rende,délnyugat,Tanker,13
+2026-10-21,Kadet-rende,délnyugat,Teherhajó,38
+2026-10-21,Kadet-rende,északkelet,Egyéb / ismeretlen,6
+2026-10-21,Kadet-rende,északkelet,Halászhajó,1
+2026-10-21,Kadet-rende,északkelet,Kedvtelési,5
+2026-10-21,Kadet-rende,északkelet,Személyszállító,13
+2026-10-21,Kadet-rende,északkelet,Szolgálati,14
+2026-10-21,Kadet-rende,északkelet,Tanker,8
+2026-10-21,Kadet-rende,északkelet,Teherhajó,38
+2026-10-21,Kis-Balti-öv,dél,Kedvtelési,3
+2026-10-21,Kis-Balti-öv,dél,Tanker,1
+2026-10-21,Kis-Balti-öv,dél,Teherhajó,4
+2026-10-21,Kis-Balti-öv,észak,Teherhajó,1
+2026-10-21,Nagy-Balti-öv,dél,Személyszállító,3
+2026-10-21,Nagy-Balti-öv,dél,Szolgálati,1
+2026-10-21,Nagy-Balti-öv,dél,Tanker,6
+2026-10-21,Nagy-Balti-öv,dél,Teherhajó,16
+2026-10-21,Nagy-Balti-öv,észak,Egyéb / ismeretlen,1
+2026-10-21,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-10-21,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-21,Nagy-Balti-öv,észak,Szolgálati,2
+2026-10-21,Nagy-Balti-öv,észak,Tanker,8
+2026-10-21,Nagy-Balti-öv,észak,Teherhajó,21
+2026-10-21,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-21,Skagen,dél,Halászhajó,21
+2026-10-21,Skagen,dél,Személyszállító,2
+2026-10-21,Skagen,dél,Szolgálati,12
+2026-10-21,Skagen,dél,Tanker,14
+2026-10-21,Skagen,dél,Teherhajó,45
+2026-10-21,Skagen,észak,Egyéb / ismeretlen,1
+2026-10-21,Skagen,észak,Halászhajó,16
+2026-10-21,Skagen,észak,Személyszállító,2
+2026-10-21,Skagen,észak,Szolgálati,11
+2026-10-21,Skagen,észak,Tanker,21
+2026-10-21,Skagen,észak,Teherhajó,39
+2026-10-21,Øresund,dél,Személyszállító,2
+2026-10-21,Øresund,dél,Szolgálati,6
+2026-10-21,Øresund,dél,Tanker,6
+2026-10-21,Øresund,dél,Teherhajó,25
+2026-10-21,Øresund,észak,Személyszállító,1
+2026-10-21,Øresund,észak,Szolgálati,2
+2026-10-21,Øresund,észak,Tanker,6
+2026-10-21,Øresund,észak,Teherhajó,12
+2026-10-21,Øresund – Drogden,dél,Kedvtelési,1
+2026-10-21,Øresund – Drogden,dél,Személyszállító,6
+2026-10-21,Øresund – Drogden,dél,Szolgálati,15
+2026-10-21,Øresund – Drogden,dél,Tanker,7
+2026-10-21,Øresund – Drogden,dél,Teherhajó,26
+2026-10-21,Øresund – Drogden,észak,Egyéb / ismeretlen,1
+2026-10-21,Øresund – Drogden,észak,Személyszállító,5
+2026-10-21,Øresund – Drogden,észak,Szolgálati,15
+2026-10-21,Øresund – Drogden,észak,Tanker,4
+2026-10-21,Øresund – Drogden,észak,Teherhajó,10
+2026-10-22,Fehmarn-öv,kelet,Egyéb / ismeretlen,1
+2026-10-22,Fehmarn-öv,kelet,Kedvtelési,1
+2026-10-22,Fehmarn-öv,kelet,Személyszállító,1
+2026-10-22,Fehmarn-öv,kelet,Szolgálati,1
+2026-10-22,Fehmarn-öv,kelet,Tanker,14
+2026-10-22,Fehmarn-öv,kelet,Teherhajó,27
+2026-10-22,Fehmarn-öv,nyugat,Egyéb / ismeretlen,1
+2026-10-22,Fehmarn-öv,nyugat,Személyszállító,1
+2026-10-22,Fehmarn-öv,nyugat,Szolgálati,1
+2026-10-22,Fehmarn-öv,nyugat,Tanker,15
+2026-10-22,Fehmarn-öv,nyugat,Teherhajó,32
+2026-10-22,Kadet-rende,délnyugat,Egyéb / ismeretlen,14
+2026-10-22,Kadet-rende,délnyugat,Személyszállító,12
+2026-10-22,Kadet-rende,délnyugat,Szolgálati,18
+2026-10-22,Kadet-rende,délnyugat,Tanker,16
+2026-10-22,Kadet-rende,délnyugat,Teherhajó,37
+2026-10-22,Kadet-rende,északkelet,Egyéb / ismeretlen,10
+2026-10-22,Kadet-rende,északkelet,Kedvtelési,3
+2026-10-22,Kadet-rende,északkelet,Személyszállító,13
+2026-10-22,Kadet-rende,északkelet,Szolgálati,14
+2026-10-22,Kadet-rende,északkelet,Tanker,10
+2026-10-22,Kadet-rende,északkelet,Teherhajó,33
+2026-10-22,Kis-Balti-öv,dél,Szolgálati,3
+2026-10-22,Kis-Balti-öv,dél,Teherhajó,1
+2026-10-22,Kis-Balti-öv,észak,Szolgálati,1
+2026-10-22,Kis-Balti-öv,észak,Teherhajó,2
+2026-10-22,Nagy-Balti-öv,dél,Kedvtelési,1
+2026-10-22,Nagy-Balti-öv,dél,Személyszállító,2
+2026-10-22,Nagy-Balti-öv,dél,Szolgálati,2
+2026-10-22,Nagy-Balti-öv,dél,Tanker,12
+2026-10-22,Nagy-Balti-öv,dél,Teherhajó,16
+2026-10-22,Nagy-Balti-öv,észak,Egyéb / ismeretlen,2
+2026-10-22,Nagy-Balti-öv,észak,Kedvtelési,1
+2026-10-22,Nagy-Balti-öv,észak,Személyszállító,3
+2026-10-22,Nagy-Balti-öv,észak,Tanker,15
+2026-10-22,Nagy-Balti-öv,észak,Teherhajó,17
+2026-10-22,Skagen,dél,Egyéb / ismeretlen,1
+2026-10-22,Skagen,dél,Halászhajó,26
+2026-10-22,Skagen,dél,Kedvtelési,1
+2026-10-22,Skagen,dél,Személyszállító,2
+2026-10-22,Skagen,dél,Szolgálati,12
+2026-10-22,Skagen,dél,Tanker,19
+2026-10-22,Skagen,dél,Teherhajó,45
+2026-10-22,Skagen,észak,Egyéb / ismeretlen,2
+2026-10-22,Skagen,észak,Halászhajó,24
+2026-10-22,Skagen,észak,Személyszállító,3
+2026-10-22,Skagen,észak,Szolgálati,11
+2026-10-22,Skagen,észak,Tanker,16
+2026-10-22,Skagen,észak,Teherhajó,38
+2026-10-22,Øresund,dél,Egyéb / ismeretlen,2
+2026-10-22,Øresund,dél,Halászhajó,1
+2026-10-22,Øresund,dél,Személyszállító,1
+2026-10-22,Øresund,dél,Szolgálati,4
+2026-10-22,Øresund,dél,Tanker,4
+2026-10-22,Øresund,dél,Teherhajó,24
+2026-10-22,Øresund,észak,Egyéb / ismeretlen,2
+2026-10-22,Øresund,észak,Személyszállító,1
+2026-10-22,Øresund,észak,Szolgálati,1
+2026-10-22,Øresund,észak,Tanker,4
+2026-10-22,Øresund,észak,Teherhajó,9
+2026-10-22,Øresund – Drogden,dél,Egyéb / ismeretlen,1
+2026-10-22,Øresund – Drogden,dél,Halászhajó,1
+2026-10-22,Øresund – Drogden,dél,Kedvtelési,2
+2026-10-22,Øresund – Drogden,dél,Személyszállító,4
+2026-10-22,Øresund – Drogden,dél,Szolgálati,11
+2026-10-22,Øresund – Drogden,dél,Tanker,5
+2026-10-22,Øresund – Drogden,dél,Teherhajó,21
+2026-10-22,Øresund – Drogden,észak,Egyéb / ismeretlen,2
+2026-10-22,Øresund – Drogden,észak,Személyszállító,4
+2026-10-22,Øresund – Drogden,észak,Szolgálati,12
+2026-10-22,Øresund – Drogden,észak,Tanker,6
+2026-10-22,Øresund – Drogden,észak,Teherhajó,13
