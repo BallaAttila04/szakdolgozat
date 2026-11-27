@@ -4,15 +4,15 @@
   {
    "fajl": "legutobbi.json",
    "leiras": "Az utolsó feldolgozott nap: sorozatonként érték, alapszint, eltérés, küszöb, jelzés; aktív jelzések; az utolsó futás állapota.",
-   "bajt": 7780,
-   "sha256": "a8d2fcaf45796bd6cdb1797c14dead643d7450be3f64ceecc5034c8a8fc2b32a"
+   "bajt": 7791,
+   "sha256": "88bdc8839dcebd5f3cc1a7614d4b7f7ddc7a564aa3660d5b25bcc0815e67e294"
   },
   {
    "fajl": "jelzesek.csv",
    "leiras": "A monitor összes jelzés-sora (forgalom és megrakottság).",
-   "bajt": 80383,
-   "sha256": "70bf82a8c6523e01c6cbf30c0595a0a7d8f596fa6bca97c516ac16d95cc916b1",
-   "sorok": 1038,
+   "bajt": 80868,
+   "sha256": "255df9d745ec0eb61358bd349e2fd10a58256ccd1b768849eef5769bf58653ae",
+   "sorok": 1044,
    "oszlopok": [
     {
      "nev": "datum",
@@ -55,9 +55,9 @@
   {
    "fajl": "idosor_forgalom.csv",
    "leiras": "Napi kapuvonal-átkelések kapu, irány és hajócsoport szerint.",
-   "bajt": 175869,
-   "sha256": "fb973741fecd8b3a7abaf308c4d0c47ffa0ba9dcbafda5be26647bb1bc6fdfed",
-   "sorok": 3938,
+   "bajt": 176757,
+   "sha256": "07cffafca5e9b7b0cf27040fc1d12e2e7cd984577a67b4c0be1f326b059838f2",
+   "sorok": 3958,
    "oszlopok": [
     {
      "nev": "datum",
@@ -84,9 +84,9 @@
   {
    "fajl": "idosor_megrakottsag.csv",
    "leiras": "Napi megrakottsági tábla (tanker, teherhajó).",
-   "bajt": 85351,
-   "sha256": "bac8ad02233a2b03121c6eb2f481cb22b981a5c6424599429d05d3818ffcc46f",
-   "sorok": 1407,
+   "bajt": 85855,
+   "sha256": "4efa3051f596250e1224f6a8f7c2ac88d3f94f9a48bdbe02a46c2df53aadaa72",
+   "sorok": 1415,
    "oszlopok": [
     {
      "nev": "datum",
@@ -129,9 +129,9 @@
   {
    "fajl": "kiserleti_kapuk_napi.csv",
    "leiras": "A kísérleti kapuk napi kereskedelmi (teher + tanker) átkelései – kísérleti, nem a monitor része.",
-   "bajt": 62050,
-   "sha256": "4e9d87387c36b6c9533c8a5312db0518e0e90d603cc11728b9122116994af16d",
-   "sorok": 1742,
+   "bajt": 69774,
+   "sha256": "77826f984033feae12d972b44a3c831b50d15ac358f5e8b2ac1c71582d61df72",
+   "sorok": 1959,
    "oszlopok": [
     {
      "nev": "datum",
@@ -164,8 +164,8 @@
   {
    "fajl": "kiserleti_kapuk.json",
    "leiras": "A kísérleti kapuk blokkja: sorozatok, statisztika, PortWatch-összevetés (pillanatkép).",
-   "bajt": 44475,
-   "sha256": "43849e40466fb52e846543c61fb08e143c628bb73cfc1bd7052d64ae0d1c6d0c"
+   "bajt": 47428,
+   "sha256": "491bec04f45da02d9e7d11ab11d60fee5878fe57b679a353bf00dddb1fdc0599"
   }
  ]
 }
